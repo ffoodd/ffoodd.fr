@@ -1,0 +1,447 @@
+[
+  {
+    "id": 102166,
+    "date": "2018-05-23T11:53:38",
+    "date_gmt": "2018-05-23T09:53:38",
+    "guid": {
+      "rendered": "https://www.ffoodd.fr/?page_id=102166"
+    },
+    "modified": "2018-10-02T15:02:52",
+    "modified_gmt": "2018-10-02T13:02:52",
+    "slug": "politique-de-confidentialite",
+    "status": "publish",
+    "type": "page",
+    "link": "https://www.ffoodd.fr/politique-de-confidentialite/",
+    "title": {
+      "rendered": "Politique de confidentialité"
+    },
+    "content": {
+      "rendered": "<h2>Qui sommes-nous ?</h2>\n<p>L’adresse de notre site Web est : https://www.ffoodd.fr.</p>\n<h2>Utilisation des données personnelles collectées</h2>\n<h3>Commentaires</h3>\n<p>Quand vous laissez un commentaire sur mon site web, les données inscrites dans le formulaire de commentaire, mais aussi votre adresse IP et l’agent utilisateur de votre navigateur sont collectés pour nous aider à la détection des commentaires indésirables — basée sur <a href=\"https://fr.wordpress.org/plugins/akismet/\">l’extension Akismet</a>.</p>\n<p>Une chaîne anonymisée créée à partir de votre adresse de messagerie (également appelée hash) peut être envoyée au service Gravatar pour vérifier si vous utilisez ce dernier. Les clauses de confidentialité du service Gravatar sont disponibles sur <a href=\"https://automattic.com/privacy/\">le site de la société Automattic</a>. Après validation de votre commentaire, votre photo de profil sera visible publiquement à coté de votre commentaire.</p>\n<h3>Cookies</h3>\n<p>Si vous déposez un commentaire sur mon site, il vous sera proposé d’enregistrer votre nom, adresse de messagerie et site web dans des cookies. C’est uniquement pour votre confort afin de ne pas avoir à saisir ces informations si vous déposez un autre commentaire plus tard. Ces cookies expirent au bout d’un an.</p>\n<h3>Contenu embarqué depuis d’autres sites</h3>\n<p>Les articles de ce site peuvent inclure des contenus intégrés (par exemple des vidéos, images, articles…). Le contenu intégré depuis d’autres sites se comporte de la même manière que si le visiteur se rendait sur cet autre site.</p>\n<p>Ces sites web pourraient collecter des données sur vous, utiliser des cookies, embarquer des outils de suivis tiers, suivre vos interactions avec ces contenus embarqués si vous disposez d’un compte connecté sur leur site web.</p>\n<h2>Durées de stockage de vos données</h2>\n<p>Si vous laissez un commentaire, le commentaire et ses métadonnées sont conservés indéfiniment. Cela permet de reconnaître et approuver automatiquement les commentaires suivants au lieu de les laisser dans la file de modération.</p>\n<h2>Les droits que vous avez sur vos données</h2>\n<p>Si vous avez laissé des commentaires sur le site, vous pouvez demander à recevoir un fichier contenant toutes les données personnelles que nous possédons à votre sujet, incluant celles que vous nous avez fournies. Vous pouvez également demander la suppression des données personnelles vous concernant. Cela ne prend pas en compte les données stockées à des fins administratives, légales ou pour des raisons de sécurité.</p>\n<h2>Transmission de vos données personnelles</h2>\n<p>Les commentaires des visiteurs peuvent être vérifiés à l’aide d’un service automatisé de détection des commentaires indésirables.</p>\n<h2>Informations de contact</h2>\n<p>La liste des moyens pour me contacter est disponible dans le pied-de-page ci-après.</p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>Qui sommes-nous ? L’adresse de notre site Web est : https://www.ffoodd.fr. Utilisation des données personnelles collectées Commentaires Quand vous laissez un commentaire sur mon site web, les données inscrites dans le formulaire de commentaire, mais aussi votre adresse IP et l’agent utilisateur de votre navigateur sont collectés pour nous aider à la détection des commentaires indésirables — [&hellip;] <a href=\"https://www.ffoodd.fr/politique-de-confidentialite/\" aria-hidden=\"true\">Lire la suite de «&nbsp;Politique de confidentialité&nbsp;» <span class=\"meta-nav\">&rarr;</span></a></p>\n",
+      "protected": false
+    },
+    "author": 2,
+    "featured_media": 0,
+    "parent": 0,
+    "menu_order": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "template": "",
+    "meta": {
+      "footnotes": ""
+    },
+    "acf": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/pages/102166"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/pages"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/types/page"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/users/2"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/comments?post=102166"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 3,
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/pages/102166/revisions"
+        }
+      ],
+      "predecessor-version": [
+        {
+          "id": 106527,
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/pages/102166/revisions/106527"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/media?parent=102166"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 966,
+    "date": "2013-10-03T14:49:51",
+    "date_gmt": "2013-10-03T13:49:51",
+    "guid": {
+      "rendered": "http://www.ffoodd.fr/?page_id=966"
+    },
+    "modified": "2018-05-23T11:57:48",
+    "modified_gmt": "2018-05-23T09:57:48",
+    "slug": "mentions-legales",
+    "status": "publish",
+    "type": "page",
+    "link": "https://www.ffoodd.fr/mentions-legales/",
+    "title": {
+      "rendered": "Mentions légales"
+    },
+    "content": {
+      "rendered": "<h2>Hébergement</h2>\n<p>Ce site est hébergé par la société <strong>Gandi</strong> :<br />\n63-65 boulevard Massena à Paris (75013) FRANCE<br />\n<a href=\"https://www.gandi.net/\">www.gandi.net</a></p>\n<h2>Propriété intellectuelle</h2>\n<p>Sauf mention contraire explicite, le contenu publié sur ce site est mis à disposition selon les termes de la Licence Creative Commons Attribution — Pas d’Utilisation Commerciale — Partage dans les Mêmes Conditions 3.0 France. Il est donc possible de le reproduire et le diffuser sous réserve d’en citer la paternité (à savoir Gaël Poupard), ne pas en faire un usage commercial et en cas de modification, vous devez le diffuser sous les mêmes conditions.</p>\n<h2>Politique de confidentialité</h2>\n<p>Une page expliquant la <a href=\"https://www.ffoodd.fr/politique-de-confidentialite/\">politique de confidentialité</a> en vigueur sur ce site vous expliquera tout.</p>\n<h2>Crédits</h2>\n<p>Ce site utilise les polices de caractère suivantes :</p>\n<ul>\n<li> <a title=\"En anglais\" href=\"https://typekit.com/fonts/bello-pro\">Bello Pro</a> — créée par <a title=\"Site hollandais\" href=\"http://www.underware.nl/\">Underware</a>;</li>\n<li><a title=\"En anglais\" href=\"https://typekit.com/fonts/museo-slab\">Museo Slab</a> — créée par <a title=\"En anglais\" href=\"http://www.exljbris.com/\">Exljbris</a>.</li>\n</ul>\n<p>Ces typographies ont été choisies grâce à <a title=\"En anglais\" href=\"http://typecast.com/\">Typecast</a> et sont servies par Typekit.</p>\n<p>La coloration syntaxique dans les articles se sert de <a title=\"En anglais\" href=\"http://prismjs.com/\">prismjs</a> créé notamment par <a title=\"En anglais\" href=\"http://lea.verou.me/\">Lea Verou</a>.</p>\n<p>Ce site est fièrement propulsé par <a href=\"http://fr.wordpress.org/\">WordPress</a>, enjolivé avec le thème <a href=\"https://github.com/ffoodd/ffeeeedd\">ffeeeedd</a> — ma propre création, sous licence <a title=\"En anglais\" href=\"http://creativecommons.org/licenses/by/3.0/fr/\">CC BY 3.0 FR.</a> — librement adapté.</p>\n<p>Le thème lui-même est basé sur une adaptation libre des <span lang=\"en\">micro-frameworks</span> <abbr title=\"Cascading StyleSheet\">CSS</abbr> suivants :</p>\n<ul>\n<li><a title=\"En anglais\" href=\"http://knacss.com/\">KNACSS</a> — créé par <a href=\"http://goetter.fr/\">Raphaël Goetter</a>;</li>\n<li><a href=\"http://rocssti.nicolas-hoffmann.net/\">RÖCSSTI</a> — créé par <a href=\"http://www.nicolas-hoffmann.net/source/\">Nicolas Hoffmann</a>.</li>\n</ul>\n<p>Ces deux solutions sont sous licence <a title=\"En anglais\" href=\"http://creativecommons.org/licenses/by/3.0/fr/\">CC-BY</a>.</p>\n<p>Des crédits plus détaillés sont mentionnés dans la documentation et les fichiers du thème sur GitHub.</p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>Hébergement Ce site est hébergé par la société Gandi : 63-65 boulevard Massena à Paris (75013) FRANCE www.gandi.net Propriété intellectuelle Sauf mention contraire explicite, le contenu publié sur ce site est mis à disposition selon les termes de la Licence Creative Commons Attribution — Pas d’Utilisation Commerciale — Partage dans les Mêmes Conditions 3.0 France. Il est donc possible de [&hellip;] <a href=\"https://www.ffoodd.fr/mentions-legales/\" aria-hidden=\"true\">Lire la suite de «&nbsp;Mentions légales&nbsp;» <span class=\"meta-nav\">&rarr;</span></a></p>\n",
+      "protected": false
+    },
+    "author": 2,
+    "featured_media": 0,
+    "parent": 0,
+    "menu_order": 0,
+    "comment_status": "open",
+    "ping_status": "open",
+    "template": "",
+    "meta": {
+      "footnotes": ""
+    },
+    "acf": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/pages/966"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/pages"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/types/page"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/users/2"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/comments?post=966"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 5,
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/pages/966/revisions"
+        }
+      ],
+      "predecessor-version": [
+        {
+          "id": 102246,
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/pages/966/revisions/102246"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/media?parent=966"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 272,
+    "date": "2011-04-29T13:03:57",
+    "date_gmt": "2011-04-29T12:03:57",
+    "guid": {
+      "rendered": "http://www.ffoodd.fr/?page_id=272"
+    },
+    "modified": "2016-05-25T10:52:21",
+    "modified_gmt": "2016-05-25T08:52:21",
+    "slug": "accueil",
+    "status": "publish",
+    "type": "page",
+    "link": "https://www.ffoodd.fr/",
+    "title": {
+      "rendered": "Accueil"
+    },
+    "content": {
+      "rendered": "<ul>\n<li>En langage hexadécimal, #ff00dd correspond au rose vif. «&nbsp;<em>Voir la vie en #ff00dd</em>&nbsp;»&nbsp;: voir la vie en rose&nbsp;;</li>\n<li>En anglais, <em>food</em> signifie la nourriture&nbsp;;</li>\n<li>Pour moi&nbsp;— <strong>Gaël Poupard</strong>&nbsp;— intégrateur web opérant sur Nantes, ffoodd est la métaphore d’un regard particulier sur le web&nbsp;: ses langages, sa poésie, son microcosme… Une passion nourrissante qui m’amène à créer ce site, afin de montrer mon savoir-faire et témoigner de cette vision originale en <strong>expérimentant</strong> «&nbsp;sur site&nbsp;». <strong>ffoodd</strong> est donc un espace exceptionnel pour mettre en pratique mes lectures.</li>\n</ul>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>En langage hexadécimal, #ff00dd correspond au rose vif. «&nbsp;Voir la vie en #ff00dd&nbsp;»&nbsp;: voir la vie en rose&nbsp;; En anglais, food signifie la nourriture&nbsp;; Pour moi&nbsp;— Gaël Poupard&nbsp;— intégrateur web opérant sur Nantes, ffoodd est la métaphore d’un regard particulier sur le web&nbsp;: ses langages, sa poésie, son microcosme… Une passion nourrissante qui m’amène à créer ce site, afin [&hellip;] <a href=\"https://www.ffoodd.fr/\" aria-hidden=\"true\">Lire la suite de «&nbsp;Accueil&nbsp;» <span class=\"meta-nav\">&rarr;</span></a></p>\n",
+      "protected": false
+    },
+    "author": 2,
+    "featured_media": 0,
+    "parent": 0,
+    "menu_order": 0,
+    "comment_status": "open",
+    "ping_status": "closed",
+    "template": "",
+    "meta": {
+      "footnotes": ""
+    },
+    "acf": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/pages/272"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/pages"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/types/page"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/users/2"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/comments?post=272"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 6,
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/pages/272/revisions"
+        }
+      ],
+      "predecessor-version": [
+        {
+          "id": 2009,
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/pages/272/revisions/2009"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/media?parent=272"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 255,
+    "date": "2010-10-31T19:07:45",
+    "date_gmt": "2010-10-31T18:07:45",
+    "guid": {
+      "rendered": "http://fler.salumguilher.me/"
+    },
+    "modified": "2015-10-09T09:42:24",
+    "modified_gmt": "2015-10-09T07:42:24",
+    "slug": "plus",
+    "status": "publish",
+    "type": "page",
+    "link": "https://www.ffoodd.fr/plus/",
+    "title": {
+      "rendered": "À propos"
+    },
+    "content": {
+      "rendered": "<p>Les défis imposés par certaines créations sont autant de motivations. Toujours <strong>attentif</strong> aux nouveautés dans cet univers en ébullition, je cherche la solution la mieux adaptée.</p>\n<h2>Les cordes à mon arc</h2>\n<p>Avec le temps et à force d&rsquo;apprentissage, mon travail consiste à&nbsp;:</p>\n<ol>\n<li>élaborer l&apos;aspect graphique pour répondre aux besoins contextuels&nbsp;:</li>\n<li>intégrer la structure <abbr title=\"HyperText Markup Language\" lang=\"en\">HTML</abbr> en optimisant la sémantique et en évitant le sur-codage&nbsp;;</li>\n<li>intégrer la couche graphique via <abbr title=\"Cascading Style Sheet\" lang=\"en\">CSS</abbr> en construisant mon code, en veillant à sa bonne performance&nbsp;— y compris en optimisant les images.</li>\n</ol>\n<p>Au fil des projets j’ai progressé dans des domaines plus précis&nbsp;: la compatibilité navigateurs, l’optimisation «&nbsp;à la source&nbsp;» pour le référencement, l’e-mailing, l’<strong>accessibilité</strong>, l’adaptabilité des structures notamment.</p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>Les défis imposés par certaines créations sont autant de motivations. Toujours attentif aux nouveautés dans cet univers en ébullition, je cherche la solution la mieux adaptée. Les cordes à mon arc Avec le temps et à force d&rsquo;apprentissage, mon travail consiste à&nbsp;: élaborer l&apos;aspect graphique pour répondre aux besoins contextuels&nbsp;: intégrer la structure HTML en [&hellip;] <a href=\"https://www.ffoodd.fr/plus/\" aria-hidden=\"true\">Lire la suite de «&nbsp;À propos&nbsp;» <span class=\"meta-nav\">&rarr;</span></a></p>\n",
+      "protected": false
+    },
+    "author": 2,
+    "featured_media": 0,
+    "parent": 0,
+    "menu_order": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "template": "",
+    "meta": {
+      "footnotes": ""
+    },
+    "acf": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/pages/255"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/pages"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/types/page"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/users/2"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/comments?post=255"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 4,
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/pages/255/revisions"
+        }
+      ],
+      "predecessor-version": [
+        {
+          "id": 1673,
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/pages/255/revisions/1673"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/media?parent=255"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 100,
+    "date": "2010-10-31T13:03:48",
+    "date_gmt": "2010-10-31T12:03:48",
+    "guid": {
+      "rendered": "http://fler.salumguilher.me/"
+    },
+    "modified": "2023-10-23T11:16:03",
+    "modified_gmt": "2023-10-23T09:16:03",
+    "slug": "travaux",
+    "status": "publish",
+    "type": "page",
+    "link": "https://www.ffoodd.fr/travaux/",
+    "title": {
+      "rendered": "Parcours"
+    },
+    "content": {
+      "rendered": "<p>Et j’espère que cette liste continuera d’évoluer&nbsp;!</p>\n<h2>Conférences</h2>\n<h3>Dessine-moi un graphique (en CSS)</h3>\n<p>DevFest Nantes 2023 — 19 octobre 2023</p>\n<ul>\n<li><strong>Page de l’événement</strong>&nbsp;: <a href=\"https://devfest2023.gdgnantes.com/sessions/dessine_moi_un_graphique__en_css_/\">DevFest Nantes 2023</a>&nbsp;;</li>\n<li><a href=\"https://www.ffoodd.fr/devfest.2023\">Lire les <em>slides</em> de « Dessine-moi un graphique (en CSS) »</a>.</li>\n</ul>\n<h3>Découvrez «&nbsp;le bon HTML&nbsp;» et économisez du JS et du CSS</h3>\n<p>DevFest Nantes 2022 — 21 octobre 2022</p>\n<ul>\n<li><strong>Page de l’événement</strong>&nbsp;: <a href=\"https://devfest2022.gdgnantes.com/sessions/decouvrez_le_bon_html_et_economisez_du_js_et_du_css\">DevFest Nantes 2022</a>&nbsp;;</li>\n<li><a href=\"https://www.ffoodd.fr/devfest\">Lire les <em>slides</em> de « Découvrez « le bon HTML » et économisez du JS et du CSS »</a> ;</li>\n<li><a href=\"https://www.youtube.com/watch?v=VhMqwbsyXPo&amp;list=PLuZ_sYdawLiWIRK-QW6zpEJMSeCtspXP8\">Regarder la vidéo de « Découvrez « le bon HTML » et économisez du JS et du CSS » au DevFest Nantes 2022 (sur YouTube)</a>.</li>\n</ul>\n<h3>Découvrez «&nbsp;le bon HTML&nbsp;» et économisez du JS et du CSS</h3>\n<p>Paris Web 2022 — 7 octobre 2022</p>\n<ul>\n<li><strong>Page de l’événement</strong>&nbsp;: <a href=\"https://www.paris-web.fr/2022/conferences/decouvrez-le-bon-html-et-economisez-du-js-et-du-css.php\">Paris Web 2022</a>&nbsp;;</li>\n<li><a href=\"https://www.ffoodd.fr/paris-web.2022/#slide-1\">Lire les <em>slides</em> de « Découvrez « le bon HTML » et économisez du JS et du CSS »</a> ;</li>\n<li><a href=\"https://www.youtube.com/watch?t=653&amp;v=ym2sI8Jlu6A&amp;feature=emb_imp_woyt\">Regarder la vidéo de « Découvrez « le bon HTML » et économisez du JS et du CSS » à Paris Web 2022 (sur YouTube)</a>.</li>\n</ul>\n<h3>Le jargon web, avant le web</h3>\n<p>Paris Web 2021 — 8 octobre 2021</p>\n<ul>\n<li><strong>Page de l’événement</strong>&nbsp;: <a href=\"https://www.paris-web.fr/2021/conferences/le-jargon-web-avant-le-web.php\">Paris Web 2021</a>&nbsp;;</li>\n<li><a href=\"https://www.ffoodd.fr/paris-web.2021/\">Lire les <em>slides</em> de « Le jargon web, avant le web »</a> ;</li>\n<li><a href=\"https://vimeo.com/640408851\">Regarder la vidéo de « Le jargon web, avant le web » sur Viméo</a>.</li>\n</ul>\n<h3>Comprendre et prendre en compte les situations de handicap sur le web</h3>\n<p>Nantes Numérique Responsable — 22 octobre 2020</p>\n<ul>\n<li><strong>Page de l’événement</strong> : <a href=\"https://www.meetup.com/fr-FR/nantesnr/events/273921309/\">Nantes Numérique Responsable (sur meetup.com)</a> ;</li>\n<li><a href=\"https://www.ffoodd.fr/nnr/\">Lire les <em>slides</em> de « Comprendre et prendre en compte les situations de handicap sur le web »</a>.</li>\n</ul>\n<h3>Des propriétés personnalisées très, très personnalisées</h3>\n<p>Paris Web 2020 — 1 octobre 2020</p>\n<ul>\n<li><strong>Page de l’événement</strong> : <a href=\"https://www.paris-web.fr/2020/conferences/des-proprietes-personnalisees-tres-tres-personnalisees.php\">Paris Web 2020</a> ;</li>\n<li><a href=\"https://www.ffoodd.fr/paris-web.2020/\">Lire les <em>slides</em> de « Des propriétés personnalisées très, très personnalisées »</a> ;</li>\n<li><a href=\"https://vimeo.com/462093074\">Regarder la vidéo de « Des propriétés personnalisées très, très personnalisées » sur Viméo</a>.</li>\n</ul>\n<h3>La donnée graphique avec <abbr title=\"HyperText Markup Language\">HTML</abbr> et <abbr title=\"Cascading StyleSheet\">CSS</abbr></h3>\n<p>Web2Day — 5 juin 2019</p>\n<ul>\n<li><strong>Page de l’événement</strong> : <a href=\"https://web2day.co/event/les-graphiques-de-donnees-avec-html-et-css/\">Web2Day</a> ;</li>\n<li><a href=\"https://www.ffoodd.fr/web2day/\">Lire les <em>slides</em> de « La donnée graphique avec HTML et CSS »</a> ;</li>\n<li><a href=\"https://www.youtube.com/watch?v=1AHBcoKe56E&amp;list=PLAgO0SKz6lC8lUo46-smKn_bpfv32iPYL&amp;index=37&amp;t=0s\">Regarder la vidéo de « La donnée graphique avec HTML et CSS » sur YouTube</a>.</li>\n</ul>\n<h3>La donnée graphique avec <abbr title=\"HyperText Markup Language\">HTML</abbr> et <abbr title=\"Cascading StyleSheet\">CSS</abbr></h3>\n<p>Paris Web 2018 — 4 octobre 2018</p>\n<ul>\n<li><strong>Page de l’événement</strong> : <a href=\"https://www.paris-web.fr/2018/\">Paris Web 2018</a> ;</li>\n<li><a href=\"https://www.ffoodd.fr/paris-web.2018/\">Lire les <em>slides</em> de « La donnée graphique avec HTML et CSS »</a> ;</li>\n<li><a href=\"https://vimeo.com/296245804\">Regarder la vidéo de « La donnée graphique avec HTML et CSS » sur Viméo</a>.</li>\n</ul>\n<h3>Un plan de tests automatisés pour votre <em>front-end</em></h3>\n<p><abbr title=\"WordPress\">WP</abbr> Tech Lyon — 28 avril 2018</p>\n<ul>\n<li><strong>Page de l’événement</strong> : <a href=\"https://2018.wptech.fr/\">WPTECH[2018]</a> ;</li>\n<li><a href=\"https://www.ffoodd.fr/wp-tech.2018/\">Lire les <em>slides</em> de « Un plan de tests automatisés pour votre <em>front-end</em> »</a>&nbsp;;</li>\n<li><a href=\"https://www.youtube.com/watch?v=JD1nrs2yH88&amp;feature=youtu.be&amp;a=\">Regarder la vidéo de « Un plan de tests automatisés pour votre <em>front-end</em> » sur YouTube</a>.</li>\n</ul>\n<h3>Visite guidée du <em>customizer</em></h3>\n<p>Meetup WordPress Nantes — 28 septembre 2017</p>\n<ul>\n<li><strong>Page de l’événement</strong> : <a href=\"https://www.meetup.com/fr-FR/Nantes-WordPress-Meetup/events/243486324/\">meetup.com</a> ;</li>\n<li><a href=\"https://www.ffoodd.fr/customizer/\">Lire les <em>slides</em> de « Visite guidée du <em>customizer</em> »</a>&nbsp;;</li>\n<li><a href=\"https://www.youtube.com/watch?v=5umS5IDY-SU\">Regarder la vidéo de « Visite guidée du <em>customizer</em> » sur YouTube</a>.</li>\n</ul>\n<h3>Il n’y a pas que <code>class</code> et <code>id</code> dans la vie</h3>\n<p>Paris Web 2016&nbsp;— 29 septembre 2016</p>\n<ul>\n<li><strong>Page de l’événement</strong>&nbsp;: <a href=\"https://www.paris-web.fr/\">Paris Web 2016</a>&nbsp;;</li>\n<li><a href=\"https://www.ffoodd.fr/paris-web/index-transcript.html\">Lire les <em>slides</em> de «&nbsp;Il n’y a pas que <code>class</code> et <code>id</code> dans la vie&nbsp;»</a>&nbsp;;</li>\n<li><a href=\"https://www.paris-web.fr/2016/conferences/il-ny-a-pas-que-class-et-id-dans-la-vie.php\">Regarder la vidéo de «&nbsp;Il n’y a pas que <code>class</code> et <code>id</code> dans la vie&nbsp;»</a></li>\n</ul>\n<h3><em>Workflow</em> moderne cherche graphiste à l’ancienne</h3>\n<p>KiwiParty édition 2016&nbsp;— 03 juin 2016</p>\n<ul>\n<li><strong>Page de l’événement</strong>&nbsp;: <a href=\"https://www.kiwiparty.fr/\">KiwiParty édition 2016</a>&nbsp;;</li>\n<li><a href=\"https://www.ffoodd.fr/kiwiparty/\">Lire les <em>slides</em> de «&nbsp;<em>Workflow</em> moderne cherche graphiste à l’ancienne&nbsp;»</a></li>\n<li><a href=\"https://vimeo.com/181158986\">Regarder la vidéo de «&nbsp;<em>Workflow</em> moderne cherche graphiste à l’ancienne&nbsp;» sur Viméo</a></li>\n</ul>\n<h3>L’accessibilité <em>via</em> les thèmes enfants</h3>\n<p><strong>Une mécanique pertinente de WordPress</strong><br />\n21<sup>e</sup> séminaire AccessiWeb&nbsp;— 25 juin 2015</p>\n<ul>\n<li><strong>Page de l’événement</strong>&nbsp;: <a href=\"https://inova.snv.jussieu.fr/evenements/colloques/colloques/index.php?c=87\">Choisir et utiliser un <abbr title=\"Content Management System\">CMS</abbr> pour créer des contenus accessibles</a>&nbsp;;</li>\n<li><a href=\"https://www.ffoodd.fr/gta21/\">Lire les <em>slides</em> de «&nbsp;L’accessibilité <em>via</em> les thèmes enfants&nbsp;»</a>.</li>\n</ul>\n<h3>Accessibilité et efficience</h3>\n<p><strong>Ce que vous faites et ce dont vous êtes capables</strong><br />\n<abbr title=\"WordPress Meet and Exchange\">WPMX</abbr> Day&nbsp;— 06 juin 2015</p>\n<ul>\n<li><strong>Page de l’événement</strong>&nbsp;: <a href=\"https://2015.wpmx.org/\">WPMX Day&nbsp;: le 1<sup>er</sup> événement WordPress pour les professionnels</a>&nbsp;;</li>\n<li><a href=\"https://www.ffoodd.fr/wpmx/\">Lire les <em>slides</em> de «&nbsp;Accessibilité et efficience&nbsp;»</a>&nbsp;;</li>\n<li><a href=\"http://wpmx.org/conferences-wpmx-day-2015-video/\">Regarder la vidéo de «&nbsp;Accessibilité et efficience&nbsp;»</a>.</li>\n</ul>\n<h3>Les thèmes enfants</h3>\n<p><strong>Au-delà de la bonne pratique</strong><br />\n<abbr title=\"WordPress\">WP Tech</abbr>&nbsp;— 29 novembre 2014</p>\n<ul>\n<li><strong>Page de l’événement</strong>&nbsp;: <a href=\"https://2014.wptech.fr/\">WP Tech 2014&nbsp;: l’évènement WordPress technique à Nantes</a>&nbsp;;</li>\n<li><a href=\"https://www.ffoodd.fr/wp-tech/\">Lire les <em>slides</em> de «&nbsp;Les thèmes enfants&nbsp;»</a>&nbsp;;</li>\n<li><a href=\"https://www.youtube.com/watch?v=WqBVKpq4dGA\">Regarder la vidéo de «&nbsp;Les thèmes enfants&nbsp;» sur YouTube</a>&nbsp;;</li>\n<li><a href=\"https://www.youtube.com/watch?v=mVJLNIzpnAk\">Regarder l’interview donnée à l’occasion (sur YouTube)</a>.</li>\n</ul>\n<h2>Publications</h2>\n<ul>\n<li>Trois pages d’introduction à l’accessibilité et à son impact sur le référencement naturel dans «&nbsp;<a href=\"https://www.eyrolles.com/Informatique/Livre/optimiser-son-referencement-wordpress-9782212141825\">Optimiser son référencement WordPress</a>&nbsp;» par <a href=\"https://daniel-roch.fr/\">Daniel Roch</a> <abbr title=\"also known as\">a.k.a.</abbr> <a href=\"https://www.seomix.fr/\">SEO Mix</a>&nbsp;;</li>\n<li><a href=\"https://openweb.eu.org/articles/du-consommateur-au-producteur\">Du consommateur au producteur</a> le 22 août 2014 sur Openweb&nbsp;;</li>\n<li><a href=\"https://www.alsacreations.com/livres/lire/1503-webgrids-structure-et-typographie-de-la-page-web.html\">Webgrids&nbsp;: Structure et typographie de la page web</a> le 09 novembre 2012 sur Alsacréations&nbsp;;</li>\n<li>C’est anecdotique mais j’en suis fier&nbsp;: un extrait de mon <a href=\"https://www.ffoodd.fr/guide-pratique-de-choix-typographique/\">compte-rendu de lecture</a> du «&nbsp;<a href=\"https://www.adverbum.fr/guide-pratique-de-choix-typographique-atelier-perrousseaux_ouvrage-perrousseaux_4yrc07ab75lc.html\">Guide pratique de choix typographique</a>&nbsp;» est cité en quatrième de couverture de l’édition revue et augmentée, toujours rédigé par David Rault.</li>\n</ul>\n<h2>Parcours professionnel</h2>\n<p>J’ai été amené au fil des ans à travailler dans de nombreux <strong>contextes différents</strong>, de la production complète d’un site vitrine en solitaire à la prestation de sous-traitances pour le compte de <abbr title=\"Société de services en ingénierie informatique\">SSII</abbr> (Effitic et SodiFrance notamment).</p>\n<p>J’ai ainsi évolué dans <strong>des environnements de travail variés</strong>, allant du <abbr title=\"HyperText Markup Language\">HTML</abbr> statique au client lourd (dotNet) en passant par les applications riches en Java et les intranets compatibles <abbr title=\"Internet Explorer\">IE</abbr>6.<br />\n<small>Et ne le répétez pas mais j’ai commencé en 2007 par faire du Flash.</small></p>\n<ul>\n<li><strong>mars 2021 à aujourd’hui</strong>&nbsp;: <em>lead tech front</em> chez <a href=\"https://www.groupeonepoint.com/fr/\">OnePoint</a>&nbsp;;</li>\n<li><strong>août 2016 à mars 2021</strong>&nbsp;: intégrateur web chez <a href=\"https://www.orange-business.com/fr/applications-for-business\"><abbr title=\"Orange Applications for Business\">OAB</abbr></a>, une filiale d’<a href=\"https://www.orange-business.com/fr\"><abbr title=\"Orange Business Services\">OBS</abbr></a>&nbsp;;</li>\n<li><strong>octobre 2015 à juin 2016</strong>&nbsp;: intégrateur web chez <a href=\"https://www.ornikar.com/\">Ornikar</a>&nbsp;;</li>\n<li><strong>avril 2014 à Septembre 2015</strong>&nbsp;: intégrateur web chez <a href=\"https://www.kosmos.fr/digital-for-education-33228.kjsp\">Kosmos</a>&nbsp;;</li>\n<li><strong>octobre 2009 à avril 2014</strong>&nbsp;: graphiste, intégrateur web et développeur WordPress au sein de <a href=\"https://www.1-ter-net.com\">l’agence 1-ter-net</a>&nbsp;;</li>\n<li><strong>octobre 2008 à octobre 2009</strong>&nbsp;: infographiste en alternance chez Zéni (devenue <a href=\"https://spikly.com/\">Spikly</a>).</li>\n</ul>\n<h2>Parcours scolaire</h2>\n<ul>\n<li><strong>2008&nbsp;— 2009</strong>&nbsp;: <strong>licence</strong> professionnelle <abbr title=\"Arts et Techniques de la Communication\">ATC</abbr> à <a href=\"http://www.iut-bobigny.univ-paris13.fr/\">l’<abbr title=\"Institut Universitaire de Technologie\">IUT</abbr> de Bobigny</a>&nbsp;;</li>\n<li><strong>2006&nbsp;— 2008</strong>&nbsp;: <strong><abbr title=\"Brevet de Technicien Supérieur\">BTS</abbr></strong> communication visuelle option Multimédia au <a href=\"http://lyceecotton.net/joom/\">lycée Eugénie Cotton</a> à Montreuil.</li>\n</ul>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>Et j’espère que cette liste continuera d’évoluer&nbsp;! Conférences Dessine-moi un graphique (en CSS) DevFest Nantes 2023 — 19 octobre 2023 Page de l’événement&nbsp;: DevFest Nantes 2023&nbsp;; Lire les slides de « Dessine-moi un graphique (en CSS) ». Découvrez «&nbsp;le bon HTML&nbsp;» et économisez du JS et du CSS DevFest Nantes 2022 — 21 octobre 2022 [&hellip;] <a href=\"https://www.ffoodd.fr/travaux/\" aria-hidden=\"true\">Lire la suite de «&nbsp;Parcours&nbsp;» <span class=\"meta-nav\">&rarr;</span></a></p>\n",
+      "protected": false
+    },
+    "author": 2,
+    "featured_media": 0,
+    "parent": 0,
+    "menu_order": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "template": "",
+    "meta": {
+      "footnotes": ""
+    },
+    "acf": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/pages/100"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/pages"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/types/page"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/users/2"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/comments?post=100"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 6,
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/pages/100/revisions"
+        }
+      ],
+      "predecessor-version": [
+        {
+          "id": 444983,
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/pages/100/revisions/444983"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://www.ffoodd.fr/wp-json/wp/v2/media?parent=100"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]

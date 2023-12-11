@@ -1,0 +1,35 @@
+# EditorConfig is awesome: http://EditorConfig.org
+
+root = true
+
+[*]
+indent_style = tab
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+max_line_length = off
+quote_type = double
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.{html,js,css}]
+block_comment_start = /**
+block_comment = *
+block_comment_end = */
+
+[*.svg]
+insert_final_newline = false
+
+[*.js]
+quote_type = single
+
+[*.txt]
+indent_style = space
+indent_size = unset
+end_of_line = unset
+
+[*.woff2]
+end_of_line = crlf

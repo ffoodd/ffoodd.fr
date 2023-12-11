@@ -1,0 +1,14 @@
+---
+title: "Que se passerait-il ?"
+date: "2011-09-01T16:21:45"
+modified: "2012-04-15T12:37:03"
+permalink: "que-se-passerait-il/index.html"
+excerpt: "<p>Qu&rsquo;adviendrait-il du web si chaque personne impliquée dans la création de sites internet demandait à tous ses contacts de mettre à jour son navigateur ? Léa Verou a publié un message intéréssant ici, il y a déjà quelques mois. Il reflète bien le dédain frappant les « techies » à l&rsquo;approche d&rsquo;un client qui navigue sur IE8 [&hellip;] <a href="https://www.ffoodd.fr/que-se-passerait-il/" aria-hidden="true">Lire la suite de «&nbsp;Que se passerait-il ?&nbsp;» <span class="meta-nav">&rarr;</span></a></p>
+"
+format: "standard"
+---
+<p><strong>Qu&rsquo;adviendrait-il du web si chaque personne impliquée dans la création de sites internet demandait à tous ses contacts de mettre à jour son navigateur ?</strong></p>
+<p><a href="https://twitter.com/#!/LeaVerou" title="Léa Verou sur Twitter" target="_blank">Léa Verou</a> a publié un message intéréssant <a href="http://tweeplus.com/?#Yesterday%2C+I+saw+that+a+non-techie+friend+had+IE8%2E+I+explained+to+her+how+we+developers+struggle+with+IE%2C+especially+%3C+9%2E+I+showed+her+examples+of+CSS3+websites+and+how+they+display+on+Chrome%2C+Firefox+and+IE8%2E+She+was+very+surprised+and+said+she+thought+they+were+all+the+same+and+will+always+update+ASAP+from+now+on%2E+The+moral+is%3A+Developers%2C+don%E2%80%99t+think+that+people+don%E2%80%99t+care%2E+People+naturally+don%27t+want+to+cause+trouble+to+others%2E+Explain+to+them+what+we+go+through%2E+One+person+at+a+time%2E+We+can+do+it" target="_blank">ici</a>, il y a déjà quelques mois. Il reflète bien le dédain frappant les « techies » à l&rsquo;approche d&rsquo;un client qui navigue sur IE8 : j&rsquo;ai moi-même souvent pesté contre ces <del datetime="2012-04-15T11:26:23+00:00">idiots incapables de mettre leur navigateur à jour</del> <ins datetime="2012-04-15T11:26:23+00:00">gens</ins>. Le message de Léa Verou m&rsquo;a appris qu&rsquo;ils ne pêchent que par innocence : la plupart des gens sont certainement prêts à faire leur <abbr title="Mise à Jour">MAJ</abbr> si on leur apprend qu&rsquo;ils le peuvent.</p>
+<p>Imaginez la conquête inouïe lorsque chaque personne &#8211; graphiste, intégrateur, développeur, référenceur, chef de projet, stagiaire, administrateur réseaux, consultant, patron… &#8211;  aura demandé à travers l&rsquo;ensemble de ses réseaux sociaux &#8211; mails, facebook, twitter, viadéo… &#8211; à toutes ses connaissances de mettre son navigateur favori à jour ?</p>
+<p>Personnellement, j&rsquo;ai fait le calcul : je peux faire cette demande à <strong>493</strong> personnes distinctes. Si chacune des neuf personnes de mon agence atteint ce même chiffre; nous serons déjà à 4437 personnes.</p>
+<p>Ne pensez-vous pas que ça puisse suffire à changer les statistiques ?</p>

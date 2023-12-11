@@ -1,0 +1,22 @@
+{
+	"name": "ffoodd.fr",
+	"version": "0.0.1",
+	"description": "Personal website using 11ty",
+	"main": "index.html",
+	"scripts": {
+		"start": "eleventy --serve",
+		"build": "eleventy",
+		"build:debug": "DEBUG=Eleventy* eleventy",
+		"wp:migrate": "concurrently \"wp:migrate:*\"",
+		"wp:migrate:posts": "node scripts/posts.js",
+		"wp:migrate:pages": "node scripts/pages.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@11ty/eleventy": "^2.0.1",
+		"concurrently": "^8.2.2",
+		"json-to-frontmatter-markdown": "^1.0.0"
+	}
+}
