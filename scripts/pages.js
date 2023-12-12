@@ -25,7 +25,7 @@ Object.keys(pages).forEach((p, i) => {
 	transformAndWriteToFile({
 		frontmatterMarkdown: {
 			frontmatter: [
-				{ title: turndownService.turndown(page.title.rendered) },
+				{ title: turndownService.turndown(page.title.rendered.replace(/ /g, '&nbsp;')) },
 				{ permalink: `${page.slug}/index.html` }
 			],
 			body: newContent

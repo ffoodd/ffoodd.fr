@@ -3,10 +3,8 @@ title: "Le soulignement factice"
 date: "2015-11-20T15:16:37"
 modified: "2017-01-20T11:20:39"
 permalink: "le-soulignement-factice/index.html"
-description: [""]
-excerpt: "Malgré lʼarrivée des fonctionnalités _OpenType_ et [leur support plus que décent](http://caniuse.com/#feat=font-feature "leur support plus que décent (en anglais)"), la typographie sur le web manque encore de raffinement si on compare ses possibilités dans le monde imprimé. Parmi les artefacts qui illustrent encore à ce jour la grossièreté de la **typographie sur le web**, le soulignement est le plus courant. Mais des techniques existent pour enrichir ce soulignement ! [Lire la suite de « Le soulignement factice » →](https://www.ffoodd.fr/le-soulignement-factice/)"
+excerpt: "Malgré lʼarrivée des fonctionnalités _OpenType_ et [leur support plus que décent](http://caniuse.com/#feat=font-feature "leur support plus que décent (en anglais)"), la typographie sur le web manque encore de raffinement si on compare ses possibilités dans le monde imprimé. Parmi les artefacts qui illustrent encore à ce jour la grossièreté de la **typographie sur le web**, le soulignement est le plus courant. Mais des techniques existent pour enrichir ce soulignement&nbsp;! [Lire la suite de «&nbsp;Le soulignement factice&nbsp;» →](https://www.ffoodd.fr/le-soulignement-factice/)"
 format: "standard"
-alternate: [""]
 ---
 Je vous enjoins à lire la «&nbsp;[Signalétique des hyperliens](http://letrainde13h37.fr/43/signaletique-hyperliens/)&nbsp;» sur le train de 13&nbsp;h&nbsp;37, par [Romy Duhem-Verdière](https://twitter.com/tetue). On y apprend notamment que —&nbsp;typographiquement parlant&nbsp;— le souligné nʼest dʼaucune utilité, sauf éventuellement à palier lʼabsence dʼitalique (ce qui est somme toute assez rare). En revanche sur le web, cʼest **le meilleur moyen de signaler un lien**.
 

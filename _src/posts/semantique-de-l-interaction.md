@@ -3,10 +3,8 @@ title: "Sémantique de l’interaction"
 date: "2011-03-05T11:52:36"
 modified: "2013-10-03T10:14:18"
 permalink: "semantique-de-l-interaction/index.html"
-description: [""]
-excerpt: "Saviez-vous que le langage entre êtres humains dépend à 80% des expressions physiques – même infimes ? Il en va de même pour les sites internet. Un internaute ressent – et comprend – un site grâce à son comportement : mouvements, animations, changements de couleurs, etc.. Les sites ont des sentiments, eux aussi ! [Lire la suite de « Sémantique de l’interaction » →](https://www.ffoodd.fr/semantique-de-l-interaction/)"
+excerpt: "Saviez-vous que le langage entre êtres humains dépend à 80% des expressions physiques – même infimes ? Il en va de même pour les sites internet. Un internaute ressent – et comprend – un site grâce à son comportement : mouvements, animations, changements de couleurs, etc.. Les sites ont des sentiments, eux aussi ! [Lire la suite de «&nbsp;Sémantique de l’interaction&nbsp;» →](https://www.ffoodd.fr/semantique-de-l-interaction/)"
 format: "standard"
-alternate: [""]
 ---
 Saviez-vous que le langage entre êtres humains dépend à 80% des expressions physiques – même infimes ? **Il en va de même pour les sites internet.** Un internaute ressent – et comprend – un site grâce à son comportement : mouvements, animations, changements de couleurs, etc…
 

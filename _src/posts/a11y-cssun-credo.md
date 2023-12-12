@@ -1,12 +1,10 @@
 ---
-title: "a11y.css : un crédo"
+title: "a11y.css :&nbsp;un crédo"
 date: "2013-12-04T16:43:09"
 modified: "2015-07-03T10:49:03"
 permalink: "a11y-cssun-credo/index.html"
-description: [""]
-excerpt: "Étant conscient de mes lacunes, je cherche constamment à améliorer la qualité des sites que je produis. Capitaliser sur les bonnes pratiques est une base, et c’est pourquoi j’ai « fabriqué » a11y.css. [Lire la suite de « a11y.css : un crédo » →](https://www.ffoodd.fr/a11y-cssun-credo/)"
+excerpt: "Étant conscient de mes lacunes, je cherche constamment à améliorer la qualité des sites que je produis. Capitaliser sur les bonnes pratiques est une base, et c’est pourquoi j’ai «&nbsp;fabriqué&nbsp;» a11y.css. [Lire la suite de «&nbsp;a11y.css :&nbsp;un crédo&nbsp;» →](https://www.ffoodd.fr/a11y-cssun-credo/)"
 format: "standard"
-alternate: [""]
 ---
 `a11y.css` [\[1\]](https://www.ffoodd.fr/a11y-cssun-credo/#note-1 "a11y est la contraction de « Accessibility » : un « a » suivi de 11 caractères, et conclu par un « y ».") me permet de surveiller lors de l’intégration les erreurs graves ou les améliorations possibles, et ça s’avère très agréable ! Déjà utilisé au travail et sur mes projets « à-côté », puis soumis à la relecture et aux tests de [Gaëtan](https://twitter.com/GaetanBt "Gaëtan Bonnot sur Twitter (nouvelle fenêtre)") et [Luc](http://www.kloh.ch/ "Le site personnel de Luc Poupard (nouvelle fenêtre)"), j’ai finalement décidé de vous le présenter. S’il est possible de l’améliorer encore, j’aimerais le faire :).
 

@@ -3,10 +3,16 @@ title: "Guide pratique de choix typographique"
 date: "2013-11-09T16:50:57"
 modified: "2013-11-13T11:44:37"
 permalink: "guide-pratique-de-choix-typographique/index.html"
-description: [""]
-excerpt: "Le choix d’une typographie est toujours sensible : en maîtriser toutes les connotations, toutes les aspérités est une gageure. Et s’en expliquer lorsque le besoin surgit n’est pas un mince affaire non plus. Laissez-vous guider ! [Lire la suite de « Guide pratique de choix typographique » →](https://www.ffoodd.fr/guide-pratique-de-choix-typographique/)"
+excerpt: "Le choix d’une typographie est toujours sensible :&nbsp;en maîtriser toutes les connotations, toutes les aspérités est une gageure. Et s’en expliquer lorsque le besoin surgit n’est pas un mince affaire non plus. Laissez-vous guider ! [Lire la suite de «&nbsp;Guide pratique de choix typographique&nbsp;» →](https://www.ffoodd.fr/guide-pratique-de-choix-typographique/)"
 format: "status"
-alternate: [""]
+editeur: "Atelier Perrousseaux"
+auteur: "David Rault"
+date_de_parution: "18/03/2009"
+ean13: "9782911220265"
+nombre_de_pages: "210"
+collection: ""
+lien: "http://www.adverbum.fr/guide-pratique-de-choix-typographique-rault-david-atelier-perrousseaux_ouvrage-perrousseaux_bnaigdfg1t74d1wncizxeaw.html"
+note: "5"
 ---
 L’origine du livre est un constat simple de [David Rault](http://www.davidrault.com/ "Site de David Rault (nouvelle fenêtre)") : ce livre manquait. Et après l’avoir lu, je dois avouer qu’aucun ouvrage que j’ai parcouru n’y ressemble.
 

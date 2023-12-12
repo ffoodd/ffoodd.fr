@@ -3,10 +3,8 @@ title: "IE9 sur WP7 et @font-face : je t’aime, moi non plus."
 date: "2013-07-24T17:16:35"
 modified: "2013-11-13T12:25:49"
 permalink: "ie9-sur-wp7-et-font-face-je-taime-moi-non-plus/index.html"
-description: ["J'ose le dire : j'aime Internet Explorer. Comme je l'ai précédemment évoqué, c'est le seul navigateur qui réagisse normalement à un doctype invalide et ce genre de petit détail de l'intégration. Je considère qu'une compatibilité IE8 sans râler ni coller de hacks à tout va est un gage de qualité pour un intégrateur."]
-excerpt: "Cependant, je dois également avouer que certaines choses me surprendront toujours : c’est le cas du support de @font-face sur Windows Phone 7.  Un jour, j’ai fait un test Raphaël Goetter a annoncé aujourd’hui la refonte de son site principal, goetter.fr, sur son blog. Étant donné que nous avions discuté quelques jours auparavant de ligatures \[…\] [Lire la suite de « IE9 sur WP7 et @font-face : je t’aime, moi non plus. » →](https://www.ffoodd.fr/ie9-sur-wp7-et-font-face-je-taime-moi-non-plus/)"
+excerpt: "Cependant, je dois également avouer que certaines choses me surprendront toujours : c’est le cas du support de @font-face sur Windows Phone 7.&nbsp; Un jour, j’ai fait un test Raphaël Goetter a annoncé aujourd’hui la refonte de son site principal, goetter.fr, sur son blog. Étant donné que nous avions discuté quelques jours auparavant de ligatures \[…\] [Lire la suite de «&nbsp;IE9 sur WP7 et @font-face : je t’aime, moi non plus.&nbsp;» →](https://www.ffoodd.fr/ie9-sur-wp7-et-font-face-je-taime-moi-non-plus/)"
 format: "standard"
-alternate: [""]
 ---
 **Cependant, je dois également avouer que certaines choses me surprendront toujours : c’est le cas du support de `@font-face` sur Windows Phone 7.**&nbsp;
 

@@ -3,10 +3,8 @@ title: "Le sens de la sémantique"
 date: "2016-06-24T16:06:10"
 modified: "2016-06-27T12:42:49"
 permalink: "le-sens-de-la-semantique/index.html"
-description: [""]
-excerpt: "Encore une réflexion ce matin, dans le train, sur les changements de conception des styles qui remuent notre milieu en 2016. [Lire la suite de « Le sens de la sémantique » →](https://www.ffoodd.fr/le-sens-de-la-semantique/)"
+excerpt: "Encore une réflexion ce matin, dans le train, sur les changements de conception des styles qui remuent notre milieu en 2016. [Lire la suite de «&nbsp;Le sens de la sémantique&nbsp;» →](https://www.ffoodd.fr/le-sens-de-la-semantique/)"
 format: "standard"
-alternate: [""]
 ---
 Mais probablement pas pour les raisons auxquelles vous pourriez penser de prime abord, je pense. Attention, ceci nʼest quʼune réflexion et sera peut-être truffée dʼerreurs, pleine de non sens et de raccourcis.
 

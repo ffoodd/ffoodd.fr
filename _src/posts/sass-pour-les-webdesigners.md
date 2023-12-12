@@ -3,10 +3,16 @@ title: "Sass pour les webdesigners"
 date: "2015-03-23T09:00:27"
 modified: "2015-03-06T13:56:50"
 permalink: "sass-pour-les-webdesigners/index.html"
-description: [""]
-excerpt: "Je suppose qu’il n’est plus besoin de présenter Sass, ni Dan Cederholm. J’ai commencé à utiliser Sass il y a un ou deux ans, après m’être beaucoup préparé pour éviter les pièges et abus qui étaient déjà légions dans les publications sur le sujet. Je n’y trouve toujours qu’ un intérêt limité et dans un contexte historique fini. En revanche j’apprécie énormément la collection [A Book Apart](http://abookapart.com/) (traduite en français par [Eyrolles](http://www.eyrolles.com/Informatique/Collection/10768/a-book-apart)), alors j’ai acheté et lu ce nouvel ouvrage ! [Lire la suite de « Sass pour les webdesigners » →](https://www.ffoodd.fr/sass-pour-les-webdesigners/)"
+excerpt: "Je suppose qu’il n’est plus besoin de présenter Sass, ni Dan Cederholm. J’ai commencé à utiliser Sass il y a un ou deux ans, après m’être beaucoup préparé pour éviter les pièges et abus qui étaient déjà légions dans les publications sur le sujet. Je n’y trouve toujours qu’ un intérêt limité et dans un contexte historique fini. En revanche j’apprécie énormément la collection [A Book Apart](http://abookapart.com/) (traduite en français par [Eyrolles](http://www.eyrolles.com/Informatique/Collection/10768/a-book-apart)), alors j’ai acheté et lu ce nouvel ouvrage&nbsp;! [Lire la suite de «&nbsp;Sass pour les webdesigners&nbsp;» →](https://www.ffoodd.fr/sass-pour-les-webdesigners/)"
 format: "status"
-alternate: [""]
+editeur: "Eyrolles"
+auteur: "Dan Cederholm"
+date_de_parution: "26/02/2015"
+ean13: "9782212141474"
+nombre_de_pages: "96"
+collection: "A book apart"
+lien: "http://www.eyrolles.com/Informatique/Livre/sass-pour-les-web-designers-9782212141474"
+note: "3"
 ---
 En revanche, cette collection est dédiée à la découverte des sujets. Leur accroche le sous-entend&nbsp;:
 

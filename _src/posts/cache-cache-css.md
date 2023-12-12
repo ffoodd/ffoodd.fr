@@ -3,10 +3,8 @@ title: "Cache-cache CSS"
 date: "2016-10-13T13:11:13"
 modified: "2021-03-05T17:07:37"
 permalink: "cache-cache-css/index.html"
-description: [""]
-excerpt: "Il existe une myriade de façon de masquer visuellement du texte en CSS tout en le maintenant accessible aux technologies d'assistance telles que les lecteurs d'écran. J'en agrège ici quelques-unes pour proposer une version que j'espère plus robuste. [Lire la suite de « Cache-cache CSS » →](https://www.ffoodd.fr/cache-cache-css/)"
+excerpt: "Il existe une myriade de façon de masquer visuellement du texte en CSS tout en le maintenant accessible aux technologies d'assistance telles que les lecteurs d'écran. J'en agrège ici quelques-unes pour proposer une version que j'espère plus robuste. [Lire la suite de «&nbsp;Cache-cache CSS&nbsp;» →](https://www.ffoodd.fr/cache-cache-css/)"
 format: "standard"
-alternate: [""]
 ---
 Et j’ai beau trouver ça idiot —&nbsp;masquer du texte pour certains utilisateurs et pas pour d’autres, ça me paraît incohérent avec l’accessibilité&nbsp;— c’est un besoin récurrent.
 

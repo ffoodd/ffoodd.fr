@@ -3,10 +3,8 @@ title: "Les éléments remplacés"
 date: "2015-11-16T19:16:54"
 modified: "2015-11-30T10:34:36"
 permalink: "les-elements-remplaces/index.html"
-description: [""]
-excerpt: "En travaillant sur [a11y.css](http://ffoodd.github.io/a11y.css/ "a11y.css sur Github (en anglais)"), les balises auto-fermantes et éléments remplacés [mʼont causé quelques tracas](https://github.com/ffoodd/a11y.css/blob/master/README-fr.md#cas-particuliers-et-probl%C3%A8mes-connus). Jʼen remets une couche aujourdʼhui avec un cas particulier au sein de ces cas particuliers : les **boutons**. [Lire la suite de « Les éléments remplacés » →](https://www.ffoodd.fr/les-elements-remplaces/)"
+excerpt: "En travaillant sur [a11y.css](http://ffoodd.github.io/a11y.css/ "a11y.css sur Github (en anglais)"), les balises auto-fermantes et éléments remplacés [mʼont causé quelques tracas](https://github.com/ffoodd/a11y.css/blob/master/README-fr.md#cas-particuliers-et-probl%C3%A8mes-connus). Jʼen remets une couche aujourdʼhui avec un cas particulier au sein de ces cas particuliers&nbsp;: les **boutons**. [Lire la suite de «&nbsp;Les éléments remplacés&nbsp;» →](https://www.ffoodd.fr/les-elements-remplaces/)"
 format: "standard"
-alternate: [""]
 ---
 Pourtant —&nbsp;et malgré le fait que **la plupart** des éléments remplacés soient des balises auto-fermantes&nbsp;— ça nʼest pas la même chose&nbsp;!
 

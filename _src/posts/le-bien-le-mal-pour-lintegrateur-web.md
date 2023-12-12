@@ -3,10 +3,8 @@ title: "Le bien & le mal pour l’intégrateur web"
 date: "2012-11-13T14:40:08"
 modified: "2013-10-02T10:59:02"
 permalink: "le-bien-le-mal-pour-lintegrateur-web/index.html"
-description: [""]
-excerpt: "Il y a de bonnes & de mauvaises solutions Une bonne idée le jour J peut être une mauvaise idée le D day. Au commencement de ffoodd, je voulais un fond simple mais avec un peu d’impact : j’ai donc choisi le motif très simple mais contrasté que vous avez sous les yeux. À l’époque, \[…\] [Lire la suite de « Le bien & le mal pour l’intégrateur web » →](https://www.ffoodd.fr/le-bien-le-mal-pour-lintegrateur-web/)"
+excerpt: "Il y a de bonnes & de mauvaises solutions Une bonne idée le jour J peut être une mauvaise idée le D day. Au commencement de ffoodd, je voulais un fond simple mais avec un peu d’impact : j’ai donc choisi le motif très simple mais contrasté que vous avez sous les yeux. À l’époque, \[…\] [Lire la suite de «&nbsp;Le bien & le mal pour l’intégrateur web&nbsp;» →](https://www.ffoodd.fr/le-bien-le-mal-pour-lintegrateur-web/)"
 format: "standard"
-alternate: [""]
 ---
 ## Il y a de bonnes & de mauvaises solutions
 

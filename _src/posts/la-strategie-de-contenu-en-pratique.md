@@ -3,10 +3,16 @@ title: "La stratégie de contenu en pratique"
 date: "2013-10-22T12:30:49"
 modified: "2013-10-23T13:29:32"
 permalink: "la-strategie-de-contenu-en-pratique/index.html"
-description: [""]
-excerpt: "Le synopsis est clair : «_30 outils pour rendre votre site Web attractif et performant. L’expérience des auteurs est mise à profit efficacement._». Pas si loin des grands principes et des grandes théories, ce livre reste pragmatique et concret : à lire si vous touchez parfois à du contenu 🙂 [Lire la suite de « La stratégie de contenu en pratique » →](https://www.ffoodd.fr/la-strategie-de-contenu-en-pratique/)"
+excerpt: "Le synopsis est clair : «_30 outils pour rendre votre site Web attractif et performant. L’expérience des auteurs est mise à profit efficacement._». Pas si loin des grands principes et des grandes théories, ce livre reste pragmatique et concret : à lire si vous touchez parfois à du contenu 🙂 [Lire la suite de «&nbsp;La stratégie de contenu en pratique&nbsp;» →](https://www.ffoodd.fr/la-strategie-de-contenu-en-pratique/)"
 format: "status"
-alternate: [""]
+editeur: "Eyrolles"
+auteur: "Isabelle Canivet-Bourgaux & Jean-Marc Hardy"
+date_de_parution: "25/10/2012"
+ean13: "9782212135107"
+nombre_de_pages: "176"
+collection: "Design web"
+lien: "http://www.eyrolles.com/Informatique/Livre/la-strategie-de-contenu-en-pratique-9782212135107"
+note: "4"
 ---
 ## Un ouvrage exhaustif
 

@@ -3,10 +3,8 @@ title: "Atterrissage réussi"
 date: "2013-10-02T12:33:43"
 modified: "2013-10-02T13:30:42"
 permalink: "atterrissage-reussi/index.html"
-description: ["La nouvelle version de ffoodd est là : WordPress avec ffeeeedd. Du bon CSS et du bon PHP, avec un nouveau webdesign rien que pour vos mirettes !"]
-excerpt: "La refonte : un travail de longue haleine Je ne saurais vous dire depuis combien de mois je travaille sur cette refonte. Je crois d’ailleurs que ça a commencé par mon thème ffeeeedd et l’amélioration de mon processus de travail : beaucoup de découvertes, énormément de recherches, et au final une progression certaine. Un seul constat \[…\] [Lire la suite de « Atterrissage réussi » →](https://www.ffoodd.fr/atterrissage-reussi/)"
+excerpt: "La refonte : un travail de longue haleine Je ne saurais vous dire depuis combien de mois je travaille sur cette refonte. Je crois d’ailleurs que ça a commencé par mon thème ffeeeedd&nbsp;et l’amélioration de mon processus de travail : beaucoup de découvertes, énormément de recherches, et au final une progression certaine. Un seul constat \[…\] [Lire la suite de «&nbsp;Atterrissage réussi&nbsp;» →](https://www.ffoodd.fr/atterrissage-reussi/)"
 format: "standard"
-alternate: [""]
 ---
 ## La refonte : un travail de longue haleine
 

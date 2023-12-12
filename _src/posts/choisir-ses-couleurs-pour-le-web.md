@@ -3,10 +3,16 @@ title: "Choisir ses couleurs pour le Web"
 date: "2015-04-07T09:00:38"
 modified: "2015-04-01T09:23:14"
 permalink: "choisir-ses-couleurs-pour-le-web/index.html"
-description: [""]
-excerpt: "Après le « [Guide pratique de choix typographique](http://www.ffoodd.fr/guide-pratique-de-choix-typographique/) », voici un bouquin pour nous aider à bien choisir nos couleurs. Même si « pour le web » est plus une accroche qu’une spécialisation du livre, le livre explique les principales notions avec clarté. [Lire la suite de « Choisir ses couleurs pour le Web » →](https://www.ffoodd.fr/choisir-ses-couleurs-pour-le-web/)"
+excerpt: "Après le «&nbsp;[Guide pratique de choix typographique](http://www.ffoodd.fr/guide-pratique-de-choix-typographique/)&nbsp;», voici un bouquin pour nous aider à bien choisir nos couleurs. Même si «&nbsp;pour le web&nbsp;» est plus une accroche qu’une spécialisation du livre, le livre explique les principales notions avec clarté. [Lire la suite de «&nbsp;Choisir ses couleurs pour le Web&nbsp;» →](https://www.ffoodd.fr/choisir-ses-couleurs-pour-le-web/)"
 format: "status"
-alternate: [""]
+editeur: "Eyrolles"
+auteur: "Cameron Chapman"
+date_de_parution: "02/10/2014"
+ean13: "9782212140415"
+nombre_de_pages: "144"
+collection: ""
+lien: "http://www.eyrolles.com/Informatique/Livre/choisir-ses-couleurs-pour-le-web-9782212140415"
+note: "4"
 ---
 Ce livre nous donne quelques clés pour en apprendre les tenants et les aboutissants.
 

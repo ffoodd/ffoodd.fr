@@ -7,7 +7,7 @@ On récupère les contenus depuis l’API Rest de WordPress, légèrement étend
 ### Articles
 
 1. [API Rest](https://www.ffoodd.fr/wp-json/wp/v2/posts?per_page=100).
-2. `cat _export/posts.json | jq 'map({date,modified,slug,title,content,excerpt,metadata,acf})' > _export/posts.min.json`.
+2. `cat _export/posts.json | jq 'map({date,modified,format,slug,title,content,excerpt,metadata,acf})' > _export/posts.min.json`.
 3. Conversion en Markdown : `npm run wp:migrate:posts`.
 
 

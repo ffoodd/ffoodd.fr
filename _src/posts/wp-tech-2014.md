@@ -3,10 +3,8 @@ title: "WP Tech 2014"
 date: "2014-12-04T21:08:44"
 modified: "2014-12-04T21:22:40"
 permalink: "wp-tech-2014/index.html"
-description: [""]
-excerpt: "Le premier WP Tech s’est déroulé samedi à Nantes. Cet événement orienté sur la technique a été un franc succès, et pour cause : les organisateurs [Daniel Roch](http://www.seomix.fr) et [Willy Bahuaud](http://www.wabeo.fr) ont été extraordinaires, avec le soutien bienvenu de plusieurs bénévoles. [Lire la suite de « WP Tech 2014 » →](https://www.ffoodd.fr/wp-tech-2014/)"
+excerpt: "Le premier WP Tech s’est déroulé samedi à Nantes. Cet événement orienté sur la technique a été un franc succès, et pour cause&nbsp;: les organisateurs [Daniel Roch](http://www.seomix.fr) et [Willy Bahuaud](http://www.wabeo.fr) ont été extraordinaires, avec le soutien bienvenu de plusieurs bénévoles. [Lire la suite de «&nbsp;WP Tech 2014&nbsp;» →](https://www.ffoodd.fr/wp-tech-2014/)"
 format: "standard"
-alternate: [""]
 ---
 Car non, je ne vais pas vous en faire un compte-rendu&nbsp;: j’étais orateur, et ça me fait beaucoup de choses à raconter&nbsp;!
 

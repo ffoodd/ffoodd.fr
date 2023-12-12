@@ -3,10 +3,16 @@ title: "La dette technique"
 date: "2016-02-19T13:03:53"
 modified: "2016-02-19T13:03:53"
 permalink: "la-dette-technique/index.html"
-description: [""]
-excerpt: "Cʼest un sujet complexe mais pas compliqué, que Bastien Jaillot nous fait parcourir sous lʼéclairage de ses années dʼexpériences en tant que pompier de la dette technique. [Lire la suite de « La dette technique » →](https://www.ffoodd.fr/la-dette-technique/)"
+excerpt: "Cʼest un sujet complexe mais pas compliqué, que Bastien Jaillot nous fait parcourir sous lʼéclairage de ses années dʼexpériences en tant que pompier de la dette technique. [Lire la suite de «&nbsp;La dette technique&nbsp;» →](https://www.ffoodd.fr/la-dette-technique/)"
 format: "status"
-alternate: [""]
+editeur: "Le Train de 13 h 37"
+auteur: "Bastien Jaillot"
+date_de_parution: "24/12/2015"
+ean13: "9791091997072"
+nombre_de_pages: "98"
+collection: ""
+lien: "http://boutique.letrainde13h37.fr/products/la-dette-technique-bastien-jaillot"
+note: "4"
 ---
 Et ça, cʼest vraiment chouette car leurs livres sont simples, efficaces, et très justes pour un prix vraiment très abordable —&nbsp;pour moi, en tout cas. Ils nous avaient déjà proposés lʼexcellent «&nbsp;[Petit Précis de Créativité](http://boutique.letrainde13h37.fr/products/petit-precis-de-creativite-virginie-caplet)&nbsp;» de Virginie Caplet, que je vous recommande chaudement&nbsp;!
 

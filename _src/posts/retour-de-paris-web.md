@@ -3,10 +3,8 @@ title: "Retour de Paris Web"
 date: "2014-10-29T23:41:28"
 modified: "2015-07-03T10:47:55"
 permalink: "retour-de-paris-web/index.html"
-description: [""]
-excerpt: "Pour la deuxième année consécutive, j’ai pu me rendre à la capitale pour assister à Paris Web. Et une nouvelle fois, ce fut un événement extrêmement enrichissant ! [Lire la suite de « Retour de Paris Web » →](https://www.ffoodd.fr/retour-de-paris-web/)"
+excerpt: "Pour la deuxième année consécutive, j’ai pu me rendre à la capitale pour assister à Paris Web. Et une nouvelle fois, ce fut un événement extrêmement enrichissant&nbsp;! [Lire la suite de «&nbsp;Retour de Paris Web&nbsp;» →](https://www.ffoodd.fr/retour-de-paris-web/)"
 format: "standard"
-alternate: [""]
 ---
 Comme en 2013, c’est en compagnie de [mon frère Luc](http://www.kloh.ch) que j’ai pu arpenter le métro parisien. Mais cette année était particulière pour Luc, puisqu’il était orateur&nbsp;!
 

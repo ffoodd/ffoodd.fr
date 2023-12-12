@@ -3,10 +3,16 @@ title: "JavaScript and Jquery"
 date: "2015-03-09T08:00:48"
 modified: "2015-03-04T15:03:38"
 permalink: "javascript-and-jquery/index.html"
-description: [""]
-excerpt: "Étant issu d’une formation en communication visuelle, bien loin des notions basiques du développement telles que l’algorithmie, l’apprentissage du Javascript ou du PHP et des règles de développement n’est pas une mince affaire. Je saisis mieux les concepts avec des schémas. Ça tombe bien, ce livre en regorge et ils sont de très bonne facture. [Lire la suite de « JavaScript and Jquery » →](https://www.ffoodd.fr/javascript-and-jquery/)"
+excerpt: "Étant issu d’une formation en communication visuelle, bien loin des notions basiques du développement telles que l’algorithmie, l’apprentissage du Javascript ou du PHP et des règles de développement n’est pas une mince affaire. Je saisis mieux les concepts avec des schémas. Ça tombe bien, ce livre en regorge et ils sont de très bonne facture. [Lire la suite de «&nbsp;JavaScript and Jquery&nbsp;» →](https://www.ffoodd.fr/javascript-and-jquery/)"
 format: "status"
-alternate: [""]
+editeur: "Eyrolles"
+auteur: "Jon Duckett"
+date_de_parution: "18/07/2014"
+ean13: "9781118531648"
+nombre_de_pages: "640"
+collection: "Wiley"
+lien: "http://eu.wiley.com/WileyCDA/WileyTitle/productCd-1118531647.html"
+note: "4"
 ---
 Ce livre vise à faire le premier pas vers une utilisation correcte du JS. Il explique en détail les concepts clés du langage.
 

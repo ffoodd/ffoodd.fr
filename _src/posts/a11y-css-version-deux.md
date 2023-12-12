@@ -3,10 +3,8 @@ title: "a11y.css, version deux"
 date: "2015-03-02T19:45:32"
 modified: "2021-03-05T17:11:08"
 permalink: "a11y-css-version-deux/index.html"
-description: [""]
-excerpt: "Déjà deux ans depuis la première version d’a11y.css. Mon intérêt et mon investissement n’ont pas changé, mais le sujet a énormément avancé sous l’impulsion de [Xavier Zalawa](http://www.7studio.fr/), [Hugo Giraudel](http://hugogiraudel.com/), [Luc Poupard](http://www.kloh.ch/), [Heydon Pickering](http://www.heydonworks.com/), [Gaëtan Bonnot](http://gaetanbonnot.fr/), [Romain Gervois](https://twitter.com/goetsu), [Antoine](https://github.com/a5e) et [olamedia](https://github.com/olamedia). Cet apport de compétences variées a considérablement affûté cet outil. Voyons ça en détail ! [Lire la suite de « a11y.css, version deux » →](https://www.ffoodd.fr/a11y-css-version-deux/)"
+excerpt: "Déjà deux ans depuis la première version d’a11y.css. Mon intérêt et mon investissement n’ont pas changé, mais le sujet a énormément avancé sous l’impulsion de [Xavier Zalawa](http://www.7studio.fr/), [Hugo Giraudel](http://hugogiraudel.com/), [Luc Poupard](http://www.kloh.ch/), [Heydon Pickering](http://www.heydonworks.com/), [Gaëtan Bonnot](http://gaetanbonnot.fr/), [Romain Gervois](https://twitter.com/goetsu), [Antoine](https://github.com/a5e) et [olamedia](https://github.com/olamedia). Cet apport de compétences variées a considérablement affûté cet outil. Voyons ça en détail ! [Lire la suite de «&nbsp;a11y.css, version deux&nbsp;» →](https://www.ffoodd.fr/a11y-css-version-deux/)"
 format: "standard"
-alternate: [""]
 ---
 Ainsi depuis la toute première mouture (en CSS) de cette feuille de style de diagnostic, beaucoup de choses ont changé. Voyons ça en détail&nbsp;🙂
 

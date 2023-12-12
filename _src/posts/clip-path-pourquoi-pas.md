@@ -3,10 +3,8 @@ title: "Clip-path, pourquoi pas ?"
 date: "2014-03-11T15:44:26"
 modified: "2021-03-05T17:09:34"
 permalink: "clip-path-pourquoi-pas/index.html"
-description: [""]
-excerpt: "Certaines propriétés voient régulièrement le jour en CSS mais leur appropriation par les intégrateurs est disparate : tantôt gadgets, utilisées à tort et à travers à cause d’un _buzz_ impromptu — souvent mal comprises, mal utilisées, avec peu ou pas de compatibilité; tantôt effrayantes tant elles relèvent de la science-fiction, et donc rarement employées malgré un support décent et une dégradation efficiente pour les navigateurs moins performants. `clip-path` fait partie du second groupe. Jetons-y un œil. [Lire la suite de « Clip-path, pourquoi pas ? » →](https://www.ffoodd.fr/clip-path-pourquoi-pas/)"
+excerpt: "Certaines propriétés voient régulièrement le jour en CSS mais leur appropriation par les intégrateurs est disparate&nbsp;: tantôt gadgets, utilisées à tort et à travers à cause d’un _buzz_ impromptu — souvent mal comprises, mal utilisées, avec peu ou pas de compatibilité; tantôt effrayantes tant elles relèvent de la science-fiction, et donc rarement employées malgré un support décent et une dégradation efficiente pour les navigateurs moins performants. `clip-path` fait partie du second groupe. Jetons-y un œil. [Lire la suite de «&nbsp;Clip-path, pourquoi pas ?&nbsp;» →](https://www.ffoodd.fr/clip-path-pourquoi-pas/)"
 format: "standard"
-alternate: [""]
 ---
 Mais lorsque [Kitty Giraudel](https://twitter.com/KittyGiraudel "Sur Twitter") a lancé son [CSS brain teaser](http://kittygiraudel.com/2014/02/19/the-magic-circle-a-css-brain-teaser/)[\[1\]](https://www.ffoodd.fr/clip-path-pourquoi-pas/#note-1 "Papa, Maman : j’aime les casses-têtes.") puis précisé sur Twitter qu’il apprécierait une solution utilisant `clip-path`, je me suis dit : pourquoi pas ?
 

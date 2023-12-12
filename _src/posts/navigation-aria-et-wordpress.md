@@ -3,10 +3,8 @@ title: "Navigation, Aria et WordPress"
 date: "2013-10-09T13:31:19"
 modified: "2013-11-13T12:12:38"
 permalink: "navigation-aria-et-wordpress/index.html"
-description: [""]
-excerpt: "ARIA est une évolution majeure dans le monde de l’accessibilité web, mais bien que candidat à la recommandation au W3C depuis 2011 elle est relativement peu implémentée – notamment dans WordPress. [Lire la suite de « Navigation, Aria et WordPress » →](https://www.ffoodd.fr/navigation-aria-et-wordpress/)"
+excerpt: "ARIA est une évolution majeure dans le monde de l’accessibilité web, mais bien que candidat à la recommandation au W3C depuis 2011 elle est relativement peu implémentée – notamment dans WordPress. [Lire la suite de «&nbsp;Navigation, Aria et WordPress&nbsp;» →](https://www.ffoodd.fr/navigation-aria-et-wordpress/)"
 format: "standard"
-alternate: [""]
 ---
 Dans sa version basique, la navigation de WordPress n’a rien de particulier (si ce n’est la multitude de classes générées sur chaque élément 🙁 ). Or ARIA permet d’ajouter une couche sémantique non négligeable et relativement simple à mettre en place, améliorant ainsi l’accessibilité de la navigation.
 

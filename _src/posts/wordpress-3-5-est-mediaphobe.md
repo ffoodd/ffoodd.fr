@@ -3,10 +3,8 @@ title: "WordPress 3.5 est médiaphobe"
 date: "2013-01-16T11:23:48"
 modified: "2013-10-02T10:58:00"
 permalink: "wordpress-3-5-est-mediaphobe/index.html"
-description: [""]
-excerpt: "Sauf que Dès ma première utilisation de cette nouvelle mouture je suis tombé sur un problème assez gênant : dans la fenêtre modale servant à insérer des médias depuis l’éditeur, l’ajout d’un fichier me retourne une erreur en indiquant « Une erreur est survenue lors du téléchargement.Veuillez réessayer plus tard. » Malgré ça, ledit fichier a été \[…\] [Lire la suite de « WordPress 3.5 est médiaphobe » →](https://www.ffoodd.fr/wordpress-3-5-est-mediaphobe/)"
+excerpt: "Sauf que Dès ma première utilisation de cette nouvelle mouture je suis tombé sur un problème assez gênant : dans la fenêtre modale servant à insérer des médias depuis l’éditeur, l’ajout d’un fichier me retourne une erreur en indiquant «&nbsp;Une erreur est survenue lors du téléchargement.Veuillez réessayer plus tard.&nbsp;» Malgré ça, ledit fichier a été \[…\] [Lire la suite de «&nbsp;WordPress 3.5 est médiaphobe&nbsp;» →](https://www.ffoodd.fr/wordpress-3-5-est-mediaphobe/)"
 format: "standard"
-alternate: [""]
 ---
 ## Sauf que
 

@@ -3,10 +3,8 @@ title: "Les nouveautés dʼIE4"
 date: "2016-12-08T16:28:58"
 modified: "2016-12-08T16:28:58"
 permalink: "les-nouveautes-d%ca%bcie4/index.html"
-description: [""]
-excerpt: "L'industrie web est dans un état d'emballement général, qui voit son histoire s'effacer plus vite qu'elle ne s'écrit. Et si on remontait vingt ans en arrière, pour voir de quoi demain aurait pu être fait ? [Lire la suite de « Les nouveautés dʼIE4 » →](https://www.ffoodd.fr/les-nouveautes-d%ca%bcie4/)"
+excerpt: "L'industrie web est dans un état d'emballement général, qui voit son histoire s'effacer plus vite qu'elle ne s'écrit. Et si on remontait vingt ans en arrière, pour voir de quoi demain aurait pu être fait&nbsp;? [Lire la suite de «&nbsp;Les nouveautés dʼIE4&nbsp;» →](https://www.ffoodd.fr/les-nouveautes-d%ca%bcie4/)"
 format: "standard"
-alternate: [""]
 ---
 Elle apporte son lot de nouveautés à travers les filtres Microsoft, dont le plus connu concerne l'opacité. Pour rappel, la spécification finale de CSS1 ne voit le jour que le 17 décembre 1996[\[1\]](https://www.ffoodd.fr/les-nouveautes-d%ca%bcie4/#note-1 "Le 17 décembre, c'est la Saint Gaël. Coïncidence ? Je ne crois pas.")&nbsp;— et la standardisation n'est pas encore un sujet de _hipster_.
 

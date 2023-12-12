@@ -3,10 +3,8 @@ title: "Le web en kit"
 date: "2015-10-30T10:11:52"
 modified: "2015-11-04T11:21:28"
 permalink: "le-web-en-kit/index.html"
-description: [""]
-excerpt: "Le web, cʼest compliqué. Je dirais même plus : cʼest la jungle. De multiples sources, de multiples protocoles dʼéchange de données, de multiple manière dʼaccéder aux contenus. Et aussi plein de gens qui fabriquent des morceaux de web. Ceux-là sont un minimum flemmards — je le sais bien, jʼen fais partie. Alors régulièrement, nous cédons à la facilité et cela produit des perturbations dans La Force. Un exemple ? Les sites `-webkit-` _only_. Parlons-en ! [Lire la suite de « Le web en kit » →](https://www.ffoodd.fr/le-web-en-kit/)"
+excerpt: "Le web, cʼest compliqué. Je dirais même plus&nbsp;: cʼest la jungle. De multiples sources, de multiples protocoles dʼéchange de données, de multiple manière dʼaccéder aux contenus. Et aussi plein de gens qui fabriquent des morceaux de web. Ceux-là sont un minimum flemmards —&nbsp;je le sais bien, jʼen fais partie. Alors régulièrement, nous cédons à la facilité et cela produit des perturbations dans La Force. Un exemple&nbsp;? Les sites `-webkit-` _only_. Parlons-en&nbsp;! [Lire la suite de «&nbsp;Le web en kit&nbsp;» →](https://www.ffoodd.fr/le-web-en-kit/)"
 format: "standard"
-alternate: [""]
 ---
 Beaucoup de gens qui fabriquent le web se sont plaints de lʼhégémonie dʼIE6.
 

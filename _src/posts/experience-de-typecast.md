@@ -3,10 +3,8 @@ title: "Expérience de Typecast"
 date: "2013-10-07T16:18:18"
 modified: "2013-11-13T12:02:30"
 permalink: "experience-de-typecast/index.html"
-description: [""]
-excerpt: "Typecast est un outil conçu pour vous faciliter la recherche de typographies : échelle typographique, association, couleurs, et même CSS. Piochez dans le catalogue de grandes fonderies et designez ! [Lire la suite de « Expérience de Typecast » →](https://www.ffoodd.fr/experience-de-typecast/)"
+excerpt: "Typecast est un outil conçu pour vous faciliter la recherche de typographies : échelle typographique, association, couleurs, et même CSS. Piochez dans le catalogue de grandes fonderies et designez ! [Lire la suite de «&nbsp;Expérience de Typecast&nbsp;» →](https://www.ffoodd.fr/experience-de-typecast/)"
 format: "standard"
-alternate: [""]
 ---
 ## Présentation
 

@@ -3,10 +3,16 @@ title: "Sass & Compass avancé"
 date: "2013-11-20T17:17:48"
 modified: "2014-09-21T12:39:31"
 permalink: "sass-compass-avance/index.html"
-description: [""]
-excerpt: "Nul besoin j’imagine de vous présenter Sass et Compass — en revanche le récent livre de Mehdi Kabab peut vous intéresser d’avantage ( si vous ne l’avez pas déjà acheté :) ). Voici mes impressions et ce que j’en retiens. [Lire la suite de « Sass & Compass avancé » →](https://www.ffoodd.fr/sass-compass-avance/)"
+excerpt: "Nul besoin j’imagine de vous présenter Sass et Compass — en revanche le récent livre de Mehdi Kabab peut vous intéresser d’avantage ( si vous ne l’avez pas déjà acheté :) ). Voici mes impressions et ce que j’en retiens. [Lire la suite de «&nbsp;Sass & Compass avancé&nbsp;» →](https://www.ffoodd.fr/sass-compass-avance/)"
 format: "status"
-alternate: [""]
+editeur: "Eyrolles"
+auteur: "Mehdi Kabab"
+date_de_parution: "27/10/2013"
+ean13: "9782212136772"
+nombre_de_pages: "286"
+collection: "Blanche"
+lien: "http://www.eyrolles.com/Audiovisuel/Livre/sass-et-compass-avance-9782212136777"
+note: "4"
 ---
 En tant qu’intégrateur avec un peu d’expérience — mais débutant avec Sass et Compass — les explications et retours d’expérience de Mehdi Kabab ( a.k.a [@piouPiouM](https://twitter.com/piouPiouM "Profil Twitter de Mehdi Kabab (nouvelle fenêtre)") ) sont forcément intéressants. Au-delà de la présentation de l’outil, de nombreuses informations et bonnes pratiques viennent enrichir un livre déjà complet.
 

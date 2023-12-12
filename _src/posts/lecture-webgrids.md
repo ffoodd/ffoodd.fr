@@ -3,10 +3,16 @@ title: "Webgrids"
 date: "2012-11-07T18:00:55"
 modified: "2013-10-21T16:08:04"
 permalink: "lecture-webgrids/index.html"
-description: [""]
-excerpt: "L’adret Ma formation en communication visuelle m’a enseigné les règles typographiques, de mise en page, l’histoire de l’imprimerie et les différents mouvements qui ont heurté l’histoire du graphisme et de l’impression. L’ubac Mon expérience professionnelle dans le web m’a éduqué aux contraintes spécifiques du support : affichage sur écran divers et variés, dans des navigateurs \[…\] [Lire la suite de « Webgrids » →](https://www.ffoodd.fr/lecture-webgrids/)"
+excerpt: "L’adret Ma formation en communication visuelle m’a enseigné les règles typographiques, de mise en page, l’histoire de l’imprimerie et les différents mouvements qui ont heurté l’histoire du graphisme et de l’impression. L’ubac Mon expérience professionnelle dans le web m’a éduqué aux contraintes spécifiques du support : affichage sur écran divers et variés, dans des navigateurs \[…\] [Lire la suite de «&nbsp;Webgrids&nbsp;» →](https://www.ffoodd.fr/lecture-webgrids/)"
 format: "status"
-alternate: [""]
+editeur: "Atelier Perrousseaux"
+auteur: "Anne-Sophie Fradier"
+date_de_parution: "12/04/2012"
+ean13: "9782911220449"
+nombre_de_pages: "128"
+collection: ""
+lien: "http://www.adverbum.fr/webgrids-fradier-anne-sophie-atelier-perrousseaux_ouvrage-perrousseaux_4kd26i9rxoms.html"
+note: "5"
 ---
 ## L’adret
 
