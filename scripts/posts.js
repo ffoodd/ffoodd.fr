@@ -25,19 +25,19 @@ Object.keys(posts).forEach((p, i) => {
 		.replace(/   /g, ' ');
 
 	let frontMatter = [
-		{ title: turndownService.turndown(post.title.rendered.replace(/\u00A0/g, '&nbsp;')) },
+		{ title: turndownService.turndown(post.title.rendered).replace(/\u00A0/g, '&nbsp;') },
 		{ date: post.date },
 		{ modified: post.modified },
 		{ permalink: `${post.slug}/index.html` },
-		{ excerpt: turndownService.turndown(post.excerpt.rendered.replace(/\u00A0/g, '&nbsp;')) },
+		{ excerpt: turndownService.turndown(post.excerpt.rendered).replace(/\u00A0/g, '&nbsp;') },
 		{ format: post.format }
 	];
 
 	const description = typeof post.metadata._ffeeeedd__metabox__description === Object ?
-		Object.values(post.metadata._ffeeeedd__metabox__description)[0].replace(/\u00A0/g, '&nbsp;') : '';
+		Object.values(post.metadata._ffeeeedd__metabox__description)[0] : '';
 	if (description !== '') {
 		frontMatter.push({
-			description: description
+			description: turndownService.turndown(description).replace(/\u00A0/g, '&nbsp;')
 		})
 	}
 
