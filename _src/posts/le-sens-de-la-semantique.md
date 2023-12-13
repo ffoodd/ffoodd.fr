@@ -28,7 +28,9 @@ Un rapide cours dʼhistoire est déjà fait dans lʼintroduction de lʼarticle. 
 
 Là encore, je souhaite nuancer&nbsp;: ce ne sont que des outils. Les ouvriers qui sʼen sont servis ont fait nʼimporte quoi avec. Cʼest ça, la véritable histoire. On sʼest donc mis en tête de récupérer un vieux principe de programmation et de lʼappliquer tant bien que mal sur HTML et CSS en disant&nbsp;:
 
-> HTML est le fond, CSS est la forme&nbsp;[\[1\]](https://www.ffoodd.fr/le-sens-de-la-semantique/#note-1 "Toute ressemblance avec le slogan dʼune enseigne de sport est parfaitement fortuite.")
+> HTML est le fond, CSS est la forme&nbsp;.[^1]
+
+[^1]: Toute ressemblance avec le slogan dʼune enseigne de sport est parfaitement fortuite.
 
 Cʼétait un moyen simple et efficace dʼéjecter du versant HTML ce qui avait trait à la présentation. Et ça, c’était bien. En effet le HTML doit être employé pour sa sémantique, **le sens quʼil apporte au contenu quʼil balise**. Car cʼest tout ce quʼest censé faire ce langage&nbsp;: décrire le contenu sur le plan sémantique.  
 **  
@@ -52,7 +54,9 @@ Pourquoi&nbsp;?
 
 Mais ma bonne dame, parce que sinon vous induirez une distinction entre diverses méthodes de lecture de votre contenu —&nbsp;entre les technologies qui lisent le code (les robots, les lecteurs d’écrans, les moteurs en tous genres) et celles qui regardent le style (les personnes bien voyantes, les captures dʼécran, et certains moteurs tels que les outils de test de régression visuelle). Et ça, cʼest pas terrible. Cʼest même plutôt pourri, à mon avis.
 
-En fait jʼirais encore plus loin&nbsp;: si vous séparez trop votre forme de votre fond&nbsp;[\[2\]](https://www.ffoodd.fr/le-sens-de-la-semantique/#note-2 "Notez lʼordre des termes fond/forme, forme/fond."), **vous permettez à vos CSS de falsifier visuellement la hiérarchisation de vos contenus**. Ceci nʼest, toujours à mon avis, pas souhaitable.
+En fait jʼirais encore plus loin&nbsp;: si vous séparez trop votre forme de votre fond&nbsp;.[^2]
+
+[^2]: Notez lʼordre des termes fond/forme, forme/fond.
 
 **Lʼaspect graphique devrait renforcer la structure de lʼinformation et la hiérarchisation des contenus**, pas la gommer ni la falsifier.
 
@@ -73,4 +77,6 @@ Simplifions.
 
 **CSS ne devrait pas être utilisé pour altérer lʼimportance sémantique d’un contenu.** Et par extension, utiliser les sélecteurs dʼéléments ou dʼattributs semble une bonne idée. Je reformule au cas où&nbsp;: séparer le fond de la forme est une bonne idée, mais pas séparer la forme du fond. **La forme dépend du fond, là où le fond ne dépend pas de la forme**.
 
-Pour ceux qui ont tenu jusque là, je vous invite à prendre le temps de lire [la page Wikipédia dédiée à CSS](https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade). Cʼest fort intéressant&nbsp;[\[3\]](https://www.ffoodd.fr/le-sens-de-la-semantique/#note-3 "Par exemple, on y apprend que le mécanisme de la cascade tant décrié de nos jours par lʼécosystème des développeurs JS est conçu pour permettre aux utilisateurs dʼappliquer leurs propres styles. Cʼest oublié, mais ça nʼen reste pas moins génial.").
+Pour ceux qui ont tenu jusque là, je vous invite à prendre le temps de lire [la page Wikipédia dédiée à CSS](https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade). Cʼest fort intéressant&nbsp;.[^3]
+
+[^3]: Par exemple, on y apprend que le mécanisme de la cascade tant décrié de nos jours par lʼécosystème des développeurs JS est conçu pour permettre aux utilisateurs dʼappliquer leurs propres styles. Cʼest oublié, mais ça nʼen reste pas moins génial.

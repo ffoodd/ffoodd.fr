@@ -1,7 +1,8 @@
 module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("_site/images")
 
-	// @note Ajoute rle filtre micro-typo de iimmgg ?
+	// @todo Configuration markdown-it :
+	// @link https://www.alpower.com/tutorials/configuring-footnotes-with-eleventy/
 
 	eleventyConfig.setServerOptions({
 		liveReload: true

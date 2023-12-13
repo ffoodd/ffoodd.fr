@@ -57,7 +57,9 @@ Et ça, c’est plutôt pratique 😀&nbsp;!
 
 Pour celle-ci, je vais applaudir discrètement et vous renvoyer vers [l’article écrit par Kitty (en anglais)](http://kittygiraudel.com/2014/10/22/translation-system-in-sass/) qui détaille le fonctionnement de son **système de traduction en Sass**.
 
-Oui, vous avez bien lu&nbsp;:désormais a11y.css est multilingue en demeurant écrit uniquement en Sass. Outre la portée accrue de façon incroyable suite au passage en anglais, l’exploit technique de Kitty est incroyable. J’en profite pour signaler la parution de son premier livre «&nbsp;CSS3&nbsp;: pratique du design web&nbsp;» [en vente aux éditions Eyrolles](http://www.eyrolles.com/Informatique/Livre/css3-9782212140231), que je vous recommande chaudement[\[1\]](https://www.ffoodd.fr/a11y-css-version-deux/#note-1 "Sans rire, le mec est un génie alors achetez son livre et lisez son blog.").
+Oui, vous avez bien lu&nbsp;:désormais a11y.css est multilingue en demeurant écrit uniquement en Sass. Outre la portée accrue de façon incroyable suite au passage en anglais, l’exploit technique de Kitty est incroyable. J’en profite pour signaler la parution de son premier livre «&nbsp;CSS3&nbsp;: pratique du design web&nbsp;» [en vente aux éditions Eyrolles](http://www.eyrolles.com/Informatique/Livre/css3-9782212140231), que je vous recommande chaudement.[^1]
+
+[^1]: Sans rire, le mec est un génie alors achetez son livre et lisez son blog.
 
 ## Documentation & test
 
@@ -65,7 +67,9 @@ Vous vous en doutez, le projet est devenu relativement complexe. Les solutions a
 
 J’avais déjà mentionné lors de [mon atelier au WP Tech](https://www.ffoodd.fr/wp-tech-2014/ "WP Tech 2014") mon **intérêt pour la documentation**&nbsp;; c’est donc tout naturellement que j’ai cherché à documenter plus précisément a11y.css. Et de mon point de vue, il y a deux aspects très différents à documenter&nbsp;:
 
-* le **contenu des tests**&nbsp;: pourquoi ces critères, comment ont-ils été défini, quel est leur intérêt[\[2\]](https://www.ffoodd.fr/a11y-css-version-deux/#note-2 "Je ne l’ai pas encore dit mais un des objectifs du projet est clairement devenu l’apprentissage et l’accès aux savoirs. Asséner un message sans l’expliquer me parait inutile, tout comme appliquer religieusement le contenu du message n’est pas pertinent.")&nbsp;?
+* le **contenu des tests**&nbsp;: pourquoi ces critères, comment ont-ils été défini, quel est leur intérêt.[^2]
+
+[^2]: Je ne l’ai pas encore dit mais un des objectifs du projet est clairement devenu l’apprentissage et l’accès aux savoirs. Asséner un message sans l’expliquer me parait inutile, tout comme appliquer religieusement le contenu du message n’est pas pertinent.
 * la **structure du projet Sass**, ou pour parler le technicien&nbsp;: l’API.
 
 Premier chantier&nbsp;: trouver les outils adaptés&nbsp;!

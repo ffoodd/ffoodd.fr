@@ -10,7 +10,7 @@ On a ainsi vu germer ces dernières années une multitude d’outils, proposés 
 
 * [HTML5 Boilerplate](http://html5boilerplate.com/) par Nicolas Gallagher, Hans Christian Reinl, Cãtãlin Mariş, Mathias Bynens, Paul Irish, & Divya Manian ( et une communauté gigantesque ).
 * [Knacss](http://knacss.com/ "Knacss") par Raphaël Goetter
-* [Starkers](http://viewportindustries.com/products/starkers/ "Viewport Industries' Starkers") Par Viewport Industries
+* [Starkers](http://viewportindustries.com/products/starkers/ "Viewport Industries’ Starkers") Par Viewport Industries
 * [Reverie](http://themefortress.com/reverie/ "Reverie") Par ThemeFortress et basé sur [Foundation](http://foundation.zurb.com/)
 
 J’ai parcouru, décortiqué et utilisé beaucoup d’outils de ce type. Mais un constat demeure : aucun n’a jamais été parfaitement accordé à mes besoins, et c’est tout à fait normal.
@@ -23,7 +23,7 @@ Le socle général de mon travail d’inté-graphiste est WordPress – et pour 
 
 ## ffeeeedd
 
-Mon projet est donc lancé. ffoodd – dont la signification est [expliquée](https://www.ffoodd.fr "Qu'est-ce que ffoodd ?") – fut la notion de base.
+Mon projet est donc lancé. ffoodd – dont la signification est [expliquée](https://www.ffoodd.fr "Qu’est-ce que ffoodd ?") – fut la notion de base.
 
 > Ce projet s’appelle donc **ffeeeedd** et a pour objectif de nourrir chacun de mes projets à venir.
 

@@ -9,9 +9,9 @@ const turndownService = new TurndownService({
 	headingStyle: 'atx'
 });
 
+// @todo À convertir : figure / figcaption
+// @link https://www.alpower.com/tutorials/adding-figures-with-captions-to-images-in-markdown-with-eleventy/
 // @todo Commentaires
-// @todo À convertir : notes de bas-de-page (plugin 11ty ?), formats (layouts ?)
-// @todo Layout : Fil d’Ariane / archives (/journal)
 Object.keys(posts).forEach((p, i) => {
 	let post = posts[i];
 
@@ -20,8 +20,13 @@ Object.keys(posts).forEach((p, i) => {
 		.replace(/http:\/\/www.ffoodd.fr\/wp-content\/uploads/g, '/images')
 		.replace(/http:\/\/www.ffoodd.fr/g, 'https://www.ffoodd.fr');
 
+	// @todo Nettoyer la micro-typo
 	let newContent =  turndownService.turndown(content)
+		.replace(/\[\\\[(\d)\\\]\]\(.*?"(.*?)"\).+/gm, ".[^$1]\n\n[^$1]: $2")
+		.replace(/\[\\\[(\d)\\\]\]\(.*?"(.*?)"\)+/gm, ".[^$1]\n\n[^$1]: $2")
 		.replace(/\u00A0/g, '&nbsp;')
+		.replace(/\u2009/g, '&nbsp;')
+		.replace(/\'/g, '’')
 		.replace(/   /g, ' ');
 
 	let frontMatter = [
@@ -67,8 +72,8 @@ Object.keys(posts).forEach((p, i) => {
 		frontmatterMarkdown: {
 			frontmatter: frontMatter,
 			body: newContent
-			},
-			path: './_src/posts',
-			fileName: `${post.slug}.md`
-		})
+		},
+		path: './_src/posts',
+		fileName: `${post.slug}.md`
+	})
 })

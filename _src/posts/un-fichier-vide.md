@@ -32,8 +32,12 @@ Les solutions de Nicolas et Raphaël sont un brin plus intéressantes puisqu’*
 
 ## Mes deux centimes
 
-Fut un temps ou j’ai fourché[\[1\]](https://www.ffoodd.fr/un-fichier-vide/#note-1 "De l’anglicisme « forké » que je n’aime guère.") Knacss, dans mon thème ffeeeedd pour WordPress. Puis j’ai travaillé sur des produits utilisant tantôt YUI, tantôt Bootstrap. Fort de ces expériences, je travaille différemment.
+Fut un temps ou j’ai fourché.[^1]
+
+[^1]: De l’anglicisme « forké » que je n’aime guère.
 
 Désormais lorsque je travaille sur des projets personnels, j’ai adopté mon propre _framework_ prêt à l’emploi, simple d’utilisation, sans opinion ou choix technique contraignant, agnostique, sans parti-pris graphique…
 
-**Un fichier vide**[\[2\]](https://www.ffoodd.fr/un-fichier-vide/#note-2 "Saint-Exupéry disait que « le désert est la seule chose qui ne puisse être détruite que par la construction ». J’y vois un lien :)").
+**Un fichier vide**.[^2]
+
+[^2]: Saint-Exupéry disait que « le désert est la seule chose qui ne puisse être détruite que par la construction ». J’y vois un lien :)

@@ -52,9 +52,9 @@ et en css :
 ```css
 
 @font-face {
-  font-family: 'logo';
-  src: url('font/logo.eot');
-  src: local('?'), url(data:font/woff;charset=utf-8;base64,...;
+  font-family: ’logo’;
+  src: url(’font/logo.eot’);
+  src: local(’?’), url(data:font/woff;charset=utf-8;base64,...;
   font-weight: normal;
   font-style: normal;
 }
@@ -64,7 +64,7 @@ h1 a {
 }
 h1 a:before {
   content: attr(data-icon);
-  font: 200px/250px 'logo';
+  font: 200px/250px ’logo’;
   text-decoration: none;
 }
 ```

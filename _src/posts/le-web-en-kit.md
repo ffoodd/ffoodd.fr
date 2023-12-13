@@ -14,7 +14,9 @@ Malheureusement, on ne casse pas un monopole avec un monopole. Car tous ces gens
 
 ## Microsoft et Edge
 
-De façon parfaitement sensée, Microsoft —&nbsp;qui détenait environ 95% des parts de marché des navigateurs web (ce qui lui est reproché)&nbsp;— a voulu faire table rase du passé pour en finir avec la mauvaise réputation de son navigateur vedette[\[1\]](https://www.ffoodd.fr/le-web-en-kit/#note-1 "Jʼaime rappeler aux gens qui pestent après IE quʼil est ma foi fort probable quʼils fissent partie des 95% dʼinternautes qui naviguaient avec. Ça pique."). Ils ont donc conçu Edge avec pour objectif principal de servir un maximum de sites correctement à leurs utilisateurs. Et pour ça, ils devaient gérer les sites conçus pour WebKit.
+De façon parfaitement sensée, Microsoft —&nbsp;qui détenait environ 95% des parts de marché des navigateurs web (ce qui lui est reproché)&nbsp;— a voulu faire table rase du passé pour en finir avec la mauvaise réputation de son navigateur vedette.[^1]
+
+[^1]: Jʼaime rappeler aux gens qui pestent après IE quʼil est ma foi fort probable quʼils fissent partie des 95% dʼinternautes qui naviguaient avec. Ça pique.
 
 [**Alors ils font passer Edge pour WebKit.**](http://blogs.windows.com/msedgedev/2015/06/17/building-a-more-interoperable-web-with-microsoft-edge/)
 
@@ -91,4 +93,6 @@ Difficile de garantir quoi que ce soit dans ces conditions. _A priori_ ce probl�
 
 Si vous voulez tester par vous-mêmes ou compléter mes propos, nʼhésitez pas à dupliquer [mon dabblet](http://dabblet.com/gist/08fddf3666c39ebc62ca).
 
-Et pour ceux qui rigolent dans le fond, sachez que [Windows Phone représente 4% de parts de marché des systèmes dʼexploitation sur mobile en France, entre juillet et septembre 2015 (en anglais)](http://gs.statcounter.com/#mobile_os-FR-monthly-201507-201509-bar). Ce nʼest pas négligeable, si tant est quʼon admette négliger une population[\[2\]](https://www.ffoodd.fr/le-web-en-kit/#note-2 "Je mettrais dʼailleurs ma main a couper quʼen réalité ce chiffre est déjà sous-estimé, à en croire mes yeux de lynx qui officient dans le tramway, le bus ou le TER à Nantes").
+Et pour ceux qui rigolent dans le fond, sachez que [Windows Phone représente 4% de parts de marché des systèmes dʼexploitation sur mobile en France, entre juillet et septembre 2015 (en anglais)](http://gs.statcounter.com/#mobile_os-FR-monthly-201507-201509-bar). Ce nʼest pas négligeable, si tant est quʼon admette négliger une population.[^2]
+
+[^2]: Je mettrais dʼailleurs ma main a couper quʼen réalité ce chiffre est déjà sous-estimé, à en croire mes yeux de lynx qui officient dans le tramway, le bus ou le TER à Nantes

@@ -10,9 +10,13 @@ Je vous enjoins à lire la «&nbsp;[Signalétique des hyperliens](http://letrain
 
 ## Graphiquement grossier
 
-Le souligné ordinaire est effectivement grossier&nbsp;: cʼest un reliquat des toutes premières typographies affichées sur un écran —&nbsp;que je nʼai pas eu la chance de croiser. Vous pouvez le constater avec cet exemple de souligné ordinaire[\[1\]](https://www.ffoodd.fr/le-soulignement-factice/#note-1 "Percevez-vous comme ce soulignement est affordant&nbsp;? On a envie de cliquer dessus, pas vrai&nbsp;?") (un simple élément `<u>`).
+Le souligné ordinaire est effectivement grossier&nbsp;: cʼest un reliquat des toutes premières typographies affichées sur un écran —&nbsp;que je nʼai pas eu la chance de croiser. Vous pouvez le constater avec cet exemple de souligné ordinaire.[^1]
 
-Sur le plan visuel, le souligné croise les jambages inférieures, ce qui crée un attroupement inopportun de pixels quʼon pourrait qualifier de «&nbsp;petits pâtés&nbsp;»[\[2\]](https://www.ffoodd.fr/le-soulignement-factice/#note-2 "Terme technique issu dʼune longue histoire de la calligraphie à la plume (ou de lʼapprentissage de lʼécriture avec un stylo plume pour les plus jeunes dʼentre vous)."). **Cʼest disgracieux**.
+[^1]: Percevez-vous comme ce soulignement est affordant&nbsp;? On a envie de cliquer dessus, pas vrai&nbsp;?
+
+Sur le plan visuel, le souligné croise les jambages inférieures, ce qui crée un attroupement inopportun de pixels quʼon pourrait qualifier de «&nbsp;petits pâtés&nbsp;».[^2]
+
+[^2]: Terme technique issu dʼune longue histoire de la calligraphie à la plume (ou de lʼapprentissage de lʼécriture avec un stylo plume pour les plus jeunes dʼentre vous).
 
 Quelques tentatives existaient déjà il y a fort longtemps, comme en témoigne [lʼarticle de Susan Robertson sur A List Apart](http://alistapart.com/article/customunderlines) qui utilisait `background-image` pour mettre un une image répétée en guise de soulignement. Ça peut sembler étrange —&nbsp;notamment quand vous aurez vu les exemples animés&nbsp;— mais en 2004, cʼétait parfaitement fabuleux.
 
@@ -82,7 +86,9 @@ Jʼai croisé plusieurs implémentations de cette solution, toutes très intére
 }
 ```
 
-Vous noterez les occurrences multiples de la couleur blanche —&nbsp;tant sous la forme du mot-clé `white` que de sa notation `rgba()`. Simplement parce que mon exemple à un arrière-plan blanc. Évidemment si votre texte repose sur un fond coloré, ces valeurs doivent **respecter la couleur dʼarrière-plan**[\[3\]](https://www.ffoodd.fr/le-soulignement-factice/#note-3 "Vous avez probablement déjà compris que si votre texte repose sur une image ou un dégradé, il nʼy aura probablement pas de salut pour votre soulignement."). Ça tombe bien, jʼen ai profité pour bricoler un _mixin_ Sass[\[4\]](https://www.ffoodd.fr/le-soulignement-factice/#note-4 "À vrai dire jʼai également conçu le mixin pour Less&nbsp;: si vous le désirez, je vous le ferais parvenir."), vous le trouverez [sur le CodePen](http://codepen.io/ffoodd/pen/jbRMqJ/). Le fonctionnement est très, très simple&nbsp;: la couleur dʼarrière-plan est une variable passée en argument du _mixin_, avec une valeur par défaut correspondant au blanc.
+Vous noterez les occurrences multiples de la couleur blanche —&nbsp;tant sous la forme du mot-clé `white` que de sa notation `rgba()`. Simplement parce que mon exemple à un arrière-plan blanc. Évidemment si votre texte repose sur un fond coloré, ces valeurs doivent **respecter la couleur dʼarrière-plan**.[^3]
+
+[^3]: Vous avez probablement déjà compris que si votre texte repose sur une image ou un dégradé, il nʼy aura probablement pas de salut pour votre soulignement.
 
 Petite astuce à prendre en considération, le second paramètre du _mixin_ concerne la position du soulignement **par rapport à la hauteur de lʼélément**. Je ne suis pas parvenu à rendre ça dispensable, le changement de corps et de caractères entraînant une trop grande variation sur la hauteur de ligne. Dans mes différents cas, la position varie entre 88% et 96%.
 
@@ -99,7 +105,9 @@ Petite astuce à prendre en considération, le second paramètre du _mixin_ conc
   * `background-clip`.
 * deux dégradés, dont le premier (couleur dʼarrière-plan en semi-transparent) sert à alléger visuellement le second —&nbsp;qui utilise `currentColor` pour conserver la couleur du texte sur lequel il est appliqué&nbsp;;
 * lʼombre sur le texte, dont le seul et unique objectif est dʼéviter la collision entre les jambages inférieurs et le soulignement&nbsp;;
-* et deux propriétés auxquelles vous ne vous attendiez peut-être pas&nbsp;: `display: inline;` et `width: auto;` dont lʼintérêt est de sʼassurer que notre charmant souligné suive bien le texte **et uniquement le texte**[\[5\]](https://www.ffoodd.fr/le-soulignement-factice/#note-5 "Sans cette astuce, certains éléments auraient un soulignement sur toute la largeur, même si le texte ne la remplit pas —&nbsp;et dʼautres éléments auraient un soulignement uniquement sur la dernière ligne, si dʼaventures ils fussent sur plusieurs lignes.")&nbsp;;
+* et deux propriétés auxquelles vous ne vous attendiez peut-être pas&nbsp;: `display: inline;` et `width: auto;` dont lʼintérêt est de sʼassurer que notre charmant souligné suive bien le texte **et uniquement le texte**.[^5]
+
+[^5]: Sans cette astuce, certains éléments auraient un soulignement sur toute la largeur, même si le texte ne la remplit pas —&nbsp;et dʼautres éléments auraient un soulignement uniquement sur la dernière ligne, si dʼaventures ils fussent sur plusieurs lignes.
 * les classes de tests du support des dégradés CSS et de lʼactivation du mode de contrastes élevés.
 
 Ça fait beaucoup de code, mais tout est indispensable.
@@ -123,8 +131,8 @@ Merci à [Johan Ramon](https://twitter.com/johan_ramon) pour mʼavoir rappelé �
 
 Une petite amélioration est apportée, de la manière suivante&nbsp;:
 
-* si le navigateur gère **les requêtes de fonctionnalités** _via_ `@supports` et qu'il supporte `text-decoration-skip: ink;`, on applique cette propriété&nbsp;;
-* si le navigateur gère les requêtes de fonctionnalité mais pas la propriété, on applique le `background-image` lorsque le mode de contrastes élevés n'est pas activé.
+* si le navigateur gère **les requêtes de fonctionnalités** _via_ `@supports` et qu’il supporte `text-decoration-skip: ink;`, on applique cette propriété&nbsp;;
+* si le navigateur gère les requêtes de fonctionnalité mais pas la propriété, on applique le `background-image` lorsque le mode de contrastes élevés n’est pas activé.
 
 Si ces ajouts vous intéressent, voici un peu de lecture supplémentaire&nbsp;:
 
@@ -140,7 +148,7 @@ Tout peut se résumer comme suit&nbsp;:
 }
 ```
 
-Le [CodePen](http://codepen.io/ffoodd/pen/jbRMqJ/) est à jour pour que vous jetiez un œil, et je l'ai [exporté dans un Gist](https://gist.github.com/ffoodd/d4bee79e6af99c05f0a32542d66d5969) également.
+Le [CodePen](http://codepen.io/ffoodd/pen/jbRMqJ/) est à jour pour que vous jetiez un œil, et je l’ai [exporté dans un Gist](https://gist.github.com/ffoodd/d4bee79e6af99c05f0a32542d66d5969) également.
 
 Cet ajout a quelques effets notables&nbsp;:
 
@@ -151,10 +159,10 @@ Mais nous voilà avec un pied dans le futur&nbsp;!
 
 ### 20 janvier 2017
 
-[Xavier Zalawa rencontre un bug de Blink gênant](https://twitter.com/7studio/status/822116634542374914) impliquant `currentColor` dans un `linear-gradient` en cas de changement d'état. C'est le cas dans ce soulignement factice&nbsp;: `currentColor` utilisé dans le background n'est pas mis à jour lors du survol ou de la prise de focus, sans être répété—&nbsp;ce qui ruine littéralement l'intérêt de currentColor…
+[Xavier Zalawa rencontre un bug de Blink gênant](https://twitter.com/7studio/status/822116634542374914) impliquant `currentColor` dans un `linear-gradient` en cas de changement d’état. C’est le cas dans ce soulignement factice&nbsp;: `currentColor` utilisé dans le background n’est pas mis à jour lors du survol ou de la prise de focus, sans être répété—&nbsp;ce qui ruine littéralement l’intérêt de currentColor…
 
 [Le bug est ouvert chez Chromium](https://bugs.chromium.org/p/chromium/issues/detail?id=595467).
 
-[Vincent De Oliveira a cependant trouvé une astuce pour le faire fonctionner sans devoir répéter la propriété](https://twitter.com/iamvdo/status/822130026384592898) et ça, c'est cool.
+[Vincent De Oliveira a cependant trouvé une astuce pour le faire fonctionner sans devoir répéter la propriété](https://twitter.com/iamvdo/status/822130026384592898) et ça, c’est cool.
 
-En repassant donc sur le [CodePen](http://codepen.io/ffoodd/pen/jbRMqJ) pour le mettre à jour, je me suis également rendu compte que la _media query_ `-ms-high-contrast: active` était inutile&nbsp;; je l'ai donc supprimée. Cette requête n'est comprise que par IE 11 et inférieur —&nbsp;cependant comme elle était imbriquée dans une règle @supports ces derniers ne pouvaient pas la lire. Hop, un peu de code en moins&nbsp;!
+En repassant donc sur le [CodePen](http://codepen.io/ffoodd/pen/jbRMqJ) pour le mettre à jour, je me suis également rendu compte que la _media query_ `-ms-high-contrast: active` était inutile&nbsp;; je l’ai donc supprimée. Cette requête n’est comprise que par IE 11 et inférieur —&nbsp;cependant comme elle était imbriquée dans une règle @supports ces derniers ne pouvaient pas la lire. Hop, un peu de code en moins&nbsp;!

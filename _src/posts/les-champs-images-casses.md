@@ -18,7 +18,9 @@ En revanche dʼautres éléments ont besoin quʼon leur dise par quoi ils vont �
 
 ## Le test de la source manquante dans a11y.css
 
-Comble de lʼironie, ça fait bientôt deux ans que jʼapplique [un test dans a11y.css pour vérifier que la source est mentionnée](http://ffoodd.github.io/a11y.css/errors.html#no-src)[\[1\]](https://www.ffoodd.fr/les-champs-images-casses/#note-1 "Impossible de vérifier, lorsque la source est présente, quʼelle est bel et bien valide. Dommage."). Ainsi en découvrant lʼarticle dʼIre Aderinokun, jʼai immédiatement pensé que je pourrais mʼen servir pour a11y.css. Ni une ni deux, je tente le diable. Cʼest là que jʼai constaté que ce test sʼappliquait également aux `input[type="image"]`.
+Comble de lʼironie, ça fait bientôt deux ans que jʼapplique [un test dans a11y.css pour vérifier que la source est mentionnée](http://ffoodd.github.io/a11y.css/errors.html#no-src).[^1]
+
+[^1]: Impossible de vérifier, lorsque la source est présente, quʼelle est bel et bien valide. Dommage.
 
 Mais alors, se pourrait-il que cette astuce fonctionne également sur ce type de champ&nbsp;? **Et bien oui.** Je vous ai préparé [un codePen de démonstration avec le champ de type image](http://codepen.io/ffoodd/pen/vGJPLe).
 

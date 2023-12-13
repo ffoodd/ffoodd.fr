@@ -10,7 +10,9 @@ format: "standard"
 
 Je ne saurais vous dire depuis combien de mois je travaille sur cette refonte. Je crois d’ailleurs que ça a commencé par mon [thème ffeeeedd](https://github.com/ffoodd/ffeeeedd)&nbsp;et l’amélioration de mon processus de travail : beaucoup de découvertes, énormément de recherches, et au final une progression certaine.
 
-Un seul constat : mon site était devenu obsolète : en deux ans, j’ai progressé tant en graphisme qu’en intégration – mais surtout en développement WordPress ainsi qu’en javascript. J’ai également appris beaucoup de choses concernant l’accessibilité, le html5, ARIA, les performances web, le responsive web design, la compatibilité navigateur[\[1\]](https://www.ffoodd.fr/atterrissage-reussi/#note-1 "À ce sujet : j'ai enfin abandonné le support d'IE7, et ce afin d'utiliser le plein potentiel des mises en page tabulaires en CSS 2.1.") et le design adaptatif. Mes multiples lectures sont également venues enrichir ma réflexion.
+Un seul constat : mon site était devenu obsolète : en deux ans, j’ai progressé tant en graphisme qu’en intégration – mais surtout en développement WordPress ainsi qu’en javascript. J’ai également appris beaucoup de choses concernant l’accessibilité, le html5, ARIA, les performances web, le responsive web design, la compatibilité navigateur.[^1]
+
+[^1]: À ce sujet : j’ai enfin abandonné le support d’IE7, et ce afin d’utiliser le plein potentiel des mises en page tabulaires en CSS 2.1.
 
 ## La roue existe déjà
 

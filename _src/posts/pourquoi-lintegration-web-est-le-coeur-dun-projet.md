@@ -10,7 +10,7 @@ Je ne secouerais pas le marronnier des nouveautés en question, je suppose que t
 
 Un certain nombre d’articles ont déjà été publiés sur le sujet, par d’excellents intégrateurs :
 
-* [L’importance d’un intégrateur](http://www.hteumeuleu.fr/l-importance-d-un-integrateur/ "L'importance d'un intégrateur (nouvelle fenêtre)")&nbsp;par @HTeumeuleu
+* [L’importance d’un intégrateur](http://www.hteumeuleu.fr/l-importance-d-un-integrateur/ "L’importance d’un intégrateur (nouvelle fenêtre)")&nbsp;par @HTeumeuleu
 * [De l’intégrateur au développeur front-end&nbsp;: un maillon essentiel de la qualité Web](http://openweb.eu.org/articles/integrateur-au-developpeur-front-end-un-maillon-essentiel-qualite-web "De l’intégrateur au développeur front-end&nbsp;: un maillon essentiel de la qualité Web (nouvelle fenêtre)")&nbsp;par Nicolas Hoffmann&nbsp;sur Openweb
 * [Pourquoi un (bon) intégrateur est indispensable à tout projet web](http://darklg.me/2013/06/pourquoi-un-bon-integrateur-est-indispensable-a-tout-projet-web/ "Pourquoi un (bon) intégrateur est indispensable à tout projet web (nouvelle fenêtre)")&nbsp;par @Darklg
 
@@ -26,4 +26,4 @@ Comment donc un concepteur ou un développeur, aussi doués soient-ils, auraient
 
 Le même constat m’amène à penser qu’**à l’avenir, les chefs de projets** dans les structures comme l’[agence 1-ter-net](http://www.1-ter-net.com "Création de site internet à Nantes (nouvelle fenêtre)") – dans laquelle je travaille – **seront issus de l’intégration**.
 
-À condition de retenir [cette leçon d’humilité](http://www.lesintegristes.net/2013/03/19/integration-web-humilite/ ""L'intégration web, cette leçon d'humilité" par Marie Guillaumet sur Les Intégristes (nouvelle fenêtre)"), et de faire du bon travail.
+À condition de retenir [cette leçon d’humilité](http://www.lesintegristes.net/2013/03/19/integration-web-humilite/ ""L’intégration web, cette leçon d’humilité" par Marie Guillaumet sur Les Intégristes (nouvelle fenêtre)"), et de faire du bon travail.

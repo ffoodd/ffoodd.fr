@@ -20,9 +20,9 @@ Une fois passée l’appréhension due au format du livre et au thème ‐ qui a
 
 Parmi les professionnels du web en France, le sujet semble avoir mauvaise haleine : hormis les entreprises spécialisées, les experts qualifiés et quelques pointures de la qualité web, le sujet semble tabou. L’image d’un domaine compliqué, difficile à mettre en place comme à apprendre et coûteux pour le client comme pour le prestataire lui colle aux basques.
 
-Ce livre d’[Armony Altinier](http://www.armonyaltinier.fr/ "Le site d'Armony Altinier (nouvelle fenêtre)")&nbsp;et Dominique Burger commence donc sereinement par replacer l’accessibilité web dans un contexte historique, technologique et juridique : j’ai énormément appris ! Cette seule première partie vaut le détour, car ces informations rendent la question de l’accessibilité web naturelle, voire évidente. Mais attention : le livre n’est pas indigeste pour autant. Les auteurs tentent judicieusement d’impliquer la compréhension des lecteurs, en mettant en scène des événements qui peuvent arriver à tout le monde : un bras cassé ou une panne de souris, par exemple.
+Ce livre d’[Armony Altinier](http://www.armonyaltinier.fr/ "Le site d’Armony Altinier (nouvelle fenêtre)")&nbsp;et Dominique Burger commence donc sereinement par replacer l’accessibilité web dans un contexte historique, technologique et juridique : j’ai énormément appris ! Cette seule première partie vaut le détour, car ces informations rendent la question de l’accessibilité web naturelle, voire évidente. Mais attention : le livre n’est pas indigeste pour autant. Les auteurs tentent judicieusement d’impliquer la compréhension des lecteurs, en mettant en scène des événements qui peuvent arriver à tout le monde : un bras cassé ou une panne de souris, par exemple.
 
-La partie historique est également enrichissante, notamment en ce qui concerne les deux référentiels Français : [Accessiweb](http://www.accessiweb.org/ "Accessiweb.org (nouvelle fenêtre)") et [RGAA](http://references.modernisation.gouv.fr/rgaa-accessibilite "Présentation du Référentiel Général d'Accessibilité pour les Administrations (nouvelle fenêtre)"). L’accessibilité est un sujet mouvant et bien que disposant de référentiels aux critères précis, ils ne sont pas pour autant tous pertinents. **Tout est toujours une affaire de contexte.**
+La partie historique est également enrichissante, notamment en ce qui concerne les deux référentiels Français : [Accessiweb](http://www.accessiweb.org/ "Accessiweb.org (nouvelle fenêtre)") et [RGAA](http://references.modernisation.gouv.fr/rgaa-accessibilite "Présentation du Référentiel Général d’Accessibilité pour les Administrations (nouvelle fenêtre)"). L’accessibilité est un sujet mouvant et bien que disposant de référentiels aux critères précis, ils ne sont pas pour autant tous pertinents. **Tout est toujours une affaire de contexte.**
 
 ## Détail des thématiques Accessiweb
 
@@ -43,7 +43,9 @@ Ces thématiques sont expliquées, clarifiées et détaillées : des cas concret
 
 ## Un apprentissage permanent
 
-Ce que je retiens de ce livre, c’est le crédo mentionné par les auteurs : la question à se poser lorsqu’on parle d’accessibilité est **« est-ce que ça peut pénaliser quelqu’un ? »**[\[1\]](https://www.ffoodd.fr/lecture-accessibilite-web/#note-1 "La démarche est bien de s'interroger : vous pouvez choisir de ne pas tenir compte de certaines remarques. Par exemple sur ce site, je justifie le texte courant, mais cela est considéré comme une mauvaise pratique et un risque pour l'accessibilité des contenus.").
+Ce que je retiens de ce livre, c’est le crédo mentionné par les auteurs : la question à se poser lorsqu’on parle d’accessibilité est **« est-ce que ça peut pénaliser quelqu’un ? »**.[^1]
+
+[^1]: La démarche est bien de s’interroger : vous pouvez choisir de ne pas tenir compte de certaines remarques. Par exemple sur ce site, je justifie le texte courant, mais cela est considéré comme une mauvaise pratique et un risque pour l’accessibilité des contenus.
 
 Partant de là, la leçon principale que j’en ai retenu vient tordre le coup à cette image de domaine figé réservé à des experts chevronnés. Non, l’accessibilité web n’est pas plus figée que les autres domaines du web, et non, ce n’est pas si complexe à mettre en oeuvre. Dans la plupart des sites que je réalise, les contenus sont purement textuels : pas de tableaux, pas d’iframe, pas de vidéos ou de sons, et très rarement des images porteuses de sens. Voilà qui élimine déjà beaucoup de problèmes.
 

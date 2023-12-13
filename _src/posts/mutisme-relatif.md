@@ -46,7 +46,7 @@ Ce qui m’a naturellement conduit à développer une [flotille d’extensions](
 
 ### ffeeeedd–sass
 
-Dans le même temps, j’ai complètement revu ma façon de travailler et me suis lentement mis à utiliser Sass, puis quelques portions de Compass. Je dis bien lentement puisque, [comme je l’ai fait remarquer dans un article](https://www.ffoodd.fr/sass-commencez-par-les-deux-s/ "Sass : commencez par les deux « S »") il y a quelques temps, j’ai tout fait pour éviter les pièges inhérents à ce type d’outils. Me faire gagner du temps, oui —&nbsp; mais sans perdre la qualité de mon travail.
+Dans le même temps, j’ai complètement revu ma façon de travailler et me suis lentement mis à utiliser Sass, puis quelques portions de Compass. Je dis bien lentement puisque, [comme je l’ai fait remarquer dans un article](https://www.ffoodd.fr/sass-commencez-par-les-deux-s/ "Sass&nbsp;: commencez par les deux «&nbsp;S&nbsp;»") il y a quelques temps, j’ai tout fait pour éviter les pièges inhérents à ce type d’outils. Me faire gagner du temps, oui —&nbsp; mais sans perdre la qualité de mon travail.
 
 J’abouti à [ffeeeedd–sass](https://github.com/ffoodd/ffeeeedd--sass), un thème enfant dont les styles s’appuient sur Sass, et ai utilisé PrePros pour homogénéiser facilement le traitement des scripts et des styles lors de leurs optimisations.
 

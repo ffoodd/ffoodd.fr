@@ -44,7 +44,9 @@ Pour démarrer, on va choisir un contenu quʼon pourrait attendre. Jʼen ai choi
 
 La carte de profil indique le nom, le pseudonyme et l’avatar Twitter, mais aussi les nombres de tweets, d’abonnements et d’abonnés.
 
-Cʼest donc la-dessus que va se baser la création du visuel dʼattente. Sur le principe, je me contente de créer un bloc en aplat gris par élément, afin de **représenter sa masse visuelle**[\[1\]](https://www.ffoodd.fr/reserve-d%ca%bcespace-pour-le-contenu/#note-1 "Cʼest le même principe que le gris typographique en composition de page."). Étant donné que je suis flemmard, jʼimporte simplement une capture du bloc à reproduire dans Illustrator, et redessine «&nbsp;par-dessus&nbsp;» chaque bloc. Ça permet entre autre chose de **conserver un ratio de un pour un**, ce qui présente un fort intérêt dans ce cas.
+Cʼest donc la-dessus que va se baser la création du visuel dʼattente. Sur le principe, je me contente de créer un bloc en aplat gris par élément, afin de **représenter sa masse visuelle**.[^1]
+
+[^1]: Cʼest le même principe que le gris typographique en composition de page.
 
 ![Gabarit de carte de profil twitter](/images/2015/12/twitter-placeholder-300x201.png)
 

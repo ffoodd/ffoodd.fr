@@ -6,7 +6,9 @@ permalink: "a-qui-parlent-vos-css/index.html"
 excerpt: "Les CSS atomiques, _scalable_, tendent à sʼimposer en tant que concept. Leur usage est encore un brin complexe, mais leurs avantages sont nombreux. Pourtant, je ne parviens pas à avoir envie dʼessayer. Alors jʼétale mes réflexions ici. [Lire la suite de «&nbsp;À qui parlent vos CSS&nbsp;?&nbsp;» →](https://www.ffoodd.fr/a-qui-parlent-vos-css/)"
 format: "standard"
 ---
-Le dernier article rédigé par [Adam Morse](http://mrmrs.cc/) est amplement diffusé ces derniers jours, vous lʼaurez certainement déjà lu&nbsp;: «&nbsp;[_CSS and Scalability_](http://mrmrs.io/writing/2016/03/24/scalable-css/)&nbsp;» —&nbsp;vous pouvez en lire [une traduction en Français](http://blog.perrien.fr/css-et-evolutivite/) sur le blog de Marc Perrien. Il y prône une méthode de rédaction des CSS dite «&nbsp;atomiques&nbsp;», issue du formidable travail de [Thierry Koblentz](http://cssmojo.com/) de Yahoo sur le projet [Atomic CSS](http://acss.io/)[\[1\]](https://www.ffoodd.fr/a-qui-parlent-vos-css/#note-1 "Filez lire en détail le site en question, il se montre réellement instructif.").
+Le dernier article rédigé par [Adam Morse](http://mrmrs.cc/) est amplement diffusé ces derniers jours, vous lʼaurez certainement déjà lu&nbsp;: «&nbsp;[_CSS and Scalability_](http://mrmrs.io/writing/2016/03/24/scalable-css/)&nbsp;» —&nbsp;vous pouvez en lire [une traduction en Français](http://blog.perrien.fr/css-et-evolutivite/) sur le blog de Marc Perrien. Il y prône une méthode de rédaction des CSS dite «&nbsp;atomiques&nbsp;», issue du formidable travail de [Thierry Koblentz](http://cssmojo.com/) de Yahoo sur le projet [Atomic CSS](http://acss.io/).[^1]
+
+[^1]: Filez lire en détail le site en question, il se montre réellement instructif.
 
 ## Les CSS atomiques&nbsp;⚛
 
@@ -26,7 +28,9 @@ Cʼest lʼapproche également défendue par Adam Morse dans son article. Il pous
 
 > Writing new css should be the exception, not the rule.
 
-Je trouve ça bien. Et vous&nbsp;? Cette méthode est indubitablement la meilleure **à lʼheure actuelle** pour qui cherche à réduire ses CSS, ainsi que leur coût de production[\[2\]](https://www.ffoodd.fr/a-qui-parlent-vos-css/#note-2 "Entre autres avantages évidemment, le sujet est bien plus complexe quʼil nʼy paraît").
+Je trouve ça bien. Et vous&nbsp;? Cette méthode est indubitablement la meilleure **à lʼheure actuelle** pour qui cherche à réduire ses CSS, ainsi que leur coût de production.[^2]
+
+[^2]: Entre autres avantages évidemment, le sujet est bien plus complexe quʼil nʼy paraît
 
 Toutefois je pense que cette technique est à réserver exclusivement aux sites monstrueux, massifs, des balourds. Pour un intégrateur commun, qui travaille sur des sites plus ou moins simples, **je suis persuadé que le jeu nʼen vaut pas la chandelle.** À mon avis, le site dʼAtomic CSS et lʼarticle dʼAdam Morse devraient le préciser&nbsp;: plus le site est petit, plus cette méthode coûte cher. Et je ne parle pas que sur le plan technique.
 
@@ -34,17 +38,25 @@ Toutefois je pense que cette technique est à réserver exclusivement aux sites 
 
 ### À qui sʼadressent les CSS atomiques&nbsp;?
 
-Conceptuellement, cette approche déplace un certain nombre de chose. Pour commencer, elle induit quʼun intervenant ne touche plus les CSS directement[\[3\]](https://www.ffoodd.fr/a-qui-parlent-vos-css/#note-3 "Je me demande bien comment on gère une refonte graphique dans ce cas : on reprend tout à zéro, ou on repasse sur tout le HTML ?"). En poussant le raisonnement à lʼextrême, ce fichier ne sera plus lu que par le navigateur. Pour pousser encore un peu plus loin, le fichier CSS ne sera plus quʼune **version non obfusquée** des styles écrits dans lʼattribut `class`. Après tout, pourquoi pas&nbsp;?
+Conceptuellement, cette approche déplace un certain nombre de chose. Pour commencer, elle induit quʼun intervenant ne touche plus les CSS directement.[^3]
 
-Cependant afin que la magie opère, la plupart des sélecteurs comprenant des caractères spéciaux vont être échappés. **Cʼest (très) difficile à lire pour un humain.** Pourtant jʼai déjà eu lʼoccasion de lire des CSS écrits de la sorte —&nbsp;notamment dans [debugCSS](https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L194)[\[4\]](https://www.ffoodd.fr/a-qui-parlent-vos-css/#note-4 "Cʼest une des sources dʼa11y.css, pour ceux qui suivent :p"), écrit par Brian J., auquel a contribué pour Yahoo un certain… Thierry Koblentz&nbsp;— mais rien à faire, mes yeux butent systématiquement sur ces caractères inattendus. Question dʼhabitude, je présume.
+[^3]: Je me demande bien comment on gère une refonte graphique dans ce cas : on reprend tout à zéro, ou on repasse sur tout le HTML ?
+
+Cependant afin que la magie opère, la plupart des sélecteurs comprenant des caractères spéciaux vont être échappés. **Cʼest (très) difficile à lire pour un humain.** Pourtant jʼai déjà eu lʼoccasion de lire des CSS écrits de la sorte —&nbsp;notamment dans [debugCSS](https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L194).[^4]
+
+[^4]: Cʼest une des sources dʼa11y.css, pour ceux qui suivent :p
 
 Je pense que ce procédé est **une technique dʼobfuscation des CSS**. Ces CSS ne sont pas fait pour être lus par un œil humain. Ils sont lʼexpression du système technique qui sous-tend une intégration graphique. Ils sont optimisés pour la machine.
 
 ### Et lʼhumain, dans tout ça&nbsp;?
 
-Vous lʼaurez compris, cet aspect me dérange un peu. **Jʼaime rédiger mes CSS en imaginant que quelquʼun les lira**, que ce soit par curiosité —&nbsp;comme le fait Adam Morse[\[5\]](https://www.ffoodd.fr/a-qui-parlent-vos-css/#note-5 "Pour les feignasses, dans son article militant pour les CSS atomiques Adam Morse sʼappuie sur une habitude quʼil a prise : lire les CSS de certains sites, de bout en bout, pour apprendre des choses. Jʼaime beaucoup cette idée, je lʼai fait parfois. Cependant cela lui a inspiré dʼécrire moins de CSS :/")&nbsp;— ou parce quʼil doit reprendre le projet.
+Vous lʼaurez compris, cet aspect me dérange un peu. **Jʼaime rédiger mes CSS en imaginant que quelquʼun les lira**, que ce soit par curiosité —&nbsp;comme le fait Adam Morse.[^5]
 
-Il nʼy aura pas de problème particulier à reprendre un projet intégré à lʼaide de CSS atomiques, en revanche je subodore que ça semblera bien terne et froid. Aucun parti-pris, aucune manière personnelle de travailler, probablement **aucun commentaire rigolo dans les sources**[\[6\]](https://www.ffoodd.fr/a-qui-parlent-vos-css/#note-6 "Probablement très peu de commentaires tout court dʼailleurs, lʼoutil de Yahoo intitulé Atomizer générant les fichiers CSS en fonction de ce quʼil croise dans le HTML… Le CSS nʼest même jamais ouvert.") et jʼen passe.
+[^5]: Pour les feignasses, dans son article militant pour les CSS atomiques Adam Morse sʼappuie sur une habitude quʼil a prise : lire les CSS de certains sites, de bout en bout, pour apprendre des choses. Jʼaime beaucoup cette idée, je lʼai fait parfois. Cependant cela lui a inspiré dʼécrire moins de CSS :/
+
+Il nʼy aura pas de problème particulier à reprendre un projet intégré à lʼaide de CSS atomiques, en revanche je subodore que ça semblera bien terne et froid. Aucun parti-pris, aucune manière personnelle de travailler, probablement **aucun commentaire rigolo dans les sources**.[^6]
+
+[^6]: Probablement très peu de commentaires tout court dʼailleurs, lʼoutil de Yahoo intitulé Atomizer générant les fichiers CSS en fonction de ce quʼil croise dans le HTML… Le CSS nʼest même jamais ouvert.
 
 Bref, aucune identité.
 
@@ -52,7 +64,9 @@ Bref, aucune identité.
 
 Jʼai une opinion, peut-être très mauvaise, sur lʼobjet des CSS&nbsp;: à mon avis, ils équivalent à une charte graphique. On y précise ce qui peut ou ne peut pas être fait, ce qui doit ou ne doit pas être fait.
 
-Et quand je parle de ce qui peut / doit être fait, **je parle du HTML**. Je fais un peu mon _coming-out_, mais oui, mon CSS sert de garde-fous pour le HTML. À dire vrai, un autre article à été largement diffusé il y a quelque temps déjà, à contre-courant de ce système nucléaire. Vous pourrez lire sur le blog dʼEbay [comment leur framework CSS les aide à renforcer lʼaccessibilité](http://www.ebaytechblog.com/2015/11/04/how-our-css-framework-helps-enforce-accessibility/)[\[7\]](https://www.ffoodd.fr/a-qui-parlent-vos-css/#note-7 "Je suis ravi de retrouver parmi les commentaires un article dʼHeydon Pickering sur Smashing Magazine à propos des sélecteurs intelligents. Et également surpris dʼy découvrir que Daniel Eden a poussé sur les CSS de DropBox une fonctionnalité qui ressemble beaucoup à celle dʼa11y.css, via un mixin simple. Je vais lire tout ça en détail !"). Ils y évoquent des sélecteurs dʼéléments et **des sélecteurs dʼattributs**[\[8\]](https://www.ffoodd.fr/a-qui-parlent-vos-css/#note-8 "A priori ces sélecteurs sont inusités dans les CSS atomiques. Si tel est le cas, on se prive dʼune sacrée puissance de frappe.").
+Et quand je parle de ce qui peut / doit être fait, **je parle du HTML**. Je fais un peu mon _coming-out_, mais oui, mon CSS sert de garde-fous pour le HTML. À dire vrai, un autre article à été largement diffusé il y a quelque temps déjà, à contre-courant de ce système nucléaire. Vous pourrez lire sur le blog dʼEbay [comment leur framework CSS les aide à renforcer lʼaccessibilité](http://www.ebaytechblog.com/2015/11/04/how-our-css-framework-helps-enforce-accessibility/).[^7]
+
+[^7]: Je suis ravi de retrouver parmi les commentaires un article dʼHeydon Pickering sur Smashing Magazine à propos des sélecteurs intelligents. Et également surpris dʼy découvrir que Daniel Eden a poussé sur les CSS de DropBox une fonctionnalité qui ressemble beaucoup à celle dʼa11y.css, via un mixin simple. Je vais lire tout ça en détail !
 
 Et cʼest chouette, je suis content de travailler de la sorte.Je ne suis jamais seul à intervenir, ni sur le HTML ni sur le CSS, et suis pourtant le seul intégrateur de métier dans mon équipe actuelle (comme dans la précédente lors de mon arrivée). Et ce genre de sélecteur qui se rapporte à un composant graphique est nettement plus **compréhensible** par des profils non experts, voire même carrément **attractif**. Et pour cause, en ne nécessitant pas dʼajouter des dizaines de classes précises pour former un composant mais une seule sur le conteneur, les développeurs sont heureux. Ils écrivent le bon HTML —&nbsp;chopé sur un guide de style, par exemple&nbsp;— et hop, ça marche.
 
@@ -68,7 +82,9 @@ Je n’ai pas une vision mécanique de mes CSS, j’en ai une vision humaine&nbs
 
 ## Je fais erreur, et après&nbsp;?
 
-Je sais, oui. Peu importe lʼapproche sur mes propos, **il existe des façons de travailler qui ne me font pas écrire mes CSS de manière démodée**. On peut utiliser des outils pour vérifier que le HTML est correct[\[9\]](https://www.ffoodd.fr/a-qui-parlent-vos-css/#note-9 "Par exemple a11y.css vérifie la présence de lʼalternative sur une image, ce qui permet de se passer dʼun sélecteur contraignant. De nombreux autres outils de bien meilleure qualité le font également."). On peut utiliser une technologie qui gère des composants, comme Angular ou Polymer, afin de nʼavoir quʼun seul fichier contenant du HTML pour lʼensemble des occurrences dudit composant. On pourrait ainsi rendre certains contenus obligatoires, comme les alternatives ou les rôles.
+Je sais, oui. Peu importe lʼapproche sur mes propos, **il existe des façons de travailler qui ne me font pas écrire mes CSS de manière démodée**. On peut utiliser des outils pour vérifier que le HTML est correct.[^9]
+
+[^9]: Par exemple a11y.css vérifie la présence de lʼalternative sur une image, ce qui permet de se passer dʼun sélecteur contraignant. De nombreux autres outils de bien meilleure qualité le font également.
 
 Donc encore une fois, **je sais que mes propos ne feront pas le poids** comparés aux gains multiples en terme de performance, de vitesse, de maintenabilité, dʼautomatisation. Mais soyons honnêtes, le gain de poids pour un site _lambda_ nʼest pas si énorme[\[10\]](https://www.ffoodd.fr/a-qui-parlent-vos-css/#note-10 "Les chiffres avancés par Thierry Koblentz sont issus de sites très, très gros, pour lesquels les gains sont forcément énormes. Un site vitrine pour la boulangerie du coin aura assez peu à y gagner par rapport à une feuille de styles légère et précise, je pense."). Certes, il reste dommageable pour un utilisateur de télécharger un octet supplémentaire, donc je suis dʼaccord&nbsp;: les CSS atomiques sont une idée absolument géniale, **un gain véritable et très intelligent tant pour lʼutilisateur que pour le matériel**.
 

@@ -36,7 +36,9 @@ Ce livre s’adresse avant tout aux débutants. Évidemment, les sujets n’iron
 
 Cependant je reste malgré tout sur ma faim, car très peu de problématiques pratiques sont abordées. Les exemples sont certes bien choisis et travaillés, mais ils sont légèrement utopiques. Personnellement, en me lançant dans l’apprentissage du JS, j’ai rencontré des situations complexes et des problèmes qui ne sont qu’effleurés. Ça ne me surprend pas mais c’est ce qui explique que cette lecture ne m’ait pas énormément appris, alors que **je pars de loin**.
 
-Ensuite, le parti est pris de travailler avec jQuery. C’est annoncé, pas de surprise. Mais par un heureux hasard, jQuery n’est employé que dans les situations qui pourraient devenir complexes. C’est son intérêt, mais j’aurais beaucoup apprécié que le livre évoque la création des mêmes fonctionnalités avec **et sans** jQuery. Premièrement, pour mettre en avant les avantages de jQuery et la pertinence de son utilisation. Deuxièmement, pour **mentionner les écueils potentiels** [\[1\]](https://www.ffoodd.fr/javascript-and-jquery/#note-1 "Et les contournements possibles, autant que faire se peut.") d’un travail sans jQuery.
+Ensuite, le parti est pris de travailler avec jQuery. C’est annoncé, pas de surprise. Mais par un heureux hasard, jQuery n’est employé que dans les situations qui pourraient devenir complexes. C’est son intérêt, mais j’aurais beaucoup apprécié que le livre évoque la création des mêmes fonctionnalités avec **et sans** jQuery. Premièrement, pour mettre en avant les avantages de jQuery et la pertinence de son utilisation. Deuxièmement, pour **mentionner les écueils potentiels** .[^1]
+
+[^1]: Et les contournements possibles, autant que faire se peut.
 
 ## Une référence du genre
 

@@ -21,7 +21,9 @@ En appliquant cette technique correctement, on divise par deux ou trois le nombr
 
 ## Les liens d’évitement
 
-Je ne reviendrais pas sur les bases de cette technique, qui est plus que documentée sur le web[\[1\]](https://www.ffoodd.fr/liens-devitement-persistants/#note-1 "Un article de Jean-Pierre Villain sur Alsacréations - il date de 2006 et est toujours (presque) d'actualités : http://www.alsacreations.com/tuto/lire/572-Les-liens-d-evitement.htm") ! Seules les améliorations suggérées par Johan Ramon m’intéressent ici :
+Je ne reviendrais pas sur les bases de cette technique, qui est plus que documentée sur le web.[^1]
+
+[^1]: Un article de Jean-Pierre Villain sur Alsacréations - il date de 2006 et est toujours (presque) d’actualités : http://www.alsacreations.com/tuto/lire/572-Les-liens-d-evitement.htm
 
 * La persistance des liens d’évitement après leur première prise de focus
 * La mise en avant visuelle de la zone ciblée par le lien d’évitement
@@ -32,13 +34,13 @@ Cependant la persistance des liens m’a particulièrement intéressé, car c’
 
 ## La persistance des liens d’évitement
 
-En recherchant plus d’informations sur cette technique, je suis tombé sur le blog de la société Atalan pour laquelle travaille Johan – et sur [un article dédié au sujet](http://blog.atalan.fr/des-liens-devitement-astucieux/ "Article sur les liens d'évitement astucieux (nouvelle fenêtre)"). Des ressources très intéressantes sont données, cependant toutes sont basées sur jQuery pour ajouter une classe aux liens après leur première prise de focus. **Dommage, je n’utilise pas jQuery sur ffoodd.fr.**
+En recherchant plus d’informations sur cette technique, je suis tombé sur le blog de la société Atalan pour laquelle travaille Johan – et sur [un article dédié au sujet](http://blog.atalan.fr/des-liens-devitement-astucieux/ "Article sur les liens d’évitement astucieux (nouvelle fenêtre)"). Des ressources très intéressantes sont données, cependant toutes sont basées sur jQuery pour ajouter une classe aux liens après leur première prise de focus. **Dommage, je n’utilise pas jQuery sur ffoodd.fr.**
 
 Voici donc le bout de code correspondant, en vanilla javascript :
 
 ```javascript
 
-/* Lien d'évitement > Persistance de l'affichage
+/* Lien d’évitement > Persistance de l’affichage
  * @see : http://blog.atalan.fr/des-liens-devitement-astucieux/
 */
 [].forEach.call(document.querySelectorAll(".skip"), function(el) {
