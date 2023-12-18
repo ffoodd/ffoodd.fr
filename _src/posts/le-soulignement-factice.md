@@ -14,9 +14,13 @@ Le souligné ordinaire est effectivement grossier&nbsp;: cʼest un reliquat des 
 
 [^1]: Percevez-vous comme ce soulignement est affordant&nbsp;? On a envie de cliquer dessus, pas vrai&nbsp;?
 
+
+
 Sur le plan visuel, le souligné croise les jambages inférieures, ce qui crée un attroupement inopportun de pixels quʼon pourrait qualifier de «&nbsp;petits pâtés&nbsp;».[^2]
 
 [^2]: Terme technique issu dʼune longue histoire de la calligraphie à la plume (ou de lʼapprentissage de lʼécriture avec un stylo plume pour les plus jeunes dʼentre vous).
+
+
 
 Quelques tentatives existaient déjà il y a fort longtemps, comme en témoigne [lʼarticle de Susan Robertson sur A List Apart](http://alistapart.com/article/customunderlines) qui utilisait `background-image` pour mettre un une image répétée en guise de soulignement. Ça peut sembler étrange —&nbsp;notamment quand vous aurez vu les exemples animés&nbsp;— mais en 2004, cʼétait parfaitement fabuleux.
 
@@ -90,6 +94,8 @@ Vous noterez les occurrences multiples de la couleur blanche —&nbsp;tant sous 
 
 [^3]: Vous avez probablement déjà compris que si votre texte repose sur une image ou un dégradé, il nʼy aura probablement pas de salut pour votre soulignement.
 
+
+
 Petite astuce à prendre en considération, le second paramètre du _mixin_ concerne la position du soulignement **par rapport à la hauteur de lʼélément**. Je ne suis pas parvenu à rendre ça dispensable, le changement de corps et de caractères entraînant une trop grande variation sur la hauteur de ligne. Dans mes différents cas, la position varie entre 88% et 96%.
 
 ## Cʼest pas un peu verbeux&nbsp;?
@@ -108,6 +114,8 @@ Petite astuce à prendre en considération, le second paramètre du _mixin_ conc
 * et deux propriétés auxquelles vous ne vous attendiez peut-être pas&nbsp;: `display: inline;` et `width: auto;` dont lʼintérêt est de sʼassurer que notre charmant souligné suive bien le texte **et uniquement le texte**.[^5]
 
 [^5]: Sans cette astuce, certains éléments auraient un soulignement sur toute la largeur, même si le texte ne la remplit pas —&nbsp;et dʼautres éléments auraient un soulignement uniquement sur la dernière ligne, si dʼaventures ils fussent sur plusieurs lignes.
+
+
 * les classes de tests du support des dégradés CSS et de lʼactivation du mode de contrastes élevés.
 
 Ça fait beaucoup de code, mais tout est indispensable.

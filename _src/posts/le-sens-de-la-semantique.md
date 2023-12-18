@@ -32,6 +32,8 @@ Là encore, je souhaite nuancer&nbsp;: ce ne sont que des outils. Les ouvriers q
 
 [^1]: Toute ressemblance avec le slogan dʼune enseigne de sport est parfaitement fortuite.
 
+
+
 Cʼétait un moyen simple et efficace dʼéjecter du versant HTML ce qui avait trait à la présentation. Et ça, c’était bien. En effet le HTML doit être employé pour sa sémantique, **le sens quʼil apporte au contenu quʼil balise**. Car cʼest tout ce quʼest censé faire ce langage&nbsp;: décrire le contenu sur le plan sémantique.  
 **  
 Utiliser des propriétés de style dans le HTML revient à corrompre la sémantique**&nbsp;: le contenu ne sera plus marqué correctement et pourra donc être mal interprété. Et ça, cʼest mal.
@@ -58,6 +60,8 @@ En fait jʼirais encore plus loin&nbsp;: si vous séparez trop votre forme de vo
 
 [^2]: Notez lʼordre des termes fond/forme, forme/fond.
 
+
+
 **Lʼaspect graphique devrait renforcer la structure de lʼinformation et la hiérarchisation des contenus**, pas la gommer ni la falsifier.
 
 ## Encore un peu dʼhistoire
@@ -80,3 +84,4 @@ Simplifions.
 Pour ceux qui ont tenu jusque là, je vous invite à prendre le temps de lire [la page Wikipédia dédiée à CSS](https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade). Cʼest fort intéressant&nbsp;.[^3]
 
 [^3]: Par exemple, on y apprend que le mécanisme de la cascade tant décrié de nos jours par lʼécosystème des développeurs JS est conçu pour permettre aux utilisateurs dʼappliquer leurs propres styles. Cʼest oublié, mais ça nʼen reste pas moins génial.
+

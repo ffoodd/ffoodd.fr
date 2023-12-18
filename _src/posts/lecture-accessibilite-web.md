@@ -47,6 +47,8 @@ Ce que je retiens de ce livre, c’est le crédo mentionné par les auteurs : la
 
 [^1]: La démarche est bien de s’interroger : vous pouvez choisir de ne pas tenir compte de certaines remarques. Par exemple sur ce site, je justifie le texte courant, mais cela est considéré comme une mauvaise pratique et un risque pour l’accessibilité des contenus.
 
+
+
 Partant de là, la leçon principale que j’en ai retenu vient tordre le coup à cette image de domaine figé réservé à des experts chevronnés. Non, l’accessibilité web n’est pas plus figée que les autres domaines du web, et non, ce n’est pas si complexe à mettre en oeuvre. Dans la plupart des sites que je réalise, les contenus sont purement textuels : pas de tableaux, pas d’iframe, pas de vidéos ou de sons, et très rarement des images porteuses de sens. Voilà qui élimine déjà beaucoup de problèmes.
 
 Mais pour chaque création de site, et à chaque étape du processus, il faut se poser la question : cela risque-t’il de gêner quelqu’un ? Il est compliqué d’imaginer tous les cas de figure, mais se poser la question est comme poser la première pierre : on bâtit un édifice qui sera forcément plus robuste si l’on s’interroge en amont.

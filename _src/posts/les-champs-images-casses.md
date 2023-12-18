@@ -22,6 +22,8 @@ Comble de lʼironie, ça fait bientôt deux ans que jʼapplique [un test dans a1
 
 [^1]: Impossible de vérifier, lorsque la source est présente, quʼelle est bel et bien valide. Dommage.
 
+
+
 Mais alors, se pourrait-il que cette astuce fonctionne également sur ce type de champ&nbsp;? **Et bien oui.** Je vous ai préparé [un codePen de démonstration avec le champ de type image](http://codepen.io/ffoodd/pen/vGJPLe).
 
 Ce nʼest pas une révolution —&nbsp;et globalement personne ne sʼen servira&nbsp;— mais allez savoir.

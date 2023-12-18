@@ -40,6 +40,8 @@ Ensuite, le parti est pris de travailler avec jQuery. C’est annoncé, pas de s
 
 [^1]: Et les contournements possibles, autant que faire se peut.
 
+
+
 ## Une référence du genre
 
 Malgré ces aspects négatifs, ce livre est de loin le meilleur ouvrage d’apprentissage du JS que j’ai lu jusqu’à présent. Mon profil étant intermédiaire je reste légèrement frustré, mais j’ai tout de même appris quelques trucs et surtout, les explications claires et illustrées ont éclaircies beaucoup de choses que je pensais savoir.

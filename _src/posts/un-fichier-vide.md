@@ -36,8 +36,11 @@ Fut un temps ou j’ai fourché.[^1]
 
 [^1]: De l’anglicisme « forké » que je n’aime guère.
 
+
+
 Désormais lorsque je travaille sur des projets personnels, j’ai adopté mon propre _framework_ prêt à l’emploi, simple d’utilisation, sans opinion ou choix technique contraignant, agnostique, sans parti-pris graphique…
 
 **Un fichier vide**.[^2]
 
 [^2]: Saint-Exupéry disait que « le désert est la seule chose qui ne puisse être détruite que par la construction ». J’y vois un lien :)
+

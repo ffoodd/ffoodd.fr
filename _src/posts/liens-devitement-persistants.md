@@ -25,6 +25,8 @@ Je ne reviendrais pas sur les bases de cette technique, qui est plus que documen
 
 [^1]: Un article de Jean-Pierre Villain sur Alsacréations - il date de 2006 et est toujours (presque) d’actualités : http://www.alsacreations.com/tuto/lire/572-Les-liens-d-evitement.htm
 
+
+
 * La persistance des liens d’évitement après leur première prise de focus
 * La mise en avant visuelle de la zone ciblée par le lien d’évitement
 

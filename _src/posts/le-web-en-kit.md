@@ -18,6 +18,8 @@ De façon parfaitement sensée, Microsoft —&nbsp;qui détenait environ 95% des
 
 [^1]: Jʼaime rappeler aux gens qui pestent après IE quʼil est ma foi fort probable quʼils fissent partie des 95% dʼinternautes qui naviguaient avec. Ça pique.
 
+
+
 [**Alors ils font passer Edge pour WebKit.**](http://blogs.windows.com/msedgedev/2015/06/17/building-a-more-interoperable-web-with-microsoft-edge/)
 
 ## Le _\-webkit-only_
@@ -73,21 +75,15 @@ Figurez-vous que **cʼest pourtant le cas** (je suis sûr que vous nʼavez rien 
 
 Dans un monde merveilleux et homogène, nous «&nbsp;devrions&nbsp;» voir ceci&nbsp;:
 
-![Capture dʼécran de Chrome](/images/2015/10/chrome-300x31.png)
-
-Un arc-en-ciel incrusté au texte en CSS, visible sur les navigateurs WebKit et Edge
+![Capture dʼécran de Chrome](/images/2015/10/chrome-300x31.png "Un arc-en-ciel incrusté au texte en CSS, visible sur les navigateurs WebKit et Edge")
 
 Et, le cas échéant si votre navigateur est allergique aux arc-en-ciels, voici le résultat attendu&nbsp;:
 
-![Capture dʼécran sur Firefox](/images/2015/10/firefox-300x30.png)
-
-Le texte est simplement blanc sur Firefox et IE, pas dʼarc-en-ciel à lʼhorizon
+![Capture dʼécran sur Firefox](/images/2015/10/firefox-300x30.png)↔"Le texte est simplement blanc sur Firefox et IE, pas dʼarc-en-ciel à lʼhorizon")
 
 Jusque là, tout va bien. La mécanique est belle, aucun danger grâce à la solution de repli évoquée précédemment. Maintenant, cassons tout&nbsp;! Voici le rendu sur IE11 **et _UC Browser_** sur Windows Phone 8.1&nbsp;:
 
-![capture dʼécran sur Windows Phone 8.1](/images/2015/10/windowsphone-300x169.jpg)
-
-Le texte est blanc, mais lʼarrière-plan arc-en-ciel est appliqué
+![capture dʼécran sur Windows Phone 8.1](/images/2015/10/windowsphone-300x169.jpg)↔"Le texte est blanc, mais lʼarrière-plan arc-en-ciel est appliqué")
 
 Difficile de garantir quoi que ce soit dans ces conditions. _A priori_ ce problème nʼexiste pas dans les versions antérieures de Windows Phone, et il faut noter que la version bureau dʼIE11 nʼapplique pas lʼarrière-plan&nbsp;!
 
@@ -96,3 +92,4 @@ Si vous voulez tester par vous-mêmes ou compléter mes propos, nʼhésitez pas 
 Et pour ceux qui rigolent dans le fond, sachez que [Windows Phone représente 4% de parts de marché des systèmes dʼexploitation sur mobile en France, entre juillet et septembre 2015 (en anglais)](http://gs.statcounter.com/#mobile_os-FR-monthly-201507-201509-bar). Ce nʼest pas négligeable, si tant est quʼon admette négliger une population.[^2]
 
 [^2]: Je mettrais dʼailleurs ma main a couper quʼen réalité ce chiffre est déjà sous-estimé, à en croire mes yeux de lynx qui officient dans le tramway, le bus ou le TER à Nantes
+

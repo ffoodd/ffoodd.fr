@@ -45,6 +45,8 @@ La base du fonctionnement que je propose est l’astuce utilisée par [Nicolas H
 
 [^1]: Il explique tout ça très bien dans la documentation de ses divers composants.
 
+
+
 J’aime beaucoup cette technique, dont le seul inconvénient —&nbsp;à mon avis&nbsp;— est d’animer `max-height`, ce qui nous oblige à utiliser un [chiffre magique](https://www.ffoodd.fr/decouvrez-le-calcul-magique/) pour une hauteur maximum inatteignable.
 
 ### L’état de base
@@ -118,3 +120,4 @@ Si vous êtes curieux de voir ce que ça donne ou de jouer avec, j’ai monté u
 Pour jouer avec le JS désactivé, vous devrez [consulter la vue complète](http://codepen.io/ffoodd/full/apGqpQ/).[^2]
 
 [^2]: CodePen affiche un bien joli message si vous désactivé JavaScript.
+

@@ -33,6 +33,8 @@ L’interface est extrêmement simple : le contenu et un bloc déplaçable pour 
 
 [^1]: Certaines fonderies proposent des typographies OpenType : Typecast vous permet d’utiliser les options telles que les ligatures, visibles par exemples sur la Bello-Pro à l’oeuvre sur ce site.
 
+
+
 Un format d’article standard est également fourni pour vous lancer dans le choix des typographies, mais vous pouvez bien entendu modifier ce format.
 
 ## Un résultat utile et pratique
@@ -43,13 +45,13 @@ L’intérêt principal de cette application repose sur les diverses façons de 
 * exportez le HTML/CSS afin de le travailler en local ou plus simplement le copier/coller dans votre prototype.[^2]
 
 [^2]: Attention cependant : je trouve que le code généré n’est pas du meilleur effet. Question de goût ?
+
+
 * exportez la charte graphique de votre résultat en PNG : liste des typographies et graisses, couleurs, styles principaux…
 
 Pour vous donner un aperçu du résultat, voici une portion de la charte obtenue lors de mon casting pour ffoodd :  
 
-![Exemple de charte générée par Typecast](/images/2013/10/typecast.jpg)
-
-Exemple de charte générée par Typecast
+![Exemple de charte générée par Typecast](/images/2013/10/typecast.jpg "Exemple de charte générée par Typecast")
 
 ## L’outil idéal ?
 
@@ -58,5 +60,7 @@ Vous l’aurez compris, j’ai été réellement convaincu — et satisfait — 
 Bien que l’outil soit génial, je n’ai pas pris d’abonnement car c’était un one-shot pour la refonte de ffoodd. À titre personnel ce n’est pas intéressant car je ne m’en servirais pas; à titre professionnel, très peu de clients acceptent d’acheter une typographie et je dois très souvent jouer avec des typographies websafe — ce qui fait perdre tout son intérêt à Typecast.[^3]
 
 [^3]: Exception : les Google Webfonts, gratuites et accessibles dans Typecast. Si vous avez l’habitude de vous en servir, la licence Typecast peut vous intéresser.
+
+
 
 **Cela étant dit, je recommande chaudement cet outil, qui, du point de vue du designer, est réellement riche et permet de se focaliser sur l’essentiel avant de se lancer dans la production d’une maquette complète.**

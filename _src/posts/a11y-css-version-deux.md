@@ -61,6 +61,8 @@ Oui, vous avez bien lu&nbsp;:désormais a11y.css est multilingue en demeurant é
 
 [^1]: Sans rire, le mec est un génie alors achetez son livre et lisez son blog.
 
+
+
 ## Documentation & test
 
 Vous vous en doutez, le projet est devenu relativement complexe. Les solutions apportées par les différents contributeurs on tellement enrichi ce projet que même moi, je ne m’y retrouvais plus.
@@ -70,6 +72,8 @@ J’avais déjà mentionné lors de [mon atelier au WP Tech](https://www.ffoodd.
 * le **contenu des tests**&nbsp;: pourquoi ces critères, comment ont-ils été défini, quel est leur intérêt.[^2]
 
 [^2]: Je ne l’ai pas encore dit mais un des objectifs du projet est clairement devenu l’apprentissage et l’accès aux savoirs. Asséner un message sans l’expliquer me parait inutile, tout comme appliquer religieusement le contenu du message n’est pas pertinent.
+
+
 * la **structure du projet Sass**, ou pour parler le technicien&nbsp;: l’API.
 
 Premier chantier&nbsp;: trouver les outils adaptés&nbsp;!

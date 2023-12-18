@@ -22,6 +22,8 @@ Pas de miracle, lʼajout de test dans Modernizr est [bien documenté](https://mo
 
 [^1]: Ceci est une invitation, toutes les aimables personnes qui apporteront leur aide auront droit à ma gratitude éternelle et plein de trucs dans ce goût-là.
 
+
+
 ```javascript
 
 Modernizr.addTest("highcontrast", function() {

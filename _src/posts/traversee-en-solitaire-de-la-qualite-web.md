@@ -16,6 +16,8 @@ Très souvent sur le web — et au travail, je croise ce type de propos tenus pa
 
 [^1]: Celle-ci, c’est ma préférée !
 
+
+
 Mais même cerné par cet état d’esprit, je me sens concerné et **je tends toujours plus vers la qualité et l’accessibilité** — seul. J’ai conscience de mon immaturité dans le domaine, mais sans faire les premiers pas et me faire remonter les bretelles de temps en temps, **comment apprendrai-je** ?
 
 _Pré-requis : Cet article étant légèrement impulsif, je tiens à préciser qu’à mon sens l’accessibilité fait partie intégrante de la qualité web — pour limiter les confusions dans mon propos._
@@ -25,6 +27,8 @@ _Pré-requis : Cet article étant légèrement impulsif, je tiens à préciser q
 Je ne pense pas forcer le trait, tant les remarques précédemment listées sont légions sur les forums comme [Alsacréations](http://www.alsacreations.com). Nicolas Hoffmann a lui aussi rédigé [sa petite liste d’âneries](http://www.nicolas-hoffmann.net/source/1612-Heureusement-qu-ils-existent.html).&nbsp;De nombreux professionnels reconnus ont réagi à ce sujet il y a un peu moins d’un an, alors que [QuentinC relativisait la joie de fêter les 10 ans du forum Alsacréations](http://forum.alsacreations.com/topic-9-66981-1.html#p451783).[^2]
 
 [^2]: Ce qui m’évoque la capacité des gens à se réjouir de l’augmentation des dons aux Restos du Cœur chaque année — oubliant trop facilement que c’est un symbole négatif du besoin croissant et urgent. On se réjouira le jour ou on pourra se passer des Restos du Cœur. Et puisque j’en suis là : allez faire un don sur le site dédiés&nbsp;:  dons.restosducoeur.org . Merci à vous !
+
+
 
 * [L’accessibilité, peut-on s’en foutre parce que ça coûte&nbsp;?](http://accessiblog.fr/2013/05/laccessibilite-peut-on-sen-foutre-parce-que-ca-coute/)&nbsp;—&nbsp;Olivier Nourry
 * [L’accessibilité, on s’en fout de plus en plus ?](http://www.vismaviedesourde.fr/laccessibilite-on-sen-fout-de-plus-en-plus/)&nbsp;—&nbsp;Sophie Drouvroy
@@ -51,9 +55,13 @@ Des pratiques extrêmement simples peuvent considérablement améliorer la quali
 6.  **Partagez** vos ressources, mettez-les en commun.[^3]
 
 [^3]: GitHub est magique : mon a11y.css a beaucoup évolué grâce aux participations de Guillaume Demesy, Xavier Zalawa et Luc Poupard.
+
+
 7.  **Demandez conseil** à des gens compétents&nbsp;: vous allez être surpris par la bienveillance et la disponibilité de la plupart d’entre eux.[^4]
 
 [^4]: Petite pensée et gros remerciements pour Johan Ramon, Monique Brunel, Victor Brito, Willy Bahuaud, Julio Potier, Kitty Giraudel — et j’en passe de nombreux.
+
+
 8.  Apprenez à échanger et instruire de façon constructive et positive : « [Les petits ruisseaux font les grandes rivières](http://w3qualite.net/transversalite/les-petits-ruisseaux-font-les-grandes-rivieres "Article sur W3Qualité") » — [Luc Poupard](http://kloh.ch).
 
 Peut-être pourrais-je trouver d’autres façons d’encore améliorer mon travail&nbsp;—&nbsp;et je suis tout ouï si vous voulez bien m’en suggérer. Mais celles que j’applique actuellement ne sont qu’une question de discipline, et sont donc à la portée de tout un chacun.
@@ -69,6 +77,8 @@ Bien sûr que non&nbsp;: ça va de soi.
 **Quand un client paie son site web, il va de soi qu’il doit être de qualité**. Il paie des professionnels, tout de même.[^5]
 
 [^5]: Au lieu de faire travailler le cousin de son neveu après les cours.
+
+
 
 > — Vous voulez que votre site soit accessible ?  
 > — C’est quoi, accessible ?  

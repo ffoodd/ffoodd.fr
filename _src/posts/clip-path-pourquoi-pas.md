@@ -10,6 +10,8 @@ Mais lorsque [Kitty Giraudel](https://twitter.com/KittyGiraudel "Sur Twitter") a
 
 [^1]: Papa, Maman : j’aime les casses-têtes.
 
+
+
 ## Les spécifications actuelles
 
 Ne connaissant que de très loin cette propriété, il a fallu me mettre à jour. `clip-path`, à l’instar de `clip`, sert à délimiter la zone d’affichage d’un contenu. Je m’oriente vers les spécifications pour compléter cet embryon de culture&nbsp;— et là, c’est le drame&nbsp;:
@@ -22,6 +24,8 @@ Ne connaissant que de très loin cette propriété, il a fallu me mettre à jour
 On peut d’ores et déjà noter une différence remarquable entre les états de ces deux spécifications&nbsp;: l’une est en brouillon, l’autre en recommandation. La spécification SVG est extrêmement aboutie et claire, les ressources ne manquent pas.[^2]
 
 [^2]: Un petit « cocorico » s’impose pour féliciter Jérémie Patonnier, qui a grandement contribué à la documentation sur le Mozilla Developper Network notamment.
+
+
 
 En revanche le module CSS est obscur. Il existe un lien étroit entre les deux spécifications, car le brouillon du module _CSS Masking_ s’appuie énormément sur la spécification SVG&nbsp;— et qu’en SVG il existe l’attribut `clip-path`. Ça génère des incompréhensions qui ne vont pas faciliter la prise en main de cette propriété.
 
@@ -49,6 +53,8 @@ Il faut sonder un peu les origines de ce module CSS pour en comprendre l’obscu
 
 [^3]: La propriété est dépréciée mais très bien supportée, et le W3C indique que les agents utilisateurs (navigateurs web) doivent la supporter malgré sa déprécation.
 
+
+
 Cette propriété n’a jamais réellement trouvé son public, car elle a deux inconvénients majeurs&nbsp;:
 
 1.  L’élément masqué doit être en position absolue;
@@ -58,9 +64,13 @@ Embêtant. Constatant les progrès possibles de cette fonctionnalité en CSS, c�
 
 [^4]: Je ne compte pas traiter du marronnier de « la guerre des navigateurs » ni du syndrome « Webkit only ».
 
+
+
 Là, j’ai vu poindre le problème&nbsp;: la spécification CSS en cours d’élaboration mélange joyeusement les clips issus de SVG et la proposition de Safari.[^5]
 
 [^5]: Fabriqué par Apple® en Californie.
+
+
 
 ## Des ressources dissonantes
 
@@ -74,6 +84,8 @@ Il est fort peu probable que personne avant moi ne s’y soit intéressé. Et en
 Comme vous vous en apercevrez en les lisant, le contenu est disparate. La compatibilité navigateur est abordée différemment.[^6]
 
 [^6]: La palme revient à HTML5Rocks qui détaille Chrome et Firefox, et oublie les autres.
+
+
 
 À l’instar de la spécification qui intègre les clips **et** les masques, ces ressources présentent les deux techniques. Dommage car deux articles distincts auraient été bien plus clairs !
 
@@ -114,6 +126,8 @@ Après avoir compulsé maladivement les spécifications, articles, tutoriaux et 
 Ainsi je tente de vous livrer un état des lieux aussi complet que possible.[^9]
 
 [^9]: Je tiens à préciser que je n’ai aucune expertise en la matière : ce ne sont la que les conclusions trouvées par un intégrateur lambda.
+
+
 
 * **Chrome 23, Safari 6.1 et Opéra 15** supportent `clip-path` sous toutes ses formes — incluant la définition de formes SVG basiques dans le CSS;
 * **Firefox 4** supporte `clip-path` si on référence un élément SVG `clipPath`&nbsp;— ce qui implique d’ajouter un fichier SVG&nbsp;— en revanche vous serez obligés de définir des positions en unités absolues comme le `px` pour positionner votre clip si vous souhaitez éviter les bugs, et c’est bien dommage;

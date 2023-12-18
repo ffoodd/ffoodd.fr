@@ -46,6 +46,8 @@ Et voilà.[^1]
 
 [^1]: Au fait, si dans le bout de code le .⅓ vous choque, sachez que ça fonctionne — Kitty Giraudel a même déterré une expérience de Mathias Bynens à ce propos : https://mothereff.in/css-escapes#0%E2%85%93 — et que ça me paraît un excellent nom de classe pour exprimer un tiers. Pas vous ?
 
+
+
 ### Compatibilité
 
 Et le top, c’est la compatibilité&nbsp;: **tout est au vert depuis IE&nbsp;9**. Voyez plutôt le tableau sur [Can I Use?](http://caniuse.com/#search=calc). Les seules tâches qui subsistent concernent des navigateurs pour téléphones, pour lesquels on peut raisonnablement supposer qu’un affichage d’un tiers de la largeur ne sera pas utile.

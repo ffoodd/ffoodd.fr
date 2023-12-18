@@ -10,6 +10,8 @@ Elle apporte son lot de nouveautés à travers les filtres Microsoft, dont le pl
 
 [^1]: Le 17 décembre, c’est la Saint Gaël. Coïncidence ? Je ne crois pas.
 
+
+
 ## Les nouveautés graphiques
 
 Parmi les nouveaux filtres Microsoft débarqués en 4.0, il est stupéfiant de voir à quel point ils ressemblent aux toutes dernières fonctionnalités spécifiées dans CSS et HTML&nbsp;:
@@ -27,6 +29,8 @@ Et si d’aventure ça vous gêne que ce fussent des filtres propriétaires Micr
 
 [^2]: Pour faire un parallèle avec l’histoire nord-américaine, l’époque succédant à la déclaration d’indépendance est le far-west, la ruée vers l’or, tout ça…
 
+
+
 ## Fonctionnalités hors-ligne
 
 Pas de blague. Internet Explorer 4 est la première version à évoquer la gestion de **fonctionnalités hors-ligne**. Nous sommes évidemment très loin des applications web progressives actuellement tendance —&nbsp;les fameuses PWA, _bingo buzzword_&nbsp;— mais déjà en 1997, Microsoft en parlait&nbsp;:
@@ -36,6 +40,8 @@ Pas de blague. Internet Explorer 4 est la première version à évoquer la gesti
 * un type de site appelé _active channel_ qui permettait de **synchroniser un site en ligne avec une version enregistrée localement**, hors ligne.[^3]
 
 [^3]: J’admets avoir du mal à comprendre cette technologie, je ne l’ai jamais connue…
+
+
 
 C’est rigolo comme les thèmes abordés dans les notes de version sont les mêmes en 1997 qu’en 2016, non&nbsp;?
 
@@ -72,10 +78,14 @@ Vous pensiez que le web de 1997 était révolu, et que tout ce que je viens de d
 
 [^4]: Un trollon est un bébé troll, c’est bien connu.
 
+
+
 * la propriété `filter` fait désormais partie de la spécification CSS, seules les valeurs Microsoft ne sont donc plus standards. Personnellement, ça me fait beaucoup rigoler&nbsp;;
 * à l’époque, il était possible d’écrire des scripts dans CSS. Oui oui, chez Microsoft on faisait du JS dans du CSS.[^5]
 
 [^5]: Nos fameux filtres, vous croyiez que ça fonctionnait comment ?
+
+
 
 Alors pour paraphraser le Doc, je dirais seulement&nbsp;:
 
@@ -91,6 +101,8 @@ Pour les survivants qui sont parvenus jusqu’au donjon, voici vos récompenses&
 * [une page implémentant les transitions interpages](https://www.nicolas-hoffmann.net/tacamaca/).[^6]
 
 [^6]: Un indice, il faut regarder le code source.
+
+
 
 Voilà. Comme **je me suis beaucoup amusé** à rassembler toutes ces informations et à écrire cet article, je tiens à remercier [les vieux croûtons du web](https://www.paris-web.fr/2015/conferences/la-veille-techno-pour-les-vieux-croutons.php "Conférence intitulée « La veille techno pour les vieux croûtons » présentée par Thibault Jouannic à Paris Web le vendredi 02 octobre 2015") qui ont éclairé ma lanterne lors de mes recherches. Ils se reconnaîtront, et si vous les cherchez vous trouverez la liste de leurs _nicknames_ connectés au salon `##openweb` sur IRC.
 

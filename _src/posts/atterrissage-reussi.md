@@ -14,6 +14,8 @@ Un seul constat : mon site était devenu obsolète : en deux ans, j’ai progres
 
 [^1]: À ce sujet : j’ai enfin abandonné le support d’IE7, et ce afin d’utiliser le plein potentiel des mises en page tabulaires en CSS 2.1.
 
+
+
 ## La roue existe déjà
 
 C’est un adage bien connu des professionnels du web. Je ne m’étendrais pas sur le processus de refonte graphique et technique – je trouve la série d’articles de [Marie Guillaumet](http://marieguillaumet.com/)&nbsp;sur ce sujet absolument remarquables, et je vous invite à les lire.

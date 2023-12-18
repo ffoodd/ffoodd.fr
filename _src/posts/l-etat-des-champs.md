@@ -50,6 +50,8 @@ Et bonne nouvelle, [`:placeholder-shown` est décemment supporté](https://caniu
 
 [^1]: Amusez-vous à commenter le second sélecteur pour voir le comportement ordinaire.
 
+
+
 ### Remarques post-publication
 
 * **Note**&nbsp;: Merci à [Vincent](https://vincent-valentin.name/) qui me fait réfléchir, [dans une discussion sur Twitter](https://twitter.com/htmlvv/status/943832913937928192).
@@ -75,5 +77,7 @@ Je ne pense pas que ce soit une bonne idée, je tiens à le préciser. Cette com
 Après de petites recherches sur les internets, j’ai trouvé plusieurs références à cette combinaison de sélecteurs antérieures à cet article, toutes remontant finalement à [un article sur la validation des formulaires en CSS](https://css-tricks.com/form-validation-ux-html-css/) rédigé par [Chris Coyier](https://twitter.com/chriscoyier) en 2016.[^2]
 
 [^2]: Pour la question du support et de la tolérance à l’erreur, Chris Coyier préfère évoquer @supports plutôt que d’accumuler les sélecteurs. Ça ne me paraît pas nécessaire dans le cas présent, mais à réfléchir !
+
+
 
 Un véritable _CSS trick_&nbsp;!
