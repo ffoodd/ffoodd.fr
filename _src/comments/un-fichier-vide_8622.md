@@ -1,0 +1,13 @@
+---
+date: "2016-04-12T09:43:36"
+author_name: "Nico"
+author_url: "http://www.nicolas-hoffmann.net/"
+author_avatar: "https://secure.gravatar.com/avatar/03363d4c017e8d11320687f2efa722a0?s=48&d=mm&r=g"
+---
+\> Je pense qu’une base de travail, de quelque sorte que ce soit (il n’y a pas que les frameworks dans la vie !), devrait être aussi unique que la personne ou l’équipe qui la conçoit.
+
+Surtout le contexte dans laquelle elle est faite. Bootstrap est une solution tout-en-un, et je dirai même : prévue pour des gens qui n’ont pas le temps ou la connaissance, pour poser rapidement des choses. C’est un non-sens d’imposer ça à des intés avancés (enfin, àmha).
+
+Ceci dit, en mode poil à gratter => je regardais certaines intés d’autres intégrateurs talentueux, je remarque que sur les sites actuels, ce sont à peu de choses près TOUJOURS les mêmes patterns qui reviennent : 2/3 colonnes qui se superposent en tablette/mobile, etc.
+
+Et grosso merdo, ce sont les mêmes classes atomiques qui reviennent : les margin: 1em, etc. 🙂

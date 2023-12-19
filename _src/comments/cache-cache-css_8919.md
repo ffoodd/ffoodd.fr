@@ -1,0 +1,18 @@
+---
+date: "2016-10-13T14:00:50"
+author_name: "Nico"
+author_url: "https://www.nicolas-hoffmann.net/"
+author_avatar: "https://secure.gravatar.com/avatar/03363d4c017e8d11320687f2efa722a0?s=48&d=mm&r=g"
+---
+J’ai eu un problème cocasse avec ce genre de classe dans un cas bien précis, je tente de l’expliquer clairement :
+
+– imagine avoir une loooooongue liste d’éléments avec des checkboxes masquées ainsi (pour des checkboxes personnalisées graphiquement mais qui restent accessibles)  
+– imagine ensuite que ces looooongues listes soient prises dans des hide/show (collapsible regions)
+
+Rien d’extraordinaire à priori, mais sur certains navigateurs (Safari en tête), ça donnait un effet curieux. Quand tu cochais certaines de ces checkboxes, le navigateur scrollait aléatoirement dans la page. Sans raison, en mode WTF complet.
+
+Voici l’explication : en fait, comme elles sont positionnées en absolu (et donc sorties du flux), et que le script de hide/show passe après, les checkboxes cachées ainsi se positionnaient dans la page (avec les hide/show ouverts) et restaient à leur place (et ce alors que le hide-show va repositionner des contenus).
+
+Ce qui revient peu ou prou à ce qu’elles soient en bas de page ou positionnées n’importe comment. Du coup, quand tu en coches une, le navigateur met le focus sur la checkbox et ça donne ce WTF bizarre.
+
+Donc, dans la plupart des cas, ça roule, mais gare au position: absolute qui fait des étrangetés parfois 🙂

@@ -1,0 +1,14 @@
+---
+date: "2016-06-24T17:09:11"
+author_name: "Nico"
+author_url: "http://www.nicolas-hoffmann.net/"
+author_avatar: "https://secure.gravatar.com/avatar/03363d4c017e8d11320687f2efa722a0?s=48&d=mm&r=g"
+---
+\> vous permettez à vos CSS de falsifier visuellement la hiérarchisation de vos contenus. Ceci nʼest, toujours à mon avis, pas souhaitable.  
+\> Lʼaspect graphique devrait renforcer la structure de lʼinformation et la hiérarchisation des contenus, pas la gommer ni la falsifier.
+
+Sur le principe, 100% d’accord. En pratique, la réalité fait qu’il y a toujours des entorses à ce principe, même si je reconnais que ça devient de plus en plus rare (j’ai déjà dû faire des sites délirants où la structure hx est complètement décorrélée des classes hx que j’y appliquais…). Heureusement que ça disparait petit à petit (enfin, de mon point de vue limité).
+
+Rigolo d’ailleurs, quand on sait que l’attribut class était à l’origine pensé pour ajouter du sens (l’ancêtre des micro-datas), je crois que c’est Bert Bos qui avait expliqué ça à Sud Web 2012.
+
+Tu devrais lire [http://www.la-grange.net/2013/07/24/html](http://www.la-grange.net/2013/07/24/html) de Karl, très intéressant.

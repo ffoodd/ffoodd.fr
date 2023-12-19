@@ -1,0 +1,7 @@
+---
+date: "2016-04-01T12:10:40"
+author_name: "Gaël Poupard"
+author_url: ""
+author_avatar: "https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=48&d=mm&r=g"
+---
+En réalité, l’usage de cette méthode est à mêler aux autres méthodes — comme le font la plupart des librairies CSS actuelles. Les articles et initiatives que je cite ici sont des extrêmes, et ne sont pertinents que pour des sites mastodontes tels que Yahoo 🙂

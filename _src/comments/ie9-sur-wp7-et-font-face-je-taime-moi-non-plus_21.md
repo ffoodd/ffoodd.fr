@@ -1,0 +1,7 @@
+---
+date: "2013-07-26T08:13:09"
+author_name: "Gael"
+author_url: ""
+author_avatar: "https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=48&d=mm&r=g"
+---
+Non en effet : WP7 ne permet pas de lier une typographie externe – c’est à dire de télécharger les fichiers. La seule solution envisageable est un fallback, mais je vais essayer de détailler ça dans l’article !

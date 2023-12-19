@@ -1,0 +1,9 @@
+---
+date: "2013-10-03T08:48:25"
+author_name: "Luc"
+author_url: "http://www.kloh.ch"
+author_avatar: "https://secure.gravatar.com/avatar/597de7db40f20c3c0d8afba20cee2292?s=48&d=mm&r=g"
+---
+Déjà dis mais c’est très réussi. Texture, relief, couleur… il est plaisant à utiliser même s’il reste toujours des petits réglages. 🙂
+
+Ça me donne envie de me remettre sur le mien (tellement à faire là aussi :p )

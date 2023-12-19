@@ -1,0 +1,11 @@
+---
+date: "2014-01-02T16:45:01"
+author_name: "Nico"
+author_url: "http://www.nicolas-hoffmann.net/"
+author_avatar: "https://secure.gravatar.com/avatar/03363d4c017e8d11320687f2efa722a0?s=48&d=mm&r=g"
+---
+Arf, intéressant point de vue. 🙂
+
+Pour ma part, j’y suis directement confronté, typiquement, quand quelqu’un présente un truc comme révolutionnaire, et en fait, ça fait 8 ans qu’on en a parlé sur Openweb ou ça fait 5 ans qu’on a essayé mais que c’était pas une bonne idée.
+
+Je sais plus où j’avais écrit : si on pouvait apprendre de nos erreurs, ça serait pas mal. 🙂

@@ -1,0 +1,8 @@
+---
+date: "2013-07-25T12:27:58"
+author_name: "Luc"
+author_url: "http://www.kloh.ch"
+author_avatar: "https://secure.gravatar.com/avatar/597de7db40f20c3c0d8afba20cee2292?s=48&d=mm&r=g"
+---
+Tu dis que « IE9 sur WP7 supporte @font-face mais ne chargera pas de fichiers typographiques externes ».  
+Mais ça veut dire qu’aucun fichier de font ne peut jamais être chargé tout court me trompé-je ? À moins qu’il existe une méthode de chargement inline des fonts mais j’ai jamais vu ça… B-}

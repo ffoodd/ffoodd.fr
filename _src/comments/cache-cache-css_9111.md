@@ -1,0 +1,14 @@
+---
+date: "2017-02-21T11:37:04"
+author_name: "tzi"
+author_url: "http://tzi.fr"
+author_avatar: "https://secure.gravatar.com/avatar/ce82bc828376d978362c1e905b8ea32c?s=48&d=mm&r=g"
+---
+Hello Gaël !
+
+Article super complet, merci pour le partage.
+
+Petit mot pour te dire que le lien vers le blog technique de Yahoo ne fonctionne plus. Vive la pérennité du web :’(
+
+Bises !  
+Thomas.

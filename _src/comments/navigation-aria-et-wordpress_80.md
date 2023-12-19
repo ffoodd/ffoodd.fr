@@ -1,0 +1,9 @@
+---
+date: "2013-10-14T08:44:44"
+author_name: "Luc"
+author_url: "http://www.kloh.ch"
+author_avatar: "https://secure.gravatar.com/avatar/597de7db40f20c3c0d8afba20cee2292?s=48&d=mm&r=g"
+---
+Pas d’astuce pour ton dernier point mais 2 petites remarques.  
+Au niveau code, je te suggère d’appliquer des préfixes à tes id pour les items de menu. C’est bête mais tu seras sûr d’éviter tout double id.  
+Sinon j’ai l’impression qu’il manque un truc dans ton premier paragraphe des évolutions à venir. Tu as oublié un bout de phrase je crois.
