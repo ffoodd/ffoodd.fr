@@ -57,8 +57,8 @@ Object.keys(posts).forEach((p, i) => {
 		{ format: post.format }
 	];
 
-	const description = typeof post.metadata._ffeeeedd__metabox__description === Object ?
-		Object.values(post.metadata._ffeeeedd__metabox__description)[0] : '';
+	const description = typeof post.metadata.Description === Object ?
+		Object.values(post.metadata.Description)[0] : '';
 	if (description !== '') {
 		frontMatter.push({
 			description: turndownService.turndown(description).replace(/\u00A0/g, '&nbsp;')

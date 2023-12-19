@@ -16,6 +16,7 @@ module.exports = function (eleventyConfig) {
 
 	// @todo Configuration markdown-it :
 	// @link https://www.alpower.com/tutorials/configuring-footnotes-with-eleventy/
+	// @link https://www.alpower.com/tutorials/adding-figures-with-captions-to-images-in-markdown-with-eleventy/
 	// @link https://github.com/valeriangalliat/markdown-it-anchor
 	// @todo RSS
 	// @link https://www.11ty.dev/docs/plugins/rss/

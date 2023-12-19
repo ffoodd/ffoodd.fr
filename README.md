@@ -6,19 +6,17 @@ On récupère les contenus depuis l’API Rest de WordPress, légèrement étend
 
 ### Articles
 
-1. [API Rest](https://www.ffoodd.fr/wp-json/wp/v2/posts?per_page=100).
-2. `cat _export/posts.json | jq 'map({date,modified,format,slug,title,content,excerpt,metadata,acf})' > _export/posts.min.json`.
-3. Conversion en Markdown : `npm run wp:migrate:posts`.
+1. [API Rest](https://www.ffoodd.fr/wp-json/wp/v2/posts?per_page=100&_fields=date,modified,format,slug,title,content,excerpt,metadata,acf).
+2. Conversion en Markdown : `npm run wp:migrate:posts`.
 
 
 ### Pages
 
-1. [API Rest](https://www.ffoodd.fr/wp-json/wp/v2/pages).
-2. `cat _export/pages.json | jq 'map({slug,title,content,excerpt})' > _export/pages.min.json`.
-3. Conversion en Markdown : `npm run wp:migrate:pages`.
+1. [API Rest](https://www.ffoodd.fr/wp-json/wp/v2/pages?_fields=slug,title,content,excerpt,metadata,acf).
+2. Conversion en Markdown : `npm run wp:migrate:pages`.
 
 ### Commentaires
 
-1. [API Rest](https://www.ffoodd.fr/wp-json/wp/v2/comments/).
-2. `cat _export/comments.json | jq 'map({post,author_name,author_url,date,content,link,author_avatar_urls})' > _export/comments.min.json`.
+1. API Rest, [page 1](https://www.ffoodd.fr/wp-json/wp/v2/comments?per_page=100&_fields=author_name,author_url,date,content,link,author_avatar_urls) et [page 2](https://www.ffoodd.fr/wp-json/wp/v2/comments?per_page=100&page=2&_fields=author_name,author_url,date,content,link,author_avatar_urls).
+2. Fusionner les deux JSON (manuellement).
 3. Conversion en Markdown : `npm run wp:migrate:comments`.

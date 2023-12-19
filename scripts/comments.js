@@ -1,11 +1,10 @@
 const transformAndWriteToFile = require('json-to-frontmatter-markdown').default;
 const path = require('node:path');
 
-const pages = require(path.join(__dirname, '../_export/pages.json'));
+const comments = require(path.join(__dirname, '../_export/comments.json'));
 
-Object.keys(pages).forEach((p, i) => {
-	let page = pages[i];
-
+Object.keys(comments).forEach((p, i) => {
+	let comment = comments[i];
 
 	// Convert to Markdown
 	transformAndWriteToFile({
