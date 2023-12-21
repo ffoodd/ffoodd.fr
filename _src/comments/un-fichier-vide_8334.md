@@ -10,7 +10,7 @@ Nous faisons peu de sites par an, mais uniquement du 100% custom, avec un design
 
 J’ai une fois eu l’obligation d’utiliser Bootstrap, plus jamais. J’ai perdu un temps fou à apprendre toute la nomenclature, à être surpris de certains comportements en responsive… sans compter du poids du fichier.
 
-Et puis, je « souffre » d’une manie incontrôlable : il faut que toute ma nomenclature soit cohérente, je peux passer des heures (vraiment) à me poser la question si je dois utiliser telle ou telle bibliothèque juste parce que la nomenclature ne me plait pas…
+Et puis, je «&nbsp;souffre&nbsp;» d’une manie incontrôlable : il faut que toute ma nomenclature soit cohérente, je peux passer des heures (vraiment) à me poser la question si je dois utiliser telle ou telle bibliothèque juste parce que la nomenclature ne me plait pas…
 
 Du coup j’avais créé un mini framework perso : [https://github.com/maestrooo/maestrooo-sass](https://github.com/maestrooo/maestrooo-sass)
 

@@ -6,4 +6,4 @@ author_avatar: "https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2
 ---
 @Michaël : Ça a l’air bien, en effet 🙂
 
-Merci beaucoup pour le partage — et si tu t’y retrouves, c’est que le plus important est atteint !
+Merci beaucoup pour le partage —&nbsp;et si tu t’y retrouves, c’est que le plus important est atteint&nbsp;!

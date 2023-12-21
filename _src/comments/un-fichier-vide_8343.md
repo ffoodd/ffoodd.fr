@@ -10,7 +10,7 @@ C’était un peu (mais pas assez de temps pour expliquer toute mon expérience 
 C’est en effet, très personnel et je me concentre pour ma part sur les préprocesseurs et mes snippets, du coup, tout un classement en amont pour ne m’intéresser qu’aux zones (header, footer, etc… article…).
 
 Une sorte de pré-flux ? Juste déjà un gain de temps pour ne pas refaire la boucle, ne changer ensuite que les polices et avoir une belle palette de couleurs Sass prêtes à l’emploi.  
-Puis appliquer un premier niveau d’ « assemblage » pour ensuite aller vers le détail (ça doit être ma formation d’arts plastiques initiale :)…
+Puis appliquer un premier niveau d’ «&nbsp;assemblage&nbsp;» pour ensuite aller vers le détail (ça doit être ma formation d’arts plastiques initiale :)…
 
 Pour finir, j’utilise essentiellement (mais pas toujours bien sur 🙂 Underscores et Genesis.
 

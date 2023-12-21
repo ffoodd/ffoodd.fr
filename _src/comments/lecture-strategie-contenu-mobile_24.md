@@ -8,7 +8,7 @@ J’ai plutôt bien aimé les premiers tomes, notamment celui sur le responsive,
 
 Ceci dit, ça reste de bons livres.
 
-Quand aux « concepteurs », attention à ne pas trop les charger : certains sites sont demandés avec des contraintes proprement hallucinatoires. J’ai un client qui nous a retiré un mandat sous prétexte que son site n’était pas assez tape-à-l’oeil. Normal, on avait cherché qqch de simple et efficace avec  
+Quand aux «&nbsp;concepteurs&nbsp;», attention à ne pas trop les charger : certains sites sont demandés avec des contraintes proprement hallucinatoires. J’ai un client qui nous a retiré un mandat sous prétexte que son site n’était pas assez tape-à-l’oeil. Normal, on avait cherché qqch de simple et efficace avec  
 0 superflu.
 
 Quand j’ai vu le nouveau site, j’ai compris : toujours responsive, mais 2,6 Mo au chargement, y compris sur smartphones. Le pire, c’est qu’ils en étaient fiers et pensaient presque nous punir en montrant ça. J’ai été à la limite de l’étranglement… de rire. Avec mes petits 250 Ko tout compris, je ne pouvais pas lutter.

@@ -10,4 +10,4 @@ Ton article me rappelle beaucoup celui de Divya Manian : [http://nimbupani.com/u
 
 Même si la fonction `calc()` est plus précise, elle n’empêche pas les problèmes dans IE / Edge concernant les arrondis… ex. : [http://s.codepen.io/7studio/debug/BWbBwM/vWkRwnPZZOXM](http://s.codepen.io/7studio/debug/BWbBwM/vWkRwnPZZOXM)
 
-Je n’ai pas de raison valable mais j’utilise souvent les valeurs décimales arbitraires (désolé) mais avec stylelint et sa règle « number-max-precision » comme garde-fou. Et lorsque j’utilise `calc()`, postcss-calc va remplacer tous mes calculs dans les styles finaux ^^
+Je n’ai pas de raison valable mais j’utilise souvent les valeurs décimales arbitraires (désolé) mais avec stylelint et sa règle «&nbsp;number-max-precision&nbsp;» comme garde-fou. Et lorsque j’utilise `calc()`, postcss-calc va remplacer tous mes calculs dans les styles finaux ^^

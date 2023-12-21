@@ -16,7 +16,7 @@ Object.keys(comments).forEach((p, i) => {
 		.split('#');
 	let slug = commentSlug[0].replace('/', '');
 	let hash = commentSlug[1].replace('comment-', '');
-	let content = comment.content.rendered
+	let content = turndownService.turndown(comment.content.rendered)
 		// Handle non-breakable/thin spaces
 		.replace(/\u00A0/g, '&nbsp;')
 		.replace(/\u2009/g, '&thinsp;')
@@ -36,7 +36,7 @@ Object.keys(comments).forEach((p, i) => {
 				{ author_url: comment.author_url },
 				{ author_avatar: comment.author_avatar_urls['48'] }
 			],
-			body: turndownService.turndown(content)
+			body: content
 		},
 		path: './_src/comments',
 		fileName: `${slug}_${hash}.md`
