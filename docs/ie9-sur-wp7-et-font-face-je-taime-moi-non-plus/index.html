@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>IE9 sur WP7 et @font-face : je t’aime, moi non plus.</title>
+		<meta name="description" content="">
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+		<!-- @todo Ajouter le flux RSS
+			<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/">
+		-->
+	</head>
+	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
+		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+		<div class="row">
+			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation">
+				<ul class="menu aside p-reset m-reset ul-reset">
+					<!-- @todo Gérer l’état current -->
+					<li class="tk-bello-pro h1-like m-reset current-menu-item current_page_item">
+						<a href="/" aria-current="page">ffoodd</a>
+					</li>
+					<li class="h3-like m-reset"><a href="/plus/">À propos</a></li>
+					<!-- @todo gérer l’URL ? -->
+					<li class="h3-like m-reset"><a href="/category/journal/">Journal</a></li>
+					<li class="h3-like m-reset"><a href="/travaux/">Parcours</a></li>
+				</ul>
+			</nav><!-- / #nav -->
+
+			<main class="col w--site pl3 pb3 pr5" id="content" role="main" role="main" itemprop="mainContentOfPage">
+				<div class="logo print-hidden">
+					<img src="/images/2013/10/copy-cropped-ffoodd.png" alt="La vie en #ffoodd" id="logo" width="144" height="144">
+				</div>
+				
+					<p><strong>Cependant, je dois également avouer que certaines choses me surprendront toujours : c’est le cas du support de <code>@font-face</code> sur Windows Phone 7.</strong> </p>
+<h2>Un jour, j’ai fait un test</h2>
+<p>Raphaël Goetter a annoncé aujourd’hui la refonte de son site principal, <a href="http://goetter.fr" title="Le site de Raphaël Goetter (nouvelle fenêtre)">goetter.fr</a>, sur <a href="http://blog.goetter.fr/post/56263951583/faites-un-site-web-perso" title="Article sur la refonte de goetter.fr (nouvelle fenêtre)">son blog</a>. Étant donné que nous avions discuté quelques jours auparavant de ligatures <a href="https://twitter.com/ffoodd_fr/status/357798486227435520" title="Discussion au sujet des ligatures sur Twitter (nouvelle fenêtre)">sur Twitter</a>, j’ai lâché un commentaire au sujet de cette nouveauté sur le site de M. Goetter. Cependant sa réponse m’a légèrement surpris, puisque je ne m’attendais pas à ce qu’il doive se séparer de cet ornement sur mobile – pour d’excellentes raisons au demeurant.</p>
+<p>Pris de curiosité, j’ai alors décidé d’y jeter un œil sur mon smartphone : un Lumia 800 tournant sur Windows Phone 7.10, et Internet Explorer 9. Outre l’absence de la typographie <em>«Calendas Plus»</em>, j’ai constaté que la typographie générée sur <a href="http://icomoon.io/" title="Icomoon (nouvelle fenêtre)">Icomoon</a> pour gérer les icônes était également absente.</p>
+<p>Je remonte ce problème ni une ni deux à l’auteur, qui est dans l’impossibilité de tester lui-même. Je décide donc de le faire, en commençant par regarder mon propre site – je ne disposais pas encore de ce téléphone lorsque cette version est apparue : sans appel, <a href="https://www.ffoodd.fr/la-schizophrenie-semantique-dun-logo/">mon logo basé sur <code>@font-face</code></a> n’apparaît pas non plus.</p>
+<h2>Un doute m’habite</h2>
+<p>Dès lors je sens poindre l’éventualité de l’absence de support de @font-face.. Je fais donc le tour de plusieurs sites réalisés au sein de l’<a href="http://www.1-ter-net.com" title="Création de site internet à Nantes (nouvelle fenêtre)">agence 1-ter-net</a> et utilisant <code>@font-face</code>. La encore, aucun doute possible : <code>@font-face</code> ne fonctionne sur aucun d’entre eux.</p>
+<p>Au cas ou, j’emprunte le smartphone d’une collègue, lui aussi sur Windows Phone 7. C’est le drame.</p>
+<h2>Google m’a répondu !</h2>
+<p>Je vous laisse le soin de parcourir les résultats les plus intéressants :</p>
+<ul>
+<li><a href="http://blogs.msdn.com/b/thebeebs/archive/2011/12/14/font-face-isn-t-working-on-ie9-inside-of-windows-phone-7.aspx" title="Font-Face isn’t working on IE9 inside of Windows Phone 7 (nouvelle fenêtre)">Font-Face isn’t working on IE9 inside of Windows Phone 7</a></li>
+<li><a href="http://blogs.msdn.com/b/iemobile/archive/2010/11/10/supported-fonts-on-ie-for-windows-phone-7.aspx" title="Supported fonts on IE for Windows Phone 7 (nouvelle fenêtre)">Supported fonts on IE for Windows Phone 7</a></li>
+<li><a href="http://www.ubelly.com/2011/11/the-differences-between-ie9-on-the-desktop-and-ie9-on-wp7/" title="The differences between IE9 for desktop and IE9 on WP7 (nouvelle fenêtre)">The differences between IE9 for desktop and IE9 on WP7</a></li>
+</ul>
+<p>Sans équivoque : <strong>IE9 sur WP7 supporte <code>@font-face</code> mais ne chargera pas de fichiers typographiques externes.</strong> Ça explique également le <a href="https://github.com/Modernizr/Modernizr/issues/538" title="Faut-positif de Modernizr (nouvelle fenêtre)">faux-positif de Modernizr</a> concernant la détection de cette fonctionnalité.</p>
+<p>Vous voilà prévenus : <strong>définir un fallback est un minimum</strong> pour se prémunir contre ce problème; cependant le cas des icon-fonts est plus ennuyeux puisqu’on s’appuie souvent sur des caractères unicodes indisponibles dans la plupart des typographies, et un remplacement d’images conditionnel semble compliqué…</p>
+<p>Si quelqu’un connait un moyen de cibler uniquement IE9 sur Windows Phone 7, je suis preneur ! De plus, je n’ai aucun moyen de tester IE sur Windows Phone 8 pour le moment, je ne saurais donc préciser si ce problème existe toujours dans les versions les plus récentes.</p>
+<p><strong>Edit :</strong> La nuit portant conseil, l’astuce dans le cas d’une icon-font semble finalement «simple». Il s’agira de les baser sur des caractères unicodes ayant un intérêt ( par exemple, ☎ ). Cependant, cette astuce n’est possible que lorsqu’on a le choix des glyphes utilisés comme support – ce qui, je crois, est le cas dans IcoMoon – et de disposer d’un caractère unicode signifiant.</p>
+
+				
+			</main>
+
+			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
+				<div class="aside pl2 pt2">
+					<h3 class="tk-bello-pro h2-like m-reset">À lire ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://openweb.eu.org/articles/du-consommateur-au-producteur">sur Openweb</a>
+							</li>
+							<li>
+								<a href="https://www.alsacreations.com/livres/lire/1503-webgrids-structure-et-typographie-de-la-page-web.html">sur Alsacréations</a>
+							</li>
+						</ul>
+					</div>
+					<h3 class="tk-bello-pro h2-like m-reset pt1">À regarder ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php">Paris Web 2018</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</aside>
+
+			<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
+				<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__github" href="https://github.com/ffoodd" itemprop="url" title="Gaël Poupard sur GitHub">
+							<span itemprop="name">GitHub</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__dribble" href="https://dribbble.com/ffoodd" itemprop="url" title="Gaël Poupard sur Dribbble">
+							<span itemprop="name">Dribbble</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__linkedin" href="https://www.linkedin.com/pub/ga%C3%ABl-poupard/30/17b/401" itemprop="url" title="Gaël Poupard sur LinkedIn">
+							<span itemprop="name">LinkedIn</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__behance" href="https://www.behance.net/ffoodd" itemprop="url" title="Gaël Poupard sur Behance">
+							<span itemprop="name">Behance</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/" itemprop="url" title="La vie en #ffoodd | Flux RSS">
+							<span itemprop="name">RSS</span>
+						</a>
+					</li>
+				</ul>
+
+				<small>
+					&copy; 2018 La vie en #ffoodd &mdash; Design et intégration par <span itemprop="name">Gaël Poupard</span> &mdash; <a href="/mentions-legales/">Mentions légales</a>
+					<br />
+					Sauf mention contraire, l’ensemble du contenu est sous <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/fr/">Licence <abbr lang="en" title="Creative Commons">CC</abbr> <abbr lang="en" title="Attribution">BY</abbr>-<abbr lang="en" title="Non Commercial">NC</abbr>-<abbr lang="en" title="Share Alike">SA</abbr></a>.
+				</small>
+
+				<meta itemprop="jobTitle" content="Webdesigner et intégrateur web">
+				<meta itemprop="worksFor" content="onepoint">
+			</footer><!-- / contentinfo -->
+		</div>
+	</body>
+</html>

@@ -1,4 +1,5 @@
 ---
+layout: "base.njk"
 title: "La stratégie de contenu en pratique"
 date: "2013-10-22T12:30:49"
 modified: "2013-10-23T13:29:32"

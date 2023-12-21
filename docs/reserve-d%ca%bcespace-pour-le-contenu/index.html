@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Réserve d’espace pour le contenu</title>
+		<meta name="description" content="">
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+		<!-- @todo Ajouter le flux RSS
+			<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/">
+		-->
+	</head>
+	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
+		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+		<div class="row">
+			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation">
+				<ul class="menu aside p-reset m-reset ul-reset">
+					<!-- @todo Gérer l’état current -->
+					<li class="tk-bello-pro h1-like m-reset current-menu-item current_page_item">
+						<a href="/" aria-current="page">ffoodd</a>
+					</li>
+					<li class="h3-like m-reset"><a href="/plus/">À propos</a></li>
+					<!-- @todo gérer l’URL ? -->
+					<li class="h3-like m-reset"><a href="/category/journal/">Journal</a></li>
+					<li class="h3-like m-reset"><a href="/travaux/">Parcours</a></li>
+				</ul>
+			</nav><!-- / #nav -->
+
+			<main class="col w--site pl3 pb3 pr5" id="content" role="main" role="main" itemprop="mainContentOfPage">
+				<div class="logo print-hidden">
+					<img src="/images/2013/10/copy-cropped-ffoodd.png" alt="La vie en #ffoodd" id="logo" width="144" height="144">
+				</div>
+				
+					<p>C’est ce quʼutilisent notamment Facebook et Medium, dont le contenu respecte un gabarit constant. En terme dʼinterface, ça me semble <strong>vraiment plus agréable</strong> que le classique <em>ouroboros</em>.</p>
+<p>Et figurez-vous que pour le moment, tous <strong>les retours sont extrêmement positifs</strong>. En session de test utilisateurs, la plupart des testeurs lʼont remarqué et ont tenu à le signaler comme un élément « très agréable ». Moi qui pensait mʼamuser à suivre un effet de mode à la mords-moi-le-nœud et être passé du côté obscur de la Force, me voilà confondu. Cet effet semble conférer une réelle valeur ajoutée à <strong>lʼexpérience utilisateur</strong>, alors jʼaie envie de vous montrer ce quʼil y a sous le capot afin de partager et dʼaméliorer encore tout ça.</p>
+<h2>Quelques recherches pour démarrer</h2>
+<p>Bon, bizarrement, je nʼai pas trouvé beaucoup de ressources pour faire ce truc. La plus visible est <a href="http://codepen.io/Mestika/pen/ByNYBa">une expérimentation sur codePen</a> qui est franchement sale. Une soupe de <code>div</code>, chacune positionnée en absolu et calée au pixel près. En revanche lʼarticle de lʼapprenti magicien est <strong>relativement</strong> intéressant : « <a href="http://cloudcannon.com/deconstructions/2014/11/15/facebook-content-placeholder-deconstruction.html"><em>Facebook content placeholder deconstruction</em></a> ». Très relativement, hein. Ça manque cruellement de référence donc si vous avez, elles mʼintéressent !</p>
+<p>En revanche il lie un autre article un peu plus intéressant qui aborde le sujet de lʼexpérience utilisateur : « <a href="http://usabilitypost.com/2009/01/23/making-wait-times-feel-shorter/"><em>Making Wait Times Feel Shorter</em></a> » de Dmitry Fadeyev. Jʼen retiens surtout la dernière phrase :</p>
+<blockquote>
+<p>This isn’t just simple courtesy, watching the progress bar move makes time fly faster.</p>
+</blockquote>
+<p>Je traduis sommairement : ce nʼest pas une simple question de courtoisie, regarder lʼindicateur de progression fait passer le temps plus vite. Ma foi, ça a du sens. Dans cet article, lʼauteur préconise également de spécifier le délai dʼattente quand cʼest possible afin que lʼutilisateur <strong>sache à quoi sʼattendre</strong>. Et bien cet effet de faux contenu en attendant le contenu réel donne une indication plus précise du format de données que lʼon attend et nous permet dʼ<strong>anticiper la lecture du contenu</strong> et de <strong>nous projeter dans son parcours</strong>.</p>
+<h2>Faire plus simple</h2>
+<h3>Utiliser un élément graphique</h3>
+<p>Tout ça est bien joli, mais niveau code cʼest quand même assez moyen (à mon goût en tout cas). Par exemple nous parlons ici dʼun effet purement graphique — voire esthétique — alors pourquoi utiliser des éléments HTML pour le fabriquer ? Un élément graphique semble plus adapté, et ô comble de joie il est possible dʼutiliser des images en HTML depuis 1994.</p>
+<h3>Prévoir une alternative</h3>
+<p>Cʼest un <strong>visuel porteur dʼinformations</strong>, et à ce titre il doit disposer dʼune <strong>alternative textuelle pertinente</strong>. Je vous laisse (re)lire le critère associé du RGAA qui, comme pour témoigner de son importance, porte le doux nom de <a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-11-a-chaque-image-a-t-elle-une-alternative-textuelle-">critère 1.1</a>. Ce point nʼest <em>a priori</em> pas très complexe à mettre en œuvre.</p>
+<h3>Faire passer le temps</h3>
+<p>Il ne faudrait pas omettre que lʼobjectif est avant tout de faire patienter lʼutilisateur de la manière la plus agréable possible. Pour cela nous évitons le (très frustrant) petit disque qui tourne en rond, cʼest déjà bien. Mais <strong>si lʼexpérience peut sʼavérer agréable</strong>, ce serait encore mieux ! À cette unique fin, je vais suivre les exemples de Facebook et Medium qui ont mis en place un effet de balayage lumineux afin de cadencer le temps dʼattente.</p>
+<h2>Super ! Ça donne quoi ?</h2>
+<h3>Créer lʼimage dʼattente</h3>
+<p>Pour démarrer, on va choisir un contenu quʼon pourrait attendre. Jʼen ai choisi un assez connu et avec un gabarit familier et reconnaissable : la carte de profil sur Twitter.</p>
+<p><img src="/images/2015/12/profil-twitter-300x202.png" alt="Ma carte de profil sur Twitter" title="La carte de profil indique le nom, le pseudonyme et l’avatar Twitter, mais aussi les nombres de tweets, d’abonnements et d’abonnés."></p>
+<p>Cʼest donc la-dessus que va se baser la création du visuel dʼattente. Sur le principe, je me contente de créer un bloc en aplat gris par élément, afin de <strong>représenter sa masse visuelle</strong>.[^1]</p>
+<p>[^1]: Cʼest le même principe que le gris typographique en composition de page.</p>
+<p><img src="/images/2015/12/twitter-placeholder-300x201.png" alt="Gabarit de carte de profil twitter">↔&quot;Gabarit de carte de profil twitter représenté en masses colorées&quot;)</p>
+<p>Bon, jʼadmets également avoir exporté un SVG plutôt quʼune bête image bitmap. Pour tout vous dire ça nʼest pas nécessairement le meilleur choix, étant donné que pour une image aussi simple <strong>le SVG est plus lourd</strong> quʼun PNG bien optimisé et quʼ<strong>on perd nécessairement en support navigateur</strong>.</p>
+<h3>Implémenter une alternative accessible</h3>
+<p>Pour celui-ci aucun mérite, puisque lʼaccessibilité des SVG commence à être bien documentée. Je vous laisse farfouiller un peu les artères du web pour trouver votre bonheur — personnellement jʼai abouti à ceci :</p>
+<pre><code class="language-markup">
+&lt;svg viewBox=&quot;0 0 320 215&quot; width=&quot;320&quot; height=&quot;215&quot;
+   aria-labelledby=&quot;title desc&quot; role=&quot;img&quot;
+   xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt; 
+  &lt;title id=&quot;title&quot;&gt;Chargement en cours…&lt;/title&gt;
+  &lt;desc id=&quot;desc&quot;&gt;La carte de profil est en chemin !&lt;/desc&gt;
+  &lt;path role=&quot;presentation&quot; d=&quot;…&quot; /&gt;
+&lt;/svg&gt;
+</code></pre>
+<p>Je vous passe les détails sordides des multiples <code>&lt;path&gt;</code> dans le SVG, vous pourrez jouer avec dans la démo — et accessoirement, cʼest une partie que vous devrez personnaliser, donc… Mais normalement ce magnifique assortiment de <code>&lt;title&gt;</code> et <code>&lt;desc&gt;</code> liés au SVG <em>via</em> <code>aria-labelledby</code> fait lʼaffaire et rend le tout intelligible.</p>
+<h3>Implémenter une animation</h3>
+<h4>On est dans du SVG</h4>
+<p>À lʼaube du premier jour, jeune et fougueux que jʼétais, je me suis dit « Yay, dans du SVG, je vais enfin pouvoir jouer avec SMIL ». <em>Que nenni</em> !</p>
+<p>Deux (plutôt) bonnes raisons de sʼen dispenser :</p>
+<ol>
+<li><a href="http://caniuse.com/#search=SMIL">Le support est très moyen</a>, notamment absent des navigateurs Microsoft ;</li>
+<li>Chrome et Opéra lancent (depuis deux ou trois versions) une alerte dans la console lorsquʼon utilise SMIL, quʼils considèrent déprécié et dont ils vont abandonner le support un beau matin.</li>
+</ol>
+<p>Ça nʼest guère glorieux, même si <a href="http://designmodo.com/animate-svg-gradients/">un charmant tutoriel en anglais</a> me montrait quʼon pouvait facilement animer un dégradé en remplissage dʼun SVG. Dommage.</p>
+<h4>Mais on fait du CSS</h4>
+<p>Cʼest donc finalement vers les animations CSS que je dois me tourner. Cʼest moins rigolo puisque je connais déjà, mais au moins <a href="http://caniuse.com/#search=animation">le support est excellent</a>.</p>
+<p>En revanche <strong>impossible dʼanimer <em>via</em> CSS le remplissage dʼun SVG</strong>. Le SVG sera donc rempli en aplat, et il va falloir se débrouiller autrement pour lʼeffet de balayage. Voilà comment jʼai réssolu la chose :</p>
+<ul>
+<li>un dégradé linéaire allant du transparent au transparent — afin de profiter du merveilleux SVG derrière — en passant par une étape de blanc pour apporter la lumière en ce bas-monde ;</li>
+<li>une dimension dʼarrière-plan pour ajuster la mise en scène du dégradé ;</li>
+<li>et finalement, une animation dont la seule préoccupation est de déplacer lʼarrière-plan.</li>
+</ul>
+<p>Cʼest donc un poil plus complexe que de simplement remplir le SVG avec un dégradé qui sʼanime tout seul, mais bon ! En revanche il ne vous aura probablement pas échappé quʼil nous faut cette animation <strong>devant</strong> le SVG. Et pour cela un pseudo-élément serait fort agréable. Malheureusement <a href="https://github.com/ffoodd/a11y.css/blob/master/README-fr.md#cas-particuliers-et-probl%C3%A8mes-connus">SVG est un élément remplacé</a>, ce qui empêche de lui appliquer un pseudo-élément. Pour pouvoir implémenter lʼanimation, il nous faut donc un élément conteneur qui portera le pseudo-élément (ce même conteneur qui pourrait fort bien vous servir dans un contexte adaptatif ou simplement pour la mise en page).</p>
+<h2>La démonstration</h2>
+<p>En supposant que vous utilisez une division comme conteneur, voici les styles du pseudo-élément :</p>
+<pre><code class="language-css">
+div::after {
+  animation: placeholder 2s linear infinite;
+  background-image: 
+  linear-gradient( 
+  110deg, 
+  rgba( 255, 255, 255, 0) 10%, 
+  rgba( 255, 255, 255, .33) 30%, 
+  rgba( 255, 255, 255, 0) 60% 
+  );
+  background-size: 20em 13.4375em;
+  bottom: 0;
+  content: &quot;&quot;;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+}
+</code></pre>
+<p>Un détail peut vous surprendre : je nʼutilise pas le mot-clé <code>transparent</code> mais la notation <code>rgba( 255, 255, 255, 0 )</code>. Peut-être le savez-vous déjà mais le mot-clé qui semble définir la transparence est en réalité une notation raccourcie de <code>rgba( 0, 0, 0, 0 )</code>, <a href="http://www.w3.org/TR/css3-color/#transparent">comme le précise la spécification du module « Couleurs » de CSS3</a>. Ça nʼa lʼair de rien comme ça, mais ça a son importance si vous appliquez un dégradé — disons du blanc au transparent, par exemple — et que vous regardez le résultat sur Safari : il interpole le dégradé en tendant vers le noir (ce qui est relativement logique) et vous donne donc un intermédiaire immonde entre votre blanc nacré et votre transparence parfaite. Un gros pâté noir, quoi. <strong>Bref, cʼest moche</strong>. Utiliser le blanc avec une opacité nulle résout facilement ce travers.</p>
+<p>Ensuite pour animer le dégradé, cʼest plutôt simple puisque vous avez déjà vu lʼappel à lʼanimation <code>placeholder</code>, pour une durée de deux secondes et en boucle. Elle se contente de déplacer le fond dʼune distance équivalente à la largeur du bloc, afin de générer une véritable boucle visuelle.</p>
+<pre><code class="language-css">
+@keyframes placeholder {  
+  from { 
+  background-position: -10em 0; 
+  } to { 
+  background-position: 10em 0; 
+  }
+}
+</code></pre>
+<p><strong>Et voilà !</strong></p>
+<p>Si vous souhaitez jouer avec ou le reprendre, <a href="http://dabblet.com/gist/466b6a47db1b4ac14ecb">vous trouverez le tout sur Dabblet</a>. Rien de bien complexe, mais cʼest tellement simple et efficace quʼil serait dommage de sʼen priver 😇</p>
+
+				
+			</main>
+
+			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
+				<div class="aside pl2 pt2">
+					<h3 class="tk-bello-pro h2-like m-reset">À lire ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://openweb.eu.org/articles/du-consommateur-au-producteur">sur Openweb</a>
+							</li>
+							<li>
+								<a href="https://www.alsacreations.com/livres/lire/1503-webgrids-structure-et-typographie-de-la-page-web.html">sur Alsacréations</a>
+							</li>
+						</ul>
+					</div>
+					<h3 class="tk-bello-pro h2-like m-reset pt1">À regarder ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php">Paris Web 2018</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</aside>
+
+			<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
+				<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__github" href="https://github.com/ffoodd" itemprop="url" title="Gaël Poupard sur GitHub">
+							<span itemprop="name">GitHub</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__dribble" href="https://dribbble.com/ffoodd" itemprop="url" title="Gaël Poupard sur Dribbble">
+							<span itemprop="name">Dribbble</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__linkedin" href="https://www.linkedin.com/pub/ga%C3%ABl-poupard/30/17b/401" itemprop="url" title="Gaël Poupard sur LinkedIn">
+							<span itemprop="name">LinkedIn</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__behance" href="https://www.behance.net/ffoodd" itemprop="url" title="Gaël Poupard sur Behance">
+							<span itemprop="name">Behance</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/" itemprop="url" title="La vie en #ffoodd | Flux RSS">
+							<span itemprop="name">RSS</span>
+						</a>
+					</li>
+				</ul>
+
+				<small>
+					&copy; 2018 La vie en #ffoodd &mdash; Design et intégration par <span itemprop="name">Gaël Poupard</span> &mdash; <a href="/mentions-legales/">Mentions légales</a>
+					<br />
+					Sauf mention contraire, l’ensemble du contenu est sous <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/fr/">Licence <abbr lang="en" title="Creative Commons">CC</abbr> <abbr lang="en" title="Attribution">BY</abbr>-<abbr lang="en" title="Non Commercial">NC</abbr>-<abbr lang="en" title="Share Alike">SA</abbr></a>.
+				</small>
+
+				<meta itemprop="jobTitle" content="Webdesigner et intégrateur web">
+				<meta itemprop="worksFor" content="onepoint">
+			</footer><!-- / contentinfo -->
+		</div>
+	</body>
+</html>

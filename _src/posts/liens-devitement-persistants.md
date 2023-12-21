@@ -1,9 +1,10 @@
 ---
+layout: "base.njk"
 title: "Liens d’évitement persistants"
 date: "2013-10-16T15:56:40"
 modified: "2013-11-13T12:09:49"
 permalink: "liens-devitement-persistants/index.html"
-excerpt: "Paris Web a été pour moi l’occasion de rencontrer des professionnels aguerris et d’en apercevoir les expériences cumulées. Et une conférence m’a particulièrement appris : _«Accessibiliser avec subtilité»_ de [Johan Ramon](https://twitter.com/johan_ramon "Profil Twitter de Johan Ramon (nouvelle fenêtre)") de la [société Atalan](http://www.atalan.fr/ "LE site de la société Atalan (nouvelle fenêtre)"). [Lire la suite de «&nbsp;Liens d’évitement persistants&nbsp;» →](https://www.ffoodd.fr/liens-devitement-persistants/)"
+excerpt: "Paris Web a été pour moi l’occasion de rencontrer des professionnels aguerris et d’en apercevoir les expériences cumulées. Et une conférence m’a particulièrement appris : _«Accessibiliser avec subtilité»_ de [Johan Ramon](https://twitter.com/johan_ramon 'Profil Twitter de Johan Ramon (nouvelle fenêtre)') de la [société Atalan](http://www.atalan.fr/ 'LE site de la société Atalan (nouvelle fenêtre)'). [Lire la suite de «&nbsp;Liens d’évitement persistants&nbsp;» →](https://www.ffoodd.fr/liens-devitement-persistants/)"
 format: "standard"
 ---
 Parmi ces techniques, certaines m’étaient inconnues : une ignorance qui ne nuisait pas directement à l’accessibilité mais bel et bien au confort d’utilisation du site pour les personnes concernées. Voici donc deux techniques que j’ai mises en place suite à cette lecture passionnante.

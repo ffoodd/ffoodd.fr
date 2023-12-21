@@ -1,9 +1,10 @@
 ---
+layout: "base.njk"
 title: "La qualité web en solitaire"
 date: "2014-02-27T15:56:32"
 modified: "2021-03-05T17:12:11"
 permalink: "traversee-en-solitaire-de-la-qualite-web/index.html"
-excerpt: "La qualité web reste marginale dans l’industrie du web&nbsp;—&nbsp;malgré l’essor certain du sujet grâce à des événements tels que [Paris Web](http://www.paris-web.fr/) ou des initiatives comme [OpQuast](http://opquast.com/fr/). Des «&nbsp;experts&nbsp;» sortent du lot — [Élie Sloïm](http://openweb.eu.org/openwebgroup/bios/elie_sloim "Sa biographie sur OpenWeb") ou [Stéphane Deschamps](http://nota-bene.org/), pour ne citer qu’eux&nbsp;—&nbsp;mais le revers de la médaille est une dé-responsabilisation massive de tous les «&nbsp;non-experts&nbsp;». Mais vous savez-quoi ? **Ça ne m’empêche pas de faire de la qualité**. [Lire la suite de «&nbsp;La qualité web en solitaire&nbsp;» →](https://www.ffoodd.fr/traversee-en-solitaire-de-la-qualite-web/)"
+excerpt: "La qualité web reste marginale dans l’industrie du web&nbsp;—&nbsp;malgré l’essor certain du sujet grâce à des événements tels que [Paris Web](http://www.paris-web.fr/) ou des initiatives comme [OpQuast](http://opquast.com/fr/). Des «&nbsp;experts&nbsp;» sortent du lot — [Élie Sloïm](http://openweb.eu.org/openwebgroup/bios/elie_sloim 'Sa biographie sur OpenWeb') ou [Stéphane Deschamps](http://nota-bene.org/), pour ne citer qu’eux&nbsp;—&nbsp;mais le revers de la médaille est une dé-responsabilisation massive de tous les «&nbsp;non-experts&nbsp;». Mais vous savez-quoi ? **Ça ne m’empêche pas de faire de la qualité**. [Lire la suite de «&nbsp;La qualité web en solitaire&nbsp;» →](https://www.ffoodd.fr/traversee-en-solitaire-de-la-qualite-web/)"
 format: "standard"
 ---
 Très souvent sur le web — et au travail, je croise ce type de propos tenus par des professionnels du web :

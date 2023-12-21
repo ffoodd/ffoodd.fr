@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Sass : commencez par les deux « S »</title>
+		<meta name="description" content="">
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+		<!-- @todo Ajouter le flux RSS
+			<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/">
+		-->
+	</head>
+	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
+		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+		<div class="row">
+			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation">
+				<ul class="menu aside p-reset m-reset ul-reset">
+					<!-- @todo Gérer l’état current -->
+					<li class="tk-bello-pro h1-like m-reset current-menu-item current_page_item">
+						<a href="/" aria-current="page">ffoodd</a>
+					</li>
+					<li class="h3-like m-reset"><a href="/plus/">À propos</a></li>
+					<!-- @todo gérer l’URL ? -->
+					<li class="h3-like m-reset"><a href="/category/journal/">Journal</a></li>
+					<li class="h3-like m-reset"><a href="/travaux/">Parcours</a></li>
+				</ul>
+			</nav><!-- / #nav -->
+
+			<main class="col w--site pl3 pb3 pr5" id="content" role="main" role="main" itemprop="mainContentOfPage">
+				<div class="logo print-hidden">
+					<img src="/images/2013/10/copy-cropped-ffoodd.png" alt="La vie en #ffoodd" id="logo" width="144" height="144">
+				</div>
+				
+					<p>Malheureusement, vous aurez peut-être déjà fait ce constat : ce réflexe n’est que trop rarement encouragé. J’ai beau parcourir des dizaines d’articles, de tutoriaux, de <em>frameworks</em> CSS ou de Gist, trop peu font ce rappel : testez, relisez, améliorez, testez à nouveau et finalement améliorez encore. <strong>Ça devrait se passer comme ça.</strong> On peut argumenter qu’un bon intégrateur le ferait — mais c’est trop facile, non ?</p>
+<h2>Premier contact avec Sass</h2>
+<p>Après avoir lu énormément de ressources sur <a href="http://lesscss.org/" title="Site du pré-processeur Less (nouvelle fenêtre)">Less</a> puis Sass pendant longtemps, je ne m’étais toujours pas décidé à franchir le pas pour plusieurs raisons :</p>
+<ul>
+<li>le changement bien sûr : rien de plus naturel que la résistance au changement;</li>
+<li>la perspective d’une « naturalisation » des avancées intéressantes dans les évolutions prévues de CSS .[^1]</li>
+</ul>
+<p>[^1]: Les calculs simples sont déjà là grâce à calc(), les variables sont à l’état de brouillon au W3C, etc.</p>
+<ul>
+<li>l’intérêt limité — ou imitable —  de certaines fonctionnalités .[^2]</li>
+</ul>
+<p>[^2]: Les placeholders, par exemple, sont limités puisqu’on peut créer ses propres classes transportables et modulables.</p>
+<p>Dans l’ensemble, je pensais — et je pense toujours — que l’utilisation de Sass n’avait pas d’intérêt à mon échelle : petits projets, récupération de code, très peu de collaboration… J’y percevais plus de risques et d’inconvénients que d’avantages, et certaines de mes lectures le confirmaient.</p>
+<p>L’évolution de mon projet personnel ffeeeedd conjointe à la lecture de l’excellent <a href="http://www.css-maintenables.fr/" title="Le site du livre CSS maintenables (nouvelle fenêtre)">CSS maintenables</a> puis de <a href="https://www.ffoodd.fr/sass-compass-avance/" title="Sass &amp; Compass avancé">Sass &amp; Compass avancé</a> m’ont finalement motivé : bien qu’à l’aise avec mon <em>workflow</em>, je voulais l’améliorer et Sass m’a semblé être l’outil idéal.</p>
+<h2>Découvertes particulières</h2>
+<p>J’y suis allé pas à pas, dans l’ordre de la documentation. Des règles imbriquées aux fonctions, j’ai pris un temps considérable et me suis consciencieusement appliqué à découvrir le résultat de chacune des fonctionnalités .[^3]</p>
+<p>[^3]: Soit dit en passant, je préfère ne pas passer à Compass tout de suite, je pense devoir manier Sass correctement avant d’ajouter un autre crayon à ma palette.</p>
+<p>La définition de variables — et par extension, la structuration d’un projet — est un gain de clarté évident. La compilation automatique est un gain de temps remarquable, et la qualité est au rendez-vous. Les fonctions, mixins et autres boucles sont extrêmement intéressantes, mais on touche aussi aux limites de l’outil : <strong>il faut de très, très bonnes bases en CSS pour s’en servir de façon optimale</strong>.</p>
+<p>Étendre une classe est un piège parfait, probablement le plus efficient en tant que piège ; les nombreuses subtilités des fonctions et mixins peuvent également générer des erreurs très discrètement — et elles peuvent donc rester, pour peu que l’utilisateur ne soit pas consciencieux.</p>
+<p><strong>Je ne gâcherais pourtant pas mon plaisir : créer des mixins, fonctions et placeholders pour factoriser mes feuilles de styles « sources » est terriblement agréable 😀 .</strong></p>
+<h2>Une simplification, vraiment ?</h2>
+<p>Je suis encore en phase de découverte et pourtant me voilà sur ma faim : beaucoup de choses sont considérablement simplifiées, mais je garde l’impression que la complexité « d’avant » est simplement déportée vers les fonctionnalités dynamiques .[^4]</p>
+<p>[^4]: Compass me semble d’ailleurs être un écueil remarquable pour le débutant, qui ne comprendra pas en profondeur le fonctionnement et la portée des mixins et fonctions proposées.</p>
+<p>La distance « cognitive » entre les fonctions/mixins et leur contexte d’utilisation, ainsi que la séparation des feuilles de styles en fragments .[^5]</p>
+<p>[^5]: Des « partials » dans le vocabulaire Sass</p>
+<h2>Sass n’est qu’un outil</h2>
+<p>Vous connaissez le dicton :</p>
+<blockquote>
+<p>Il n’y a pas de mauvais outil, il n’y a que de mauvais ouvriers.</p>
+</blockquote>
+<p>Et bien elle se vérifie avec Sass. Ce qui ne me convainquait pas l’an dernier ne me convainc toujours pas : les articles vantant les mérites des pré-processeurs sont relativement évasifs, et l’élan massif vers l’adoption de Sass me fait penser au <a href="http://www.youtube.com/watch?v=I8Qu7_unkg4" title="Voir la vidéo sur Youtube (nouvelle fenêtre)">crime passionnel au pays des Toupoutous</a>.</p>
+<p>Oui, Sass est un outil formidable qui peut grandement faciliter et accélerer votre travail d’intégration ; oui, les possibilités semblent infinies ; oui, son utilisation est plutôt simple…</p>
+<p>Mais n’oublions que Sass reste un outil, et en tant que tel sa vocation est seulement de faciliter votre travail et pas d’en améliorer la qualité. <strong>Ce n’est pas le marteau qui fait en sorte que le clou rentre droit, c’est votre geste.</strong></p>
+
+				
+			</main>
+
+			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
+				<div class="aside pl2 pt2">
+					<h3 class="tk-bello-pro h2-like m-reset">À lire ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://openweb.eu.org/articles/du-consommateur-au-producteur">sur Openweb</a>
+							</li>
+							<li>
+								<a href="https://www.alsacreations.com/livres/lire/1503-webgrids-structure-et-typographie-de-la-page-web.html">sur Alsacréations</a>
+							</li>
+						</ul>
+					</div>
+					<h3 class="tk-bello-pro h2-like m-reset pt1">À regarder ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php">Paris Web 2018</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</aside>
+
+			<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
+				<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__github" href="https://github.com/ffoodd" itemprop="url" title="Gaël Poupard sur GitHub">
+							<span itemprop="name">GitHub</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__dribble" href="https://dribbble.com/ffoodd" itemprop="url" title="Gaël Poupard sur Dribbble">
+							<span itemprop="name">Dribbble</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__linkedin" href="https://www.linkedin.com/pub/ga%C3%ABl-poupard/30/17b/401" itemprop="url" title="Gaël Poupard sur LinkedIn">
+							<span itemprop="name">LinkedIn</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__behance" href="https://www.behance.net/ffoodd" itemprop="url" title="Gaël Poupard sur Behance">
+							<span itemprop="name">Behance</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/" itemprop="url" title="La vie en #ffoodd | Flux RSS">
+							<span itemprop="name">RSS</span>
+						</a>
+					</li>
+				</ul>
+
+				<small>
+					&copy; 2018 La vie en #ffoodd &mdash; Design et intégration par <span itemprop="name">Gaël Poupard</span> &mdash; <a href="/mentions-legales/">Mentions légales</a>
+					<br />
+					Sauf mention contraire, l’ensemble du contenu est sous <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/fr/">Licence <abbr lang="en" title="Creative Commons">CC</abbr> <abbr lang="en" title="Attribution">BY</abbr>-<abbr lang="en" title="Non Commercial">NC</abbr>-<abbr lang="en" title="Share Alike">SA</abbr></a>.
+				</small>
+
+				<meta itemprop="jobTitle" content="Webdesigner et intégrateur web">
+				<meta itemprop="worksFor" content="onepoint">
+			</footer><!-- / contentinfo -->
+		</div>
+	</body>
+</html>

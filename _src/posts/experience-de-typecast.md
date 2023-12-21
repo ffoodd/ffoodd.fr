@@ -1,4 +1,5 @@
 ---
+layout: "base.njk"
 title: "Expérience de Typecast"
 date: "2013-10-07T16:18:18"
 modified: "2013-11-13T12:02:30"

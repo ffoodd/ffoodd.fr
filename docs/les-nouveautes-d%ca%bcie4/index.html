@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Les nouveautés dʼIE4</title>
+		<meta name="description" content="">
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+		<!-- @todo Ajouter le flux RSS
+			<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/">
+		-->
+	</head>
+	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
+		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+		<div class="row">
+			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation">
+				<ul class="menu aside p-reset m-reset ul-reset">
+					<!-- @todo Gérer l’état current -->
+					<li class="tk-bello-pro h1-like m-reset current-menu-item current_page_item">
+						<a href="/" aria-current="page">ffoodd</a>
+					</li>
+					<li class="h3-like m-reset"><a href="/plus/">À propos</a></li>
+					<!-- @todo gérer l’URL ? -->
+					<li class="h3-like m-reset"><a href="/category/journal/">Journal</a></li>
+					<li class="h3-like m-reset"><a href="/travaux/">Parcours</a></li>
+				</ul>
+			</nav><!-- / #nav -->
+
+			<main class="col w--site pl3 pb3 pr5" id="content" role="main" role="main" itemprop="mainContentOfPage">
+				<div class="logo print-hidden">
+					<img src="/images/2013/10/copy-cropped-ffoodd.png" alt="La vie en #ffoodd" id="logo" width="144" height="144">
+				</div>
+				
+					<p>Elle apporte son lot de nouveautés à travers les filtres Microsoft, dont le plus connu concerne l’opacité. Pour rappel, la spécification finale de CSS1 ne voit le jour que le 17 décembre 1996.[^1]</p>
+<p>[^1]: Le 17 décembre, c’est la Saint Gaël. Coïncidence ? Je ne crois pas.</p>
+<h2>Les nouveautés graphiques</h2>
+<p>Parmi les nouveaux filtres Microsoft débarqués en 4.0, il est stupéfiant de voir à quel point ils ressemblent aux toutes dernières fonctionnalités spécifiées dans CSS et HTML :</p>
+<ul>
+<li>transformation ;</li>
+<li>filtres graphiques ;</li>
+<li>transition ;</li>
+<li>dégradés ;</li>
+<li>masques ;</li>
+<li>ombres…</li>
+</ul>
+<p>Oh, et <code>@font-face</code> est apparu dans IE4. Oui oui, en 1997. Vous vous souvenez de la révolution que c’est devenu en 2009, et le battage médiatique autour de CSS 3 ? Ils devaient bien se marrer chez Microsoft, quand ils nous ont vus nous exciter comme des molécules en chaleur <strong>douze ans plus tard</strong>.</p>
+<p>Et si d’aventure ça vous gêne que ce fussent des filtres propriétaires Microsoft, je remets une couche de contexte — toujours pour ceux du fond, décidément : <strong>CSS 1 n’existe officiellement que depuis quelques mois</strong>. La définition des propriétés et de leurs valeurs n’en est qu’à ses balbutiements.[^2]</p>
+<p>[^2]: Pour faire un parallèle avec l’histoire nord-américaine, l’époque succédant à la déclaration d’indépendance est le far-west, la ruée vers l’or, tout ça…</p>
+<h2>Fonctionnalités hors-ligne</h2>
+<p>Pas de blague. Internet Explorer 4 est la première version à évoquer la gestion de <strong>fonctionnalités hors-ligne</strong>. Nous sommes évidemment très loin des applications web progressives actuellement tendance — les fameuses PWA, <em>bingo buzzword</em> — mais déjà en 1997, Microsoft en parlait :</p>
+<ul>
+<li><strong>mise en cache</strong> des pages consultées afin d’améliorer l’expérience sans connexion ;</li>
+<li>fonctionnalité d’archivage de site, permettant « tout simplement » d’<strong>enregistrer une copie du site</strong> sur votre ordinateur — et donc de le consulter sans connexion ;</li>
+<li>un type de site appelé <em>active channel</em> qui permettait de <strong>synchroniser un site en ligne avec une version enregistrée localement</strong>, hors ligne.[^3]</li>
+</ul>
+<p>[^3]: J’admets avoir du mal à comprendre cette technologie, je ne l’ai jamais connue…</p>
+<p>C’est rigolo comme les thèmes abordés dans les notes de version sont les mêmes en 1997 qu’en 2016, non ?</p>
+<h2>Transitions entre les pages</h2>
+<p>Ça, c’est vraiment l’apothéose.</p>
+<p>Vous connaissez peut-être déjà <a href="https://jakearchibald.com/">Jake Archibald</a> ? Je l’apprécie notamment pour son travail sur l’optimisation des SVG, mais il a produit beaucoup de choses très utiles.</p>
+<p>En octobre 2016, il a créé <a href="https://github.com/jakearchibald/navigation-transitions/blob/master/README.md">un répertoire sur Github intitulé navigation-transition</a>, dans lequel il explore la complexité d’effectuer des transitions entre les pages en respectant l’historique de navigation.</p>
+<p>C’est chouette, il évoque <strong>des pistes en CSS</strong> lancées par Google en 2014 puis Mozilla en 2015, et sa propre exploration. Je suis sûr que ça en fait baver plus d’un !</p>
+<p>Je vous présente <a href="https://msdn.microsoft.com/en-us/library/ms532847(v=vs.85).aspx#Interpage_Transition">les transitions interpages</a> introduites par Microsoft dans Internet Explorer 4 en 1997. Concrètement, ce sont des filtres Microsoft utilisés dans des balises <code>meta</code>, comme suit :</p>
+<pre><code class="language-markup">
+&lt;META http-equiv=&quot;Page-Enter&quot; 
+  CONTENT=&quot;progid:DXImageTransform.Microsoft.Blinds(
+  Duration=4
+  )&quot; /&gt;
+&lt;META http-equiv=&quot;Page-Exit&quot; 
+  CONTENT=&quot;progid:DXImageTransform.Microsoft.Slide(
+  Duration=2.500,
+  slidestyle=’HIDE’
+  )&quot; /&gt;
+</code></pre>
+<p>C’est pas beau, ça ?</p>
+<h2>De retour du passé</h2>
+<p>Vous pensiez que le web de 1997 était révolu, et que tout ce que je viens de déterrer reste obsolète ? Je vous présente mes deux trollons.[^4]</p>
+<p>[^4]: Un trollon est un bébé troll, c’est bien connu.</p>
+<ul>
+<li>la propriété <code>filter</code> fait désormais partie de la spécification CSS, seules les valeurs Microsoft ne sont donc plus standards. Personnellement, ça me fait beaucoup rigoler ;</li>
+<li>à l’époque, il était possible d’écrire des scripts dans CSS. Oui oui, chez Microsoft on faisait du JS dans du CSS.[^5]</li>
+</ul>
+<p>[^5]: Nos fameux filtres, vous croyiez que ça fonctionnait comment ?</p>
+<p>Alors pour paraphraser le Doc, je dirais seulement :</p>
+<blockquote>
+<p>Nom de d’IE, Marty !</p>
+</blockquote>
+<h2>Vous êtes encore là ?</h2>
+<p>Pour les survivants qui sont parvenus jusqu’au donjon, voici vos récompenses :</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Internet_Explorer_4">la page Wikipédia d’Internet Explorer 4 (en anglais)</a> ;</li>
+<li><a href="http://www.actden.com/ie4/">un site fabuleux pour découvrir IE4, en anglais</a> — qui n’est pas sans rappeler ce fameux trombone pot de colle dans les produits Microsoft du début des années 2000 ;</li>
+<li><a href="http://www.blooberry.com/indexdot/history/ie.htm">un historique d’Internet Explorer 1 à 6, en anglais</a> — comme ça, vous avez le choix dans les dates ;</li>
+<li><a href="https://www.nicolas-hoffmann.net/tacamaca/">une page implémentant les transitions interpages</a>.[^6]</li>
+</ul>
+<p>[^6]: Un indice, il faut regarder le code source.</p>
+<p>Voilà. Comme <strong>je me suis beaucoup amusé</strong> à rassembler toutes ces informations et à écrire cet article, je tiens à remercier <a href="https://www.paris-web.fr/2015/conferences/la-veille-techno-pour-les-vieux-croutons.php" title="Conférence intitulée « La veille techno pour les vieux croûtons » présentée par Thibault Jouannic à Paris Web le vendredi 02 octobre 2015">les vieux croûtons du web</a> qui ont éclairé ma lanterne lors de mes recherches. Ils se reconnaîtront, et si vous les cherchez vous trouverez la liste de leurs <em>nicknames</em> connectés au salon <code>##openweb</code> sur IRC.</p>
+<p>Merci les copains.</p>
+
+				
+			</main>
+
+			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
+				<div class="aside pl2 pt2">
+					<h3 class="tk-bello-pro h2-like m-reset">À lire ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://openweb.eu.org/articles/du-consommateur-au-producteur">sur Openweb</a>
+							</li>
+							<li>
+								<a href="https://www.alsacreations.com/livres/lire/1503-webgrids-structure-et-typographie-de-la-page-web.html">sur Alsacréations</a>
+							</li>
+						</ul>
+					</div>
+					<h3 class="tk-bello-pro h2-like m-reset pt1">À regarder ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php">Paris Web 2018</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</aside>
+
+			<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
+				<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__github" href="https://github.com/ffoodd" itemprop="url" title="Gaël Poupard sur GitHub">
+							<span itemprop="name">GitHub</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__dribble" href="https://dribbble.com/ffoodd" itemprop="url" title="Gaël Poupard sur Dribbble">
+							<span itemprop="name">Dribbble</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__linkedin" href="https://www.linkedin.com/pub/ga%C3%ABl-poupard/30/17b/401" itemprop="url" title="Gaël Poupard sur LinkedIn">
+							<span itemprop="name">LinkedIn</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__behance" href="https://www.behance.net/ffoodd" itemprop="url" title="Gaël Poupard sur Behance">
+							<span itemprop="name">Behance</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/" itemprop="url" title="La vie en #ffoodd | Flux RSS">
+							<span itemprop="name">RSS</span>
+						</a>
+					</li>
+				</ul>
+
+				<small>
+					&copy; 2018 La vie en #ffoodd &mdash; Design et intégration par <span itemprop="name">Gaël Poupard</span> &mdash; <a href="/mentions-legales/">Mentions légales</a>
+					<br />
+					Sauf mention contraire, l’ensemble du contenu est sous <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/fr/">Licence <abbr lang="en" title="Creative Commons">CC</abbr> <abbr lang="en" title="Attribution">BY</abbr>-<abbr lang="en" title="Non Commercial">NC</abbr>-<abbr lang="en" title="Share Alike">SA</abbr></a>.
+				</small>
+
+				<meta itemprop="jobTitle" content="Webdesigner et intégrateur web">
+				<meta itemprop="worksFor" content="onepoint">
+			</footer><!-- / contentinfo -->
+		</div>
+	</body>
+</html>

@@ -1,4 +1,5 @@
 ---
+layout: "base.njk"
 title: "Fabrice Flipo, Michelle Dobrée et Marion Michot"
 date: "2014-05-23T19:34:21"
 modified: "2014-05-23T23:20:56"

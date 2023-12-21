@@ -1,4 +1,5 @@
 ---
+layout: "base.njk"
 title: "AccesSlide&nbsp;: la prise en main"
 date: "2015-05-24T11:06:51"
 modified: "2015-05-26T09:03:59"

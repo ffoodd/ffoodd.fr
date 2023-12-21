@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Les éléments remplacés</title>
+		<meta name="description" content="">
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+		<!-- @todo Ajouter le flux RSS
+			<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/">
+		-->
+	</head>
+	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
+		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+		<div class="row">
+			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation">
+				<ul class="menu aside p-reset m-reset ul-reset">
+					<!-- @todo Gérer l’état current -->
+					<li class="tk-bello-pro h1-like m-reset current-menu-item current_page_item">
+						<a href="/" aria-current="page">ffoodd</a>
+					</li>
+					<li class="h3-like m-reset"><a href="/plus/">À propos</a></li>
+					<!-- @todo gérer l’URL ? -->
+					<li class="h3-like m-reset"><a href="/category/journal/">Journal</a></li>
+					<li class="h3-like m-reset"><a href="/travaux/">Parcours</a></li>
+				</ul>
+			</nav><!-- / #nav -->
+
+			<main class="col w--site pl3 pb3 pr5" id="content" role="main" role="main" itemprop="mainContentOfPage">
+				<div class="logo print-hidden">
+					<img src="/images/2013/10/copy-cropped-ffoodd.png" alt="La vie en #ffoodd" id="logo" width="144" height="144">
+				</div>
+				
+					<p>Pourtant — et malgré le fait que <strong>la plupart</strong> des éléments remplacés soient des balises auto-fermantes — ça nʼest pas la même chose !</p>
+<h2>Les mauvaises définitions</h2>
+<h3>La définition de Dudley Storey</h3>
+<p>La plus connue est celle proposée par Dudley Storey dans son article « <a href="http://thenewcode.com/461/What-The-Heck-Is-A-Replaced-Element">What’s A Replaced Element?</a> » (traduit en Français sur <a href="https://la-cascade.io/quest-ce-quun-element-remplace/">La Cascade</a>) que voici :</p>
+<blockquote>
+<p>Les éléments remplacés sont essentiellement des éléments qui ont des dimensions pré-déterminées, sans bénéficier de CSS. Une autre façon de comprendre les éléments remplacés est “ ce sont les éléments dont le contenu est remplacé par une source extérieure ”.</p>
+</blockquote>
+<p>Il prend pour exemple lʼélément <code>input</code> qui, <strong>même vide</strong>, aura des dimensions intrinsèques — car le navigateur remplace lʼélément par un objet avec des dimensions par défaut pré-déterminées.</p>
+<p>Cʼest très bien, mais ça nʼest pas tout à fait ça. En réalité <strong>cette définition est orientée</strong> vers la conclusion de lʼarticle, qui précise que les éléments remplacés ne peuvent pas se voir appliquer de contenu généré à lʼaide de pseudo-élément.</p>
+<p><strong>Figurez-vous que cʼest parfois possible.</strong> Il sʼagit dʼune simplification abusive.</p>
+<h3>La référence de SitePoint</h3>
+<p>SitePoint propose <a href="http://reference.sitepoint.com/css/replacedelements">une définition un peu plus pointue (en anglais)</a> indiquant quʼun élément remplacé est un élément dont lʼapparence et les dimensions sont définies par une ressource externe. Les détails sont assez intéressants (notamment le dernier paragraphe sur le contexte <em>inline</em>) mais là encore cʼest <strong>en léger décalage avec la réalité</strong>.</p>
+<p>En revanche ce qui est amusant, cʼest que <strong>la définition réelle est cachée dans le troisième paragraphe</strong> : « Les éléments remplacés peuvent également avoir des pré-requis de mise en forme imposés par lʼélément, <strong>hors du contrôle du CSS</strong> ; par exemple, les contrôles de lʼinterface utilisateur rendus pour les éléments de formulaires ».</p>
+<p>En fait ils ne se contentent pas de pouvoir.</p>
+<h2>La spécification cachée</h2>
+<p>Soyons honnête, elle est vraiment galère à trouver. Le W3C précise <a href="http://www.w3.org/TR/CSS21/conform.html#replaced-element">dans CSS2.1 (en anglais)</a> quʼun élément remplacé « est un élément dont le contenu est hors de la portée du modèle de mise en forme CSS ». Si vous en avez le courage, <a href="http://www.w3.org/TR/html51/rendering.html#replaced-elements">la spécification HTML5</a> est plus absconse mais rejoint globalement ce qui est dit précédemment.</p>
+<p><strong>Simple, non ?</strong> Ça inclut effectivement les éléments qui ont des dimensions intrinsèques, même lorsquʼelles peuvent être surchargées <em>via</em> CSS. <a href="https://github.com/ffoodd/a11y.css/blob/master/README-fr.md#cas-particuliers-et-probl%C3%A8mes-connus">La liste dont je dispose est documentée sur a11y.css</a>. Elle contient lʼensemble des balises auto-fermantes, ainsi que les éléments de formulaires et les objets multimédias.</p>
+<h2>Le cas des boutons</h2>
+<p>Vous remarquerez que cette liste nʼinclut pas lʼélément <code>&lt;button&gt;</code>. Pour une bonne raison, à mon humble avis : cet élément nʼest pas un cas particulier dans la perspective de travail dʼa11y.css puisquʼ<strong>il accepte les pseudos-éléments.</strong></p>
+<p>Voilà qui discrédite poliment la définition de Dudley Storey. Cela fait cependant de <code>&lt;button&gt;</code> une exception parmi les cas particuliers…</p>
+<p>Cependant <a href="https://twitter.com/Nico3333fr/status/666185952608567296">comme Nicolas Hoffmann me lʼa indiqué</a>, <code>&lt;button&gt;</code> est bel et bien un élément remplacé. Fidèlement à la spécification, il dispose en effet de styles pré-définis — un savant mélange entre la vision de votre navigateur et celle de votre système dʼexploitation.</p>
+<h2>La singularité</h2>
+<p>Les éléments remplacés ont donc des dimensions intrinsèques, et ça inclut les boutons. Lorsque vous spécifiez une largeur sur un élément remplacé, <strong>vous écrasez sa largeur intrinsèque</strong>. Jusque là, tout va bien. Vous pouvez jouer avec une image, effectivement cʼest chouette.</p>
+<p>Maintenant pour rigoler, prenez un <code>&lt;button&gt;</code> et affublez-le de ce CSS :</p>
+<pre><code class="language-css">
+button {
+  display: inline;
+  width: 20em;
+}
+</code></pre>
+<p>Jʼavais tendance à penser que ce CSS ne produirait rien, puisquʼ<strong>on ne peut pas définir de dimension sur un élément <em>inline</em></strong>. Sauf quʼun bouton a donc des dimensions intrinsèques quʼon peut surcharger — alors même que ces styles sont considérés comme hors de portée de CSS. La magie opère : <strong>un bouton en ligne obéira à une définition de sa largeur</strong>.</p>
+<p>Vous pouvez jouer avec <a href="http://dabblet.com/gist/d94397d5d22a7cc9c1eb">ce dabblet</a> pour vous en convaincre.</p>
+<h2>Un réel problème ?</h2>
+<p>Probablement pas. Mais je me suis malgré tout retrouvé dans une situation enquiquinante. Je souhaitais tout bêtement mettre en place un soulignement amélioré en CSS à lʼaide dʼun dégradé et dʼune ombre. Or ce soulignement doit évidemment suivre le texte, y compris si ledit texte passe à la ligne. Cʼest généralement aisé pour nʼimporte quel élément : on le met en <code>display: inline;</code> et le tour est joué. <strong>Sauf que sur un bouton, ça ne fonctionne pas</strong>.</p>
+<p>Heureusement, <a href="https://twitter.com/htmlvv/status/666184830456078336">Vincent mʼa donné une solution qui fonctionne</a>. Tant pis pour le bouton, cʼest le <code>&lt;span&gt;</code> qui aura droit à un soulignement amélioré.<br>
+**<br>
+Mais bon sang, quelle aventure pour un bête bouton qui ne veut pas se mettre en ligne !**</p>
+
+				
+			</main>
+
+			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
+				<div class="aside pl2 pt2">
+					<h3 class="tk-bello-pro h2-like m-reset">À lire ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://openweb.eu.org/articles/du-consommateur-au-producteur">sur Openweb</a>
+							</li>
+							<li>
+								<a href="https://www.alsacreations.com/livres/lire/1503-webgrids-structure-et-typographie-de-la-page-web.html">sur Alsacréations</a>
+							</li>
+						</ul>
+					</div>
+					<h3 class="tk-bello-pro h2-like m-reset pt1">À regarder ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php">Paris Web 2018</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</aside>
+
+			<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
+				<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__github" href="https://github.com/ffoodd" itemprop="url" title="Gaël Poupard sur GitHub">
+							<span itemprop="name">GitHub</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__dribble" href="https://dribbble.com/ffoodd" itemprop="url" title="Gaël Poupard sur Dribbble">
+							<span itemprop="name">Dribbble</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__linkedin" href="https://www.linkedin.com/pub/ga%C3%ABl-poupard/30/17b/401" itemprop="url" title="Gaël Poupard sur LinkedIn">
+							<span itemprop="name">LinkedIn</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__behance" href="https://www.behance.net/ffoodd" itemprop="url" title="Gaël Poupard sur Behance">
+							<span itemprop="name">Behance</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/" itemprop="url" title="La vie en #ffoodd | Flux RSS">
+							<span itemprop="name">RSS</span>
+						</a>
+					</li>
+				</ul>
+
+				<small>
+					&copy; 2018 La vie en #ffoodd &mdash; Design et intégration par <span itemprop="name">Gaël Poupard</span> &mdash; <a href="/mentions-legales/">Mentions légales</a>
+					<br />
+					Sauf mention contraire, l’ensemble du contenu est sous <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/fr/">Licence <abbr lang="en" title="Creative Commons">CC</abbr> <abbr lang="en" title="Attribution">BY</abbr>-<abbr lang="en" title="Non Commercial">NC</abbr>-<abbr lang="en" title="Share Alike">SA</abbr></a>.
+				</small>
+
+				<meta itemprop="jobTitle" content="Webdesigner et intégrateur web">
+				<meta itemprop="worksFor" content="onepoint">
+			</footer><!-- / contentinfo -->
+		</div>
+	</body>
+</html>

@@ -1,4 +1,5 @@
 ---
+layout: "base.njk"
 title: "P. Mendelson"
 date: "2013-10-03T10:50:26"
 modified: "2013-10-18T13:51:25"

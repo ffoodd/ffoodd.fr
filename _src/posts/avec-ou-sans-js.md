@@ -1,4 +1,5 @@
 ---
+layout: "base.njk"
 title: "Avec ou sans JS&nbsp;?"
 date: "2017-02-03T17:02:05"
 modified: "2017-02-06T12:42:12"

@@ -1,4 +1,5 @@
 ---
+layout: "base.njk"
 title: "Le sens de la sémantique"
 date: "2016-06-24T16:06:10"
 modified: "2016-06-27T12:42:49"

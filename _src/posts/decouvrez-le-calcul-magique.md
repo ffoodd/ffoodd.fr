@@ -1,4 +1,5 @@
 ---
+layout: "base.njk"
 title: "Découvrez le calcul magique"
 date: "2015-03-30T14:30:04"
 modified: "2016-01-07T16:12:06"

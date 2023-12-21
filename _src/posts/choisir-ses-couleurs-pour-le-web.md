@@ -1,4 +1,5 @@
 ---
+layout: "base.njk"
 title: "Choisir ses couleurs pour le Web"
 date: "2015-04-07T09:00:38"
 modified: "2015-04-01T09:23:14"

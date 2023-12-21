@@ -1,0 +1,2 @@
+<p>Pour le JS qui prend du temps, pourquoi ne pas utiliser un script dans le <code>head</code>, qui va juste modifier la <code>class</code> ? Ça évite d’avoir a utiliser un durée d’animation qui ne corrigera pas le problème sur les connexion lentes (j’ai testé en utilisant le <em>network throttling</em> de Chrome : on voit le menu à partir d’une connexion 3g).<br>
+<code>document.documentElement.classList.remove(’no-js’).add(’js’)</code></p>

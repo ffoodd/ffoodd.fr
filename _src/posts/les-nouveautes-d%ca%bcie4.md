@@ -1,4 +1,5 @@
 ---
+layout: "base.njk"
 title: "Les nouveautés dʼIE4"
 date: "2016-12-08T16:28:58"
 modified: "2016-12-08T16:28:58"

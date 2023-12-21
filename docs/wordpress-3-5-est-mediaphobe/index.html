@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>WordPress 3.5 est médiaphobe</title>
+		<meta name="description" content="">
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+		<!-- @todo Ajouter le flux RSS
+			<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/">
+		-->
+	</head>
+	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
+		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+		<div class="row">
+			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation">
+				<ul class="menu aside p-reset m-reset ul-reset">
+					<!-- @todo Gérer l’état current -->
+					<li class="tk-bello-pro h1-like m-reset current-menu-item current_page_item">
+						<a href="/" aria-current="page">ffoodd</a>
+					</li>
+					<li class="h3-like m-reset"><a href="/plus/">À propos</a></li>
+					<!-- @todo gérer l’URL ? -->
+					<li class="h3-like m-reset"><a href="/category/journal/">Journal</a></li>
+					<li class="h3-like m-reset"><a href="/travaux/">Parcours</a></li>
+				</ul>
+			</nav><!-- / #nav -->
+
+			<main class="col w--site pl3 pb3 pr5" id="content" role="main" role="main" itemprop="mainContentOfPage">
+				<div class="logo print-hidden">
+					<img src="/images/2013/10/copy-cropped-ffoodd.png" alt="La vie en #ffoodd" id="logo" width="144" height="144">
+				</div>
+				
+					<h2>Sauf que</h2>
+<p>Dès ma première utilisation de cette nouvelle mouture je suis tombé sur un problème assez gênant : dans la fenêtre modale servant à insérer des médias depuis l’éditeur, l’ajout d’un fichier me retourne une erreur en indiquant</p>
+<blockquote>
+<p>« Une erreur est survenue lors du téléchargement.<br>
+Veuillez réessayer plus tard. »</p>
+</blockquote>
+<p>Malgré ça, ledit fichier a été ajouté à la bibliothèque des médias. De plus, impossible de parcourir la bibliothèque et d’insérer un fichier depuis cette même fenêtre modale ! Après une recherche rapide, il s’avère que <a href="http://wordpress.org/search/bug+3.5+media+insert" title="Wordpress 3.5 media insert bug">je ne suis pas le premier à rencontrer ce problème</a>.</p>
+<p>Or ce bug – connu depuis la bêta – peut avoir diverses origines :</p>
+<ol>
+<li>Le serveur utilise <em>mod_pagespeed</em></li>
+<li>Un plugin interfère avec les scripts de l’administration</li>
+<li>Le thème retire la version de jQuery inclue, et en utilise une autre</li>
+<li>Une erreur a pu se glisser dans certains fichiers, à vérifier via la console js du navigateur</li>
+<li>Un mode DEBUG de WordPress « abusif »</li>
+<li>La concaténation des fichiers de l’administration trop agressive ou mal effectuée</li>
+</ol>
+<p>Miam ! Vous l’aurez compris, beaucoup de ces causes potentielles tournent autour des fichiers javascript ( et la technologie Ajax utilisée dans ce cas ). Une multitude de parades ont été proposées sur le web, fonctionnant dans certains cas :</p>
+<ul>
+<li>Repasser au thème TwentyTwelve</li>
+<li>Désactiver les plugins un par un</li>
+<li>Désactiver <em>mod_pagespeed</em> ou un système de concaténation quelconque du js de l’administration</li>
+</ul>
+<p>Ces solutions ont – dans beaucoup de cas – suffit à résoudre le bug, ou au moins à en identifier l’origine afin de le corriger. <strong>Pas dans mon cas.</strong></p>
+<h2>.htaccess</h2>
+<p><strong>Après diverses pérégrinations dans les tréfonds de WordPress, j’ai finalement trouvé la solution à mon cas : le .htaccess.</strong></p>
+<p>Pour une raison ou pour une autre, appliquer le .htaccess que j’ai l’habitude d’appliquer en production a suffit. C’est donc un patch insignifiant, sauf que WordPress ne dispose pas – et ne crée pas – de .htaccess par lui-même. C’est une habitude que j’ai acquise pour des questions d’environnement serveur, de <strong>performances</strong>, de <strong>qualité web</strong> et de types de fichiers à servir, mais qui n’est pas connue de tout le monde.</p>
+<p>À titre personnel, le .htaccess de base dont je me sers est un amalgame :</p>
+<ul>
+<li>du .htaccess disponible dans le <a href="http://html5boilerplate.com/" title="HTML5 Boilerplate">html5 Boilerplate</a></li>
+<li>du .htaccess dédié à WordPress proposé par <a href="http://www.seomix.fr/guide-htaccess-performances-et-temps-de-chargement/" title="le .htaccess expliqué sur seo-mix">seo-mix</a></li>
+</ul>
+<p>Je suppose qu’il s’agit d’un entête http ou d’un type MIME incorrect qui nuit à la bonne compréhension du fichier par le serveur, sans toutefois en être sûr. Étant donné que j’avais jusqu’à présent l’habitude d’ajouter le .htaccess à la fin du développement, je me contenterais désormais de l’ajouter <strong>dès le début du projet</strong>.</p>
+<p><strong>De plus, il s’agit d’une bonne pratique nécessaire à la <a href="https://www.ffoodd.fr/tag/qualite-web/" title="Qualité web">qualité d’un site web</a> : il est donc indispensable de disposer d’un fichier .htaccess efficace.</strong></p>
+
+				
+			</main>
+
+			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
+				<div class="aside pl2 pt2">
+					<h3 class="tk-bello-pro h2-like m-reset">À lire ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://openweb.eu.org/articles/du-consommateur-au-producteur">sur Openweb</a>
+							</li>
+							<li>
+								<a href="https://www.alsacreations.com/livres/lire/1503-webgrids-structure-et-typographie-de-la-page-web.html">sur Alsacréations</a>
+							</li>
+						</ul>
+					</div>
+					<h3 class="tk-bello-pro h2-like m-reset pt1">À regarder ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php">Paris Web 2018</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</aside>
+
+			<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
+				<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__github" href="https://github.com/ffoodd" itemprop="url" title="Gaël Poupard sur GitHub">
+							<span itemprop="name">GitHub</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__dribble" href="https://dribbble.com/ffoodd" itemprop="url" title="Gaël Poupard sur Dribbble">
+							<span itemprop="name">Dribbble</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__linkedin" href="https://www.linkedin.com/pub/ga%C3%ABl-poupard/30/17b/401" itemprop="url" title="Gaël Poupard sur LinkedIn">
+							<span itemprop="name">LinkedIn</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__behance" href="https://www.behance.net/ffoodd" itemprop="url" title="Gaël Poupard sur Behance">
+							<span itemprop="name">Behance</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/" itemprop="url" title="La vie en #ffoodd | Flux RSS">
+							<span itemprop="name">RSS</span>
+						</a>
+					</li>
+				</ul>
+
+				<small>
+					&copy; 2018 La vie en #ffoodd &mdash; Design et intégration par <span itemprop="name">Gaël Poupard</span> &mdash; <a href="/mentions-legales/">Mentions légales</a>
+					<br />
+					Sauf mention contraire, l’ensemble du contenu est sous <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/fr/">Licence <abbr lang="en" title="Creative Commons">CC</abbr> <abbr lang="en" title="Attribution">BY</abbr>-<abbr lang="en" title="Non Commercial">NC</abbr>-<abbr lang="en" title="Share Alike">SA</abbr></a>.
+				</small>
+
+				<meta itemprop="jobTitle" content="Webdesigner et intégrateur web">
+				<meta itemprop="worksFor" content="onepoint">
+			</footer><!-- / contentinfo -->
+		</div>
+	</body>
+</html>

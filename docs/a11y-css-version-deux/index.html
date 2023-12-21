@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>a11y.css, version deux</title>
+		<meta name="description" content="">
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+		<!-- @todo Ajouter le flux RSS
+			<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/">
+		-->
+	</head>
+	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
+		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+		<div class="row">
+			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation">
+				<ul class="menu aside p-reset m-reset ul-reset">
+					<!-- @todo Gérer l’état current -->
+					<li class="tk-bello-pro h1-like m-reset current-menu-item current_page_item">
+						<a href="/" aria-current="page">ffoodd</a>
+					</li>
+					<li class="h3-like m-reset"><a href="/plus/">À propos</a></li>
+					<!-- @todo gérer l’URL ? -->
+					<li class="h3-like m-reset"><a href="/category/journal/">Journal</a></li>
+					<li class="h3-like m-reset"><a href="/travaux/">Parcours</a></li>
+				</ul>
+			</nav><!-- / #nav -->
+
+			<main class="col w--site pl3 pb3 pr5" id="content" role="main" role="main" itemprop="mainContentOfPage">
+				<div class="logo print-hidden">
+					<img src="/images/2013/10/copy-cropped-ffoodd.png" alt="La vie en #ffoodd" id="logo" width="144" height="144">
+				</div>
+				
+					<p>Ainsi depuis la toute première mouture (en CSS) de cette feuille de style de diagnostic, beaucoup de choses ont changé. Voyons ça en détail 🙂</p>
+<h2>Corrections multiples</h2>
+<p>Comme vous pourrez le voir <a href="https://github.com/ffoodd/a11y.css/issues?q=is%3Aissue+is%3Aclosed">sur Github</a>, pas moins de 97 issues ont été résolues. Cela a été possible grâce aux retours de quelques personnes, que je tiens à citer et remercier à nouveau :</p>
+<ul>
+<li><a href="https://twitter.com/KittyGiraudel">Kitty Giraudel</a> ;</li>
+<li><a href="https://twitter.com/7studio">Xavier Zalawa</a> ;</li>
+<li><a href="https://twitter.com/heydonworks">Heydon Pickering</a> ;</li>
+<li><a href="https://twitter.com/klohFR">Luc Poupard</a> ;</li>
+<li><a href="https://twitter.com/GaetanBt">Gaëtan Bonnot</a> ;</li>
+<li><a href="https://github.com/a5e">Antoine</a> ;</li>
+<li><a href="https://twitter.com/goetsu">Aurélien Levy</a> ;</li>
+<li><a href="https://github.com/olamedia">Olamedia</a> ;</li>
+<li><a href="http://bveneman.nl/">Bart Veneman</a>.</li>
+</ul>
+<p>Entre les bugs et les découvertes diverses, la <strong>qualité</strong> et la <strong>pertinence</strong> d’a11y.css ont considérablement progressé.</p>
+<h3>Compteurs CSS</h3>
+<p>Les compteurs sont au nombre des améliorations simples mais utiles — ces choses parfois qualifiées de <em>quick win</em>. Même si l’idée cheminait dans mon esprit depuis longtemps, c’est l’implémentation dans <a href="https://yahoo.github.io/debugCSS/">le DebugCSS de Yahoo</a> qui a produit le déclic.</p>
+<p>Les fonctions CSS de compteurs font partie des outils qui trouvent rarement un contexte d’utilisation pertinent. Pour une fois, c’est le cas !</p>
+<h2>Personnalisation</h2>
+<p>Après la fastidieuse relecture <a href="https://github.com/ffoodd/a11y.css/blob/master/README-fr.md#r%C3%A9f%C3%A9rences-et-inspirations">de mes différentes sources</a>, ce qui n’était qu’un simple fichier CSS de diagnostic est devenu un <strong>système complexe basé sur Sass</strong> — dont le fichier de sortie final compressé pèse 80kb !</p>
+<p>Il devenait indispensable de permettre aux utilisateurs le désirant de charger seulement les portions qui leur sont utiles. Avec l’aide de <a href="http://kittygiraudel.com/">Kitty Giraudel</a>, deux mécanismes ont été mis en place.</p>
+<h3>Générateur de <em>bookmarklet</em></h3>
+<p>Il était déjà possible aux utilisateurs de Sass de ne compiler que les niveaux de critères qui les intéressaient. Désormais, ces fichiers nivelés sont mis <a href="https://github.com/ffoodd/a11y.css/tree/master/css">à disposition dans le projet</a>.</p>
+<p>Le <em>bookmarklet</em> existait depuis quelques temps déjà, mais désormais un petit formulaire <a href="http://ffoodd.github.io/a11y.css/">sur le site de présentation</a> permet de le paramétrer <strong>en définissant le niveau minimum</strong> nécessaire.</p>
+<h3>Désactivation de tests</h3>
+<p>Pour que les utilisateurs de Sass aient toujours un intérêt à disposer du projet sur leur poste, mais aussi afin que les utilisateurs les plus avertis puissent personnaliser cet outil, Kitty a également <a href="https://github.com/ffoodd/a11y.css/blob/master/README-fr.md#d%C3%A9sactiver-des-tests">conçu une fonction</a> pour désactiver les tests au cas par cas. Par exemple, si vous voulez désactiver les erreurs à propos des mauvais <code>tabindex</code> et du <code>href</code> manquant, voici comment faire :</p>
+<pre><code class="language-css">
+@include disable-errors(&quot;tab-order, no-href&quot;);
+</code></pre>
+<p>Et ça, c’est plutôt pratique 😀 !</p>
+<h2>Traduction</h2>
+<p>Pour celle-ci, je vais applaudir discrètement et vous renvoyer vers <a href="http://kittygiraudel.com/2014/10/22/translation-system-in-sass/">l’article écrit par Kitty (en anglais)</a> qui détaille le fonctionnement de son <strong>système de traduction en Sass</strong>.</p>
+<p>Oui, vous avez bien lu :désormais a11y.css est multilingue en demeurant écrit uniquement en Sass. Outre la portée accrue de façon incroyable suite au passage en anglais, l’exploit technique de Kitty est incroyable. J’en profite pour signaler la parution de son premier livre « CSS3 : pratique du design web » <a href="http://www.eyrolles.com/Informatique/Livre/css3-9782212140231">en vente aux éditions Eyrolles</a>, que je vous recommande chaudement.[^1]</p>
+<p>[^1]: Sans rire, le mec est un génie alors achetez son livre et lisez son blog.</p>
+<h2>Documentation &amp; test</h2>
+<p>Vous vous en doutez, le projet est devenu relativement complexe. Les solutions apportées par les différents contributeurs on tellement enrichi ce projet que même moi, je ne m’y retrouvais plus.</p>
+<p>J’avais déjà mentionné lors de <a href="https://www.ffoodd.fr/wp-tech-2014/" title="WP Tech 2014">mon atelier au WP Tech</a> mon <strong>intérêt pour la documentation</strong> ; c’est donc tout naturellement que j’ai cherché à documenter plus précisément a11y.css. Et de mon point de vue, il y a deux aspects très différents à documenter :</p>
+<ul>
+<li>le <strong>contenu des tests</strong> : pourquoi ces critères, comment ont-ils été défini, quel est leur intérêt.[^2]</li>
+</ul>
+<p>[^2]: Je ne l’ai pas encore dit mais un des objectifs du projet est clairement devenu l’apprentissage et l’accès aux savoirs. Asséner un message sans l’expliquer me parait inutile, tout comme appliquer religieusement le contenu du message n’est pas pertinent.</p>
+<ul>
+<li>la <strong>structure du projet Sass</strong>, ou pour parler le technicien : l’API.</li>
+</ul>
+<p>Premier chantier : trouver les outils adaptés !</p>
+<h3>Hologram</h3>
+<p>Ayant démarré ce projet seul et n’ayant pas imaginé le partager, les recherches qui m’avaient permis d’aboutir à certains tests n’étaient pas suffisamment documentées. J’ai donc étoffé les références de chaque test en indiquant, autant que faire se peut :</p>
+<ul>
+<li>Les bonnes pratiques Opquast ;</li>
+<li>Les critères et tests Accessiweb HTML5 et ARIA ;</li>
+<li>Les succès WCAG 2.0 ;</li>
+<li>Les sources dans des projets équivalents.</li>
+</ul>
+<p>Ces ressources étant réunies, je souhaitais mettre à l’épreuve cet outil en mettant en place une <strong>page de démonstration</strong> qui servirait aussi à suivre les éventuelles régressions. Et parce qu’il ne s’agit pas seulement de pouvoir tester, mais également d’<strong>expliquer et de partager ces bonnes pratiques</strong>, un court descriptif du test était nécessaire.</p>
+<p>Pour résumer, je cherchais donc un outil capable :</p>
+<ol>
+<li>D’afficher la description et les liens associés au test ;</li>
+<li>Un exemple de code HTML lisible ciblé par le test, et une version interprétée par le navigateur </li>
+<li>La capacité d’organiser les nombreux tests présents.</li>
+</ol>
+<p>C’est là qu’intervient <a href="http://trulia.github.io/hologram/">Hologram</a>, une gem Ruby créée par Trulia. Elle m’a semblé parfaite puisqu’elle repose sur des commentaires CSS formatés pour générer la documentation. Son objectif premier est la création et la maintenance de guides de style, ce qui n’est pas si loin du sens premier d’a11y.css : <strong>gérer et maintenir un ensemble de pratiques</strong> à vérifier.</p>
+<p>Hologram est incroyablement simple à manipuler, puisqu’une fois la gem installée il suffit de commenter son CSS de la façon suivante :</p>
+<pre><code class="language-css">
+/*doc
+---
+title: &quot;[tabindex] &gt; 0&quot;
+name: tab-order
+category: Errors
+---
+The `[tabindex]` attribute should never be greater than 0.
+* &lt;https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L337&gt;
+```html_example
+&lt;button tabindex=&quot;1&quot;&gt;Positive tabindex is bad&lt;/button&gt;
+```
+*/
+</code></pre>
+<p>La syntaxe est intelligible, et reste utile sans Hologram pour générer la documentation. Un point que j’apprécie ! Pour générer la documentation, c’est très simple :</p>
+<pre><code class="language-css">
+hologram
+</code></pre>
+<p><strong>Et voilà !</strong> Hologram génère un mini-site statique grâce à un jeu de ressources très simple. Il est ainsi possible de personnaliser l’entête, le pied-de-page et les ressources statiques pour aménager sa documentation à volonté. <strong>Magique</strong> 🙂</p>
+<p>Et puisque j’avais déjà créé une branche pour servir de présentation en ligne sur Github, j’ai ajouté ces nouveaux fichiers HTML afin d’en faire <strong>un véritable site de démonstration</strong>.</p>
+<p>Jetez un œil au <a href="http://ffoodd.github.io/a11y.css/">site de démonstration d’a11y.css</a> !</p>
+<h3>SassDoc</h3>
+<p>Pour finir, l’architecture du projet s’étant alourdie d’options et de fonctionnalités, il fallait permettre aux utilisateurs de Sass de s’approprier plus facilement l’outil.</p>
+<p>Par chance, la majorité de ces enrichissements étaient l’œuvre de Kitty Giraudel, qui s’avère aussi être le créateur de <a href="http://sassdoc.com/">SassDoc</a>. La personne a tendance à faire des trucs un peu fou en Sass, et cet outil de documentation correspond à la perfection aux besoins d’une API Sass.</p>
+<p>Ni une ni deux, Kitty a mis en place SassDoc !</p>
+<p>Et voilà un projet <strong>complètement documenté</strong>.</p>
+<h2>Ce n’est pas fini !</h2>
+<p>Il reste quelques sujets à avancer :</p>
+<ul>
+<li>Mettre à niveau SassDoc pour utiliser la V2 ;</li>
+<li>Créer un thème SassDoc pour l’intégrer au site ;</li>
+<li>Essayer d’ajouter une version française de cette documentation — ce qui semble complexe ;</li>
+<li>Trouver une façon de cibler les éléments auto-fermants dans les tests génériques ;</li>
+<li>Chercher de nouveaux tests à ajouter :D.</li>
+</ul>
+<p>Et, bien sûr, maintenir tout ça dans le temps !</p>
+<p>Je ne sais pas si ça se sent mais ce projet me passionne et je suis enchanté d’avoir pu <strong>partager mes réflexions, mes pratiques et mes idées</strong> avec toutes les personnes qui sont intervenues. J’ai énormément progressé grâce à ces échanges, et ma plus grande <strong>fierté</strong> est de voir a11y.css cité dans <a href="http://daisy.tetue.net/#debug">la section <em>debug</em> de la méthode Daisy</a>, créé par une personne que j’admire : <a href="http://romy.tetue.net/">Romy Duhem-Verdière</a>.</p>
+
+				
+			</main>
+
+			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
+				<div class="aside pl2 pt2">
+					<h3 class="tk-bello-pro h2-like m-reset">À lire ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://openweb.eu.org/articles/du-consommateur-au-producteur">sur Openweb</a>
+							</li>
+							<li>
+								<a href="https://www.alsacreations.com/livres/lire/1503-webgrids-structure-et-typographie-de-la-page-web.html">sur Alsacréations</a>
+							</li>
+						</ul>
+					</div>
+					<h3 class="tk-bello-pro h2-like m-reset pt1">À regarder ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php">Paris Web 2018</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</aside>
+
+			<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
+				<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__github" href="https://github.com/ffoodd" itemprop="url" title="Gaël Poupard sur GitHub">
+							<span itemprop="name">GitHub</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__dribble" href="https://dribbble.com/ffoodd" itemprop="url" title="Gaël Poupard sur Dribbble">
+							<span itemprop="name">Dribbble</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__linkedin" href="https://www.linkedin.com/pub/ga%C3%ABl-poupard/30/17b/401" itemprop="url" title="Gaël Poupard sur LinkedIn">
+							<span itemprop="name">LinkedIn</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__behance" href="https://www.behance.net/ffoodd" itemprop="url" title="Gaël Poupard sur Behance">
+							<span itemprop="name">Behance</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/" itemprop="url" title="La vie en #ffoodd | Flux RSS">
+							<span itemprop="name">RSS</span>
+						</a>
+					</li>
+				</ul>
+
+				<small>
+					&copy; 2018 La vie en #ffoodd &mdash; Design et intégration par <span itemprop="name">Gaël Poupard</span> &mdash; <a href="/mentions-legales/">Mentions légales</a>
+					<br />
+					Sauf mention contraire, l’ensemble du contenu est sous <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/fr/">Licence <abbr lang="en" title="Creative Commons">CC</abbr> <abbr lang="en" title="Attribution">BY</abbr>-<abbr lang="en" title="Non Commercial">NC</abbr>-<abbr lang="en" title="Share Alike">SA</abbr></a>.
+				</small>
+
+				<meta itemprop="jobTitle" content="Webdesigner et intégrateur web">
+				<meta itemprop="worksFor" content="onepoint">
+			</footer><!-- / contentinfo -->
+		</div>
+	</body>
+</html>

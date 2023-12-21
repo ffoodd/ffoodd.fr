@@ -1,4 +1,5 @@
 ---
+layout: "base.njk"
 title: "Réserve d’espace pour le contenu"
 date: "2015-12-03T12:30:49"
 modified: "2015-12-09T09:28:45"

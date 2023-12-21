@@ -1,4 +1,5 @@
 ---
+layout: "base.njk"
 title: "JavaScript and Jquery"
 date: "2015-03-09T08:00:48"
 modified: "2015-03-04T15:03:38"

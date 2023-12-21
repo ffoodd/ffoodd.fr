@@ -1,9 +1,10 @@
 ---
+layout: "base.njk"
 title: "Que se passerait-il ?"
 date: "2011-09-01T16:21:45"
 modified: "2012-04-15T12:37:03"
 permalink: "que-se-passerait-il/index.html"
-excerpt: "Qu’adviendrait-il du web si chaque personne impliquée dans la création de sites internet demandait à tous ses contacts de mettre à jour son navigateur ? Léa Verou a publié un message intéréssant ici, il y a déjà quelques mois. Il reflète bien le dédain frappant les «&nbsp;techies&nbsp;» à l’approche d’un client qui navigue sur IE8 \[…\] [Lire la suite de «&nbsp;Que se passerait-il ?&nbsp;» →](https://www.ffoodd.fr/que-se-passerait-il/)"
+excerpt: "Qu’adviendrait-il du web si chaque personne impliquée dans la création de sites internet demandait à tous ses contacts de mettre à jour son navigateur ? Léa Verou a publié un message intéréssant ici, il y a déjà quelques mois. Il reflète bien le dédain frappant les «&nbsp;techies&nbsp;» à l’approche d’un client qui navigue sur IE8 […] [Lire la suite de «&nbsp;Que se passerait-il ?&nbsp;» →](https://www.ffoodd.fr/que-se-passerait-il/)"
 format: "standard"
 ---
 **Qu’adviendrait-il du web si chaque personne impliquée dans la création de sites internet demandait à tous ses contacts de mettre à jour son navigateur ?**

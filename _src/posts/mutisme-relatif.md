@@ -1,4 +1,5 @@
 ---
+layout: "base.njk"
 title: "Mutisme relatif"
 date: "2014-05-17T11:59:35"
 modified: "2015-07-03T10:48:05"

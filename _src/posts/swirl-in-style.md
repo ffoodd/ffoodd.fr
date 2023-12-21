@@ -1,9 +1,10 @@
 ---
+layout: "base.njk"
 title: "Dessine-moi un bouton"
 date: "2010-10-31T18:54:49"
 modified: "2013-10-03T10:13:54"
 permalink: "swirl-in-style/index.html"
-excerpt: "Les boutons sont des éléments capitaux du graphisme web : ils appellent, suggèrent et provoquent l’action. Autrefois, les liens hypertextes étaient l’emblème des interactions : aujourd’hui, ce sont les boutons. Une espèce animale Il en existe de toute sorte : des grands, des petits, des noirs, des jaunes, des visuels et des textuels… Chaque bouton \[…\] [Lire la suite de «&nbsp;Dessine-moi un bouton&nbsp;» →](https://www.ffoodd.fr/swirl-in-style/)"
+excerpt: "Les boutons sont des éléments capitaux du graphisme web : ils appellent, suggèrent et provoquent l’action. Autrefois, les liens hypertextes étaient l’emblème des interactions : aujourd’hui, ce sont les boutons. Une espèce animale Il en existe de toute sorte : des grands, des petits, des noirs, des jaunes, des visuels et des textuels… Chaque bouton […] [Lire la suite de «&nbsp;Dessine-moi un bouton&nbsp;» →](https://www.ffoodd.fr/swirl-in-style/)"
 format: "standard"
 ---
 Les boutons sont des éléments capitaux du graphisme web : ils appellent, suggèrent et provoquent **l’action**. Autrefois, les liens hypertextes étaient l’emblème des interactions : aujourd’hui, ce sont les boutons.

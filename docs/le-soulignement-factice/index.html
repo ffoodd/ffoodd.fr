@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Le soulignement factice</title>
+		<meta name="description" content="">
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+		<!-- @todo Ajouter le flux RSS
+			<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/">
+		-->
+	</head>
+	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
+		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+		<div class="row">
+			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation">
+				<ul class="menu aside p-reset m-reset ul-reset">
+					<!-- @todo Gérer l’état current -->
+					<li class="tk-bello-pro h1-like m-reset current-menu-item current_page_item">
+						<a href="/" aria-current="page">ffoodd</a>
+					</li>
+					<li class="h3-like m-reset"><a href="/plus/">À propos</a></li>
+					<!-- @todo gérer l’URL ? -->
+					<li class="h3-like m-reset"><a href="/category/journal/">Journal</a></li>
+					<li class="h3-like m-reset"><a href="/travaux/">Parcours</a></li>
+				</ul>
+			</nav><!-- / #nav -->
+
+			<main class="col w--site pl3 pb3 pr5" id="content" role="main" role="main" itemprop="mainContentOfPage">
+				<div class="logo print-hidden">
+					<img src="/images/2013/10/copy-cropped-ffoodd.png" alt="La vie en #ffoodd" id="logo" width="144" height="144">
+				</div>
+				
+					<p>Je vous enjoins à lire la « <a href="http://letrainde13h37.fr/43/signaletique-hyperliens/">Signalétique des hyperliens</a> » sur le train de 13 h 37, par <a href="https://twitter.com/tetue">Romy Duhem-Verdière</a>. On y apprend notamment que — typographiquement parlant — le souligné nʼest dʼaucune utilité, sauf éventuellement à palier lʼabsence dʼitalique (ce qui est somme toute assez rare). En revanche sur le web, cʼest <strong>le meilleur moyen de signaler un lien</strong>.</p>
+<h2>Graphiquement grossier</h2>
+<p>Le souligné ordinaire est effectivement grossier : cʼest un reliquat des toutes premières typographies affichées sur un écran — que je nʼai pas eu la chance de croiser. Vous pouvez le constater avec cet exemple de souligné ordinaire.[^1]</p>
+<p>[^1]: Percevez-vous comme ce soulignement est affordant ? On a envie de cliquer dessus, pas vrai ?</p>
+<p>Sur le plan visuel, le souligné croise les jambages inférieures, ce qui crée un attroupement inopportun de pixels quʼon pourrait qualifier de « petits pâtés ».[^2]</p>
+<p>[^2]: Terme technique issu dʼune longue histoire de la calligraphie à la plume (ou de lʼapprentissage de lʼécriture avec un stylo plume pour les plus jeunes dʼentre vous).</p>
+<p>Quelques tentatives existaient déjà il y a fort longtemps, comme en témoigne <a href="http://alistapart.com/article/customunderlines">lʼarticle de Susan Robertson sur A List Apart</a> qui utilisait <code>background-image</code> pour mettre un une image répétée en guise de soulignement. Ça peut sembler étrange — notamment quand vous aurez vu les exemples animés — mais en 2004, cʼétait parfaitement fabuleux.</p>
+<h2>Le truchement CSS</h2>
+<p>On ne peut malheureusement pas <strong>encore</strong> intervenir sur la propriété <code>text-decoration: underline;</code> de façon satisfaisante. Ce sera en revanche le cas un jour avec <code>text-decoration-skip: ink;</code> qui est <a href="https://drafts.csswg.org/css-text-decor-3/#text-decoration-skip-property">à lʼétat de brouillon au W3C (en anglais)</a>. Il nʼexiste actuellement aucun support de cette propriété, cependant <a href="https://css-tricks.com/almanac/properties/t/text-decoration-skip/">celle-ci est émulée sur les engins Apple omme le mentionne Chris Coyier sur CSS-Tricks (en anglais)</a>. En attendant, vous allez voir que Susan Robertson était déjà sur la bonne piste il y a 10 ans.</p>
+<p>Lʼastuce — <em>a priori</em> trouvée par Marcin Wichary pour Medium et expliquée dans « <a href="https://medium.com/designing-medium/crafting-link-underlines-on-medium-7c03a9274f9#.hhqigq2dq">Crafting link underlines on Medium</a> » — consiste à supprimer le <code>text-decoration</code> et le trucher à lʼaide dʼun dégradé pour la ligne, et dʼune ombre portée sur le texte pour « nettoyer les jambages ». Comme Susan Robertson, nous allons nous servir de la propriété <code>background-image</code>, mais au lieu de charger un gif nous utiliserons la fonction <code>linear-gradient();</code>. Si vous nʼêtes pas encore familier avec les dégradés, prenez le temps de lire <a href="https://developer.mozilla.org/fr/docs/Web/CSS/linear-gradient">la page dédiée aux dégradés en CSS sur MDN</a>.</p>
+<h2>Du code, du code !</h2>
+<p>Jʼai croisé plusieurs implémentations de cette solution, toutes très intéressantes mais aucune ne fonctionnant « telle quelle ». En voici deux notables :</p>
+<ul>
+<li><a href="https://github.com/edwardtufte/tufte-css/blob/master/tufte.css#L237">la méthode utilisée par tufte-CSS (sur Github)</a> ;</li>
+<li><a href="https://eager.io/blog/smarter-link-underlines/">la réflexion menée par Adam Schwartz pour Eager (en anglais)</a> avec une illustration interactive particulièrement réussie.</li>
+</ul>
+<p>Ça donne suffisamment de matière pour avancer, donc jʼai trituré tout ça jusquʼà obtenir un résultat satisfaisant mes besoins. Vous en trouverez <a href="http://codepen.io/ffoodd/pen/jbRMqJ/">un aperçu rigolo sur CodePen</a>. Pour les feignasses, voici le CSS incriminé :</p>
+<pre><code class="language-css">
+.underline {
+  text-decoration: underline;
+}
+
+.no-highcontrast.cssgradients .underline {
+  background: white 0 88% / 100% 0.1rem no-repeat content-box content-box;
+  background-image: 
+  linear-gradient(
+  rgba(255, 255, 255, .67), 
+  rgba(255, 255, 255, .67)
+  ), 
+  linear-gradient(
+  currentColor, 
+  currentColor
+  );
+  display: inline;
+  text-decoration: none;
+  text-shadow: 
+  .05rem 0 0 white, 
+ -.05rem 0 0 white, 
+  .1rem 0 0 white, 
+ -.1rem 0 0 white, 
+  .2rem 0 0 white, 
+ -.2rem 0 0 white;
+  width: auto;
+}
+
+/* Pour la sélection */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/::selection */
+.no-highcontrast.cssgradients .underline::-moz-selection {
+  background-color: black;
+  color: white;
+  text-shadow: none;
+}
+
+.no-highcontrast.cssgradients .underline::selection {
+  background-color: black;
+  color: white;
+  text-shadow: none;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .underline {
+  background: none !important;
+  text-decoration: underline !important;
+  }
+}
+</code></pre>
+<p>Vous noterez les occurrences multiples de la couleur blanche — tant sous la forme du mot-clé <code>white</code> que de sa notation <code>rgba()</code>. Simplement parce que mon exemple à un arrière-plan blanc. Évidemment si votre texte repose sur un fond coloré, ces valeurs doivent <strong>respecter la couleur dʼarrière-plan</strong>.[^3]</p>
+<p>[^3]: Vous avez probablement déjà compris que si votre texte repose sur une image ou un dégradé, il nʼy aura probablement pas de salut pour votre soulignement.</p>
+<p>Petite astuce à prendre en considération, le second paramètre du <em>mixin</em> concerne la position du soulignement <strong>par rapport à la hauteur de lʼélément</strong>. Je ne suis pas parvenu à rendre ça dispensable, le changement de corps et de caractères entraînant une trop grande variation sur la hauteur de ligne. Dans mes différents cas, la position varie entre 88% et 96%.</p>
+<h2>Cʼest pas un peu verbeux ?</h2>
+<p><strong>Si</strong>. Pour plusieurs raisons que je tente de vous expliquer :</p>
+<ul>
+<li>les propriétés dʼarrière-plan sont très riches, avec dans la notation raccourcie :
+<ul>
+<li><code>background-color</code> </li>
+<li><code>background-position</code> </li>
+<li><code>background-size</code> </li>
+<li><code>background-repeat</code> </li>
+<li><code>background-origin</code> </li>
+<li><code>background-clip</code>.</li>
+</ul>
+</li>
+<li>deux dégradés, dont le premier (couleur dʼarrière-plan en semi-transparent) sert à alléger visuellement le second — qui utilise <code>currentColor</code> pour conserver la couleur du texte sur lequel il est appliqué ;</li>
+<li>lʼombre sur le texte, dont le seul et unique objectif est dʼéviter la collision entre les jambages inférieurs et le soulignement ;</li>
+<li>et deux propriétés auxquelles vous ne vous attendiez peut-être pas : <code>display: inline;</code> et <code>width: auto;</code> dont lʼintérêt est de sʼassurer que notre charmant souligné suive bien le texte <strong>et uniquement le texte</strong>.[^5]</li>
+</ul>
+<p>[^5]: Sans cette astuce, certains éléments auraient un soulignement sur toute la largeur, même si le texte ne la remplit pas — et dʼautres éléments auraient un soulignement uniquement sur la dernière ligne, si dʼaventures ils fussent sur plusieurs lignes.</p>
+<ul>
+<li>les classes de tests du support des dégradés CSS et de lʼactivation du mode de contrastes élevés.</li>
+</ul>
+<p>Ça fait beaucoup de code, mais tout est indispensable.</p>
+<h2>Et lʼaccessibilité ?</h2>
+<p>Pour commencer, il est nécessaire de mettre en place deux scripts fonctionnant sur le même principe :</p>
+<ol>
+<li>un test de fonctionnalité tel que <em>Modernizr</em> — <a href="https://modernizr.com/download?setclasses&amp;q=gradient">dont vous pouvez générer une version uniquement pour les dégradés CSS</a> — afin dʼappliquer ce CSS de soulignement uniquement si le navigateur supporte les dégradés ;</li>
+<li>un second test pour <strong>détecter lʼactivation du mode de contrastes élevés</strong> — qui supprime les arrières-plans et laisserait donc nos éléments soulignés complètement nus et sans soulignement — mais qui détecte également si <strong>lʼutilisateur a personnalisé la couleur des liens</strong> : vous trouverez la source sur <a href="http://jsfiddle.net/karlgroves/XR8Su/6/">un JSFiddle de Karl Groves</a> du Paciello Group (quʼil a lui-même récupéré de Hans Hillen) que jʼai modifié afin de tester un lien plutôt quʼune division.</li>
+</ol>
+<p>Les navigateurs ne supportant pas les dégradés ou étant utilisé conjointement au mode de contrastes élevés resteront avec leur bon vieux <code>text-decoration: underline;</code>.</p>
+<p>Un autre cas pointu est à signaler : <strong>la sélection du texte en question</strong>. Il est impossible à ma connaissance de simplement supprimer les styles ajoutés (<code>unset</code> sert <em>a priori</em> à ça, mais son fonctionnement et son support ne sont pas convaincants). Il faut donc personnaliser la sélection, ce que je fais en inversant couleur dʼarrière-plan et couleur de texte et en supprimant lʼombre sous le texte <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::selection">à lʼaide du pseudo-élément dédié (en anglais)</a>.</p>
+<p>Merci à <a href="https://twitter.com/johan_ramon">Johan Ramon</a> pour mʼavoir rappelé à lʼordre avec ces détails croustillants !</p>
+<h2>Modifications</h2>
+<h3>27 octobre 2016</h3>
+<p>Une petite amélioration est apportée, de la manière suivante :</p>
+<ul>
+<li>si le navigateur gère <strong>les requêtes de fonctionnalités</strong> <em>via</em> <code>@supports</code> et qu’il supporte <code>text-decoration-skip: ink;</code>, on applique cette propriété ;</li>
+<li>si le navigateur gère les requêtes de fonctionnalité mais pas la propriété, on applique le <code>background-image</code> lorsque le mode de contrastes élevés n’est pas activé.</li>
+</ul>
+<p>Si ces ajouts vous intéressent, voici un peu de lecture supplémentaire :</p>
+<ul>
+<li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/@supports"><code>@supports</code> sur MDN</a> ;</li>
+<li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/text-decoration-skip"><code>text-decoration-skip</code>, également sur MDN</a>.</li>
+</ul>
+<p>Tout peut se résumer comme suit :</p>
+<pre><code class="language-css">
+@supports (text-decoration-skip: ink) {
+  text-decoration-skip: ink;
+}
+</code></pre>
+<p>Le <a href="http://codepen.io/ffoodd/pen/jbRMqJ/">CodePen</a> est à jour pour que vous jetiez un œil, et je l’ai <a href="https://gist.github.com/ffoodd/d4bee79e6af99c05f0a32542d66d5969">exporté dans un Gist</a> également.</p>
+<p>Cet ajout a quelques effets notables :</p>
+<ul>
+<li>certains navigateurs sont désormais exclus par le manque de support de <code>@supports</code>, tels que le <em>Stock browser Adnroid</em>, <em>Blackberry Browser</em> ou <em>IE Mobile</em>. Ça me semble une bonne chose puisque ces styles sont relativement coûteux, ces vieux navigateurs mobiles seront épargnés ;</li>
+<li>seul Safari 9 supporte <code>text-decoration-skip: ink;</code>, et je ne suis pas certain que le rendu soit le même. Ce serait à tester et ajuster au cas par cas.</li>
+</ul>
+<p>Mais nous voilà avec un pied dans le futur !</p>
+<h3>20 janvier 2017</h3>
+<p><a href="https://twitter.com/7studio/status/822116634542374914">Xavier Zalawa rencontre un bug de Blink gênant</a> impliquant <code>currentColor</code> dans un <code>linear-gradient</code> en cas de changement d’état. C’est le cas dans ce soulignement factice : <code>currentColor</code> utilisé dans le background n’est pas mis à jour lors du survol ou de la prise de focus, sans être répété— ce qui ruine littéralement l’intérêt de currentColor…</p>
+<p><a href="https://bugs.chromium.org/p/chromium/issues/detail?id=595467">Le bug est ouvert chez Chromium</a>.</p>
+<p><a href="https://twitter.com/iamvdo/status/822130026384592898">Vincent De Oliveira a cependant trouvé une astuce pour le faire fonctionner sans devoir répéter la propriété</a> et ça, c’est cool.</p>
+<p>En repassant donc sur le <a href="http://codepen.io/ffoodd/pen/jbRMqJ">CodePen</a> pour le mettre à jour, je me suis également rendu compte que la <em>media query</em> <code>-ms-high-contrast: active</code> était inutile ; je l’ai donc supprimée. Cette requête n’est comprise que par IE 11 et inférieur — cependant comme elle était imbriquée dans une règle @supports ces derniers ne pouvaient pas la lire. Hop, un peu de code en moins !</p>
+
+				
+			</main>
+
+			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
+				<div class="aside pl2 pt2">
+					<h3 class="tk-bello-pro h2-like m-reset">À lire ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://openweb.eu.org/articles/du-consommateur-au-producteur">sur Openweb</a>
+							</li>
+							<li>
+								<a href="https://www.alsacreations.com/livres/lire/1503-webgrids-structure-et-typographie-de-la-page-web.html">sur Alsacréations</a>
+							</li>
+						</ul>
+					</div>
+					<h3 class="tk-bello-pro h2-like m-reset pt1">À regarder ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php">Paris Web 2018</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</aside>
+
+			<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
+				<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__github" href="https://github.com/ffoodd" itemprop="url" title="Gaël Poupard sur GitHub">
+							<span itemprop="name">GitHub</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__dribble" href="https://dribbble.com/ffoodd" itemprop="url" title="Gaël Poupard sur Dribbble">
+							<span itemprop="name">Dribbble</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__linkedin" href="https://www.linkedin.com/pub/ga%C3%ABl-poupard/30/17b/401" itemprop="url" title="Gaël Poupard sur LinkedIn">
+							<span itemprop="name">LinkedIn</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__behance" href="https://www.behance.net/ffoodd" itemprop="url" title="Gaël Poupard sur Behance">
+							<span itemprop="name">Behance</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/" itemprop="url" title="La vie en #ffoodd | Flux RSS">
+							<span itemprop="name">RSS</span>
+						</a>
+					</li>
+				</ul>
+
+				<small>
+					&copy; 2018 La vie en #ffoodd &mdash; Design et intégration par <span itemprop="name">Gaël Poupard</span> &mdash; <a href="/mentions-legales/">Mentions légales</a>
+					<br />
+					Sauf mention contraire, l’ensemble du contenu est sous <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/fr/">Licence <abbr lang="en" title="Creative Commons">CC</abbr> <abbr lang="en" title="Attribution">BY</abbr>-<abbr lang="en" title="Non Commercial">NC</abbr>-<abbr lang="en" title="Share Alike">SA</abbr></a>.
+				</small>
+
+				<meta itemprop="jobTitle" content="Webdesigner et intégrateur web">
+				<meta itemprop="worksFor" content="onepoint">
+			</footer><!-- / contentinfo -->
+		</div>
+	</body>
+</html>

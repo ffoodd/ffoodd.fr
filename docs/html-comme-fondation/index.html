@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>HTML comme fondation</title>
+		<meta name="description" content="">
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+		<!-- @todo Ajouter le flux RSS
+			<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/">
+		-->
+	</head>
+	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
+		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+		<div class="row">
+			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation">
+				<ul class="menu aside p-reset m-reset ul-reset">
+					<!-- @todo Gérer l’état current -->
+					<li class="tk-bello-pro h1-like m-reset current-menu-item current_page_item">
+						<a href="/" aria-current="page">ffoodd</a>
+					</li>
+					<li class="h3-like m-reset"><a href="/plus/">À propos</a></li>
+					<!-- @todo gérer l’URL ? -->
+					<li class="h3-like m-reset"><a href="/category/journal/">Journal</a></li>
+					<li class="h3-like m-reset"><a href="/travaux/">Parcours</a></li>
+				</ul>
+			</nav><!-- / #nav -->
+
+			<main class="col w--site pl3 pb3 pr5" id="content" role="main" role="main" itemprop="mainContentOfPage">
+				<div class="logo print-hidden">
+					<img src="/images/2013/10/copy-cropped-ffoodd.png" alt="La vie en #ffoodd" id="logo" width="144" height="144">
+				</div>
+				
+					<p><strong>Note</strong> : cet article est la traduction de <a href="https://www.htmhell.dev/adventcalendar/2022/17/">ma contribution au calendrier de l’avent de HTMHell, Modern HTML as a foundation for progressive enhancement</a> !</p>
+<p>Vous êtes peut-être familier avec le concept d’amélioration progressive. En résumé, c’est une méthode permettant de s’assurer que l’utilisateur dispose d’<strong>une version viable</strong> de votre page quelque soit son contexte — connexion limitée, navigateur désuet, etc. — mais aussi de rendre ladite page plus <strong>résiliente</strong> (par exemple aux erreurs JavaScript).</p>
+<p>L’amélioration progressive débute par la base :</p>
+<ol>
+<li>le <strong>contenu</strong>,</li>
+<li>balisé avec <strong>HTML</strong>,</li>
+<li>stylé avec <strong>CSS</strong>,</li>
+<li>enrichi avec <strong>JavaScript</strong>,</li>
+<li>et amélioré pour l’accessibilité avec <strong>ARIA</strong> (en cas de besoin uniquement).</li>
+</ol>
+<p>Chacune de ces étapes devrait fonctionner telle quelle et améliorer les étapes précédentes sans les abîmer. En d’autres termes, il vous faut rédiger votre HTML indépendamment du CSS ou du JavaScript que vous y appliquerez ensuite.</p>
+<p>Cela étant dit, il paraît évident que mieux vous connaissez chaque étape de la liste, plus votre page devrait être robuste. <strong>JavaScript est omniprésent</strong> donc je présume que vous en êtes familier. <strong>ARIA devient de plus en plus visible</strong> depuis quelques années, donc on peut supposer que même sans connaître ARIA vous utilisez une bibliothèque ou un outil s’en occupant très bien. <strong>CSS s’améliore constamment</strong> et j’imagine que votre veille vous permet de découvrir des nouveautés quotidiennement ou presque…</p>
+<p>Mais quid de HTML ? Fait-il partie de votre <strong>veille technique</strong> ? Voyez-vous fréquemment passer des nouveautés HTML dans vos flux d’information ? Pas très souvent, je présume.</p>
+<p>Mais voilà. HTML est un standard vivant donc les spécifications changent, les navigateurs améliorent leurs supports en permanence — avec <a href="https://wpt.fyi/interop-2022">Interop 2022</a> par exemple — donc il y a des nouveautés, côté spécifications ou côté navigateurs ; et certains d’entre eux sont destinés à devenir des versions natives de composants JavaScript basés sur un amas de <code>div</code> depuis des lustres.</p>
+<p>Et si nous pouvions améliorer la couche HTML pour ce genre de composants, rendant le balisage plus résilient au passage ?</p>
+<p><strong>Avertissement</strong> : il faut voir HTML comme <strong>une fondation, en aucun cas un remplacement</strong> de votre composant JavaScript existant. Si votre composant requière ARIA, ne tentez pas de l’implémenter sans. Autrement dit, tentez systématiquement de fournir la meilleure expérience utilisateur possible et ne vous préoccupez pas trop de l’expérience développeur. Vous pourriez être intéressé par <a href="https://adrianroselli.com/2022/10/under-engineered-patterns-for-a11ytoconf.html#References">la série d’articles sur les composants sous-conçus d’Adrian Roselli</a>.</p>
+<p>Allons faire une ballade !</p>
+<h2><code>details</code> et <code>summary</code> comme base pour le motif de conception <em>disclosure</em></h2>
+<p>Remémorez-vous ces boutons « Voir plus » qui font apparaître des contenus supplémentaires quand vous les activez. Rendre ce genre de composant accessible nécessite généralement que vous implémentiez le motif de conception ARIA <em>disclosure</em>, basé sur un bouton et l’attribut <code>aria-expanded</code> pour communiquer l’état.</p>
+<p><code>&lt;details&gt;</code> et <code>summary&gt;</code> sont les candidats parfaits pour ça. Comme leur nom l’indique, ce motif de balisage va afficher un résumé (<em>summary</em>) et masquer les détails associés, mais les rendre disponibles lors de l’activation du résumé. <a href="https://thepaciellogroup.github.io/AT-browser-tests/test-files/details-summary.html">L’implémentation par les navigateurs</a> et <a href="https://caniuse.com/details">le support</a> sont excellents.</p>
+<p>Ça semble plutôt sympa, non ? Alors pourquoi s’embarrasser avec le motif de conception <em>disclosure</em> et ne pas préférer utiliser <code>&lt;details&gt;</code> et <code>&lt;summary&gt;</code> systématiquement ? Pour faire simple, les interactions ne sont pas exactement celles attendues par vos utilisateurs, et le support par les navigateurs et technologies d’assistance n’est pas encore idéal — <a href="https://www.scottohara.me/blog/2022/09/12/details-summary.html">comme l’a démontré Scott O’Hara</a>.</p>
+<p>Mais alors… peut-on l’utiliser comme la fondation de notre motif de conception ARIA <em>disclosure</em> ? <a href="https://codepen.io/ffoodd/pen/XWYmmGj">Découvrons ça (sur CodePen)</a> !</p>
+<p>Rien de magique ici : pour améliorer et harmoniser le support des technologies d’assistance, on transforme le motif HTML en <em>disclosure</em> en ajoutant à l’élément <code>&lt;summary&gt;</code> le rôle <code>button</code> et l’attribut <code>aria-expanded</code> pour expliciter l’état, et en s’assurant que le contenu masqué l’est pour tout le monde avec l’attribut <code>hidden</code>. L’attribut <code>open</code> sur l’élément <code>&lt;details&gt;</code> se charge de tout ça nativement, mais <a href="https://www.scottohara.me/blog/2022/09/12/details-summary.html#impact-of-removing-the-default-disclosure-triangle">on ne peut pas se reposer dessus dès qu’on personnalise le marqueur triangle par défaut</a> (ce qu’on fera à n’en pas douter) : on doit implémenter le motif de conception <em>disclosure</em> complet pour éviter des restitutions incohérentes entre navigateurs et technologies d’assistance.</p>
+<p>De plus, saviez-vous que les navigateurs basés sur Chromium permettent de trouver le contenu masqué par <code>&lt;details&gt;</code> lors d’une recherche sur la page ? C’est une fonctionnalité qui va être standardisée en HTML avec <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/hidden#the_hidden_until_found_state">la valeur <code>until-found</code> pour l’attribut <code>hidden</code></a> mais ça n’est pas censé être le cas des contenus masqués par le motif de conception <em>disclosure</em>.</p>
+<p>Comme vous l’avez peut-être compris, utiliser <code>&lt;details&gt;</code> et <code>&lt;summary&gt;</code> enrichis avec le motif de conception ARIA <em>disclosure</em> ne fera aucune différence pour la plupart des utilisateurs… mais si d’aventure votre JS ou votre CSS ne fonctionne pas, votre balisage sémantique prendra le relai et restera interactif — avec toutes ses limitations actuelles dans les technologies d’assistance.</p>
+<p>Faites d’ailleurs attention en utilisant ces éléments comme fondation : ils ne sont pas le bon choix <a href="https://daverupert.com/2019/12/why-details-is-not-an-accordion/">pour des accordéons</a>, <a href="https://melsumner.github.io/details-as-a-menu">un menu déroulant</a>, <a href="https://cloudfour.com/thinks/a-details-element-as-a-burger-menu-is-not-accessible/">un menu « burger »</a>, <a href="https://adrianroselli.com/2019/04/details-summary-are-not-insert-control-here.html">un groupe d’onglets ou une fenêtre modale</a>… Restez sémantiques !</p>
+<p>Et si je vous disais qu’il y a d’autres éléments HTML améliorables progressivement de la sorte ? On jette un œil ?</p>
+<h2><code>output</code> comme une <em>live region</em></h2>
+<p>Avez-vous déjà eu besoin d’alimenter une <em>live region</em> pour communiquer des changements aux utilisateurs de lecteurs d’écran — parfois <a href="https://www.ffoodd.fr/cache-cache-css/">masquée visuellement en CSS</a> ? C’est assez fréquent de nos jours, et vous retrouverez une gestion des <em>live regions</em> dans la plupart des <em>frameworks</em> : Angular a un <code>LiveAnnouncer</code> dans son CDK Accessibilité, et <a href="https://make.wordpress.org/accessibility/handbook/markup/wp-a11y-speak/">WordPress a un script interne <code>wp.a11y.speak()</code></a>… <a href="https://developer.mozilla.org/fr/docs/Web/Accessibility/ARIA/ARIA_Live_Regions">Les <em>live regions</em> ARIA s’appuient sur trois rôles spécifiques : <code>status</code>, <code>log</code> et <code>alert</code></a>, chacune ayant un comportement légèrement différent.</p>
+<p>Mais saviez-vous qu’un élément HTML est une <em>live region</em> native, avec un rôle implicite <code>status</code> ? <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/output">Je vous présente <code>&lt;output&gt;</code></a> ! <a href="https://thepaciellogroup.github.io/AT-browser-tests/test-files/output.html">L’implémentation par les navigateurs est complète</a> et <a href="https://caniuse.com/mdn-html_elements_output">le support est excellent</a>. Cependant certains couples de navigateurs et technologies d’assistance précis sont défectueux, comme <a href="https://www.scottohara.me/blog/2019/07/10/the-output-element.html">Scott O’Hara (à nouveau) l’a démontré</a>.</p>
+<p><a href="https://codepen.io/ffoodd/pen/rNvqGBB">Rendons <code>&lt;output&gt;</code> encore plus robuste en le transformant en <em>live region</em> ARIA (sur CodePen)</a> !</p>
+<p>Vous vous en souvenez peut-être, expliciter les rôles des éléments HTML était nécessaire il y a quelques années — pour les <em>landmarks</em>, principalement — afin d’améliorer le support des navigateurs et technologies d’assistance. C’est d’ailleurs toujours une pratique encouragée par <a href="https://www.numerique.gouv.fr/publications/rgaa-accessibilite/methode-rgaa/criteres/#crit-12-6">le critère 12.6 du RGAA</a>. Nous nous sommes habitués à écrire <code>&lt;main role=&quot;main&quot;&gt;</code>, <code>&lt;header role=&quot;banner&quot;&gt;</code>, etc.</p>
+<p>Un autre point positif avec <code>&lt;output role=&quot;status&quot;&gt;</code> est que ça vous permet de styler vos <em>live regions</em> en sélectionnant l’élément <code>output</code> : spécificité moins élevée, et la possibilité d’appliquer des styles de base renforcés — avec <em>CSS containment</em>, par exemple ?</p>
+<h3>Une <em>live region</em> particulière : le toast !</h3>
+<p>Il existe aussi un cas d’usage pour une <em>live region</em> affichée visuellement. Je n’irais pas très loin sur le sujet, car il a déjà été traité dans un grand nombre d’articles de grande qualité :</p>
+<ul>
+<li><a href="https://www.scottohara.me/blog/2019/07/10/the-output-element.html">Scott O’Hara l’a mentionné dans The Output Element</a>,</li>
+<li>une précision technique après <a href="https://www.scottohara.me/blog/2019/07/08/a-toast-to-a11y-toasts.html">A toast to an accessible toast… abordant les considérations d’expérience utilisateur</a>,</li>
+<li>mais aussi <a href="https://adrianroselli.com/2020/01/defining-toast-messages.html">Adrian Roselli avec Defining toast message</a>.</li>
+</ul>
+<p><strong>Attention</strong> : si votre toast ou votre <em>live region</em> contient des éléments interactifs, vous devriez probablement utiliser un rôle <code>dialog</code> ou <code>alertdialog</code> au lieu d’un élément <code>&lt;output&gt;</code>. Cela dit… il y a peut-être un élément HTML plus indiqué pour ça !</p>
+<h2>Une boîte de <code>dialog</code></h2>
+<p>Je ne vais pas creuser beaucoup <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/dialog">l’élément <code>&lt;dialog&gt;</code></a>, mais explorons tout de même ce qu’il fait nativement comparé au <a href="https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal/">modèle de conception ARIA dialog</a> :</p>
+<ul>
+<li>il a un rôle <code>dialog</code> implicite,</li>
+<li>si on l’ouvre avec la méthode <code>showModal()</code> :
+<ul>
+<li>il a une propriété <code>aria-modal=&quot;true&quot;</code> implicite,</li>
+<li>il peut être fermé avec la touche Échap,</li>
+</ul>
+</li>
+<li>il piège le focus en son sein — mais permet d’atteindre la fenêtre du navigateur, c’est toujours discuté…</li>
+<li>il restaure le focus à l’élément qui a déclenché l’ouverture, lors de sa fermeture,</li>
+<li>il rend le reste du document <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/inert"><code>inert</code></a> automatiquement.</li>
+</ul>
+<p>Mais il y a plus ! Voyez plutôt :</p>
+<ul>
+<li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/::backdrop">Le pseudo-élément <code>::backdrop</code></a> permet de styler l’arrière-plan superposé vraiment facilement.</li>
+<li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/:modal">La pseudo-classe <code>:modal</code></a> s’applique lorsque <code>&lt;dialog&gt;</code> est ouvert avec la méthode <code>showModal()</code>.</li>
+<li>Si votre boîte de dialogue contient un formulaire, utiliser l’attribut <code>method=&quot;dialog&quot;</code> sur le formulaire permet à votre bouton de soumission de fermer la boîte de dialogue en transmettant les données.</li>
+</ul>
+<p>L’élément <code>&lt;dialog&gt;</code> seul n’est pas (encore) suffisamment cohérent entre les différents navigateurs et technologies d’assistance, <a href="https://www.scottohara.me/blog/2019/03/05/open-dialog.html">comme Scott O’Hara (de nouveau) l’a remarqué</a>, mais vous avez saisi le principe : qu’en serait-il si on l’enrichissait en appliquant le motif de conception ARIA <em>dialog</em>, et en s’appuyant sur le comportement natif pour économiser quelques lignes de JavaScript ?</p>
+<p>C’est plus ou moins <a href="https://web.dev/building-a-dialog-component/">ce qu’Adam Argyle a exploré avec son composant <em>dialog</em> sur web.dev</a> avec quelques astuces sympathiques à apprendre — gardez cependant à l’esprit que <a href="https://twitter.com/aardrian/status/1586792250113232896">les contenus sur web.dev ne sont pas testés avec des technologies d’assistance ni contre les WCAG</a>.</p>
+<p><a href="https://css-tricks.com/dialog-components-roll-your-own/">Construire un composant <em>dialog</em> n’est vraiment pas évident</a>, et <a href="https://www.smashingmagazine.com/2021/07/accessible-dialog-from-scratch/">Kitty Giraudel a détaillé ce dont vous avez besoin pour faire un bon composant <em>dialog</em></a>. Depuis la rédaction de ces articles, le support de <code>&lt;dialog&gt;</code> s’est considérablement amélioré et <a href="https://wpt.fyi/interop-2022">fait même partie  d’Interop 2022</a>, donc attendez-vous à ce que le support s’améliore encore en ces derniers jours de 2022.</p>
+<p>C’est probablement l’exemple le moins évident, puisqu’en parlant d’amélioration progressive l’élément <code>&lt;dialog&gt;</code> pourrait être un mauvais choix : il ne peut tout bonnement pas fonctionner sans JavaScript. Mais si votre JavaScript est en panne pour une raison inopinée, vos écouteurs d’événement pourraient toujours fonctionner.</p>
+<h2>Conclusion</h2>
+<p>HTML est incroyable. Ça n’est pas suffisant pour proposer un expérience accessible à tous les utilisateurs, comme <a href="https://daverupert.com/2020/02/html-the-inaccessible-parts/">Dave Rupert l’a mis en exergue il y a deux dans HTML: the inaccessible parts</a> — bien que certains de ces exemples ne sont plus d’actualité, corrigés dans les navigateurs ou technologies d’assistance.</p>
+<p>Mais ne pas être parfait est probablement toujours mieux qu’être neutre, n’est-ce pas ?</p>
+<p>Je crois que c’est le genre de choses qu’HTML permet : <code>&lt;details&gt;</code> et <code>&lt;summary&gt;</code> finiront par être implémentés et restitués de façon cohérente aux technologies d’assistance, rendant les enrichissements avec ARIA caduques. Le travail de Scott, du test très avancé aux articles de blogs et à l’ouverture de tickets de bug, est la voie à suivre. Les implémentations complètes dans les bibliothèques comme <a href="https://a11y-dialog.netlify.app/">a11y-dialog de Kitty Giraudel</a> permettent de gagner en maturité et de clarifier les attentes pour ces composants. Et avec l’augmentation des usages, les navigateurs et technologies d’assistance vont certainement reconsidérer leurs priorisations, dans des opérations comme Interop ou <a href="https://aria-at.w3.org/">ARIA-AT</a>.</p>
+<p>Alors utilisons, testons, et aidons les navigateurs et technologies d’assistance à supporter ces nouveaux éléments HTML !</p>
+
+				
+			</main>
+
+			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
+				<div class="aside pl2 pt2">
+					<h3 class="tk-bello-pro h2-like m-reset">À lire ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://openweb.eu.org/articles/du-consommateur-au-producteur">sur Openweb</a>
+							</li>
+							<li>
+								<a href="https://www.alsacreations.com/livres/lire/1503-webgrids-structure-et-typographie-de-la-page-web.html">sur Alsacréations</a>
+							</li>
+						</ul>
+					</div>
+					<h3 class="tk-bello-pro h2-like m-reset pt1">À regarder ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php">Paris Web 2018</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</aside>
+
+			<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
+				<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__github" href="https://github.com/ffoodd" itemprop="url" title="Gaël Poupard sur GitHub">
+							<span itemprop="name">GitHub</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__dribble" href="https://dribbble.com/ffoodd" itemprop="url" title="Gaël Poupard sur Dribbble">
+							<span itemprop="name">Dribbble</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__linkedin" href="https://www.linkedin.com/pub/ga%C3%ABl-poupard/30/17b/401" itemprop="url" title="Gaël Poupard sur LinkedIn">
+							<span itemprop="name">LinkedIn</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__behance" href="https://www.behance.net/ffoodd" itemprop="url" title="Gaël Poupard sur Behance">
+							<span itemprop="name">Behance</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/" itemprop="url" title="La vie en #ffoodd | Flux RSS">
+							<span itemprop="name">RSS</span>
+						</a>
+					</li>
+				</ul>
+
+				<small>
+					&copy; 2018 La vie en #ffoodd &mdash; Design et intégration par <span itemprop="name">Gaël Poupard</span> &mdash; <a href="/mentions-legales/">Mentions légales</a>
+					<br />
+					Sauf mention contraire, l’ensemble du contenu est sous <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/fr/">Licence <abbr lang="en" title="Creative Commons">CC</abbr> <abbr lang="en" title="Attribution">BY</abbr>-<abbr lang="en" title="Non Commercial">NC</abbr>-<abbr lang="en" title="Share Alike">SA</abbr></a>.
+				</small>
+
+				<meta itemprop="jobTitle" content="Webdesigner et intégrateur web">
+				<meta itemprop="worksFor" content="onepoint">
+			</footer><!-- / contentinfo -->
+		</div>
+	</body>
+</html>

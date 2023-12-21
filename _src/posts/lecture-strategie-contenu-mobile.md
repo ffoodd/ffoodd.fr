@@ -1,9 +1,10 @@
 ---
+layout: "base.njk"
 title: "Stratégie de contenu mobile"
 date: "2013-08-23T13:01:21"
 modified: "2013-11-13T12:19:59"
 permalink: "lecture-strategie-contenu-mobile/index.html"
-excerpt: "Les détails négatifs Car il ne faut pas plus de quelques détails pour donner une impression négative : Les explications se répètent de nombreuses fois, et parfois s’enchaînent simplement – donnant l’impression d’être légèrement attardé et d’avoir besoin de cette frustrante répétition; Beaucoup d’allusions péjoratives sont faites aux CMS «&nbsp;populaires&nbsp;» – comparant WordPress à Tumblr, \[…\] [Lire la suite de «&nbsp;Stratégie de contenu mobile&nbsp;» →](https://www.ffoodd.fr/lecture-strategie-contenu-mobile/)"
+excerpt: "Les détails négatifs Car il ne faut pas plus de quelques détails pour donner une impression négative : Les explications se répètent de nombreuses fois, et parfois s’enchaînent simplement – donnant l’impression d’être légèrement attardé et d’avoir besoin de cette frustrante répétition; Beaucoup d’allusions péjoratives sont faites aux CMS «&nbsp;populaires&nbsp;» – comparant WordPress à Tumblr, […] [Lire la suite de «&nbsp;Stratégie de contenu mobile&nbsp;» →](https://www.ffoodd.fr/lecture-strategie-contenu-mobile/)"
 format: "status"
 editeur: "Eyrolles"
 auteur: "Karen McGrane"

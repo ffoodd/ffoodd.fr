@@ -33,6 +33,7 @@ Object.keys(pages).forEach((p, i) => {
 	transformAndWriteToFile({
 		frontmatterMarkdown: {
 			frontmatter: [
+				{ layout: 'base.njk' },
 				{ title: turndownService.turndown(page.title.rendered).replace(/\u00A0/g, '&nbsp;') },
 				{ permalink: `${page.slug}/index.html` }
 			],

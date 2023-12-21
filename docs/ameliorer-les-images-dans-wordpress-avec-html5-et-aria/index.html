@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>[caption] avec html5 et aria</title>
+		<meta name="description" content="">
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+		<!-- @todo Ajouter le flux RSS
+			<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/">
+		-->
+	</head>
+	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
+		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+		<div class="row">
+			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation">
+				<ul class="menu aside p-reset m-reset ul-reset">
+					<!-- @todo Gérer l’état current -->
+					<li class="tk-bello-pro h1-like m-reset current-menu-item current_page_item">
+						<a href="/" aria-current="page">ffoodd</a>
+					</li>
+					<li class="h3-like m-reset"><a href="/plus/">À propos</a></li>
+					<!-- @todo gérer l’URL ? -->
+					<li class="h3-like m-reset"><a href="/category/journal/">Journal</a></li>
+					<li class="h3-like m-reset"><a href="/travaux/">Parcours</a></li>
+				</ul>
+			</nav><!-- / #nav -->
+
+			<main class="col w--site pl3 pb3 pr5" id="content" role="main" role="main" itemprop="mainContentOfPage">
+				<div class="logo print-hidden">
+					<img src="/images/2013/10/copy-cropped-ffoodd.png" alt="La vie en #ffoodd" id="logo" width="144" height="144">
+				</div>
+				
+					<p>Pour commencer, il faut comprendre une problématique de base en terme d’accessibilité : la distinction entre <strong>les images décoratives</strong> et <strong>les images porteuses de sens</strong>. Pour comprendre cette distinction et son importance, je vous recommande vivement la lecture d’<a href="https://www.ffoodd.fr/lecture-accessibilite-web/" title="Accessibilité web"><em>«Accessibilité web»</em></a> par <a href="http://www.armonyaltinier.fr/" title="Le site d’Armony Altinier (nouvelle fenêtre)">Armony Altinier</a>. Comme souvent lorsque nous parlons d’<strong>accessibilité web</strong>, il s’agit de bon sens : une image porteuse de sens doit être restituée à tous les utilisateurs, tandis qu’une image décorative ne doit être montrée qu’aux utilisateurs disposant d’un affichage graphique complet.</p>
+<h2>Les limites de WordPress</h2>
+<p>Tout le monde n’est pas sensible à ces questions, même s’il le faudrait : WordPress ne fait pas exception. Il donne cependant la possibilité à ses utilisateurs de servir des images de façon tout à fait correcte, en proposant de base pour tous les fichiers la capacité d’adjoindre un texte alternatif — ce qui remplit le critère principal des <a href="http://checklists.opquast.com/fr/" title="Les checklists OpQuast (nouvelle fenêtre)">bonnes pratiques d’OpQuast</a> et permet de satisfaire <a href="http://www.accessiweb.org/index.php/accessiweb_2.2_liste_generale.html#images" title="La thématique image sur Accessiweb (nouvelle fenêtre)">la plupart des critères de niveau Bronze d’Accessiweb</a>.</p>
+<p>Pour autant WordPress ne va pas plus loin :</p>
+<ul>
+<li>Dans le cas d’une image décorative, il l’ajoute dans une balise <code>&lt;img /&gt;</code> et conserve l’attribut <code>alt</code> vide s’il n’est pas renseigné. <strong>C’est une bonne façon de procéder</strong>, car l’image n’est pas vocalisée par un lecteur d’écran et n’a aucun poids sémantique.</li>
+<li>Dans le cas d’une image qui véhicule une information ( ce que je suppose être le cas si la légende est renseignée ), il encadre cette image d’une <code>&lt;div&gt;</code> et y intègre la description dans un <code>&lt;p&gt;</code> ( <em>cf :</em>  <a href="http://core.trac.wordpress.org/browser/tags/3.7.1/src/wp-includes/media.php#L614" title="Le code source du shortcode (nouvelle fenêtre)">le code source du shortcode</a> ). <strong>C’est problématique car il n’existe aucun lien sémantique entre l’image et sa description, et le balisage est neutre.</strong></li>
+</ul>
+<p>Certes, c’est du fignolage. Mais c’est à priori dans les détails que l’on améliore sensiblement la qualité d’un site web.</p>
+<h2>Les images porteuses de sens</h2>
+<p>Le cas des images véhiculant des informations demande donc quelques efforts : il faut intercepter le shortcode afin de le ré-interpréter <strong>avant</strong> qu’il ne soit renvoyé côté client. Voici ce à quoi j’ai pu aboutir : </p>
+<pre><code class="language-php">  /* == @section Remplace le code généré par [caption] ==================== */
+  /**
+ * @note : Le contenu est filtré pour remplacer le html généré pour les caption par du html5 sémantique. Astuce trouvée sur Reverie.
+ * @author : Zhen Huang
+ * @see : http://themefortress.com/reverie/
+ * @see : https://github.com/milohuang/reverie/blob/master/lib/clean.php#LC151
+ * @note : On y ajoute les microdonnées qui vont bien.
+ * @author : Joost Kiens ( @joostkiens )
+ * @see : https://gist.github.com/JoostKiens/4477366
+ * @note : Et j’y ajoute les roles et attributs Aria nécessaires
+ * @see : http://www.kloh.ch/craw2013-html5-aria-et-accessibilite-web-479
+ */
+  add_filter( ’img_caption_shortcode’, ’ffeeeedd__caption’, 10, 3 );
+  function ffeeeedd__caption( $output, $attr, $content ) {
+  if ( is_feed() ) {
+  return $output;
+  }
+  $defaults = array(
+  ’id’ =&gt; ’’,
+  ’align’ =&gt; ’alignnone’,
+  ’width’ =&gt; ’’,
+  ’caption’ =&gt; ’’
+  );
+  $attr = shortcode_atts( $defaults, $attr );
+  if ( 1 &gt; (int) $attr[’width’] || empty( $attr[’caption’] ) ) {
+  return $content;
+  }
+  $content = str_replace( ’&lt;img’, ’&lt;img id=&quot;’ . $attr[’id’] . ’&quot; itemprop=&quot;contentURL&quot; aria-describedby=&quot;wp-caption--’ . $attr[’id’] . ’&quot;’, $content );
+  $attributes = ’ class=&quot;wp-caption inbl ’ . esc_attr( $attr[’align’] ) . ’&quot;’;
+  $output = ’&lt;figure’ . $attributes .’ role=&quot;group&quot; itemscope itemtype=&quot;http://schema.org/ImageObject&quot;&gt;’;
+  $output .= do_shortcode( $content );
+  $output .= ’&lt;figcaption class=&quot;wp-caption-text pt1 small&quot; id=&quot;wp-caption--’ . $attr[’id’] . ’&quot; itemprop=&quot;description&quot;&gt;’ . $attr[’caption’] . ’&lt;/figcaption&gt;’;
+  $output .= ’&lt;/figure&gt;’;
+  return $output;
+  }
+</code></pre>
+<h2>L’intervention détaillée</h2>
+<p>La structure d’origine est conservée ; je détaille ce qui a été fait :</p>
+<ul>
+<li>Une couche sémantique HTML5 est appliquée en lieu et place du balisage «neutre» précédent : <code>figure</code> et <code>figcaption</code> ;</li>
+<li>Une couche ARIA améliore la compréhension de ce balisage parfois défaillant dans les technologies d’assistance, comme me l’a appris <a href="http://www.kloh.ch/craw2013-html5-aria-et-accessibilite-web-479" title="Compte-rendu de l’atelier de J.P. Villain par Luc (nouvelle fenêtre)">le compte-rendu d’un atelier</a> de <a href="https://twitter.com/villainjp" title="Profil Twitter de Jean-Pierre Villain (nouvelle fenêtre)">Jean-Pierre Vilain</a> à la <a href="http://www.telono.com/fr/agence/conference-romande-accessibilite-web-2013/" title="Conférence Romande sur l’Accessibilité Web 2013 (nouvelle fenêtre)">CRAW2013</a> rédigé par <a href="https://twitter.com/klohFR" title="Profil Twitter de Luc Poupard (nouvelle fenêtre)">Luc</a>. Dans notre cas, le <code>role=&quot;group&quot;</code>.[^1]</li>
+</ul>
+<p>[^1]: En savoir plus sur le rôle «group» : https://developer.mozilla.org/en-US/docs/Accessibility/ARIA/ARIA_Techniques/Using_the_group_role</p>
+<ul>
+<li>Et finalement une dernière couche est ajoutée : les micro-données.[^3]</li>
+</ul>
+<p>[^3]: Découvrir les micro-données pour enrichir les objets images : http://schema.org/ImageObject</p>
+<p>Ce code n’est probablement pas parfait, car je ne l’ai pas testé avec un lecteur d’écran : il va falloir que je le fasse. Mais je pense que c’est un premier pas en avant vers une meilleure qualité des sites WordPress que je produis.</p>
+<p><strong>Les commentaires, conseils et indications supplémentaires seront grandement appréciés</strong> :) .</p>
+<h2>Mises à jour</h2>
+<p>Suite à un bref échange avec <a href="https://twitter.com/johan_ramon" title="Johan Ramon sur Twitter (nouvelle fenêtre)">Johan Ramon</a>, je dois préciser un point important : l’alternative textuelle de l’image doit également mentionner la légende attenante, pour les technologies d’assistance qui ne prendraient pas en compte l’attribut <code>aria-describedby</code>. Voici les ressources utiles </p>
+<ul>
+<li><a href="http://www.accessiweb.org/forumhtml5/viewtopic.php?id=39#p810" title="Discussion sur le forum d’AccessiWeb (nouvelle fenêtre)">Discussion sur le critère 1.10 d’AccessiWeb 2.2</a></li>
+<li><a href="http://blog.atalan.fr/support-des-attributs-aria-par-les-lecteurs-decran/" title="Article sur le blog de la société Atalan (nouvelle fenêtre)">Support des attributs ARIA par les lecteurs d’écran</a></li>
+</ul>
+<p>Comme souvent, cette dernière contrainte repose entièrement sur le contributeur qui doit être <strong>informé</strong> et <strong>éduqué</strong> à cette responsabilité.</p>
+
+				
+			</main>
+
+			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
+				<div class="aside pl2 pt2">
+					<h3 class="tk-bello-pro h2-like m-reset">À lire ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://openweb.eu.org/articles/du-consommateur-au-producteur">sur Openweb</a>
+							</li>
+							<li>
+								<a href="https://www.alsacreations.com/livres/lire/1503-webgrids-structure-et-typographie-de-la-page-web.html">sur Alsacréations</a>
+							</li>
+						</ul>
+					</div>
+					<h3 class="tk-bello-pro h2-like m-reset pt1">À regarder ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php">Paris Web 2018</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</aside>
+
+			<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
+				<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__github" href="https://github.com/ffoodd" itemprop="url" title="Gaël Poupard sur GitHub">
+							<span itemprop="name">GitHub</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__dribble" href="https://dribbble.com/ffoodd" itemprop="url" title="Gaël Poupard sur Dribbble">
+							<span itemprop="name">Dribbble</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__linkedin" href="https://www.linkedin.com/pub/ga%C3%ABl-poupard/30/17b/401" itemprop="url" title="Gaël Poupard sur LinkedIn">
+							<span itemprop="name">LinkedIn</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__behance" href="https://www.behance.net/ffoodd" itemprop="url" title="Gaël Poupard sur Behance">
+							<span itemprop="name">Behance</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/" itemprop="url" title="La vie en #ffoodd | Flux RSS">
+							<span itemprop="name">RSS</span>
+						</a>
+					</li>
+				</ul>
+
+				<small>
+					&copy; 2018 La vie en #ffoodd &mdash; Design et intégration par <span itemprop="name">Gaël Poupard</span> &mdash; <a href="/mentions-legales/">Mentions légales</a>
+					<br />
+					Sauf mention contraire, l’ensemble du contenu est sous <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/fr/">Licence <abbr lang="en" title="Creative Commons">CC</abbr> <abbr lang="en" title="Attribution">BY</abbr>-<abbr lang="en" title="Non Commercial">NC</abbr>-<abbr lang="en" title="Share Alike">SA</abbr></a>.
+				</small>
+
+				<meta itemprop="jobTitle" content="Webdesigner et intégrateur web">
+				<meta itemprop="worksFor" content="onepoint">
+			</footer><!-- / contentinfo -->
+		</div>
+	</body>
+</html>

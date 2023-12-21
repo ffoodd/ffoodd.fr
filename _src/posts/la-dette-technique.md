@@ -1,4 +1,5 @@
 ---
+layout: "base.njk"
 title: "La dette technique"
 date: "2016-02-19T13:03:53"
 modified: "2016-02-19T13:03:53"

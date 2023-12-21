@@ -1,4 +1,5 @@
 ---
+layout: "base.njk"
 title: "Le web en kit"
 date: "2015-10-30T10:11:52"
 modified: "2015-11-04T11:21:28"

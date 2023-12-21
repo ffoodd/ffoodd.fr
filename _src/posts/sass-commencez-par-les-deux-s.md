@@ -1,4 +1,5 @@
 ---
+layout: "base.njk"
 title: "Sass : commencez par les deux « S »"
 date: "2013-11-28T14:26:04"
 modified: "2015-07-03T10:49:17"

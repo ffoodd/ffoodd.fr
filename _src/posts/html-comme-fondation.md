@@ -1,4 +1,5 @@
 ---
+layout: "base.njk"
 title: "HTML comme fondation"
 date: "2022-12-22T16:53:57"
 modified: "2022-12-22T16:54:59"

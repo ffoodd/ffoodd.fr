@@ -1,9 +1,10 @@
 ---
-title: "\[caption\] avec html5 et aria"
+layout: "base.njk"
+title: "[caption] avec html5 et aria"
 date: "2013-11-12T16:32:51"
 modified: "2015-07-03T10:49:36"
 permalink: "ameliorer-les-images-dans-wordpress-avec-html5-et-aria/index.html"
-excerpt: "Le shortcode \[caption\], au demeurant très pratique, est cependant très limité :&nbsp;il se contente d’ajouter l’image et sa description ( un paragraphe ) dans une div. Correct pour l’affichage, mais très léger en terme de sémantique et d’accessibilité. Voyons comment améliorer ça ! [Lire la suite de «&nbsp;\[caption\] avec html5 et aria&nbsp;» →](https://www.ffoodd.fr/ameliorer-les-images-dans-wordpress-avec-html5-et-aria/)"
+excerpt: "Le shortcode [caption], au demeurant très pratique, est cependant très limité :&nbsp;il se contente d’ajouter l’image et sa description ( un paragraphe ) dans une div. Correct pour l’affichage, mais très léger en terme de sémantique et d’accessibilité. Voyons comment améliorer ça ! [Lire la suite de «&nbsp;[caption] avec html5 et aria&nbsp;» →](https://www.ffoodd.fr/ameliorer-les-images-dans-wordpress-avec-html5-et-aria/)"
 format: "standard"
 ---
 Pour commencer, il faut comprendre une problématique de base en terme d’accessibilité&thinsp;:&nbsp;la distinction entre **les images décoratives** et **les images porteuses de sens**. Pour comprendre cette distinction et son importance, je vous recommande vivement la lecture d’[_«Accessibilité web»_](https://www.ffoodd.fr/lecture-accessibilite-web/ "Accessibilité web") par [Armony Altinier](http://www.armonyaltinier.fr/ "Le site d’Armony Altinier (nouvelle fenêtre)"). Comme souvent lorsque nous parlons d’**accessibilité web**, il s’agit de bon sens&thinsp;:&nbsp;une image porteuse de sens doit être restituée à tous les utilisateurs, tandis qu’une image décorative ne doit être montrée qu’aux utilisateurs disposant d’un affichage graphique complet.

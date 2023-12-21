@@ -1,4 +1,5 @@
 ---
+layout: "base.njk"
 title: "21e séminaire AccessiWeb"
 date: "2015-07-15T15:06:31"
 modified: "2015-07-15T15:06:31"

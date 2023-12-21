@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Le web en kit</title>
+		<meta name="description" content="">
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+		<!-- @todo Ajouter le flux RSS
+			<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/">
+		-->
+	</head>
+	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
+		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+		<div class="row">
+			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation">
+				<ul class="menu aside p-reset m-reset ul-reset">
+					<!-- @todo Gérer l’état current -->
+					<li class="tk-bello-pro h1-like m-reset current-menu-item current_page_item">
+						<a href="/" aria-current="page">ffoodd</a>
+					</li>
+					<li class="h3-like m-reset"><a href="/plus/">À propos</a></li>
+					<!-- @todo gérer l’URL ? -->
+					<li class="h3-like m-reset"><a href="/category/journal/">Journal</a></li>
+					<li class="h3-like m-reset"><a href="/travaux/">Parcours</a></li>
+				</ul>
+			</nav><!-- / #nav -->
+
+			<main class="col w--site pl3 pb3 pr5" id="content" role="main" role="main" itemprop="mainContentOfPage">
+				<div class="logo print-hidden">
+					<img src="/images/2013/10/copy-cropped-ffoodd.png" alt="La vie en #ffoodd" id="logo" width="144" height="144">
+				</div>
+				
+					<p>Beaucoup de gens qui fabriquent le web se sont plaints de lʼhégémonie dʼIE6.</p>
+<p>Pour protester, ils se sont rués sur les nouveaux arrivants : Firefox et Chrome. Puis les produits Apple ont débarqué, apportant avec eux Safari. Cʼétait encore une révolution — et de fait, le nouvel endroit ou aller. Or Safari fonctionne sur la même base que Chrome, à savoir le moteur de rendu Webkit. Et petit à petit, nous nous sommes retrouvés <strong>avec un nouveau monopole</strong>.</p>
+<p>Malheureusement, on ne casse pas un monopole avec un monopole. Car tous ces gens qui se sont rués sur les navigateurs WebKit ont produit des morceaux de web qui ne sont pas inter-opérables : on ne pouvait sʼen servir (voire simplement y accéder) autrement <strong>quʼavec un sésame estampillé WebKit</strong>.</p>
+<h2>Microsoft et Edge</h2>
+<p>De façon parfaitement sensée, Microsoft — qui détenait environ 95% des parts de marché des navigateurs web (ce qui lui est reproché) — a voulu faire table rase du passé pour en finir avec la mauvaise réputation de son navigateur vedette.[^1]</p>
+<p>[^1]: Jʼaime rappeler aux gens qui pestent après IE quʼil est ma foi fort probable quʼils fissent partie des 95% dʼinternautes qui naviguaient avec. Ça pique.</p>
+<p><a href="http://blogs.windows.com/msedgedev/2015/06/17/building-a-more-interoperable-web-with-microsoft-edge/"><strong>Alors ils font passer Edge pour WebKit.</strong></a></p>
+<h2>Le <em>-webkit-only</em></h2>
+<h3>Les préfixes vendeurs</h3>
+<p>Vous commencez à flairer lʼarnaque, pas vrai ? Edge interprète désormais les CSS préfixées par <code>-webkit-</code>. Bon allez, si ça nʼest que ça cʼest de bonne guerre !</p>
+<p>Sauf que… <strong>Non</strong>. Ça ne sʼarrête pas à ça.</p>
+<h3>Les propriétés hors spécification</h3>
+<p>Pendant très longtemps, Chrome et Safari ont implémenté des nouveautés avant de les proposer aux concepteurs des spécifications — notamment des propriétés et valeurs CSS. Ça permet de mettre un peu de pression sur le processus de spécification et de tenir en haleine les développeurs.</p>
+<p>Parmi ces nouveautés, la valeur <code>text</code> pour la propriété <code>background-clip</code>.</p>
+<p>Cette propriété fait partie intégrante de <a href="https://drafts.csswg.org/css-backgrounds-3/#the-background-clip">la spécification (en anglais</a>) depuis longtemps. La valeur <code>text</code> a été <a href="https://www.webkit.org/blog/164/background-clip-text/">proposée en 2008 par WebKit (en anglais)</a>, et nʼétait — jusquʼà preuve du contraire — supportée que par les navigateurs basés sur WebKit.</p>
+<h2>Edge gère !</h2>
+<p>Edge lʼinterprète, cette valeur exotique — et sans souci. Jʼai découvert ça inopinément, en me disant que <a href="http://nimbupani.com/using-background-clip-for-text-with-css-fallback.html">la solution de repli proposée par Divya Manian (en anglais)</a> était robuste. En terme de logique, elle est imparable : lʼarrière-plan est conçu pour ne sʼappliquer que si le clip est interprété, car lʼensemble est préfixé par <code>-webkit-</code>. Voyez plutôt :</p>
+<pre><code class="language-css">
+[class=&quot;rainbow&quot;] {
+  color: #fff;
+  display: inline-block;
+  /* -webkit-only: Chrome, Safari, Opera */  
+  background: -webkit-linear-gradient(…);
+  background: -o-linear-gradient(…);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+</code></pre>
+<p>Mais Edge considère désormais les préfixes <code>-webkit-</code> comme des <em>aliases</em>, et les mange tout crus. Ça aurait pu être un problème dans ce cas précis, puisque théoriquement la paire <code>background-clip: text;</code> nʼest reconnue que par les navigateurs basés sur WebKit. Là encore : <strong>surprise</strong> ! Edge lʼapplique sans rechigner.</p>
+<h3>Cas isolé ?</h3>
+<p>De nombreuses techniques ont vu le jour et nʼont vécu que pour WebKit. Je mʼinterroge donc : parmi ces techniques que nous pensons réservées à WebKit, <strong>combien dʼautres encore ont atterri dans Edge discrètement ?</strong></p>
+<h2>Et Windows Phone, on en parle 😄 ?</h2>
+<p>Et bien… En quelque sorte ! Pour clarifier, précisons que jʼutilise Windows Phone 8.1, qui embarque IE11. Dʼaprès mes lectures sur le blog technique de Edge, ce mécanisme dʼinterprétation des préfixes vendeurs <code>-webkit-</code> nʼest inclus que dans Edge — en tout cas, il nʼy est fait aucune mention du cousin IE11.</p>
+<p>Figurez-vous que <strong>cʼest pourtant le cas</strong> (je suis sûr que vous nʼavez rien vu venir, avec mes gros sabots 😇). Enfin… <strong>Presque</strong>.</p>
+<h3>Le cas qui pique</h3>
+<p><a href="https://www.ffoodd.fr/ie9-sur-wp7-et-font-face-je-taime-moi-non-plus/">Une fois nʼest pas coutume</a>, Windows Phone et son IE représentent une configuration particulière. En lʼoccurrence, IE11 interprète les valeurs <code>-webkit-linear-gradient(…)</code> mais est incapable dʼappliquer la valeur <code>text</code> pour la proriété <code>background-clip</code>. Oups 🙈 !</p>
+<h2>Captures à lʼappui</h2>
+<p>Dans un monde merveilleux et homogène, nous « devrions » voir ceci :</p>
+<p><img src="/images/2015/10/chrome-300x31.png" alt="Capture dʼécran de Chrome" title="Un arc-en-ciel incrusté au texte en CSS, visible sur les navigateurs WebKit et Edge"></p>
+<p>Et, le cas échéant si votre navigateur est allergique aux arc-en-ciels, voici le résultat attendu :</p>
+<p><img src="/images/2015/10/firefox-300x30.png" alt="Capture dʼécran sur Firefox">↔&quot;Le texte est simplement blanc sur Firefox et IE, pas dʼarc-en-ciel à lʼhorizon&quot;)</p>
+<p>Jusque là, tout va bien. La mécanique est belle, aucun danger grâce à la solution de repli évoquée précédemment. Maintenant, cassons tout ! Voici le rendu sur IE11 <strong>et <em>UC Browser</em></strong> sur Windows Phone 8.1 :</p>
+<p><img src="/images/2015/10/windowsphone-300x169.jpg" alt="capture dʼécran sur Windows Phone 8.1">↔&quot;Le texte est blanc, mais lʼarrière-plan arc-en-ciel est appliqué&quot;)</p>
+<p>Difficile de garantir quoi que ce soit dans ces conditions. <em>A priori</em> ce problème nʼexiste pas dans les versions antérieures de Windows Phone, et il faut noter que la version bureau dʼIE11 nʼapplique pas lʼarrière-plan !</p>
+<p>Si vous voulez tester par vous-mêmes ou compléter mes propos, nʼhésitez pas à dupliquer <a href="http://dabblet.com/gist/08fddf3666c39ebc62ca">mon dabblet</a>.</p>
+<p>Et pour ceux qui rigolent dans le fond, sachez que <a href="http://gs.statcounter.com/#mobile_os-FR-monthly-201507-201509-bar">Windows Phone représente 4% de parts de marché des systèmes dʼexploitation sur mobile en France, entre juillet et septembre 2015 (en anglais)</a>. Ce nʼest pas négligeable, si tant est quʼon admette négliger une population.[^2]</p>
+<p>[^2]: Je mettrais dʼailleurs ma main a couper quʼen réalité ce chiffre est déjà sous-estimé, à en croire mes yeux de lynx qui officient dans le tramway, le bus ou le TER à Nantes</p>
+
+				
+			</main>
+
+			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
+				<div class="aside pl2 pt2">
+					<h3 class="tk-bello-pro h2-like m-reset">À lire ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://openweb.eu.org/articles/du-consommateur-au-producteur">sur Openweb</a>
+							</li>
+							<li>
+								<a href="https://www.alsacreations.com/livres/lire/1503-webgrids-structure-et-typographie-de-la-page-web.html">sur Alsacréations</a>
+							</li>
+						</ul>
+					</div>
+					<h3 class="tk-bello-pro h2-like m-reset pt1">À regarder ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php">Paris Web 2018</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</aside>
+
+			<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
+				<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__github" href="https://github.com/ffoodd" itemprop="url" title="Gaël Poupard sur GitHub">
+							<span itemprop="name">GitHub</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__dribble" href="https://dribbble.com/ffoodd" itemprop="url" title="Gaël Poupard sur Dribbble">
+							<span itemprop="name">Dribbble</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__linkedin" href="https://www.linkedin.com/pub/ga%C3%ABl-poupard/30/17b/401" itemprop="url" title="Gaël Poupard sur LinkedIn">
+							<span itemprop="name">LinkedIn</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__behance" href="https://www.behance.net/ffoodd" itemprop="url" title="Gaël Poupard sur Behance">
+							<span itemprop="name">Behance</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/" itemprop="url" title="La vie en #ffoodd | Flux RSS">
+							<span itemprop="name">RSS</span>
+						</a>
+					</li>
+				</ul>
+
+				<small>
+					&copy; 2018 La vie en #ffoodd &mdash; Design et intégration par <span itemprop="name">Gaël Poupard</span> &mdash; <a href="/mentions-legales/">Mentions légales</a>
+					<br />
+					Sauf mention contraire, l’ensemble du contenu est sous <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/fr/">Licence <abbr lang="en" title="Creative Commons">CC</abbr> <abbr lang="en" title="Attribution">BY</abbr>-<abbr lang="en" title="Non Commercial">NC</abbr>-<abbr lang="en" title="Share Alike">SA</abbr></a>.
+				</small>
+
+				<meta itemprop="jobTitle" content="Webdesigner et intégrateur web">
+				<meta itemprop="worksFor" content="onepoint">
+			</footer><!-- / contentinfo -->
+		</div>
+	</body>
+</html>

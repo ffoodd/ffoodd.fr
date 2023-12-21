@@ -1,4 +1,5 @@
 ---
+layout: "base.njk"
 title: "Un test Modernizr pour les contrastes élevés"
 date: "2015-11-25T15:06:44"
 modified: "2015-11-25T15:06:44"

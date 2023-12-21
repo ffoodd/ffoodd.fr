@@ -1,4 +1,5 @@
 ---
+layout: "base.njk"
 title: "Guide pratique de choix typographique"
 date: "2013-11-09T16:50:57"
 modified: "2013-11-13T11:44:37"

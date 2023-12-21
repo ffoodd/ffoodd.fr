@@ -1,4 +1,5 @@
 ---
+layout: "base.njk"
 title: "Navigation, Aria et WordPress"
 date: "2013-10-09T13:31:19"
 modified: "2013-11-13T12:12:38"

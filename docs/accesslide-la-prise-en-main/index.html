@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>AccesSlide&amp;nbsp;: la prise en main</title>
+		<meta name="description" content="">
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+		<!-- @todo Ajouter le flux RSS
+			<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/">
+		-->
+	</head>
+	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
+		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+		<div class="row">
+			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation">
+				<ul class="menu aside p-reset m-reset ul-reset">
+					<!-- @todo Gérer l’état current -->
+					<li class="tk-bello-pro h1-like m-reset current-menu-item current_page_item">
+						<a href="/" aria-current="page">ffoodd</a>
+					</li>
+					<li class="h3-like m-reset"><a href="/plus/">À propos</a></li>
+					<!-- @todo gérer l’URL ? -->
+					<li class="h3-like m-reset"><a href="/category/journal/">Journal</a></li>
+					<li class="h3-like m-reset"><a href="/travaux/">Parcours</a></li>
+				</ul>
+			</nav><!-- / #nav -->
+
+			<main class="col w--site pl3 pb3 pr5" id="content" role="main" role="main" itemprop="mainContentOfPage">
+				<div class="logo print-hidden">
+					<img src="/images/2013/10/copy-cropped-ffoodd.png" alt="La vie en #ffoodd" id="logo" width="144" height="144">
+				</div>
+				
+					<p>Access42 est la société créée conjointement par Armony Altinier (rédactrice du livre « Accessibilité web » dont j’ai écrit <a href="https://www.ffoodd.fr/lecture-accessibilite-web/">un compte-rendu de lecture</a>) et Jean-Pierre Villain après qu’ils aient remporté le marché de refonte du RGAA3. Ils ont été rapidement rejoint par Sylvie Duchateau et Audrey Maniez.</p>
+<p>Si vous ne connaissez pas ces noms, sachez qu’ils sont <strong>incontournables dans le domaine de l’accessibilité numérique en France</strong>. Et c’est peu dire !</p>
+<h2>Premier contact</h2>
+<p>Pour commencer, je tiens à signaler la manière tout à fait <strong>attractive</strong> qu’a trouvé d’Access42 pour communiquer sur ce nouvel outil : c’est suite à ma participation à leur <a href="http://access42.net/MAJ-Jeu-concours-le-secret-de-la-licorne.html">jeu-concours : le secret de la licorne</a> que j’ai reçu un mail signalant dans un premier temps <a href="https://github.com/access42/AccesSlide">le dépôt Github d’AccesSlide</a>.</p>
+<p>C’est bête, mais ça donne envie de regarder ! Étant donné que j’avais déjà cherché une solution lors de la préparation de mon atelier pour le <a href="http://2014.wptech.fr/">WP Tech</a> et que je prépare une conférence pour le <a href="http://2015.wpmx.org/">WPMX</a>, je me suis lancé dans l’utilisation de cet outil.</p>
+<p>De prime abord, <strong>cette solution est très riche</strong>. Le <strong>sommaire</strong> ainsi que <strong>les réglages utilisateurs</strong> sont de très gros atouts pour ce système de diaporama.</p>
+<p><strong>Commençons par créer le contenu  !</strong></p>
+<h2>La contribution</h2>
+<p>Partie cruciale s’il en est, AccesSlide permet de rédiger ces slides de façon extrêmement simple, en imposant <strong>très peu de contraintes sur le balisage</strong>. Il suffit d’une section avec la bonne classe, et le tour est joué :</p>
+<pre><code class="language-markup">&lt;section class=&quot;slide&quot;&gt; [votre diapo] &lt;/section&gt;
+</code></pre>
+<p>Il est difficile de faire plus simple, et c’est équivalent en terme d’efficacité aux solutions populaires telles que <a href="http://lab.hakim.se/reveal-js/#/">Reveal.js</a>. <strong>Ainsi pour la saisie du contenu, c’est top !</strong></p>
+<h2>La personnalisation</h2>
+<p>L’équipe d’Access42 a gardé cet aspect important pour l’appropriation en tête, <strong>et c’est tant mieux</strong>. Un système de thèmes fonctionne très bien, ce qui m’a permis d’implémenter très rapidement des styles qui correspondent à la fois à ce site mais aussi à ma précédente présentation. Quelques ajustements ont évidemment été nécessaires, mais rien de bien compliqué.</p>
+<p>Je dois même avouer avoir été agréablement surpris par la facilité de personnalisation, car la majorité des styles structurels sont cloisonnés dans un fichier principal et <strong>évite toute forme de collision désagréable</strong>.</p>
+<h2>Mon thème</h2>
+<p>Ni une, ni deux : j’ai donc créé mon thème. Voici donc <a href="https://www.ffoodd.fr/wp-tech/">le support de mon atelier du WP Tech</a> refondu en utilisant AccesSlide. Qu’en pensez-vous ?</p>
+<p>Pour rester fidèle à ma première présentation — mais aussi pour essayer de creuser un peu plus — je suis allé faire quelques modifications plus profondes.</p>
+<h3>Les pictogrammes en SVG</h3>
+<p>Mon dada du moment. Les boutons et liens icônes sont intégrés à l’aide d’une police d’icône dans la version « officielle » proposée par Access42. Personnellement, je n’aime pas cette technique, que je trouve moins robuste qu’une bonne vieille balise image avec une source vectorielle. J’ai donc changé la façon de gérer ces boutons. Ça m’amène à une première remarque d’ordre général, mais sans être expert <strong>je pense que le javascript peut encore être amélioré</strong> car on trouve beaucoup de répétitions.</p>
+<p>Pour information, il s’avère que si une balise image a une source svg, il faut ajouter le rôle image afin que VoiceOver accède à l’alternative textuelle :</p>
+<pre><code class="language-markup">&lt;img src=&quot;*.svg&quot; alt=&quot;Quel essai !&quot; role=&quot;img&quot; 
+   width=&quot;8&quot; height=&quot;8&quot; /&gt;
+</code></pre>
+<p>Étant donné que ça ne constitue pas un effort insurmontable ni même complexe, je préfère toujours cette version (qui fonctionne à partir d’IE9).</p>
+<p>Un petit coucou et un grand merci à Nicolas Hoffmann qui, suite à mon interrogation, a permis de confirmer ce diagnostic en haranguant la plèbe sur Twitter. Lisez <a href="https://twitter.com/Nico3333fr/status/601687531218931712">le fil de discussion</a>, c’est très intéressant !</p>
+<h3>La transition en CSS</h3>
+<p>J’avais particulièrement apprécié la gestion des transitions sur Reveal.js, plutôt simple et efficace à l’aide de CSS. Aucun des effets proposés par AccesSlide ne correspondaient à celui que j’utilisais précédemment, alors je l’ai re-créé et ajouté !</p>
+<p>Là encore, <strong>ce fut extrêmement facile</strong> en déclarant la nouvelle animation <a href="https://github.com/access42/AccesSlide/blob/master/AccesSlide.js#L63">conformément aux isntructions laissées dans le fichier javascript principal</a>. Côté utilisateur, vous pourrez voir cette animation en la choisissant dans les réglages : je l’ai nommée « Coulisse vers la gauche » puisque c’est ce qu’elle fait !</p>
+<p>Ainsi le conteneur principal se voit affubler d’un attribut <code>data-effect</code> dont la valeur est le nom de l’effet. Il n’en faut pas plus pour appliquer la transition CSS de mes rêves (même si je dois avouer devoir truander un peu afin de ne pas toucher aux fichiers originels) :</p>
+<pre><code class="language-css">[data-effect=&quot;ffoodd&quot;] .slide {
+  display: block !important;
+  opacity: 0;
+  margin: .5rem;
+  position: absolute;
+  top: 0 !important;
+  visibility: hidden;
+  transform-style: preserve-3d;
+  transition: 
+  transform-origin .8s cubic-bezier(.26, .86, .44, .985),
+  transform .8s cubic-bezier(.26, .86, .44, .985),
+  visibility .8s cubic-bezier(.26, .86, .44, .985),
+  opacity .8s cubic-bezier(.26, .86, .44, .985);
+}
+
+[data-effect=&quot;ffoodd&quot;] .slide[style*=&quot;display: none&quot;] {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  transform: translate3d( -150%, 0, 0 );
+  visibility: hidden;
+}
+
+/* C’est là que je truande :P */
+[data-effect=&quot;ffoodd&quot;] .slide[style*=&quot;display: block&quot;] {
+  opacity: 1    !important;
+  position: relative  !important;
+  visibility: visible !important;
+}
+
+[data-effect=&quot;ffoodd&quot;] .slide[style*=&quot;display: block&quot;] ~ .slide[style*=&quot;display: none&quot;] {
+  transform: translate3d( 150%, 0, 0 );
+}
+</code></pre>
+<p>Et puis pour le fun, j’ai ajouté une animation au chargement de la page :</p>
+<pre><code class="language-css">@keyframes move-up {
+  from {
+  transform: translateY( 100% ) translateZ( 0 );
+  opacity: 0;
+  }
+}
+
+[data-effect=&quot;ffoodd&quot;] #wrapper {
+  animation: move-up .8s cubic-bezier(.165, .840, .440, 1);
+}
+</code></pre>
+<p>Et le tour est joué ☺.</p>
+<h2>Participez !</h2>
+<p>Pour le moment mon thème est trop éloigné de la solution originelle pour que je puisse le proposer simplement, mais avec un peu de réécriture ce devrait être faisable (tout comme l’animation). <strong>Je tenterai de les proposer à Access42 dès que mon temps libre me le permettra</strong> !</p>
+<p>Même si je ne m’en suis pas servi, je tiens également à souligner l’utilisation de fichiers partiels et du post-processeur <a href="http://www.myth.io/">Myth</a> pour générer les sources. Le découpage en fichiers partiels rend l’orientation dans les fichiers encore plus clair. Côté compilation, une configuration basique pour Grunt est aussi mise à disposition.</p>
+<p><strong>Tout est fait pour que quiconque puisse s’approprier la solution rapidement.</strong></p>
+<p>Ah oui au fait, il y a d’autres fonctionnalités que je n’ai même pas évoquées :</p>
+<ul>
+<li>les styles pour l’impression ;</li>
+<li>le responsive ;</li>
+<li>un mode plan ;</li>
+<li>un système d’internationalisation géré <em>via</em> javascript.</li>
+</ul>
+<p>Plutôt pas mal, non ☺ ?</p>
+<p><strong>Alors à votre tour de contribuer</strong> : <a href="https://github.com/access42/AccesSlide">AccesSlide est sur Github</a> !</p>
+<h2>Épilogue</h2>
+<p>Il me reste un point important remonté par <a href="http://anysurfer.be/fr">Sophie Schuermans</a> concernant l’aspect responsive que j’ai un peu endommagé. Et je tiens également à remercier <a href="http://www.nicolas-hoffmann.net/source/">Nicolas Hoffmann</a> pour sa relecture attentive et ses conseils, ainsi qu’<a href="http://accessiblog.fr/">Olivier Nourry</a> pour son intérêt !</p>
+
+				
+			</main>
+
+			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
+				<div class="aside pl2 pt2">
+					<h3 class="tk-bello-pro h2-like m-reset">À lire ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://openweb.eu.org/articles/du-consommateur-au-producteur">sur Openweb</a>
+							</li>
+							<li>
+								<a href="https://www.alsacreations.com/livres/lire/1503-webgrids-structure-et-typographie-de-la-page-web.html">sur Alsacréations</a>
+							</li>
+						</ul>
+					</div>
+					<h3 class="tk-bello-pro h2-like m-reset pt1">À regarder ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php">Paris Web 2018</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</aside>
+
+			<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
+				<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__github" href="https://github.com/ffoodd" itemprop="url" title="Gaël Poupard sur GitHub">
+							<span itemprop="name">GitHub</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__dribble" href="https://dribbble.com/ffoodd" itemprop="url" title="Gaël Poupard sur Dribbble">
+							<span itemprop="name">Dribbble</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__linkedin" href="https://www.linkedin.com/pub/ga%C3%ABl-poupard/30/17b/401" itemprop="url" title="Gaël Poupard sur LinkedIn">
+							<span itemprop="name">LinkedIn</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__behance" href="https://www.behance.net/ffoodd" itemprop="url" title="Gaël Poupard sur Behance">
+							<span itemprop="name">Behance</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/" itemprop="url" title="La vie en #ffoodd | Flux RSS">
+							<span itemprop="name">RSS</span>
+						</a>
+					</li>
+				</ul>
+
+				<small>
+					&copy; 2018 La vie en #ffoodd &mdash; Design et intégration par <span itemprop="name">Gaël Poupard</span> &mdash; <a href="/mentions-legales/">Mentions légales</a>
+					<br />
+					Sauf mention contraire, l’ensemble du contenu est sous <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/fr/">Licence <abbr lang="en" title="Creative Commons">CC</abbr> <abbr lang="en" title="Attribution">BY</abbr>-<abbr lang="en" title="Non Commercial">NC</abbr>-<abbr lang="en" title="Share Alike">SA</abbr></a>.
+				</small>
+
+				<meta itemprop="jobTitle" content="Webdesigner et intégrateur web">
+				<meta itemprop="worksFor" content="onepoint">
+			</footer><!-- / contentinfo -->
+		</div>
+	</body>
+</html>

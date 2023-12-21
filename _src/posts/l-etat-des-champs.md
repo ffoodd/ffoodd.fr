@@ -1,4 +1,5 @@
 ---
+layout: "base.njk"
 title: "L’état des champs"
 date: "2017-12-21T14:09:15"
 modified: "2022-12-22T16:55:46"

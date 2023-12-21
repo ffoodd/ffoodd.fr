@@ -1,4 +1,5 @@
 ---
+layout: "base.njk"
 title: "Sémantique de l’interaction"
 date: "2011-03-05T11:52:36"
 modified: "2013-10-03T10:14:18"

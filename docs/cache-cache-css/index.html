@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Cache-cache CSS</title>
+		<meta name="description" content="">
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+		<!-- @todo Ajouter le flux RSS
+			<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/">
+		-->
+	</head>
+	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
+		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+		<div class="row">
+			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation">
+				<ul class="menu aside p-reset m-reset ul-reset">
+					<!-- @todo Gérer l’état current -->
+					<li class="tk-bello-pro h1-like m-reset current-menu-item current_page_item">
+						<a href="/" aria-current="page">ffoodd</a>
+					</li>
+					<li class="h3-like m-reset"><a href="/plus/">À propos</a></li>
+					<!-- @todo gérer l’URL ? -->
+					<li class="h3-like m-reset"><a href="/category/journal/">Journal</a></li>
+					<li class="h3-like m-reset"><a href="/travaux/">Parcours</a></li>
+				</ul>
+			</nav><!-- / #nav -->
+
+			<main class="col w--site pl3 pb3 pr5" id="content" role="main" role="main" itemprop="mainContentOfPage">
+				<div class="logo print-hidden">
+					<img src="/images/2013/10/copy-cropped-ffoodd.png" alt="La vie en #ffoodd" id="logo" width="144" height="144">
+				</div>
+				
+					<p>Et j’ai beau trouver ça idiot — masquer du texte pour certains utilisateurs et pas pour d’autres, ça me paraît incohérent avec l’accessibilité — c’est un besoin récurrent.</p>
+<p>Il existe de nombreuses façons de faire, que je ne détaillerai pas ici. Depuis quelques années, lorsque je le peux, j’utilise celle de <a href="https://twitter.com/thierrykoblentz">Thierry Koblentz</a> pour Yahoo! qui est décrite <a href="https://developer.yahoo.com/blogs/ydn/clip-hidden-content-better-accessibility-53456.html">sur le blog technique de Yahoo!</a> <a href="http://cssmojo.com/hide-content-from-sighted-users/">sur le blog de Thierry</a>. C’est de loin la plus complète, et la seule à ma connaissance à supporter la direction de texte de droite à gauche.</p>
+<p>Mais elle n’est pas exempte de problème, désormais.</p>
+<h2>Propriété dépréciée</h2>
+<p>La « magie » de cette solution repose sur la propriété <code>clip</code>. Elle est simple à comprendre et très efficace. Seul bémol : <code>clip</code> est <strong>déprécié par le module <em><a href="https://drafts.fxtf.org/css-masking-1/#clip-property">CSS masking</a></em></strong> de niveau 1.</p>
+<p>Pas de souci. La technique basée sur <code>clip</code> date un peu, il est normal qu’elle tombe en désuétude. La nouvelle spécification recommande l’utilisation de <code>clip-path</code> pour remplacer <code>clip</code>. Ce qui nous laisse pantois, puisque <a href="http://caniuse.com/#feat=css-clip-path">le support de <code>clip-path</code> est encore tout à fait relatif</a>. <strong>Nous devons conserver <code>clip</code> et ajouter <code>clip-path</code> en guise d’amélioration progressive</strong>.</p>
+<p>Cependant la syntaxe est différente également. Après quelques recherches, <a href="https://twitter.com/ryuran78/status/778943389819604992">Yvain Liechti a proposé la version la plus courte pour obtenir le résultat attendu</a> :</p>
+<pre><code class="language-css">clip-path: inset(50%);
+</code></pre>
+<p>Banco. Un problème résolu !</p>
+<h2>Le texte ratatiné</h2>
+<p><a href="https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe">J. Renée Beach a signalé</a> que la propriété <code>width: 1px;</code> avait des effets négatifs sur le rendu du texte et par conséquent sa vocalisation par un lecteur d’écran.</p>
+<p>La solution proposée est à la fois logique et simple : empêcher le texte de passer à la ligne et ainsi <strong>garantir que les espaces entre les mots sont conservés</strong>.</p>
+<p>Une seule propriété suffit :</p>
+<pre><code class="language-css">white-space: nowrap;
+</code></pre>
+<p>Et voilà, second problème résolu.</p>
+<h2>La totale</h2>
+<p>Voilà la version finale que je propose actuellement :</p>
+<pre><code class="language-css">
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+</code></pre>
+<h3>Avertissement</h3>
+<p>Normalement, vous ne devriez utiliser ceci <strong>que pour du texte</strong>. Autrement dit, il ne devrait jamais y avoir d’élément capable de recevoir le <code>:focus</code> dans un élément masqué de la sorte. Cela pourrait conduire à des comportements étonnants, puisque le navigateur cherchera à positionner le <em>scroll</em> à l’endroit où est placé le <code>:focus</code>.</p>
+<p>Cependant, si l’élément masqué peut lui-même recevoir le <code>:focus</code>, il nous faut pouvoir l’afficher de nouveau. <strong>C’est généralement le cas pour les liens d’évitement</strong>. Lisez <a href="https://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1">la technique G1 des WCAG</a> pour en savoir plus.</p>
+<p>Pour ce genre de cas, <a href="https://github.com/twbs/bootstrap/blob/v4-dev/scss/mixins/_screen-reader.scss">Bootstrap propose une classe supplémentaire</a> pour remettre à zéro nos valeurs de masquage.</p>
+<p>C’est à mon avis la meilleure façon de faire — et étant donné les changements apportés sur la classe de masquage, cette seconde classe doit être revue elle aussi. Voici ma version :</p>
+<pre><code class="language-css">
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+  clip: auto !important;
+  -webkit-clip-path: none !important;
+    clip-path: none !important;
+  height: auto !important;
+  margin: auto !important;
+  overflow: visible !important;
+  width: auto !important;
+  white-space: normal !important;
+}
+</code></pre>
+<h2>Code et traduction</h2>
+<p>Vous pouvez retrouver ces classes à plusieurs endroits :</p>
+<ul>
+<li><a href="http://codepen.io/ffoodd/pen/gwKZyq?editors=1100#">sur CodePen</a> ;</li>
+<li><a href="https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034">dans un Gist</a>.</li>
+</ul>
+<p>Qu’en dites-vous ?</p>
+<h3>Version anglaise</h3>
+<p><a href="https://twitter.com/KittyGiraudel">Kitty Giraudel</a> m’a fait l’honneur de <a href="http://kittygiraudel.com/2016/10/13/css-hide-and-seek/">traduire cet article en anglais et le publier sur son blog</a>. Merci !</p>
+<h2>Modifications</h2>
+<h3>Les lecteurs d’écran sur mobile</h3>
+<p>19 octobre 2016</p>
+<p>Ayant besoin de tests sur cette version pour vérifier qu’elle n’introduit pas de régressions, <a href="https://twitter.com/johan_ramon/status/788372720224526336">Johan Ramon m’a remonté un bug étrange sur VoiceOver</a>. En creusant un peu avec <a href="https://github.com/PigeardSylvain">Sylvain Pigeard</a>, il nous est apparu que <code>position: static</code> posait problème lors de la prise de focus d’un lien ayant la classe <code>.sr-only-focusable</code>.</p>
+<p>Nous étions contents, lorsqu’en cherchant à avertir l’équipe de Bootstrap nous sommes tombés sur <a href="https://github.com/twbs/bootstrap/issues/20732">un ticket ouvert récemment qui implique également TalkBack</a>. <a href="https://twitter.com/patrick_h_lauke">Patrick H. Lauke</a>, en investiguant, a décelé de nombreuses incohérences dans la gestion du focus entre les diverses technologies d’assistance sur mobile. Il a ainsi ouvert des tickets un peu partout :</p>
+<ul>
+<li><a href="https://microsoftaccessibility.uservoice.com/forums/307429-microsoft-accessibility-feedback/suggestions/16717318-focusable-elements-should-fire-focus-event-recei">Narrator</a>, le lecteur d’écran intégré à Windows 8, Windows 10 et Windows Phone ;</li>
+<li><a href="https://bugs.chromium.org/p/chromium/issues/detail?id=657157">TalkBack</a>, le lecteur d’écran intégré à Android, interfacé avec Chromium ;</li>
+<li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1000082">Firefox</a>, qui tend à s’interfacer le mieux possible avec tous les lecteurs d’écran ;</li>
+<li><a href="https://bugs.webkit.org/show_bug.cgi?id=116046">Webkit</a>, le moteur de rendu de Safari ;</li>
+<li><a href="https://bugs.webkit.org/show_bug.cgi?id=163658">Webkit</a>, encore.</li>
+</ul>
+<p>L’état des lieux est assez sombre : <strong>les liens d’évitement ne marchent globalement pas sur les interfaces tactiles lorsqu’on utilise un lecteur d’écran</strong>. Ô joie.</p>
+<h3>Le référencement naturel</h3>
+<p>19 octobre 2016</p>
+<p><a href="https://twitter.com/stevefaulkner">Steve Faulkner</a> — du <a href="https://www.paciellogroup.com/blog/">Paciello Group</a> — a posé la question au forum de support pour <em>webmasters</em> de Google : <a href="https://productforums.google.com/forum/#!msg/webmasters/YJcZUhtMIE4/XkOEzVakBAAJ">les contextes supplémentaires pour utilisateurs malvoyants ont-ils un effet négatif sur le positionnement dans les résultats de recherche ?</a></p>
+<p>Réponse courte : <strong>non</strong> Cependant étant donné que ce texte n’apparaît pas de prime abord il est considéré comme du contenu secondaire et a donc un très faible impact sur le positionnement, et c’est une excellente chose puisque cela dissuade d’en abuser.</p>
+<h3>Les débordements inopinés</h3>
+<p>18 janvier 2019</p>
+<p>De multiples problèmes de débordements ont été observés, notamment sur Chrome, lorsque les éléments masqués sont contenus dans un élément avec <code>overflow: auto;</code>. <a href="https://github.com/Orange-OpenSource/Orange-Boosted-Bootstrap/issues/84">Le problème est résolu dans Boosted</a> en ajoutant <code>margin: -1px;</code>.</p>
+
+				
+			</main>
+
+			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
+				<div class="aside pl2 pt2">
+					<h3 class="tk-bello-pro h2-like m-reset">À lire ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://openweb.eu.org/articles/du-consommateur-au-producteur">sur Openweb</a>
+							</li>
+							<li>
+								<a href="https://www.alsacreations.com/livres/lire/1503-webgrids-structure-et-typographie-de-la-page-web.html">sur Alsacréations</a>
+							</li>
+						</ul>
+					</div>
+					<h3 class="tk-bello-pro h2-like m-reset pt1">À regarder ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php">Paris Web 2018</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</aside>
+
+			<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
+				<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__github" href="https://github.com/ffoodd" itemprop="url" title="Gaël Poupard sur GitHub">
+							<span itemprop="name">GitHub</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__dribble" href="https://dribbble.com/ffoodd" itemprop="url" title="Gaël Poupard sur Dribbble">
+							<span itemprop="name">Dribbble</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__linkedin" href="https://www.linkedin.com/pub/ga%C3%ABl-poupard/30/17b/401" itemprop="url" title="Gaël Poupard sur LinkedIn">
+							<span itemprop="name">LinkedIn</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__behance" href="https://www.behance.net/ffoodd" itemprop="url" title="Gaël Poupard sur Behance">
+							<span itemprop="name">Behance</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/" itemprop="url" title="La vie en #ffoodd | Flux RSS">
+							<span itemprop="name">RSS</span>
+						</a>
+					</li>
+				</ul>
+
+				<small>
+					&copy; 2018 La vie en #ffoodd &mdash; Design et intégration par <span itemprop="name">Gaël Poupard</span> &mdash; <a href="/mentions-legales/">Mentions légales</a>
+					<br />
+					Sauf mention contraire, l’ensemble du contenu est sous <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/fr/">Licence <abbr lang="en" title="Creative Commons">CC</abbr> <abbr lang="en" title="Attribution">BY</abbr>-<abbr lang="en" title="Non Commercial">NC</abbr>-<abbr lang="en" title="Share Alike">SA</abbr></a>.
+				</small>
+
+				<meta itemprop="jobTitle" content="Webdesigner et intégrateur web">
+				<meta itemprop="worksFor" content="onepoint">
+			</footer><!-- / contentinfo -->
+		</div>
+	</body>
+</html>

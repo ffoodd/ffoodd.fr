@@ -1,4 +1,5 @@
 ---
+layout: "base.njk"
 title: "WP Tech 2014"
 date: "2014-12-04T21:08:44"
 modified: "2014-12-04T21:22:40"

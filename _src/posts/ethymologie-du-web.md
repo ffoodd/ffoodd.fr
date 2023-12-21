@@ -1,4 +1,5 @@
 ---
+layout: "base.njk"
 title: "Étymologie du web"
 date: "2013-11-04T17:32:27"
 modified: "2013-11-13T11:50:06"

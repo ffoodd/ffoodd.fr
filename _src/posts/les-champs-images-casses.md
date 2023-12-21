@@ -1,4 +1,5 @@
 ---
+layout: "base.njk"
 title: "Les champs images cassés"
 date: "2016-03-31T10:27:00"
 modified: "2016-03-31T10:27:00"

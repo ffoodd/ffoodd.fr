@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Clip-path, pourquoi pas ?</title>
+		<meta name="description" content="">
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+		<!-- @todo Ajouter le flux RSS
+			<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/">
+		-->
+	</head>
+	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
+		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+		<div class="row">
+			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation">
+				<ul class="menu aside p-reset m-reset ul-reset">
+					<!-- @todo Gérer l’état current -->
+					<li class="tk-bello-pro h1-like m-reset current-menu-item current_page_item">
+						<a href="/" aria-current="page">ffoodd</a>
+					</li>
+					<li class="h3-like m-reset"><a href="/plus/">À propos</a></li>
+					<!-- @todo gérer l’URL ? -->
+					<li class="h3-like m-reset"><a href="/category/journal/">Journal</a></li>
+					<li class="h3-like m-reset"><a href="/travaux/">Parcours</a></li>
+				</ul>
+			</nav><!-- / #nav -->
+
+			<main class="col w--site pl3 pb3 pr5" id="content" role="main" role="main" itemprop="mainContentOfPage">
+				<div class="logo print-hidden">
+					<img src="/images/2013/10/copy-cropped-ffoodd.png" alt="La vie en #ffoodd" id="logo" width="144" height="144">
+				</div>
+				
+					<p>Mais lorsque <a href="https://twitter.com/KittyGiraudel" title="Sur Twitter">Kitty Giraudel</a> a lancé son <a href="http://kittygiraudel.com/2014/02/19/the-magic-circle-a-css-brain-teaser/">CSS brain teaser</a>.[^1]</p>
+<p>[^1]: Papa, Maman : j’aime les casses-têtes.</p>
+<h2>Les spécifications actuelles</h2>
+<p>Ne connaissant que de très loin cette propriété, il a fallu me mettre à jour. <code>clip-path</code>, à l’instar de <code>clip</code>, sert à délimiter la zone d’affichage d’un contenu. Je m’oriente vers les spécifications pour compléter cet embryon de culture — et là, c’est le drame :</p>
+<ul>
+<li><a href="http://www.w3.org/TR/css-masking-1/#the-clip-path" title="en Anglais">La spécification de la propriété</a> <code>clip-path</code> au sein du module <em>CSS masking</em>, encore à l’état de brouillon;</li>
+<li>Qui nous renvoie <a href="http://www.w3.org/TR/2013/WD-css-shapes-1-20130620/#basic-shapes-from-svg-syntax" title="en Anglais">aux formes basiques</a> en SVG;</li>
+<li>Tout cela en se référant sans arrêt à <a href="http://www.w3.org/TR/css-masking-1/#ClipPathElement" title="en Anglais">l’élément SVG <code>ClipPath</code></a>;</li>
+<li>De fil en aiguille, citons également le module <em>Masking</em> de la spécification SVG — et notamment <a href="http://www.w3.org/TR/SVG/masking.html#ClippingPaths" title="en Anglais">la section sur les <em>Clipping paths</em></a>.</li>
+</ul>
+<p>On peut d’ores et déjà noter une différence remarquable entre les états de ces deux spécifications : l’une est en brouillon, l’autre en recommandation. La spécification SVG est extrêmement aboutie et claire, les ressources ne manquent pas.[^2]</p>
+<p>[^2]: Un petit « cocorico » s’impose pour féliciter Jérémie Patonnier, qui a grandement contribué à la documentation sur le Mozilla Developper Network notamment.</p>
+<p>En revanche le module CSS est obscur. Il existe un lien étroit entre les deux spécifications, car le brouillon du module <em>CSS Masking</em> s’appuie énormément sur la spécification SVG — et qu’en SVG il existe l’attribut <code>clip-path</code>. Ça génère des incompréhensions qui ne vont pas faciliter la prise en main de cette propriété.</p>
+<p>Pour éclaircir un peu tout ça — et vous épargner la lecture des spécifications — vous devriez pouvoir écrire ceci pour utiliser une forme basique :</p>
+<pre><code class="language-css">
+.clip { 
+  clip-path: circle( 50%, 50%, 5em );
+}
+</code></pre>
+<p>Mais ceci devrait fonctionner également — en appelant un élément SVG :</p>
+<pre><code class="language-css">
+.clip { 
+  clip-path: url(#circle);
+}
+</code></pre>
+<h2>Les origines</h2>
+<p>Il faut sonder un peu les origines de ce module CSS pour en comprendre l’obscurité. Bien que déjà en cours d’élaboration dans le cadre technique du SVG, la possibilité de masquer des éléments en CSS existait depuis CSS 2.1 grâce à la propriété <code>clip</code>, désormais <a href="http://www.w3.org/TR/css-masking-1/#clip-property" title="en Anglais">dépréciée</a>.[^3]</p>
+<p>[^3]: La propriété est dépréciée mais très bien supportée, et le W3C indique que les agents utilisateurs (navigateurs web) doivent la supporter malgré sa déprécation.</p>
+<p>Cette propriété n’a jamais réellement trouvé son public, car elle a deux inconvénients majeurs :</p>
+<ol>
+<li>L’élément masqué doit être en position absolue;</li>
+<li>Le masque ne peut être que rectangulaire, et son placement est contre-intuitif.</li>
+</ol>
+<p>Embêtant. Constatant les progrès possibles de cette fonctionnalité en CSS, c’est <a href="https://www.webkit.org/blog/181/css-masks/" title="en Anglais">le navigateur Safari qui a ouvert les hostilités en 2008</a> avec les propriétés <code>-webkit-mask-…</code> supportées <a href="https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariCSSRef/Articles/StandardCSSProperties.html#//apple_ref/doc/uid/TP30001266-SW17" title="en Anglais">dès Safari 4</a>. Cette technique a rencontré un franc succès car elle permet d’utiliser une image comme masque. Malheureusement cette propriété n’était supportée que par le moteur de rendu Webkit.[^4]</p>
+<p>[^4]: Je ne compte pas traiter du marronnier de « la guerre des navigateurs » ni du syndrome « Webkit only ».</p>
+<p>Là, j’ai vu poindre le problème : la spécification CSS en cours d’élaboration mélange joyeusement les clips issus de SVG et la proposition de Safari.[^5]</p>
+<p>[^5]: Fabriqué par Apple® en Californie.</p>
+<h2>Des ressources dissonantes</h2>
+<p>Il est fort peu probable que personne avant moi ne s’y soit intéressé. Et en effet, quatre ressources principales sont indispensables pour appréhender <code>clip-path</code> :</p>
+<ul>
+<li><a href="http://www.html5rocks.com/en/tutorials/masking/adobe/" title="en Anglais">CSS Masking</a> sur HTML5Rocks;</li>
+<li>L’article dédié sur <a href="http://docs.webplatform.org/wiki/css/properties/clip-path" title="en Anglais">Web Platform Docs</a>;</li>
+<li>Un tutoriel avancé sur <a href="http://thenittygritty.co/css-masking" title="en Anglais">The Nitty Gritty</a>;</li>
+<li>L’article de l’Avent par Vincent De Oliveira sur <a href="http://www.24joursdeweb.fr/2013/les-masques-css/">24 jours de web</a>;</li>
+</ul>
+<p>Comme vous vous en apercevrez en les lisant, le contenu est disparate. La compatibilité navigateur est abordée différemment.[^6]</p>
+<p>[^6]: La palme revient à HTML5Rocks qui détaille Chrome et Firefox, et oublie les autres.</p>
+<p>À l’instar de la spécification qui intègre les clips <strong>et</strong> les masques, ces ressources présentent les deux techniques. Dommage car deux articles distincts auraient été bien plus clairs !</p>
+<h2>Un bilan mitigé</h2>
+<p>Après avoir compulsé maladivement les spécifications, articles, tutoriaux et autres exemples pendant quelques jours, j’ai abouti à un exemple ressemblant à ceci :</p>
+<pre><code class="language-css">
+/**
+ * 1. Définition d’une forme rectangulaire de repli pour les navigateurs ne supportant pas clip-path;
+ * 2. Création d’une forme SVG basique, circulaire;
+ * 3. Appel d’un fichier SVG contenant un élément clipPath. 
+ */
+.clip { 
+  clip: rect( 7em, 30em, 17em, 20em ); /* 1 */
+  -webkit-clip-path: circle( 50%, 50%, 5em ); /* 2 */
+  clip-path: url(#circle); /* 3 */
+}
+</code></pre>
+<p>Évidemment, cela implique un balisage précis côté HTML :</p>
+<pre><code class="language-markup">
+&lt;p class=&quot;clip&quot;&gt;
+  ♬ Tout, tout, tout : vous saurez tout sur le clip-path ♬
+&lt;/p&gt;
+&lt;svg width=&quot;200&quot; height=&quot;200&quot;&gt;
+  &lt;defs&gt;
+  &lt;clipPath id=&quot;circle&quot;&gt;
+  &lt;circle cx=&quot;50%&quot; cy=&quot;50%&quot; r=&quot;80&quot; /&gt;
+  &lt;/clipPath&gt;  
+  &lt;/defs&gt;
+&lt;/svg&gt;
+</code></pre>
+<p>Ainsi je tente de vous livrer un état des lieux aussi complet que possible.[^9]</p>
+<p>[^9]: Je tiens à préciser que je n’ai aucune expertise en la matière : ce ne sont la que les conclusions trouvées par un intégrateur lambda.</p>
+<ul>
+<li><strong>Chrome 23, Safari 6.1 et Opéra 15</strong> supportent <code>clip-path</code> sous toutes ses formes — incluant la définition de formes SVG basiques dans le CSS;</li>
+<li><strong>Firefox 4</strong> supporte <code>clip-path</code> si on référence un élément SVG <code>clipPath</code> — ce qui implique d’ajouter un fichier SVG — en revanche vous serez obligés de définir des positions en unités absolues comme le <code>px</code> pour positionner votre clip si vous souhaitez éviter les bugs, et c’est bien dommage;</li>
+<li><strong>Opéra 7, Chrome 14, IE8 à 11 et Safari 1</strong> se replient sur <code>clip</code>;</li>
+<li><strong>Une note sur IE9 à 11 :</strong> ces navigateurs supportent <code>clip-path</code> si on référence un élément SVG <code>clipPath</code>, à condition d’appliquer le clip sur un élément SVG. Il est envisageable d’intégrer la zone à clipper dans un élément <code>ForeignObject</code> au sein d’un SVG, mais ça devient trop tordu à mon goût;</li>
+<li><strong>Un mot sur IE4 à 7 :</strong> surpris vous êtes ? Ne le soyez pas, clip est reconnu sur IE4 à 7 (et même Netscape 4). Le hic, ce sont les pseudo-éléments que j’emploie dans mon exemple; ainsi en ajoutant un élément dédié dans le DOM, vous devriez pouvoir supporter IE4 facilement 😀 .</li>
+</ul>
+<h2>Une solution correcte</h2>
+<p>Malgré le support disparate et le funambulisme nécessaire pour aboutir à un résultat viable, j’ai trouvé <code>clip-path</code> extrêmement intéressant — et notamment grâce à la dégradation possible à l’aide de <code>clip</code> sur de très vieux navigateurs et de façon simplissime.</p>
+<p>Ce repli implique de perdre les formes personnalisées au profit d’un rectangle « simple », ce qui fut considéré comme acceptable lors de l’avènement de <code>border-radius</code> par exemple. Et je suppose que dans la plupart des cas, cette solution reste acceptable.</p>
+<p>Vous trouverez donc ma solution au casse-tête proposé par Kitty <a href="http://codepen.io/ffoodd/pen/Eolkb" title="en Anglais">sur CodePen</a>, détaillée, commentée, agrémentée de diverses précisions — en Anglais.</p>
+<p>Tout retour sera le bienvenu 🙂 .</p>
+<h3>Mise à jour</h3>
+<p>Moins d’une semaine avant la publication de mon article, le brouillon du W3C concernant la notation des formes basiques a évolué. Je cite <a href="https://twitter.com/iamvdo">Vincent De Oliveira</a>, qui a partagé l’information avec moi :</p>
+<blockquote>
+<p>Par contre, la notation des basic-shapes ont (encore) changées récemment! 😛 <a href="http://dev.w3.org/csswg/css-shapes/#basic-shape-functions" title="en Anglais">dev.w3.org</a></p>
+</blockquote>
+<p>Ô joie. Merci à Vincent en tout cas !</p>
+
+				
+			</main>
+
+			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
+				<div class="aside pl2 pt2">
+					<h3 class="tk-bello-pro h2-like m-reset">À lire ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://openweb.eu.org/articles/du-consommateur-au-producteur">sur Openweb</a>
+							</li>
+							<li>
+								<a href="https://www.alsacreations.com/livres/lire/1503-webgrids-structure-et-typographie-de-la-page-web.html">sur Alsacréations</a>
+							</li>
+						</ul>
+					</div>
+					<h3 class="tk-bello-pro h2-like m-reset pt1">À regarder ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php">Paris Web 2018</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</aside>
+
+			<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
+				<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__github" href="https://github.com/ffoodd" itemprop="url" title="Gaël Poupard sur GitHub">
+							<span itemprop="name">GitHub</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__dribble" href="https://dribbble.com/ffoodd" itemprop="url" title="Gaël Poupard sur Dribbble">
+							<span itemprop="name">Dribbble</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__linkedin" href="https://www.linkedin.com/pub/ga%C3%ABl-poupard/30/17b/401" itemprop="url" title="Gaël Poupard sur LinkedIn">
+							<span itemprop="name">LinkedIn</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__behance" href="https://www.behance.net/ffoodd" itemprop="url" title="Gaël Poupard sur Behance">
+							<span itemprop="name">Behance</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/" itemprop="url" title="La vie en #ffoodd | Flux RSS">
+							<span itemprop="name">RSS</span>
+						</a>
+					</li>
+				</ul>
+
+				<small>
+					&copy; 2018 La vie en #ffoodd &mdash; Design et intégration par <span itemprop="name">Gaël Poupard</span> &mdash; <a href="/mentions-legales/">Mentions légales</a>
+					<br />
+					Sauf mention contraire, l’ensemble du contenu est sous <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/fr/">Licence <abbr lang="en" title="Creative Commons">CC</abbr> <abbr lang="en" title="Attribution">BY</abbr>-<abbr lang="en" title="Non Commercial">NC</abbr>-<abbr lang="en" title="Share Alike">SA</abbr></a>.
+				</small>
+
+				<meta itemprop="jobTitle" content="Webdesigner et intégrateur web">
+				<meta itemprop="worksFor" content="onepoint">
+			</footer><!-- / contentinfo -->
+		</div>
+	</body>
+</html>

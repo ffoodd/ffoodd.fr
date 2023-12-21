@@ -1,4 +1,5 @@
 ---
+layout: "base.njk"
 title: "Clip-path, pourquoi pas ?"
 date: "2014-03-11T15:44:26"
 modified: "2021-03-05T17:09:34"

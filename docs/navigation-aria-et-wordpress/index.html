@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Navigation, Aria et WordPress</title>
+		<meta name="description" content="">
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+		<!-- @todo Ajouter le flux RSS
+			<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/">
+		-->
+	</head>
+	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
+		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+		<div class="row">
+			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation">
+				<ul class="menu aside p-reset m-reset ul-reset">
+					<!-- @todo Gérer l’état current -->
+					<li class="tk-bello-pro h1-like m-reset current-menu-item current_page_item">
+						<a href="/" aria-current="page">ffoodd</a>
+					</li>
+					<li class="h3-like m-reset"><a href="/plus/">À propos</a></li>
+					<!-- @todo gérer l’URL ? -->
+					<li class="h3-like m-reset"><a href="/category/journal/">Journal</a></li>
+					<li class="h3-like m-reset"><a href="/travaux/">Parcours</a></li>
+				</ul>
+			</nav><!-- / #nav -->
+
+			<main class="col w--site pl3 pb3 pr5" id="content" role="main" role="main" itemprop="mainContentOfPage">
+				<div class="logo print-hidden">
+					<img src="/images/2013/10/copy-cropped-ffoodd.png" alt="La vie en #ffoodd" id="logo" width="144" height="144">
+				</div>
+				
+					<p>Dans sa version basique, la navigation de WordPress n’a rien de particulier (si ce n’est la multitude de classes générées sur chaque élément 🙁 ). Or ARIA permet d’ajouter une couche sémantique non négligeable et relativement simple à mettre en place, améliorant ainsi l’accessibilité de la navigation.</p>
+<h2>Notre objectif</h2>
+<p>L’implémentation d’ARIA sur une navigation est simple ‐ bien qu’il soit assez compliqué d’en trouver une documentation ou un exemple concret. Voici le résultat attendu sur ffoodd (je vous épargne les classes et identifiants, pour cette fois 😉 ) :</p>
+<pre><code class="language-markup">&lt;nav id=&quot;nav&quot; role=&quot;navigation&quot;&gt;
+  &lt;ul role=&quot;menubar&quot;&gt;
+  &lt;li role=&quot;menuitem&quot; aria-labelledby=&quot;ffoodd&quot;&gt;
+  &lt;a href=&quot;https://www.ffoodd.fr&quot; id=&quot;ffoodd&quot;&gt;ffoodd&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li role=&quot;menuitem&quot; aria-labelledby=&quot;travaux&quot;&gt;
+  &lt;a href=&quot;https://www.ffoodd.fr/travaux/&quot; id=&quot;travaux&quot;&gt;Travaux&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;/ul&gt; 
+&lt;/nav&gt;
+</code></pre>
+<p>Vous connaissiez sans doute déjà le rôle « navigation », qui identifie la zone majeure du contenu destinée à la navigation. Les autres rôle et attributs sont explicites, et on en saisit facilement l’intérêt sur cet extrait de code. Voyons maintenant comment obtenir ce résultat avec WordPress.</p>
+<h2>WordPress et le Walker dédié à la navigation</h2>
+<p>Ce sympathique walker se nomme <strong>Walker_Nav_Menu</strong>. Je l’avais rencontré la première fois en farfouillant dans le code de <a href="http://themefortress.com/reverie/" title="Reverie - un starter theme pour WordPress (nouvelle fenêtre)">Reverie</a>, sans en saisir l’intérêt à l’époque. Puis mes compétences et réflexions évoluant avec le temps, lorsque je le recroisais sur le blog de <a href="https://twitter.com/willybahuaud" title="Willy Bahuaud sur Twitter (nouvelle fenêtre)">Willy Bahuaud</a> dans <a href="http://wabeo.fr/blog/construire-walker-wordpress/" title="Construire un walker WordPress (nouvelle fenêtre)">son article présentant les walkers</a>, j’en saisis rapidement l’intérêt et me mit en tête de m’en servir sur mon thème ffeeeedd.</p>
+<p>Je vous recommande chaudement de lire l’article de Willy sur le sujet, qui est une entrée en matière extrêmement intéressante.</p>
+<h2>Les mains dans le code</h2>
+<p>Voilà sans plus attendre le code obtenu après quelques recherche :</p>
+<pre><code class="language-php">  /* == @section Amélioration de la navigation ==================== */
+  /**
+ * @note : Un walker nous permet de amnipuler le html généré pour la navigation afin d’y ajouter les roles aria qui vont bien.
+ * @author : Gaël Poupard
+ * @see : https://twitter.com/ffoodd_fr
+ * @see : http://wabeo.fr/blog/construire-walker-wordpress/
+ * @author : Willy Bahuaud
+ * @see : http://core.trac.wordpress.org/browser/tags/3.6.1//wp-includes/nav-menu-template.php#L0
+ */
+  class ffeeeedd__walker extends Walker_Nav_Menu {
+  function start_el( &amp;$output, $item, $depth = 1, $args = array(), $id = 0 ) {
+  $indent = ( $depth ) ? str_repeat( &quot;\t&quot;, $depth ) : ’’;
+
+  $class_names = $value = ’’;
+
+  $classes = empty( $item-&gt;classes ) ? array() : (array) $item-&gt;classes;
+  $classes[] = ’menu-item-’ . $item-&gt;ID;
+
+  $class_names = join( ’ ’, apply_filters( ’nav_menu_css_class’, array_filter( $classes ), $item, $args ) );
+  $class_names = $class_names ? ’ class=&quot;’ . esc_attr( $class_names ) . ’&quot;’ : ’’;
+
+  $id = apply_filters( ’nav_menu_item_id’, ’menu-item-’. $item-&gt;ID, $item, $args );
+  $id = $id ? ’ id=&quot;’ . esc_attr( $id ) . ’&quot;’ : ’’;
+
+  $output .= $indent . ’&lt;li’ . $id . $value . $class_names .’ role=&quot;menuitem&quot; aria-labelledby=&quot;item-’ . sanitize_html_class( apply_filters( ’the_title’, $item-&gt;title, $item-&gt;ID ) ) . ’&quot;&gt;’;
+
+  $atts = array();
+  $atts[’title’] = ! empty( $item-&gt;attr_title ) ? $item-&gt;attr_title : ’’;
+  $atts[’target’] = ! empty( $item-&gt;target ) ? $item-&gt;target : ’’;
+  $atts[’rel’] = ! empty( $item-&gt;xfn ) ? $item-&gt;xfn : ’’;
+  $atts[’href’] = ! empty( $item-&gt;url ) ? $item-&gt;url : ’’;
+
+  $atts = apply_filters( ’nav_menu_link_attributes’, $atts, $item, $args );
+
+  $attributes = ’’;
+  foreach ( $atts as $attr =&gt; $value ) {
+    if ( ! empty( $value ) ) {
+    $value = ( ’href’ === $attr ) ? esc_url( $value ) : esc_attr( $value );
+    $attributes .= ’ ’ . $attr . ’=&quot;’ . $value . ’&quot;’;
+    }
+  }
+
+  $item_output = $args-&gt;before;
+  $item_output .= ’&lt;a’. $attributes .’ id=&quot;item-’ . sanitize_html_class( apply_filters( ’the_title’, $item-&gt;title, $item-&gt;ID ) ) . ’&quot;&gt;’;
+  $item_output .= $args-&gt;link_before . apply_filters( ’the_title’, $item-&gt;title, $item-&gt;ID ) . $args-&gt;link_after;
+  $item_output .= ’&lt;/a&gt;’;
+  $item_output .= $args-&gt;after;
+
+  $output .= apply_filters( ’walker_nav_menu_start_el’, $item_output, $item, $depth, $args );
+  }
+  }
+</code></pre>
+<p>Le walker manipule chaque niveau de rendu de la navigation, ce qui nous permet d’ajouter les rôles très facilement. La seule intervention astucieuse consiste à récupérer l’intitulé de l’item afin de l’utiliser comme label pour la navigation.</p>
+<p>Et voilà ! Simple, non ?</p>
+<h2>Les évolutions à venir</h2>
+<p>Bien qu’intéressante, cette astuce n’est pas parfaite. En effet la spécification ARIA prévoit des états pour les éléments, afin d’expliciter les interactions.</p>
+<p>Dans notre cas, il va falloir appliquer l’attribut booléen <strong>aria-selected</strong> sur les items de navigation, en passant sa valeur de true à false selon l’item actif.</p>
+<p>Bien qu’ayant déjà appliqué ce comportement sur des boîtes à onglets notamment, j’aimerais parvenir à le faire sur ma navigation sans passer par du javascript. J’ai cherché des pistes pour utiliser le walker (qui à priori devrait être capable de repérer l’item actif) mais sans résultat pour le moment, donc <strong>n’hésitez pas à commenter l’article ou à me contacter par mail si vous avez la moindre piste à me suggérer</strong> (voire même la solution, hein :D).</p>
+<p>De plus, un comportement (en javascript à priori) est également à prévoir pour les sous-menu, qui pourront s’avérer plus complexes à gérer ‐ bien qu’ARIA soit très complète sur ce sujet.</p>
+
+				
+			</main>
+
+			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
+				<div class="aside pl2 pt2">
+					<h3 class="tk-bello-pro h2-like m-reset">À lire ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://openweb.eu.org/articles/du-consommateur-au-producteur">sur Openweb</a>
+							</li>
+							<li>
+								<a href="https://www.alsacreations.com/livres/lire/1503-webgrids-structure-et-typographie-de-la-page-web.html">sur Alsacréations</a>
+							</li>
+						</ul>
+					</div>
+					<h3 class="tk-bello-pro h2-like m-reset pt1">À regarder ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php">Paris Web 2018</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</aside>
+
+			<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
+				<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__github" href="https://github.com/ffoodd" itemprop="url" title="Gaël Poupard sur GitHub">
+							<span itemprop="name">GitHub</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__dribble" href="https://dribbble.com/ffoodd" itemprop="url" title="Gaël Poupard sur Dribbble">
+							<span itemprop="name">Dribbble</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__linkedin" href="https://www.linkedin.com/pub/ga%C3%ABl-poupard/30/17b/401" itemprop="url" title="Gaël Poupard sur LinkedIn">
+							<span itemprop="name">LinkedIn</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__behance" href="https://www.behance.net/ffoodd" itemprop="url" title="Gaël Poupard sur Behance">
+							<span itemprop="name">Behance</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/" itemprop="url" title="La vie en #ffoodd | Flux RSS">
+							<span itemprop="name">RSS</span>
+						</a>
+					</li>
+				</ul>
+
+				<small>
+					&copy; 2018 La vie en #ffoodd &mdash; Design et intégration par <span itemprop="name">Gaël Poupard</span> &mdash; <a href="/mentions-legales/">Mentions légales</a>
+					<br />
+					Sauf mention contraire, l’ensemble du contenu est sous <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/fr/">Licence <abbr lang="en" title="Creative Commons">CC</abbr> <abbr lang="en" title="Attribution">BY</abbr>-<abbr lang="en" title="Non Commercial">NC</abbr>-<abbr lang="en" title="Share Alike">SA</abbr></a>.
+				</small>
+
+				<meta itemprop="jobTitle" content="Webdesigner et intégrateur web">
+				<meta itemprop="worksFor" content="onepoint">
+			</footer><!-- / contentinfo -->
+		</div>
+	</body>
+</html>

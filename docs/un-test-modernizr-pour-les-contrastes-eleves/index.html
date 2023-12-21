@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Un test Modernizr pour les contrastes élevés</title>
+		<meta name="description" content="">
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+		<!-- @todo Ajouter le flux RSS
+			<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/">
+		-->
+	</head>
+	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
+		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+		<div class="row">
+			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation">
+				<ul class="menu aside p-reset m-reset ul-reset">
+					<!-- @todo Gérer l’état current -->
+					<li class="tk-bello-pro h1-like m-reset current-menu-item current_page_item">
+						<a href="/" aria-current="page">ffoodd</a>
+					</li>
+					<li class="h3-like m-reset"><a href="/plus/">À propos</a></li>
+					<!-- @todo gérer l’URL ? -->
+					<li class="h3-like m-reset"><a href="/category/journal/">Journal</a></li>
+					<li class="h3-like m-reset"><a href="/travaux/">Parcours</a></li>
+				</ul>
+			</nav><!-- / #nav -->
+
+			<main class="col w--site pl3 pb3 pr5" id="content" role="main" role="main" itemprop="mainContentOfPage">
+				<div class="logo print-hidden">
+					<img src="/images/2013/10/copy-cropped-ffoodd.png" alt="La vie en #ffoodd" id="logo" width="144" height="144">
+				</div>
+				
+					<p>Malheureusement, il ne répond pas correctement lorsque lʼutilisateur a personnalisé les couleurs des liens ou utilise un thème navigateur aux contrastes élevés — ce que jʼai testé avec Firefox. En sus, et bien quʼil soit conçu de façon à renvoyer un booléen, il se couple difficilement avec un outil spécialisé tel que <a href="https://modernizr.com/">Modernizr</a>.</p>
+<h2>Les changements</h2>
+<p>On va faire simple, puisque vous avez lʼexemple de Karl Groves en amont ! Les seules modifications apportées sont :</p>
+<ul>
+<li>un peu de nettoyage, principalement des variables inutiles ;</li>
+<li>lʼélément créé est un lien au lieu dʼune division ;</li>
+<li>la condition finale pour renvoyer le booléen a été allégée.</li>
+</ul>
+<h2>Le code</h2>
+<p>Pas de miracle, lʼajout de test dans Modernizr est <a href="https://modernizr.com/docs#modernizr-addtest">bien documenté</a>. Voici ce que jʼai réalisé — qui est probablement améliorable.[^1]</p>
+<p>[^1]: Ceci est une invitation, toutes les aimables personnes qui apporteront leur aide auront droit à ma gratitude éternelle et plein de trucs dans ce goût-là.</p>
+<pre><code class="language-javascript">
+Modernizr.addTest(&quot;highcontrast&quot;, function() {
+  var objA = document.createElement(&quot;a&quot;),
+  strColor;
+  objA.style.color = &quot;rgb(31, 41, 59)&quot;;
+  document.documentElement.appendChild(objA);
+  strColor = document.defaultView ? document.defaultView.getComputedStyle(objA, null).color : objA.currentStyle.color;
+  strColor = strColor.replace(/ /g, &quot;&quot;);
+  document.documentElement.removeChild(objA);
+  return strColor !== &quot;rgb(31,41,59)&quot;;
+});
+</code></pre>
+<p>Rien de bien méchant 😊 Jʼai créé <a href="http://codepen.io/ffoodd/pen/RWmmOO">un CodePen dédié uniquement à ce test</a> avec quelques commentaires et une illustration basique en HTML.</p>
+<h2>La couverture</h2>
+<p>Pour commencer, cette version est un test Modernizr. Nul besoin de télécharger tout la bibliothèque de tests cependant, sa seule et unique dépendance est la méthode <code>addTest()</code>, dont lʼoutil de construction personnalisée de Modernizr indique quʼelle pèse 2,53 kB (et 1,08 kB une fois compressé avec gzip).</p>
+<p>Ensuite et pour le cas ou vous ne liriez pas couramment le JavaScript, le test procède ainsi :</p>
+<ol>
+<li>il crée un lien ;</li>
+<li>il attache ce dernier au document </li>
+<li>il lʼaffuble dʼune couleur <em>via</em> CSS ;</li>
+<li>il récupère la valeur calculée pour la couleur du lien ;</li>
+<li>il supprime le lien créé au début ;</li>
+<li>et il renvoie finalement une affirmation quʼon peut formuler ainsi : « la couleur calculée est-elle égale à la couleur définie par le test ? ».</li>
+</ol>
+<p>Le résultat est donc soit vrai, soit faux (cʼest le principe du <a href="https://fr.wikipedia.org/wiki/Bool%C3%A9en">booléen</a>). Donc pour résumer, ce test vérifie que la couleur calculée par le navigateur correspond à la couleur quʼon lui demande : si ce nʼest pas le cas, lʼutilisateur interfère avec les styles envoyés dʼune manière ou dʼune autre. Les cas les plus courants sont <strong>le mode de contrastes élevés</strong> du système dʼexploitation, et <strong>les styles utilisateurs</strong> fournis par le navigateur sur demande de lʼutilisateur.</p>
+<p>Ce test répond correctement dans deux cas précis identifiés :</p>
+<ul>
+<li>le mode de contrastes élevés de Windows, testé avec Edge et Firefox ;</li>
+<li>les paramètres de personnalisation de thème et couleurs dans Firefox, sur tous les systèmes.</li>
+</ul>
+<p>Il serait génial de tester plus avant dʼautres configurations, afin de préciser la couverture et de repérer dʼéventuels faux positifs ou négatifs. Jʼai créé <a href="https://gist.github.com/ffoodd/78f99204b5806e183574">un Gist</a> dʼaprès le CodePen précédemment lié — nʼhésitez pas à le forker, le commenter, le triturer comme bon vous semble !</p>
+
+				
+			</main>
+
+			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
+				<div class="aside pl2 pt2">
+					<h3 class="tk-bello-pro h2-like m-reset">À lire ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://openweb.eu.org/articles/du-consommateur-au-producteur">sur Openweb</a>
+							</li>
+							<li>
+								<a href="https://www.alsacreations.com/livres/lire/1503-webgrids-structure-et-typographie-de-la-page-web.html">sur Alsacréations</a>
+							</li>
+						</ul>
+					</div>
+					<h3 class="tk-bello-pro h2-like m-reset pt1">À regarder ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php">Paris Web 2018</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</aside>
+
+			<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
+				<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__github" href="https://github.com/ffoodd" itemprop="url" title="Gaël Poupard sur GitHub">
+							<span itemprop="name">GitHub</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__dribble" href="https://dribbble.com/ffoodd" itemprop="url" title="Gaël Poupard sur Dribbble">
+							<span itemprop="name">Dribbble</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__linkedin" href="https://www.linkedin.com/pub/ga%C3%ABl-poupard/30/17b/401" itemprop="url" title="Gaël Poupard sur LinkedIn">
+							<span itemprop="name">LinkedIn</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__behance" href="https://www.behance.net/ffoodd" itemprop="url" title="Gaël Poupard sur Behance">
+							<span itemprop="name">Behance</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/" itemprop="url" title="La vie en #ffoodd | Flux RSS">
+							<span itemprop="name">RSS</span>
+						</a>
+					</li>
+				</ul>
+
+				<small>
+					&copy; 2018 La vie en #ffoodd &mdash; Design et intégration par <span itemprop="name">Gaël Poupard</span> &mdash; <a href="/mentions-legales/">Mentions légales</a>
+					<br />
+					Sauf mention contraire, l’ensemble du contenu est sous <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/fr/">Licence <abbr lang="en" title="Creative Commons">CC</abbr> <abbr lang="en" title="Attribution">BY</abbr>-<abbr lang="en" title="Non Commercial">NC</abbr>-<abbr lang="en" title="Share Alike">SA</abbr></a>.
+				</small>
+
+				<meta itemprop="jobTitle" content="Webdesigner et intégrateur web">
+				<meta itemprop="worksFor" content="onepoint">
+			</footer><!-- / contentinfo -->
+		</div>
+	</body>
+</html>

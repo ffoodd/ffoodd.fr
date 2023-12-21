@@ -1,9 +1,10 @@
 ---
+layout: "base.njk"
 title: "Pourquoi l’intégration web est le cœur d’un projet"
 date: "2013-07-04T10:33:38"
 modified: "2013-11-13T12:27:30"
 permalink: "pourquoi-lintegration-web-est-le-coeur-dun-projet/index.html"
-excerpt: "Je ne secouerais pas le marronnier des nouveautés en question, je suppose que tout le monde a déjà parcouru le champ de bogues. Un certain nombre d’articles ont déjà été publiés sur le sujet, par d’excellents intégrateurs : L’importance d’un intégrateur&nbsp;par @HTeumeuleu De l’intégrateur au développeur front-end&nbsp;: un maillon essentiel de la qualité Web&nbsp;par Nicolas \[…\] [Lire la suite de «&nbsp;Pourquoi l’intégration web est le cœur d’un projet&nbsp;» →](https://www.ffoodd.fr/pourquoi-lintegration-web-est-le-coeur-dun-projet/)"
+excerpt: "Je ne secouerais pas le marronnier des nouveautés en question, je suppose que tout le monde a déjà parcouru le champ de bogues. Un certain nombre d’articles ont déjà été publiés sur le sujet, par d’excellents intégrateurs : L’importance d’un intégrateur&nbsp;par @HTeumeuleu De l’intégrateur au développeur front-end&nbsp;: un maillon essentiel de la qualité Web&nbsp;par Nicolas […] [Lire la suite de «&nbsp;Pourquoi l’intégration web est le cœur d’un projet&nbsp;» →](https://www.ffoodd.fr/pourquoi-lintegration-web-est-le-coeur-dun-projet/)"
 format: "standard"
 ---
 Je ne secouerais pas le marronnier des nouveautés en question, je suppose que tout le monde a déjà parcouru le champ de [bogues](http://www.linternaute.com/dictionnaire/fr/definition/bogue/ "Définition de bogue (nouvelle fenêtre)").

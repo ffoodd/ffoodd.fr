@@ -1,4 +1,5 @@
 ---
+layout: "base.njk"
 title: "Paris Web et la vie"
 date: "2015-10-16T09:22:50"
 modified: "2015-10-16T09:22:50"

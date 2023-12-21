@@ -1,4 +1,5 @@
 ---
+layout: "base.njk"
 title: "Accessibilité web"
 date: "2013-10-04T12:42:39"
 modified: "2013-11-13T12:09:00"

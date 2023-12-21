@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>À qui parlent vos CSS&amp;nbsp;?</title>
+		<meta name="description" content="">
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+		<!-- @todo Ajouter le flux RSS
+			<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/">
+		-->
+	</head>
+	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
+		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+		<div class="row">
+			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation">
+				<ul class="menu aside p-reset m-reset ul-reset">
+					<!-- @todo Gérer l’état current -->
+					<li class="tk-bello-pro h1-like m-reset current-menu-item current_page_item">
+						<a href="/" aria-current="page">ffoodd</a>
+					</li>
+					<li class="h3-like m-reset"><a href="/plus/">À propos</a></li>
+					<!-- @todo gérer l’URL ? -->
+					<li class="h3-like m-reset"><a href="/category/journal/">Journal</a></li>
+					<li class="h3-like m-reset"><a href="/travaux/">Parcours</a></li>
+				</ul>
+			</nav><!-- / #nav -->
+
+			<main class="col w--site pl3 pb3 pr5" id="content" role="main" role="main" itemprop="mainContentOfPage">
+				<div class="logo print-hidden">
+					<img src="/images/2013/10/copy-cropped-ffoodd.png" alt="La vie en #ffoodd" id="logo" width="144" height="144">
+				</div>
+				
+					<p>Le dernier article rédigé par <a href="http://mrmrs.cc/">Adam Morse</a> est amplement diffusé ces derniers jours, vous lʼaurez certainement déjà lu : « <a href="http://mrmrs.io/writing/2016/03/24/scalable-css/"><em>CSS and Scalability</em></a> » — vous pouvez en lire <a href="http://blog.perrien.fr/css-et-evolutivite/">une traduction en Français</a> sur le blog de Marc Perrien. Il y prône une méthode de rédaction des CSS dite « atomiques », issue du formidable travail de <a href="http://cssmojo.com/">Thierry Koblentz</a> de Yahoo sur le projet <a href="http://acss.io/">Atomic CSS</a>.[^1]</p>
+<p>[^1]: Filez lire en détail le site en question, il se montre réellement instructif.</p>
+<h2>Les CSS atomiques ⚛</h2>
+<p>La métaphore est la même que celle utilisée par <a href="http://bradfrost.com/">Brad Frost</a> dans <a href="http://atomicdesign.bradfrost.com/">son livre (en cours de rédaction) sur le design atomique</a>. Cependant là où Brad Frost file la métaphore jusquʼà la matière, les CSS atomiques se contentent des atomes et vous laissent vous débrouiller avec le reste.</p>
+<p>Pour résumer, <strong>une classe atomique ne dispose que dʼune seule propriété, avec une seule valeur</strong>. Voici un exemple — tiré directement de <a href="http://acss.io/frequently-asked-questions.html#how-is-atomic-css-different-than-using-inline-styles-">la foire aux questions dʼAtomic CSS</a> — qui devrait être plus clair :</p>
+<pre><code class="language-css">.Fz(large) {
+  font-size: 18px;
+}
+</code></pre>
+<p>Vous démultipliez ce principe pour tous vos styles redondants, et vous obtenez des CSS atomiques. Il sʼagit dʼune optimisation massive des CSS en terme de poids, de spécificité, de portabilité. Les chiffres avancés par Thierry Koblentz sont ahurissants, et les explications données par ses présentations et la foire aux questions sont <strong>très convaincantes</strong>.</p>
+<p>Cʼest lʼapproche également défendue par Adam Morse dans son article. Il pousse la réflexion encore plus loin en précisant que si cette conception est menée correctement, alors écrire du CSS devrait être lʼexception et non la règle.</p>
+<blockquote>
+<p>Writing new css should be the exception, not the rule.</p>
+</blockquote>
+<p>Je trouve ça bien. Et vous ? Cette méthode est indubitablement la meilleure <strong>à lʼheure actuelle</strong> pour qui cherche à réduire ses CSS, ainsi que leur coût de production.[^2]</p>
+<p>[^2]: Entre autres avantages évidemment, le sujet est bien plus complexe quʼil nʼy paraît</p>
+<p>Toutefois je pense que cette technique est à réserver exclusivement aux sites monstrueux, massifs, des balourds. Pour un intégrateur commun, qui travaille sur des sites plus ou moins simples, <strong>je suis persuadé que le jeu nʼen vaut pas la chandelle.</strong> À mon avis, le site dʼAtomic CSS et lʼarticle dʼAdam Morse devraient le préciser : plus le site est petit, plus cette méthode coûte cher. Et je ne parle pas que sur le plan technique.</p>
+<h2>Interrogeons la destination des CSS</h2>
+<h3>À qui sʼadressent les CSS atomiques ?</h3>
+<p>Conceptuellement, cette approche déplace un certain nombre de chose. Pour commencer, elle induit quʼun intervenant ne touche plus les CSS directement.[^3]</p>
+<p>[^3]: Je me demande bien comment on gère une refonte graphique dans ce cas : on reprend tout à zéro, ou on repasse sur tout le HTML ?</p>
+<p>Cependant afin que la magie opère, la plupart des sélecteurs comprenant des caractères spéciaux vont être échappés. <strong>Cʼest (très) difficile à lire pour un humain.</strong> Pourtant jʼai déjà eu lʼoccasion de lire des CSS écrits de la sorte — notamment dans <a href="https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L194">debugCSS</a>.[^4]</p>
+<p>[^4]: Cʼest une des sources dʼa11y.css, pour ceux qui suivent :p</p>
+<p>Je pense que ce procédé est <strong>une technique dʼobfuscation des CSS</strong>. Ces CSS ne sont pas fait pour être lus par un œil humain. Ils sont lʼexpression du système technique qui sous-tend une intégration graphique. Ils sont optimisés pour la machine.</p>
+<h3>Et lʼhumain, dans tout ça ?</h3>
+<p>Vous lʼaurez compris, cet aspect me dérange un peu. <strong>Jʼaime rédiger mes CSS en imaginant que quelquʼun les lira</strong>, que ce soit par curiosité — comme le fait Adam Morse.[^5]</p>
+<p>[^5]: Pour les feignasses, dans son article militant pour les CSS atomiques Adam Morse sʼappuie sur une habitude quʼil a prise : lire les CSS de certains sites, de bout en bout, pour apprendre des choses. Jʼaime beaucoup cette idée, je lʼai fait parfois. Cependant cela lui a inspiré dʼécrire moins de CSS :/</p>
+<p>Il nʼy aura pas de problème particulier à reprendre un projet intégré à lʼaide de CSS atomiques, en revanche je subodore que ça semblera bien terne et froid. Aucun parti-pris, aucune manière personnelle de travailler, probablement <strong>aucun commentaire rigolo dans les sources</strong>.[^6]</p>
+<p>[^6]: Probablement très peu de commentaires tout court dʼailleurs, lʼoutil de Yahoo intitulé Atomizer générant les fichiers CSS en fonction de ce quʼil croise dans le HTML… Le CSS nʼest même jamais ouvert.</p>
+<p>Bref, aucune identité.</p>
+<h2>Dʼoù viennent mes CSS ?</h2>
+<p>Jʼai une opinion, peut-être très mauvaise, sur lʼobjet des CSS : à mon avis, ils équivalent à une charte graphique. On y précise ce qui peut ou ne peut pas être fait, ce qui doit ou ne doit pas être fait.</p>
+<p>Et quand je parle de ce qui peut / doit être fait, <strong>je parle du HTML</strong>. Je fais un peu mon <em>coming-out</em>, mais oui, mon CSS sert de garde-fous pour le HTML. À dire vrai, un autre article à été largement diffusé il y a quelque temps déjà, à contre-courant de ce système nucléaire. Vous pourrez lire sur le blog dʼEbay <a href="http://www.ebaytechblog.com/2015/11/04/how-our-css-framework-helps-enforce-accessibility/">comment leur framework CSS les aide à renforcer lʼaccessibilité</a>.[^7]</p>
+<p>[^7]: Je suis ravi de retrouver parmi les commentaires un article dʼHeydon Pickering sur Smashing Magazine à propos des sélecteurs intelligents. Et également surpris dʼy découvrir que Daniel Eden a poussé sur les CSS de DropBox une fonctionnalité qui ressemble beaucoup à celle dʼa11y.css, via un mixin simple. Je vais lire tout ça en détail !</p>
+<p>Et cʼest chouette, je suis content de travailler de la sorte.Je ne suis jamais seul à intervenir, ni sur le HTML ni sur le CSS, et suis pourtant le seul intégrateur de métier dans mon équipe actuelle (comme dans la précédente lors de mon arrivée). Et ce genre de sélecteur qui se rapporte à un composant graphique est nettement plus <strong>compréhensible</strong> par des profils non experts, voire même carrément <strong>attractif</strong>. Et pour cause, en ne nécessitant pas dʼajouter des dizaines de classes précises pour former un composant mais une seule sur le conteneur, les développeurs sont heureux. Ils écrivent le bon HTML — chopé sur un guide de style, par exemple — et hop, ça marche.</p>
+<p>Nʼest-ce pas merveilleux ?</p>
+<p>Ce qui lʼest encore plus, cʼest que si jamais le HTML ne correspond pas (disons, par exemple, quʼil manque lʼattribut <code>alt</code> sur une image) et bien les styles ne sʼappliquent pas. Que fait alors la personne qui se trompe, pour peu que vous lʼayez prévenue que ceci pourrait arriver ? Elle va lire vos CSS pour comprendre ce quʼil manque.</p>
+<p>Par ailleurs je trouve beaucoup plus naturel dʼécrire les styles de cette façon : on décrit quelque chose, après tout CSS est un langage descriptif. De plus <strong>nous pouvons parler facilement de ce sur quoi nous travaillons</strong>, et pouvons même nous référer à un élément commun dans un guide de style ou une documentation quelconque.</p>
+<p>Nos CSS ne sont pas censées gonfler lorsquʼon a défini une architecture en amont. On a une somme peu ou prou figée pour nos besoins précis. En cas de refonte graphique la structure ne bouge pas, puisquʼelle est <strong>solidaire</strong> du contenu.</p>
+<p>Je n’ai pas une vision mécanique de mes CSS, j’en ai une vision humaine : quelquʼun dʼautre (une personne) va les lire, chercher à les comprendre, les utiliser, les modifier peut-être. <strong>Je communique avec cette personne</strong>, je documente, je commente, jʼinduis des erreurs pour obliger à lire, comprendre et respecter certaines bonnes pratiques.</p>
+<h2>Je fais erreur, et après ?</h2>
+<p>Je sais, oui. Peu importe lʼapproche sur mes propos, <strong>il existe des façons de travailler qui ne me font pas écrire mes CSS de manière démodée</strong>. On peut utiliser des outils pour vérifier que le HTML est correct.[^9]</p>
+<p>[^9]: Par exemple a11y.css vérifie la présence de lʼalternative sur une image, ce qui permet de se passer dʼun sélecteur contraignant. De nombreux autres outils de bien meilleure qualité le font également.</p>
+<p>Donc encore une fois, <strong>je sais que mes propos ne feront pas le poids</strong> comparés aux gains multiples en terme de performance, de vitesse, de maintenabilité, dʼautomatisation. Mais soyons honnêtes, le gain de poids pour un site <em>lambda</em> nʼest pas si énorme<a href="https://www.ffoodd.fr/a-qui-parlent-vos-css/#note-10" title="Les chiffres avancés par Thierry Koblentz sont issus de sites très, très gros, pour lesquels les gains sont forcément énormes. Un site vitrine pour la boulangerie du coin aura assez peu à y gagner par rapport à une feuille de styles légère et précise, je pense.">[10]</a>. Certes, il reste dommageable pour un utilisateur de télécharger un octet supplémentaire, donc je suis dʼaccord : les CSS atomiques sont une idée absolument géniale, <strong>un gain véritable et très intelligent tant pour lʼutilisateur que pour le matériel</strong>.</p>
+<p>Je trouve tout de même un intérêt bien supérieur dans mes échanges avec mes collègues ou camarades de métier. Jʼaime répondre aux questions. Jʼespère quʼun nouvel arrivant parcourant mes styles éprouvera du confort et aura envie dʼécrire de cette façon, tout comme un curieux qui lirait mes sources.</p>
+<p>Après tout, « <em>Code is poetry</em> ».</p>
+
+				
+			</main>
+
+			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
+				<div class="aside pl2 pt2">
+					<h3 class="tk-bello-pro h2-like m-reset">À lire ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://openweb.eu.org/articles/du-consommateur-au-producteur">sur Openweb</a>
+							</li>
+							<li>
+								<a href="https://www.alsacreations.com/livres/lire/1503-webgrids-structure-et-typographie-de-la-page-web.html">sur Alsacréations</a>
+							</li>
+						</ul>
+					</div>
+					<h3 class="tk-bello-pro h2-like m-reset pt1">À regarder ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php">Paris Web 2018</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</aside>
+
+			<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
+				<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__github" href="https://github.com/ffoodd" itemprop="url" title="Gaël Poupard sur GitHub">
+							<span itemprop="name">GitHub</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__dribble" href="https://dribbble.com/ffoodd" itemprop="url" title="Gaël Poupard sur Dribbble">
+							<span itemprop="name">Dribbble</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__linkedin" href="https://www.linkedin.com/pub/ga%C3%ABl-poupard/30/17b/401" itemprop="url" title="Gaël Poupard sur LinkedIn">
+							<span itemprop="name">LinkedIn</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__behance" href="https://www.behance.net/ffoodd" itemprop="url" title="Gaël Poupard sur Behance">
+							<span itemprop="name">Behance</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/" itemprop="url" title="La vie en #ffoodd | Flux RSS">
+							<span itemprop="name">RSS</span>
+						</a>
+					</li>
+				</ul>
+
+				<small>
+					&copy; 2018 La vie en #ffoodd &mdash; Design et intégration par <span itemprop="name">Gaël Poupard</span> &mdash; <a href="/mentions-legales/">Mentions légales</a>
+					<br />
+					Sauf mention contraire, l’ensemble du contenu est sous <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/fr/">Licence <abbr lang="en" title="Creative Commons">CC</abbr> <abbr lang="en" title="Attribution">BY</abbr>-<abbr lang="en" title="Non Commercial">NC</abbr>-<abbr lang="en" title="Share Alike">SA</abbr></a>.
+				</small>
+
+				<meta itemprop="jobTitle" content="Webdesigner et intégrateur web">
+				<meta itemprop="worksFor" content="onepoint">
+			</footer><!-- / contentinfo -->
+		</div>
+	</body>
+</html>

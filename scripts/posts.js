@@ -4,13 +4,6 @@ const path = require('node:path');
 
 const posts = require(path.join(__dirname, '../_export/posts.json'));
 
-const caption = {
-	filter: ['figcaption'],
-	replacement: (content) => {
-		return `"${content}"`
-	}
-}
-
 const turndownService = new TurndownService({
 	codeBlockStyle: 'fenced',
 	preformattedCode: true,
@@ -49,11 +42,19 @@ Object.keys(posts).forEach((p, i) => {
 		.replace(/   /g, ' ');
 
 	let frontMatter = [
-		{ title: turndownService.turndown(post.title.rendered).replace(/\u00A0/g, '&nbsp;') },
+		{ layout: 'base.njk' },
+		{ title: turndownService.turndown(post.title.rendered)
+				.replace(/\u00A0/g, '&nbsp;')
+				.replace(/\u005C/g, '')
+		},
 		{ date: post.date },
 		{ modified: post.modified },
 		{ permalink: `${post.slug}/index.html` },
-		{ excerpt: turndownService.turndown(post.excerpt.rendered).replace(/\u00A0/g, '&nbsp;') },
+		{ excerpt: turndownService.turndown(post.excerpt.rendered)
+				.replace(/\[(.*?)\]\((.*?) "(.*?)"\)/g, "[$1]($2 '$3')")
+				.replace(/\u00A0/g, '&nbsp;')
+				.replace(/\u005C/g, '')
+		},
 		{ format: post.format }
 	];
 

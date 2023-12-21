@@ -1,4 +1,5 @@
 ---
+layout: "base.njk"
 title: "Sass & Compass avancé"
 date: "2013-11-20T17:17:48"
 modified: "2014-09-21T12:39:31"

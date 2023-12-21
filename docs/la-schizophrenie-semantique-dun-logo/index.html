@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>La schizophrénie sémantique</title>
+		<meta name="description" content="">
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+		<!-- @todo Ajouter le flux RSS
+			<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/">
+		-->
+	</head>
+	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
+		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+		<div class="row">
+			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation">
+				<ul class="menu aside p-reset m-reset ul-reset">
+					<!-- @todo Gérer l’état current -->
+					<li class="tk-bello-pro h1-like m-reset current-menu-item current_page_item">
+						<a href="/" aria-current="page">ffoodd</a>
+					</li>
+					<li class="h3-like m-reset"><a href="/plus/">À propos</a></li>
+					<!-- @todo gérer l’URL ? -->
+					<li class="h3-like m-reset"><a href="/category/journal/">Journal</a></li>
+					<li class="h3-like m-reset"><a href="/travaux/">Parcours</a></li>
+				</ul>
+			</nav><!-- / #nav -->
+
+			<main class="col w--site pl3 pb3 pr5" id="content" role="main" role="main" itemprop="mainContentOfPage">
+				<div class="logo print-hidden">
+					<img src="/images/2013/10/copy-cropped-ffoodd.png" alt="La vie en #ffoodd" id="logo" width="144" height="144">
+				</div>
+				
+					<p>Comme beaucoup d’intégrateurs, je me suis heurté à la <strong>schizophrénie sémantique</strong> du logo. Vous rêvez de l’inclure dans un h1 plein de bon texte pour le SEO, mais m**d* ! Votre logo est une image.</p>
+<h2>Que dois-je faire, Docteur ?</h2>
+<p>De nombreux remèdes ont vu le jour pour combattre ce symptôme, à tel point que l’excellent Chris Coyier en a érigé un <a href="http://css-tricks.com/examples/ImageReplacement/">mémorial</a>.<br>
+De mon côté, j’ai beaucoup apprécié l’élégance et la légèreté de la <a href="http://nicolasgallagher.com/another-css-image-replacement-technique/">proposition</a> de Nicolas Gallagher, notamment utilisée dans le fameux <a href="http://html5boilerplate.com/">HTML5 Boilerplate</a>. Et c’est cette option que j’utilise et recommande.</p>
+<h2>Mais ça démange encore !</h2>
+<p>Il reste un symptôme gênant : l’image elle-même. On se retrouve avec un fichier à charger – et donc une <strong>requête HTTP supplémentaire</strong> – et qui nécessitera de <strong>refaire</strong> l’image en cas de modification. Ennuyeux. Mais deux techniques supplémentaires viennent à notre rescousse : <strong>@font-face</strong> et <strong>base64</strong>.</p>
+<h2>@font-face</h2>
+<p>Une astuce relativement simple a vu le jour récemment, qui permet d’incorporer des images dans un seul fichier et pouvoir les styler via CSS : les icon-fonts. Cette technique est plébiscitée en ce moment, et j’ai donc eu tout le loisir de me documenter :</p>
+<ul>
+<li><a href="http://css-tricks.com/examples/IconFont/">Icon Fonts are Awesome</a> de Chris Coyier</li>
+<li><a href="http://trentwalton.com/2012/05/04/icon-fonts/">Icon Fonts</a> de Trent Walton</li>
+<li><a href="http://24ways.org/2011/displaying-icons-with-fonts-and-data-attributes">Displaying Icons with Fonts and Data- Attributes</a> de John Hicks</li>
+<li><a href="http://blog.goetter.fr/post/18017100624/icones-font-face-et-accessibilite">ICÔNES “@FONT-FACE” ET ACCESSIBILITÉ</a> par Raphaël Goetter</li>
+</ul>
+<p>Certains points sont abordés, notamment pourquoi le SVG ne suffit pas actuellement ( indice : IE8 ) mais aussi la question de l’accessibilité. J’ai d’abord été attiré par l’implémentation de Trent Walton de son logo. Mais dans une correction de son billet, Raphaël Goetter a ajouté une proposition de Keyamoon pour son outil <a href="http://keyamoon.com/icomoon/#toHome">IcoMoon</a>. Cette solution est particulièrement propre car il s’agit simplement d’ajouter <strong>un attribut</strong> à la balise visée. J’adopte !</p>
+<p>À noter cependant : pour inclure une image dans une typographie, il est nécessaire de disposer d’un outil efficace – et ça n’est pas si simple. Il existe un <a href="http://www.webdesignerdepot.com/2012/01/how-to-make-your-own-icon-webfont/">tutoriel intéressant</a> pour y parvenir, ou encore le site <a href="http://fontstruct.com/">Fontstruct</a> qui vous permet de dessiner directement vos caractères.</p>
+<p>Je tiens à remercier <a href="http://damien-collot.com/">Damien Collot</a> pour l’aide qu’il m’a apporté sur le sujet.</p>
+<h2>Base64</h2>
+<p>Au fil de mes pérégrinations, j’ai un jour remarqué cette option sur le générateur de kits @font-face de <a href="http://www.fontsquirrel.com/">font-squirrel</a> : encoder en Base64. Quelques rapides recherches – et cet <a href="http://www.alsacreations.com/article/lire/1439-data-uri-schema.html">excellent article sur Alsacréations</a> – m’ont appris qu’encoder un petit fichier en Base64 permettait d’économiser une requête HTTP : Eurêka !</p>
+<h2>Résultat</h2>
+<p>Ne cherchez plus, c’est la technique que j’ai utilisée sur le logo de ce site. En HTML cela donne simplement :</p>
+<pre><code class="language-markup">
+&lt;h1&gt;
+  &lt;a data-icon=&quot;a&quot;&gt;Gaël Poupard&lt;/a&gt;
+&lt;/h1&gt;
+</code></pre>
+<p>et en css :</p>
+<pre><code class="language-css">
+@font-face {
+  font-family: ’logo’;
+  src: url(’font/logo.eot’);
+  src: local(’?’), url(data:font/woff;charset=utf-8;base64,...;
+  font-weight: normal;
+  font-style: normal;
+}
+h1 a {
+  font: 0/0 a;
+  text-decoration: none;
+}
+h1 a:before {
+  content: attr(data-icon);
+  font: 200px/250px ’logo’;
+  text-decoration: none;
+}
+</code></pre>
+<p>Et c’est tout ! Le résultat est particulièrement propre et simple. Il nécessite un travail préparatoire assez long, mais c’est une mécanique intéressante à connaître.</p>
+<h2>Conclusion</h2>
+<p>Trois techniques relativement avancées permettent d’obtenir cet excellent résultat. Le logo est :</p>
+<ol>
+<li>encodé en <strong>Base64</strong> : pas de requête HTTP</li>
+<li>appelé via <strong>@font-face</strong> : maniable en CSS</li>
+<li>inclus dans un <strong>h1</strong> : sémantiquement intéressant</li>
+<li>dispose d’un texte de remplacement <strong>pertinent</strong> : optimisé pour le référencement</li>
+</ol>
+<p>Le principal inconvénient est le <strong>support d’IE8</strong> : il ne reconnaît que les fichiers .eot dans @font-face, ce qui nous force à ajouter un fichier .eot difficile à convertir en Base64. Mais si vous pouvez m’y aider, je suis tout ouï !</p>
+
+				
+			</main>
+
+			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
+				<div class="aside pl2 pt2">
+					<h3 class="tk-bello-pro h2-like m-reset">À lire ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://openweb.eu.org/articles/du-consommateur-au-producteur">sur Openweb</a>
+							</li>
+							<li>
+								<a href="https://www.alsacreations.com/livres/lire/1503-webgrids-structure-et-typographie-de-la-page-web.html">sur Alsacréations</a>
+							</li>
+						</ul>
+					</div>
+					<h3 class="tk-bello-pro h2-like m-reset pt1">À regarder ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php">Paris Web 2018</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</aside>
+
+			<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
+				<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__github" href="https://github.com/ffoodd" itemprop="url" title="Gaël Poupard sur GitHub">
+							<span itemprop="name">GitHub</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__dribble" href="https://dribbble.com/ffoodd" itemprop="url" title="Gaël Poupard sur Dribbble">
+							<span itemprop="name">Dribbble</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__linkedin" href="https://www.linkedin.com/pub/ga%C3%ABl-poupard/30/17b/401" itemprop="url" title="Gaël Poupard sur LinkedIn">
+							<span itemprop="name">LinkedIn</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__behance" href="https://www.behance.net/ffoodd" itemprop="url" title="Gaël Poupard sur Behance">
+							<span itemprop="name">Behance</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/" itemprop="url" title="La vie en #ffoodd | Flux RSS">
+							<span itemprop="name">RSS</span>
+						</a>
+					</li>
+				</ul>
+
+				<small>
+					&copy; 2018 La vie en #ffoodd &mdash; Design et intégration par <span itemprop="name">Gaël Poupard</span> &mdash; <a href="/mentions-legales/">Mentions légales</a>
+					<br />
+					Sauf mention contraire, l’ensemble du contenu est sous <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/fr/">Licence <abbr lang="en" title="Creative Commons">CC</abbr> <abbr lang="en" title="Attribution">BY</abbr>-<abbr lang="en" title="Non Commercial">NC</abbr>-<abbr lang="en" title="Share Alike">SA</abbr></a>.
+				</small>
+
+				<meta itemprop="jobTitle" content="Webdesigner et intégrateur web">
+				<meta itemprop="worksFor" content="onepoint">
+			</footer><!-- / contentinfo -->
+		</div>
+	</body>
+</html>

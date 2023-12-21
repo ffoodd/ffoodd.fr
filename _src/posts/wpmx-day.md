@@ -1,4 +1,5 @@
 ---
+layout: "base.njk"
 title: "WPMX Day"
 date: "2015-07-02T16:42:39"
 modified: "2015-07-02T16:45:35"

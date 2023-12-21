@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Découvrez le calcul magique</title>
+		<meta name="description" content="">
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+		<!-- @todo Ajouter le flux RSS
+			<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/">
+		-->
+	</head>
+	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
+		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+		<div class="row">
+			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation">
+				<ul class="menu aside p-reset m-reset ul-reset">
+					<!-- @todo Gérer l’état current -->
+					<li class="tk-bello-pro h1-like m-reset current-menu-item current_page_item">
+						<a href="/" aria-current="page">ffoodd</a>
+					</li>
+					<li class="h3-like m-reset"><a href="/plus/">À propos</a></li>
+					<!-- @todo gérer l’URL ? -->
+					<li class="h3-like m-reset"><a href="/category/journal/">Journal</a></li>
+					<li class="h3-like m-reset"><a href="/travaux/">Parcours</a></li>
+				</ul>
+			</nav><!-- / #nav -->
+
+			<main class="col w--site pl3 pb3 pr5" id="content" role="main" role="main" itemprop="mainContentOfPage">
+				<div class="logo print-hidden">
+					<img src="/images/2013/10/copy-cropped-ffoodd.png" alt="La vie en #ffoodd" id="logo" width="144" height="144">
+				</div>
+				
+					<p>Et ça, c’était pas terrible. Non, vraiment pas. On cherchait frénétiquement à obtenir le même rendu sur tous les navigateurs et tous les écrans. Aujourd’hui, c’est drôle — à l’époque, c’était le nerf de la guerre.</p>
+<h2>Les valeurs uniques</h2>
+<p>Cette recherche de perfection était régulièrement entravée par plusieurs limitations techniques :</p>
+<ul>
+<li>les <strong>styles par défaut des navigateurs</strong> différaient, parfois beaucoup — ce problème a été résolu à coup de <em>reset</em> ou de <em>normalize</em> ;</li>
+<li>les unités relatives étaient parfois compliquées à manœuvrer, à cause d’<strong>inconsistances dans les valeurs calculées</strong> par les navigateurs (notamment la question des arrondis) mais ces derniers ont plutôt bien corrigé le tir, depuis ;</li>
+<li><strong>les unités différentes</strong>, difficiles à manipuler ensemble (<code>px</code>, <code>%</code>, <code>em</code>, etc.) ;</li>
+<li>l’<strong>incompréhension des modèles de boîte</strong>,  au moment ou tout le monde blâmait le mode <em>quirks</em> d’IE avant de l’adopter massivement sous sa forme CSS (<code>box-sizing: border-box;</code>, pour ceux qui se posent la question).</li>
+</ul>
+<p>Pour l’intégrateur, ces différents tracas pouvaient être résolus de la même façon : des valeurs absolues en pixels, de préférence. Ainsi ajustions-nous nos largeurs, marges internes et marges externes <strong>au pixel près</strong>.</p>
+<p>Désormais il est relativement rare d’en arriver à ces extrémités, grâce aux nombreux outils qui sont apparus ces dernières années. Il en est un en particulier qui aide bien, lorsque <code>box-sizing</code> ne suffit pas : la fonction <code>calc()</code>.</p>
+<h2>La fonction calc() à la rescousse</h2>
+<p>Pour faire simple — vous la connaissez sûrement déjà — elle permet de réaliser des calculs simples directement dans les styles, <strong>en mixant les unités</strong>.</p>
+<p>Dans un écosystème rempli de nombres magiques et d’intégration <em>pixel perfect</em>, une reprise partielle du code peut s’avérer extrêmement fastidieuse.</p>
+<p>En l’occurrence, c’était mon cas lors d’un POC l’an dernier. Je devais travailler un gabarit souple en surcouche d’une structure figée, <strong>sans accès au DOM</strong>.</p>
+<p>Ce fut relativement simple à l’exception d’un point : il fallait un bloc image avec titre superposé, qui prenne les deux tiers de la largeur du site — largeur devenue relative, je le rappelle — en partant de la colonne centrale. Jusque là, ça va ! Le point vraiment compliqué est que le bloc de la colonne de droite devait suffisamment se décaler en hauteur pour laisser la place à ce nouveau contenu, tout en respectant le ratio de l’image constituant ce nouvel élément — puisqu’elle sera souple également. Ah, et pour s’amuser un peu visuellement, il faudrait conserver un rappel visuel du colonage au-dessus du nouveau bloc !</p>
+<p>Bien, utilisons une bordure en haut pour gérer le décalage !</p>
+<p><strong>Ça commence à faire un certain nombre de calculs, vous ne trouvez pas ?</strong></p>
+<h2>La situation complexe</h2>
+<p>Textuellement, ça n’est pas forcément évident. Voici une petite illustration, dans laquelle la zone blanche est le nouvel élément, et le bloc rouge est la bordure dont je devais ajuster la dimension :</p>
+<p><img src="/images/2015/03/calc-300x209.png" alt="Représentation graphique des proportions entre les blocs" title="Représentation graphique des proportions entre les blocs"></p>
+<p>Finalement, je suis parvenu à simplifier le calcul en tournant autour du ratio de l’image utilisée (en blanc sur le schéma), soit <strong>431:950</strong>. Il s’agissait donc d’exprimer la hauteur de la bordure selon 3 valeurs :</p>
+<ol>
+<li>la proportion en largeur que représente ce nouveau bloc par rapport au <em>viewport</em>, soit <code>72%</code> ;</li>
+<li>le ratio de l’image utilisée, en l’occurrence <code>431/950</code> ;</li>
+<li>le décalage supplémentaire à ajouter au-dessus et en-dessous pour l’esthétisme, ici <code>4.8em</code>.</li>
+</ol>
+<h2>La magie opère</h2>
+<p>Et voilà comment on aboutit à :</p>
+<pre><code class="language-css">aside {
+  border-top-width: calc( 72vw * 431 / 950 + 4.8em);
+}
+</code></pre>
+<p>Grâce à ce calcul, le décalage reste correct et proportionnel au reste de l’écran, et l’aspect graphique est homogène dans tous les contextes d’affichage.</p>
+<h2>Les suppléments</h2>
+<p>Depuis ce POC, j’ai découvert le travail de <a href="http://gasteroprod.com/">Nicolas Hoizey</a> sur <a href="https://github.com/nhoizey/esviji">esviji V2</a>, qui utilise <a href="https://github.com/nhoizey/esviji/blob/master/src/sass/_screen.scss">les ratios, les calculs et les unités de viewport</a> pour atteindre un degré d’adaptation aux écrans extraordinaire. Je vous conseille de garder un œil sur son projet, et surtout de parcourir <a href="https://gist.github.com/nhoizey/f31cf92114a376a23155">la feuille de styles générée</a> qui est remarquablement écrite !</p>
+
+				
+			</main>
+
+			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
+				<div class="aside pl2 pt2">
+					<h3 class="tk-bello-pro h2-like m-reset">À lire ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://openweb.eu.org/articles/du-consommateur-au-producteur">sur Openweb</a>
+							</li>
+							<li>
+								<a href="https://www.alsacreations.com/livres/lire/1503-webgrids-structure-et-typographie-de-la-page-web.html">sur Alsacréations</a>
+							</li>
+						</ul>
+					</div>
+					<h3 class="tk-bello-pro h2-like m-reset pt1">À regarder ailleurs</h3>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<a href="https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php">Paris Web 2018</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</aside>
+
+			<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
+				<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__github" href="https://github.com/ffoodd" itemprop="url" title="Gaël Poupard sur GitHub">
+							<span itemprop="name">GitHub</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__dribble" href="https://dribbble.com/ffoodd" itemprop="url" title="Gaël Poupard sur Dribbble">
+							<span itemprop="name">Dribbble</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__linkedin" href="https://www.linkedin.com/pub/ga%C3%ABl-poupard/30/17b/401" itemprop="url" title="Gaël Poupard sur LinkedIn">
+							<span itemprop="name">LinkedIn</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__behance" href="https://www.behance.net/ffoodd" itemprop="url" title="Gaël Poupard sur Behance">
+							<span itemprop="name">Behance</span>
+						</a>
+					</li>
+					<li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/" itemprop="url" title="La vie en #ffoodd | Flux RSS">
+							<span itemprop="name">RSS</span>
+						</a>
+					</li>
+				</ul>
+
+				<small>
+					&copy; 2018 La vie en #ffoodd &mdash; Design et intégration par <span itemprop="name">Gaël Poupard</span> &mdash; <a href="/mentions-legales/">Mentions légales</a>
+					<br />
+					Sauf mention contraire, l’ensemble du contenu est sous <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/fr/">Licence <abbr lang="en" title="Creative Commons">CC</abbr> <abbr lang="en" title="Attribution">BY</abbr>-<abbr lang="en" title="Non Commercial">NC</abbr>-<abbr lang="en" title="Share Alike">SA</abbr></a>.
+				</small>
+
+				<meta itemprop="jobTitle" content="Webdesigner et intégrateur web">
+				<meta itemprop="worksFor" content="onepoint">
+			</footer><!-- / contentinfo -->
+		</div>
+	</body>
+</html>
