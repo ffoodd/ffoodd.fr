@@ -1,11 +1,12 @@
 ---
-layout: "base.njk"
+layout: "template/post.njk"
 title: "Réserve d’espace pour le contenu"
 date: "2015-12-03T12:30:49"
 modified: "2015-12-09T09:28:45"
 permalink: "reserve-d%ca%bcespace-pour-le-contenu/index.html"
-excerpt: "Cet effet consiste à utiliser en guise dʼindicateur de chargement un élément graphique ayant les mêmes caractéristiques visuelles —&nbsp;hauteur, largeur, lignes, blocs…&nbsp;— que le contenu en cours de chargement. Vous le connaissez probablement déjà car cʼest ce quʼutilisent Facebook et Medium, entre autres. Et cʼest quand même vachement mieux quʼun gif qui tourne en rond. [Lire la suite de «&nbsp;Réserve d’espace pour le contenu&nbsp;» →](https://www.ffoodd.fr/reserve-d%ca%bcespace-pour-le-contenu/)"
+excerpt: "Cet effet consiste à utiliser en guise dʼindicateur de chargement un élément graphique ayant les mêmes caractéristiques visuelles —&nbsp;hauteur, largeur, lignes, blocs…&nbsp;— que le contenu en cours de chargement. Vous le connaissez probablement déjà car cʼest ce quʼutilisent Facebook et Medium, entre autres. Et cʼest quand même vachement mieux quʼun gif qui tourne en rond."
 format: "standard"
+tags: "posts"
 ---
 C’est ce quʼutilisent notamment Facebook et Medium, dont le contenu respecte un gabarit constant. En terme dʼinterface, ça me semble **vraiment plus agréable** que le classique _ouroboros_.
 

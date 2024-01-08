@@ -3,9 +3,11 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title></title>
+		<title>La vie en #ffoodd</title>
 		<meta name="description" content="">
 		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+		<link rel="stylesheet" href="/assets/styles.min.css" media="all">
+		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
 		<!-- @todo Ajouter le flux RSS
 			<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/">
 		-->
@@ -15,27 +17,77 @@
 		<div class="row">
 			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation">
 				<ul class="menu aside p-reset m-reset ul-reset">
-					<!-- @todo Gérer l’état current -->
-					<li class="tk-bello-pro h1-like m-reset current-menu-item current_page_item">
-						<a href="/" aria-current="page">ffoodd</a>
+					<li class="tk-bello-pro h1-like m-reset">
+						<a href="/">ffoodd</a>
 					</li>
-					<li class="h3-like m-reset"><a href="/plus/">À propos</a></li>
-					<!-- @todo gérer l’URL ? -->
-					<li class="h3-like m-reset"><a href="/category/journal/">Journal</a></li>
-					<li class="h3-like m-reset"><a href="/travaux/">Parcours</a></li>
+					<li class="h3-like m-reset">
+						<a href="/plus/">À propos</a>
+					</li>
+					<!-- @todo gérer l’URL ? Une redirection ? -->
+					<li class="h3-like m-reset">
+						<a href="/category/journal/">Journal</a>
+					</li>
+					<li class="h3-like m-reset">
+						<a href="/travaux/">Parcours</a>
+					</li>
 				</ul>
-			</nav><!-- / #nav -->
+			</nav>
 
 			<main class="col w--site pl3 pb3 pr5" id="content" role="main" role="main" itemprop="mainContentOfPage">
 				<div class="logo print-hidden">
-					<img src="/images/2013/10/copy-cropped-ffoodd.png" alt="La vie en #ffoodd" id="logo" width="144" height="144">
+					<img src="/assets/img/embossed-ffoodd.png" alt="La vie en #ffoodd" id="logo" width="144" height="144">
 				</div>
+				<article role="article" itemscope itemtype="https://schema.org/Article">
 				
+					<header class="center pt1 mb1" role="banner">
+						<h1 class="mb0 mt0 tk-bello-pro" itemprop="name">La vie en #ffoodd</h1>
+						
+	<h2 class="small" itemprop="author"><i class="pl2">par</i> Gaël Poupard</h2>
+
+						
+							<h2 class="h3-like description" itemprop="description">Intégrateur web à Nantes</h2>
+						
+					</header>
 					
+						<div itemprop="articleBody">
+							<ul>
+<li>En langage hexadécimal, #ff00dd correspond au rose vif. « <em>Voir la vie en #ff00dd</em> » : voir la vie en rose ;</li>
+<li>En anglais, <em>food</em> signifie la nourriture ;</li>
+<li>Pour moi — <strong>Gaël Poupard</strong> — intégrateur web opérant sur Nantes, ffoodd est la métaphore d’un regard particulier sur le web : ses langages, sa poésie, son microcosme… Une passion nourrissante qui m’amène à créer ce site, afin de montrer mon savoir-faire et témoigner de cette vision originale en <strong>expérimentant</strong> « sur site ». <strong>ffoodd</strong> est donc un espace exceptionnel pour mettre en pratique mes lectures.</li>
+</ul>
+
+						</div>
+					
+				</article>
 				
+	
+		<div>
+			<article itemscope itemtype="https://schema.org/Article">
+				<!-- @todo Compter les commentaires -->
+				<p class="end mt0 print-hidden" itemprop="UserComments">0</p>
+				<h3 itemprop="name" class="mb0">
+					Nouvel article&nbsp;:
+					<a href="html-comme-fondation/index.html" rel="bookmark" itemprop="url" tabindex="-1">HTML comme fondation</a>
+				</h3>
+				<time class="small inbl mb1" datetime="2022-12-22T16:53:57" itemprop="datePublished">22 décembre 2022</time>
+				<p class="pl2 mt0" itemprop="description">
+					Traduction de <a href="https://www.htmhell.dev/adventcalendar/2022/17/">ma contribution au calendrier de l’avent de HTMHell</a>.
+					<a href="html-comme-fondation/index.html" aria-hidden="true">Lire la suite de «&nbsp;HTML comme fondation&nbsp;» <span class="meta-nav">→</span></a>
+				</p>
+				<footer class="small mt1">
+					<p class="pl2">
+						Article rédigé par <strong itemprop="author" class="vcard author"><span class="fn">Gaël Poupard</span></strong>.
+						
+					</p>
+				</footer>
+			</article>
+		</div>
+	
+
 			</main>
 
 			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
+				<!-- @todo Gérer le sommaire, pour les articles et pages -->
 				<div class="aside pl2 pt2">
 					<h3 class="tk-bello-pro h2-like m-reset">À lire ailleurs</h3>
 					<div class="textwidget">
@@ -58,45 +110,50 @@
 					</div>
 				</div>
 			</aside>
-
-			<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
-				<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
-					<li class="inbl pa1" itemscope itemprop="contactPoint">
-						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__github" href="https://github.com/ffoodd" itemprop="url" title="Gaël Poupard sur GitHub">
-							<span itemprop="name">GitHub</span>
-						</a>
-					</li>
-					<li class="inbl pa1" itemscope itemprop="contactPoint">
-						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__dribble" href="https://dribbble.com/ffoodd" itemprop="url" title="Gaël Poupard sur Dribbble">
-							<span itemprop="name">Dribbble</span>
-						</a>
-					</li>
-					<li class="inbl pa1" itemscope itemprop="contactPoint">
-						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__linkedin" href="https://www.linkedin.com/pub/ga%C3%ABl-poupard/30/17b/401" itemprop="url" title="Gaël Poupard sur LinkedIn">
-							<span itemprop="name">LinkedIn</span>
-						</a>
-					</li>
-					<li class="inbl pa1" itemscope itemprop="contactPoint">
-						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__behance" href="https://www.behance.net/ffoodd" itemprop="url" title="Gaël Poupard sur Behance">
-							<span itemprop="name">Behance</span>
-						</a>
-					</li>
-					<li class="inbl pa1" itemscope itemprop="contactPoint">
-						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/" itemprop="url" title="La vie en #ffoodd | Flux RSS">
-							<span itemprop="name">RSS</span>
-						</a>
-					</li>
-				</ul>
-
-				<small>
-					&copy; 2018 La vie en #ffoodd &mdash; Design et intégration par <span itemprop="name">Gaël Poupard</span> &mdash; <a href="/mentions-legales/">Mentions légales</a>
-					<br />
-					Sauf mention contraire, l’ensemble du contenu est sous <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/fr/">Licence <abbr lang="en" title="Creative Commons">CC</abbr> <abbr lang="en" title="Attribution">BY</abbr>-<abbr lang="en" title="Non Commercial">NC</abbr>-<abbr lang="en" title="Share Alike">SA</abbr></a>.
-				</small>
-
-				<meta itemprop="jobTitle" content="Webdesigner et intégrateur web">
-				<meta itemprop="worksFor" content="onepoint">
-			</footer><!-- / contentinfo -->
 		</div>
+		<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
+			<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
+				<li class="inbl pa1" itemscope itemprop="contactPoint">
+					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__mastodon" href="https://mamot.fr/@ffoodd" itemprop="url" title="Gaël Poupard sur Mastodon">
+						<span itemprop="name">Mastodon</span>
+					</a>
+				</li>
+				<li class="inbl pa1" itemscope itemprop="contactPoint">
+					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__github" href="https://github.com/ffoodd" itemprop="url" title="Gaël Poupard sur GitHub">
+						<span itemprop="name">GitHub</span>
+					</a>
+				</li>
+				<li class="inbl pa1" itemscope itemprop="contactPoint">
+					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__dribble" href="https://dribbble.com/ffoodd" itemprop="url" title="Gaël Poupard sur Dribbble">
+						<span itemprop="name">Dribbble</span>
+					</a>
+				</li>
+				<li class="inbl pa1" itemscope itemprop="contactPoint">
+					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__linkedin" href="https://www.linkedin.com/pub/ga%C3%ABl-poupard/30/17b/401" itemprop="url" title="Gaël Poupard sur LinkedIn">
+						<span itemprop="name">LinkedIn</span>
+					</a>
+				</li>
+				<li class="inbl pa1" itemscope itemprop="contactPoint">
+					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__behance" href="https://www.behance.net/ffoodd" itemprop="url" title="Gaël Poupard sur Behance">
+						<span itemprop="name">Behance</span>
+					</a>
+				</li>
+				<li class="inbl pa1" itemscope itemprop="contactPoint">
+					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/" itemprop="url" title="La vie en #ffoodd | Flux RSS">
+						<span itemprop="name">RSS</span>
+					</a>
+				</li>
+			</ul>
+
+			<small>
+				&copy; 2018 La vie en #ffoodd &mdash; Design et intégration par <span itemprop="name">Gaël Poupard</span> &mdash; <a href="/mentions-legales/">Mentions légales</a>
+				<br />
+				Sauf mention contraire, l’ensemble du contenu est sous <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/fr/">Licence <abbr lang="en" title="Creative Commons">CC</abbr> <abbr lang="en" title="Attribution">BY</abbr>-<abbr lang="en" title="Non Commercial">NC</abbr>-<abbr lang="en" title="Share Alike">SA</abbr></a>.
+			</small>
+
+			<meta itemprop="jobTitle" content="Webdesigner et intégrateur web">
+			<meta itemprop="worksFor" content="onepoint">
+		</footer>
+		<script src="/assets/script.min.js"></script>
 	</body>
 </html>

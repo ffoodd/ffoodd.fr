@@ -1,11 +1,12 @@
 ---
-layout: "base.njk"
+layout: "template/post.njk"
 title: "Étymologie du web"
 date: "2013-11-04T17:32:27"
 modified: "2013-11-13T11:50:06"
 permalink: "ethymologie-du-web/index.html"
-excerpt: "Mon récent périple sur l’île de Jersey m’a non seulement relaxé, mais aussi fait découvrir sous un nouveau jour certains éléments que j’utilise quotidiennement dans mon travail — et ce pour mon plus grand plaisir. [Lire la suite de «&nbsp;Étymologie du web&nbsp;» →](https://www.ffoodd.fr/ethymologie-du-web/)"
+excerpt: "Mon récent périple sur l’île de Jersey m’a non seulement relaxé, mais aussi fait découvrir sous un nouveau jour certains éléments que j’utilise quotidiennement dans mon travail — et ce pour mon plus grand plaisir."
 format: "standard"
+tags: "posts"
 ---
 Je m’étais déjà fait cette réflexion en lisant [Webgrids](https://www.ffoodd.fr/lecture-webgrids/ "Compte-rendu de lecture&thinsp;:&nbsp;Webgrids (nouvelle fenêtre)"), dans lequel [Anne-Sophie Fradier](https://twitter.com/Mitternacht "Anne-Sophie Fradier sur Twitter (nouvelle fenêtre)") m’apprenait l’origine du mot _scroll_, qui signifiait simplement l’action de dérouler un parchemin. Mais mes vacances à Jersey m’ont appris bien plus encore.
 

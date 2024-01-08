@@ -41,8 +41,15 @@ Object.keys(posts).forEach((p, i) => {
 		.replace(/\'/g, '’')
 		.replace(/   /g, ' ');
 
+
+	let newExcerpt = turndownService.turndown(post.excerpt.rendered)
+		.replace(/\[(.*?)\]\((.*?) "(.*?)"\)/g, "[$1]($2 '$3')")
+		.replace(/\s\[Lire la suite de «\u00A0.*\u00A0» →\]\(https:\/\/www\.ffoodd\.fr\/.*\/\)/g, '')
+		.replace(/\u00A0/g, '&nbsp;')
+		.replace(/\u005C/g, '');
+
 	let frontMatter = [
-		{ layout: 'base.njk' },
+		{ layout: 'template/post.njk' },
 		{ title: turndownService.turndown(post.title.rendered)
 				.replace(/\u00A0/g, '&nbsp;')
 				.replace(/\u005C/g, '')
@@ -50,12 +57,9 @@ Object.keys(posts).forEach((p, i) => {
 		{ date: post.date },
 		{ modified: post.modified },
 		{ permalink: `${post.slug}/index.html` },
-		{ excerpt: turndownService.turndown(post.excerpt.rendered)
-				.replace(/\[(.*?)\]\((.*?) "(.*?)"\)/g, "[$1]($2 '$3')")
-				.replace(/\u00A0/g, '&nbsp;')
-				.replace(/\u005C/g, '')
-		},
-		{ format: post.format }
+		{ excerpt: newExcerpt },
+		{ format: post.format },
+		{ tags: 'posts' }
 	];
 
 	const description = typeof post.metadata.Description === Object ?

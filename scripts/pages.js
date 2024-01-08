@@ -29,17 +29,31 @@ Object.keys(pages).forEach((p, i) => {
 		.replace(/\'/g, '’')
 		.replace(/   /g, ' ');
 
+	let permalink = `${page.slug}/index.html`;
+	let title = turndownService.turndown(page.title.rendered).replace(/\u00A0/g, '&nbsp;');
+	let layout = 'template/page.njk';
+	let path = './_src/pages';
+	let slug = `${page.slug}.md`;
+	if (page.slug === 'accueil') {
+		permalink = 'index.html';
+		title = 'La vie en #ffoodd'
+		layout = 'template/home.njk';
+		path = './_src';
+		slug = 'index.md';
+	}
+
 	// Write to markdown file with frontmatter
 	transformAndWriteToFile({
 		frontmatterMarkdown: {
 			frontmatter: [
-				{ layout: 'base.njk' },
-				{ title: turndownService.turndown(page.title.rendered).replace(/\u00A0/g, '&nbsp;') },
-				{ permalink: `${page.slug}/index.html` }
+				{ layout: layout },
+				{ title: title },
+				{ permalink: permalink },
+				{ tags: 'pages' }
 			],
 			body: newContent
 		},
-		path: './_src/pages',
-		fileName: `${page.slug}.md`
+		path: path,
+		fileName: slug
 	})
 })

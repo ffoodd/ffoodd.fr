@@ -1,11 +1,12 @@
 ---
-layout: "base.njk"
+layout: "template/post.njk"
 title: "Mutisme relatif"
 date: "2014-05-17T11:59:35"
 modified: "2015-07-03T10:48:05"
 permalink: "mutisme-relatif/index.html"
-excerpt: "Restant muet depuis plusieurs semaines, il m’a semblé bon de faire un point sur le pourquoi du comment. Les changements opérés en quelques mois, les nouveautés à afficher ainsi que les projets en cours et à venir devraient me permettre de me projeter dans cette année qui s’annonce très riche ! [Lire la suite de «&nbsp;Mutisme relatif&nbsp;» →](https://www.ffoodd.fr/mutisme-relatif/)"
+excerpt: "Restant muet depuis plusieurs semaines, il m’a semblé bon de faire un point sur le pourquoi du comment. Les changements opérés en quelques mois, les nouveautés à afficher ainsi que les projets en cours et à venir devraient me permettre de me projeter dans cette année qui s’annonce très riche !"
 format: "standard"
+tags: "posts"
 ---
 Voici un&nbsp;résumé de&nbsp;mes activités des derniers mois, ainsi que de mes projets pour cette année. Je souhaite seulement signaler que cette baisse de régime dans mes publications n’est que temporaire.
 

@@ -6,6 +6,8 @@
 		<title>Réserve d’espace pour le contenu</title>
 		<meta name="description" content="">
 		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+		<link rel="stylesheet" href="/assets/styles.min.css" media="all">
+		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
 		<!-- @todo Ajouter le flux RSS
 			<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/">
 		-->
@@ -15,23 +17,49 @@
 		<div class="row">
 			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation">
 				<ul class="menu aside p-reset m-reset ul-reset">
-					<!-- @todo Gérer l’état current -->
-					<li class="tk-bello-pro h1-like m-reset current-menu-item current_page_item">
-						<a href="/" aria-current="page">ffoodd</a>
+					<li class="tk-bello-pro h1-like m-reset">
+						<a href="/">ffoodd</a>
 					</li>
-					<li class="h3-like m-reset"><a href="/plus/">À propos</a></li>
-					<!-- @todo gérer l’URL ? -->
-					<li class="h3-like m-reset"><a href="/category/journal/">Journal</a></li>
-					<li class="h3-like m-reset"><a href="/travaux/">Parcours</a></li>
+					<li class="h3-like m-reset">
+						<a href="/plus/">À propos</a>
+					</li>
+					<!-- @todo gérer l’URL ? Une redirection ? -->
+					<li class="h3-like m-reset">
+						<a href="/category/journal/">Journal</a>
+					</li>
+					<li class="h3-like m-reset">
+						<a href="/travaux/">Parcours</a>
+					</li>
 				</ul>
-			</nav><!-- / #nav -->
+			</nav>
 
 			<main class="col w--site pl3 pb3 pr5" id="content" role="main" role="main" itemprop="mainContentOfPage">
 				<div class="logo print-hidden">
-					<img src="/images/2013/10/copy-cropped-ffoodd.png" alt="La vie en #ffoodd" id="logo" width="144" height="144">
+					<img src="/assets/img/embossed-ffoodd.png" alt="La vie en #ffoodd" id="logo" width="144" height="144">
 				</div>
+				<article role="article" itemscope itemtype="https://schema.org/Article">
 				
-					<p>C’est ce quʼutilisent notamment Facebook et Medium, dont le contenu respecte un gabarit constant. En terme dʼinterface, ça me semble <strong>vraiment plus agréable</strong> que le classique <em>ouroboros</em>.</p>
+					<header class="center pt1 mb1" role="banner">
+						<h1 class="mb0 mt0 tk-bello-pro" itemprop="name">Réserve d’espace pour le contenu</h1>
+						
+	<nav role="navigation" aria-labelledby="here" class="print-hidden small mt2 mb1">
+		<span id="here">Vous êtes ici&nbsp;: </span>
+		<div class="inbl" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+			<a href="/" itemprop="url"><span itemprop="title">La vie en #ffoodd</span></a>
+			<span> ›&nbsp;</span>
+		</div><div class="inbl" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+			<a href="/journal/" itemprop="url"><span itemprop="title">Journal</span></a>
+			<span> ›&nbsp;</span>
+		</div><div class="inbl" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+			<span itemprop="title">Réserve d’espace pour le contenu</span>
+		</div>
+	</nav>
+
+						
+					</header>
+					
+	<div itemprop="articleBody">
+		<p>C’est ce quʼutilisent notamment Facebook et Medium, dont le contenu respecte un gabarit constant. En terme dʼinterface, ça me semble <strong>vraiment plus agréable</strong> que le classique <em>ouroboros</em>.</p>
 <p>Et figurez-vous que pour le moment, tous <strong>les retours sont extrêmement positifs</strong>. En session de test utilisateurs, la plupart des testeurs lʼont remarqué et ont tenu à le signaler comme un élément « très agréable ». Moi qui pensait mʼamuser à suivre un effet de mode à la mords-moi-le-nœud et être passé du côté obscur de la Force, me voilà confondu. Cet effet semble conférer une réelle valeur ajoutée à <strong>lʼexpérience utilisateur</strong>, alors jʼaie envie de vous montrer ce quʼil y a sous le capot afin de partager et dʼaméliorer encore tout ça.</p>
 <h2>Quelques recherches pour démarrer</h2>
 <p>Bon, bizarrement, je nʼai pas trouvé beaucoup de ressources pour faire ce truc. La plus visible est <a href="http://codepen.io/Mestika/pen/ByNYBa">une expérimentation sur codePen</a> qui est franchement sale. Une soupe de <code>div</code>, chacune positionnée en absolu et calée au pixel près. En revanche lʼarticle de lʼapprenti magicien est <strong>relativement</strong> intéressant : « <a href="http://cloudcannon.com/deconstructions/2014/11/15/facebook-content-placeholder-deconstruction.html"><em>Facebook content placeholder deconstruction</em></a> ». Très relativement, hein. Ça manque cruellement de référence donc si vous avez, elles mʼintéressent !</p>
@@ -121,10 +149,15 @@ div::after {
 <p><strong>Et voilà !</strong></p>
 <p>Si vous souhaitez jouer avec ou le reprendre, <a href="http://dabblet.com/gist/466b6a47db1b4ac14ecb">vous trouverez le tout sur Dabblet</a>. Rien de bien complexe, mais cʼest tellement simple et efficace quʼil serait dommage de sʼen priver 😇</p>
 
+	</div>
+	<!-- @todo Gérer les commentaires -->
+
+				</article>
 				
 			</main>
 
 			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
+				<!-- @todo Gérer le sommaire, pour les articles et pages -->
 				<div class="aside pl2 pt2">
 					<h3 class="tk-bello-pro h2-like m-reset">À lire ailleurs</h3>
 					<div class="textwidget">
@@ -147,45 +180,50 @@ div::after {
 					</div>
 				</div>
 			</aside>
-
-			<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
-				<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
-					<li class="inbl pa1" itemscope itemprop="contactPoint">
-						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__github" href="https://github.com/ffoodd" itemprop="url" title="Gaël Poupard sur GitHub">
-							<span itemprop="name">GitHub</span>
-						</a>
-					</li>
-					<li class="inbl pa1" itemscope itemprop="contactPoint">
-						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__dribble" href="https://dribbble.com/ffoodd" itemprop="url" title="Gaël Poupard sur Dribbble">
-							<span itemprop="name">Dribbble</span>
-						</a>
-					</li>
-					<li class="inbl pa1" itemscope itemprop="contactPoint">
-						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__linkedin" href="https://www.linkedin.com/pub/ga%C3%ABl-poupard/30/17b/401" itemprop="url" title="Gaël Poupard sur LinkedIn">
-							<span itemprop="name">LinkedIn</span>
-						</a>
-					</li>
-					<li class="inbl pa1" itemscope itemprop="contactPoint">
-						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__behance" href="https://www.behance.net/ffoodd" itemprop="url" title="Gaël Poupard sur Behance">
-							<span itemprop="name">Behance</span>
-						</a>
-					</li>
-					<li class="inbl pa1" itemscope itemprop="contactPoint">
-						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/" itemprop="url" title="La vie en #ffoodd | Flux RSS">
-							<span itemprop="name">RSS</span>
-						</a>
-					</li>
-				</ul>
-
-				<small>
-					&copy; 2018 La vie en #ffoodd &mdash; Design et intégration par <span itemprop="name">Gaël Poupard</span> &mdash; <a href="/mentions-legales/">Mentions légales</a>
-					<br />
-					Sauf mention contraire, l’ensemble du contenu est sous <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/fr/">Licence <abbr lang="en" title="Creative Commons">CC</abbr> <abbr lang="en" title="Attribution">BY</abbr>-<abbr lang="en" title="Non Commercial">NC</abbr>-<abbr lang="en" title="Share Alike">SA</abbr></a>.
-				</small>
-
-				<meta itemprop="jobTitle" content="Webdesigner et intégrateur web">
-				<meta itemprop="worksFor" content="onepoint">
-			</footer><!-- / contentinfo -->
 		</div>
+		<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
+			<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
+				<li class="inbl pa1" itemscope itemprop="contactPoint">
+					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__mastodon" href="https://mamot.fr/@ffoodd" itemprop="url" title="Gaël Poupard sur Mastodon">
+						<span itemprop="name">Mastodon</span>
+					</a>
+				</li>
+				<li class="inbl pa1" itemscope itemprop="contactPoint">
+					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__github" href="https://github.com/ffoodd" itemprop="url" title="Gaël Poupard sur GitHub">
+						<span itemprop="name">GitHub</span>
+					</a>
+				</li>
+				<li class="inbl pa1" itemscope itemprop="contactPoint">
+					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__dribble" href="https://dribbble.com/ffoodd" itemprop="url" title="Gaël Poupard sur Dribbble">
+						<span itemprop="name">Dribbble</span>
+					</a>
+				</li>
+				<li class="inbl pa1" itemscope itemprop="contactPoint">
+					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__linkedin" href="https://www.linkedin.com/pub/ga%C3%ABl-poupard/30/17b/401" itemprop="url" title="Gaël Poupard sur LinkedIn">
+						<span itemprop="name">LinkedIn</span>
+					</a>
+				</li>
+				<li class="inbl pa1" itemscope itemprop="contactPoint">
+					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__behance" href="https://www.behance.net/ffoodd" itemprop="url" title="Gaël Poupard sur Behance">
+						<span itemprop="name">Behance</span>
+					</a>
+				</li>
+				<li class="inbl pa1" itemscope itemprop="contactPoint">
+					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/" itemprop="url" title="La vie en #ffoodd | Flux RSS">
+						<span itemprop="name">RSS</span>
+					</a>
+				</li>
+			</ul>
+
+			<small>
+				&copy; 2018 La vie en #ffoodd &mdash; Design et intégration par <span itemprop="name">Gaël Poupard</span> &mdash; <a href="/mentions-legales/">Mentions légales</a>
+				<br />
+				Sauf mention contraire, l’ensemble du contenu est sous <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/fr/">Licence <abbr lang="en" title="Creative Commons">CC</abbr> <abbr lang="en" title="Attribution">BY</abbr>-<abbr lang="en" title="Non Commercial">NC</abbr>-<abbr lang="en" title="Share Alike">SA</abbr></a>.
+			</small>
+
+			<meta itemprop="jobTitle" content="Webdesigner et intégrateur web">
+			<meta itemprop="worksFor" content="onepoint">
+		</footer>
+		<script src="/assets/script.min.js"></script>
 	</body>
 </html>

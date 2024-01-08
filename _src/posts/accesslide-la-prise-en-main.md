@@ -1,11 +1,12 @@
 ---
-layout: "base.njk"
+layout: "template/post.njk"
 title: "AccesSlide&nbsp;: la prise en main"
 date: "2015-05-24T11:06:51"
 modified: "2015-05-26T09:03:59"
 permalink: "accesslide-la-prise-en-main/index.html"
-excerpt: "Auriez-vous ‒&nbsp;par hasard&nbsp;‒ déjà cherché une solution pour créer des diaporamas accessibles&nbsp;? De nombreuses solutions existent, mais aucune n’était réellement satisfaisante… C’est désormais le cas avec [AccesSlide](http://accesslide.net/), dont j’avais découvert l’existence après le petit jeu du 1er avril organisé par [Access42](http://www.access42.net/). Ma première prise en main a été très agréable alors me voilà lancé dans quelques explications et une démonstration pour en vanter les mérites&nbsp;! [Lire la suite de «&nbsp;AccesSlide&nbsp;: la prise en main&nbsp;» →](https://www.ffoodd.fr/accesslide-la-prise-en-main/)"
+excerpt: "Auriez-vous ‒&nbsp;par hasard&nbsp;‒ déjà cherché une solution pour créer des diaporamas accessibles&nbsp;? De nombreuses solutions existent, mais aucune n’était réellement satisfaisante… C’est désormais le cas avec [AccesSlide](http://accesslide.net/), dont j’avais découvert l’existence après le petit jeu du 1er avril organisé par [Access42](http://www.access42.net/). Ma première prise en main a été très agréable alors me voilà lancé dans quelques explications et une démonstration pour en vanter les mérites&nbsp;!"
 format: "standard"
+tags: "posts"
 ---
 Access42 est la société créée conjointement par Armony Altinier (rédactrice du livre «&nbsp;Accessibilité web&nbsp;» dont j’ai écrit [un compte-rendu de lecture](https://www.ffoodd.fr/lecture-accessibilite-web/)) et Jean-Pierre Villain après qu’ils aient remporté le marché de refonte du RGAA3\. Ils ont été rapidement rejoint par Sylvie Duchateau et Audrey Maniez.
 

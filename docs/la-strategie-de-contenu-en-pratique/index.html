@@ -6,6 +6,8 @@
 		<title>La stratégie de contenu en pratique</title>
 		<meta name="description" content="">
 		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+		<link rel="stylesheet" href="/assets/styles.min.css" media="all">
+		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
 		<!-- @todo Ajouter le flux RSS
 			<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/">
 		-->
@@ -15,23 +17,49 @@
 		<div class="row">
 			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation">
 				<ul class="menu aside p-reset m-reset ul-reset">
-					<!-- @todo Gérer l’état current -->
-					<li class="tk-bello-pro h1-like m-reset current-menu-item current_page_item">
-						<a href="/" aria-current="page">ffoodd</a>
+					<li class="tk-bello-pro h1-like m-reset">
+						<a href="/">ffoodd</a>
 					</li>
-					<li class="h3-like m-reset"><a href="/plus/">À propos</a></li>
-					<!-- @todo gérer l’URL ? -->
-					<li class="h3-like m-reset"><a href="/category/journal/">Journal</a></li>
-					<li class="h3-like m-reset"><a href="/travaux/">Parcours</a></li>
+					<li class="h3-like m-reset">
+						<a href="/plus/">À propos</a>
+					</li>
+					<!-- @todo gérer l’URL ? Une redirection ? -->
+					<li class="h3-like m-reset">
+						<a href="/category/journal/">Journal</a>
+					</li>
+					<li class="h3-like m-reset">
+						<a href="/travaux/">Parcours</a>
+					</li>
 				</ul>
-			</nav><!-- / #nav -->
+			</nav>
 
 			<main class="col w--site pl3 pb3 pr5" id="content" role="main" role="main" itemprop="mainContentOfPage">
 				<div class="logo print-hidden">
-					<img src="/images/2013/10/copy-cropped-ffoodd.png" alt="La vie en #ffoodd" id="logo" width="144" height="144">
+					<img src="/assets/img/embossed-ffoodd.png" alt="La vie en #ffoodd" id="logo" width="144" height="144">
 				</div>
+				<article role="article" itemscope itemtype="https://schema.org/Article">
 				
-					<h2>Un ouvrage exhaustif</h2>
+					<header class="center pt1 mb1" role="banner">
+						<h1 class="mb0 mt0 tk-bello-pro" itemprop="name">La stratégie de contenu en pratique</h1>
+						
+	<nav role="navigation" aria-labelledby="here" class="print-hidden small mt2 mb1">
+		<span id="here">Vous êtes ici&nbsp;: </span>
+		<div class="inbl" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+			<a href="/" itemprop="url"><span itemprop="title">La vie en #ffoodd</span></a>
+			<span> ›&nbsp;</span>
+		</div><div class="inbl" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+			<a href="/journal/" itemprop="url"><span itemprop="title">Journal</span></a>
+			<span> ›&nbsp;</span>
+		</div><div class="inbl" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+			<span itemprop="title">La stratégie de contenu en pratique</span>
+		</div>
+	</nav>
+
+						
+					</header>
+					
+	<div itemprop="articleBody">
+		<h2>Un ouvrage exhaustif</h2>
 <p>Ce livre ne s’adresse pas seulement aux professionnels de la publication en ligne mais plutôt à <strong>tous les profils</strong> susceptibles d’intervenir sur le contenu — d’une manière ou d’une autre. Ça comprend les commerciaux, chefs de projets, concepteurs, ergonomes, graphistes, intégrateurs, et même les développeurs. Nous sommes tous garants d’un niveau de qualité ; et bien que nous ne puissions pas tous travailler la stratégie à proprement parler, gérer la façon de contribuer et l’affichage a un impact fort sur la gestion de contenu — et fait partie intégrante de la stratégie de contenu.</p>
 <p>L’ouvrage traite alors exhaustivement tous les outils intéressants pour la stratégie de contenu, sans préciser le profil type d’utilisateur. Chacun se reconnaîtra : le <strong>référencement</strong> ou l’<strong>audit d’accessibilité</strong> par exemple sont rarement dévolus au commercial 🙂 .</p>
 <h2>Des outils analysés</h2>
@@ -40,10 +68,15 @@
 <h2>Un véritable guide</h2>
 <p>Vous l’aurez compris, cet ouvrage est complet et concis. Son système de fiche permet de naviguer dans le livre selon ses centres d’intérêts, et l’érige également en guide pratique : une nouvelle demande concernant les contenus vous rend perplexe ? <strong>Jetez un œil à ce livre.</strong></p>
 
+	</div>
+	<!-- @todo Gérer les commentaires -->
+
+				</article>
 				
 			</main>
 
 			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
+				<!-- @todo Gérer le sommaire, pour les articles et pages -->
 				<div class="aside pl2 pt2">
 					<h3 class="tk-bello-pro h2-like m-reset">À lire ailleurs</h3>
 					<div class="textwidget">
@@ -66,45 +99,50 @@
 					</div>
 				</div>
 			</aside>
-
-			<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
-				<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
-					<li class="inbl pa1" itemscope itemprop="contactPoint">
-						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__github" href="https://github.com/ffoodd" itemprop="url" title="Gaël Poupard sur GitHub">
-							<span itemprop="name">GitHub</span>
-						</a>
-					</li>
-					<li class="inbl pa1" itemscope itemprop="contactPoint">
-						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__dribble" href="https://dribbble.com/ffoodd" itemprop="url" title="Gaël Poupard sur Dribbble">
-							<span itemprop="name">Dribbble</span>
-						</a>
-					</li>
-					<li class="inbl pa1" itemscope itemprop="contactPoint">
-						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__linkedin" href="https://www.linkedin.com/pub/ga%C3%ABl-poupard/30/17b/401" itemprop="url" title="Gaël Poupard sur LinkedIn">
-							<span itemprop="name">LinkedIn</span>
-						</a>
-					</li>
-					<li class="inbl pa1" itemscope itemprop="contactPoint">
-						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__behance" href="https://www.behance.net/ffoodd" itemprop="url" title="Gaël Poupard sur Behance">
-							<span itemprop="name">Behance</span>
-						</a>
-					</li>
-					<li class="inbl pa1" itemscope itemprop="contactPoint">
-						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/" itemprop="url" title="La vie en #ffoodd | Flux RSS">
-							<span itemprop="name">RSS</span>
-						</a>
-					</li>
-				</ul>
-
-				<small>
-					&copy; 2018 La vie en #ffoodd &mdash; Design et intégration par <span itemprop="name">Gaël Poupard</span> &mdash; <a href="/mentions-legales/">Mentions légales</a>
-					<br />
-					Sauf mention contraire, l’ensemble du contenu est sous <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/fr/">Licence <abbr lang="en" title="Creative Commons">CC</abbr> <abbr lang="en" title="Attribution">BY</abbr>-<abbr lang="en" title="Non Commercial">NC</abbr>-<abbr lang="en" title="Share Alike">SA</abbr></a>.
-				</small>
-
-				<meta itemprop="jobTitle" content="Webdesigner et intégrateur web">
-				<meta itemprop="worksFor" content="onepoint">
-			</footer><!-- / contentinfo -->
 		</div>
+		<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
+			<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
+				<li class="inbl pa1" itemscope itemprop="contactPoint">
+					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__mastodon" href="https://mamot.fr/@ffoodd" itemprop="url" title="Gaël Poupard sur Mastodon">
+						<span itemprop="name">Mastodon</span>
+					</a>
+				</li>
+				<li class="inbl pa1" itemscope itemprop="contactPoint">
+					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__github" href="https://github.com/ffoodd" itemprop="url" title="Gaël Poupard sur GitHub">
+						<span itemprop="name">GitHub</span>
+					</a>
+				</li>
+				<li class="inbl pa1" itemscope itemprop="contactPoint">
+					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__dribble" href="https://dribbble.com/ffoodd" itemprop="url" title="Gaël Poupard sur Dribbble">
+						<span itemprop="name">Dribbble</span>
+					</a>
+				</li>
+				<li class="inbl pa1" itemscope itemprop="contactPoint">
+					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__linkedin" href="https://www.linkedin.com/pub/ga%C3%ABl-poupard/30/17b/401" itemprop="url" title="Gaël Poupard sur LinkedIn">
+						<span itemprop="name">LinkedIn</span>
+					</a>
+				</li>
+				<li class="inbl pa1" itemscope itemprop="contactPoint">
+					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__behance" href="https://www.behance.net/ffoodd" itemprop="url" title="Gaël Poupard sur Behance">
+						<span itemprop="name">Behance</span>
+					</a>
+				</li>
+				<li class="inbl pa1" itemscope itemprop="contactPoint">
+					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/" itemprop="url" title="La vie en #ffoodd | Flux RSS">
+						<span itemprop="name">RSS</span>
+					</a>
+				</li>
+			</ul>
+
+			<small>
+				&copy; 2018 La vie en #ffoodd &mdash; Design et intégration par <span itemprop="name">Gaël Poupard</span> &mdash; <a href="/mentions-legales/">Mentions légales</a>
+				<br />
+				Sauf mention contraire, l’ensemble du contenu est sous <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/fr/">Licence <abbr lang="en" title="Creative Commons">CC</abbr> <abbr lang="en" title="Attribution">BY</abbr>-<abbr lang="en" title="Non Commercial">NC</abbr>-<abbr lang="en" title="Share Alike">SA</abbr></a>.
+			</small>
+
+			<meta itemprop="jobTitle" content="Webdesigner et intégrateur web">
+			<meta itemprop="worksFor" content="onepoint">
+		</footer>
+		<script src="/assets/script.min.js"></script>
 	</body>
 </html>

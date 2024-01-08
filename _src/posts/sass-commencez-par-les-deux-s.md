@@ -1,11 +1,12 @@
 ---
-layout: "base.njk"
+layout: "template/post.njk"
 title: "Sass : commencez par les deux « S »"
 date: "2013-11-28T14:26:04"
 modified: "2015-07-03T10:49:17"
 permalink: "sass-commencez-par-les-deux-s/index.html"
-excerpt: "La principale chose à savoir avant de se lancer dans l’apprentissage de Sass, c’est qu’il faut en premier lieu maîtriser les CSS. Les pièges sont multiples, et même Indiana Jones se ferait avoir&nbsp;! [Lire la suite de «&nbsp;Sass : commencez par les deux « S »&nbsp;» →](https://www.ffoodd.fr/sass-commencez-par-les-deux-s/)"
+excerpt: "La principale chose à savoir avant de se lancer dans l’apprentissage de Sass, c’est qu’il faut en premier lieu maîtriser les CSS. Les pièges sont multiples, et même Indiana Jones se ferait avoir&nbsp;!"
 format: "standard"
+tags: "posts"
 ---
 Malheureusement, vous aurez peut-être déjà fait ce constat&thinsp;:&nbsp;ce réflexe n’est que trop rarement encouragé. J’ai beau parcourir des dizaines d’articles, de tutoriaux, de _frameworks_ CSS ou de Gist, trop peu font ce rappel&thinsp;:&nbsp;testez, relisez, améliorez, testez à nouveau et finalement améliorez encore. **Ça devrait se passer comme ça.** On peut argumenter qu’un bon intégrateur le ferait&thinsp;—&thinsp;mais c’est trop facile, non&nbsp;?
 

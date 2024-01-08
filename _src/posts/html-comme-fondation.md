@@ -1,11 +1,12 @@
 ---
-layout: "base.njk"
+layout: "template/post.njk"
 title: "HTML comme fondation"
 date: "2022-12-22T16:53:57"
 modified: "2022-12-22T16:54:59"
 permalink: "html-comme-fondation/index.html"
-excerpt: "Traduction de [ma contribution au calendrier de l’avent de HTMHell](https://www.htmhell.dev/adventcalendar/2022/17/)&nbsp;! [Lire la suite de «&nbsp;HTML comme fondation&nbsp;» →](https://www.ffoodd.fr/html-comme-fondation/)"
+excerpt: "Traduction de [ma contribution au calendrier de l’avent de HTMHell](https://www.htmhell.dev/adventcalendar/2022/17/)."
 format: "standard"
+tags: "posts"
 ---
 **Note** : cet article est la traduction de [ma contribution au calendrier de l’avent de HTMHell, Modern HTML as a foundation for progressive enhancement](https://www.htmhell.dev/adventcalendar/2022/17/)&nbsp;!
 

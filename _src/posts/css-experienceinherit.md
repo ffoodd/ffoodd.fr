@@ -1,11 +1,12 @@
 ---
-layout: "base.njk"
+layout: "template/post.njk"
 title: "expérience: inherit;"
 date: "2012-07-18T15:32:46"
 modified: "2016-03-01T09:52:18"
 permalink: "css-experienceinherit/index.html"
-excerpt: "Aujourd'hui, un stagiaire chargé d'une intégration m’annonce —&nbsp;fier de lui&nbsp;— qu'il a réussi à rendre sa page compatible avec IE8 à coup de _hacks_. Ceci n'est pas un article faisant l'éloge d'IE —&nbsp;ni un énième pamphlet dénonçant la huitième plaie d'Égypte&nbsp;— mais il illustre ce proverbe&nbsp;: **«&nbsp;Il n'y a pas de mauvais outils ; que des mauvais ouvriers.&nbsp;»** [Lire la suite de «&nbsp;expérience: inherit;&nbsp;» →](https://www.ffoodd.fr/css-experienceinherit/)"
+excerpt: "Aujourd'hui, un stagiaire chargé d'une intégration m’annonce —&nbsp;fier de lui&nbsp;— qu'il a réussi à rendre sa page compatible avec IE8 à coup de _hacks_. Ceci n'est pas un article faisant l'éloge d'IE —&nbsp;ni un énième pamphlet dénonçant la huitième plaie d'Égypte&nbsp;— mais il illustre ce proverbe&nbsp;: **«&nbsp;Il n'y a pas de mauvais outils ; que des mauvais ouvriers.&nbsp;»**"
 format: "standard"
+tags: "posts"
 ---
 Ceci n’est pas un article faisant l’éloge d’IE —&nbsp;ni un énième pamphlet dénonçant la huitième plaie d’Égypte&nbsp;— mais il illustre ce proverbe&nbsp;: **«&nbsp;Il n’y a pas de mauvais outils ; que des mauvais ouvriers.&nbsp;»**
 

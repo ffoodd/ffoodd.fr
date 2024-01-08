@@ -1,11 +1,12 @@
 ---
-layout: "base.njk"
+layout: "template/post.njk"
 title: "À qui parlent vos CSS&nbsp;?"
 date: "2016-03-30T10:07:39"
 modified: "2019-06-20T14:31:24"
 permalink: "a-qui-parlent-vos-css/index.html"
-excerpt: "Les CSS atomiques, _scalable_, tendent à sʼimposer en tant que concept. Leur usage est encore un brin complexe, mais leurs avantages sont nombreux. Pourtant, je ne parviens pas à avoir envie dʼessayer. Alors jʼétale mes réflexions ici. [Lire la suite de «&nbsp;À qui parlent vos CSS&nbsp;?&nbsp;» →](https://www.ffoodd.fr/a-qui-parlent-vos-css/)"
+excerpt: "Les CSS atomiques, _scalable_, tendent à sʼimposer en tant que concept. Leur usage est encore un brin complexe, mais leurs avantages sont nombreux. Pourtant, je ne parviens pas à avoir envie dʼessayer. Alors jʼétale mes réflexions ici."
 format: "standard"
+tags: "posts"
 ---
 Le dernier article rédigé par [Adam Morse](http://mrmrs.cc/) est amplement diffusé ces derniers jours, vous lʼaurez certainement déjà lu&nbsp;: «&nbsp;[_CSS and Scalability_](http://mrmrs.io/writing/2016/03/24/scalable-css/)&nbsp;» —&nbsp;vous pouvez en lire [une traduction en Français](http://blog.perrien.fr/css-et-evolutivite/) sur le blog de Marc Perrien. Il y prône une méthode de rédaction des CSS dite «&nbsp;atomiques&nbsp;», issue du formidable travail de [Thierry Koblentz](http://cssmojo.com/) de Yahoo sur le projet [Atomic CSS](http://acss.io/).[^1]
 

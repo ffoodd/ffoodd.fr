@@ -1,11 +1,12 @@
 ---
-layout: "base.njk"
+layout: "template/post.njk"
 title: "Les champs images cassés"
 date: "2016-03-31T10:27:00"
 modified: "2016-03-31T10:27:00"
 permalink: "les-champs-images-casses/index.html"
-excerpt: "Il y a quelques jours, [Ire Aderinokun](http://bitsofco.de/) a dévoilé que les images cassées supportaient les pseudo-éléments. En bossant sur [a11y.css](https://github.com/ffoodd/a11y.css), je me suis aperçu que ça valait également pour les champs images. [Lire la suite de «&nbsp;Les champs images cassés&nbsp;» →](https://www.ffoodd.fr/les-champs-images-casses/)"
+excerpt: "Il y a quelques jours, [Ire Aderinokun](http://bitsofco.de/) a dévoilé que les images cassées supportaient les pseudo-éléments. En bossant sur [a11y.css](https://github.com/ffoodd/a11y.css), je me suis aperçu que ça valait également pour les champs images."
 format: "standard"
+tags: "posts"
 ---
 [Ire Aderinokun](http://bitsofco.de/) a brisé un mythe il y a quelques jours à propos des pseudos-éléments sur la balise `img`.
 

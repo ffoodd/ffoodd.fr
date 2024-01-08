@@ -1,11 +1,12 @@
 ---
-layout: "base.njk"
+layout: "template/post.njk"
 title: "Expérience de Typecast"
 date: "2013-10-07T16:18:18"
 modified: "2013-11-13T12:02:30"
 permalink: "experience-de-typecast/index.html"
-excerpt: "Typecast est un outil conçu pour vous faciliter la recherche de typographies : échelle typographique, association, couleurs, et même CSS. Piochez dans le catalogue de grandes fonderies et designez ! [Lire la suite de «&nbsp;Expérience de Typecast&nbsp;» →](https://www.ffoodd.fr/experience-de-typecast/)"
+excerpt: "Typecast est un outil conçu pour vous faciliter la recherche de typographies : échelle typographique, association, couleurs, et même CSS. Piochez dans le catalogue de grandes fonderies et designez !"
 format: "standard"
+tags: "posts"
 ---
 ## Présentation
 

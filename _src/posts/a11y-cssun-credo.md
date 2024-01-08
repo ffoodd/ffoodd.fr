@@ -1,11 +1,12 @@
 ---
-layout: "base.njk"
+layout: "template/post.njk"
 title: "a11y.css :&nbsp;un crédo"
 date: "2013-12-04T16:43:09"
 modified: "2015-07-03T10:49:03"
 permalink: "a11y-cssun-credo/index.html"
-excerpt: "Étant conscient de mes lacunes, je cherche constamment à améliorer la qualité des sites que je produis. Capitaliser sur les bonnes pratiques est une base, et c’est pourquoi j’ai «&nbsp;fabriqué&nbsp;» a11y.css. [Lire la suite de «&nbsp;a11y.css :&nbsp;un crédo&nbsp;» →](https://www.ffoodd.fr/a11y-cssun-credo/)"
+excerpt: "Étant conscient de mes lacunes, je cherche constamment à améliorer la qualité des sites que je produis. Capitaliser sur les bonnes pratiques est une base, et c’est pourquoi j’ai «&nbsp;fabriqué&nbsp;» a11y.css."
 format: "standard"
+tags: "posts"
 ---
 `a11y.css` .[^1]
 

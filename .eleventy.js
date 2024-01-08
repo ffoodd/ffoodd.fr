@@ -1,3 +1,6 @@
+const { DateTime } = require('luxon');
+const markdownIt   = require("markdown-it");
+
 module.exports = function (eleventyConfig) {
 
 	// @note Micro-typographie : des choses à ajouter ?
@@ -14,6 +17,15 @@ module.exports = function (eleventyConfig) {
 			.replace(' / ', ' / ')
 	})
 
+	eleventyConfig.addFilter('date', (dateObj) => {
+		return DateTime.fromISO(dateObj).setLocale('fr').toLocaleString(DateTime.DATE_FULL)
+	})
+
+	const md = new markdownIt()
+	eleventyConfig.addFilter("markdown", (content) => {
+		return md.renderInline(content);
+	})
+
 	// @todo Configuration markdown-it :
 	// @link https://www.alpower.com/tutorials/configuring-footnotes-with-eleventy/
 	// @link https://www.alpower.com/tutorials/adding-figures-with-captions-to-images-in-markdown-with-eleventy/
@@ -27,7 +39,9 @@ module.exports = function (eleventyConfig) {
 	// @todo Robots.txt
 	// @link https://micro.anniegreens.lol/2023/09/29/updated-my-microblog.html
 
-	eleventyConfig.addPassthroughCopy("_site/images")
+	eleventyConfig.addPassthroughCopy("_src/favicon.svg")
+	eleventyConfig.addPassthroughCopy("_src/images")
+	eleventyConfig.addPassthroughCopy("_src/assets")
 
 	eleventyConfig.setServerOptions({
 		liveReload: true

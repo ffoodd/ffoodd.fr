@@ -1,11 +1,12 @@
 ---
-layout: "base.njk"
+layout: "template/post.njk"
 title: "Paris Web et la vie"
 date: "2015-10-16T09:22:50"
 modified: "2015-10-16T09:22:50"
 permalink: "paris-web-et-la-vie/index.html"
-excerpt: "Une fois n’est pas coutume, l’absence d’actualités sur ce blog s’explique par leur abondance IRL. Petit tour d’horizon des plus récentes… [Lire la suite de «&nbsp;Paris Web et la vie&nbsp;» →](https://www.ffoodd.fr/paris-web-et-la-vie/)"
+excerpt: "Une fois n’est pas coutume, l’absence d’actualités sur ce blog s’explique par leur abondance IRL. Petit tour d’horizon des plus récentes…"
 format: "standard"
+tags: "posts"
 ---
 Il sʼen est passé, des choses, cet été ☺.
 

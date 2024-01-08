@@ -1,11 +1,12 @@
 ---
-layout: "base.njk"
+layout: "template/post.njk"
 title: "À venir : ffeeeedd"
 date: "2013-01-08T14:15:11"
 modified: "2014-05-17T11:23:31"
 permalink: "a-venir-ffeeeedd/index.html"
-excerpt: "On a ainsi vu germer ces dernières années une multitude d’outils, proposés par des professionnels aguerris et basés sur leur expérience et leur envie de partager leurs connaissances. Certains sont l’œuvre d’un seul, d’autres le fruit d’une communauté de passionnés. On peut en citer quelques-uns : HTML5 Boilerplate par Nicolas Gallagher, Hans Christian Reinl, Cãtãlin […] [Lire la suite de «&nbsp;À venir : ffeeeedd&nbsp;» →](https://www.ffoodd.fr/a-venir-ffeeeedd/)"
+excerpt: "On a ainsi vu germer ces dernières années une multitude d’outils, proposés par des professionnels aguerris et basés sur leur expérience et leur envie de partager leurs connaissances. Certains sont l’œuvre d’un seul, d’autres le fruit d’une communauté de passionnés. On peut en citer quelques-uns : HTML5 Boilerplate par Nicolas Gallagher, Hans Christian Reinl, Cãtãlin […]"
 format: "standard"
+tags: "posts"
 ---
 On a ainsi vu germer ces dernières années une multitude d’outils, proposés par des professionnels aguerris et basés sur leur expérience et leur envie de partager leurs connaissances. Certains sont l’œuvre d’un seul, d’autres le fruit d’une communauté de passionnés. On peut en citer quelques-uns :
 

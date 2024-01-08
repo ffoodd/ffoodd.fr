@@ -1,6 +1,9 @@
 ---
+layout: "template/page.njk"
 title: "À propos"
+subtitle: "Intégrateur en quête de qualité"
 permalink: "plus/index.html"
+tags: "pages"
 ---
 Les défis imposés par certaines créations sont autant de motivations. Toujours **attentif** aux nouveautés dans cet univers en ébullition, je cherche la solution la mieux adaptée.
 

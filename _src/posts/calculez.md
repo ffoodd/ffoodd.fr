@@ -1,11 +1,12 @@
 ---
-layout: "base.njk"
+layout: "template/post.njk"
 title: "Calculez"
 date: "2017-04-03T13:35:56"
 modified: "2021-03-05T17:06:53"
 permalink: "calculez/index.html"
-excerpt: "Parce que ça m'horripile de croiser des largeurs de 33,33333&nbsp;% de nos jours. Vraiment. [Lire la suite de «&nbsp;Calculez&nbsp;» →](https://www.ffoodd.fr/calculez/)"
+excerpt: "Parce que ça m'horripile de croiser des largeurs de 33,33333&nbsp;% de nos jours. Vraiment."
 format: "standard"
+tags: "posts"
 ---
 Traditionnellement, quand on veut partager une largeur en trois portions égales, on écrit `width: 33.3333%;`. Alors oui, d’accord, à l’époque pré-industrielle nous n’avions pas vraiment le choix. Mais aujourd’hui&nbsp;?
 
