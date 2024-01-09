@@ -7,6 +7,7 @@ permalink: "wpmx-day/index.html"
 excerpt: "Après une première expérience agréable lors du [WP Tech 2014](http://www.ffoodd.fr/wp-tech-2014/) à Nantes en novembre dernier, Aurélien Denis _alias_ [WordPress Channel](http://wpchannel.com/) m’a invité à proposer un sujet pour le [WPMX](http://2015.wpmx.org/). Le premier sujet à m’avoir traversé l’esprit lui a plu —&nbsp;ainsi qu’à ses compères de l’association&nbsp;— et me voilà embarqué dans l’aventure&nbsp;!"
 format: "standard"
 tags: "posts"
+description: "Destinée aux professionnels travaillant avec WordPress ainsi qu’aux entreprises l’utilisant, cette journée se voulait plus généraliste que le <abbr lang=\"en\" title=\"WordPress\">WP</abbr> Tech."
 ---
 Souhaitant toucher un maximum de personnes dans le public —&nbsp;tous profils confondus, j’ai donc proposé aux organisateurs de parler des points d’accessibilité que chacun traite sans le savoir. Mon objectif était bien entendu d’évoquer d’autres pratiques abordables et bénéfiques pour les utilisateurs.
 

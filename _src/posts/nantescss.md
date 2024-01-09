@@ -7,6 +7,7 @@ permalink: "nantescss/index.html"
 excerpt: "Dʼaucun sʼétonnent de ne pas voir de rencontres autour de la thématique des CSS organisées à Nantes. À Paris, vous pouvez vous rendre au [4e _meetup_ organisé par **CSS Paris**](http://www.meetup.com/fr-FR/CSS-Paris/) —&nbsp;et il en existe probablement dans dʼautres villes de France et de Navarre. Mais pas (encore) à Nantes. Vous voyez ou je veux en venir&nbsp;?"
 format: "standard"
 tags: "posts"
+description: "Derrière ce patronyme inattendu se cache un petit groupe d&#700;intégrateurs ayant envie de se rencontrer ou se croiser plus souvent. Qui sont-ils&nbsp;? Que veulent-ils&nbsp;?"
 ---
 tl;dr&nbsp;: si vous êtes intéressés mais que ma prose vous importune, filez directement sur le [Doodle](http://doodle.com/poll/7rv8ixe9tqc6kwdc) proposant quelques dates, aux horaires du déjeuner.
 

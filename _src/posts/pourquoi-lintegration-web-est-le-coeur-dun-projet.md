@@ -7,6 +7,7 @@ permalink: "pourquoi-lintegration-web-est-le-coeur-dun-projet/index.html"
 excerpt: "Je ne secouerais pas le marronnier des nouveautés en question, je suppose que tout le monde a déjà parcouru le champ de bogues. Un certain nombre d’articles ont déjà été publiés sur le sujet, par d’excellents intégrateurs : L’importance d’un intégrateur&nbsp;par @HTeumeuleu De l’intégrateur au développeur front-end&nbsp;: un maillon essentiel de la qualité Web&nbsp;par Nicolas […]"
 format: "standard"
 tags: "posts"
+description: "Nous en entendons beaucoup parler ces derniers temps : avec l'arrivée de nouvelles technologies et de nouvelles pratiques, les choix relatifs à l'intégration ont de plus en plus d'impact sur le bon déroulement d'un projet web - ainsi que sur son budget."
 ---
 Je ne secouerais pas le marronnier des nouveautés en question, je suppose que tout le monde a déjà parcouru le champ de [bogues](http://www.linternaute.com/dictionnaire/fr/definition/bogue/ "Définition de bogue (nouvelle fenêtre)").
 

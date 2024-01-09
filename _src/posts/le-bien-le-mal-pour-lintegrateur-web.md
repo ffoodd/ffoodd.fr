@@ -7,6 +7,7 @@ permalink: "le-bien-le-mal-pour-lintegrateur-web/index.html"
 excerpt: "Il y a de bonnes & de mauvaises solutions Une bonne idée le jour J peut être une mauvaise idée le D day. Au commencement de ffoodd, je voulais un fond simple mais avec un peu d’impact : j’ai donc choisi le motif très simple mais contrasté que vous avez sous les yeux. À l’époque, […]"
 format: "standard"
 tags: "posts"
+description: "J'apprends tous les jours. À force de lectures, d'essais, d'erreurs et de réussites. Le web avance, et moi aussi - j'essaie même de le rattraper ! J'ai toujours su qu'il y avait de bonnes et de mauvaises pratiques en intégration. Aujourd'hui j'ai découvert le bien et le mal."
 ---
 ## Il y a de bonnes & de mauvaises solutions
 

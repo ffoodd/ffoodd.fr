@@ -7,6 +7,7 @@ permalink: "avec-ou-sans-js/index.html"
 excerpt: "Vous est-il déjà arrivé de voir un élément se cacher dès que vous arrivez sur un site&nbsp;? Rassurez-vous, ça n'est pas qu'il ne vous aime pas, non&nbsp;: son concepteur a simplement pensé que sans JavaScript, ce contenu devait être affiché. Et quand JavaScript est activé, il le cache. C'est malin&nbsp;! Mais vous l’avez vu."
 format: "standard"
 tags: "posts"
+description: "J&apos;arrive sur la page… Hop&nbsp;! Le menu vient de se cacher&nbsp;! J&apos;ai du l&apos;effrayer…"
 ---
 Vous avez déjà vécu ça, pas vrai&nbsp;?
 

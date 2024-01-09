@@ -7,6 +7,7 @@ permalink: "navigation-aria-et-wordpress/index.html"
 excerpt: "ARIA est une évolution majeure dans le monde de l’accessibilité web, mais bien que candidat à la recommandation au W3C depuis 2011 elle est relativement peu implémentée – notamment dans WordPress."
 format: "standard"
 tags: "posts"
+description: "La refonte de ffoodd est un bon prétexte pour me mettre à niveau sur certaines nouveautés, dont ARIA : je connaissais les rôles \"landmarks\" principaux, mais assez peu les autres propriétés et leur utilité. Voilà qui est corrigé !"
 ---
 Dans sa version basique, la navigation de WordPress n’a rien de particulier (si ce n’est la multitude de classes générées sur chaque élément 🙁 ). Or ARIA permet d’ajouter une couche sémantique non négligeable et relativement simple à mettre en place, améliorant ainsi l’accessibilité de la navigation.
 

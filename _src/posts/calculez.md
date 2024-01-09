@@ -7,6 +7,7 @@ permalink: "calculez/index.html"
 excerpt: "Parce que ça m'horripile de croiser des largeurs de 33,33333&nbsp;% de nos jours. Vraiment."
 format: "standard"
 tags: "posts"
+description: "Ou plutôt&nbsp;: laissez <abbr title=\"Cascading StyleSheet\" lang=\"en\">CSS</abbr> faire les calculs."
 ---
 Traditionnellement, quand on veut partager une largeur en trois portions égales, on écrit `width: 33.3333%;`. Alors oui, d’accord, à l’époque pré-industrielle nous n’avions pas vraiment le choix. Mais aujourd’hui&nbsp;?
 

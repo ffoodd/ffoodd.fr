@@ -7,6 +7,7 @@ permalink: "21e-seminaire-accessiweb/index.html"
 excerpt: "[L’association BrailleNet](http://www.braillenet.org/) œuvre depuis des années en faveur de l’accessibilité numérique. Elle est un acteur majeur de l’accessibilité en France, et a notamment créé le [référentiel AccessiWeb](http://www.accessiweb.org/) ainsi que [les formations](http://www.accessiweb.org/index.php/Formations.html). Les personnes ayant acquis l’expertise en évaluation ont accès au [GTA](http://www.accessiweb.org/index.php/groupe-de-travail-accessibilite-web.html), et ce dernier se réunit deux fois par an lors des séminaires."
 format: "standard"
 tags: "posts"
+description: "Réservé jusqu’à présent aux seuls membres du <abbr title=\"Groupe de Travail AccessiWeb\">GTA</abbr>, la 21<sup>e</sup> édition s’est ouverte aux non-membres."
 ---
 C’est donc une grande première, et moi qui lisait les comptes-rendus des précédents séminaires sur internet ait enfin pu y assister&nbsp;!
 

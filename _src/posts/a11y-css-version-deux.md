@@ -7,6 +7,7 @@ permalink: "a11y-css-version-deux/index.html"
 excerpt: "Déjà deux ans depuis la première version d’a11y.css. Mon intérêt et mon investissement n’ont pas changé, mais le sujet a énormément avancé sous l’impulsion de [Xavier Zalawa](http://www.7studio.fr/), [Hugo Giraudel](http://hugogiraudel.com/), [Luc Poupard](http://www.kloh.ch/), [Heydon Pickering](http://www.heydonworks.com/), [Gaëtan Bonnot](http://gaetanbonnot.fr/), [Romain Gervois](https://twitter.com/goetsu), [Antoine](https://github.com/a5e) et [olamedia](https://github.com/olamedia). Cet apport de compétences variées a considérablement affûté cet outil. Voyons ça en détail !"
 format: "standard"
 tags: "posts"
+description: "Ma volonté d’améliorer toujours plus mes pratiques et mes productions ne faiblissant pas, les itérations sur ce projet me tenant à cœur ont été productives. J’ai encore appris beaucoup, manipulé de nouveaux outils et fait de nouvelles rencontres."
 ---
 Ainsi depuis la toute première mouture (en CSS) de cette feuille de style de diagnostic, beaucoup de choses ont changé. Voyons ça en détail&nbsp;🙂
 

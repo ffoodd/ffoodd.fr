@@ -7,6 +7,9 @@ permalink: "atterrissage-reussi/index.html"
 excerpt: "La refonte : un travail de longue haleine Je ne saurais vous dire depuis combien de mois je travaille sur cette refonte. Je crois d’ailleurs que ça a commencé par mon thème ffeeeedd&nbsp;et l’amélioration de mon processus de travail : beaucoup de découvertes, énormément de recherches, et au final une progression certaine. Un seul constat […]"
 format: "standard"
 tags: "posts"
+description: "La nouvelle version de ffoodd est là : WordPress avec le thème que je développe, ffeeeedd. Du bon CSS et du bon PHP, avec un nouveau webdesign rien que pour vos mirettes !"
+metadescription: "La nouvelle version de ffoodd est là : WordPress avec ffeeeedd. Du bon CSS et du bon PHP, avec un nouveau webdesign rien que pour vos mirettes !"
+metatitle: "Refonte de ffood : mise en ligne réussie !"
 ---
 ## La refonte : un travail de longue haleine
 

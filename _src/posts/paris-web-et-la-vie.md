@@ -7,6 +7,7 @@ permalink: "paris-web-et-la-vie/index.html"
 excerpt: "Une fois n’est pas coutume, l’absence d’actualités sur ce blog s’explique par leur abondance IRL. Petit tour d’horizon des plus récentes…"
 format: "standard"
 tags: "posts"
+description: "Il n&rsquo;y a pas que Paris et les potes dans la vie."
 ---
 Il sʼen est passé, des choses, cet été ☺.
 

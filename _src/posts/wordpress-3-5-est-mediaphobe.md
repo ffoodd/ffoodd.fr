@@ -7,6 +7,7 @@ permalink: "wordpress-3-5-est-mediaphobe/index.html"
 excerpt: "Sauf que Dès ma première utilisation de cette nouvelle mouture je suis tombé sur un problème assez gênant : dans la fenêtre modale servant à insérer des médias depuis l’éditeur, l’ajout d’un fichier me retourne une erreur en indiquant «&nbsp;Une erreur est survenue lors du téléchargement.Veuillez réessayer plus tard.&nbsp;» Malgré ça, ledit fichier a été […]"
 format: "standard"
 tags: "posts"
+description: "La mise à jour de WordPress vers la version 3.5 a fait parler d'elle : elle a en effet amené de nombreuses améliorations - et une refonte légère mais agréable de l'interface."
 ---
 ## Sauf que
 

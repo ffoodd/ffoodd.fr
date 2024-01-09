@@ -3,6 +3,7 @@ layout: "template/page.njk"
 title: "Mentions légales"
 permalink: "mentions-legales/index.html"
 tags: "pages"
+description: ";"
 ---
 ## Hébergement
 

@@ -7,6 +7,7 @@ permalink: "le-web-en-kit/index.html"
 excerpt: "Le web, cʼest compliqué. Je dirais même plus&nbsp;: cʼest la jungle. De multiples sources, de multiples protocoles dʼéchange de données, de multiple manière dʼaccéder aux contenus. Et aussi plein de gens qui fabriquent des morceaux de web. Ceux-là sont un minimum flemmards —&nbsp;je le sais bien, jʼen fais partie. Alors régulièrement, nous cédons à la facilité et cela produit des perturbations dans La Force. Un exemple&nbsp;? Les sites `-webkit-` _only_. Parlons-en&nbsp;!"
 format: "standard"
 tags: "posts"
+description: "<abbr lang=\"en\" title=\"Too Long, Didn't Read\">tl;dr</abbr>&nbsp;: jetez un œil <a href=\"http://dabblet.com/gist/08fddf3666c39ebc62ca\">à ce dabblet</a> sur Edge —&nbsp;qui gère <code>-webkit-background-clip: text;</code> sans broncher."
 ---
 Beaucoup de gens qui fabriquent le web se sont plaints de lʼhégémonie dʼIE6.
 

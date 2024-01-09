@@ -7,6 +7,7 @@ permalink: "reserve-d%ca%bcespace-pour-le-contenu/index.html"
 excerpt: "Cet effet consiste à utiliser en guise dʼindicateur de chargement un élément graphique ayant les mêmes caractéristiques visuelles —&nbsp;hauteur, largeur, lignes, blocs…&nbsp;— que le contenu en cours de chargement. Vous le connaissez probablement déjà car cʼest ce quʼutilisent Facebook et Medium, entre autres. Et cʼest quand même vachement mieux quʼun gif qui tourne en rond."
 format: "standard"
 tags: "posts"
+description: "Cet effet consiste à utiliser en guise d&#700;indicateur de chargement un élément graphique ayant les mêmes caractéristiques visuelles que le contenu en cours de chargement. "
 ---
 C’est ce quʼutilisent notamment Facebook et Medium, dont le contenu respecte un gabarit constant. En terme dʼinterface, ça me semble **vraiment plus agréable** que le classique _ouroboros_.
 

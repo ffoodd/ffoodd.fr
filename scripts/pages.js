@@ -34,23 +34,47 @@ Object.keys(pages).forEach((p, i) => {
 	let layout = 'template/page.njk';
 	let path = './_src/pages';
 	let slug = `${page.slug}.md`;
+	let description = ';'
+
 	if (page.slug === 'accueil') {
 		permalink = 'index.html';
 		title = 'La vie en #ffoodd'
 		layout = 'template/home.njk';
 		path = './_src';
 		slug = 'index.md';
+		description = 'Intégrateur web à Nantes';
+	}
+
+	let frontMatter = [
+		{ layout: layout },
+		{ title: title },
+		{ permalink: permalink },
+		{ tags: 'pages' }
+	];
+
+	description = typeof page.metadata.Description == 'object' ?
+		Object.values(page.metadata.Description)[0] : description;
+	if (description !== '') {
+		frontMatter.push({ description: description })
+	}
+
+	const descriptionMeta = typeof page.metadata._ffeeeedd__metabox__description == 'object' ?
+		Object.values(page.metadata._ffeeeedd__metabox__description)[0] : '';
+	if (descriptionMeta !== '') {
+		let newDescriptionMeta = descriptionMeta.replace('"sur site"', ' « sur site »');
+		frontMatter.push({ metadescription: newDescriptionMeta })
+	}
+
+	const titleMeta = typeof page.metadata._ffeeeedd__metabox__titre == 'object' ?
+		Object.values(page.metadata._ffeeeedd__metabox__titre)[0] : '';
+	if (titleMeta !== '') {
+		frontMatter.push({ metatitle: titleMeta })
 	}
 
 	// Write to markdown file with frontmatter
 	transformAndWriteToFile({
 		frontmatterMarkdown: {
-			frontmatter: [
-				{ layout: layout },
-				{ title: title },
-				{ permalink: permalink },
-				{ tags: 'pages' }
-			],
+			frontmatter: frontMatter,
 			body: newContent
 		},
 		path: path,

@@ -2,10 +2,9 @@
 <html lang="fr">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>{{ title }}</title>
-		<!-- @todo Manque la description des pages // attention à ne pas perdre les subtitle -->
-		<meta name="description" content="{{ description }}">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>{{ metatitle or title }} — La vie en #ffoodd</title>
+		<meta name="description" content="{{ metadescription or description }}">
 		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 		<link rel="stylesheet" href="/assets/styles.min.css" media="all">
 		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
@@ -54,8 +53,8 @@
 								</div>
 							</nav>
 						{% endblock %}
-						{% if subtitle %}
-							<h2 class="h3-like description" itemprop="description">{{ subtitle }}</h2>
+						{% if description %}
+							<h2 class="h3-like description" itemprop="description">{{ description | safe }}</h2>
 						{% endif %}
 					</header>
 					{% block content %}

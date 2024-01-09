@@ -1,15 +1,15 @@
 ---
 layout: "template/page.njk"
 title: "Parcours"
-subtitle: "Voici comment je me suis occupé ces dernières années : mes études, puis du travail, un peu de rédaction sur ce blog et quelques interventions pour partager mes idées."
 permalink: "travaux/index.html"
 tags: "pages"
+description: "Voici comment je me suis occupé ces dernières années&nbsp;: mes études, puis du travail, un peu de rédaction sur ce blog et quelques interventions pour partager mes idées."
+metadescription: "Mes travaux en intégration web, développements WordPress, webdesign et graphisme web."
+metatitle: "Gaël Poupard - Travaux de webdesign et intégration web"
 ---
 Et j’espère que cette liste continuera d’évoluer&nbsp;!
 
 ## Conférences
-
-<!-- @todo Utiliser <time> / convertir en collection ? -->
 
 ### Dessine-moi un graphique (en CSS)
 

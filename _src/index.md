@@ -1,9 +1,11 @@
 ---
 layout: "template/home.njk"
 title: "La vie en #ffoodd"
-subtitle: "Intégrateur web à Nantes"
 permalink: "index.html"
 tags: "pages"
+description: "Intégrateur web à Nantes"
+metadescription: "ffoodd est la métaphore d'un regard particulier sur le web. Une passion nourrissante qui m'amène à créer ce site, afin de montrer mon savoir-faire et témoigner de cette vision originale en expérimentant « sur site »."
+metatitle: "Gaël Poupard, graphiste et intégrateur web à Nantes"
 ---
 * En langage hexadécimal, #ff00dd correspond au rose vif.&nbsp;«&nbsp;_Voir la vie en #ff00dd_&nbsp;»&nbsp;: voir la vie en rose&nbsp;;
 * En anglais, _food_ signifie la nourriture&nbsp;;

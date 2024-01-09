@@ -7,6 +7,7 @@ permalink: "liens-devitement-persistants/index.html"
 excerpt: "Paris Web a été pour moi l’occasion de rencontrer des professionnels aguerris et d’en apercevoir les expériences cumulées. Et une conférence m’a particulièrement appris : _«Accessibiliser avec subtilité»_ de [Johan Ramon](https://twitter.com/johan_ramon 'Profil Twitter de Johan Ramon (nouvelle fenêtre)') de la [société Atalan](http://www.atalan.fr/ 'LE site de la société Atalan (nouvelle fenêtre)')."
 format: "standard"
 tags: "posts"
+description: "<a href=\"http://www.johanramon.fr\" target=\"_blank\" title=\"Le site de Johan Ramon (nouvelle fenêtre)\">Johan Ramon</a> propose quelques techniques simples à mettre en oeuvre et améliorant significativement l'accessibilité d'un site - et il a eu la bonté de <a href=\"http://www.johanramon.fr/accessibiliser-subtilite/\" target=\"_blank\" title=\"Les slides de la conférence de Johan Ramon (nouvelle fenêtre)\">mettre ses slides à disposition</a> (et en <abbr title=\"HyperText Markup Language\" lang=\"en\">HTML</abbr> s'il-vous-plaît)."
 ---
 Parmi ces techniques, certaines m’étaient inconnues : une ignorance qui ne nuisait pas directement à l’accessibilité mais bel et bien au confort d’utilisation du site pour les personnes concernées. Voici donc deux techniques que j’ai mises en place suite à cette lecture passionnante.
 

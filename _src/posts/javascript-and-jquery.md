@@ -7,6 +7,8 @@ permalink: "javascript-and-jquery/index.html"
 excerpt: "Étant issu d’une formation en communication visuelle, bien loin des notions basiques du développement telles que l’algorithmie, l’apprentissage du Javascript ou du PHP et des règles de développement n’est pas une mince affaire. Je saisis mieux les concepts avec des schémas. Ça tombe bien, ce livre en regorge et ils sont de très bonne facture."
 format: "status"
 tags: "posts"
+description: "Le <abbr lang=\"en\" title=\"JavaScript\">JS</abbr> est devenu indispensable lorsqu’il s’agit de créer une interface web complète. Et en prenant soin d’améliorer progressivement l’interactivité de l’interface, le JS devient la couche comportementale qui enrichit le fond —&nbsp;le <abbr lang=\"en\" title=\"HyperText Markup Language\">HTML</abbr>&nbsp;— et la forme —&nbsp;le <abbr lang=\"en\" title=\"Cascading StyleSheet\">CSS</abbr>.
+"
 editeur: "Eyrolles"
 auteur: "Jon Duckett"
 date_de_parution: "18/07/2014"

@@ -62,20 +62,28 @@ Object.keys(posts).forEach((p, i) => {
 		{ tags: 'posts' }
 	];
 
-	const description = typeof post.metadata.Description === Object ?
+	const description = typeof post.metadata.Description == 'object' ?
 		Object.values(post.metadata.Description)[0] : '';
 	if (description !== '') {
-		frontMatter.push({
-			description: turndownService.turndown(description).replace(/\u00A0/g, '&nbsp;')
-		})
+		frontMatter.push({ description: description.replace(/"/g, '\\\"') })
 	}
 
-	const canonical = typeof post.metadata._ffeeeedd__metabox__canonical === Object ?
+	const descriptionMeta = typeof post.metadata._ffeeeedd__metabox__description == 'object' ?
+		Object.values(post.metadata._ffeeeedd__metabox__description)[0] : '';
+	if (descriptionMeta !== '') {
+		frontMatter.push({ metadescription: descriptionMeta })
+	}
+
+	const titleMeta = typeof post.metadata._ffeeeedd__metabox__titre == 'object' ?
+		Object.values(post.metadata._ffeeeedd__metabox__titre)[0] : '';
+	if (titleMeta !== '') {
+		frontMatter.push({ metatitle: titleMeta })
+	}
+
+	const canonical = typeof post.metadata._ffeeeedd__metabox__canonical == 'object' ?
 		Object.values(post.metadata._ffeeeedd__metabox__canonical)[0] : '';
 	if (canonical !== '') {
-		frontMatter.push({
-			alternate: canonical
-		})
+		frontMatter.push({ alternate: canonical })
 	}
 
 	if (post.format === 'status') {

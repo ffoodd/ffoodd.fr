@@ -7,6 +7,7 @@ permalink: "retour-de-paris-web/index.html"
 excerpt: "Pour la deuxième année consécutive, j’ai pu me rendre à la capitale pour assister à Paris Web. Et une nouvelle fois, ce fut un événement extrêmement enrichissant&nbsp;!"
 format: "standard"
 tags: "posts"
+description: "L’an passé était une première pour moi&nbsp;: je découvrais les conférences, les atelier, les rencontres et discussions enflammées. Cette fois-ci, je n’étais plus le gamin qui ouvre ses cadeaux de Noël mais ça ne m’a pas empêché d’être émerveillé."
 ---
 Comme en 2013, c’est en compagnie de [mon frère Luc](http://www.kloh.ch) que j’ai pu arpenter le métro parisien. Mais cette année était particulière pour Luc, puisqu’il était orateur&nbsp;!
 

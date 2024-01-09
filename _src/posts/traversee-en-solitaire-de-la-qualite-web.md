@@ -7,6 +7,7 @@ permalink: "traversee-en-solitaire-de-la-qualite-web/index.html"
 excerpt: "La qualité web reste marginale dans l’industrie du web&nbsp;—&nbsp;malgré l’essor certain du sujet grâce à des événements tels que [Paris Web](http://www.paris-web.fr/) ou des initiatives comme [OpQuast](http://opquast.com/fr/). Des «&nbsp;experts&nbsp;» sortent du lot — [Élie Sloïm](http://openweb.eu.org/openwebgroup/bios/elie_sloim 'Sa biographie sur OpenWeb') ou [Stéphane Deschamps](http://nota-bene.org/), pour ne citer qu’eux&nbsp;—&nbsp;mais le revers de la médaille est une dé-responsabilisation massive de tous les «&nbsp;non-experts&nbsp;». Mais vous savez-quoi ? **Ça ne m’empêche pas de faire de la qualité**."
 format: "standard"
 tags: "posts"
+description: "Ou pourquoi vous devriez arrêter de vous trouver des excuses ridicules impliquant vos collègues, clients ou chimpanzés."
 ---
 Très souvent sur le web — et au travail, je croise ce type de propos tenus par des professionnels du web :
 
