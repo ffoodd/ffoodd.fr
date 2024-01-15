@@ -60,20 +60,20 @@
 						
 					</header>
 					
+	<time class="screen-reader-text" datetime="2013-12-04T16:43:09" itemprop="datePublished">4 décembre 2013</time>
 	<div itemprop="articleBody">
-		<p><code>a11y.css</code> .[^1]</p>
-<p>[^1]: a11y est la contraction de « Accessibility » : un « a » suivi de 11 caractères, et conclu par un « y ».</p>
-<h2>Les références</h2>
-<h3>Les projets reposant sur CSS</h3>
+		<p><code>a11y.css</code> .<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<h2 id="les-r%C3%A9f%C3%A9rences" tabindex="-1">Les références</h2>
+<h3 id="les-projets-reposant-sur-css" tabindex="-1">Les projets reposant sur CSS</h3>
 <p>Le premier projet de ce type que j’ai rencontré est <a href="http://red-root.com/sandbox/holmes/" title="Présentation de Holmes.css, en anglais (nouvelle fenêtre)">Holmes.css</a>. L’idée m’a rapidement séduit. Des projets similaires ont fleuri, dont : </p>
 <ul>
 <li><a href="https://github.com/karlgroves/diagnostic.css" title="Diagnostic.css sur GitHub (nouvelle fenêtre)">Diagnostic.css</a> par Karl Groves ;</li>
 <li><a href="https://github.com/nternetinspired/debug-css" title="Debug-CSS sur GitHub (nouvelle fenêtre)">Debug-css</a> par Seth Warburton.</li>
 </ul>
 <p>La découverte d’<a href="http://opquast.com/fr/" title="Le site OpQuast (nouvelle fenêtre)">OpQuast</a> et des <a href="http://checklists.opquast.com/fr/" title="Les bonnes pratiques d’OpQuast (nouvelle fenêtre)">bonnes pratiques</a> ayant accentué mon exigence, les outils précédemment cités m’ont semblé un peu légers.</p>
-<h3>Les checklists</h3>
+<h3 id="les-checklists" tabindex="-1">Les checklists</h3>
 <p>Définir des <strong>« checklists qualités »</strong> est également une bonne idée, et les exemples lus dans <em>« Intégration web, les bonnes pratiques »</em> de <a href="https://twitter.com/schillinger" title="Corine Schillinger sur Twitter (nouvelle fenêtre)">Corinne Schillinger</a> ou dans le projet <a href="https://github.com/htmlzengarden/outline/blob/master/index.md" title="La checklist d’Outline sur GitHub (nouvelle fenêtre)">Outline</a> de <a href="https://twitter.com/htmlvv" title="Vincent Valentin sur Twitter (nouvelle fenêtre)">Vincent Valentin</a> m’ont persuadé de tenter cette solution. Cependant, c’est plus contraignant que les solutions de repérage en CSS, et légèrement différent puisqu’une solution CSS ne permettra pas d’évaluer la pertinence des textes ou solutions techniques. Les checklists sont également rapidement contextuelles à un projet, puisque les objectifs et contraintes peuvent varier — je cherchais plutôt un outil générique.</p>
-<h3>Les solutions en ligne</h3>
+<h3 id="les-solutions-en-ligne" tabindex="-1">Les solutions en ligne</h3>
 <p>Les solutions automatisées en ligne sont également très utiles, mais ne permettent pas de faire un suivi au fil de l’eau. Je m’en sers lorsque je touche au but, à savoir en préambule à une recette complète. Voici une liste de ceux que j’affectionne particulièrement : </p>
 <ul>
 <li><a href="http://reporting.opquast.com/fr/" title="Le site d’OpQuast Reporting (nouvelle fenêtre)">OpQuast Reporting</a></li>
@@ -81,7 +81,7 @@
 <li><a href="http://validator.w3.org/" title="Le service de validation du W3C (nouvelle fenêtre)">Le Validator</a> du W3C</li>
 </ul>
 <p>Mais à moins que vous ne soyez fan des allers-retours, ces services ne sont pas adaptés à une utilisation intensive.</p>
-<h2>Une organisation lisible</h2>
+<h2 id="une-organisation-lisible" tabindex="-1">Une organisation lisible</h2>
 <p>J’ai donc travaillé sur ce fichier CSS pendant un moment, égrainant les règles à tester, les façons d’afficher le message, etc. <a href="https://www.ffoodd.fr/sass-commencez-par-les-deux-s/" title="Sass : commencez par les deux « S »">Mon récent apprentissage de Sass</a> m’a permis d’organiser beaucoup plus précisément ce fichier, en définissant quatre degrés de gravité : </p>
 <ul>
 <li><strong>Les erreurs</strong>, dénoncées en rouge : principalement des attributs absents, vides ou très fortement déconseillés ;</li>
@@ -90,57 +90,53 @@
 <li><strong>Les conseils</strong>, mentionnés en vert. Il s’agit de simples suggestions d’utilisation de certains attributs, ou de bonnes pratiques méconnues.</li>
 </ul>
 <p>L’organisation du projet est simple : la feuille de style « reine » contient un mixin, quelques explications et des placeholders pour chaque degré de gravité. Des fichiers partiels sont importés en deux groupes : un pour les sélecteurs — pour la maintenabilité, c’est bien plus lisible ainsi — et un pour les messages eux-mêmes.</p>
-<h2>Une cible précise</h2>
+<h2 id="une-cible-pr%C3%A9cise" tabindex="-1">Une cible précise</h2>
 <p>Comme vous vous en doutez, cet outil n’est destiné qu’aux intégrateurs soucieux de la qualité de leur production. C’est pourquoi la compatibilité des sélecteurs et de l’affichage des messages ne prend pas en compte IE8 :D.</p>
 <p>De plus, les messages sont affichés via un pseudo-élément <code>::after</code> — et vous le savez sûrement, mais <a href="http://www.karlgroves.com/2013/08/26/css-generated-content-is-not-content/" title="Article de Karl Groves sur le contenu généré en CSS (en anglais - nouvelle fenêtre)">les contenus générés via des pseudos-éléments ne sont pas du contenu.</a></p>
 <p>Et pour que ça ne me gratte pas trop la rétine, j’ai également ajouté un effet de transition pour l’apparition du message.</p>
-<h2>La documentation</h2>
+<h2 id="la-documentation" tabindex="-1">La documentation</h2>
 <p>Reste une question à se poser : comment ai-je choisi les tests à effectuer, les formulations des messages et leur degré de gravité respectif ?</p>
 <p>Pour faire simple, j’ai lu. Beaucoup. Les premières ressources ont été les projets similaires déjà cités, bien sûr. Puis je me suis inspiré des indications récurrentes obtenues sur Tanaguru ou OpQuast Reporting. La page du W3C listant les éléments obsolètes s’est imposée d’elle-même en tant que ressource complète pour un degré bien précis de vérification.</p>
 <p>Et finalement, <a href="http://www.accessiweb.org/forumhtml5/index.php" title="(nouvelle fenêtre)">le forum de discussion du référentiel AccessiWeb pour sa version 2.2</a> ( sous-titré <em>« Mesure de la conformité WCAG 2.0 via le référentiel AccessiWeb 2.2 avec HTML5/ARIA »</em> ) que m’avait précédemment indiqué <a href="https://twitter.com/johan_ramon" title="Johan Ramon sur Twitter (nouvelle fenêtre)">Johan Ramon</a> m’a appris énormément.</p>
 <p>Car oui : j’ai tout lu, tout détaillé. Pour chaque critère j’ai essayé d’en saisir le sens, les implications techniques et fonctionnelles, mais aussi ma capacité à les vérifier en CSS. C’est pourquoi les fichiers <code>.scss</code> sont plutôt bien documentés : chaque test indique, via un commentaire, le critère Accessiweb et/ou la bonne pratique OpQuast concerné(es).</p>
 <p>Les tests susceptibles d’évoluer ou dont la vérification en CSS m’a semblé discutable ont été soit retirés, soit inclus aux conseils avec la mention utile concernant le contexte de rédaction du test en question.</p>
-<h2>Une capitalisation indispensable</h2>
+<h2 id="une-capitalisation-indispensable" tabindex="-1">Une capitalisation indispensable</h2>
 <p>Voilà, vous savez tout. J’estime ce projet suffisamment mûr pour être soumis aux regards de tous, en espérant que ceux-là me permettront d’enrichir encore cet outil qui m’aide déjà beaucoup.</p>
 <p>J’ai peu détaillé l’origine concrète de ce projet et <strong>comment il est né d’un réel besoin</strong>. Il faut savoir que dans mon travail, je ne maîtrise pas toujours l’environnement de la phase d’intégration. Lorsqu’un nouveau projet est lancé, il peut parfois m’être imposé un thème ( sur WordPress ) ou une solution ( Prestashop, si tu nous regardes ) ; et lorsqu’il s’agit d’une maintenance ou d’une refonte partielle, je ne vous raconte pas ce que je déterre parfois…</p>
 <p>C’est dans ce cadre qu’<code>a11y.css</code> prend tout son sens. Car si vous maîtrisez parfaitement la chaîne de production, il ne pourra vous servir que de pense-bête ( car vous aurez déjà appliqué toutes les bonnes pratiques, n’est-ce pas ? ), surtout si vous automatisez ce type de tâches grâce à <a href="http://gruntjs.com/" title="Le site de Grunt, en anglais (nouvelle fenêtre)">Grunt</a> ou d’autres outils du même acabit.</p>
 <p>Alors, qu’en dites-vous ?</p>
+<ol class="footnotes-list small mt2 pt2 pb2">
+<li id="fn1" class="footnote-item"><p>a11y est la contraction de « Accessibility » : un « a » suivi de 11 caractères, et conclu par un « y ». <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
 
-		<!-- @todo Manque le footer de l’article -->
 	</div>
+	<footer class="small mt2">
+		<p class="pl2 mt0 pt1">
+			Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
+			Modifié le <time class="updated" datetime="2015-07-03T10:49:03" itemprop="dateModified">3 juillet 2015</time>.
+		</p>
+	</footer>
 	<!-- @todo Gérer les commentaires -->
 
 				</article>
 				
 			</main>
 
-			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
-				<!-- @todo Gérer le sommaire, pour les articles et pages -->
-				<div class="aside pl2 pt2">
-					<h3 class="tk-bello-pro h2-like m-reset">À lire ailleurs</h3>
-					<div class="textwidget">
-						<ul>
-							<li>
-								<a href="https://openweb.eu.org/articles/du-consommateur-au-producteur">sur Openweb</a>
-							</li>
-							<li>
-								<a href="https://www.alsacreations.com/livres/lire/1503-webgrids-structure-et-typographie-de-la-page-web.html">sur Alsacréations</a>
-							</li>
-						</ul>
-					</div>
-					<h3 class="tk-bello-pro h2-like m-reset pt1">À regarder ailleurs</h3>
-					<div class="textwidget">
-						<ul>
-							<li>
-								<a href="https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php">Paris Web 2018</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</aside>
+			
+	<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
+		<div class="aside pl2 pt2">
+			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
+			<div class="textwidget" >
+        <ol><li><a href="#les-r%C3%A9f%C3%A9rences">Les références</a></li><li><a href="#une-organisation-lisible">Une organisation lisible</a></li><li><a href="#une-cible-pr%C3%A9cise">Une cible précise</a></li><li><a href="#la-documentation">La documentation</a></li><li><a href="#une-capitalisation-indispensable">Une capitalisation indispensable</a></li></ol>
+      </div>
+		</div>
+	</aside>
+
 		</div>
 		<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
 			<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
+				<!-- @todo Fichier json pour les réseaux ? -->
 				<li class="inbl pa1" itemscope itemprop="contactPoint">
 					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__mastodon" href="https://mamot.fr/@ffoodd" itemprop="url" title="Gaël Poupard sur Mastodon">
 						<span itemprop="name">Mastodon</span>

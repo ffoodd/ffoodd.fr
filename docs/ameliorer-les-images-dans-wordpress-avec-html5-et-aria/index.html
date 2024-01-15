@@ -60,9 +60,10 @@
 						
 					</header>
 					
+	<time class="screen-reader-text" datetime="2013-11-12T16:32:51" itemprop="datePublished">12 novembre 2013</time>
 	<div itemprop="articleBody">
 		<p>Pour commencer, il faut comprendre une problématique de base en terme d’accessibilité : la distinction entre <strong>les images décoratives</strong> et <strong>les images porteuses de sens</strong>. Pour comprendre cette distinction et son importance, je vous recommande vivement la lecture d’<a href="https://www.ffoodd.fr/lecture-accessibilite-web/" title="Accessibilité web"><em>«Accessibilité web»</em></a> par <a href="http://www.armonyaltinier.fr/" title="Le site d’Armony Altinier (nouvelle fenêtre)">Armony Altinier</a>. Comme souvent lorsque nous parlons d’<strong>accessibilité web</strong>, il s’agit de bon sens : une image porteuse de sens doit être restituée à tous les utilisateurs, tandis qu’une image décorative ne doit être montrée qu’aux utilisateurs disposant d’un affichage graphique complet.</p>
-<h2>Les limites de WordPress</h2>
+<h2 id="les-limites-de-wordpress" tabindex="-1">Les limites de WordPress</h2>
 <p>Tout le monde n’est pas sensible à ces questions, même s’il le faudrait : WordPress ne fait pas exception. Il donne cependant la possibilité à ses utilisateurs de servir des images de façon tout à fait correcte, en proposant de base pour tous les fichiers la capacité d’adjoindre un texte alternatif — ce qui remplit le critère principal des <a href="http://checklists.opquast.com/fr/" title="Les checklists OpQuast (nouvelle fenêtre)">bonnes pratiques d’OpQuast</a> et permet de satisfaire <a href="http://www.accessiweb.org/index.php/accessiweb_2.2_liste_generale.html#images" title="La thématique image sur Accessiweb (nouvelle fenêtre)">la plupart des critères de niveau Bronze d’Accessiweb</a>.</p>
 <p>Pour autant WordPress ne va pas plus loin :</p>
 <ul>
@@ -70,7 +71,7 @@
 <li>Dans le cas d’une image qui véhicule une information ( ce que je suppose être le cas si la légende est renseignée ), il encadre cette image d’une <code>&lt;div&gt;</code> et y intègre la description dans un <code>&lt;p&gt;</code> ( <em>cf :</em>  <a href="http://core.trac.wordpress.org/browser/tags/3.7.1/src/wp-includes/media.php#L614" title="Le code source du shortcode (nouvelle fenêtre)">le code source du shortcode</a> ). <strong>C’est problématique car il n’existe aucun lien sémantique entre l’image et sa description, et le balisage est neutre.</strong></li>
 </ul>
 <p>Certes, c’est du fignolage. Mais c’est à priori dans les détails que l’on améliore sensiblement la qualité d’un site web.</p>
-<h2>Les images porteuses de sens</h2>
+<h2 id="les-images-porteuses-de-sens" tabindex="-1">Les images porteuses de sens</h2>
 <p>Le cas des images véhiculant des informations demande donc quelques efforts : il faut intercepter le shortcode afin de le ré-interpréter <strong>avant</strong> qu’il ne soit renvoyé côté client. Voici ce à quoi j’ai pu aboutir : </p>
 <pre><code class="language-php">  /* == @section Remplace le code généré par [caption] ==================== */
   /**
@@ -108,62 +109,58 @@
   return $output;
   }
 </code></pre>
-<h2>L’intervention détaillée</h2>
+<h2 id="l%E2%80%99intervention-d%C3%A9taill%C3%A9e" tabindex="-1">L’intervention détaillée</h2>
 <p>La structure d’origine est conservée ; je détaille ce qui a été fait :</p>
 <ul>
 <li>Une couche sémantique HTML5 est appliquée en lieu et place du balisage «neutre» précédent : <code>figure</code> et <code>figcaption</code> ;</li>
-<li>Une couche ARIA améliore la compréhension de ce balisage parfois défaillant dans les technologies d’assistance, comme me l’a appris <a href="http://www.kloh.ch/craw2013-html5-aria-et-accessibilite-web-479" title="Compte-rendu de l’atelier de J.P. Villain par Luc (nouvelle fenêtre)">le compte-rendu d’un atelier</a> de <a href="https://twitter.com/villainjp" title="Profil Twitter de Jean-Pierre Villain (nouvelle fenêtre)">Jean-Pierre Vilain</a> à la <a href="http://www.telono.com/fr/agence/conference-romande-accessibilite-web-2013/" title="Conférence Romande sur l’Accessibilité Web 2013 (nouvelle fenêtre)">CRAW2013</a> rédigé par <a href="https://twitter.com/klohFR" title="Profil Twitter de Luc Poupard (nouvelle fenêtre)">Luc</a>. Dans notre cas, le <code>role=&quot;group&quot;</code>.[^1]</li>
+<li>Une couche ARIA améliore la compréhension de ce balisage parfois défaillant dans les technologies d’assistance, comme me l’a appris <a href="http://www.kloh.ch/craw2013-html5-aria-et-accessibilite-web-479" title="Compte-rendu de l’atelier de J.P. Villain par Luc (nouvelle fenêtre)">le compte-rendu d’un atelier</a> de <a href="https://twitter.com/villainjp" title="Profil Twitter de Jean-Pierre Villain (nouvelle fenêtre)">Jean-Pierre Vilain</a> à la <a href="http://www.telono.com/fr/agence/conference-romande-accessibilite-web-2013/" title="Conférence Romande sur l’Accessibilité Web 2013 (nouvelle fenêtre)">CRAW2013</a> rédigé par <a href="https://twitter.com/klohFR" title="Profil Twitter de Luc Poupard (nouvelle fenêtre)">Luc</a>. Dans notre cas, le <code>role=&quot;group&quot;</code>.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></li>
 </ul>
-<p>[^1]: En savoir plus sur le rôle «group» : https://developer.mozilla.org/en-US/docs/Accessibility/ARIA/ARIA_Techniques/Using_the_group_role</p>
 <ul>
-<li>Et finalement une dernière couche est ajoutée : les micro-données.[^3]</li>
+<li>Et finalement une dernière couche est ajoutée : les micro-données.<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></li>
 </ul>
-<p>[^3]: Découvrir les micro-données pour enrichir les objets images : http://schema.org/ImageObject</p>
 <p>Ce code n’est probablement pas parfait, car je ne l’ai pas testé avec un lecteur d’écran : il va falloir que je le fasse. Mais je pense que c’est un premier pas en avant vers une meilleure qualité des sites WordPress que je produis.</p>
 <p><strong>Les commentaires, conseils et indications supplémentaires seront grandement appréciés</strong> :) .</p>
-<h2>Mises à jour</h2>
+<h2 id="mises-%C3%A0-jour" tabindex="-1">Mises à jour</h2>
 <p>Suite à un bref échange avec <a href="https://twitter.com/johan_ramon" title="Johan Ramon sur Twitter (nouvelle fenêtre)">Johan Ramon</a>, je dois préciser un point important : l’alternative textuelle de l’image doit également mentionner la légende attenante, pour les technologies d’assistance qui ne prendraient pas en compte l’attribut <code>aria-describedby</code>. Voici les ressources utiles </p>
 <ul>
 <li><a href="http://www.accessiweb.org/forumhtml5/viewtopic.php?id=39#p810" title="Discussion sur le forum d’AccessiWeb (nouvelle fenêtre)">Discussion sur le critère 1.10 d’AccessiWeb 2.2</a></li>
 <li><a href="http://blog.atalan.fr/support-des-attributs-aria-par-les-lecteurs-decran/" title="Article sur le blog de la société Atalan (nouvelle fenêtre)">Support des attributs ARIA par les lecteurs d’écran</a></li>
 </ul>
 <p>Comme souvent, cette dernière contrainte repose entièrement sur le contributeur qui doit être <strong>informé</strong> et <strong>éduqué</strong> à cette responsabilité.</p>
+<ol class="footnotes-list small mt2 pt2 pb2">
+<li id="fn1" class="footnote-item"><p>En savoir plus sur le rôle «group» : https://developer.mozilla.org/en-US/docs/Accessibility/ARIA/ARIA_Techniques/Using_the_group_role <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Découvrir les micro-données pour enrichir les objets images : http://schema.org/ImageObject <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
 
-		<!-- @todo Manque le footer de l’article -->
 	</div>
+	<footer class="small mt2">
+		<p class="pl2 mt0 pt1">
+			Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
+			Modifié le <time class="updated" datetime="2015-07-03T10:49:36" itemprop="dateModified">3 juillet 2015</time>.
+		</p>
+	</footer>
 	<!-- @todo Gérer les commentaires -->
 
 				</article>
 				
 			</main>
 
-			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
-				<!-- @todo Gérer le sommaire, pour les articles et pages -->
-				<div class="aside pl2 pt2">
-					<h3 class="tk-bello-pro h2-like m-reset">À lire ailleurs</h3>
-					<div class="textwidget">
-						<ul>
-							<li>
-								<a href="https://openweb.eu.org/articles/du-consommateur-au-producteur">sur Openweb</a>
-							</li>
-							<li>
-								<a href="https://www.alsacreations.com/livres/lire/1503-webgrids-structure-et-typographie-de-la-page-web.html">sur Alsacréations</a>
-							</li>
-						</ul>
-					</div>
-					<h3 class="tk-bello-pro h2-like m-reset pt1">À regarder ailleurs</h3>
-					<div class="textwidget">
-						<ul>
-							<li>
-								<a href="https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php">Paris Web 2018</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</aside>
+			
+	<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
+		<div class="aside pl2 pt2">
+			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
+			<div class="textwidget" >
+        <ol><li><a href="#les-limites-de-wordpress">Les limites de WordPress</a></li><li><a href="#les-images-porteuses-de-sens">Les images porteuses de sens</a></li><li><a href="#l%E2%80%99intervention-d%C3%A9taill%C3%A9e">L’intervention détaillée</a></li><li><a href="#mises-%C3%A0-jour">Mises à jour</a></li></ol>
+      </div>
+		</div>
+	</aside>
+
 		</div>
 		<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
 			<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
+				<!-- @todo Fichier json pour les réseaux ? -->
 				<li class="inbl pa1" itemscope itemprop="contactPoint">
 					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__mastodon" href="https://mamot.fr/@ffoodd" itemprop="url" title="Gaël Poupard sur Mastodon">
 						<span itemprop="name">Mastodon</span>

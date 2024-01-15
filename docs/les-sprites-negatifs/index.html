@@ -58,15 +58,16 @@
 						
 					</header>
 					
+	<time class="screen-reader-text" datetime="2012-06-21T10:48:38" itemprop="datePublished">21 juin 2012</time>
 	<div itemprop="articleBody">
 		<p>L’utilisation des sprites est connue de – presque – tous. Et dans le cas ou vous feriez partie du presque, voici un <a href="http://www.alsacreations.com/tuto/lire/1068-sprites-css-background-position.html">très bon article</a> en français sur le sujet. Ma réflexion aujourd’hui ne portera donc pas sur l’intérêt des sprites, mais sur une façon de pousser plus loin <strong>la quête du moindre octet</strong>.</p>
-<h2>La Genèse</h2>
+<h2 id="la-gen%C3%A8se" tabindex="-1">La Genèse</h2>
 <p>Ce jour-là, je me suis heurté au problème suivant : une vaste iconographie en aplat coloré, dont chaque élément disposait de trois variations colorées. Pour des questions de <strong>performances</strong>, il était nécessaire d’utiliser un sprite ; et la ou ça se complique, c’est qu’il était également question d’<strong>accessibilité</strong>.</p>
 <p>Mon premier écueil : la <strong>performance</strong>. Afin d’intégrer les variations colorées, mon premier sprite contenait trois fois chaque icône. Pas très efficace…</p>
-<h2>Et la lumière fut</h2>
+<h2 id="et-la-lumi%C3%A8re-fut" tabindex="-1">Et la lumière fut</h2>
 <p>C’est alors que j’ai réalisé : ces icônes étaient systématiquement sur un fond blanc. <strong>Eurêka.</strong></p>
 <p>En précisant un peu mes recherches, je suis tombé sur “<a href="http://coding.smashingmagazine.com/2010/10/31/transparent-css-sprites/">Transparent CSS Sprites</a>” par Trevor Morris. L’idée est simple : puisque la seule variation est la couleur de l’icône elle-même, il suffit de créer ce sprite en réservant la forme des icônes, ou plus simplement : en négatif. Voila un exemple plus concret :</p>
-<p><img src="/images/2012/06/sprite.png" alt="Le-super-sprite-de-la-mort-qui-tue" title="Alors, heureux ?"></p>
+<figure><img src="/images/2012/06/sprite.png" alt="Le-super-sprite-de-la-mort-qui-tue" loading="lazy"><figcaption>Alors, heureux ?</figcaption></figure>
 <p>Tout est alors plus simple. <strong>Survolez cette image</strong> afin de vous en rendre compte, et observez-la dans votre outil de dev ou dans un nouvel onglet. Il suffit d’appliquer un <strong>background-color</strong> à cette image et de le changer au <strong>:hover</strong> afin d’obtenir le même résultat qu’un déplacement du sprite. Le code – allégé en matière grasse :</p>
 <p>img {
 background: #269;
@@ -83,10 +84,10 @@ background: #045175;
 </ul>
 <p>Performance :</p>
 <p>Mon second écueil : l’<strong>accessibilité</strong>.</p>
-<h2>Qui dit sprite dit sprite</h2>
+<h2 id="qui-dit-sprite-dit-sprite" tabindex="-1">Qui dit sprite dit sprite</h2>
 <p>Effectivement, il reste nécessaire de <strong>“recadrer”</strong> ce sprite. Usuellement, on le fait via css en appelant le sprite dans une background-image. Le hic : sans texte d’accompagnement, ce n’est vraiment, vraiment pas accessible. La seule solution : <strong>une balise &lt; img / &gt;</strong>.</p>
 <p>On peut le faire de façon très simple : un parent conteneur aux dimensions fixes et un overflow hidden. Il ne reste plus qu’à déplacer l’image au sein de ce parent grâce à d’une position relative :</p>
-<p><img src="/images/2012/06/sprite.png" alt="Et voila !" title="Le-super-sprite-de-la-mort-qui-tue"></p>
+<figure><img src="/images/2012/06/sprite.png" alt="Et voila !" loading="lazy"><figcaption>Le-super-sprite-de-la-mort-qui-tue</figcaption></figure>
 <p><strong>Rien de plus simple !</strong><br>
 Accessibilité :</p>
 <p>Pour conclure, la solution qui émerge est :</p>
@@ -103,41 +104,33 @@ Accessibilité :</p>
 </ol>
 <p>À titre personnel, je n’ai utilisé cette technique que sur un projet, particulièrement contraignant en terme de performances et d’accessibilité – mais je compte l’étendre à d’autres projets. Correctement utilisée, elle peut permettre une <strong>optimisation massive d’une iconographie riche</strong> – mais simple.</p>
 
-		<!-- @todo Manque le footer de l’article -->
 	</div>
+	<footer class="small mt2">
+		<p class="pl2 mt0 pt1">
+			Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
+			Modifié le <time class="updated" datetime="2013-12-16T10:58:14" itemprop="dateModified">16 décembre 2013</time>.
+		</p>
+	</footer>
 	<!-- @todo Gérer les commentaires -->
 
 				</article>
 				
 			</main>
 
-			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
-				<!-- @todo Gérer le sommaire, pour les articles et pages -->
-				<div class="aside pl2 pt2">
-					<h3 class="tk-bello-pro h2-like m-reset">À lire ailleurs</h3>
-					<div class="textwidget">
-						<ul>
-							<li>
-								<a href="https://openweb.eu.org/articles/du-consommateur-au-producteur">sur Openweb</a>
-							</li>
-							<li>
-								<a href="https://www.alsacreations.com/livres/lire/1503-webgrids-structure-et-typographie-de-la-page-web.html">sur Alsacréations</a>
-							</li>
-						</ul>
-					</div>
-					<h3 class="tk-bello-pro h2-like m-reset pt1">À regarder ailleurs</h3>
-					<div class="textwidget">
-						<ul>
-							<li>
-								<a href="https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php">Paris Web 2018</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</aside>
+			
+	<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
+		<div class="aside pl2 pt2">
+			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
+			<div class="textwidget" >
+        <ol><li><a href="#la-gen%C3%A8se">La Genèse</a></li><li><a href="#et-la-lumi%C3%A8re-fut">Et la lumière fut</a></li><li><a href="#qui-dit-sprite-dit-sprite">Qui dit sprite dit sprite</a></li></ol>
+      </div>
+		</div>
+	</aside>
+
 		</div>
 		<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
 			<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
+				<!-- @todo Fichier json pour les réseaux ? -->
 				<li class="inbl pa1" itemscope itemprop="contactPoint">
 					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__mastodon" href="https://mamot.fr/@ffoodd" itemprop="url" title="Gaël Poupard sur Mastodon">
 						<span itemprop="name">Mastodon</span>

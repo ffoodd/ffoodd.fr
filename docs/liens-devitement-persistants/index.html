@@ -60,9 +60,10 @@
 						
 					</header>
 					
+	<time class="screen-reader-text" datetime="2013-10-16T15:56:40" itemprop="datePublished">16 octobre 2013</time>
 	<div itemprop="articleBody">
 		<p>Parmi ces techniques, certaines m’étaient inconnues : une ignorance qui ne nuisait pas directement à l’accessibilité mais bel et bien au confort d’utilisation du site pour les personnes concernées. Voici donc deux techniques que j’ai mises en place suite à cette lecture passionnante.</p>
-<h2>Les liens similaires</h2>
+<h2 id="les-liens-similaires" tabindex="-1">Les liens similaires</h2>
 <p>Il devient rapidement ennuyeux de parcourir une liste de liens (avec un lecteur d’écrans <strong>et/ou</strong> en tabulant) lorsque plusieurs liens consécutifs ont la même destination. Malheureusement, c’est le cas très souvent sur WordPress dans les boucles d’articles.</p>
 <p>Et bien voici une bonne nouvelle : il est très simple de corriger ça, de façon totalement transparente pour tout le monde :</p>
 <ul>
@@ -70,16 +71,15 @@
 <li><strong>aria-hidden à true :</strong> cet attribut permet de taire un élément dans les lecteurs d’écrans. La logique est la même que précédemment, à ceci près qu’on prendra soin de laisser le lien dont la vocalisation sera la plus pertinente : dans le cas d’une boucle WordPress, le lien présent dans les titres est idéal.</li>
 </ul>
 <p>En appliquant cette technique correctement, on divise par deux ou trois le nombre de liens à parcourir dans une liste d’articles. Vos utilisateurs vous remercieront 🙂 .</p>
-<h2>Les liens d’évitement</h2>
-<p>Je ne reviendrais pas sur les bases de cette technique, qui est plus que documentée sur le web.[^1]</p>
-<p>[^1]: Un article de Jean-Pierre Villain sur Alsacréations - il date de 2006 et est toujours (presque) d’actualités : http://www.alsacreations.com/tuto/lire/572-Les-liens-d-evitement.htm</p>
+<h2 id="les-liens-d%E2%80%99%C3%A9vitement" tabindex="-1">Les liens d’évitement</h2>
+<p>Je ne reviendrais pas sur les bases de cette technique, qui est plus que documentée sur le web.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
 <ul>
 <li>La persistance des liens d’évitement après leur première prise de focus</li>
 <li>La mise en avant visuelle de la zone ciblée par le lien d’évitement</li>
 </ul>
 <p>Concernant le second point, je ne l’ai pas encore implémenté sur ffoodd.fr pour la seule raison que je dois trouver un signifiant visuel cohérent avec mon design, mais ça ne saurait tarder 🙂 .</p>
 <p>Cependant la persistance des liens m’a particulièrement intéressé, car c’est un point que je trouve réellement bénéfique pour le confort d’utilisation. Même si je ne me sers de la tabulation que pour tester mes intégrations, il m’a toujours semblé désagréable de « perdre » ces liens.</p>
-<h2>La persistance des liens d’évitement</h2>
+<h2 id="la-persistance-des-liens-d%E2%80%99%C3%A9vitement" tabindex="-1">La persistance des liens d’évitement</h2>
 <p>En recherchant plus d’informations sur cette technique, je suis tombé sur le blog de la société Atalan pour laquelle travaille Johan – et sur <a href="http://blog.atalan.fr/des-liens-devitement-astucieux/" title="Article sur les liens d’évitement astucieux (nouvelle fenêtre)">un article dédié au sujet</a>. Des ressources très intéressantes sont données, cependant toutes sont basées sur jQuery pour ajouter une classe aux liens après leur première prise de focus. <strong>Dommage, je n’utilise pas jQuery sur ffoodd.fr.</strong></p>
 <p>Voici donc le bout de code correspondant, en vanilla javascript :</p>
 <pre><code class="language-javascript">
@@ -109,44 +109,40 @@ window.addEventListener(&quot;hashchange&quot;, function(event) {
   }
 }, false);
 </code></pre>
-<h2>La qualité de l’expérience</h2>
+<h2 id="la-qualit%C3%A9-de-l%E2%80%99exp%C3%A9rience" tabindex="-1">La qualité de l’expérience</h2>
 <p>Ce sont certes des détails, mais ces détails améliorent le confort de navigation et rendent un site agréable : l’internaute appréciera cette expérience, et reviendra (pour peu que vos contenus soient à la hauteur).</p>
+<ol class="footnotes-list small mt2 pt2 pb2">
+<li id="fn1" class="footnote-item"><p>Un article de Jean-Pierre Villain sur Alsacréations - il date de 2006 et est toujours (presque) d’actualités : http://www.alsacreations.com/tuto/lire/572-Les-liens-d-evitement.htm <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
 
-		<!-- @todo Manque le footer de l’article -->
 	</div>
+	<footer class="small mt2">
+		<p class="pl2 mt0 pt1">
+			Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
+			Modifié le <time class="updated" datetime="2013-11-13T12:09:49" itemprop="dateModified">13 novembre 2013</time>.
+		</p>
+	</footer>
 	<!-- @todo Gérer les commentaires -->
 
 				</article>
 				
 			</main>
 
-			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
-				<!-- @todo Gérer le sommaire, pour les articles et pages -->
-				<div class="aside pl2 pt2">
-					<h3 class="tk-bello-pro h2-like m-reset">À lire ailleurs</h3>
-					<div class="textwidget">
-						<ul>
-							<li>
-								<a href="https://openweb.eu.org/articles/du-consommateur-au-producteur">sur Openweb</a>
-							</li>
-							<li>
-								<a href="https://www.alsacreations.com/livres/lire/1503-webgrids-structure-et-typographie-de-la-page-web.html">sur Alsacréations</a>
-							</li>
-						</ul>
-					</div>
-					<h3 class="tk-bello-pro h2-like m-reset pt1">À regarder ailleurs</h3>
-					<div class="textwidget">
-						<ul>
-							<li>
-								<a href="https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php">Paris Web 2018</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</aside>
+			
+	<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
+		<div class="aside pl2 pt2">
+			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
+			<div class="textwidget" >
+        <ol><li><a href="#les-liens-similaires">Les liens similaires</a></li><li><a href="#les-liens-d%E2%80%99%C3%A9vitement">Les liens d’évitement</a></li><li><a href="#la-persistance-des-liens-d%E2%80%99%C3%A9vitement">La persistance des liens d’évitement</a></li><li><a href="#la-qualit%C3%A9-de-l%E2%80%99exp%C3%A9rience">La qualité de l’expérience</a></li></ol>
+      </div>
+		</div>
+	</aside>
+
 		</div>
 		<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
 			<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
+				<!-- @todo Fichier json pour les réseaux ? -->
 				<li class="inbl pa1" itemscope itemprop="contactPoint">
 					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__mastodon" href="https://mamot.fr/@ffoodd" itemprop="url" title="Gaël Poupard sur Mastodon">
 						<span itemprop="name">Mastodon</span>

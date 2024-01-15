@@ -60,18 +60,18 @@
 						
 					</header>
 					
+	<time class="screen-reader-text" datetime="2015-11-25T15:06:44" itemprop="datePublished">25 novembre 2015</time>
 	<div itemprop="articleBody">
 		<p>Malheureusement, il ne répond pas correctement lorsque lʼutilisateur a personnalisé les couleurs des liens ou utilise un thème navigateur aux contrastes élevés — ce que jʼai testé avec Firefox. En sus, et bien quʼil soit conçu de façon à renvoyer un booléen, il se couple difficilement avec un outil spécialisé tel que <a href="https://modernizr.com/">Modernizr</a>.</p>
-<h2>Les changements</h2>
+<h2 id="les-changements" tabindex="-1">Les changements</h2>
 <p>On va faire simple, puisque vous avez lʼexemple de Karl Groves en amont ! Les seules modifications apportées sont :</p>
 <ul>
 <li>un peu de nettoyage, principalement des variables inutiles ;</li>
 <li>lʼélément créé est un lien au lieu dʼune division ;</li>
 <li>la condition finale pour renvoyer le booléen a été allégée.</li>
 </ul>
-<h2>Le code</h2>
-<p>Pas de miracle, lʼajout de test dans Modernizr est <a href="https://modernizr.com/docs#modernizr-addtest">bien documenté</a>. Voici ce que jʼai réalisé — qui est probablement améliorable.[^1]</p>
-<p>[^1]: Ceci est une invitation, toutes les aimables personnes qui apporteront leur aide auront droit à ma gratitude éternelle et plein de trucs dans ce goût-là.</p>
+<h2 id="le-code" tabindex="-1">Le code</h2>
+<p>Pas de miracle, lʼajout de test dans Modernizr est <a href="https://modernizr.com/docs#modernizr-addtest">bien documenté</a>. Voici ce que jʼai réalisé — qui est probablement améliorable.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
 <pre><code class="language-javascript">
 Modernizr.addTest(&quot;highcontrast&quot;, function() {
   var objA = document.createElement(&quot;a&quot;),
@@ -85,7 +85,7 @@ Modernizr.addTest(&quot;highcontrast&quot;, function() {
 });
 </code></pre>
 <p>Rien de bien méchant 😊 Jʼai créé <a href="http://codepen.io/ffoodd/pen/RWmmOO">un CodePen dédié uniquement à ce test</a> avec quelques commentaires et une illustration basique en HTML.</p>
-<h2>La couverture</h2>
+<h2 id="la-couverture" tabindex="-1">La couverture</h2>
 <p>Pour commencer, cette version est un test Modernizr. Nul besoin de télécharger tout la bibliothèque de tests cependant, sa seule et unique dépendance est la méthode <code>addTest()</code>, dont lʼoutil de construction personnalisée de Modernizr indique quʼelle pèse 2,53 kB (et 1,08 kB une fois compressé avec gzip).</p>
 <p>Ensuite et pour le cas ou vous ne liriez pas couramment le JavaScript, le test procède ainsi :</p>
 <ol>
@@ -103,42 +103,38 @@ Modernizr.addTest(&quot;highcontrast&quot;, function() {
 <li>les paramètres de personnalisation de thème et couleurs dans Firefox, sur tous les systèmes.</li>
 </ul>
 <p>Il serait génial de tester plus avant dʼautres configurations, afin de préciser la couverture et de repérer dʼéventuels faux positifs ou négatifs. Jʼai créé <a href="https://gist.github.com/ffoodd/78f99204b5806e183574">un Gist</a> dʼaprès le CodePen précédemment lié — nʼhésitez pas à le forker, le commenter, le triturer comme bon vous semble !</p>
+<ol class="footnotes-list small mt2 pt2 pb2">
+<li id="fn1" class="footnote-item"><p>Ceci est une invitation, toutes les aimables personnes qui apporteront leur aide auront droit à ma gratitude éternelle et plein de trucs dans ce goût-là. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
 
-		<!-- @todo Manque le footer de l’article -->
 	</div>
+	<footer class="small mt2">
+		<p class="pl2 mt0 pt1">
+			Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
+			Modifié le <time class="updated" datetime="2015-11-25T15:06:44" itemprop="dateModified">25 novembre 2015</time>.
+		</p>
+	</footer>
 	<!-- @todo Gérer les commentaires -->
 
 				</article>
 				
 			</main>
 
-			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
-				<!-- @todo Gérer le sommaire, pour les articles et pages -->
-				<div class="aside pl2 pt2">
-					<h3 class="tk-bello-pro h2-like m-reset">À lire ailleurs</h3>
-					<div class="textwidget">
-						<ul>
-							<li>
-								<a href="https://openweb.eu.org/articles/du-consommateur-au-producteur">sur Openweb</a>
-							</li>
-							<li>
-								<a href="https://www.alsacreations.com/livres/lire/1503-webgrids-structure-et-typographie-de-la-page-web.html">sur Alsacréations</a>
-							</li>
-						</ul>
-					</div>
-					<h3 class="tk-bello-pro h2-like m-reset pt1">À regarder ailleurs</h3>
-					<div class="textwidget">
-						<ul>
-							<li>
-								<a href="https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php">Paris Web 2018</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</aside>
+			
+	<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
+		<div class="aside pl2 pt2">
+			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
+			<div class="textwidget" >
+        <ol><li><a href="#les-changements">Les changements</a></li><li><a href="#le-code">Le code</a></li><li><a href="#la-couverture">La couverture</a></li></ol>
+      </div>
+		</div>
+	</aside>
+
 		</div>
 		<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
 			<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
+				<!-- @todo Fichier json pour les réseaux ? -->
 				<li class="inbl pa1" itemscope itemprop="contactPoint">
 					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__mastodon" href="https://mamot.fr/@ffoodd" itemprop="url" title="Gaël Poupard sur Mastodon">
 						<span itemprop="name">Mastodon</span>

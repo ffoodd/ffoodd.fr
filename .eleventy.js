@@ -1,5 +1,9 @@
 const { DateTime } = require('luxon');
-const markdownIt   = require("markdown-it");
+const markdownit = require("markdown-it");
+const anchor = require("markdown-it-anchor");
+const figure = require("markdown-it-image-figures");
+const footnote = require("markdown-it-footnote");
+const tocPlugin = require("eleventy-plugin-toc");
 
 module.exports = function (eleventyConfig) {
 
@@ -21,23 +25,43 @@ module.exports = function (eleventyConfig) {
 		return DateTime.fromISO(dateObj).setLocale('fr').toLocaleString(DateTime.DATE_FULL)
 	})
 
-	const md = new markdownIt()
+	const mdFilter = new markdownit()
 	eleventyConfig.addFilter("markdown", (content) => {
-		return md.renderInline(content);
+		return mdFilter.renderInline(content);
 	})
 
-	// @todo Configuration markdown-it :
-	// @link https://www.alpower.com/tutorials/configuring-footnotes-with-eleventy/
-	// @link https://www.alpower.com/tutorials/adding-figures-with-captions-to-images-in-markdown-with-eleventy/
-	// @link https://github.com/valeriangalliat/markdown-it-anchor
+	const md = markdownit({
+		html: true,
+		typographer: true,
+		quotes: ['«\xA0', '\xA0»', '‹\xA0', '\xA0›'],
+	})
+		.use(anchor)
+		.use(footnote)
+		.use(figure, {
+			figcaption: true,
+			lazy: true,
+			classes: ['aligncenter', 'alignright', 'alignleft']
+		});
+
+	md.renderer.rules.footnote_block_open = () => ('<ol class="footnotes-list small mt2 pt2 pb2">\n');
+	md.renderer.rules.footnote_block_close = () => ('</ol>\n');
+
 	// @todo RSS
 	// @link https://www.11ty.dev/docs/plugins/rss/
 	// @todo Syntax highlighting
 	// @link https://www.11ty.dev/docs/plugins/syntaxhighlight/
+	// @note LEs portions de code existantes fonctionnent toujours : privilégier PrismJS pour la rétro-compatibilité ?
 	// @todo HTML minifier ?
 	// @link https://github.com/terser/html-minifier-terser
 	// @todo Robots.txt
 	// @link https://micro.anniegreens.lol/2023/09/29/updated-my-microblog.html
+	eleventyConfig.setLibrary("md", md);
+
+	eleventyConfig.addPlugin(tocPlugin, {
+		tags: ["h2"],
+		wrapper: 'div',
+		wrapperClass: 'textwidget'
+	});
 
 	eleventyConfig.addPassthroughCopy("_src/favicon.svg")
 	eleventyConfig.addPassthroughCopy("_src/images")
@@ -46,6 +70,8 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.setServerOptions({
 		liveReload: true
 	})
+
+	// @todo Vérifier les 404 (sur les images notamment)
 
 	return {
 			dir: {

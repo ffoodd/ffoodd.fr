@@ -48,6 +48,8 @@ Object.keys(posts).forEach((p, i) => {
 		.replace(/\u00A0/g, '&nbsp;')
 		.replace(/\u005C/g, '');
 
+	let newSlug = post.slug.replace('%ca%bc', 'ʼ');
+
 	let frontMatter = [
 		{ layout: 'template/post.njk' },
 		{ title: turndownService.turndown(post.title.rendered)
@@ -56,7 +58,7 @@ Object.keys(posts).forEach((p, i) => {
 		},
 		{ date: post.date },
 		{ modified: post.modified },
-		{ permalink: `${post.slug}/index.html` },
+		{ permalink: `${newSlug}/index.html` },
 		{ excerpt: newExcerpt },
 		{ format: post.format },
 		{ tags: 'posts' }
@@ -106,6 +108,6 @@ Object.keys(posts).forEach((p, i) => {
 			body: newContent
 		},
 		path: './_src/posts',
-		fileName: `${post.slug}.md`
+		fileName: `${newSlug}.md`
 	})
 })

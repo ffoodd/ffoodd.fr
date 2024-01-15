@@ -60,8 +60,9 @@
 						
 					</header>
 					
+	<time class="screen-reader-text" datetime="2013-01-16T11:23:48" itemprop="datePublished">16 janvier 2013</time>
 	<div itemprop="articleBody">
-		<h2>Sauf que</h2>
+		<h2 id="sauf-que" tabindex="-1">Sauf que</h2>
 <p>Dès ma première utilisation de cette nouvelle mouture je suis tombé sur un problème assez gênant : dans la fenêtre modale servant à insérer des médias depuis l’éditeur, l’ajout d’un fichier me retourne une erreur en indiquant</p>
 <blockquote>
 <p>« Une erreur est survenue lors du téléchargement.<br>
@@ -84,7 +85,7 @@ Veuillez réessayer plus tard. »</p>
 <li>Désactiver <em>mod_pagespeed</em> ou un système de concaténation quelconque du js de l’administration</li>
 </ul>
 <p>Ces solutions ont – dans beaucoup de cas – suffit à résoudre le bug, ou au moins à en identifier l’origine afin de le corriger. <strong>Pas dans mon cas.</strong></p>
-<h2>.htaccess</h2>
+<h2 id=".htaccess" tabindex="-1">.htaccess</h2>
 <p><strong>Après diverses pérégrinations dans les tréfonds de WordPress, j’ai finalement trouvé la solution à mon cas : le .htaccess.</strong></p>
 <p>Pour une raison ou pour une autre, appliquer le .htaccess que j’ai l’habitude d’appliquer en production a suffit. C’est donc un patch insignifiant, sauf que WordPress ne dispose pas – et ne crée pas – de .htaccess par lui-même. C’est une habitude que j’ai acquise pour des questions d’environnement serveur, de <strong>performances</strong>, de <strong>qualité web</strong> et de types de fichiers à servir, mais qui n’est pas connue de tout le monde.</p>
 <p>À titre personnel, le .htaccess de base dont je me sers est un amalgame :</p>
@@ -95,41 +96,33 @@ Veuillez réessayer plus tard. »</p>
 <p>Je suppose qu’il s’agit d’un entête http ou d’un type MIME incorrect qui nuit à la bonne compréhension du fichier par le serveur, sans toutefois en être sûr. Étant donné que j’avais jusqu’à présent l’habitude d’ajouter le .htaccess à la fin du développement, je me contenterais désormais de l’ajouter <strong>dès le début du projet</strong>.</p>
 <p><strong>De plus, il s’agit d’une bonne pratique nécessaire à la <a href="https://www.ffoodd.fr/tag/qualite-web/" title="Qualité web">qualité d’un site web</a> : il est donc indispensable de disposer d’un fichier .htaccess efficace.</strong></p>
 
-		<!-- @todo Manque le footer de l’article -->
 	</div>
+	<footer class="small mt2">
+		<p class="pl2 mt0 pt1">
+			Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
+			Modifié le <time class="updated" datetime="2013-10-02T10:58:00" itemprop="dateModified">2 octobre 2013</time>.
+		</p>
+	</footer>
 	<!-- @todo Gérer les commentaires -->
 
 				</article>
 				
 			</main>
 
-			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
-				<!-- @todo Gérer le sommaire, pour les articles et pages -->
-				<div class="aside pl2 pt2">
-					<h3 class="tk-bello-pro h2-like m-reset">À lire ailleurs</h3>
-					<div class="textwidget">
-						<ul>
-							<li>
-								<a href="https://openweb.eu.org/articles/du-consommateur-au-producteur">sur Openweb</a>
-							</li>
-							<li>
-								<a href="https://www.alsacreations.com/livres/lire/1503-webgrids-structure-et-typographie-de-la-page-web.html">sur Alsacréations</a>
-							</li>
-						</ul>
-					</div>
-					<h3 class="tk-bello-pro h2-like m-reset pt1">À regarder ailleurs</h3>
-					<div class="textwidget">
-						<ul>
-							<li>
-								<a href="https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php">Paris Web 2018</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</aside>
+			
+	<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
+		<div class="aside pl2 pt2">
+			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
+			<div class="textwidget" >
+        <ol><li><a href="#sauf-que">Sauf que</a></li><li><a href="#.htaccess">.htaccess</a></li></ol>
+      </div>
+		</div>
+	</aside>
+
 		</div>
 		<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
 			<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
+				<!-- @todo Fichier json pour les réseaux ? -->
 				<li class="inbl pa1" itemscope itemprop="contactPoint">
 					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__mastodon" href="https://mamot.fr/@ffoodd" itemprop="url" title="Gaël Poupard sur Mastodon">
 						<span itemprop="name">Mastodon</span>

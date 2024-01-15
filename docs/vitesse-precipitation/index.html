@@ -58,9 +58,10 @@
 						
 					</header>
 					
+	<time class="screen-reader-text" datetime="2012-05-18T15:02:06" itemprop="datePublished">18 mai 2012</time>
 	<div itemprop="articleBody">
 		<p>Les transitions représentent une formidable avancée en matière de CSS, dans le but de s’affranchir du javascript pour les interactions simples. Je ne vais pas vous faire l’offense de vous présenter les transitions CSS, mais avant d’évoquer le sujet principal, j’aimerais faire une piqûre de rappel sur les origines des transitions.</p>
-<h2>Au commencement</h2>
+<h2 id="au-commencement" tabindex="-1">Au commencement</h2>
 <p>Dans une époque ( pas si ) reculée, javascript était indispensable dès lors qu’on envisageait une interaction. Dan Cederholm s’en souvient dans son livre « <a href="http://www.abookapart.com/products/css3-for-web-designers">CSS3 FOR WEBDESIGNERS</a> » disponible en Français <a href="http://www.eyrolles.com/Informatique/Livre/css3-pour-les-web-designers-9782212129878">aux éditions Eyrolles</a>.</p>
 <blockquote>
 <p>It was 1997 and I was sitting in a terribly run-down apartment in beautiful Allston, Massachusetts. A typical late night of viewing source and teaching myself HTML followed a day of packing CDs at a local record label for peanuts (hence the run-down apartment). I’m sure you can relate.</p>
@@ -68,59 +69,51 @@
 <p>I still remember the amazement of seeing a crudely designed button graphic I’d cobbled together “swap” to a different one when hovered over by the mouse. I barely had a clue as to what I was doing at the time, but making something on the page successfully change, dynamically, was, well…magical.</p>
 </blockquote>
 <p>Le :hover a été une première bénédiction – malgré ses différends avec IE7 – et on a enfin pu se passer de javascript pour les roll-over. Les transitions constituent une nouvelle étape dans l’évolution des interactions, mais comme toute avancée il faut d’abord essuyer les plâtres.</p>
-<h2>Sans transition, le problème :</h2>
+<h2 id="sans-transition%2C-le-probl%C3%A8me-%3A" tabindex="-1">Sans transition, le problème :</h2>
 <p>Si l’utilisation des transitions est claire et limpide, leur présence au sein du CSS implique une nouvelle dimension : <strong>le temps</strong>. Hors vous n’êtes pas sans savoir qu’une page web, ça met du temps à se charger. Pas beaucoup certes, mais suffisamment pour que <strong>le chargement soit perceptible à l’œil nu</strong>.</p>
 <p>Hors comme le décrit Chris Coyier dans <a href="http://css-tricks.com/transitions-only-after-page-load/">son article</a>, lorsqu’une page se charge elle se dessine progressivement. Certains éléments sont déplacés via CSS – à l’aide de position, float ou margin pour ne citer qu’eux. Concrètement, votre navigateur place d’abord ces éléments dans le flux, puis les déplace à l’endroit spécifié en CSS ; c’est la que le bas blesse, puisque si ces éléments sont dotés de transition, <strong>on les voit se positionner</strong>.</p>
 <p>Ces pauvres navigateurs n’y peuvent rien. Il leur faudrait prioriser l’application des CSS par couches : grille de positionnement, aspect visuel, puis dimension temporelle… Pas besoin d’être expert pour comprendre la difficulté. Mais en l’état, il y a <strong>confusion entre vitesse et précipitation</strong>.</p>
-<h2>Temporisation</h2>
+<h2 id="temporisation" tabindex="-1">Temporisation</h2>
 <p>L’article « <a href="http://css-tricks.com/transitions-only-after-page-load/">Transitions only after page load</a> » sur Css-Tricks inclut la solution proposée par <strong>Chris Coyier</strong>, très simple : une classe preload annule les transitions, et lorsque la page est chargée on la retire via Jquery. C’est extrêmement futé ! Mais elle implique de charger Jquery et ça, c’est dommage.</p>
 <p><strong>J’ai donc entrepris d’effectuer la même action, mais en javascript pur</strong>. Quelques interférences font varier le fonctionnement, comme par exemple l’impossibilité ( à ma connaissance ) de cibler une valeur dans un attribut. Or mon attribut « class » m’est utile : j’ai donc préféré utiliser un id. La syntaxe javascript, insérée juste avant la fermeture du body, est la suivante :</p>
 <p>// &lt;![CDATA[
 function init() {
-&quot;use strict&quot;;
-document.getElementById(&quot;preload&quot;).removeAttribute(&quot;id&quot;);
+« use strict »;
+document.getElementById(« preload »).removeAttribute(« id »);
 }
 window.onload = init;
 // ]]&gt;</p>
 <p>Et c’est tout ! Pas besoin de librairie ou framework : juste 5 lignes à la fin du corps du document, et <strong>le tour est joué</strong>.</p>
-<h2>Contrepartie</h2>
+<h2 id="contrepartie" tabindex="-1">Contrepartie</h2>
 <p>J’ai remarqué un <strong>problème de compatibilité avec IE8 et Safari</strong>, tandis que les autres navigateurs appliquent parfaitement ce code. Ce n’est qu’un demi-problème puisque de toute façon, IE8 ne comprend pas les transitions. C’est un peu plus gênant pour Safari, mais je n’ai pas encore trouvé l’astuce : si quelqu’un en connaît une ou en trouve une, je suis preneur !!</p>
 
-		<!-- @todo Manque le footer de l’article -->
 	</div>
+	<footer class="small mt2">
+		<p class="pl2 mt0 pt1">
+			Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
+			Modifié le <time class="updated" datetime="2012-05-19T11:41:27" itemprop="dateModified">19 mai 2012</time>.
+		</p>
+	</footer>
 	<!-- @todo Gérer les commentaires -->
 
 				</article>
 				
 			</main>
 
-			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
-				<!-- @todo Gérer le sommaire, pour les articles et pages -->
-				<div class="aside pl2 pt2">
-					<h3 class="tk-bello-pro h2-like m-reset">À lire ailleurs</h3>
-					<div class="textwidget">
-						<ul>
-							<li>
-								<a href="https://openweb.eu.org/articles/du-consommateur-au-producteur">sur Openweb</a>
-							</li>
-							<li>
-								<a href="https://www.alsacreations.com/livres/lire/1503-webgrids-structure-et-typographie-de-la-page-web.html">sur Alsacréations</a>
-							</li>
-						</ul>
-					</div>
-					<h3 class="tk-bello-pro h2-like m-reset pt1">À regarder ailleurs</h3>
-					<div class="textwidget">
-						<ul>
-							<li>
-								<a href="https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php">Paris Web 2018</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</aside>
+			
+	<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
+		<div class="aside pl2 pt2">
+			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
+			<div class="textwidget" >
+        <ol><li><a href="#au-commencement">Au commencement</a></li><li><a href="#sans-transition%2C-le-probl%C3%A8me-%3A">Sans transition, le problème :</a></li><li><a href="#temporisation">Temporisation</a></li><li><a href="#contrepartie">Contrepartie</a></li></ol>
+      </div>
+		</div>
+	</aside>
+
 		</div>
 		<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
 			<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
+				<!-- @todo Fichier json pour les réseaux ? -->
 				<li class="inbl pa1" itemscope itemprop="contactPoint">
 					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__mastodon" href="https://mamot.fr/@ffoodd" itemprop="url" title="Gaël Poupard sur Mastodon">
 						<span itemprop="name">Mastodon</span>

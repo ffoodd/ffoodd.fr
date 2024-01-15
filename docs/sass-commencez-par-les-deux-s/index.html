@@ -60,33 +60,29 @@
 						
 					</header>
 					
+	<time class="screen-reader-text" datetime="2013-11-28T14:26:04" itemprop="datePublished">28 novembre 2013</time>
 	<div itemprop="articleBody">
 		<p>Malheureusement, vous aurez peut-être déjà fait ce constat : ce réflexe n’est que trop rarement encouragé. J’ai beau parcourir des dizaines d’articles, de tutoriaux, de <em>frameworks</em> CSS ou de Gist, trop peu font ce rappel : testez, relisez, améliorez, testez à nouveau et finalement améliorez encore. <strong>Ça devrait se passer comme ça.</strong> On peut argumenter qu’un bon intégrateur le ferait — mais c’est trop facile, non ?</p>
-<h2>Premier contact avec Sass</h2>
+<h2 id="premier-contact-avec-sass" tabindex="-1">Premier contact avec Sass</h2>
 <p>Après avoir lu énormément de ressources sur <a href="http://lesscss.org/" title="Site du pré-processeur Less (nouvelle fenêtre)">Less</a> puis Sass pendant longtemps, je ne m’étais toujours pas décidé à franchir le pas pour plusieurs raisons :</p>
 <ul>
 <li>le changement bien sûr : rien de plus naturel que la résistance au changement;</li>
-<li>la perspective d’une « naturalisation » des avancées intéressantes dans les évolutions prévues de CSS .[^1]</li>
+<li>la perspective d’une « naturalisation » des avancées intéressantes dans les évolutions prévues de CSS .<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></li>
 </ul>
-<p>[^1]: Les calculs simples sont déjà là grâce à calc(), les variables sont à l’état de brouillon au W3C, etc.</p>
 <ul>
-<li>l’intérêt limité — ou imitable —  de certaines fonctionnalités .[^2]</li>
+<li>l’intérêt limité — ou imitable —  de certaines fonctionnalités .<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></li>
 </ul>
-<p>[^2]: Les placeholders, par exemple, sont limités puisqu’on peut créer ses propres classes transportables et modulables.</p>
 <p>Dans l’ensemble, je pensais — et je pense toujours — que l’utilisation de Sass n’avait pas d’intérêt à mon échelle : petits projets, récupération de code, très peu de collaboration… J’y percevais plus de risques et d’inconvénients que d’avantages, et certaines de mes lectures le confirmaient.</p>
 <p>L’évolution de mon projet personnel ffeeeedd conjointe à la lecture de l’excellent <a href="http://www.css-maintenables.fr/" title="Le site du livre CSS maintenables (nouvelle fenêtre)">CSS maintenables</a> puis de <a href="https://www.ffoodd.fr/sass-compass-avance/" title="Sass &amp; Compass avancé">Sass &amp; Compass avancé</a> m’ont finalement motivé : bien qu’à l’aise avec mon <em>workflow</em>, je voulais l’améliorer et Sass m’a semblé être l’outil idéal.</p>
-<h2>Découvertes particulières</h2>
-<p>J’y suis allé pas à pas, dans l’ordre de la documentation. Des règles imbriquées aux fonctions, j’ai pris un temps considérable et me suis consciencieusement appliqué à découvrir le résultat de chacune des fonctionnalités .[^3]</p>
-<p>[^3]: Soit dit en passant, je préfère ne pas passer à Compass tout de suite, je pense devoir manier Sass correctement avant d’ajouter un autre crayon à ma palette.</p>
+<h2 id="d%C3%A9couvertes-particuli%C3%A8res" tabindex="-1">Découvertes particulières</h2>
+<p>J’y suis allé pas à pas, dans l’ordre de la documentation. Des règles imbriquées aux fonctions, j’ai pris un temps considérable et me suis consciencieusement appliqué à découvrir le résultat de chacune des fonctionnalités .<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></p>
 <p>La définition de variables — et par extension, la structuration d’un projet — est un gain de clarté évident. La compilation automatique est un gain de temps remarquable, et la qualité est au rendez-vous. Les fonctions, mixins et autres boucles sont extrêmement intéressantes, mais on touche aussi aux limites de l’outil : <strong>il faut de très, très bonnes bases en CSS pour s’en servir de façon optimale</strong>.</p>
 <p>Étendre une classe est un piège parfait, probablement le plus efficient en tant que piège ; les nombreuses subtilités des fonctions et mixins peuvent également générer des erreurs très discrètement — et elles peuvent donc rester, pour peu que l’utilisateur ne soit pas consciencieux.</p>
 <p><strong>Je ne gâcherais pourtant pas mon plaisir : créer des mixins, fonctions et placeholders pour factoriser mes feuilles de styles « sources » est terriblement agréable 😀 .</strong></p>
-<h2>Une simplification, vraiment ?</h2>
-<p>Je suis encore en phase de découverte et pourtant me voilà sur ma faim : beaucoup de choses sont considérablement simplifiées, mais je garde l’impression que la complexité « d’avant » est simplement déportée vers les fonctionnalités dynamiques .[^4]</p>
-<p>[^4]: Compass me semble d’ailleurs être un écueil remarquable pour le débutant, qui ne comprendra pas en profondeur le fonctionnement et la portée des mixins et fonctions proposées.</p>
-<p>La distance « cognitive » entre les fonctions/mixins et leur contexte d’utilisation, ainsi que la séparation des feuilles de styles en fragments .[^5]</p>
-<p>[^5]: Des « partials » dans le vocabulaire Sass</p>
-<h2>Sass n’est qu’un outil</h2>
+<h2 id="une-simplification%2C-vraiment-%3F" tabindex="-1">Une simplification, vraiment ?</h2>
+<p>Je suis encore en phase de découverte et pourtant me voilà sur ma faim : beaucoup de choses sont considérablement simplifiées, mais je garde l’impression que la complexité « d’avant » est simplement déportée vers les fonctionnalités dynamiques .<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></p>
+<p>La distance « cognitive » entre les fonctions/mixins et leur contexte d’utilisation, ainsi que la séparation des feuilles de styles en fragments .<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup></p>
+<h2 id="sass-n%E2%80%99est-qu%E2%80%99un-outil" tabindex="-1">Sass n’est qu’un outil</h2>
 <p>Vous connaissez le dicton :</p>
 <blockquote>
 <p>Il n’y a pas de mauvais outil, il n’y a que de mauvais ouvriers.</p>
@@ -94,42 +90,46 @@
 <p>Et bien elle se vérifie avec Sass. Ce qui ne me convainquait pas l’an dernier ne me convainc toujours pas : les articles vantant les mérites des pré-processeurs sont relativement évasifs, et l’élan massif vers l’adoption de Sass me fait penser au <a href="http://www.youtube.com/watch?v=I8Qu7_unkg4" title="Voir la vidéo sur Youtube (nouvelle fenêtre)">crime passionnel au pays des Toupoutous</a>.</p>
 <p>Oui, Sass est un outil formidable qui peut grandement faciliter et accélerer votre travail d’intégration ; oui, les possibilités semblent infinies ; oui, son utilisation est plutôt simple…</p>
 <p>Mais n’oublions que Sass reste un outil, et en tant que tel sa vocation est seulement de faciliter votre travail et pas d’en améliorer la qualité. <strong>Ce n’est pas le marteau qui fait en sorte que le clou rentre droit, c’est votre geste.</strong></p>
+<ol class="footnotes-list small mt2 pt2 pb2">
+<li id="fn1" class="footnote-item"><p>Les calculs simples sont déjà là grâce à calc(), les variables sont à l’état de brouillon au W3C, etc. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Les placeholders, par exemple, sont limités puisqu’on peut créer ses propres classes transportables et modulables. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>Soit dit en passant, je préfère ne pas passer à Compass tout de suite, je pense devoir manier Sass correctement avant d’ajouter un autre crayon à ma palette. <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>Compass me semble d’ailleurs être un écueil remarquable pour le débutant, qui ne comprendra pas en profondeur le fonctionnement et la portée des mixins et fonctions proposées. <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p>Des « partials » dans le vocabulaire Sass <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
 
-		<!-- @todo Manque le footer de l’article -->
 	</div>
+	<footer class="small mt2">
+		<p class="pl2 mt0 pt1">
+			Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
+			Modifié le <time class="updated" datetime="2015-07-03T10:49:17" itemprop="dateModified">3 juillet 2015</time>.
+		</p>
+	</footer>
 	<!-- @todo Gérer les commentaires -->
 
 				</article>
 				
 			</main>
 
-			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
-				<!-- @todo Gérer le sommaire, pour les articles et pages -->
-				<div class="aside pl2 pt2">
-					<h3 class="tk-bello-pro h2-like m-reset">À lire ailleurs</h3>
-					<div class="textwidget">
-						<ul>
-							<li>
-								<a href="https://openweb.eu.org/articles/du-consommateur-au-producteur">sur Openweb</a>
-							</li>
-							<li>
-								<a href="https://www.alsacreations.com/livres/lire/1503-webgrids-structure-et-typographie-de-la-page-web.html">sur Alsacréations</a>
-							</li>
-						</ul>
-					</div>
-					<h3 class="tk-bello-pro h2-like m-reset pt1">À regarder ailleurs</h3>
-					<div class="textwidget">
-						<ul>
-							<li>
-								<a href="https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php">Paris Web 2018</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</aside>
+			
+	<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
+		<div class="aside pl2 pt2">
+			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
+			<div class="textwidget" >
+        <ol><li><a href="#premier-contact-avec-sass">Premier contact avec Sass</a></li><li><a href="#d%C3%A9couvertes-particuli%C3%A8res">Découvertes particulières</a></li><li><a href="#une-simplification%2C-vraiment-%3F">Une simplification, vraiment ?</a></li><li><a href="#sass-n%E2%80%99est-qu%E2%80%99un-outil">Sass n’est qu’un outil</a></li></ol>
+      </div>
+		</div>
+	</aside>
+
 		</div>
 		<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
 			<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
+				<!-- @todo Fichier json pour les réseaux ? -->
 				<li class="inbl pa1" itemscope itemprop="contactPoint">
 					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__mastodon" href="https://mamot.fr/@ffoodd" itemprop="url" title="Gaël Poupard sur Mastodon">
 						<span itemprop="name">Mastodon</span>

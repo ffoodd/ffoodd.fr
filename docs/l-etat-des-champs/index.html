@@ -60,17 +60,18 @@
 						
 					</header>
 					
+	<time class="screen-reader-text" datetime="2017-12-21T14:09:15" itemprop="datePublished">21 décembre 2017</time>
 	<div itemprop="articleBody">
 		<p>Mais en arrivant sur la page, ledit champ est vide — et par conséquent, invalide.</p>
-<h2>Le souci</h2>
+<h2 id="le-souci" tabindex="-1">Le souci</h2>
 <p>Lorsque vous appliquez des styles à un champ invalide (en utilisant la pseudo-classe <code>:invalid</code>), ils seront donc appliqués dès le chargement de la page si ce champ est également affublé de l’attribut <code>required</code>. Dommage !</p>
 <p>C’est ce qui a conduit <a href="https://nota-bene.org/">Stéphane Deschamps</a> à ouvrir <a href="https://github.com/w3c/html/issues/1073">une issue sur le Github du W3C</a>.</p>
-<h3>L’état indéterminé</h3>
+<h3 id="l%E2%80%99%C3%A9tat-ind%C3%A9termin%C3%A9" tabindex="-1">L’état indéterminé</h3>
 <p>Quelques échanges plus tard, on évoque l’existence de l’état indéterminé pour les cases à cocher, boutons radios et barres de progression <a href="https://www.w3.org/TR/html5/disabled-elements.html#selector-indeterminate">dans la spécification HTML5</a> qui pourrait porter le statu quo sur l’invalidité de notre champ. Cet état est facile à cibler en CSS à l’aide de la pseudo-classe <code>:indeterminate</code>.</p>
-<h3>Le brouillon du module 4 des sélecteurs</h3>
+<h3 id="le-brouillon-du-module-4-des-s%C3%A9lecteurs" tabindex="-1">Le brouillon du module 4 des sélecteurs</h3>
 <p>Dans <a href="https://drafts.csswg.org/selectors-4/#user-pseudos">le brouillon du module de niveau 4 des sélecteurs CSS</a>, une nouvelle pseudo-classe tente de résoudre ce problème : <code>:user-invalid</code>. Vous noterez par ailleurs que le paragraphe descriptif n’est pas à jour puisqu’il évoque la première dénomination de ce nouveau sélecteur, à savoir <code>:user-error</code>.</p>
 <p>Mais vous l’aurez compris, il s’agit d’un brouillon et ce nouveau sélecteur est très loin d’avoir été implémenté où que ce soit.</p>
-<h2>Un contournement possible</h2>
+<h2 id="un-contournement-possible" tabindex="-1">Un contournement possible</h2>
 <p>Une idée m’est venue en lisant un article du calendrier de l’avent Digitpaint intitulé <a href="https://advent2017.digitpaint.nl/2/">Fantastic form pseudo selectors</a>, dans lequel le premier exemple implémente un label flottant non pas au <code>:focus</code> sur le champ, mais lors du début de saisie grâce à la pseudo-classe <code>:placeholder-shown</code>. Génie !</p>
 <p>Cette pseudo-classe est active uniquement lorsque le <code>placeholder</code> est affiché, autrement dit tant qu’aucune saisie n’a été effectuée dans le champ. Et ça, ça ressemble beaucoup à une partie de l’énoncé de notre problème du jour. Nous pourrions donc faire en sorte de <strong>distinguer un champ invalide vierge d’un champ invalide ayant été saisi</strong>, avec les sélecteurs suivants :</p>
 <pre><code class="language-css">
@@ -87,61 +88,57 @@ input:invalid:placeholder-shown {
 }
 </code></pre>
 <p>Et bien a priori, ça fonctionne !<br>
-Et bonne nouvelle, <a href="https://caniuse.com/#feat=css-placeholder-shown"><code>:placeholder-shown</code> est décemment supporté</a>. Je vous ai même fait <a href="https://codepen.io/ffoodd/pen/PEzoYO">un petit CodePen pour jouer</a>.[^1]</p>
-<p>[^1]: Amusez-vous à commenter le second sélecteur pour voir le comportement ordinaire.</p>
-<h3>Remarques post-publication</h3>
+Et bonne nouvelle, <a href="https://caniuse.com/#feat=css-placeholder-shown"><code>:placeholder-shown</code> est décemment supporté</a>. Je vous ai même fait <a href="https://codepen.io/ffoodd/pen/PEzoYO">un petit CodePen pour jouer</a>.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<h3 id="remarques-post-publication" tabindex="-1">Remarques post-publication</h3>
 <ul>
 <li><strong>Note</strong> : Merci à <a href="https://vincent-valentin.name/">Vincent</a> qui me fait réfléchir, <a href="https://twitter.com/htmlvv/status/943832913937928192">dans une discussion sur Twitter</a>.</li>
 <li><strong>Note</strong> : <a href="https://twitter.com/GaetanBt/status/943842968754061312">Gaëtan me signale</a> que sur Chrome, le placeholder ne peut pas être vide pour que cette astuce fonctionne.</li>
 <li><strong>Note</strong> : <a href="https://twitter.com/johan_ramon/status/943844529597272065">Johan me signale</a> que le comportement observé de visu était également vocalisé par les lecteurs d’écran. Là, ça devient vraiment gênant !</li>
 </ul>
-<h3>Pourquoi pas <code>:not()</code></h3>
+<h3 id="pourquoi-pas-%3Anot()" tabindex="-1">Pourquoi pas <code>:not()</code></h3>
 <p>Peut-être supposez-vous (à juste titre) qu’au lieu d’utiliser deux sélecteurs différents, nous pourrions styler directement les champs invalides dont le <code>placeholder</code> n’est pas affiché, grâce à <code>input:invalid:not(:placeholder-shown)</code>.</p>
 <p>Le fait est que le support de <code>:invalid</code> est <a href="https://caniuse.com/#search=%3Ainvalid">bien meilleur</a> que celui de <code>:placeholder-shown</code> ; de plus, vous n’êtes pas sans savoir que CSS est un langage tolérant à l’erreur. Quand un navigateur rencontre un sélecteur qu’il ne comprend pas, <strong>il ignore l’ensemble du bloc de déclaration concerné</strong> — et ce pour une bonne raison : être capable d’appliquer les styles suivants.</p>
 <p>Ainsi les navigateurs ne comprenant pas <code>:placeholder-shown</code> (Internet Explorer et Edge au premier rang) n’appliqueraient pas nos styles dédiés aux champs invalides. Et ça, a priori, ce n’est pas ce qu’on veut ! Alors en utilisant deux sélecteurs, le seul inconvénient est que <strong>les navigateurs ne comprenant pas le second sélecteur conservent leur comportement actuel</strong>.</p>
 <p>Et ça, c’est mieux.</p>
-<h2>Au final</h2>
+<h2 id="au-final" tabindex="-1">Au final</h2>
 <p>Je ne pense pas que ce soit une bonne idée, je tiens à le préciser. Cette combinaison n’a pas vocation à être employée de la sorte, ce n’est qu’un détournement un peu tordu, il est vrai. Mais bon, j’aime les petits défis en CSS, ne m’en voulez pas !</p>
-<h3>Un précédent</h3>
-<p>Après de petites recherches sur les internets, j’ai trouvé plusieurs références à cette combinaison de sélecteurs antérieures à cet article, toutes remontant finalement à <a href="https://css-tricks.com/form-validation-ux-html-css/">un article sur la validation des formulaires en CSS</a> rédigé par <a href="https://twitter.com/chriscoyier">Chris Coyier</a> en 2016.[^2]</p>
-<p>[^2]: Pour la question du support et de la tolérance à l’erreur, Chris Coyier préfère évoquer @supports plutôt que d’accumuler les sélecteurs. Ça ne me paraît pas nécessaire dans le cas présent, mais à réfléchir !</p>
+<h3 id="un-pr%C3%A9c%C3%A9dent" tabindex="-1">Un précédent</h3>
+<p>Après de petites recherches sur les internets, j’ai trouvé plusieurs références à cette combinaison de sélecteurs antérieures à cet article, toutes remontant finalement à <a href="https://css-tricks.com/form-validation-ux-html-css/">un article sur la validation des formulaires en CSS</a> rédigé par <a href="https://twitter.com/chriscoyier">Chris Coyier</a> en 2016.<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
 <p>Un véritable <em>CSS trick</em> !</p>
+<ol class="footnotes-list small mt2 pt2 pb2">
+<li id="fn1" class="footnote-item"><p>Amusez-vous à commenter le second sélecteur pour voir le comportement ordinaire. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Pour la question du support et de la tolérance à l’erreur, Chris Coyier préfère évoquer @supports plutôt que d’accumuler les sélecteurs. Ça ne me paraît pas nécessaire dans le cas présent, mais à réfléchir ! <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
 
-		<!-- @todo Manque le footer de l’article -->
 	</div>
+	<footer class="small mt2">
+		<p class="pl2 mt0 pt1">
+			Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
+			Modifié le <time class="updated" datetime="2022-12-22T16:55:46" itemprop="dateModified">22 décembre 2022</time>.
+		</p>
+	</footer>
 	<!-- @todo Gérer les commentaires -->
 
 				</article>
 				
 			</main>
 
-			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
-				<!-- @todo Gérer le sommaire, pour les articles et pages -->
-				<div class="aside pl2 pt2">
-					<h3 class="tk-bello-pro h2-like m-reset">À lire ailleurs</h3>
-					<div class="textwidget">
-						<ul>
-							<li>
-								<a href="https://openweb.eu.org/articles/du-consommateur-au-producteur">sur Openweb</a>
-							</li>
-							<li>
-								<a href="https://www.alsacreations.com/livres/lire/1503-webgrids-structure-et-typographie-de-la-page-web.html">sur Alsacréations</a>
-							</li>
-						</ul>
-					</div>
-					<h3 class="tk-bello-pro h2-like m-reset pt1">À regarder ailleurs</h3>
-					<div class="textwidget">
-						<ul>
-							<li>
-								<a href="https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php">Paris Web 2018</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</aside>
+			
+	<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
+		<div class="aside pl2 pt2">
+			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
+			<div class="textwidget" >
+        <ol><li><a href="#le-souci">Le souci</a></li><li><a href="#un-contournement-possible">Un contournement possible</a></li><li><a href="#au-final">Au final</a></li></ol>
+      </div>
+		</div>
+	</aside>
+
 		</div>
 		<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
 			<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
+				<!-- @todo Fichier json pour les réseaux ? -->
 				<li class="inbl pa1" itemscope itemprop="contactPoint">
 					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__mastodon" href="https://mamot.fr/@ffoodd" itemprop="url" title="Gaël Poupard sur Mastodon">
 						<span itemprop="name">Mastodon</span>

@@ -60,9 +60,10 @@
 						
 					</header>
 					
+	<time class="screen-reader-text" datetime="2013-10-09T13:31:19" itemprop="datePublished">9 octobre 2013</time>
 	<div itemprop="articleBody">
 		<p>Dans sa version basique, la navigation de WordPress n’a rien de particulier (si ce n’est la multitude de classes générées sur chaque élément 🙁 ). Or ARIA permet d’ajouter une couche sémantique non négligeable et relativement simple à mettre en place, améliorant ainsi l’accessibilité de la navigation.</p>
-<h2>Notre objectif</h2>
+<h2 id="notre-objectif" tabindex="-1">Notre objectif</h2>
 <p>L’implémentation d’ARIA sur une navigation est simple ‐ bien qu’il soit assez compliqué d’en trouver une documentation ou un exemple concret. Voici le résultat attendu sur ffoodd (je vous épargne les classes et identifiants, pour cette fois 😉 ) :</p>
 <pre><code class="language-markup">&lt;nav id=&quot;nav&quot; role=&quot;navigation&quot;&gt;
   &lt;ul role=&quot;menubar&quot;&gt;
@@ -76,10 +77,10 @@
 &lt;/nav&gt;
 </code></pre>
 <p>Vous connaissiez sans doute déjà le rôle « navigation », qui identifie la zone majeure du contenu destinée à la navigation. Les autres rôle et attributs sont explicites, et on en saisit facilement l’intérêt sur cet extrait de code. Voyons maintenant comment obtenir ce résultat avec WordPress.</p>
-<h2>WordPress et le Walker dédié à la navigation</h2>
+<h2 id="wordpress-et-le-walker-d%C3%A9di%C3%A9-%C3%A0-la-navigation" tabindex="-1">WordPress et le Walker dédié à la navigation</h2>
 <p>Ce sympathique walker se nomme <strong>Walker_Nav_Menu</strong>. Je l’avais rencontré la première fois en farfouillant dans le code de <a href="http://themefortress.com/reverie/" title="Reverie - un starter theme pour WordPress (nouvelle fenêtre)">Reverie</a>, sans en saisir l’intérêt à l’époque. Puis mes compétences et réflexions évoluant avec le temps, lorsque je le recroisais sur le blog de <a href="https://twitter.com/willybahuaud" title="Willy Bahuaud sur Twitter (nouvelle fenêtre)">Willy Bahuaud</a> dans <a href="http://wabeo.fr/blog/construire-walker-wordpress/" title="Construire un walker WordPress (nouvelle fenêtre)">son article présentant les walkers</a>, j’en saisis rapidement l’intérêt et me mit en tête de m’en servir sur mon thème ffeeeedd.</p>
 <p>Je vous recommande chaudement de lire l’article de Willy sur le sujet, qui est une entrée en matière extrêmement intéressante.</p>
-<h2>Les mains dans le code</h2>
+<h2 id="les-mains-dans-le-code" tabindex="-1">Les mains dans le code</h2>
 <p>Voilà sans plus attendre le code obtenu après quelques recherche :</p>
 <pre><code class="language-php">  /* == @section Amélioration de la navigation ==================== */
   /**
@@ -135,47 +136,39 @@
 </code></pre>
 <p>Le walker manipule chaque niveau de rendu de la navigation, ce qui nous permet d’ajouter les rôles très facilement. La seule intervention astucieuse consiste à récupérer l’intitulé de l’item afin de l’utiliser comme label pour la navigation.</p>
 <p>Et voilà ! Simple, non ?</p>
-<h2>Les évolutions à venir</h2>
+<h2 id="les-%C3%A9volutions-%C3%A0-venir" tabindex="-1">Les évolutions à venir</h2>
 <p>Bien qu’intéressante, cette astuce n’est pas parfaite. En effet la spécification ARIA prévoit des états pour les éléments, afin d’expliciter les interactions.</p>
 <p>Dans notre cas, il va falloir appliquer l’attribut booléen <strong>aria-selected</strong> sur les items de navigation, en passant sa valeur de true à false selon l’item actif.</p>
 <p>Bien qu’ayant déjà appliqué ce comportement sur des boîtes à onglets notamment, j’aimerais parvenir à le faire sur ma navigation sans passer par du javascript. J’ai cherché des pistes pour utiliser le walker (qui à priori devrait être capable de repérer l’item actif) mais sans résultat pour le moment, donc <strong>n’hésitez pas à commenter l’article ou à me contacter par mail si vous avez la moindre piste à me suggérer</strong> (voire même la solution, hein :D).</p>
 <p>De plus, un comportement (en javascript à priori) est également à prévoir pour les sous-menu, qui pourront s’avérer plus complexes à gérer ‐ bien qu’ARIA soit très complète sur ce sujet.</p>
 
-		<!-- @todo Manque le footer de l’article -->
 	</div>
+	<footer class="small mt2">
+		<p class="pl2 mt0 pt1">
+			Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
+			Modifié le <time class="updated" datetime="2013-11-13T12:12:38" itemprop="dateModified">13 novembre 2013</time>.
+		</p>
+	</footer>
 	<!-- @todo Gérer les commentaires -->
 
 				</article>
 				
 			</main>
 
-			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
-				<!-- @todo Gérer le sommaire, pour les articles et pages -->
-				<div class="aside pl2 pt2">
-					<h3 class="tk-bello-pro h2-like m-reset">À lire ailleurs</h3>
-					<div class="textwidget">
-						<ul>
-							<li>
-								<a href="https://openweb.eu.org/articles/du-consommateur-au-producteur">sur Openweb</a>
-							</li>
-							<li>
-								<a href="https://www.alsacreations.com/livres/lire/1503-webgrids-structure-et-typographie-de-la-page-web.html">sur Alsacréations</a>
-							</li>
-						</ul>
-					</div>
-					<h3 class="tk-bello-pro h2-like m-reset pt1">À regarder ailleurs</h3>
-					<div class="textwidget">
-						<ul>
-							<li>
-								<a href="https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php">Paris Web 2018</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</aside>
+			
+	<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
+		<div class="aside pl2 pt2">
+			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
+			<div class="textwidget" >
+        <ol><li><a href="#notre-objectif">Notre objectif</a></li><li><a href="#wordpress-et-le-walker-d%C3%A9di%C3%A9-%C3%A0-la-navigation">WordPress et le Walker dédié à la navigation</a></li><li><a href="#les-mains-dans-le-code">Les mains dans le code</a></li><li><a href="#les-%C3%A9volutions-%C3%A0-venir">Les évolutions à venir</a></li></ol>
+      </div>
+		</div>
+	</aside>
+
 		</div>
 		<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
 			<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
+				<!-- @todo Fichier json pour les réseaux ? -->
 				<li class="inbl pa1" itemscope itemprop="contactPoint">
 					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__mastodon" href="https://mamot.fr/@ffoodd" itemprop="url" title="Gaël Poupard sur Mastodon">
 						<span itemprop="name">Mastodon</span>

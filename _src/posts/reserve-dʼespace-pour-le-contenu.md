@@ -3,7 +3,7 @@ layout: "template/post.njk"
 title: "Réserve d’espace pour le contenu"
 date: "2015-12-03T12:30:49"
 modified: "2015-12-09T09:28:45"
-permalink: "reserve-d%ca%bcespace-pour-le-contenu/index.html"
+permalink: "reserve-dʼespace-pour-le-contenu/index.html"
 excerpt: "Cet effet consiste à utiliser en guise dʼindicateur de chargement un élément graphique ayant les mêmes caractéristiques visuelles —&nbsp;hauteur, largeur, lignes, blocs…&nbsp;— que le contenu en cours de chargement. Vous le connaissez probablement déjà car cʼest ce quʼutilisent Facebook et Medium, entre autres. Et cʼest quand même vachement mieux quʼun gif qui tourne en rond."
 format: "standard"
 tags: "posts"
@@ -43,7 +43,7 @@ Il ne faudrait pas omettre que lʼobjectif est avant tout de faire patienter lʼ
 
 Pour démarrer, on va choisir un contenu quʼon pourrait attendre. Jʼen ai choisi un assez connu et avec un gabarit familier et reconnaissable&nbsp;: la carte de profil sur Twitter.
 
-![Ma carte de profil sur Twitter](/images/2015/12/profil-twitter-300x202.png "La carte de profil indique le nom, le pseudonyme et l’avatar Twitter, mais aussi les nombres de tweets, d’abonnements et d’abonnés.")
+![Ma carte de profil sur Twitter](/images/2015/12/profil-twitter.png "La carte de profil indique le nom, le pseudonyme et l’avatar Twitter, mais aussi les nombres de tweets, d’abonnements et d’abonnés.")
 
 Cʼest donc la-dessus que va se baser la création du visuel dʼattente. Sur le principe, je me contente de créer un bloc en aplat gris par élément, afin de **représenter sa masse visuelle**.[^1]
 

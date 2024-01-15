@@ -16,9 +16,24 @@
 {% endblock %}
 
 {% block content %}
+	<time class="screen-reader-text" datetime="{{ date }}" itemprop="datePublished">{{ date | date }}</time>
 	<div itemprop="articleBody">
 		{{ content | safe }}
-		<!-- @todo Manque le footer de l’article -->
 	</div>
+	<footer class="small mt2">
+		<p class="pl2 mt0 pt1">
+			Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
+			Modifié le <time class="updated" datetime="{{ modified or date }}" itemprop="dateModified">{{ modified | date or date | date }}</time>.
+		</p>
+	</footer>
 	<!-- @todo Gérer les commentaires -->
+{% endblock %}
+
+{% block aside %}
+	<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
+		<div class="aside pl2 pt2">
+			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
+			{{ content | toc | safe }}
+		</div>
+	</aside>
 {% endblock %}
