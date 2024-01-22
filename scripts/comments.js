@@ -34,11 +34,13 @@ Object.keys(comments).forEach((p, i) => {
 				{ date: comment.date },
 				{ author_name: comment.author_name },
 				{ author_url: comment.author_url },
-				{ author_avatar: comment.author_avatar_urls['48'] }
+				{ author_avatar: comment.author_avatar_urls['48'].split('?')[0] },
+				{ id: hash },
+				{ tags: ['comments', `${slug}`] }
 			],
 			body: content
 		},
-		path: './_src/comments',
-		fileName: `${slug}_${hash}.md`
+		path: `./_src/posts/${slug}/comments`,
+		fileName: `${hash}.md`
 	})
 })

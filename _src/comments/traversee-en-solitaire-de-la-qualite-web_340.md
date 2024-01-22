@@ -1,8 +1,0 @@
----
-date: "2014-03-11T12:45:40"
-author_name: "Muriel de Dona"
-author_url: "https://twitter.com/muriel_dedona"
-author_avatar: "https://secure.gravatar.com/avatar/b12210ebcf020eb8b3295bc1c8617e5b?s=48&d=mm&r=g"
----
-Merci pour cet excellent article (et pour la citation) qui démontre une bonne analyse de la problématique et une belle conscience professionnelle. J’espère que tu garderas cette volonté de bien faire et de progresser même si parfois tu as l’impression de naviguer en solitaire et de te battre contre des courants opposés. Dans ce cas, n’hésite pas à accoster sur les différents ponts où t’attendent ceux qui suivent la même route que toi (équipe Opquast, les responsables qualité et nombreux autres convaincus).  
-Non, tu n’es pas seul Gaël 🙂

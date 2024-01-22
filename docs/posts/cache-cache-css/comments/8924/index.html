@@ -1,0 +1,5 @@
+<p>Bonjour Michel,</p>
+<p>J’utilise systématiquement <code>!important</code> sur les classes utilitaires qui ont vocation à figer une propriété, ce qui est le cas ici. L’objectif étant que même incorporé dans un environnement sauvage (plusieurs bibliothèques de styles, des styles supplémentaires rédigés à la main par un débutant, etc.) ces styles soient appliqués. Vous utilisez cette classe pour masquer visuellement un élément’: si cela n’est plus le cas, retirez la classe au lieu de surcharger le style.</p>
+<p>Si d’aventure la personne qui intervient est tentée de retirer le <code>!important</code> — ou d’en ajouter pour le surcharger — elle commet une erreur : c’est la classe sur l’élément HTML qu’elle devrait retirer.</p>
+<p><a href="http://csswizardry.com/2016/05/the-importance-of-important/">Harry Roberts a écrit un article intéressant sur ce sujet, dans lequel il parle d’immuabilité</a>.</p>
+<p>C’est de l’ordre du choix, évidemment rien ne vous oblige à les conserver si cela va à l’encontre de vos pratiques.</p>

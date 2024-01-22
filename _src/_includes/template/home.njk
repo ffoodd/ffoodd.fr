@@ -8,8 +8,9 @@
 	{% for post in collections.posts.slice(-1) %}
 		<div>
 			<article itemscope itemtype="https://schema.org/Article">
-				<!-- @todo Compter les commentaires -->
-				<p class="end mt0 print-hidden" itemprop="UserComments">0</p>
+				{%- set slug = post.data.permalink | replace("/index.html", "") -%}
+				{%- set comments = collections.comments | comments(slug) -%}
+				<p class="end mt0 print-hidden" itemprop="UserComments">{{ comments | length }}</p>
 				<h3 itemprop="name" class="mb0">
 					Nouvel article&nbsp;:
 					<a href="{{ post.data.permalink }}" rel="bookmark" itemprop="url" tabindex="-1">{{ post.data.title }}</a>

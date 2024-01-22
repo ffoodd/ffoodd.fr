@@ -1,7 +1,0 @@
----
-date: "2015-12-04T12:20:32"
-author_name: "Gaël Poupard"
-author_url: ""
-author_avatar: "https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=48&d=mm&r=g"
----
-À noter, [Vincent Valentin](http://vincent-valentin.name/) a proposé une variante bien plus intuitive à manipuler, en faisant concorder la hauteur de ligne avec la taille de l’arrière-plan. Vous trouverez [une démonstration adaptée sur ce codePen](http://codepen.io/ffoodd/pen/xZxOXL).

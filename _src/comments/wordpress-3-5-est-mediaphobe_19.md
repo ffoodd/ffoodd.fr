@@ -1,7 +1,0 @@
----
-date: "2013-01-18T14:10:07"
-author_name: "Gael"
-author_url: ""
-author_avatar: "https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=48&d=mm&r=g"
----
-Non il n’y a que ça ! Le fichier .htaccess doit être à la racine du WordPress ( à côté de wp-content, wp-includes, wp-admin etc…). Il existe beaucoup de tutoriels sur le web pour mieux comprendre ce fichier.

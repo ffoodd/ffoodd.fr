@@ -61,7 +61,7 @@ Object.keys(posts).forEach((p, i) => {
 		{ permalink: `${newSlug}/index.html` },
 		{ excerpt: newExcerpt },
 		{ format: post.format },
-		{ tags: 'posts' }
+		{ tags: 'posts' },
 	];
 
 	const description = typeof post.metadata.Description == 'object' ?
@@ -107,7 +107,7 @@ Object.keys(posts).forEach((p, i) => {
 			frontmatter: frontMatter,
 			body: newContent
 		},
-		path: './_src/posts',
-		fileName: `${newSlug}.md`
+		path: `./_src/posts/${newSlug}`,
+		fileName: `index.md`
 	})
 })

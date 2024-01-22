@@ -1,7 +1,0 @@
----
-date: "2015-11-24T12:05:32"
-author_name: "Boris"
-author_url: "https://borisschapira.com"
-author_avatar: "https://secure.gravatar.com/avatar/e884b2ba7d66cfea7cb2185922c7a183?s=48&d=mm&r=g"
----
-Très sympa ! J’aurais cependant légèrement modifié la méthode HCTest pour qu’elle renvoie une fonction renvoyant toujours true ou false. Ainsi, si je l’appelle une seconde fois ailleurs pour un autre besoin, pas besoin d’exécuter à nouveau l’ensemble du test 😉

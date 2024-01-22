@@ -1,7 +1,0 @@
----
-date: "2013-11-05T15:01:00"
-author_name: "Luc"
-author_url: "http://www.kloh.ch"
-author_avatar: "https://secure.gravatar.com/avatar/597de7db40f20c3c0d8afba20cee2292?s=48&d=mm&r=g"
----
-On en a déjà parlé mais je suis sûr qu’on a plein de chose à découvrir en creusant l’origine du vocabulaire du web. On doit pouvoir trouver beaucoup de matière très visuelle. 🙂

@@ -895,8 +895,15 @@ body {
 	color: #d9847d;
 }
 
-[role="contentinfo"] {
+[role="contentinfo"],
+[role="contentinfo"] a {
 	color: #efeee3;
+}
+
+[role="contentinfo"] a:hover,
+[role="contentinfo"] a:focus,
+[role="contentinfo"] a:visited {
+	color: #fff;
 }
 
 strong {
@@ -917,6 +924,8 @@ a {
 	text-decoration: none;
 }
 
+main a,
+[role="contentinfo"] a,
 a:focus, a:hover, a:active {
 	text-decoration: underline;
 }
