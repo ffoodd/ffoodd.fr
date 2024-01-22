@@ -25,27 +25,44 @@
 			</li>
 		{% endfor %}
 	</ol>
-	<ol class="ul-reset page-numbers">
+	<ol class="ul-reset pl0 page-numbers">
 		{% if pagination.href.previous %}
 			<li><a href="{{ pagination.href.previous }}">←&nbsp;Page précédente</a></li>
 		{% endif %}
-		<li>
-			<a href="{{ pagination.href.first }}"><span class="screen-reader-text">Page </span>1</a>
+		<li{% if not pagination.href.previous %} class="ml-auto"{% endif %}>
+			{% if page.url === pagination.href.first %}
+				<span aria-current="page"><span class="screen-reader-text">Page </span>1</span>
+			{% else %}
+				<a href="{{ pagination.href.first }}"><span class="screen-reader-text">Page </span>1</a>
+			{%- endif -%}
 		</li>
 		{%- for pageEntry in pagination.pages %}
-			{%- if loop.index !== 1 and loop.index !== loop.length -%}
-				<!-- @todo N’afficher que le current + 2 autour, et des … sinon -->
-				<!-- @note current = pagination.pageNumber -->
+			{%- if loop.index !== 1 and loop.index !== loop.length and loop.index0 >= (pagination.pageNumber - 2) and loop.index0 <= (pagination.pageNumber + 2) -%}
+				{%- if loop.index0 === (pagination.pageNumber - 2) and loop.index !== 2 -%}
+					<li>…</li>
+				{%- endif -%}
 				<li>
-					<a href="{{ pagination.hrefs[ loop.index0 ] }}"
-						{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>
-						<span class="screen-reader-text">Page </span>{{ loop.index }}
-					</a>
+					{% if page.url === pagination.hrefs[ loop.index0 ] %}
+						<span aria-current="page">
+							<span class="screen-reader-text">Page </span>{{ loop.index }}
+						</span>
+					{% else %}
+						<a href="{{ pagination.hrefs[ loop.index0 ] }}">
+							<span class="screen-reader-text">Page </span>{{ loop.index }}
+						</a>
+					{% endif %}
 				</li>
+				{%- if loop.index0 === (pagination.pageNumber + 2) and loop.index !== loop.length - 1 -%}
+					<li>…</li>
+				{%- endif -%}
 			{%- endif %}
 		{%- endfor %}
-		<li>
-			<a href="{{ pagination.href.last }}"><span class="screen-reader-text">Page </span>{{ pagination.pages.length }}</a>
+		<li{% if not pagination.href.next %} class="mr-auto"{% endif %}>
+			{% if page.url === pagination.href.last %}
+				<span aria-current="page"><span class="screen-reader-text">Page </span>{{ pagination.pages.length }}</span>
+			{% else %}
+				<a href="{{ pagination.href.last }}"><span class="screen-reader-text">Page </span>{{ pagination.pages.length }}</a>
+			{%- endif -%}
 		</li>
 		{% if pagination.href.next %}
 			<li><a href="{{ pagination.href.next }}">Page suivante&nbsp;→</a></li>

@@ -360,22 +360,20 @@ label {
  * @note Spécifiques à ffoodd.fr
 */
 /* -- @subsection Marges externes -------------------- */
-.mt0, h1:first-child,
-.h1-like:first-child, h2:first-child,
-.h2-like:first-child,
-.h3-like:first-child, h3:first-child,
-h4:first-child,
-.h4-like:first-child, h5:first-child,
-.h5-like:first-child, h6:first-child,
-.h6-like:first-child {
+.mt0,
+:is(
+	h1, .h1-like,
+	h2, .h2-like,
+	h3, .h3-like,
+	h4, .h4-like,
+	h5, .h5-like,
+	h6, .h6-like
+):first-child {
 	margin-top: 0;
 }
 
-.mb0, p:last-child,
-ul:last-child,
-ol:last-child,
-pre:last-child,
-blockquote:last-child {
+.mb0,
+:is(p, ul, ol, pre, blockquote):last-child {
 	margin-bottom: 0;
 }
 
@@ -389,6 +387,14 @@ blockquote:last-child {
 
 .mb2 {
 	margin-bottom: 2em;
+}
+
+.ml-auto {
+	margin-left: auto;
+}
+
+.mr-auto {
+	margin-right: auto;
 }
 
 /* -- @subsection Marges internes -------------------- */
@@ -441,6 +447,10 @@ div[itemprop="reviewBody"]  :is(p, ul, ol) {
 
 .pl3 {
 	padding-left: 3em;
+}
+
+.pr3 {
+	padding-right: 3em;
 }
 
 .pr5 {
@@ -922,15 +932,14 @@ a:active, a:visited {
 /* == @section Modules ==================== */
 .page-numbers {
 	border-top: 1px dotted #9faaad;
+	display: flex;
+	justify-content: space-between;
 	padding-top: 1em;
 }
 
 .page-numbers li {
-	display: inline-block;
-}
-
-.page-numbers li + li {
-	padding: 0 0 0 1em;
+	min-width: 3ch;
+	text-align: center;
 }
 
 /* == @section Navigation ==================== */
