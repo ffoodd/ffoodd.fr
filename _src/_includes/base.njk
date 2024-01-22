@@ -8,9 +8,7 @@
 		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 		<link rel="stylesheet" href="/assets/styles.min.css" media="all">
 		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
-		<!-- @todo Ajouter le flux RSS
-			<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/">
-		-->
+		<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/index.xml">
 		{%- set slug = post.data.permalink | replace("/index.html", "") -%}
 		{%- set comments = collections.comments | comments(slug) | length -%}
 		{%- if comments > 0 -%}
@@ -133,7 +131,7 @@
 					</a>
 				</li>
 				<li class="inbl pa1" itemscope itemprop="contactPoint">
-					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/" itemprop="url" title="La vie en #ffoodd | Flux RSS">
+					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/index.xml" itemprop="url" title="La vie en #ffoodd | Flux RSS">
 						<span itemprop="name">RSS</span>
 					</a>
 				</li>

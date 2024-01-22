@@ -8,9 +8,7 @@
 		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 		<link rel="stylesheet" href="/assets/styles.min.css" media="all">
 		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
-		<!-- @todo Ajouter le flux RSS
-			<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/">
-		--></head>
+		<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/index.xml"></head>
 	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
 		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
 		<div class="row">
@@ -101,13 +99,256 @@
 				<span class="tk-bello-pro h2-like" itemprop="discusses">«&nbsp;Un fichier vide&nbsp;»</span>
 				<a href="#sommaire" class="scroll small" title="Retour au sommaire">⤴</a>
 			</h2>
-			<ol class="commentlist ul-reset pl0" itemprop="comment"></ol>
+			<ol class="commentlist ul-reset pl0" itemprop="comment"><li id="8332" class="mb2" itemscope itemtype="https://schema.org/UserComments">
+						<article>
+							<header><img alt="" loading="lazy"
+											 src="https://secure.gravatar.com/avatar/03363d4c017e8d11320687f2efa722a0?s=44&d=mm&r=g"
+											 srcset="https://secure.gravatar.com/avatar/03363d4c017e8d11320687f2efa722a0?s=88&d=mm&r=g 2x"
+											 class="avatar avatar-44 photo"
+											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="http://www.nicolas-hoffmann.net/" class="url" rel="ugc external nofollow">Nico</a></em>
+								
+								<time datetime="[object Object]" itemprop="commentTime">12 février 2016 à 22 h 07 min</time>
+								<a href="#8332">
+									<span class="screen-reader-text">Ancre vers ce commentaire</span>
+									<span aria-hidden="true">⚓</span>
+								</a>
+							</header>
+						</article>
+						<div itemprop="CommentText"><p>Héhé, moi c’est justement en ayant marre de partir du fichier vide que je me suis constitué une base CSS nommée Röcssti. Et je ne cache même pas que l’idée m’est venue avec Knacss. 🙂</p>
+<p>Comme tu l’as bien dit, elle reflète mes habitudes… et surtout elle est là pour « standardiser » l’organisation du travail au boulot : trop de perte de temps à avoir des CSS en bordel et à chercher le petit truc qu’on a oublié de reprendre du projet précédent. Grosso merdo, c’est 3/4H d’économisées au démarrage de chaque projet, et je ne parle pas de la maintenance facilitée. Maintenant, même le graphiste commence à utiliser les classes auto-* pour responsiver les sites. ^^</p>
+<p>Après, ça dépend ® : si tu bosses sur un site unique et spécifique, Röcssti ne sera peut-être pas adapté. Si tu dois abattre du site en quantité, Röcssti tire son épingle. Sur le dernier site d’événement que j’ai dû pondre très rapidement, un browser sync, et attention la vitesse d’intégration.</p>
+<p>Si par contre l’idée se voulait la même que Knacss au départ, les orientations sont devenues très différentes au fur et à mesure : Knacss est parti sur un chouette système d’autogrid et notamment sur du Flexbox dans sa dernière version, je suis resté sur le minimum viable qui doit tenir sur de vieux navigateurs (exit Flexbox en standard). Röcssti est en full-em, ce qui n’est pas le cas de Knacss si ma mémoire est bonne. Etc.</p>
+<p>Bref, des choix différents : Knacss est un peu plus fourni en features automatiques donc plus pratique de ce côté-là, Röcssti est encore plus minimaliste (et peut-être plus atomique, même si ce n’est pas sa feature principale). Ce qui se confirme avec le poids : Knacss est à 17ko minifié, et Röcssti est à 7ko minifié.</p>
+<p>Le vrai truc le plus important de Röcssti n’est pas ce qu’il permet de faire en responsive (même si je fais des trucs très biens avec :), mais surtout l’organisation rigoureuse qui vient avec : si l’inté ne fait pas le débile (et je veille au grain), je sais de suite si un élément est utilisé plusieurs fois, si c’est une exception, si le template est globalement homogène ou non, etc. C’est là àmha le vrai travail de l’inté : être méga-structuré.</p>
+<p>Et surtout on minimise la quantité de code en tirant au maximum parti de la cascade : léger et rigoureux pour la maintenance. Je remarque d’ailleurs que plus je fais de l’inté avec, plus je suis parcimonieux dans l’écriture de code.</p>
+<p>En tout cas, je suis content de voir qu’enfin les intés arrêtent de croire que « tel (micro) framework » est la solution ultime : des cas d’usure différents, des approches différentes, pas de mauvais choix, mais juste des choix. Perso, le site de Röcssti est juste là pour le crédibiliser auprès de mes clients, pas pour lui faire dominer le monde ! 🙂</p>
+<p>D’ailleurs, tu as déjà pensé à releaser ta base de travail ? Je serais curieux de voir cela.</p>
+</div>
+					</li><li id="8333" class="mb2" itemscope itemtype="https://schema.org/UserComments">
+						<article>
+							<header><img alt="" loading="lazy"
+											 src="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=44&d=mm&r=g"
+											 srcset="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=88&d=mm&r=g 2x"
+											 class="avatar avatar-44 photo"
+											 height="44" width="44"><em itemprop="creator" class="pl1">Gaël Poupard <small>(Rédacteur)</small></em>
+								
+								<time datetime="[object Object]" itemprop="commentTime">12 février 2016 à 23 h 01 min</time>
+								<a href="#8333">
+									<span class="screen-reader-text">Ancre vers ce commentaire</span>
+									<span aria-hidden="true">⚓</span>
+								</a>
+							</header>
+						</article>
+						<div itemprop="CommentText"><p>Héhé mais oui figure-toi 😀 Quand je bossais en agence, j’avais donc fourché Knacss. Tu pourras trouver <a href="https://github.com/ffoodd/sseeeedd">sseeeedd sur GitHub</a>. Comme tu peux le voir, ça fait un bail que je ne bosse plus en agence ! Ne l’utilise surtout pas.</p>
+<p>Pour rebondir sur tes propos, en effet — comme je pensais l’avoir dit — dans un contexte industrialisé qui tend vers la productivité et l’efficience, ce type d’outillage est absolument <strong>indispensable</strong>. Cependant rien ne sert de tenter d’apprivoiser une solution tierce, surtout si elle n’est pas aussi minimaliste et agnostique que le sont Röcssti et Knacss. Ce serait du temps perdu, de la lourdeur, et des problèmes de maintenabilité. Vos <em>micro-frameworks</em> peuvent devenir une excellente base de travail, mais il me semble également futile de bêtement les utiliser tels quels. Je pense qu’une base de travail, de quelque sorte que ce soit (il n’y a pas que les <em>frameworks</em> dans la vie !), devrait être aussi unique que la personne ou l’équipe qui la conçoit. Elle doit être propre à un intégrateur, à une agence, à une équipe de développement, et dans certains cas transcender ceux-là pour être propre à une entreprise. C’est une question de pertinence à plusieurs niveaux, de valeur ajoutée et de savoir-faire.</p>
+<p>Cet article questionnait surtout les gens® qui ne sont jamais contents de leurs outils. Heureux soient les simples d’esprit.</p>
+<p>Dans mon cas, j’ai le luxe de travailler sur un produit vivant. Je compte mettre en ligne (bientôt) un projet embarquant plusieurs outils (que tu connais déjà si tu as détaillé la dernière année d’évolutions sur a11y.css :P). <em>Grosso merdo</em>, ce projet inclura un gros fichier Sass avec deux ou trois petites fonctions, et une approche de conception dite atomique (à compléter à l’échelle du projet, donc). Le plus (à mon humble avis) sera la documentation incorporée et structurée, permettant de générer un guide de styles avec Hologram. Et pour le fun j’ajouterai un ensemble de tâches Gulp bien huilé.</p>
+<p>Je fais de jolies promesses. Mais encore une fois ce projet sera vivant. Et enfantera. Il finira arrière-grand-père et je finirais par l’enterrer dans un coin du web, quand plus personne ne s’en souciera. C’est ce que sont tous ces projets, tous ces outils, toutes ces tendances. Nous les avons écrits dans un fichier vide et ils redeviendront un fichier vide un jour.</p>
+<p>C’est pourquoi je pense que ce projet ne sera pas utilisable en tant que base de travail — et en tout cas très peu éprouvé en tant que tel, je ne le recommanderai pas. Je le publierai avec comme seule ambition l’espoir que ça pourra inspirer certains camarades, donner des idées, provoquer des échanges, et (oh oui alors) recueillir un max conseils et progresser encore et encore grâce à vous.</p>
+<p>Mais quiconque pensera s’en servir comme base pourra relire cet article pour connaître mon avis 🙂</p>
+</div>
+					</li><li id="8334" class="mb2" itemscope itemtype="https://schema.org/UserComments">
+						<article>
+							<header><img alt="" loading="lazy"
+											 src="https://secure.gravatar.com/avatar/2c3202718f850e5822f31a72b904668e?s=44&d=mm&r=g"
+											 srcset="https://secure.gravatar.com/avatar/2c3202718f850e5822f31a72b904668e?s=88&d=mm&r=g 2x"
+											 class="avatar avatar-44 photo"
+											 height="44" width="44"><em itemprop="creator" class="pl1">Michael</em>
+								
+								<time datetime="[object Object]" itemprop="commentTime">13 février 2016 à 10 h 23 min</time>
+								<a href="#8334">
+									<span class="screen-reader-text">Ancre vers ce commentaire</span>
+									<span aria-hidden="true">⚓</span>
+								</a>
+							</header>
+						</article>
+						<div itemprop="CommentText"><p>Merci pour cet article. J’en suis venu à la même conclusion.</p>
+<p>Nous faisons peu de sites par an, mais uniquement du 100% custom, avec un designer assez créatif ^^.</p>
+<p>J’ai une fois eu l’obligation d’utiliser Bootstrap, plus jamais. J’ai perdu un temps fou à apprendre toute la nomenclature, à être surpris de certains comportements en responsive… sans compter du poids du fichier.</p>
+<p>Et puis, je « souffre » d’une manie incontrôlable : il faut que toute ma nomenclature soit cohérente, je peux passer des heures (vraiment) à me poser la question si je dois utiliser telle ou telle bibliothèque juste parce que la nomenclature ne me plait pas…</p>
+<p>Du coup j’avais créé un mini framework perso : <a href="https://github.com/maestrooo/maestrooo-sass">https://github.com/maestrooo/maestrooo-sass</a></p>
+<p>Il est encore beaucoup trop gros, je vais prochainement virer la moitié. Mais l’idée c’est juste d’inclure ce dont je suis sûr à 100% d’inclure dans TOUS les projets, sans exception aucune. Et surtout, je ne m’en sers jamais comme une dépendance bower, je le copie colle systématiquement pour pouvoir le modifier à la source, et non surcharger son comportement par cascade.</p>
+<p>Au final, je m’y retrouve :p.</p>
+</div>
+					</li><li id="8335" class="mb2" itemscope itemtype="https://schema.org/UserComments">
+						<article>
+							<header><img alt="" loading="lazy"
+											 src="https://secure.gravatar.com/avatar/51349c977e12b363ecedf2f31e77b5c5?s=44&d=mm&r=g"
+											 srcset="https://secure.gravatar.com/avatar/51349c977e12b363ecedf2f31e77b5c5?s=88&d=mm&r=g 2x"
+											 class="avatar avatar-44 photo"
+											 height="44" width="44"><em itemprop="creator" class="pl1">Sutterlity</em>
+								
+								<time datetime="[object Object]" itemprop="commentTime">13 février 2016 à 10 h 28 min</time>
+								<a href="#8335">
+									<span class="screen-reader-text">Ancre vers ce commentaire</span>
+									<span aria-hidden="true">⚓</span>
+								</a>
+							</header>
+						</article>
+						<div itemprop="CommentText"><p>Perso je fais pareil. Un framework perso permet un worflow plus rapide et adapté à mes besoins, ainsi qu’une bonne source de montée en compétences.<br>
+Voilà un starter qui illustre mes besoins du moment -&gt; <a href="https://github.com/sutter/Starter-STATIC">https://github.com/sutter/Starter-STATIC</a></p>
+</div>
+					</li><li id="8336" class="mb2" itemscope itemtype="https://schema.org/UserComments">
+						<article>
+							<header><img alt="" loading="lazy"
+											 src="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=44&d=mm&r=g"
+											 srcset="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=88&d=mm&r=g 2x"
+											 class="avatar avatar-44 photo"
+											 height="44" width="44"><em itemprop="creator" class="pl1">Gaël Poupard <small>(Rédacteur)</small></em>
+								
+								<time datetime="[object Object]" itemprop="commentTime">13 février 2016 à 11 h 20 min</time>
+								<a href="#8336">
+									<span class="screen-reader-text">Ancre vers ce commentaire</span>
+									<span aria-hidden="true">⚓</span>
+								</a>
+							</header>
+						</article>
+						<div itemprop="CommentText"><p>@Sutterlity : <em>That’s the spirit!</em><br>
+Je vais regarder ton <em>starter</em> avec attention, merci pour ce partage 🙂</p>
+</div>
+					</li><li id="8337" class="mb2" itemscope itemtype="https://schema.org/UserComments">
+						<article>
+							<header><img alt="" loading="lazy"
+											 src="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=44&d=mm&r=g"
+											 srcset="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=88&d=mm&r=g 2x"
+											 class="avatar avatar-44 photo"
+											 height="44" width="44"><em itemprop="creator" class="pl1">Gaël Poupard <small>(Rédacteur)</small></em>
+								
+								<time datetime="[object Object]" itemprop="commentTime">13 février 2016 à 11 h 23 min</time>
+								<a href="#8337">
+									<span class="screen-reader-text">Ancre vers ce commentaire</span>
+									<span aria-hidden="true">⚓</span>
+								</a>
+							</header>
+						</article>
+						<div itemprop="CommentText"><p>@Michaël : Ça a l’air bien, en effet 🙂</p>
+<p>Merci beaucoup pour le partage — et si tu t’y retrouves, c’est que le plus important est atteint !</p>
+</div>
+					</li><li id="8338" class="mb2" itemscope itemtype="https://schema.org/UserComments">
+						<article>
+							<header><img alt="" loading="lazy"
+											 src="https://secure.gravatar.com/avatar/af3d2e45dbbd597bc6477d84d66cb0b6?s=44&d=mm&r=g"
+											 srcset="https://secure.gravatar.com/avatar/af3d2e45dbbd597bc6477d84d66cb0b6?s=88&d=mm&r=g 2x"
+											 class="avatar avatar-44 photo"
+											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="https://medium.com/@Plou" class="url" rel="ugc external nofollow">Plou</a></em>
+								
+								<time datetime="[object Object]" itemprop="commentTime">14 février 2016 à 15 h 57 min</time>
+								<a href="#8338">
+									<span class="screen-reader-text">Ancre vers ce commentaire</span>
+									<span aria-hidden="true">⚓</span>
+								</a>
+							</header>
+						</article>
+						<div itemprop="CommentText"><p>Je pense qu’il ne faut pas non plus abandonner l’idée des frameworks suite aux frustrations que peuvent apporter la mauvaise utilisation de Bootstrap/Foundation. Quand on enlève tout les partis pris superflus de ce genre d’outil, il ne reste pas nécessairement rien.</p>
+<p>Plus qu’un fichier vide, je pense que c’est dans « l’emballage » que se trouvera la vrai valeur des « frameworks » css. Ce qui est commun à tous les projets d’une équipe : les outils qui vont autour. Une manière simple d’obtenir une base de travail saine est d’observer la globalité des projets d’un équipe. Il faut ensuite garder ce qui est présent dans la majorité de ces projets. Si les produits finis sont graphiquement indépendant et originaux, ce qui restera seront les systèmes d’automatisations et styles de normalisation (reset.css). Le choix que j’ai pris est d’avoir cette base de travail presque vide (mais bien emballée) et à côté une galerie de composants (graphiquement neutres) qui sont ajoutés au cas par cas.</p>
+<p>J’essaie d’expliquer le processus qui à mené à cette outil ici: <a href="https://medium.com/dev-notes/dummy-2b44823d57db#.6mlwwor57">https://medium.com/dev-notes/dummy-2b44823d57db#.6mlwwor57</a></p>
+<p>Là où je suis d’accord, c’est qu’une base de travail doit être « personnelle ». Il faut que chaque utilisateur se l’approprie et surtout travailler avec un framework et pas en dépit d’un cadre trop rigide.</p>
+</div>
+					</li><li id="8341" class="mb2" itemscope itemtype="https://schema.org/UserComments">
+						<article>
+							<header><img alt="" loading="lazy"
+											 src="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=44&d=mm&r=g"
+											 srcset="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=88&d=mm&r=g 2x"
+											 class="avatar avatar-44 photo"
+											 height="44" width="44"><em itemprop="creator" class="pl1">Gaël Poupard <small>(Rédacteur)</small></em>
+								
+								<time datetime="[object Object]" itemprop="commentTime">15 février 2016 à 08 h 48 min</time>
+								<a href="#8341">
+									<span class="screen-reader-text">Ancre vers ce commentaire</span>
+									<span aria-hidden="true">⚓</span>
+								</a>
+							</header>
+						</article>
+						<div itemprop="CommentText"><p>Je ne dis pas dʼabandonner les <em>frameworks</em>, au contraire ! Mais ce sont des outils avec des capacités et des fonctionnalités très précises, et celles-ci doivent correspondra à lʼobjectif du projet.</p>
+<p>Lʼorigine de cet article (que jʼaurais probablement du mentionner) est un discours trop souvent entendu du type « Bootstrap a un design trop avancé », ou encore « il a trop de fonctionnalité pour ce quʼil est censé faire ». Ce qui est idiot, il fait exactement ce pour quoi il a été conçu. Et ça ne correspond pas souvent aux besoins auxquels nous devons répondre.</p>
+<p>Chacun sa solution, comme tu le dis si bien. La mienne est un fichier vide car je travaille depuis quelques années maintenant sur des produits, qui nʼont rien de commun. Cʼest un cas à la marge, mais vraiment on sʼy habitue bien 🙂</p>
+</div>
+					</li><li id="8343" class="mb2" itemscope itemtype="https://schema.org/UserComments">
+						<article>
+							<header><img alt="" loading="lazy"
+											 src="https://secure.gravatar.com/avatar/efa8c07900b9df1d12923f8a82df3344?s=44&d=mm&r=g"
+											 srcset="https://secure.gravatar.com/avatar/efa8c07900b9df1d12923f8a82df3344?s=88&d=mm&r=g 2x"
+											 class="avatar avatar-44 photo"
+											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="http://www.frederiquegame.fr" class="url" rel="ugc external nofollow">Frédérique Game</a></em>
+								
+								<time datetime="[object Object]" itemprop="commentTime">15 février 2016 à 11 h 19 min</time>
+								<a href="#8343">
+									<span class="screen-reader-text">Ancre vers ce commentaire</span>
+									<span aria-hidden="true">⚓</span>
+								</a>
+							</header>
+						</article>
+						<div itemprop="CommentText"><p>Idem 🙂<br>
+C’était un peu (mais pas assez de temps pour expliquer toute mon expérience passée) l’idée de ma conférence au #wcparis &gt; <a href="http://fr.slideshare.net/FrederiqueGame/conception-de-thmes-construire-et-optimiser-son-espace-de-travail">http://fr.slideshare.net/FrederiqueGame/conception-de-thmes-construire-et-optimiser-son-espace-de-travail</a></p>
+<p>C’est en effet, très personnel et je me concentre pour ma part sur les préprocesseurs et mes snippets, du coup, tout un classement en amont pour ne m’intéresser qu’aux zones (header, footer, etc… article…).</p>
+<p>Une sorte de pré-flux ? Juste déjà un gain de temps pour ne pas refaire la boucle, ne changer ensuite que les polices et avoir une belle palette de couleurs Sass prêtes à l’emploi.<br>
+Puis appliquer un premier niveau d’ « assemblage » pour ensuite aller vers le détail (ça doit être ma formation d’arts plastiques initiale :)…</p>
+<p>Pour finir, j’utilise essentiellement (mais pas toujours bien sur 🙂 Underscores et Genesis.</p>
+<p>Voili :o)</p>
+</div>
+					</li><li id="8344" class="mb2" itemscope itemtype="https://schema.org/UserComments">
+						<article>
+							<header><img alt="" loading="lazy"
+											 src="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=44&d=mm&r=g"
+											 srcset="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=88&d=mm&r=g 2x"
+											 class="avatar avatar-44 photo"
+											 height="44" width="44"><em itemprop="creator" class="pl1">Gaël Poupard <small>(Rédacteur)</small></em>
+								
+								<time datetime="[object Object]" itemprop="commentTime">15 février 2016 à 11 h 37 min</time>
+								<a href="#8344">
+									<span class="screen-reader-text">Ancre vers ce commentaire</span>
+									<span aria-hidden="true">⚓</span>
+								</a>
+							</header>
+						</article>
+						<div itemprop="CommentText"><p>Merci Frédérique pour ce partage 🙂 En effet jʼétais là au WordCamp et me suis pas mal retrouvé dans ton intervention !</p>
+</div>
+					</li><li id="8622" class="mb2" itemscope itemtype="https://schema.org/UserComments">
+						<article>
+							<header><img alt="" loading="lazy"
+											 src="https://secure.gravatar.com/avatar/03363d4c017e8d11320687f2efa722a0?s=44&d=mm&r=g"
+											 srcset="https://secure.gravatar.com/avatar/03363d4c017e8d11320687f2efa722a0?s=88&d=mm&r=g 2x"
+											 class="avatar avatar-44 photo"
+											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="http://www.nicolas-hoffmann.net/" class="url" rel="ugc external nofollow">Nico</a></em>
+								
+								<time datetime="[object Object]" itemprop="commentTime">12 avril 2016 à 09 h 43 min</time>
+								<a href="#8622">
+									<span class="screen-reader-text">Ancre vers ce commentaire</span>
+									<span aria-hidden="true">⚓</span>
+								</a>
+							</header>
+						</article>
+						<div itemprop="CommentText"><p>&gt; Je pense qu’une base de travail, de quelque sorte que ce soit (il n’y a pas que les frameworks dans la vie !), devrait être aussi unique que la personne ou l’équipe qui la conçoit.</p>
+<p>Surtout le contexte dans laquelle elle est faite. Bootstrap est une solution tout-en-un, et je dirai même : prévue pour des gens qui n’ont pas le temps ou la connaissance, pour poser rapidement des choses. C’est un non-sens d’imposer ça à des intés avancés (enfin, àmha).</p>
+<p>Ceci dit, en mode poil à gratter =&gt; je regardais certaines intés d’autres intégrateurs talentueux, je remarque que sur les sites actuels, ce sont à peu de choses près TOUJOURS les mêmes patterns qui reviennent : 2/3 colonnes qui se superposent en tablette/mobile, etc.</p>
+<p>Et grosso merdo, ce sont les mêmes classes atomiques qui reviennent : les margin: 1em, etc. 🙂</p>
+</div>
+					</li><li id="8623" class="mb2" itemscope itemtype="https://schema.org/UserComments">
+						<article>
+							<header><img alt="" loading="lazy"
+											 src="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=44&d=mm&r=g"
+											 srcset="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=88&d=mm&r=g 2x"
+											 class="avatar avatar-44 photo"
+											 height="44" width="44"><em itemprop="creator" class="pl1">Gaël Poupard <small>(Rédacteur)</small></em>
+								
+								<time datetime="[object Object]" itemprop="commentTime">12 avril 2016 à 10 h 02 min</time>
+								<a href="#8623">
+									<span class="screen-reader-text">Ancre vers ce commentaire</span>
+									<span aria-hidden="true">⚓</span>
+								</a>
+							</header>
+						</article>
+						<div itemprop="CommentText"><p>En effet, mais c’est un biais je pense 🙂</p>
+<p>Concernant les colonnes / grilles, selon la compatibilité attendue, l’objectif et la complexité de la grille tout devrait varier à chaque intégration, je crois.</p>
+<p>Pour les espacements — et bien que je sois tombé dans ce biais moi aussi — il me semble que varier les valeurs d’espacements devrait être le standard, au lieu d’avoir une valeur standard. En terme de communication visuelle, l’aération graphique est primordiale et sert des objectifs précis : je doute fort que tous nos sites aient les mêmes objectifs.</p>
+<p>C’est un standard par défaut plus qu’un choix conscient, je crois.</p>
+</div>
+					</li></ol>
 		</div>
 				
 			</main>
 
-			
-	<aside class="col pt8 pl0 pr0 print-hidden" role="complementary" id="sommaire">
+			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary" id="sommaire">
 		<div class="aside pl2 pt2">
 			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
 			<div class="textwidget">
@@ -146,7 +387,7 @@
 					</a>
 				</li>
 				<li class="inbl pa1" itemscope itemprop="contactPoint">
-					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/" itemprop="url" title="La vie en #ffoodd | Flux RSS">
+					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/index.xml" itemprop="url" title="La vie en #ffoodd | Flux RSS">
 						<span itemprop="name">RSS</span>
 					</a>
 				</li>

@@ -1,9 +1,5 @@
 {% extends "../base.njk" %}
 
-{%- set slug = permalink | replace("/index.html", "") -%}
-{%- set comments = collections.comments | comments(slug) -%}
-{%- set commentsNumber = comments | length -%}
-
 {% block breadcrumb %}
 	<nav role="navigation" aria-labelledby="here" class="print-hidden small mt2 mb1">
 		<span id="here">Vous êtes ici&nbsp;: </span>
@@ -97,6 +93,9 @@
 {% endblock %}
 
 {% block comments %}
+	{%- set slug = permalink | replace("/index.html", "") -%}
+	{%- set comments = collections.comments | comments(slug) -%}
+	{%- set commentsNumber = comments | length -%}
 	{%- if commentsNumber > 0 -%}
 		<div id="comments" class="comments-area pl2 pt2 mt2 print-hidden">
 			<h2 class="comments-title" itemprop="interactionCount" content="UserComments:{{ commentsNumber }}">
@@ -127,7 +126,7 @@
 								</em>
 								{% set date = comment.data.date | datetime %}
 								<time datetime="{{ comment.data }}" itemprop="commentTime">{{ date | replace(':', ' h ')}} min</time>
-								<a href="#{{ id }}">
+								<a href="#{{ comment.data.id }}">
 									<span class="screen-reader-text">Ancre vers ce commentaire</span>
 									<span aria-hidden="true">⚓</span>
 								</a>
@@ -142,6 +141,9 @@
 {% endblock %}
 
 {% block aside %}
+	{%- set slug = permalink | replace("/index.html", "") -%}
+	{%- set comments = collections.comments | comments(slug) -%}
+	{%- set commentsNumber = comments | length -%}
 	<aside class="col pt8 pl0 pr0 print-hidden" role="complementary" id="sommaire">
 		<div class="aside pl2 pt2">
 			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>

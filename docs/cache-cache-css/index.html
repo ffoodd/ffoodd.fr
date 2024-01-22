@@ -8,9 +8,7 @@
 		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 		<link rel="stylesheet" href="/assets/styles.min.css" media="all">
 		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
-		<!-- @todo Ajouter le flux RSS
-			<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/">
-		--></head>
+		<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/index.xml"></head>
 	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
 		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
 		<div class="row">
@@ -156,13 +154,185 @@
 				<span class="tk-bello-pro h2-like" itemprop="discusses">«&nbsp;Cache-cache CSS&nbsp;»</span>
 				<a href="#sommaire" class="scroll small" title="Retour au sommaire">⤴</a>
 			</h2>
-			<ol class="commentlist ul-reset pl0" itemprop="comment"></ol>
+			<ol class="commentlist ul-reset pl0" itemprop="comment"><li id="8917" class="mb2" itemscope itemtype="https://schema.org/UserComments">
+						<article>
+							<header><img alt="" loading="lazy"
+											 src="https://secure.gravatar.com/avatar/a458e575146daa6b981863b801aadfea?s=44&d=mm&r=g"
+											 srcset="https://secure.gravatar.com/avatar/a458e575146daa6b981863b801aadfea?s=88&d=mm&r=g 2x"
+											 class="avatar avatar-44 photo"
+											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="http://ryuran.info" class="url" rel="ugc external nofollow">Yvain Liechti</a></em>
+								
+								<time datetime="[object Object]" itemprop="commentTime">13 octobre 2016 à 13 h 25 min</time>
+								<a href="#8917">
+									<span class="screen-reader-text">Ancre vers ce commentaire</span>
+									<span aria-hidden="true">⚓</span>
+								</a>
+							</header>
+						</article>
+						<div itemprop="CommentText"><p>Super, tellement content d’être cité.<br>
+Il faudrait avoir un petit benchmark du comportement des différentes solutions de dictée d’écrans et navigateurs pour voir si la solution est bien universelle et bulletproof.</p>
+</div>
+					</li><li id="8918" class="mb2" itemscope itemtype="https://schema.org/UserComments">
+						<article>
+							<header><img alt="" loading="lazy"
+											 src="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=44&d=mm&r=g"
+											 srcset="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=88&d=mm&r=g 2x"
+											 class="avatar avatar-44 photo"
+											 height="44" width="44"><em itemprop="creator" class="pl1">Gaël Poupard <small>(Rédacteur)</small></em>
+								
+								<time datetime="[object Object]" itemprop="commentTime">13 octobre 2016 à 13 h 37 min</time>
+								<a href="#8918">
+									<span class="screen-reader-text">Ancre vers ce commentaire</span>
+									<span aria-hidden="true">⚓</span>
+								</a>
+							</header>
+						</article>
+						<div itemprop="CommentText"><p>Parfaitement d’accord avec toi pour le <em>benchmark</em>, mais je n’ai pour le moment ni les moyens ni le temps de m’en occuper. C’est effectivement primordial, la découverte de J. Renée Beach illustre bien que cette technique n’a jamais été suffisamment éprouvée…</p>
+<p>Et c’est normal pour la citation, c’est toi qui a cherché et trouvé le truc 🙂 Merci !</p>
+</div>
+					</li><li id="8919" class="mb2" itemscope itemtype="https://schema.org/UserComments">
+						<article>
+							<header><img alt="" loading="lazy"
+											 src="https://secure.gravatar.com/avatar/03363d4c017e8d11320687f2efa722a0?s=44&d=mm&r=g"
+											 srcset="https://secure.gravatar.com/avatar/03363d4c017e8d11320687f2efa722a0?s=88&d=mm&r=g 2x"
+											 class="avatar avatar-44 photo"
+											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="https://www.nicolas-hoffmann.net/" class="url" rel="ugc external nofollow">Nico</a></em>
+								
+								<time datetime="[object Object]" itemprop="commentTime">13 octobre 2016 à 14 h 00 min</time>
+								<a href="#8919">
+									<span class="screen-reader-text">Ancre vers ce commentaire</span>
+									<span aria-hidden="true">⚓</span>
+								</a>
+							</header>
+						</article>
+						<div itemprop="CommentText"><p>J’ai eu un problème cocasse avec ce genre de classe dans un cas bien précis, je tente de l’expliquer clairement :</p>
+<p>– imagine avoir une loooooongue liste d’éléments avec des checkboxes masquées ainsi (pour des checkboxes personnalisées graphiquement mais qui restent accessibles)<br>
+– imagine ensuite que ces looooongues listes soient prises dans des hide/show (collapsible regions)</p>
+<p>Rien d’extraordinaire à priori, mais sur certains navigateurs (Safari en tête), ça donnait un effet curieux. Quand tu cochais certaines de ces checkboxes, le navigateur scrollait aléatoirement dans la page. Sans raison, en mode WTF complet.</p>
+<p>Voici l’explication : en fait, comme elles sont positionnées en absolu (et donc sorties du flux), et que le script de hide/show passe après, les checkboxes cachées ainsi se positionnaient dans la page (avec les hide/show ouverts) et restaient à leur place (et ce alors que le hide-show va repositionner des contenus).</p>
+<p>Ce qui revient peu ou prou à ce qu’elles soient en bas de page ou positionnées n’importe comment. Du coup, quand tu en coches une, le navigateur met le focus sur la checkbox et ça donne ce WTF bizarre.</p>
+<p>Donc, dans la plupart des cas, ça roule, mais gare au position: absolute qui fait des étrangetés parfois 🙂</p>
+</div>
+					</li><li id="8920" class="mb2" itemscope itemtype="https://schema.org/UserComments">
+						<article>
+							<header><img alt="" loading="lazy"
+											 src="https://secure.gravatar.com/avatar/03363d4c017e8d11320687f2efa722a0?s=44&d=mm&r=g"
+											 srcset="https://secure.gravatar.com/avatar/03363d4c017e8d11320687f2efa722a0?s=88&d=mm&r=g 2x"
+											 class="avatar avatar-44 photo"
+											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="https://www.nicolas-hoffmann.net/" class="url" rel="ugc external nofollow">Nico</a></em>
+								
+								<time datetime="[object Object]" itemprop="commentTime">13 octobre 2016 à 14 h 09 min</time>
+								<a href="#8920">
+									<span class="screen-reader-text">Ancre vers ce commentaire</span>
+									<span aria-hidden="true">⚓</span>
+								</a>
+							</header>
+						</article>
+						<div itemprop="CommentText"><p>Oups, j’ai oublié de mettre la parade : dans ces cas foireux, virer le position: absolute et vive opacity: 0 ou une bricole du genre 🙂</p>
+<p>Pour mémo, la technique que j’utilise pour Röcssti est proche : <a href="https://github.com/nico3333fr/ROCSSTI/blob/master/src/css/rocssti-fr.css#L637">https://github.com/nico3333fr/ROCSSTI/blob/master/src/css/rocssti-fr.css#L637</a></p>
+</div>
+					</li><li id="8923" class="mb2" itemscope itemtype="https://schema.org/UserComments">
+						<article>
+							<header><img alt="" loading="lazy"
+											 src="https://secure.gravatar.com/avatar/c4aa93c7b71f9a4a64eee5d06f25f326?s=44&d=mm&r=g"
+											 srcset="https://secure.gravatar.com/avatar/c4aa93c7b71f9a4a64eee5d06f25f326?s=88&d=mm&r=g 2x"
+											 class="avatar avatar-44 photo"
+											 height="44" width="44"><em itemprop="creator" class="pl1">Michel</em>
+								
+								<time datetime="[object Object]" itemprop="commentTime">20 octobre 2016 à 22 h 33 min</time>
+								<a href="#8923">
+									<span class="screen-reader-text">Ancre vers ce commentaire</span>
+									<span aria-hidden="true">⚓</span>
+								</a>
+							</header>
+						</article>
+						<div itemprop="CommentText"><p>Pourquoi Important?</p>
+</div>
+					</li><li id="8924" class="mb2" itemscope itemtype="https://schema.org/UserComments">
+						<article>
+							<header><img alt="" loading="lazy"
+											 src="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=44&d=mm&r=g"
+											 srcset="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=88&d=mm&r=g 2x"
+											 class="avatar avatar-44 photo"
+											 height="44" width="44"><em itemprop="creator" class="pl1">Gaël Poupard <small>(Rédacteur)</small></em>
+								
+								<time datetime="[object Object]" itemprop="commentTime">21 octobre 2016 à 09 h 11 min</time>
+								<a href="#8924">
+									<span class="screen-reader-text">Ancre vers ce commentaire</span>
+									<span aria-hidden="true">⚓</span>
+								</a>
+							</header>
+						</article>
+						<div itemprop="CommentText"><p>Bonjour Michel,</p>
+<p>J’utilise systématiquement <code>!important</code> sur les classes utilitaires qui ont vocation à figer une propriété, ce qui est le cas ici. L’objectif étant que même incorporé dans un environnement sauvage (plusieurs bibliothèques de styles, des styles supplémentaires rédigés à la main par un débutant, etc.) ces styles soient appliqués. Vous utilisez cette classe pour masquer visuellement un élément’: si cela n’est plus le cas, retirez la classe au lieu de surcharger le style.</p>
+<p>Si d’aventure la personne qui intervient est tentée de retirer le <code>!important</code> — ou d’en ajouter pour le surcharger — elle commet une erreur : c’est la classe sur l’élément HTML qu’elle devrait retirer.</p>
+<p><a href="http://csswizardry.com/2016/05/the-importance-of-important/">Harry Roberts a écrit un article intéressant sur ce sujet, dans lequel il parle d’immuabilité</a>.</p>
+<p>C’est de l’ordre du choix, évidemment rien ne vous oblige à les conserver si cela va à l’encontre de vos pratiques.</p>
+</div>
+					</li><li id="9111" class="mb2" itemscope itemtype="https://schema.org/UserComments">
+						<article>
+							<header><img alt="" loading="lazy"
+											 src="https://secure.gravatar.com/avatar/ce82bc828376d978362c1e905b8ea32c?s=44&d=mm&r=g"
+											 srcset="https://secure.gravatar.com/avatar/ce82bc828376d978362c1e905b8ea32c?s=88&d=mm&r=g 2x"
+											 class="avatar avatar-44 photo"
+											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="http://tzi.fr" class="url" rel="ugc external nofollow">tzi</a></em>
+								
+								<time datetime="[object Object]" itemprop="commentTime">21 février 2017 à 11 h 37 min</time>
+								<a href="#9111">
+									<span class="screen-reader-text">Ancre vers ce commentaire</span>
+									<span aria-hidden="true">⚓</span>
+								</a>
+							</header>
+						</article>
+						<div itemprop="CommentText"><p>Hello Gaël !</p>
+<p>Article super complet, merci pour le partage.</p>
+<p>Petit mot pour te dire que le lien vers le blog technique de Yahoo ne fonctionne plus. Vive la pérennité du web :’(</p>
+<p>Bises !<br>
+Thomas.</p>
+</div>
+					</li><li id="9586" class="mb2" itemscope itemtype="https://schema.org/UserComments">
+						<article>
+							<header><img alt="" loading="lazy"
+											 src="https://secure.gravatar.com/avatar/cef8086ec4a82e22034c088b11358aaa?s=44&d=mm&r=g"
+											 srcset="https://secure.gravatar.com/avatar/cef8086ec4a82e22034c088b11358aaa?s=88&d=mm&r=g 2x"
+											 class="avatar avatar-44 photo"
+											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="http://accessiblog.fr" class="url" rel="ugc external nofollow">Olivier Nourry</a></em>
+								
+								<time datetime="[object Object]" itemprop="commentTime">14 juin 2017 à 09 h 32 min</time>
+								<a href="#9586">
+									<span class="screen-reader-text">Ancre vers ce commentaire</span>
+									<span aria-hidden="true">⚓</span>
+								</a>
+							</header>
+						</article>
+						<div itemprop="CommentText"><p>Génial!<br>
+Je viens de faire une passe sur tous mes projets en cours, pour créer un ticket et demander une optim de la CSS de masquage 🙂</p>
+<p>Et sinon, oui, il y a des motifs légitimes d’utilisation de texte caché, je trouve. Par exemple, avec les fontes-icones.</p>
+<p>Un grand merci!</p>
+</div>
+					</li><li id="13476" class="mb2" itemscope itemtype="https://schema.org/UserComments">
+						<article>
+							<header><img alt="" loading="lazy"
+											 src="https://secure.gravatar.com/avatar/a03f9669782a2173e29001550ccf0b2f?s=44&d=mm&r=g"
+											 srcset="https://secure.gravatar.com/avatar/a03f9669782a2173e29001550ccf0b2f?s=88&d=mm&r=g 2x"
+											 class="avatar avatar-44 photo"
+											 height="44" width="44"><em itemprop="creator" class="pl1">Arnaud Delafosse</em>
+								
+								<time datetime="[object Object]" itemprop="commentTime">4 janvier 2021 à 15 h 07 min</time>
+								<a href="#13476">
+									<span class="screen-reader-text">Ancre vers ce commentaire</span>
+									<span aria-hidden="true">⚓</span>
+								</a>
+							</header>
+						</article>
+						<div itemprop="CommentText"><p>.sr-only et .sr-only-focusable deviennent .visually-hidden et .visually-hidden-focusable (et ne sont plus cumulables) : <a href="https://getbootstrap.com/docs/5.0/getting-started/accessibility/#visually-hidden-content">https://getbootstrap.com/docs/5.0/getting-started/accessibility/#visually-hidden-content</a></p>
+</div>
+					</li></ol>
 		</div>
 				
 			</main>
 
-			
-	<aside class="col pt8 pl0 pr0 print-hidden" role="complementary" id="sommaire">
+			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary" id="sommaire">
 		<div class="aside pl2 pt2">
 			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
 			<div class="textwidget">
@@ -201,7 +371,7 @@
 					</a>
 				</li>
 				<li class="inbl pa1" itemscope itemprop="contactPoint">
-					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/" itemprop="url" title="La vie en #ffoodd | Flux RSS">
+					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/index.xml" itemprop="url" title="La vie en #ffoodd | Flux RSS">
 						<span itemprop="name">RSS</span>
 					</a>
 				</li>
