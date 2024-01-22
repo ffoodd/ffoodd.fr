@@ -29,6 +29,11 @@ module.exports = function (eleventyConfig) {
 		return DateTime.fromISO(dateObj).setLocale('fr').toLocaleString({...DateTime.DATETIME_MED, month: 'long'})
 	})
 
+	eleventyConfig.addFilter('publicationdate', dateStr => {
+		const dateData = dateStr.split('/')
+		return new Date(dateData[2], dateData[1], dateData[0]).toISOString()
+	})
+
 	eleventyConfig.addFilter('comments', (comments, slug) => {
 		return comments.filter(
 			comment => comment.data.tags.includes(slug)

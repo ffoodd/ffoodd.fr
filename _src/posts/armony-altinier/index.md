@@ -7,5 +7,6 @@ permalink: "armony-altinier/index.html"
 excerpt: "Est-ce que ça peut pénaliser quelqu’un ?"
 format: "quote"
 tags: "posts"
+lang: ""
 ---
 Est-ce que ça peut pénaliser quelqu’un ?

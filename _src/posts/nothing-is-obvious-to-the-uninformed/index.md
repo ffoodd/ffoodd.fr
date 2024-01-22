@@ -7,5 +7,6 @@ permalink: "nothing-is-obvious-to-the-uninformed/index.html"
 excerpt: "Nothing is obvious to the uninformed!"
 format: "quote"
 tags: "posts"
+lang: "en"
 ---
 Nothing is obvious to the uninformed!

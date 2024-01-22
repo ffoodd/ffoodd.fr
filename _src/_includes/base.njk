@@ -11,6 +11,17 @@
 		<!-- @todo Ajouter le flux RSS
 			<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/">
 		-->
+		{%- set slug = post.data.permalink | replace("/index.html", "") -%}
+		{%- set comments = collections.comments | comments(slug) | length -%}
+		{%- if comments > 0 -%}
+			<link rel="preconnect" href="https://secure.gravatar.com/">
+		{%- endif -%}
+		{%- if pagination.href.previous -%}
+			<link rel="prev" href="{{ pagination.href.prev }}">
+		{%- endif -%}
+		{%- if pagination.href.next -%}
+			<link rel="next" href="{{ pagination.href.next }}">
+		{%- endif -%}
 	</head>
 	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
 		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
@@ -23,9 +34,8 @@
 					<li class="h3-like m-reset{% if title === 'À propos' %} current-menu-item current_page_item{% endif %}">
 						<a href="/plus/"{% if title === 'À propos' %} aria-current="page"{% endif %}>À propos</a>
 					</li>
-					<!-- @todo gérer l’URL ? Une redirection ? -->
 					<li class="h3-like m-reset{% if title === 'Journal' %} current-menu-item current_page_item{% endif %}">
-						<a href="/category/journal/"{% if title === 'Journal' %} aria-current="page"{% endif %}>Journal</a>
+						<a href="/journal/"{% if title === 'Journal' %} aria-current="page"{% endif %}>Journal</a>
 					</li>
 					<li class="h3-like m-reset{% if title === 'Parcours' %} current-menu-item current_page_item{% endif %}">
 						<a href="/travaux/"{% if title === 'Parcours' %} aria-current="page"{% endif %}>Parcours</a>
@@ -54,7 +64,7 @@
 							</nav>
 						{% endblock %}
 						{% if description %}
-							<h2 class="h3-like description" itemprop="description">{{ description | safe }}</h2>
+							<h2 class="h3-like {% if layout === 'template/archive.njk' %}m-reset pb1{% else %}description{% endif %}" itemprop="description">{{ description | safe }}</h2>
 						{% endif %}
 					</header>
 					{% block content %}

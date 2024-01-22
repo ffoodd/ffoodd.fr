@@ -101,6 +101,12 @@ Object.keys(posts).forEach((p, i) => {
 		})
 	}
 
+	if (post.format === 'quote') {
+		frontMatter.push({
+			lang: post.acf.langue
+		})
+	}
+
 	// Write to markdown file with frontmatter
 	transformAndWriteToFile({
 		frontmatterMarkdown: {

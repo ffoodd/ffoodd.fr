@@ -7,5 +7,6 @@ permalink: "marie-guillaumet/index.html"
 excerpt: "Bien faire et laisser braire"
 format: "quote"
 tags: "posts"
+lang: ""
 ---
 Bien faire et laisser braire

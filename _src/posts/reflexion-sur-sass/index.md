@@ -7,5 +7,6 @@ permalink: "reflexion-sur-sass/index.html"
 excerpt: "Un outil est fait pour faciliter le travail — pas pour en améliorer la qualité."
 format: "quote"
 tags: "posts"
+lang: ""
 ---
 Un outil est fait pour faciliter le travail — pas pour en améliorer la qualité.

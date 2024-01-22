@@ -7,28 +7,7 @@
 {% block latest %}
 	{% for post in collections.posts.slice(-1) %}
 		<div>
-			<article itemscope itemtype="https://schema.org/Article">
-				{%- set slug = post.data.permalink | replace("/index.html", "") -%}
-				{%- set comments = collections.comments | comments(slug) -%}
-				<p class="end mt0 print-hidden" itemprop="UserComments">{{ comments | length }}</p>
-				<h3 itemprop="name" class="mb0">
-					Nouvel article&nbsp;:
-					<a href="{{ post.data.permalink }}" rel="bookmark" itemprop="url" tabindex="-1">{{ post.data.title }}</a>
-				</h3>
-				<time class="small inbl mb1" datetime="{{ post.data.date }}" itemprop="datePublished">{{ post.data.date | date }}</time>
-				<p class="pl2 mt0" itemprop="description">
-					{{ post.data.excerpt | markdown | safe }}
-					<a href="{{ post.data.permalink }}" aria-hidden="true">Lire la suite de «&nbsp;{{ post.data.title }}&nbsp;» <span class="meta-nav">→</span></a>
-				</p>
-				<footer class="small mt1">
-					<p class="pl2">
-						Article rédigé par <strong itemprop="author" class="vcard author"><span class="fn">Gaël Poupard</span></strong>.
-						{% if post.data.modified | date !== post.data.date | date %}
-						Modifié le <time class="updated" datetime="{{ post.data.modified }}" itemprop="dateModified">{{ post.data.modified | date }}</time>.
-						{% endif %}
-					</p>
-				</footer>
-			</article>
+			{% include '../partials/format-' + post.data.format + '.njk' %}
 		</div>
 	{% endfor %}
 {% endblock %}

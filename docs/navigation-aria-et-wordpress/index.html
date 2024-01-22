@@ -10,8 +10,7 @@
 		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
 		<!-- @todo Ajouter le flux RSS
 			<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/">
-		-->
-	</head>
+		--></head>
 	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
 		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
 		<div class="row">
@@ -23,9 +22,8 @@
 					<li class="h3-like m-reset">
 						<a href="/plus/">À propos</a>
 					</li>
-					<!-- @todo gérer l’URL ? Une redirection ? -->
 					<li class="h3-like m-reset">
-						<a href="/category/journal/">Journal</a>
+						<a href="/journal/">Journal</a>
 					</li>
 					<li class="h3-like m-reset">
 						<a href="/travaux/">Parcours</a>
@@ -60,8 +58,7 @@
 						
 					</header>
 					
-	<time class="screen-reader-text" datetime="2013-10-09T13:31:19" itemprop="datePublished">9 octobre 2013</time>
-	<div itemprop="articleBody">
+	<time class="screen-reader-text" datetime="2013-10-09T13:31:19" itemprop="datePublished">9 octobre 2013</time><div itemprop="articleBody">
 		<p>Dans sa version basique, la navigation de WordPress n’a rien de particulier (si ce n’est la multitude de classes générées sur chaque élément 🙁 ). Or ARIA permet d’ajouter une couche sémantique non négligeable et relativement simple à mettre en place, améliorant ainsi l’accessibilité de la navigation.</p>
 <h2 id="notre-objectif" tabindex="-1">Notre objectif</h2>
 <p>L’implémentation d’ARIA sur une navigation est simple ‐ bien qu’il soit assez compliqué d’en trouver une documentation ou un exemple concret. Voici le résultat attendu sur ffoodd (je vous épargne les classes et identifiants, pour cette fois 😉 ) :</p>
@@ -157,44 +154,7 @@
 				<span class="tk-bello-pro h2-like" itemprop="discusses">«&nbsp;Navigation, Aria et WordPress&nbsp;»</span>
 				<a href="#sommaire" class="scroll small" title="Retour au sommaire">⤴</a>
 			</h2>
-			<ol class="commentlist ul-reset pl0" itemprop="comment"><li id="80" class="mb2" itemscope itemtype="https://schema.org/UserComments">
-						<article>
-							<header><img alt="" loading="lazy"
-											 src="https://secure.gravatar.com/avatar/597de7db40f20c3c0d8afba20cee2292?s=44&d=mm&r=g"
-											 srcset="https://secure.gravatar.com/avatar/597de7db40f20c3c0d8afba20cee2292?s=88&d=mm&r=g 2x"
-											 class="avatar avatar-44 photo"
-											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="http://www.kloh.ch" class="url" rel="ugc external nofollow">Luc</a></em>
-								
-								<time datetime="[object Object]" itemprop="commentTime">14 octobre 2013 à 08 h 44 min</time>
-								<a href="#">
-									<span class="screen-reader-text">Ancre vers ce commentaire</span>
-									<span aria-hidden="true">⚓</span>
-								</a>
-							</header>
-						</article>
-						<div itemprop="CommentText"><p>Pas d’astuce pour ton dernier point mais 2 petites remarques.<br>
-Au niveau code, je te suggère d’appliquer des préfixes à tes id pour les items de menu. C’est bête mais tu seras sûr d’éviter tout double id.<br>
-Sinon j’ai l’impression qu’il manque un truc dans ton premier paragraphe des évolutions à venir. Tu as oublié un bout de phrase je crois.</p>
-</div>
-					</li><li id="81" class="mb2" itemscope itemtype="https://schema.org/UserComments">
-						<article>
-							<header><img alt="" loading="lazy"
-											 src="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=44&d=mm&r=g"
-											 srcset="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=88&d=mm&r=g 2x"
-											 class="avatar avatar-44 photo"
-											 height="44" width="44"><em itemprop="creator" class="pl1">Gaël Poupard <small>(Rédacteur)</small></em>
-								
-								<time datetime="[object Object]" itemprop="commentTime">14 octobre 2013 à 08 h 59 min</time>
-								<a href="#">
-									<span class="screen-reader-text">Ancre vers ce commentaire</span>
-									<span aria-hidden="true">⚓</span>
-								</a>
-							</header>
-						</article>
-						<div itemprop="CommentText"><p>Ha oui : un verbe ! Je corrige et je prépare la modification sur les IDs, ta suggestion est pertinente 🙂</p>
-<p>Edit : voila qui est fait 🙂</p>
-</div>
-					</li></ol>
+			<ol class="commentlist ul-reset pl0" itemprop="comment"></ol>
 		</div>
 				
 			</main>

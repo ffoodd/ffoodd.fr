@@ -1,0 +1,9 @@
+<article itemscope itemtype="https://schema.org/Article">
+	<h3 itemprop="name" class="mb0">
+		<a href="{{ post.data.title }}" rel="external noopener" itemprop="url">{{ post.data.title | safe }}</a>
+	</h3>
+	<p class="small mt0 pl2" itemprop="description">
+		{{ post.data.excerpt | markdown | safe }}
+		<time class="small inbl w-100" datetime="{{ post.data.date }}" itemprop="datePublished">{{ post.data.date | date }}</time>
+	</p>
+</article>

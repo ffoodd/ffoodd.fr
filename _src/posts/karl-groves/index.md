@@ -7,5 +7,6 @@ permalink: "karl-groves/index.html"
 excerpt: "If it looks the same, it should act the same."
 format: "quote"
 tags: "posts"
+lang: "en"
 ---
 If it **looks** the same, it should **act** the same.

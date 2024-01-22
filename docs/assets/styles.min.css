@@ -132,7 +132,7 @@ mark {
 
 [role="article"] ul,
 .ul-reset {
-	list-style: none !important;
+	list-style-type: "" !important;
 }
 
 /* Élude la fusion des marges pour les éléments imbriqués */
@@ -194,12 +194,8 @@ a:focus img {
 	outline: 4px solid;
 }
 
-/* Pour que le texte ne soit pas plus large que l'image
- * @see https://github.com/ffoodd/ffoodd--./issues/15
- */
+/* Pour que le texte ne soit pas plus large que l'image */
 figure {
-	width: -webkit-min-content;
-	width: -moz-min-content;
 	width: min-content;
 }
 
@@ -433,13 +429,9 @@ blockquote:last-child {
 }
 
 .pl2, ul,
-ol,
-blockquote, div[itemprop="articleBody"] p,
-div[itemprop="articleBody"] ul,
-div[itemprop="articleBody"] ol,
-div[itemprop="reviewBody"] p,
-div[itemprop="reviewBody"] ul,
-div[itemprop="reviewBody"] ol {
+ol, blockquote,
+div[itemprop="articleBody"] :is(p, ul, ol),
+div[itemprop="reviewBody"]  :is(p, ul, ol) {
 	padding-left: 2em;
 }
 
@@ -492,7 +484,6 @@ div[itemprop="reviewBody"] ol {
 	border: 0 !important;
 	clip: rect(1px, 1px, 1px, 1px) !important;
 	/* 1 */
-	-webkit-clip-path: inset(50%) !important;
 	clip-path: inset(50%) !important;
 	/* 2 */
 	height: 1px !important;
@@ -516,7 +507,6 @@ div[itemprop="reviewBody"] ol {
 .screen-reader-text-focusable:focus,
 .screen-reader-text-focusable:active {
 	clip: auto !important;
-	-webkit-clip-path: none !important;
 	clip-path: none !important;
 	height: auto !important;
 	overflow: visible !important;
@@ -559,52 +549,6 @@ div[itemprop="reviewBody"] ol {
   * @see www.sitepen.com
   * @see https://github.com/HugoGiraudel/KNACSS-Sass/blob/master/sass/modules/_forms.scss @author : Hugo Giraudel pour Knacss-Sass
 */
-/* ----------------------------- */
-/* ==Formulaires */
-/* @note : Aucun de ces éléments ne doit être modifié.
-/* ----------------------------- */
-/* Éléments de formulaires */
-label {
-	cursor: pointer;
-}
-
-input {
-	font-size: 100%;
-	margin: 0;
-	vertical-align: baseline;
-}
-
-textarea {
-	min-height: 5em;
-	overflow: auto;
-	/* @bugfix
-@affected Supprime la scrollbar par défaut sur IE6/7/8/9 */
-	resize: vertical;
-	/* Évite l’application d’une fonte monospace */
-	font-family: inherit;
-}
-
-input[type="submit"] {
-	cursor: pointer;
-	-webkit-appearance: button;
-	/* @ bugfix
-@affected Types d’input cliquables sur iOS */
-}
-
-::-webkit-input-placeholder {
-	color: #065366;
-}
-
-input:-moz-placeholder {
-	color: #065366;
-}
-
-input[type="submit"]::-moz-focus-inner {
-	border: 0;
-	padding: 0;
-	/* @bugfix
-@affected Retire les marges internes et les bordures sur FF3+ */
-}
 
 /**
 * @author Gaël Poupard
@@ -811,7 +755,7 @@ blockquote::before {
 blockquote p {
 	font-style: italic;
 	font-weight: 500;
-	font-size: 1.125em;
+	font-size: 1.75em;
 	line-height: 1.33333;
 }
 
@@ -976,54 +920,17 @@ a:active, a:visited {
 }
 
 /* == @section Modules ==================== */
-.page-numbers,
-form li {
-	list-style: none;
-}
-
-ul.page-numbers {
+.page-numbers {
 	border-top: 1px dotted #9faaad;
 	padding-top: 1em;
 }
 
-ul.page-numbers li {
+.page-numbers li {
 	display: inline-block;
 }
 
-ul.page-numbers li + li {
+.page-numbers li + li {
 	padding: 0 0 0 1em;
-}
-
-/* == @section Formulaires ==================== */
-form label {
-	display: block;
-}
-
-input,
-textarea {
-	border: 1px solid #9faaad;
-	font: 300 1em/1.5 "museo-slab-1", "museo-slab-2", "Arial", sans-serif;
-	padding: 0.5em;
-	width: 100%;
-}
-
-input:focus,
-textarea:focus {
-	border-color: #c42419;
-	outline: 0;
-}
-
-input:hover, input:active,
-textarea:hover,
-textarea:active {
-	border-color: #032c36;
-}
-
-input[type="email"],
-input[type="text"],
-input[type="url"],
-textarea {
-	min-width: 6.25em;
 }
 
 /* == @section Navigation ==================== */
@@ -1216,31 +1123,33 @@ blockquote,
 
 .format-quote blockquote {
 	border-bottom: 1px dotted #9faaad;
-	padding-bottom: 0.5em;
+	padding-bottom: .875em;
 }
 
-.format-quote b {
+.format-quote footer {
 	background: #efeee3;
-	padding: 0 0.5em;
-	position: relative;
-	top: -1em;
+	display: inline-block;
+	font-style: normal;
+	font-weight: 500;
+	padding: 0 .5em;
+	position: absolute;
 }
 
-.book ul {
-	-webkit-columns: 2;
-	-moz-columns: 2;
+.book dl {
 	columns: 2;
-	-webkit-column-gap: 3em;
-	-moz-column-gap: 3em;
 	column-gap: 3em;
-	-webkit-column-rule: 1px dotted;
-	-moz-column-rule: 1px dotted;
 	column-rule: 1px dotted;
 }
 
-.book ul li::before {
-	content: "";
+.book :is(dt, dd) {
+	display: inline;
+	margin: 0;
 }
+
+.book dt {
+	font-weight: 500;
+}
+
 
 /* -- @subsection Coloration syntaxique -------------------- */
 /**
@@ -1257,11 +1166,7 @@ pre[class*="language-"] {
 	direction: ltr;
 	font-family: "Consolas", "Monaco", "Andale Mono", monospace;
 	font-size: small;
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
 	hyphens: none;
-	-moz-tab-size: 2;
 	tab-size: 2;
 	text-align: left;
 	text-shadow: 0 1px white;

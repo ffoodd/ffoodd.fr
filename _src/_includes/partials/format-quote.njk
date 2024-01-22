@@ -1,0 +1,7 @@
+<article class="mt2 pb2" itemscope itemtype="https://schema.org/Article">
+	{%- if page.url === '/' %}<h3 class="mb0">Nouvelle citation&nbsp;:</h3>{%- endif %}
+	<blockquote class="description pb1 pt2" itemprop="description"{% if post.data.lang !== "" %} lang="{{ post.data.lang }}"{% endif %}>
+		<p class="m-reset">{{ post.data.excerpt | markdown | safe }}</p>
+		<footer class="small ml2">{{ post.data.title | safe }}</footer>
+	</blockquote>
+</article>
