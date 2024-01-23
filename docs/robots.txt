@@ -61,4 +61,4 @@ Disallow: /
 
 # Block all crawlers
 User-agent: *
-Disallow: 
+Disallow:

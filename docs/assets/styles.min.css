@@ -1,0 +1,1655 @@
+@charset "UTF-8";
+/**
+ * @author Gaël Poupard
+ * @site Thème ffeeeedd--sass
+ * @lastmodified 2013-11-13
+ */
+/**
+* @author Gaël Poupard
+* @site Thème ffeeeedd
+* @lastmodified 2014-03-26
+*/
+/* ----------------------------- */
+/* ==Mixins */
+/* ----------------------------- */
+/* -- @subsection Gestion de l’échelle typographique -------------------- */
+/*
+ * @note Inspiré de plusieurs outils et techniques :
+ ** @author Pascal C
+ ** @see https://twitter.com/eQRoeil
+ ** @see https://soqr.fr/vertical-rhythm/
+ ** @author Emmanuel Georjon
+ ** @see https://twitter.com/emmanuelgeorjon/
+ ** @see https://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
+ * @note Le premier paramètre est obligatoire : c’est le corps cible, en PX — et ce doit être un nombre, évidemment.
+ * @note Le second paramètre est optionnel (« true » par défaut) : il active le calcul des marges externes.
+*/
+/* -- @subsection Gestion de l’échelle typographique -------------------- */
+/*
+ * @note Défini un style standard pour les boutons d’actions et éléments avec un dégradé.
+ * @note Trois paramtères existent :
+ ** @note Les deux premiers sont les couleurs de début et de fin du dégradé de base.
+ ** @note Elles doivent être dans un format de couleurs valide, et sont obligatoires.
+ ** @note La dernière est facultative (« false » par défaut) et active les interactions (survol, focus…).
+*/
+/* -- @subsection Récupérer la position des sprites en EM -------------------- */
+/**
+ * @note Une seule modification apportée : retirer l’unité PX de la position du sprite.
+ ** @author Marie Guillaumet
+ ** @see https://twitter.com/kReEsTaL
+ ** @see https://marieguillaumet.com/
+ ** @see https://gist.github.com/kReEsTaL/7222348
+ ** @author Mehdi Kabab
+ ** @see https://twitter.com/piouPiouM
+ ** @see https://pioupioum.fr/
+ */
+/* -- @subsection Récupérer les dimensions du sprite en EM -------------------- */
+/**
+ * @note Une seule modification apportée : retirer l’unité PX des dimensions du sprite.
+ ** @author Marie Guillaumet
+ ** @see https://twitter.com/kReEsTaL
+ ** @see https://marieguillaumet.com/
+ ** @see https://gist.github.com/kReEsTaL/6997139
+ */
+/**
+ * @author Gaël Poupard
+ * @lastmodified 2014-03-26
+ */
+/* ----------------------------- */
+/* ==Fonctions */
+/* ----------------------------- */
+/* -- @subsection Supprimer l’unité d’une valeur -------------------- */
+/*
+ * @note Inspiré directement des « helpers » de Foundation
+ * @see https://github.com/zurb/foundation/blob/master/scss/foundation/_functions.scss#L39
+ * @note Le seul paramètre est obligatoire et doit être un nombre.
+*/
+/* -- @subsection Conversion en em -------------------- */
+/*
+ * @note Référence trouvée grâce aux Gists de Marie Guillaumet
+ ** @author Marie Guillaumet
+ ** @see https://twitter.com/kReEsTaL
+ ** @see https://marieguillaumet.com/
+ * @see https://gist.github.com/ijy/1441967
+*/
+/**
+ * @author Gaël Poupard
+ * @lastmodified 2014-03-26
+ */
+/* ----------------------------- */
+/* ==Placeholders */
+/* ----------------------------- */
+/* -- @subsection Styles communs aux actions -------------------- */
+/*
+ * @note Regroupement des styles communs pour le mixin éponyme.
+ * @see « CSS maintenables avec Sass & Compass », pages 238/239
+ * @author Kaelig Deloumeau-Prigent
+*/
+/**
+* @author Gaël Poupard
+* @site Thème ffeeeedd
+* @lastmodified 2013-06-26
+* @subsection Références :
+  * @see KNACSS.com V1.1 @author : Raphael Goetter, Alsacreations
+  * @see https://rocssti.nicolas-hoffmann.net/ @author : @Nico3333fr
+*/
+/* ----------------------------- */
+/* ==Base */
+/* @note Aucun de ces éléments ne doit être modifié.
+/* ----------------------------- */
+/* Soft reset */
+html,
+body,
+label {
+	margin: 0;
+	padding: 0;
+}
+
+[role="article"] code {
+	white-space: nowrap;
+}
+
+pre,
+pre code {
+	white-space: pre-wrap;
+}
+
+mark {
+	font-weight: bold;
+}
+
+.m-reset {
+	margin: 0 !important;
+}
+
+.p-reset {
+	padding: 0 !important;
+}
+
+.b-reset, a img, form {
+	border: 0 !important;
+}
+
+[role="article"] ul,
+.ul-reset {
+	list-style-type: "" !important;
+}
+
+/* Élude la fusion des marges pour les éléments imbriqués */
+li ul,
+li ol {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+/* Balises HTML5 */
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+nav,
+section,
+main {
+	display: block;
+}
+
+/* Valeurs maximum */
+img,
+blockquote,
+code,
+pre,
+textarea,
+input {
+	height: auto;
+	max-width: 100%;
+}
+
+/* Éviter l’interlignage disgracieux */
+sup,
+sub {
+	vertical-align: 0;
+	position: relative;
+}
+
+sup {
+	bottom: 1ex;
+}
+
+sub {
+	top: .5ex;
+}
+
+/* Parce que «les abbr c’est bon pour la planète» (dixit Nicolas Hoffmann dans RÖCSSTI), ceux ayant un title sont signalés */
+abbr[title] {
+	border-bottom: dotted 1px;
+	/* La couleur est héritée du texte */
+	cursor: help;
+	text-decoration: none;
+}
+
+/* Images */
+a:focus img {
+	outline: 4px solid;
+}
+
+/* Pour que le texte ne soit pas plus large que l'image */
+figure {
+	width: min-content;
+}
+
+figure img {
+	max-width: 30em;
+}
+
+/**
+* @author Gaël Poupard
+* @site Thème ffeeeedd
+* @lastmodified 2013-06-26
+* @subsection Références :
+  * @see KNACSS.com V1.1 @author : Raphael Goetter, Alsacreations
+  * @see HTML5boilerplate
+  * @see https://rocssti.nicolas-hoffmann.net/ @author : @Nico3333fr
+*/
+/* ----------------------------- */
+/* ==Structure */
+/* @note : Aucun de ces éléments ne doit être modifié.
+/* ----------------------------- */
+/* ----------------------------- */
+/* Sommaire */
+/* ----------------------------- */
+/*
+  == Modèle de boîte
+  == Structure flottante
+  == Structure en tableau
+  == Alignements ( blocs et en ligne )
+    -- Alignement horizontal
+    -- Alignement vertical
+  == Grilles
+  == Inline-block
+  == Largeurs
+  == Espacements
+    -- Marges externes
+    -- Marges internes
+  == Éléments masqués
+    -- Remplacement d’image
+  == Orientation
+*/
+/* == @section Modèle de boîte ==================== */
+/* @see https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+/* == @section Structure flottante ==================== */
+/* Bloc capable de contenir plusieurs .mod, peut contenir des flottants */
+.mod {
+	overflow: hidden;
+}
+
+/* == @section Structure en tableau ==================== */
+.row {
+	display: table;
+	padding: .4375em 0;
+	overflow: hidden;
+	table-layout: fixed;
+}
+
+.col {
+	display: table-cell;
+	padding: 1em;
+	vertical-align: top;
+}
+
+/* Blocs qui peuvent suivre des flottants */
+.clear {
+	clear: both;
+}
+
+/* Blocs qui peuvent contenir des flottants */
+.clearfix:after,
+.mod:after {
+	clear: both;
+	content: "";
+	display: table;
+}
+
+/* == @section Alignements ( blocs et en ligne ) ==================== */
+/* -- @subsection Alignement horizontal -------------------- */
+.alignleft {
+	float: left;
+}
+
+.end,
+.alignright {
+	float: right;
+}
+
+img.alignleft {
+	margin-right: 2em;
+}
+
+img.end,
+img.alignright {
+	margin-left: 2em;
+}
+
+/* Centré */
+.aligncenter {
+	clear: both;
+	display: block;
+}
+
+/* Autorise les marges verticales spécifiques */
+.center,
+.aligncenter {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Alignement du texte */
+.txtright {
+	text-align: right;
+}
+
+.txtcenter {
+	text-align: center;
+}
+
+/* -- @subsection Alignement vertical -------------------- */
+.aligntop, textarea {
+	vertical-align: top;
+}
+
+.alignmiddle, img, input,
+label {
+	vertical-align: middle;
+}
+
+.alignbottom {
+	vertical-align: bottom;
+}
+
+/* == @section Inline-block ==================== */
+.inbl,
+.btn {
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* == @section Largeurs ==================== */
+.w-33 {
+	width: 33%;
+}
+
+.w-100, .row {
+	width: 100%;
+}
+
+/* == @section Espacements ====================
+ * @note p, m = padding, margin
+ * @note a, t, r, b, l = all, top, right, bottom, left
+ * @note Nous avons besoin des valeurs de 0 à 2 au minimum.
+ * @note Spécifiques à ffoodd.fr
+*/
+/* -- @subsection Marges externes -------------------- */
+.mt0,
+:is(
+	h1, .h1-like,
+	h2, .h2-like,
+	h3, .h3-like,
+	h4, .h4-like,
+	h5, .h5-like,
+	h6, .h6-like
+):first-child {
+	margin-top: 0;
+}
+
+.mb0,
+:is(p, ul, ol, pre, blockquote):last-child {
+	margin-bottom: 0;
+}
+
+.mb1 {
+	margin-bottom: 1em;
+}
+
+.mt2 {
+	margin-top: 2em;
+}
+
+.mb2 {
+	margin-bottom: 2em;
+}
+
+.ml-auto {
+	margin-left: auto;
+}
+
+.mr-auto {
+	margin-right: auto;
+}
+
+/* -- @subsection Marges internes -------------------- */
+.pa1, .mod {
+	padding: 1em;
+}
+
+.pt0 {
+	padding-top: 0;
+}
+
+.pr0 {
+	padding-right: 0;
+}
+
+.pl0 {
+	padding-left: 0;
+}
+
+.pt1 {
+	padding-top: 1em;
+}
+
+.pr1 {
+	padding-right: 1em;
+}
+
+.pl1 {
+	padding-left: 1em;
+}
+
+.pt2 {
+	padding-top: 2em;
+}
+
+.pb2 {
+	padding-bottom: 2em;
+}
+
+.pl2, ul,
+ol, blockquote,
+div[itemprop="articleBody"] :is(p, ul, ol),
+div[itemprop="reviewBody"]  :is(p, ul, ol) {
+	padding-left: 2em;
+}
+
+.pb3 {
+	padding-bottom: 3em;
+}
+
+.pl3 {
+	padding-left: 3em;
+}
+
+.pr3 {
+	padding-right: 3em;
+}
+
+.pr5 {
+	padding-right: 5em;
+}
+
+.pt8 {
+	padding-top: 8em;
+}
+
+/* == @section Éléments masqués ==================== */
+/*
+	Improved screen reader only CSS class
+	@author Gaël Poupard
+		@note Based on Yahoo!'s technique
+		@author Thierry Koblentz
+		@see https://developer.yahoo.com/blogs/ydn/clip-hidden-content-better-accessibility-53456.html
+	* 1.
+		@note `clip` is deprecated but works everywhere
+		@see https://developer.mozilla.org/en-US/docs/Web/CSS/clip
+	* 2.
+		@note `clip-path` is the future-proof version, but not very well supported yet
+		@see https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path
+		@see https://caniuse.com/#search=clip-path
+		@author Yvain Liechti
+		@see https://twitter.com/ryuran78/status/778943389819604992
+	* 3.
+		@note preventing text to be condensed
+		author J. Renée Beach
+		@see https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+		@note Drupal 8 goes with word-wrap: normal instead
+		@see https://www.drupal.org/node/2045151
+		@see https://cgit.drupalcode.org/drupal/commit/?id=5b847ea
+	* 4.
+		@note !important is important
+		@note Obviously you wanna hide something
+		@author Harry Roberts
+		@see https://csswizardry.com/2016/05/the-importance-of-important/
+*/
+.screen-reader-text {
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important;
+	/* 1 */
+	clip-path: inset(50%) !important;
+	/* 2 */
+	height: 1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;
+	/* 3 */
+}
+
+/*
+	Use in conjunction with .sr-only to only display content when it's focused.
+	@note Useful for skip links
+	@see https://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1
+	@note Based on a HTML5 Boilerplate technique, included in Bootstrap
+	@note Fixed a bug with position: static on iOS 10.0.2 + VoiceOver
+		@author Sylvain Pigeard
+		@see https://github.com/twbs/bootstrap/issues/20732
+*/
+.screen-reader-text-focusable:focus,
+.screen-reader-text-focusable:active {
+	clip: auto !important;
+	clip-path: none !important;
+	height: auto !important;
+	overflow: visible !important;
+	width: auto !important;
+	white-space: normal !important;
+}
+
+/* -- @subsection Remplacement d’image -------------------- */
+.ir {
+	background-color: transparent;
+	border: 0;
+	overflow: hidden;
+}
+
+.ir::before {
+	content: "";
+	display: block;
+	height: 100%;
+	width: 0;
+}
+
+/* == @section Orientation ====================
+ * @note Corrige un bug sur les font-size lors du changement d’orientation sur iOS
+*/
+@media (orientation: landscape) and (max-device-width: 768px) {
+	html,
+	body {
+		-webkit-text-size-adjust: 100%;
+	}
+}
+
+/**
+* @author Gaël Poupard
+* @site Thème ffeeeedd
+* @lastmodified 2013-11-05
+* @subsection Références :
+  * @see KNACSS.com V1.1 @author : Raphael Goetter, Alsacreations
+  * @see HTML5boilerplate
+  * @see github.com/nathansmith/formalize
+  * @see www.sitepen.com
+  * @see https://github.com/HugoGiraudel/KNACSS-Sass/blob/master/sass/modules/_forms.scss @author : Hugo Giraudel pour Knacss-Sass
+*/
+
+/**
+* @author Gaël Poupard
+* @site Thème ffeeeedd
+* @lastmodified 2013-06-26
+*/
+/* ----------------------------- */
+/* ==Typographie */
+/* @note Cette feuille de stlye gère le rythme vertical, les corps et graisses de texte (niveaux de titres, texte courant, éléments particuliers…).
+/* ----------------------------- */
+/* ----------------------------- */
+/* Sommaire */
+/* ----------------------------- */
+/*
+  == Typographie
+    -- Niveaux de titres
+    -- Corps alternatifs
+    -- Styles particuliers
+*/
+/* == @section Typographie ====================
+ * @see https://www.codestyle.org/servlets/FontStack
+ * @see https://ffffallback.com/
+ * @see https://soqr.fr/vertical-rhythm/ @author : @eQRoeil
+*/
+body,
+code {
+	font: 300 1em/1.5 "museo-slab-1", "museo-slab-2", "Arial", sans-serif;
+}
+
+/*
+  Corps du texte pour le contenu,
+  Préserve le rythme vertical.
+*/
+p,
+ul,
+ol,
+blockquote,
+pre,
+label,
+textarea {
+	font-size: 1em;
+	line-height: 1.5;
+	margin: 1.5em 0 0.75em;
+}
+
+/* -- @subsection Niveaux de titres -------------------- */
+h1,
+.h1-like, h2,
+.h2-like,
+.h3-like, h3,
+h4,
+.h4-like, h5,
+.h5-like, h6,
+.h6-like {
+	font-weight: 500;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1,
+.h1-like {
+	font-size: 4.375em;
+	line-height: 1.02857;
+	margin: 2.05714em 0 1.02857em;
+}
+
+h2,
+.h2-like,
+.h3-like {
+	font-size: 1.5em;
+	line-height: 1;
+	margin: 1.5em 0 1em;
+}
+
+h3,
+h4,
+.h4-like {
+	font-size: 1.375em;
+	line-height: 1.09091;
+	margin: 2.18182em 0 1.09091em;
+}
+
+h5,
+.h5-like {
+	font-size: 1.25em;
+	line-height: 1.2;
+	margin: 2.4em 0 1.2em;
+}
+
+h6,
+.h6-like {
+	font-size: 1.125em;
+	line-height: 1.33333;
+	margin: 2.66667em 0 1.33333em;
+}
+
+/* -- @subsection Corps alternatifs -------------------- */
+.smaller {
+	font-size: 0.75em;
+	line-height: 2;
+}
+
+small,
+.small,
+figcaption,
+.form-allowed-tags {
+	font-size: 0.875em;
+	line-height: 1.71429;
+}
+
+/* -- @subsection Styles particuliers -------------------- */
+/*
+ * @note Repris de https://tinytypo.tetue.net/
+ * @author Romy Duhem-Verdière @tetue
+ * @author Nicolas Hoffmann
+ * @see https://www.nicolas-hoffmann.net/
+ * @see https://en.wikipedia.org/wiki/International_variation_in_quotation_marks
+ * @author Vincent De Oliveira
+ * @see https://iamvdo.me/blog/n-oubliez-pas-la-propriete-css-quotes
+ */
+[role="article"] ul li::before {
+	content: "—";
+	color: #c42419;
+	display: inline-block;
+	margin-left: -1.2em;
+	width: 1.2em;
+}
+
+[role="article"] p + p {
+	text-indent: 1em;
+}
+
+/* -- @subsection : Améliorations typographiques -------------------- */
+@font-face {
+	font-family: bello-pro-1;
+	font-style: normal;
+	font-weight: 300;
+	src: url(./fonts/bello-pro.woff2) format("woff2")
+}
+
+@font-face {
+	font-family: museo-slab-1;
+	font-style: normal;
+	font-weight: 300;
+	src: url(./fonts/museo-slab-300.woff2) format("woff2")
+}
+
+@font-face {
+	font-family: museo-slab-1;
+	font-style: italic;
+	font-weight: 300;
+	src: url(./fonts/museo-slab-300-italic.woff2) format("woff2")
+}
+
+@font-face {
+	font-family: museo-slab-1;
+	font-style: normal;
+	font-weight: 500;
+	src: url(./fonts/museo-slab-500.woff2) format("woff2")
+}
+
+@font-face {
+	font-family: museo-slab-1;
+	font-style: italic;
+	font-weight: 500;
+	src: url(./fonts/museo-slab-500-italic.woff2) format("woff2")
+}
+
+.tk-bello-pro {
+	font-family: "bello-pro-1", "bello-pro-2", "Arial", sans-serif;
+	font-feature-settings: "liga" 1, "dlig" 1, "sups" 1, "calt" 1;
+}
+
+.tk-museo-slab {
+	font-family: "museo-slab-1", "museo-slab-2", "Arial", sans-serif;
+	font-feature-settings: "liga" 1, "onum" 1;
+}
+
+.description {
+	font-style: italic;
+	line-height: 1.25;
+}
+
+blockquote {
+	quotes: "\00AB\A0" "\A0\00BB" "\201C" "\201D";
+	position: relative;
+}
+
+blockquote:lang(en) {
+	quotes: "\201C" "\201D";
+}
+
+blockquote::before {
+	content: open-quote;
+	color: #9faaad;
+	font: 300 3em/0.2em "bello-pro-1", "bello-pro-2", "Arial", sans-serif;
+	left: -0.6em;
+	opacity: .3;
+	position: absolute;
+	top: 0.5em;
+	z-index: -1;
+}
+
+blockquote p {
+	font-style: italic;
+	font-weight: 500;
+	font-size: 1.75em;
+	line-height: 1.33333;
+}
+
+blockquote p:after {
+	content: close-quote;
+	font: 300 1em "bello-pro-1", "bello-pro-2", "Arial", sans-serif;
+	opacity: .3;
+}
+
+b,
+mark,
+strong {
+	color: #01171d;
+	font-weight: 500;
+}
+
+i,
+em,
+[pubdate],
+figcaption,
+.comment-notes {
+	font-style: italic;
+	font-weight: 300;
+}
+
+[itemprop="articleBody"] > p > code,
+[itemprop="articleBody"] > ul code {
+	border: 1px solid;
+	border-radius: 2px;
+	color: #c42419;
+	padding: 0 0.2em;
+}
+
+/**
+* @author Gaël Poupard
+* @site Thème ffeeeedd
+* @lastmodified 2013-06-26
+*/
+/* ----------------------------- */
+/* ==Modules */
+/* @note : Cette feuille de style gère la partie personnalisation et modules ajoutés.
+/* ----------------------------- */
+/* ----------------------------- */
+/* Sommaire */
+/* ----------------------------- */
+/*
+  == Couleurs
+  == Liens
+  == Modules
+  == Formulaires
+  == Tableaux
+  == Navigation
+  == WordPress
+*/
+/* == @section Couleurs ==================== */
+html {
+	background-color: #032c36;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAMCAYAAAC0qUeeAAAAOElEQVR42mNgYGBgAmJ+IBYBYm4GAkAIiKWQMBc+xRJoigXxKRZGU4zXKUxQ00SBmI9h0IFhEaQAj8ADZ2F3CVYAAAAASUVORK5CYII=);
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAMCAYAAAC0qUeeAAAAOElEQVR42mNgYGBgAmJ+IBYBYm4GAkAIiKWQMBc+xRJoigXxKRZGU4zXKUxQ00SBmI9h0IFhEaQAj8ADZ2F3CVYAAAAASUVORK5CYII=), radial-gradient(ellipse at center, #1b4049 0%, #032c36 100%);
+	background-repeat: repeat, no-repeat;
+	font-size-adjust: auto;
+	min-height: 100%;
+}
+
+body {
+	color: #032c36;
+}
+
+.aside {
+	background-color: #b31d14;
+	background-image: linear-gradient(to bottom, #c42419 0%, #a1160f 100%);
+	border-top: 1px solid #d7665e;
+	color: #efeee3;
+	min-height: 16em;
+	outline: 1px solid #000;
+	transition: outline .3s ease-in;
+}
+
+.aside ol,
+.aside small {
+	color: #d9847d;
+}
+
+[role="contentinfo"],
+[role="contentinfo"] a {
+	color: #efeee3;
+}
+
+[role="contentinfo"] a:hover,
+[role="contentinfo"] a:focus,
+[role="contentinfo"] a:visited {
+	color: #fff;
+}
+
+strong {
+	color: #01171d;
+}
+
+a,
+pre,
+.required {
+	color: #c42419;
+}
+
+/* == @section Liens ====================
+ * @note Signaler les liens visités, survolés, actifs, externes, vers un mail ou un pdf;
+ * @note Ne surtout pas oublier le :focus, primordial pour l’accessibilité.
+*/
+a {
+	text-decoration: none;
+}
+
+main a,
+[role="contentinfo"] a,
+a:focus, a:hover, a:active {
+	text-decoration: underline;
+}
+
+a:focus, a:hover {
+	color: #971c13;
+}
+
+a:active, a:visited {
+	color: #e4382c;
+}
+
+/* Signaler les liens externes */
+[role="main"] a[target="_blank"]::after {
+	content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKAQMAAAC3/F3+AAAABlBMVEUAAADEJBmmQs41AAAAAXRSTlMAQObYZgAAAB1JREFUaN5jeHyAoeEAQ6MDwzwgYoCiBgcQ+n8AAJauCZxyx3imAAAAAElFTkSuQmCC);
+	margin: 0 .5em 0 .25em;
+}
+
+.aside a,
+.aside h3,
+.aside .textwidget,
+[itemprop="UserComments"] {
+	color: #efeee3;
+	display: block;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2), 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Les liens d’évitement sont de la même couleur que le fond. */
+.skip,
+.skip:hover {
+	color: #032c36;
+	cursor: default;
+}
+
+/* Au focus, ils apparaissent. */
+.skip.show,
+.skip:focus {
+	color: #efeee3;
+}
+
+[href$="#content"]:focus ~ .row > [role="main"] {
+	box-shadow: 0 0 0 7px rgba(0, 0, 0, 0.5);
+}
+
+[href$="#nav"]:focus ~ .row [role="navigation"] .aside,
+[href$="#toc"]:focus ~ .row [role="complementary"] .aside {
+	outline: 7px solid rgba(0, 0, 0, 0.5);
+}
+
+/* == @section Modules ==================== */
+.page-numbers {
+	border-top: 1px dotted #9faaad;
+	display: flex;
+	justify-content: space-between;
+	padding-top: 1em;
+}
+
+.page-numbers li {
+	min-width: 3ch;
+	text-align: center;
+}
+
+/* == @section Navigation ==================== */
+.menu li {
+	display: block;
+	position: relative;
+}
+
+.menu a {
+	display: block;
+}
+
+[id="nav"] {
+	position: relative;
+}
+
+/* == @section WordPress ==================== */
+/*
+ * @note Classes utilisées par WordPress pour afficher les images avec leurs légendes, les galeries d’images, ainsi que pour distinguer les articles mis en avant et les commentaires ajoutés par l’auteur d’un article himself.
+ */
+figure {
+	background: white;
+	border: 1em solid white;
+	margin: 1em auto;
+	max-width: 100%;
+	padding: 1em;
+}
+
+figure img {
+	outline: 1px solid #efeee3;
+}
+
+figcaption {
+	color: #032c36;
+	padding-top: 1em;
+}
+
+/* == @Section Spécifiques ==================== */
+.tk-bello-pro,
+[itemprop="author"] {
+	font-weight: 300;
+}
+
+[role="main"] {
+	background: #efeee3;
+	border: 1px solid #fff;
+	border-radius: 5px;
+	box-shadow: 0 0 0 7px rgba(0, 0, 0, 0.2);
+	position: relative;
+	transition: box-shadow .3s ease-in;
+	z-index: 1;
+}
+
+.logo {
+	position: relative;
+	width: 110%;
+}
+
+[id="logo"] {
+	position: absolute;
+	right: 2em;
+	top: 2em;
+	z-index: -1;
+}
+
+[id="nav"] a {
+	box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0.2);
+	font-weight: 500;
+	padding: 0.5em 2em 0.5em 1em;
+}
+
+[id="nav"] a:hover, [id="nav"] a:focus, [id="nav"] a:active {
+	box-shadow: inset 999px 0 0 0 rgba(0, 0, 0, 0.2);
+	text-decoration: none;
+}
+
+[id="nav"] .h1-like a {
+	line-height: 1.4;
+	padding: 0.1em 0.75em 0;
+}
+
+[id="nav"] .h1-like a:hover, [id="nav"] .h1-like a:focus, [id="nav"] .h1-like a:active {
+	box-shadow: none;
+	color: #fff;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5), 2px 2px 2px rgba(0, 0, 0, 0.3), 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+[id="nav"] li + [class*="current"] a {
+	background: #971c13;
+	background: rgba(0, 0, 0, 0.1);
+}
+
+h2[itemprop="author"] {
+	text-transform: uppercase;
+}
+
+h2[itemprop="author"] i {
+	font-weight: 500;
+	text-transform: none;
+}
+
+[itemprop="UserComments"] {
+	background: url("./img/comments.svg") no-repeat center top;
+	padding: 0.25em 1em 0.75em;
+}
+
+[role="article"] footer p {
+	border-top: 1px dotted;
+}
+
+.footnotes-list:last-child {
+	border-top: 1px dotted;
+	margin-bottom: -2em;
+}
+
+.footnote-item {
+	background: radial-gradient(ellipse at center bottom, white 20%, transparent 66%) center bottom/0% 0% no-repeat;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+	padding: 0 0 .5em;
+	transition: background .3s ease-in;
+	transition-delay: .3s;
+}
+
+.footnote-item:target {
+	background-size: 100% 100%;
+}
+
+.footnote-item p {
+	margin: 0;
+	padding: 0 !important;
+}
+
+/* -- @subsection Commentaires -------------------- */
+.comment-respond {
+	margin-top: 4em;
+}
+
+.commentlist header {
+	margin-left: -4em;
+}
+
+blockquote,
+.comment-notes,
+[itemprop="commentText"] p,
+[itemprop="reviewBody"] blockquote p,
+[itemprop="articleBody"] blockquote p {
+	padding: 0;
+}
+
+.avatar {
+	border-radius: 50%;
+}
+
+.comment-respond input,
+.comment-respond textarea {
+	margin-left: -1em;
+	width: calc(100% + 1em);
+}
+
+.comment-respond input[type="submit"] {
+	background-color: #a1160f;
+	background-image: url("./img/comment.svg");
+	background-image: url("./img/comment.svg"), linear-gradient(to bottom, #c42419 0%, #a1160f 100%);
+	background-position: 130% center;
+	background-position: 130% center, 0 0;
+	background-repeat: no-repeat;
+	border: 1px solid #d7665e;
+	border-width: 1px 0 0 1px;
+	color: #efeee3;
+	float: right;
+	font: 500 normal 1.2em/1.5 "museo-slab-1", "museo-slab-2", "Arial", sans-serif;
+	margin: 0 -1em 0 0;
+	outline: 1px solid #000;
+	text-align: left;
+	text-shadow: 1px 1px 1px #000;
+	width: 55%;
+}
+
+.comment-respond input[type="submit"]:hover, .comment-respond input[type="submit"]:active, .comment-respond input[type="submit"]:focus {
+	background-position: 98% center;
+	background-position: 98% center, 0 0;
+	color: #fff;
+	width: 66%;
+}
+
+/* -- @subsection Formats d'articles -------------------- */
+.format-link h3:before {
+	content: "#";
+}
+
+.format-quote blockquote {
+	border-bottom: 1px dotted #9faaad;
+	padding-bottom: .875em;
+}
+
+.format-quote footer {
+	background: #efeee3;
+	display: inline-block;
+	font-style: normal;
+	font-weight: 500;
+	padding: 0 .5em;
+	position: absolute;
+}
+
+.book dl {
+	columns: 2;
+	column-gap: 3em;
+	column-rule: 1px dotted;
+}
+
+.book :is(dt, dd) {
+	display: inline;
+	margin: 0;
+}
+
+.book dt {
+	font-weight: 500;
+}
+
+
+/* -- @subsection Coloration syntaxique -------------------- */
+/**
+ * @note Thème par défaut de Prism.js pour JavaScript, CSS et HTML.
+ * @note Basé sur dabblet
+ * @see https://dabblet.com
+ * @author Lea Verou
+ * @see https://lea.verou.me/
+ * @see https://twitter.com/leaverou
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #032c36;
+	direction: ltr;
+	font-family: "Consolas", "Monaco", "Andale Mono", monospace;
+	font-size: small;
+	hyphens: none;
+	tab-size: 2;
+	text-align: left;
+	text-shadow: 0 1px white;
+	white-space: pre;
+	word-spacing: normal;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	margin: 0.5em 0 0.5em -3em;
+	overflow: auto;
+	padding: 1em 0 1em 3em;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+}
+
+.token.comment, .token.prolog, .token.doctype, .token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #676767;
+}
+
+.token.property, .token.tag, .token.boolean, .token.number, .token.constant, .token.symbol {
+	color: #905;
+}
+
+.token.selector, .token.attr-name, .token.string, .token.builtin {
+	color: #52770a;
+}
+
+.token.operator, .token.entity, .token.url, .language-css .token.string, .style .token.string, .token.variable {
+	color: #896541;
+}
+
+.token.atrule, .token.attr-value, .token.keyword {
+	color: #02749f;
+}
+
+.token.regex, .token.important {
+	color: #d50900;
+}
+
+.token.important {
+	font-weight: bold;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+.token a {
+	color: inherit;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+/**
+* @author Gaël Poupard
+* @site Thème ffeeeedd
+* @lastmodified 2013-06-26
+*/
+/* ----------------------------- */
+/* ==Sprites */
+/* @note Cette feuille de style gère les sprites.
+/* ----------------------------- */
+.ffeeeedd--sprite {
+	background-image: url("./img/ffeeeedd--sprite.svg");
+	background-repeat: no-repeat;
+	background-size: 18em 2.25em;
+	border-radius: 50%;
+	height: 2.25em;
+	width: 2.25em;
+}
+
+.ffeeeedd--sprite:hover, .ffeeeedd--sprite:focus {
+	background-color: #000;
+	background-color: rgba(0, 0, 0, 0.3);
+	box-shadow: 0 0 0 0.66667em rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+}
+
+.ffeeeedd--sprite:focus, .ffeeeedd--sprite.show {
+	overflow: visible;
+}
+
+.ffeeeedd--sprite span {
+	font-size: 0.75em;
+}
+
+.ffeeeedd--sprite__behance {
+	background-position: 0 0;
+}
+
+.ffeeeedd--sprite__dribble {
+	background-position: -2.25em 0;
+}
+
+.ffeeeedd--sprite__github {
+	background-position: -4.5em 0;
+}
+
+.ffeeeedd--sprite__google {
+	background-position: -6.75em 0;
+}
+
+.ffeeeedd--sprite__linkedin {
+	background-position: -9em 0;
+}
+
+.ffeeeedd--sprite__mail {
+	background-position: -11.25em 0;
+}
+
+.ffeeeedd--sprite__rss {
+	background-position: -13.5em 0;
+}
+
+.ffeeeedd--sprite__mastodon {
+	background-position: -15.75em 0;
+}
+
+/**
+* @author Gaël Poupard
+* @site Thème ffeeeedd
+* @lastmodified 2014-01-21
+*/
+/* ----------------------------- */
+/* == Types */
+/* @note Cette feuille de style gère les personnalisations spécifiques à certains types de contenus : les types d’articles, les catégories, les archives, etc.
+/* ----------------------------- */
+/**
+* @author Gaël Poupard
+* @site Thème ffeeeedd
+* @lastmodified 2013-06-26
+*/
+/* ----------------------------- */
+/* == Pages */
+/* @note Cette feuille de style gère les personnalisations spécifiques à certaines pages.
+/* ----------------------------- */
+/* ----------------------------- */
+/* Sommaire */
+/* ----------------------------- */
+/*
+  == Accueil
+*/
+/* == @section Accueil ==================== */
+/**
+* @author Gaël Poupard
+* @site Thème ffeeeedd
+* @lastmodified 2013-11-06
+* @subsection Références :
+  * @see KNACSS.com V1.1 @author : Raphael Goetter, Alsacreations
+  * @see HTML5boilerplate
+  * @see https://rocssti.nicolas-hoffmann.net/ @author : @Nico3333fr
+*/
+/* ----------------------------- */
+/* ==Structure étendue // Design réactif
+/* @note Utilisé pour étendre la structure d’origine : personnaliser la largeur du site, ajouter des tailles en px par exemple, personnaliser les versions responsive (MQ en em)…
+ * @see https://marieguillaumet.com/refonte-mon-portfolio-du-responsive-en-em-premiere-partie
+ * @see https://lanyrd.com/2013/parisweb/sckdfg/
+/* ----------------------------- */
+/* ----------------------------- */
+/* Sommaire */
+/* ----------------------------- */
+/*
+  == Largeur du contenu
+  == Modification des classes
+    -- Palier «large»
+    -- Palier «medium»
+    -- Palier «small»
+    -- Palier «tiny»
+*/
+/* == @section Largeur du contenu ==================== */
+.w--site {
+	width: 40em;
+}
+
+.mw--site {
+	max-width: 40em;
+}
+
+.mw--site.center {
+	margin-left: 33%;
+}
+
+/* == @section Modification des classes ====================
+ * @note Premier palier :    « large »
+ * @note Deuxième palier :   « medium »
+ * @note Troisième palier :  « small »
+ * @note Quatrième palier :  « tiny »
+*/
+/* -- @subsection Palier « large » -------------------- */
+@media (max-width: 136em) {
+	[id="nav"] {
+		width: 33%;
+	}
+
+	body > .skip:first-child {
+		margin-left: 33%;
+	}
+}
+
+@media (max-width: 92em) {
+	.w--site,
+	.mw--site {
+		width: 50%;
+	}
+
+	.mw--site.center,
+	body > .skip:first-child {
+		margin-left: 25%;
+	}
+
+	[id="nav"],
+	[id="nav"] ~ aside {
+		width: 25%;
+	}
+}
+
+@media (min-width: 80em) {
+	a,
+	pre,
+	.required {
+		transition: all .3s ease-in;
+	}
+
+	input,
+	select,
+	textarea {
+		transition: all .3s ease-out;
+	}
+}
+
+/* -- @subsection Palier « medium » -------------------- */
+@media (max-width: 80em) {
+	.row,
+	.w--site,
+	.mw--site {
+		max-width: 66%;
+		width: 66%;
+	}
+
+	.row,
+	.mw--site.center {
+		margin: 0 auto;
+	}
+
+	[id="content"] {
+		border-radius: 0;
+		padding-right: 3em;
+	}
+
+	[id="nav"] {
+		display: table-header-group;
+		text-align: center;
+	}
+
+	[id="nav"] a {
+		padding: .5em 1em .5em .5em;
+	}
+
+	[id="nav"] .aside {
+		min-height: 7em;
+	}
+
+	[id="nav"] .h1-like a {
+		padding: .1em .25em;
+	}
+
+	[id="nav"] ~ aside {
+		display: table-footer-group;
+	}
+
+	[role="banner"] h1 {
+		margin-bottom: .25em;
+	}
+
+	.menu li {
+		display: inline-block;
+	}
+
+	.textwidget p {
+		display: inline-block;
+		vertical-align: top;
+		width: 48%;
+	}
+
+	aside .aside {
+		min-height: 15em;
+	}
+
+	#logo {
+		right: 5em;
+	}
+
+	[id="content"] > article,
+	[id="content"] > section,
+	[id="content"] > .logo + div {
+		max-width: 40em;
+		margin: 0 auto;
+	}
+
+	abbr::after {
+		content: " (" attr(title) ") ";
+	}
+}
+
+@media (max-width: 76.8125em) {
+	.w--site,
+	.mw--site,
+	.row {
+		max-width: 75%;
+		width: 75%;
+	}
+}
+
+@media (max-width: 68em) {
+	.w--site,
+	.mw--site,
+	.row {
+		max-width: 80%;
+		width: 80%;
+	}
+}
+
+@media (min-width: 64em) {
+	.wp-caption.alignright {
+		margin-right: -2em;
+	}
+
+	.wp-caption.alignleft {
+		margin-left: 0;
+	}
+}
+
+/* -- @subsection Palier "small" -------------------- */
+@media (max-width: 64em) {
+	.w--site,
+	.mw--site,
+	.row {
+		max-width: 88%;
+		width: 88%;
+	}
+
+	[id="nav"] {
+		font-size: small;
+	}
+
+	[role="banner"] h1 {
+		font-size: 3.75em;
+	}
+
+	[role="main"] {
+		padding: 2em;
+	}
+
+	.single .comment-respond input[type="submit"],
+	.single .comment-respond input[type="submit"]:hover,
+	.single .comment-respond input[type="submit"]:focus,
+	.single .comment-respond input[type="submit"]:active {
+		background-position: 98% center, 0 0;
+		float: none;
+		width: 100%;
+	}
+
+	div[itemprop="articleBody"] p,
+	div[itemprop="articleBody"] ul,
+	div[itemprop="articleBody"] ol,
+	div[itemprop="reviewBody"] p,
+	div[itemprop="reviewBody"] ul,
+	div[itemprop="reviewBody"] ol {
+		padding-left: .5em;
+		text-align: left;
+	}
+
+	div[itemprop="articleBody"] ul,
+	div[itemprop="articleBody"] ol,
+	div[itemprop="reviewBody"] ul,
+	div[itemprop="reviewBody"] ol {
+		list-style-position: inside;
+	}
+
+	figure.wp-caption {
+		float: none;
+		margin: 0 auto;
+		max-width: 100%;
+	}
+}
+
+@media (max-width: 60em) {
+	.w--site,
+	.mw--site,
+	.row {
+		max-width: 96%;
+		width: 96%;
+	}
+
+	#nav a {
+		padding: 1em 1em 1em .5em;
+	}
+
+	#nav .aside {
+		min-height: 6em;
+	}
+
+	#nav .h1-like a {
+		font-size: .75em;
+	}
+
+	[role="banner"] h1 {
+		font-size: 3em;
+	}
+
+	[role="main"] {
+		padding: 1em;
+	}
+
+	aside .aside {
+		padding-bottom: 2em;
+	}
+}
+
+@media (max-width: 50em) {
+	.w--site,
+	.mw--site,
+	.row,
+	.textwidget p {
+		max-width: 100%;
+		width: 100%;
+	}
+
+	body {
+		padding: 0 !important;
+	}
+
+	body > .skip {
+		position: absolute;
+		z-index: -1;
+	}
+
+	#nav .aside {
+		min-height: 5em;
+	}
+
+	#nav .h1-like a {
+		font-size: .5em;
+	}
+
+	.ffeeeedd--contact li {
+		padding: .5em;
+	}
+}
+
+@media (max-width: 30em) {
+	.menu li {
+		display: block;
+	}
+
+	#nav a {
+		padding: .5em;
+	}
+
+	#nav .h1-like a {
+		font-size: 1em;
+		padding: .25em;
+	}
+}
+
+/*# sourceMappingURL=styles.min.css.map */

@@ -18,7 +18,6 @@ turndownService.addRule('figcaption', {
 	}
 });
 
-// @todo Commentaires
 Object.keys(posts).forEach((p, i) => {
 	let post = posts[i];
 
