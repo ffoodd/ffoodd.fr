@@ -691,6 +691,10 @@ figcaption,
 	text-indent: 1em;
 }
 
+.erreur-404 p {
+	text-indent: 0 !important;
+}
+
 /* -- @subsection : Améliorations typographiques -------------------- */
 @font-face {
 	font-family: bello-pro-1;

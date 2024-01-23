@@ -1,0 +1,9 @@
+{% extends "../base.njk" %}
+
+{% block breadcrumb %}{%- endblock -%}
+
+{% block content %}
+	<div itemprop="articleBody" class="erreur-404">
+		{{ content | safe }}
+	</div>
+{% endblock %}
