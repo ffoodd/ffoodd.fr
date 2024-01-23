@@ -1,34 +1,23 @@
----json
-{
-	"permalink": "feed/index.xml",
-	"eleventyExcludeFromCollections": true,
-	"metadata": {
-		"title": "La vie en #ffoodd",
-		"subtitle": "Intégrateur web à Nantes.",
-		"language": "fr-FR",
-		"url": "https://www.ffoodd.fr/feed/",
-		"author": {
-			"name": "Gaël Poupard"
-		}
-	}
-}
+---
+permalink: "feed/index.xml"
+eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="{{ metadata.url }}" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="{{ site.url }}" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>{{ metadata.title }}</title>
-		<link>{{ metadata.url }}</link>
-		<atom:link href="{{ permalink | absoluteUrl(metadata.url) }}" rel="self" type="application/rss+xml" />
-		<description>{{ metadata.subtitle }}</description>
-		<language>{{ metadata.language }}</language>
+		<title>{{ site.name }}</title>
+		<link>{{ site.url }}/feed/</link>
+		<atom:link href="{{ permalink | absoluteUrl(site.url) }}" rel="self" type="application/rss+xml" />
+		<description>{{ site.subtitle }}</description>
+		<language>{{ site.language }}</language>
 		{%- for post in collections.posts | reverse %}
-			{%- set absolutePostUrl = post.url | absoluteUrl(metadata.url) %}
+			{%- set absolutePostUrl = post.url | absoluteUrl(site.url) %}
 			<item>
 				<title>{{ post.data.title }}</title>
 				<link>{{ absolutePostUrl }}</link>
 				<description>{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</description>
 				<pubDate>{{ post.date | dateToRfc822 }}</pubDate>
-				<dc:creator>{{ metadata.author.name }}</dc:creator>
+				<dc:creator>{{ site.author.name }}</dc:creator>
 				<guid>{{ absolutePostUrl }}</guid>
 			</item>
 		{%- endfor %}

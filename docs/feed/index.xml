@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="https://www.ffoodd.fr/feed/" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="https://www.ffoodd.fr" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>La vie en #ffoodd</title>
 		<link>https://www.ffoodd.fr/feed/</link>
-		<atom:link href="https://www.ffoodd.fr/feed/feed/index.xml" rel="self" type="application/rss+xml" />
+		<atom:link href="https://www.ffoodd.fr/feed/index.xml" rel="self" type="application/rss+xml" />
 		<description>Intégrateur web à Nantes.</description>
 		<language>fr-FR</language>
 			<item>
@@ -2986,7 +2986,7 @@ h1 a:before {
 			</item>
 			<item>
 				<title>Dessine-moi un bouton</title>
-				<link>https://www.ffoodd.fr/swirl-in-style/</link>
+				<link>https://www.ffoodd.fr/dessine-moi-un-bouton/</link>
 				<description>&lt;p&gt;Les boutons sont des éléments capitaux du graphisme web : ils appellent, suggèrent et provoquent &lt;strong&gt;l’action&lt;/strong&gt;. Autrefois, les liens hypertextes étaient l’emblème des interactions : aujourd’hui, ce sont les boutons.&lt;/p&gt;
 &lt;h2 id=&quot;une-esp%C3%A8ce-animale&quot; tabindex=&quot;-1&quot;&gt;Une espèce animale&lt;/h2&gt;
 &lt;p&gt;Il en existe de toute sorte : des grands, des petits, des noirs, des jaunes, des visuels et des textuels… Chaque bouton que vous pouvez imaginer existe certainement déjà quelque part.&lt;/p&gt;
@@ -3002,7 +3002,7 @@ h1 a:before {
 </description>
 				<pubDate>Sun, 31 Oct 2010 19:54:49 +0000</pubDate>
 				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/swirl-in-style/</guid>
+				<guid>https://www.ffoodd.fr/dessine-moi-un-bouton/</guid>
 			</item>
 	</channel>
 </rss>

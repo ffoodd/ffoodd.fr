@@ -3,7 +3,6 @@ layout: "template/page.njk"
 title: "Politique de confidentialité"
 permalink: "politique-de-confidentialite/index.html"
 tags: "pages"
-description: ";"
 ---
 ## Qui sommes-nous&nbsp;?
 

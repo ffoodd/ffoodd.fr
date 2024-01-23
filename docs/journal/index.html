@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr-FR">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,7 +12,7 @@
 	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
 		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
 		<div class="row">
-			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation">
+			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation" aria-label="Menu principal">
 				<ul class="menu aside p-reset m-reset ul-reset">
 					<li class="tk-bello-pro h1-like m-reset">
 						<a href="/">ffoodd</a>
@@ -31,23 +31,25 @@
 
 			<main class="col w--site pl3 pb3 pr3" id="content" role="main" role="main" itemprop="mainContentOfPage">
 				<div class="logo print-hidden">
-					<img src="/assets/img/embossed-ffoodd.png" alt="La vie en #ffoodd" id="logo" width="144" height="144">
+					<img src="/assets/img/embossed-ffoodd.png" alt="" id="logo" width="144" height="144">
 				</div>
 				<div>
 				
 					<header class="center pt1 mb1" role="banner">
 						<h1 class="mb0 mt0 tk-bello-pro" itemprop="name">Journal</h1>
 						
-	<nav role="navigation" aria-labelledby="here" class="print-hidden small mt2 mb1">
-		<span id="here">Vous êtes ici&nbsp;: </span>
-		<div class="inbl" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-			<a href="/" itemprop="url"><span itemprop="title">La vie en #ffoodd</span></a>
-			<span> ›&nbsp;</span>
-		</div><div class="inbl" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-			<a href="/journal/" itemprop="url"><span itemprop="title">Journal</span></a>
-		</div>
-	</nav>
+							<nav role="navigation" aria-labelledby="here" class="print-hidden small mt2 mb1">
+	<span id="here">Vous êtes ici&nbsp;: </span>
+	<div class="inbl" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+		<a href="/" itemprop="url"><span itemprop="title">La vie en #ffoodd</span></a>
+		<span> ›&nbsp;</span>
+	</div>
+	<div class="inbl" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+		<span itemprop="title">Journal</span>
+	</div>
+</nav>
 
+						
 						
 							<h2 class="h3-like m-reset pb1" itemprop="description">Articles récents</h2>
 						
@@ -194,25 +196,18 @@
 
 			
 				<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
-					<!-- @todo Autres liens ? -->
 					<div class="aside pl2 pt2">
 						<h3 class="tk-bello-pro h2-like m-reset">À lire ailleurs</h3>
 						<div class="textwidget">
 							<ul>
-								<li>
-									<a href="https://openweb.eu.org/articles/du-consommateur-au-producteur">sur Openweb</a>
-								</li>
-								<li>
-									<a href="https://www.alsacreations.com/livres/lire/1503-webgrids-structure-et-typographie-de-la-page-web.html">sur Alsacréations</a>
-								</li>
+								<li><a href="https://openweb.eu.org/articles/du-consommateur-au-producteur">sur Openweb</a></li>
+								<li><a href="https://www.alsacreations.com/livres/lire/1503-webgrids-structure-et-typographie-de-la-page-web.html">sur Alsacréations</a></li>
 							</ul>
 						</div>
 						<h3 class="tk-bello-pro h2-like m-reset pt1">À regarder ailleurs</h3>
 						<div class="textwidget">
 							<ul>
-								<li>
-									<a href="https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php">Paris Web 2018</a>
-								</li>
+								<li><a href="https://devfest.gdgnantes.com/sessions/dessine_moi_un_graphique__en_css_/">DevFest Nantes 2023</a></li>
 							</ul>
 						</div>
 					</div>
@@ -220,45 +215,33 @@
 			
 		</div>
 		<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
-			<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
-				<!-- @todo Fichier json pour les réseaux ? -->
-				<li class="inbl pa1" itemscope itemprop="contactPoint">
-					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__mastodon" href="https://mamot.fr/@ffoodd" itemprop="url" title="Gaël Poupard sur Mastodon">
-						<span itemprop="name">Mastodon</span>
-					</a>
-				</li>
-				<li class="inbl pa1" itemscope itemprop="contactPoint">
-					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__github" href="https://github.com/ffoodd" itemprop="url" title="Gaël Poupard sur GitHub">
-						<span itemprop="name">GitHub</span>
-					</a>
-				</li>
-				<li class="inbl pa1" itemscope itemprop="contactPoint">
-					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__dribble" href="https://dribbble.com/ffoodd" itemprop="url" title="Gaël Poupard sur Dribbble">
-						<span itemprop="name">Dribbble</span>
-					</a>
-				</li>
-				<li class="inbl pa1" itemscope itemprop="contactPoint">
-					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__linkedin" href="https://www.linkedin.com/pub/ga%C3%ABl-poupard/30/17b/401" itemprop="url" title="Gaël Poupard sur LinkedIn">
-						<span itemprop="name">LinkedIn</span>
-					</a>
-				</li>
-				<li class="inbl pa1" itemscope itemprop="contactPoint">
-					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__behance" href="https://www.behance.net/ffoodd" itemprop="url" title="Gaël Poupard sur Behance">
-						<span itemprop="name">Behance</span>
-					</a>
-				</li>
-				<li class="inbl pa1" itemscope itemprop="contactPoint">
-					<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/index.xml" itemprop="url" title="La vie en #ffoodd | Flux RSS">
-						<span itemprop="name">RSS</span>
-					</a>
-				</li>
-			</ul>
+			<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden"><li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__mastodon" href="https://mamot.fr/@ffoodd" itemprop="url" title="Gaël Poupard sur Mastodon">
+							<span itemprop="name">Mastodon</span>
+						</a>
+					</li><li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__github" href="https://github.com/ffoodd" itemprop="url" title="Gaël Poupard sur GitHub">
+							<span itemprop="name">GitHub</span>
+						</a>
+					</li><li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__dribbble" href="https://dribbble.com/ffoodd" itemprop="url" title="Gaël Poupard sur Dribbble">
+							<span itemprop="name">Dribbble</span>
+						</a>
+					</li><li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__linkedin" href="https://www.linkedin.com/pub/ga%C3%ABl-poupard/30/17b/401" itemprop="url" title="Gaël Poupard sur LinkedIn">
+							<span itemprop="name">LinkedIn</span>
+						</a>
+					</li><li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/index.xml" itemprop="url" title="La vie en #ffoodd | Flux RSS">
+							<span itemprop="name">RSS</span>
+						</a>
+					</li></ul>
 
-			<small>
-				&copy; 2018 La vie en #ffoodd &mdash; Design et intégration par <span itemprop="name">Gaël Poupard</span> &mdash; <a href="/mentions-legales/">Mentions légales</a>
+			<p class="small">
+				&copy; 2024 La vie en #ffoodd &mdash; Design et intégration par <span itemprop="name">Gaël Poupard</span> &mdash; <a href="/mentions-legales/">Mentions légales</a>
 				<br />
 				Sauf mention contraire, l’ensemble du contenu est sous <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/fr/">Licence <abbr lang="en" title="Creative Commons">CC</abbr> <abbr lang="en" title="Attribution">BY</abbr>-<abbr lang="en" title="Non Commercial">NC</abbr>-<abbr lang="en" title="Share Alike">SA</abbr></a>.
-			</small>
+			</p>
 
 			<meta itemprop="jobTitle" content="Webdesigner et intégrateur web">
 			<meta itemprop="worksFor" content="onepoint">

@@ -34,7 +34,7 @@ Object.keys(pages).forEach((p, i) => {
 	let layout = 'template/page.njk';
 	let path = './_src/pages';
 	let slug = `${page.slug}.md`;
-	let description = ';'
+	let description = '';
 
 	if (page.slug === 'accueil') {
 		permalink = 'index.html';

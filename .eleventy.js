@@ -8,6 +8,9 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 module.exports = function (eleventyConfig) {
 
+	// Shortcodes
+	eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`)
+
 	// Filtres
 	eleventyConfig.addFilter('date', dateObj => {
 		return DateTime.fromISO(dateObj).setLocale('fr').toLocaleString(DateTime.DATE_FULL)
@@ -54,9 +57,6 @@ module.exports = function (eleventyConfig) {
 	// @todo Syntax highlighting
 	// @link https://www.11ty.dev/docs/plugins/syntaxhighlight/
 	// @note Les portions de code existantes fonctionnent toujours : privilégier PrismJS pour la rétro-compatibilité ?
-	// @todo Robots.txt
-	// @link https://micro.anniegreens.lol/2023/09/29/updated-my-microblog.html
-	// @todo sitemap.xml
 	eleventyConfig.setLibrary("md", md)
 
 	// Plugins
