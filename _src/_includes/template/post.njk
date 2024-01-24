@@ -1,80 +1,93 @@
 {% extends "../base.njk" %}
 
 {% block content %}
-	<time class="screen-reader-text" datetime="{{ date }}" itemprop="datePublished">{{ date | date }}</time>
-	{%- if format === 'status' -%}
-		<aside class="book mb2">
-			<dl class="small ul-reset">
-				{%- if auteur !== "" %}
-					<div>
-						<dt>Auteur(s) :&nbsp;</dt>
-						<dd itemprop="author">{{ auteur }}</dd>
-					</div>
-				{%- endif -%}
-				{%- if editeur !== "" %}
-					<div>
-						<dt>Éditeur(s) :&nbsp;</dt>
-						<dd itemprop="publisher">{{ editeur }}</dd>
-					</div>
-				{%- endif -%}
-				{%- if collection !== "" %}
-					<div>
-						<dt>Collection :&nbsp;</dt>
-						<dd itemprop="bookEdition">{{ collection }}</dd>
-					</div>
-				{%- endif -%}
-				{%- if lien !== "" %}
-					<div>
-						<dt>Lien :&nbsp;</dt>
-						<dd>
-							<a href="{{ lien }}" itemprop="url">Sur le site de l’éditeur</a>
-						</dd>
-					</div>
-				{%- endif -%}
-				{%- if date_de_parution !== "" %}
-					<div>
-						<dt>Date de parution :&nbsp;</dt>
-						<dd itemprop="datePublished"><time datetime="{{ date_de_parution | publicationdate }}">{{ date_de_parution }}</time></dd>
-					</div>
-				{%- endif -%}
-				{%- if ean13 !== "" %}
-					<div>
-						<dt><abbr title="European Article Numbering" lang="en">EAN</abbr>13 :&nbsp;</dt>
-						<dd itemprop="isbn">{{ ean13 }}</dd>
-					</div>
-				{%- endif -%}
-				{%- if nombre_de_pages !== "" %}
-					<div>
-						<dt>Nombre de pages :&nbsp;</dt>
-						<dd itemprop="numberOfPages">{{ nombre_de_pages }} pages</dd>
-					</div>
-				{%- endif -%}
-				{%- if note !== "" %}
-					<div itemprop="review" itemscope itemtype="https://schema.org/Review">
-						<dt>Note :&nbsp;</dt>
-						<dd itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-							<meta content="0" itemprop="worstRating">
-							<meta content="{{ note }}" itemprop="ratingValue">
-							<meta content="5" itemprop="bestRating">
-							<span aria-label="{{ note }} sur 5" title="{{ note }} sur 5">
-								{%- for i in range(0, note) %}★{% endfor -%}
-								{%- for i in range(note, 5) %}☆{% endfor -%}
-							</span>
-						</dd>
-					</div>
-				{%- endif -%}
-			</dl>
-		</aside>
-	{%- endif -%}
-	<div itemprop="articleBody">
-		{{ content | safe }}
-	</div>
-	<footer class="small mt2">
-		<p class="pl2 mt0 pt1">
-			Article rédigé par <strong itemprop="author"><span class="fn">{{ site.author.name }}</span></strong>.
-			Modifié le <time class="updated" datetime="{{ modified or date }}" itemprop="dateModified">{{ modified | date or date | date }}</time>.
-		</p>
-	</footer>
+	<article role="article" itemscope itemtype="https://schema.org/{% if format === 'status' %}Book{% else %}Article{% endif %}">
+		<time class="screen-reader-text" datetime="{{ date }}" itemprop="datePublished">{{ date | date }}</time>
+		{% if format === 'status' %}
+			<aside class="book mb2">
+				<dl class="small ul-reset">
+					{%- if auteur !== "" %}
+						<div>
+							<dt>Auteur(s) :&nbsp;</dt>
+							<dd itemprop="author">{{ auteur }}</dd>
+						</div>
+					{%- endif -%}
+					{%- if editeur !== "" %}
+						<div>
+							<dt>Éditeur(s) :&nbsp;</dt>
+							<dd itemprop="publisher">{{ editeur }}</dd>
+						</div>
+					{%- endif -%}
+					{%- if collection !== "" %}
+						<div>
+							<dt>Collection :&nbsp;</dt>
+							<dd itemprop="bookEdition">{{ collection }}</dd>
+						</div>
+					{%- endif -%}
+					{%- if lien !== "" %}
+						<div>
+							<dt>Lien :&nbsp;</dt>
+							<dd>
+								<a href="{{ lien }}" itemprop="url">Sur le site de l’éditeur</a>
+							</dd>
+						</div>
+					{%- endif -%}
+					{%- if date_de_parution !== "" %}
+						<div>
+							<dt>Date de parution :&nbsp;</dt>
+							<dd itemprop="datePublished"><time datetime="{{ date_de_parution | publicationdate }}">{{ date_de_parution }}</time></dd>
+						</div>
+					{%- endif -%}
+					{%- if ean13 !== "" %}
+						<div>
+							<dt><abbr title="European Article Numbering" lang="en">EAN</abbr>13 :&nbsp;</dt>
+							<dd itemprop="isbn">{{ ean13 }}</dd>
+						</div>
+					{%- endif -%}
+					{%- if nombre_de_pages !== "" %}
+						<div>
+							<dt>Nombre de pages :&nbsp;</dt>
+							<dd itemprop="numberOfPages">{{ nombre_de_pages }} pages</dd>
+						</div>
+					{%- endif -%}
+					{%- if note !== "" %}
+						<div itemprop="review" itemscope itemtype="https://schema.org/Review">
+							<dt>Note :&nbsp;</dt>
+							<dd itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+								<meta content="0" itemprop="worstRating">
+								<meta content="{{ note }}" itemprop="ratingValue">
+								<meta content="5" itemprop="bestRating">
+								<span aria-label="{{ note }} sur 5" title="{{ note }} sur 5">
+									{%- for i in range(0, note) %}★{% endfor -%}
+									{%- for i in range(note, 5) %}☆{% endfor -%}
+								</span>
+							</dd>
+						</div>
+					{%- endif -%}
+				</dl>
+			</aside>
+			<div itemprop="review" itemscope itemtype="https://schema.org/Review">
+				<div itemprop="reviewBody">
+					{{ content | safe }}
+				</div>
+			</div>
+		{% elseif format === 'quote' %}
+			<blockquote class="description pb1 pt2" itemprop="description"{% if lang !== "" %} lang="{{ lang }}"{% endif %}>
+				<p class="m-reset">{{ excerpt | markdown | safe }}</p>
+				<footer class="small ml2">{{ title | safe }}</footer>
+			</blockquote>
+		{% else %}
+			<div itemprop="articleBody">
+				{{ content | safe }}
+			</div>
+		{% endif %}
+		<footer class="small mt2">
+			<p class="pl2 mt0 pt1">
+				Article rédigé par <strong itemprop="author"><span class="fn">{{ site.author.name }}</span></strong>.
+				Modifié le <time class="updated" datetime="{{ modified or date }}" itemprop="dateModified">{{ modified | date or date | date }}</time>.
+			</p>
+		</footer>
+	</article>
 {% endblock %}
 
 {% block comments %}

@@ -45,24 +45,22 @@
 				<div class="logo print-hidden">
 					<img src="/assets/img/embossed-ffoodd.png" alt="" id="logo" width="144" height="144">
 				</div>
-				{% if layout === 'template/archive.njk' %}<div>
-				{% else %}<article role="article" itemscope itemtype="https://schema.org/Article">
-				{% endif %}
-					<header class="center pt1 mb1" role="banner">
-						<h1 class="mb0 mt0 tk-bello-pro" itemprop="name">{{ title | safe }}</h1>
-						{% block breadcrumb %}
-							{% include 'partials/breadcrumb.njk' %}
-						{% endblock %}
-						{% if description %}
-							<h2 class="h3-like {% if layout === 'template/archive.njk' %}m-reset pb1{% else %}description{% endif %}" itemprop="description">{{ description | safe }}</h2>
-						{% endif %}
-					</header>
-					{% block content %}
+				<header class="center pt1 mb1" role="banner">
+					<h1 class="mb0 mt0 tk-bello-pro" itemprop="name">{{ title | safe }}</h1>
+					{% block breadcrumb %}
+						{% include 'partials/breadcrumb.njk' %}
+					{% endblock %}
+					{% if description %}
+						<h2 class="h3-like {% if layout === 'template/archive.njk' %}m-reset pb1{% else %}description{% endif %}" itemprop="description">{{ description | safe }}</h2>
+					{% endif %}
+				</header>
+				{% block content %}
+					<article role="article" itemscope itemtype="https://schema.org/Article}">
 						<div itemprop="articleBody">
 							{{ content | safe }}
 						</div>
-					{% endblock %}
-				{% if layout === 'template/archive.njk' %}</div>{% else %}</article>{% endif %}
+					</article>
+				{% endblock %}
 				{% block comments %}{% endblock %}
 				{% block latest %}{% endblock %}
 			</main>

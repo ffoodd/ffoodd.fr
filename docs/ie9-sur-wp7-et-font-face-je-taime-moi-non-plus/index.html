@@ -33,12 +33,10 @@
 				<div class="logo print-hidden">
 					<img src="/assets/img/embossed-ffoodd.png" alt="" id="logo" width="144" height="144">
 				</div>
-				<article role="article" itemscope itemtype="https://schema.org/Article">
-				
-					<header class="center pt1 mb1" role="banner">
-						<h1 class="mb0 mt0 tk-bello-pro" itemprop="name">IE9 sur WP7 et @font-face : je t’aime, moi non plus.</h1>
-						
-							<nav role="navigation" aria-labelledby="here" class="print-hidden small mt2 mb1">
+				<header class="center pt1 mb1" role="banner">
+					<h1 class="mb0 mt0 tk-bello-pro" itemprop="name">IE9 sur WP7 et @font-face : je t’aime, moi non plus.</h1>
+					
+						<nav role="navigation" aria-labelledby="here" class="print-hidden small mt2 mb1">
 	<span id="here">Vous êtes ici&nbsp;: </span>
 	<div class="inbl" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
 		<a href="/" itemprop="url"><span itemprop="title">La vie en #ffoodd</span></a>
@@ -49,14 +47,15 @@
 	</div>
 </nav>
 
-						
-						
-							<h2 class="h3-like description" itemprop="description">J'ose le dire : j'aime Internet Explorer. Comme je l'ai précédemment <a title="css {    expérience:inherit; }" href="http://www.ffoodd.fr/css-experienceinherit/">évoqué</a>, c'est le seul navigateur qui réagisse normalement à un doctype invalide et ce genre de petit détail de l'intégration. Je considère qu'une compatibilité IE8 sans râler ni coller de hacks à tout va est un gage de qualité pour un intégrateur.</h2>
-						
-					</header>
 					
-	<time class="screen-reader-text" datetime="2013-07-24T17:16:35" itemprop="datePublished">24 juillet 2013</time><div itemprop="articleBody">
-		<p><strong>Cependant, je dois également avouer que certaines choses me surprendront toujours : c’est le cas du support de <code>@font-face</code> sur Windows Phone 7.</strong> </p>
+					
+						<h2 class="h3-like description" itemprop="description">J'ose le dire : j'aime Internet Explorer. Comme je l'ai précédemment <a title="css {    expérience:inherit; }" href="http://www.ffoodd.fr/css-experienceinherit/">évoqué</a>, c'est le seul navigateur qui réagisse normalement à un doctype invalide et ce genre de petit détail de l'intégration. Je considère qu'une compatibilité IE8 sans râler ni coller de hacks à tout va est un gage de qualité pour un intégrateur.</h2>
+					
+				</header>
+				
+	<article role="article" itemscope itemtype="https://schema.org/Article">
+		<time class="screen-reader-text" datetime="2013-07-24T17:16:35" itemprop="datePublished">24 juillet 2013</time><div itemprop="articleBody">
+				<p><strong>Cependant, je dois également avouer que certaines choses me surprendront toujours : c’est le cas du support de <code>@font-face</code> sur Windows Phone 7.</strong> </p>
 <h2 id="un-jour%2C-j%E2%80%99ai-fait-un-test" tabindex="-1">Un jour, j’ai fait un test</h2>
 <p>Raphaël Goetter a annoncé aujourd’hui la refonte de son site principal, <a href="http://goetter.fr" title="Le site de Raphaël Goetter (nouvelle fenêtre)">goetter.fr</a>, sur <a href="http://blog.goetter.fr/post/56263951583/faites-un-site-web-perso" title="Article sur la refonte de goetter.fr (nouvelle fenêtre)">son blog</a>. Étant donné que nous avions discuté quelques jours auparavant de ligatures <a href="https://twitter.com/ffoodd_fr/status/357798486227435520" title="Discussion au sujet des ligatures sur Twitter (nouvelle fenêtre)">sur Twitter</a>, j’ai lâché un commentaire au sujet de cette nouveauté sur le site de M. Goetter. Cependant sa réponse m’a légèrement surpris, puisque je ne m’attendais pas à ce qu’il doive se séparer de cet ornement sur mobile – pour d’excellentes raisons au demeurant.</p>
 <p>Pris de curiosité, j’ai alors décidé d’y jeter un œil sur mon smartphone : un Lumia 800 tournant sur Windows Phone 7.10, et Internet Explorer 9. Outre l’absence de la typographie <em>«Calendas Plus»</em>, j’ai constaté que la typographie générée sur <a href="http://icomoon.io/" title="Icomoon (nouvelle fenêtre)">Icomoon</a> pour gérer les icônes était également absente.</p>
@@ -76,15 +75,14 @@
 <p>Si quelqu’un connait un moyen de cibler uniquement IE9 sur Windows Phone 7, je suis preneur ! De plus, je n’ai aucun moyen de tester IE sur Windows Phone 8 pour le moment, je ne saurais donc préciser si ce problème existe toujours dans les versions les plus récentes.</p>
 <p><strong>Edit :</strong> La nuit portant conseil, l’astuce dans le cas d’une icon-font semble finalement «simple». Il s’agira de les baser sur des caractères unicodes ayant un intérêt ( par exemple, ☎ ). Cependant, cette astuce n’est possible que lorsqu’on a le choix des glyphes utilisés comme support – ce qui, je crois, est le cas dans IcoMoon – et de disposer d’un caractère unicode signifiant.</p>
 
-	</div>
-	<footer class="small mt2">
-		<p class="pl2 mt0 pt1">
-			Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
-			Modifié le <time class="updated" datetime="2013-11-13T12:25:49" itemprop="dateModified">13 novembre 2013</time>.
-		</p>
-	</footer>
+			</div><footer class="small mt2">
+			<p class="pl2 mt0 pt1">
+				Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
+				Modifié le <time class="updated" datetime="2013-11-13T12:25:49" itemprop="dateModified">13 novembre 2013</time>.
+			</p>
+		</footer>
+	</article>
 
-				</article>
 				<div id="comments" class="comments-area pl2 pt2 mt2 print-hidden">
 			<h2 class="comments-title" itemprop="interactionCount" content="UserComments:5">
 				5 commentaires sur

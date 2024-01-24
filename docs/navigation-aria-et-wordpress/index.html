@@ -33,12 +33,10 @@
 				<div class="logo print-hidden">
 					<img src="/assets/img/embossed-ffoodd.png" alt="" id="logo" width="144" height="144">
 				</div>
-				<article role="article" itemscope itemtype="https://schema.org/Article">
-				
-					<header class="center pt1 mb1" role="banner">
-						<h1 class="mb0 mt0 tk-bello-pro" itemprop="name">Navigation, Aria et WordPress</h1>
-						
-							<nav role="navigation" aria-labelledby="here" class="print-hidden small mt2 mb1">
+				<header class="center pt1 mb1" role="banner">
+					<h1 class="mb0 mt0 tk-bello-pro" itemprop="name">Navigation, Aria et WordPress</h1>
+					
+						<nav role="navigation" aria-labelledby="here" class="print-hidden small mt2 mb1">
 	<span id="here">Vous êtes ici&nbsp;: </span>
 	<div class="inbl" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
 		<a href="/" itemprop="url"><span itemprop="title">La vie en #ffoodd</span></a>
@@ -49,14 +47,15 @@
 	</div>
 </nav>
 
-						
-						
-							<h2 class="h3-like description" itemprop="description">La refonte de ffoodd est un bon prétexte pour me mettre à niveau sur certaines nouveautés, dont ARIA : je connaissais les rôles "landmarks" principaux, mais assez peu les autres propriétés et leur utilité. Voilà qui est corrigé !</h2>
-						
-					</header>
 					
-	<time class="screen-reader-text" datetime="2013-10-09T13:31:19" itemprop="datePublished">9 octobre 2013</time><div itemprop="articleBody">
-		<p>Dans sa version basique, la navigation de WordPress n’a rien de particulier (si ce n’est la multitude de classes générées sur chaque élément 🙁 ). Or ARIA permet d’ajouter une couche sémantique non négligeable et relativement simple à mettre en place, améliorant ainsi l’accessibilité de la navigation.</p>
+					
+						<h2 class="h3-like description" itemprop="description">La refonte de ffoodd est un bon prétexte pour me mettre à niveau sur certaines nouveautés, dont ARIA : je connaissais les rôles "landmarks" principaux, mais assez peu les autres propriétés et leur utilité. Voilà qui est corrigé !</h2>
+					
+				</header>
+				
+	<article role="article" itemscope itemtype="https://schema.org/Article">
+		<time class="screen-reader-text" datetime="2013-10-09T13:31:19" itemprop="datePublished">9 octobre 2013</time><div itemprop="articleBody">
+				<p>Dans sa version basique, la navigation de WordPress n’a rien de particulier (si ce n’est la multitude de classes générées sur chaque élément 🙁 ). Or ARIA permet d’ajouter une couche sémantique non négligeable et relativement simple à mettre en place, améliorant ainsi l’accessibilité de la navigation.</p>
 <h2 id="notre-objectif" tabindex="-1">Notre objectif</h2>
 <p>L’implémentation d’ARIA sur une navigation est simple ‐ bien qu’il soit assez compliqué d’en trouver une documentation ou un exemple concret. Voici le résultat attendu sur ffoodd (je vous épargne les classes et identifiants, pour cette fois 😉 ) :</p>
 <pre><code class="language-markup">&lt;nav id=&quot;nav&quot; role=&quot;navigation&quot;&gt;
@@ -136,15 +135,14 @@
 <p>Bien qu’ayant déjà appliqué ce comportement sur des boîtes à onglets notamment, j’aimerais parvenir à le faire sur ma navigation sans passer par du javascript. J’ai cherché des pistes pour utiliser le walker (qui à priori devrait être capable de repérer l’item actif) mais sans résultat pour le moment, donc <strong>n’hésitez pas à commenter l’article ou à me contacter par mail si vous avez la moindre piste à me suggérer</strong> (voire même la solution, hein :D).</p>
 <p>De plus, un comportement (en javascript à priori) est également à prévoir pour les sous-menu, qui pourront s’avérer plus complexes à gérer ‐ bien qu’ARIA soit très complète sur ce sujet.</p>
 
-	</div>
-	<footer class="small mt2">
-		<p class="pl2 mt0 pt1">
-			Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
-			Modifié le <time class="updated" datetime="2013-11-13T12:12:38" itemprop="dateModified">13 novembre 2013</time>.
-		</p>
-	</footer>
+			</div><footer class="small mt2">
+			<p class="pl2 mt0 pt1">
+				Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
+				Modifié le <time class="updated" datetime="2013-11-13T12:12:38" itemprop="dateModified">13 novembre 2013</time>.
+			</p>
+		</footer>
+	</article>
 
-				</article>
 				<div id="comments" class="comments-area pl2 pt2 mt2 print-hidden">
 			<h2 class="comments-title" itemprop="interactionCount" content="UserComments:2">
 				2 commentaires sur
