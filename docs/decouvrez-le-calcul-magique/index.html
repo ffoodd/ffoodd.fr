@@ -54,7 +54,9 @@
 				</header>
 				
 	<article role="article" itemscope itemtype="https://schema.org/Article">
-		<time class="screen-reader-text" datetime="2015-03-30T14:30:04" itemprop="datePublished">30 mars 2015</time><div itemprop="articleBody">
+		<time class="screen-reader-text" datetime="2015-03-30T14:30:04" itemprop="datePublished">30 mars 2015</time>
+		
+			<div itemprop="articleBody">
 				<p>Et ça, c’était pas terrible. Non, vraiment pas. On cherchait frénétiquement à obtenir le même rendu sur tous les navigateurs et tous les écrans. Aujourd’hui, c’est drôle — à l’époque, c’était le nerf de la guerre.</p>
 <h2 id="les-valeurs-uniques" tabindex="-1">Les valeurs uniques</h2>
 <p>Cette recherche de perfection était régulièrement entravée par plusieurs limitations techniques :</p>
@@ -66,7 +68,7 @@
 </ul>
 <p>Pour l’intégrateur, ces différents tracas pouvaient être résolus de la même façon : des valeurs absolues en pixels, de préférence. Ainsi ajustions-nous nos largeurs, marges internes et marges externes <strong>au pixel près</strong>.</p>
 <p>Désormais il est relativement rare d’en arriver à ces extrémités, grâce aux nombreux outils qui sont apparus ces dernières années. Il en est un en particulier qui aide bien, lorsque <code>box-sizing</code> ne suffit pas : la fonction <code>calc()</code>.</p>
-<h2 id="la-fonction-calc()-%C3%A0-la-rescousse" tabindex="-1">La fonction calc() à la rescousse</h2>
+<h2 id="la-fonction-calc-a-la-rescousse" tabindex="-1">La fonction calc() à la rescousse</h2>
 <p>Pour faire simple — vous la connaissez sûrement déjà — elle permet de réaliser des calculs simples directement dans les styles, <strong>en mixant les unités</strong>.</p>
 <p>Dans un écosystème rempli de nombres magiques et d’intégration <em>pixel perfect</em>, une reprise partielle du code peut s’avérer extrêmement fastidieuse.</p>
 <p>En l’occurrence, c’était mon cas lors d’un POC l’an dernier. Je devais travailler un gabarit souple en surcouche d’une structure figée, <strong>sans accès au DOM</strong>.</p>
@@ -82,17 +84,19 @@
 <li>le ratio de l’image utilisée, en l’occurrence <code>431/950</code> ;</li>
 <li>le décalage supplémentaire à ajouter au-dessus et en-dessous pour l’esthétisme, ici <code>4.8em</code>.</li>
 </ol>
-<h2 id="la-magie-op%C3%A8re" tabindex="-1">La magie opère</h2>
+<h2 id="la-magie-opere" tabindex="-1">La magie opère</h2>
 <p>Et voilà comment on aboutit à :</p>
 <pre><code class="language-css">aside {
   border-top-width: calc( 72vw * 431 / 950 + 4.8em);
 }
 </code></pre>
 <p>Grâce à ce calcul, le décalage reste correct et proportionnel au reste de l’écran, et l’aspect graphique est homogène dans tous les contextes d’affichage.</p>
-<h2 id="les-suppl%C3%A9ments" tabindex="-1">Les suppléments</h2>
-<p>Depuis ce POC, j’ai découvert le travail de <a href="http://gasteroprod.com/">Nicolas Hoizey</a> sur <a href="https://github.com/nhoizey/esviji">esviji V2</a>, qui utilise <a href="https://github.com/nhoizey/esviji/blob/master/src/sass/_screen.scss">les ratios, les calculs et les unités de viewport</a> pour atteindre un degré d’adaptation aux écrans extraordinaire. Je vous conseille de garder un œil sur son projet, et surtout de parcourir <a href="https://gist.github.com/nhoizey/f31cf92114a376a23155">la feuille de styles générée</a> qui est remarquablement écrite !</p>
+<h2 id="les-supplements" tabindex="-1">Les suppléments</h2>
+<p>Depuis ce POC, j’ai découvert le travail de <a href="https://gasteroprod.com/">Nicolas Hoizey</a> sur <a href="https://github.com/nhoizey/esviji">esviji V2</a>, qui utilise <a href="https://github.com/nhoizey/esviji/blob/master/src/sass/_screen.scss">les ratios, les calculs et les unités de viewport</a> pour atteindre un degré d’adaptation aux écrans extraordinaire. Je vous conseille de garder un œil sur son projet, et surtout de parcourir <a href="https://gist.github.com/nhoizey/f31cf92114a376a23155">la feuille de styles générée</a> qui est remarquablement écrite !</p>
 
-			</div><footer class="small mt2">
+			</div>
+		
+		<footer class="small mt2">
 			<p class="pl2 mt0 pt1">
 				Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
 				Modifié le <time class="updated" datetime="2016-01-07T16:12:06" itemprop="dateModified">7 janvier 2016</time>.
@@ -108,7 +112,7 @@
 		<div class="aside pl2 pt2">
 			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
 			<div class="textwidget">
-				<ol><li><a href="#les-valeurs-uniques">Les valeurs uniques</a></li><li><a href="#la-fonction-calc()-%C3%A0-la-rescousse">La fonction calc() à la rescousse</a></li><li><a href="#la-situation-complexe">La situation complexe</a></li><li><a href="#la-magie-op%C3%A8re">La magie opère</a></li><li><a href="#les-suppl%C3%A9ments">Les suppléments</a></li></ol>
+				<ol><li><a href="#les-valeurs-uniques">Les valeurs uniques</a></li><li><a href="#la-fonction-calc-a-la-rescousse">La fonction calc() à la rescousse</a></li><li><a href="#la-situation-complexe">La situation complexe</a></li><li><a href="#la-magie-opere">La magie opère</a></li><li><a href="#les-supplements">Les suppléments</a></li></ol>
 			</div>
 		</div>
 	</aside>

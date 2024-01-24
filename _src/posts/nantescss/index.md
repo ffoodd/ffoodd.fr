@@ -4,18 +4,18 @@ title: "NantesCSS"
 date: "2016-01-20T13:59:51"
 modified: "2016-01-21T08:35:15"
 permalink: "nantescss/index.html"
-excerpt: "Dʼaucun sʼétonnent de ne pas voir de rencontres autour de la thématique des CSS organisées à Nantes. À Paris, vous pouvez vous rendre au [4e _meetup_ organisé par **CSS Paris**](http://www.meetup.com/fr-FR/CSS-Paris/) —&nbsp;et il en existe probablement dans dʼautres villes de France et de Navarre. Mais pas (encore) à Nantes. Vous voyez ou je veux en venir&nbsp;?"
+excerpt: "Dʼaucun sʼétonnent de ne pas voir de rencontres autour de la thématique des CSS organisées à Nantes. À Paris, vous pouvez vous rendre au [4e _meetup_ organisé par **CSS Paris**](https://www.meetup.com/fr-FR/CSS-Paris/) —&nbsp;et il en existe probablement dans dʼautres villes de France et de Navarre. Mais pas (encore) à Nantes. Vous voyez ou je veux en venir&nbsp;?"
 format: "standard"
 tags: "posts"
 description: "Derrière ce patronyme inattendu se cache un petit groupe d&#700;intégrateurs ayant envie de se rencontrer ou se croiser plus souvent. Qui sont-ils&nbsp;? Que veulent-ils&nbsp;?"
 ---
-tl;dr&nbsp;: si vous êtes intéressés mais que ma prose vous importune, filez directement sur le [Doodle](http://doodle.com/poll/7rv8ixe9tqc6kwdc) proposant quelques dates, aux horaires du déjeuner.
+tl;dr&nbsp;: si vous êtes intéressés mais que ma prose vous importune, filez directement sur le [Doodle](https://doodle.com/poll/7rv8ixe9tqc6kwdc) proposant quelques dates, aux horaires du déjeuner.
 
 ## Une communauté de praticiens
 
-En arrivant chez [Kosmos](http://www.kosmos.fr) mi 2014, jʼétais le troisième intégrateur en poste —&nbsp;après une décennie passée avec un seul intégrateur. Parmi les sujets de conversation émergeants, celui dʼune [communauté de pratique](https://fr.wikipedia.org/wiki/Communaut%C3%A9_de_pratique) mʼa particulièrement intéressé. Jʼai donc creusé le sujet et, sans parvenir à une application concrète au sein de Kosmos, en ai conservé lʼineffable envie de regrouper des intégrateurs pour causer de HTML et CSS —&nbsp;**et plus si affinités**.
+En arrivant chez [Kosmos](https://www.kosmos.fr) mi 2014, jʼétais le troisième intégrateur en poste —&nbsp;après une décennie passée avec un seul intégrateur. Parmi les sujets de conversation émergeants, celui dʼune [communauté de pratique](https://fr.wikipedia.org/wiki/Communaut%C3%A9_de_pratique) mʼa particulièrement intéressé. Jʼai donc creusé le sujet et, sans parvenir à une application concrète au sein de Kosmos, en ai conservé lʼineffable envie de regrouper des intégrateurs pour causer de HTML et CSS —&nbsp;**et plus si affinités**.
 
-De plus, déjeuner régulièrement avec quelques camarades éclairés comme [Emmanuel Clément](http://emmanuel.clement.free.fr/), [Vincent Valentin](http://vincent-valentin.name/), [Gaëtan Ark](https://twitter.com/shinze), [Jean-Christophe Brebion](http://jcbrebion.com/) ou [Marie Guillaumet](http://marieguillaumet.com/) mʼa beaucoup motivé et appris. **Jʼai envie de partager ça**&nbsp;!
+De plus, déjeuner régulièrement avec quelques camarades éclairés comme [Emmanuel Clément](https://emmanuel.clement.free.fr/), [Vincent Valentin](https://vincent-valentin.name/), [Gaëtan Ark](https://twitter.com/shinze), [Jean-Christophe Brebion](https://jcbrebion.com/) ou [Marie Guillaumet](https://marieguillaumet.com/) mʼa beaucoup motivé et appris. **Jʼai envie de partager ça**&nbsp;!
 
 Ça me trotte dans la tête depuis un moment, au point dʼavoir un brouillon ici-même et quelques pages noircies dans mon carnet&nbsp;; mais cʼétait mon sujet no2 derrière [a11y.css](https://github.com/ffoodd/a11y.css).
 
@@ -25,7 +25,7 @@ Oui, parfois je trolle. Évidemment, cʼest important&nbsp;! Le temps passe vite
 
 Et même les styles commencent à être gérés _via_ JavaScript. Elle est bien loin, lʼépoque ou la **séparation des responsabilités** était primordiale (le fond, la forme, tout ça…).
 
-Alors pourquoi voguer à contre-courant et parler de CSS&nbsp;? Tout simplement parce que peu importe la technologie ou le langage que vous utilisez —&nbsp;et peu importe que vous soyez un gourou, un hipster, un ninja ou [un vieux croûton du web](http://www.paris-web.fr/2015/conferences/la-veille-techno-pour-les-vieux-croutons.php)&nbsp;— **vous ne servez que des interfaces en HTML et CSS saupoudrés de JavaScript**.
+Alors pourquoi voguer à contre-courant et parler de CSS&nbsp;? Tout simplement parce que peu importe la technologie ou le langage que vous utilisez —&nbsp;et peu importe que vous soyez un gourou, un hipster, un ninja ou [un vieux croûton du web](https://www.paris-web.fr/2015/conferences/la-veille-techno-pour-les-vieux-croutons.php)&nbsp;— **vous ne servez que des interfaces en HTML et CSS saupoudrés de JavaScript**.
 
 Pour enfoncer une porte ouverte, sachez que sans HTML ni CSS votre JavaScript est à peu près [aussi utile quʼun parpaing à un morpion](https://fr.wikipedia.org/wiki/Dodgeball_!_M%C3%AAme_pas_mal_!). Alors autant parler de langages utiles, non&nbsp;?
 
@@ -37,7 +37,7 @@ Comme on dit sur les internets, «&nbsp;un lien vaut mille paragraphes&nbsp;». 
 > 
 > — Loïc Goyet (@loicgoyet) [January 19, 2016](https://twitter.com/loicgoyet/status/689453449897910272)
 
-Je ne connais pas encore [Loïc Goyet](http://loicgoyet.github.io/) ni lʼéquipe de [Sparkk](http://www.sparkk.fr/), mais vais me faire une joie de les rencontrer et les découvrir. Pour la petite histoire, Gʼest Gaëtan Ark —&nbsp;avec lequel jʼavais probablement déjà évoqué lʼidée&nbsp;— qui mʼa _drafté_ dans la discussion, et en quelques minutes tout sʼest enchaîné&nbsp;:
+Je ne connais pas encore [Loïc Goyet](https://loicgoyet.github.io/) ni lʼéquipe de [Sparkk](https://www.sparkk.fr/), mais vais me faire une joie de les rencontrer et les découvrir. Pour la petite histoire, Gʼest Gaëtan Ark —&nbsp;avec lequel jʼavais probablement déjà évoqué lʼidée&nbsp;— qui mʼa _drafté_ dans la discussion, et en quelques minutes tout sʼest enchaîné&nbsp;:
 
 > [@htmlvv](https://twitter.com/htmlvv) [@ffoodd\_fr](https://twitter.com/ffoodd_fr) [@loicgoyet](https://twitter.com/loicgoyet) [@shinze](https://twitter.com/shinze) [@WeAreSparkk](https://twitter.com/WeAreSparkk) [@emmanuelc](https://twitter.com/emmanuelc) [@jcbrbn](https://twitter.com/jcbrbn) Interessé aussi 🙂
 > 
@@ -69,7 +69,7 @@ De plus quelques cours dʼHistoire pourraient sʼavérer bénéfiques. Je pense 
 
 ### Produire du matériel&nbsp;?
 
-Et par matériel jʼentends matériel **pédagogique**. Des projets comme [TrainDrop](http://traindrop.github.io/) existent et je pense que **nous pourrions y participer**. Lʼobjectif est dʼéchanger, dʼapprendre, de faire des rencontres —&nbsp;alors **pourquoi se limiter au moment présent**&nbsp;?
+Et par matériel jʼentends matériel **pédagogique**. Des projets comme [TrainDrop](https://traindrop.github.io/) existent et je pense que **nous pourrions y participer**. Lʼobjectif est dʼéchanger, dʼapprendre, de faire des rencontres —&nbsp;alors **pourquoi se limiter au moment présent**&nbsp;?
 
 ### Des propositions de sujets
 
@@ -83,6 +83,6 @@ De mon côté, la première idée dont je ne parviens pas à me détacher est de
 
 ## Vous venez&nbsp;?
 
-Alors voilà, il ne reste quʼà faire le premier pas. Et comme je suis un peu foufou, [je vous propose des dates la semaine prochaine](http://doodle.com/poll/7rv8ixe9tqc6kwdc), aux horaires dʼune pause déjeuner classique. Vous pouvez évidemment mʼindiquer ici-même où sur Twitter si vous avez dʼautres plages horaires de prédilection, ou si la semaine prochaine est un peu tôt pour vous.
+Alors voilà, il ne reste quʼà faire le premier pas. Et comme je suis un peu foufou, [je vous propose des dates la semaine prochaine](https://doodle.com/poll/7rv8ixe9tqc6kwdc), aux horaires dʼune pause déjeuner classique. Vous pouvez évidemment mʼindiquer ici-même où sur Twitter si vous avez dʼautres plages horaires de prédilection, ou si la semaine prochaine est un peu tôt pour vous.
 
 PS&nbsp;: pour le nom, jʼavais pensé à **la Communauté des Spécialistes des Styles**. Je sais, je ne suis pas réputé pour mon humour 😶

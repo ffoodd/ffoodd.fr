@@ -52,14 +52,16 @@
 				</header>
 				
 	<article role="article" itemscope itemtype="https://schema.org/Article">
-		<time class="screen-reader-text" datetime="2012-06-21T10:48:38" itemprop="datePublished">21 juin 2012</time><div itemprop="articleBody">
-				<p>L’utilisation des sprites est connue de – presque – tous. Et dans le cas ou vous feriez partie du presque, voici un <a href="http://www.alsacreations.com/tuto/lire/1068-sprites-css-background-position.html">très bon article</a> en français sur le sujet. Ma réflexion aujourd’hui ne portera donc pas sur l’intérêt des sprites, mais sur une façon de pousser plus loin <strong>la quête du moindre octet</strong>.</p>
-<h2 id="la-gen%C3%A8se" tabindex="-1">La Genèse</h2>
+		<time class="screen-reader-text" datetime="2012-06-21T10:48:38" itemprop="datePublished">21 juin 2012</time>
+		
+			<div itemprop="articleBody">
+				<p>L’utilisation des sprites est connue de – presque – tous. Et dans le cas ou vous feriez partie du presque, voici un <a href="https://www.alsacreations.com/tuto/lire/1068-sprites-css-background-position.html">très bon article</a> en français sur le sujet. Ma réflexion aujourd’hui ne portera donc pas sur l’intérêt des sprites, mais sur une façon de pousser plus loin <strong>la quête du moindre octet</strong>.</p>
+<h2 id="la-genese" tabindex="-1">La Genèse</h2>
 <p>Ce jour-là, je me suis heurté au problème suivant : une vaste iconographie en aplat coloré, dont chaque élément disposait de trois variations colorées. Pour des questions de <strong>performances</strong>, il était nécessaire d’utiliser un sprite ; et la ou ça se complique, c’est qu’il était également question d’<strong>accessibilité</strong>.</p>
 <p>Mon premier écueil : la <strong>performance</strong>. Afin d’intégrer les variations colorées, mon premier sprite contenait trois fois chaque icône. Pas très efficace…</p>
-<h2 id="et-la-lumi%C3%A8re-fut" tabindex="-1">Et la lumière fut</h2>
+<h2 id="et-la-lumiere-fut" tabindex="-1">Et la lumière fut</h2>
 <p>C’est alors que j’ai réalisé : ces icônes étaient systématiquement sur un fond blanc. <strong>Eurêka.</strong></p>
-<p>En précisant un peu mes recherches, je suis tombé sur “<a href="http://coding.smashingmagazine.com/2010/10/31/transparent-css-sprites/">Transparent CSS Sprites</a>” par Trevor Morris. L’idée est simple : puisque la seule variation est la couleur de l’icône elle-même, il suffit de créer ce sprite en réservant la forme des icônes, ou plus simplement : en négatif. Voila un exemple plus concret :</p>
+<p>En précisant un peu mes recherches, je suis tombé sur “<a href="https://coding.smashingmagazine.com/2010/10/31/transparent-css-sprites/">Transparent CSS Sprites</a>” par Trevor Morris. L’idée est simple : puisque la seule variation est la couleur de l’icône elle-même, il suffit de créer ce sprite en réservant la forme des icônes, ou plus simplement : en négatif. Voila un exemple plus concret :</p>
 <figure><img src="/images/2012/06/sprite.png" alt="Le-super-sprite-de-la-mort-qui-tue" loading="lazy"><figcaption>Alors, heureux ?</figcaption></figure>
 <p>Tout est alors plus simple. <strong>Survolez cette image</strong> afin de vous en rendre compte, et observez-la dans votre outil de dev ou dans un nouvel onglet. Il suffit d’appliquer un <strong>background-color</strong> à cette image et de le changer au <strong>:hover</strong> afin d’obtenir le même résultat qu’un déplacement du sprite. Le code – allégé en matière grasse :</p>
 <p>img {
@@ -97,7 +99,9 @@ Accessibilité :</p>
 </ol>
 <p>À titre personnel, je n’ai utilisé cette technique que sur un projet, particulièrement contraignant en terme de performances et d’accessibilité – mais je compte l’étendre à d’autres projets. Correctement utilisée, elle peut permettre une <strong>optimisation massive d’une iconographie riche</strong> – mais simple.</p>
 
-			</div><footer class="small mt2">
+			</div>
+		
+		<footer class="small mt2">
 			<p class="pl2 mt0 pt1">
 				Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
 				Modifié le <time class="updated" datetime="2013-12-16T10:58:14" itemprop="dateModified">16 décembre 2013</time>.
@@ -113,7 +117,7 @@ Accessibilité :</p>
 		<div class="aside pl2 pt2">
 			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
 			<div class="textwidget">
-				<ol><li><a href="#la-gen%C3%A8se">La Genèse</a></li><li><a href="#et-la-lumi%C3%A8re-fut">Et la lumière fut</a></li><li><a href="#qui-dit-sprite-dit-sprite">Qui dit sprite dit sprite</a></li></ol>
+				<ol><li><a href="#la-genese">La Genèse</a></li><li><a href="#et-la-lumiere-fut">Et la lumière fut</a></li><li><a href="#qui-dit-sprite-dit-sprite">Qui dit sprite dit sprite</a></li></ol>
 			</div>
 		</div>
 	</aside>

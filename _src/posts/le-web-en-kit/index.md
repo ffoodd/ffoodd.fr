@@ -7,7 +7,7 @@ permalink: "le-web-en-kit/index.html"
 excerpt: "Le web, cʼest compliqué. Je dirais même plus&nbsp;: cʼest la jungle. De multiples sources, de multiples protocoles dʼéchange de données, de multiple manière dʼaccéder aux contenus. Et aussi plein de gens qui fabriquent des morceaux de web. Ceux-là sont un minimum flemmards —&nbsp;je le sais bien, jʼen fais partie. Alors régulièrement, nous cédons à la facilité et cela produit des perturbations dans La Force. Un exemple&nbsp;? Les sites `-webkit-` _only_. Parlons-en&nbsp;!"
 format: "standard"
 tags: "posts"
-description: "<abbr lang=\"en\" title=\"Too Long, Didn't Read\">tl;dr</abbr>&nbsp;: jetez un œil <a href=\"http://dabblet.com/gist/08fddf3666c39ebc62ca\">à ce dabblet</a> sur Edge —&nbsp;qui gère <code>-webkit-background-clip: text;</code> sans broncher."
+description: "<abbr lang=\"en\" title=\"Too Long, Didn't Read\">tl;dr</abbr>&nbsp;: jetez un œil <a href=\"https://dabblet.com/gist/08fddf3666c39ebc62ca\">à ce dabblet</a> sur Edge —&nbsp;qui gère <code>-webkit-background-clip: text;</code> sans broncher."
 ---
 Beaucoup de gens qui fabriquent le web se sont plaints de lʼhégémonie dʼIE6.
 
@@ -23,7 +23,7 @@ De façon parfaitement sensée, Microsoft —&nbsp;qui détenait environ 95% des
 
 
 
-[**Alors ils font passer Edge pour WebKit.**](http://blogs.windows.com/msedgedev/2015/06/17/building-a-more-interoperable-web-with-microsoft-edge/)
+[**Alors ils font passer Edge pour WebKit.**](https://blogs.windows.com/msedgedev/2015/06/17/building-a-more-interoperable-web-with-microsoft-edge/)
 
 ## Le _\-webkit-only_
 
@@ -43,7 +43,7 @@ Cette propriété fait partie intégrante de [la spécification (en anglais](htt
 
 ## Edge gère&nbsp;!
 
-Edge lʼinterprète, cette valeur exotique —&nbsp;et sans souci. Jʼai découvert ça inopinément, en me disant que [la solution de repli proposée par Divya Manian (en anglais)](http://nimbupani.com/using-background-clip-for-text-with-css-fallback.html) était robuste. En terme de logique, elle est imparable&nbsp;: lʼarrière-plan est conçu pour ne sʼappliquer que si le clip est interprété, car lʼensemble est préfixé par `-webkit-`. Voyez plutôt&nbsp;:
+Edge lʼinterprète, cette valeur exotique —&nbsp;et sans souci. Jʼai découvert ça inopinément, en me disant que [la solution de repli proposée par Divya Manian (en anglais)](https://nimbupani.com/using-background-clip-for-text-with-css-fallback.html) était robuste. En terme de logique, elle est imparable&nbsp;: lʼarrière-plan est conçu pour ne sʼappliquer que si le clip est interprété, car lʼensemble est préfixé par `-webkit-`. Voyez plutôt&nbsp;:
 
 ```css
 
@@ -90,9 +90,9 @@ Jusque là, tout va bien. La mécanique est belle, aucun danger grâce à la sol
 
 Difficile de garantir quoi que ce soit dans ces conditions. _A priori_ ce problème nʼexiste pas dans les versions antérieures de Windows Phone, et il faut noter que la version bureau dʼIE11 nʼapplique pas lʼarrière-plan&nbsp;!
 
-Si vous voulez tester par vous-mêmes ou compléter mes propos, nʼhésitez pas à dupliquer [mon dabblet](http://dabblet.com/gist/08fddf3666c39ebc62ca).
+Si vous voulez tester par vous-mêmes ou compléter mes propos, nʼhésitez pas à dupliquer [mon dabblet](https://dabblet.com/gist/08fddf3666c39ebc62ca).
 
-Et pour ceux qui rigolent dans le fond, sachez que [Windows Phone représente 4% de parts de marché des systèmes dʼexploitation sur mobile en France, entre juillet et septembre 2015 (en anglais)](http://gs.statcounter.com/#mobile_os-FR-monthly-201507-201509-bar). Ce nʼest pas négligeable, si tant est quʼon admette négliger une population.[^2]
+Et pour ceux qui rigolent dans le fond, sachez que [Windows Phone représente 4% de parts de marché des systèmes dʼexploitation sur mobile en France, entre juillet et septembre 2015 (en anglais)](https://gs.statcounter.com/#mobile_os-FR-monthly-201507-201509-bar). Ce nʼest pas négligeable, si tant est quʼon admette négliger une population.[^2]
 
 [^2]: Je mettrais dʼailleurs ma main a couper quʼen réalité ce chiffre est déjà sous-estimé, à en croire mes yeux de lynx qui officient dans le tramway, le bus ou le TER à Nantes
 

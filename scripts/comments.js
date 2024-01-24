@@ -17,6 +17,7 @@ Object.keys(comments).forEach((p, i) => {
 	let slug = commentSlug[0].replace('/', '');
 	let hash = commentSlug[1].replace('comment-', '');
 	let content = turndownService.turndown(comment.content.rendered)
+		.replace(/http:\/\//g, 'https://')
 		// Handle non-breakable/thin spaces
 		.replace(/\u00A0/g, '&nbsp;')
 		.replace(/\u2009/g, '&thinsp;')

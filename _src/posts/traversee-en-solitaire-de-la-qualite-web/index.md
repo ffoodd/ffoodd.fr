@@ -4,14 +4,14 @@ title: "La qualité web en solitaire"
 date: "2014-02-27T15:56:32"
 modified: "2021-03-05T17:12:11"
 permalink: "traversee-en-solitaire-de-la-qualite-web/index.html"
-excerpt: "La qualité web reste marginale dans l’industrie du web&nbsp;—&nbsp;malgré l’essor certain du sujet grâce à des événements tels que [Paris Web](http://www.paris-web.fr/) ou des initiatives comme [OpQuast](http://opquast.com/fr/). Des «&nbsp;experts&nbsp;» sortent du lot — [Élie Sloïm](http://openweb.eu.org/openwebgroup/bios/elie_sloim 'Sa biographie sur OpenWeb') ou [Stéphane Deschamps](http://nota-bene.org/), pour ne citer qu’eux&nbsp;—&nbsp;mais le revers de la médaille est une dé-responsabilisation massive de tous les «&nbsp;non-experts&nbsp;». Mais vous savez-quoi ? **Ça ne m’empêche pas de faire de la qualité**."
+excerpt: "La qualité web reste marginale dans l’industrie du web&nbsp;—&nbsp;malgré l’essor certain du sujet grâce à des événements tels que [Paris Web](https://www.paris-web.fr/) ou des initiatives comme [OpQuast](https://opquast.com/fr/). Des «&nbsp;experts&nbsp;» sortent du lot — [Élie Sloïm](https://openweb.eu.org/openwebgroup/bios/elie_sloim 'Sa biographie sur OpenWeb') ou [Stéphane Deschamps](https://nota-bene.org/), pour ne citer qu’eux&nbsp;—&nbsp;mais le revers de la médaille est une dé-responsabilisation massive de tous les «&nbsp;non-experts&nbsp;». Mais vous savez-quoi ? **Ça ne m’empêche pas de faire de la qualité**."
 format: "standard"
 tags: "posts"
 description: "Ou pourquoi vous devriez arrêter de vous trouver des excuses ridicules impliquant vos collègues, clients ou chimpanzés."
 ---
 Très souvent sur le web — et au travail, je croise ce type de propos tenus par des professionnels du web :
 
-* [Valider le code n’est pas important](http://forum.kob-one.com/post361394.html#p361394), du moment que «&nbsp;ça&nbsp;» fonctionne;
+* [Valider le code n’est pas important](https://forum.kob-one.com/post361394.html#p361394), du moment que «&nbsp;ça&nbsp;» fonctionne;
 * L’accessibilité, c’est du travail supplémentaire;
 * Si ça n’est pas vendu, ça nous coûte de l’argent;
 * L’accessibilité ? Pour deux péquins par an ?
@@ -27,16 +27,16 @@ _Pré-requis : Cet article étant légèrement impulsif, je tiens à préciser q
 
 ## Un état des lieux éloquent
 
-Je ne pense pas forcer le trait, tant les remarques précédemment listées sont légions sur les forums comme [Alsacréations](http://www.alsacreations.com). Nicolas Hoffmann a lui aussi rédigé [sa petite liste d’âneries](http://www.nicolas-hoffmann.net/source/1612-Heureusement-qu-ils-existent.html).&nbsp;De nombreux professionnels reconnus ont réagi à ce sujet il y a un peu moins d’un an, alors que [QuentinC relativisait la joie de fêter les 10 ans du forum Alsacréations](http://forum.alsacreations.com/topic-9-66981-1.html#p451783).[^2]
+Je ne pense pas forcer le trait, tant les remarques précédemment listées sont légions sur les forums comme [Alsacréations](https://www.alsacreations.com). Nicolas Hoffmann a lui aussi rédigé [sa petite liste d’âneries](https://www.nicolas-hoffmann.net/source/1612-Heureusement-qu-ils-existent.html).&nbsp;De nombreux professionnels reconnus ont réagi à ce sujet il y a un peu moins d’un an, alors que [QuentinC relativisait la joie de fêter les 10 ans du forum Alsacréations](https://forum.alsacreations.com/topic-9-66981-1.html#p451783).[^2]
 
 [^2]: Ce qui m’évoque la capacité des gens à se réjouir de l’augmentation des dons aux Restos du Cœur chaque année — oubliant trop facilement que c’est un symbole négatif du besoin croissant et urgent. On se réjouira le jour ou on pourra se passer des Restos du Cœur. Et puisque j’en suis là : allez faire un don sur le site dédiés&nbsp;:  dons.restosducoeur.org . Merci à vous !
 
 
 
-* [L’accessibilité, peut-on s’en foutre parce que ça coûte&nbsp;?](http://accessiblog.fr/2013/05/laccessibilite-peut-on-sen-foutre-parce-que-ca-coute/)&nbsp;—&nbsp;Olivier Nourry
-* [L’accessibilité, on s’en fout de plus en plus ?](http://www.vismaviedesourde.fr/laccessibilite-on-sen-fout-de-plus-en-plus/)&nbsp;—&nbsp;Sophie Drouvroy
-* [Défaitisme et accessibilité](http://nota-bene.org/Defaitisme-et-accessibilite)&nbsp;—&nbsp;Stéphane Deschamps
-* [L’accessibilité, on s’en fout de plus en plus ? Moi, non.](http://www.nicolas-hoffmann.net/source/1545-L-accessibilite-on-s-en-fout-de-plus-en-plus-Moi-non.html)&nbsp;—&nbsp;Nicolas Hoffmann
+* [L’accessibilité, peut-on s’en foutre parce que ça coûte&nbsp;?](https://accessiblog.fr/2013/05/laccessibilite-peut-on-sen-foutre-parce-que-ca-coute/)&nbsp;—&nbsp;Olivier Nourry
+* [L’accessibilité, on s’en fout de plus en plus ?](https://www.vismaviedesourde.fr/laccessibilite-on-sen-fout-de-plus-en-plus/)&nbsp;—&nbsp;Sophie Drouvroy
+* [Défaitisme et accessibilité](https://nota-bene.org/Defaitisme-et-accessibilite)&nbsp;—&nbsp;Stéphane Deschamps
+* [L’accessibilité, on s’en fout de plus en plus ? Moi, non.](https://www.nicolas-hoffmann.net/source/1545-L-accessibilite-on-s-en-fout-de-plus-en-plus-Moi-non.html)&nbsp;—&nbsp;Nicolas Hoffmann
 
 J’en oublie évidemment de nombreux. J’ai cependant la vilaine impression que **plus l’auteur est reconnu en tant qu’expert, plus l’impact du discours est réduit en conséquence**. J’ai déjà entendu cette remarque :
 
@@ -52,7 +52,7 @@ Des pratiques extrêmement simples peuvent considérablement améliorer la quali
 
 1.  Utilisez des solutions éprouvées, **déjà accessibles**;
 2.  **Documentez** votre code de façon complète&nbsp;: citez vos sources, précisez à quoi ça sert, quels éléments contextuels peuvent influer…
-3.  **Instaurez** des _checklists_ qualités — comme celles [proposées par OpQuast](http://checklists.opquast.com/fr/) ou [suggerées par Corinne Schillinger](https://github.com/inseo/bpi-checklist) — et [faites les premiers pas dans cette démarche qualité](http://w3qualite.net/demarche/la-qualite-web-un-tramway-nomme-desir "«La qualité web : un tramway nommé désir » sur W3Qualité");
+3.  **Instaurez** des _checklists_ qualités — comme celles [proposées par OpQuast](https://checklists.opquast.com/fr/) ou [suggerées par Corinne Schillinger](https://github.com/inseo/bpi-checklist) — et [faites les premiers pas dans cette démarche qualité](https://w3qualite.net/demarche/la-qualite-web-un-tramway-nomme-desir "«La qualité web : un tramway nommé désir » sur W3Qualité");
 4.  Créez vos propres outils et **capitalisez** dessus&nbsp;: intégrez-y les solutions choisies et les documentations;
 5.  **Contre-pillez** tous vos projets spécifiques afin de pouvoir **recycler** chacun de vos travaux spécifiques;
 6.  **Partagez** vos ressources, mettez-les en commun.[^3]
@@ -65,7 +65,7 @@ Des pratiques extrêmement simples peuvent considérablement améliorer la quali
 [^4]: Petite pensée et gros remerciements pour Johan Ramon, Monique Brunel, Victor Brito, Willy Bahuaud, Julio Potier, Kitty Giraudel — et j’en passe de nombreux.
 
 
-8.  Apprenez à échanger et instruire de façon constructive et positive : « [Les petits ruisseaux font les grandes rivières](http://w3qualite.net/transversalite/les-petits-ruisseaux-font-les-grandes-rivieres "Article sur W3Qualité") » — [Luc Poupard](http://kloh.ch).
+8.  Apprenez à échanger et instruire de façon constructive et positive : « [Les petits ruisseaux font les grandes rivières](https://w3qualite.net/transversalite/les-petits-ruisseaux-font-les-grandes-rivieres "Article sur W3Qualité") » — [Luc Poupard](https://kloh.ch).
 
 Peut-être pourrais-je trouver d’autres façons d’encore améliorer mon travail&nbsp;—&nbsp;et je suis tout ouï si vous voulez bien m’en suggérer. Mais celles que j’applique actuellement ne sont qu’une question de discipline, et sont donc à la portée de tout un chacun.
 
@@ -105,4 +105,4 @@ Même si vous n’en tirez aucune reconnaissance.
 
 ## Faites-le
 
-J’en profite pour remercier Muriel de Dona dont [l’échange gratifiant sur Twitter](https://twitter.com/ffoodd_fr/status/431436100226531328) a généré cette envie d’écrire&nbsp;—&nbsp;et je fais un peu de publicité supplémentaire pour son travail chez [OpQuast](http://opquast.com/fr/)&nbsp;(notamment la rédaction du livre «&nbsp;Qualité web&nbsp;» et des fameuses bonnes pratiques). Cette initiative est absolument indispensable et je tiens à signaler les progrès considérables que j’ai fait grâce à eux 🙂
+J’en profite pour remercier Muriel de Dona dont [l’échange gratifiant sur Twitter](https://twitter.com/ffoodd_fr/status/431436100226531328) a généré cette envie d’écrire&nbsp;—&nbsp;et je fais un peu de publicité supplémentaire pour son travail chez [OpQuast](https://opquast.com/fr/)&nbsp;(notamment la rédaction du livre «&nbsp;Qualité web&nbsp;» et des fameuses bonnes pratiques). Cette initiative est absolument indispensable et je tiens à signaler les progrès considérables que j’ai fait grâce à eux 🙂

@@ -54,14 +54,16 @@
 				</header>
 				
 	<article role="article" itemscope itemtype="https://schema.org/Article">
-		<time class="screen-reader-text" datetime="2013-01-16T11:23:48" itemprop="datePublished">16 janvier 2013</time><div itemprop="articleBody">
+		<time class="screen-reader-text" datetime="2013-01-16T11:23:48" itemprop="datePublished">16 janvier 2013</time>
+		
+			<div itemprop="articleBody">
 				<h2 id="sauf-que" tabindex="-1">Sauf que</h2>
 <p>Dès ma première utilisation de cette nouvelle mouture je suis tombé sur un problème assez gênant : dans la fenêtre modale servant à insérer des médias depuis l’éditeur, l’ajout d’un fichier me retourne une erreur en indiquant</p>
 <blockquote>
 <p>« Une erreur est survenue lors du téléchargement.<br>
 Veuillez réessayer plus tard. »</p>
 </blockquote>
-<p>Malgré ça, ledit fichier a été ajouté à la bibliothèque des médias. De plus, impossible de parcourir la bibliothèque et d’insérer un fichier depuis cette même fenêtre modale ! Après une recherche rapide, il s’avère que <a href="http://wordpress.org/search/bug+3.5+media+insert" title="Wordpress 3.5 media insert bug">je ne suis pas le premier à rencontrer ce problème</a>.</p>
+<p>Malgré ça, ledit fichier a été ajouté à la bibliothèque des médias. De plus, impossible de parcourir la bibliothèque et d’insérer un fichier depuis cette même fenêtre modale ! Après une recherche rapide, il s’avère que <a href="https://wordpress.org/search/bug+3.5+media+insert" title="Wordpress 3.5 media insert bug">je ne suis pas le premier à rencontrer ce problème</a>.</p>
 <p>Or ce bug – connu depuis la bêta – peut avoir diverses origines :</p>
 <ol>
 <li>Le serveur utilise <em>mod_pagespeed</em></li>
@@ -78,18 +80,20 @@ Veuillez réessayer plus tard. »</p>
 <li>Désactiver <em>mod_pagespeed</em> ou un système de concaténation quelconque du js de l’administration</li>
 </ul>
 <p>Ces solutions ont – dans beaucoup de cas – suffit à résoudre le bug, ou au moins à en identifier l’origine afin de le corriger. <strong>Pas dans mon cas.</strong></p>
-<h2 id=".htaccess" tabindex="-1">.htaccess</h2>
+<h2 id="htaccess" tabindex="-1">.htaccess</h2>
 <p><strong>Après diverses pérégrinations dans les tréfonds de WordPress, j’ai finalement trouvé la solution à mon cas : le .htaccess.</strong></p>
 <p>Pour une raison ou pour une autre, appliquer le .htaccess que j’ai l’habitude d’appliquer en production a suffit. C’est donc un patch insignifiant, sauf que WordPress ne dispose pas – et ne crée pas – de .htaccess par lui-même. C’est une habitude que j’ai acquise pour des questions d’environnement serveur, de <strong>performances</strong>, de <strong>qualité web</strong> et de types de fichiers à servir, mais qui n’est pas connue de tout le monde.</p>
 <p>À titre personnel, le .htaccess de base dont je me sers est un amalgame :</p>
 <ul>
-<li>du .htaccess disponible dans le <a href="http://html5boilerplate.com/" title="HTML5 Boilerplate">html5 Boilerplate</a></li>
-<li>du .htaccess dédié à WordPress proposé par <a href="http://www.seomix.fr/guide-htaccess-performances-et-temps-de-chargement/" title="le .htaccess expliqué sur seo-mix">seo-mix</a></li>
+<li>du .htaccess disponible dans le <a href="https://html5boilerplate.com/" title="HTML5 Boilerplate">html5 Boilerplate</a></li>
+<li>du .htaccess dédié à WordPress proposé par <a href="https://www.seomix.fr/guide-htaccess-performances-et-temps-de-chargement/" title="le .htaccess expliqué sur seo-mix">seo-mix</a></li>
 </ul>
 <p>Je suppose qu’il s’agit d’un entête http ou d’un type MIME incorrect qui nuit à la bonne compréhension du fichier par le serveur, sans toutefois en être sûr. Étant donné que j’avais jusqu’à présent l’habitude d’ajouter le .htaccess à la fin du développement, je me contenterais désormais de l’ajouter <strong>dès le début du projet</strong>.</p>
 <p><strong>De plus, il s’agit d’une bonne pratique nécessaire à la <a href="https://www.ffoodd.fr/tag/qualite-web/" title="Qualité web">qualité d’un site web</a> : il est donc indispensable de disposer d’un fichier .htaccess efficace.</strong></p>
 
-			</div><footer class="small mt2">
+			</div>
+		
+		<footer class="small mt2">
 			<p class="pl2 mt0 pt1">
 				Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
 				Modifié le <time class="updated" datetime="2013-10-02T10:58:00" itemprop="dateModified">2 octobre 2013</time>.
@@ -109,7 +113,7 @@ Veuillez réessayer plus tard. »</p>
 											 src="https://secure.gravatar.com/avatar/a1f9c72c19c30b3ad8724ef3248a61e4?s=44&d=mm&r=g"
 											 srcset="https://secure.gravatar.com/avatar/a1f9c72c19c30b3ad8724ef3248a61e4?s=88&d=mm&r=g 2x"
 											 class="avatar avatar-44 photo"
-											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="http://www.lifebodybuilding.com" class="url" rel="ugc external nofollow">Vince de LifeBodybuilding.com</a></em>
+											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="https://www.lifebodybuilding.com" class="url" rel="ugc external nofollow">Vince de LifeBodybuilding.com</a></em>
 								
 								<time datetime="[object Object]" itemprop="commentTime">18 janvier 2013 à 10 h 13 min</time>
 								<a href="#16">
@@ -136,7 +140,7 @@ Veuillez réessayer plus tard. »</p>
 							</header>
 						</article>
 						<div itemprop="CommentText"><p>Bonjour,<br>
-Comme je l’ai indiqué, le .htaccess proposé par [seo-mix](http://www.seomix.fr/guide-htaccess-performances-et-temps-de-chargement/ target=) est à mon avis le meilleur – et tu peux récupérer le fichier directement sur leur article.</p>
+Comme je l’ai indiqué, le .htaccess proposé par [seo-mix](https://www.seomix.fr/guide-htaccess-performances-et-temps-de-chargement/ target=) est à mon avis le meilleur – et tu peux récupérer le fichier directement sur leur article.</p>
 <p>Attention toutefois, votre cas n’est pas forcément le même : cela peut venir de votre thème, de certains plugins, de votre serveur, ou d’une optimisation excessive.</p>
 <p>Bon courage avec ça !</p>
 </div>
@@ -146,7 +150,7 @@ Comme je l’ai indiqué, le .htaccess proposé par [seo-mix](http://www.seomix.
 											 src="https://secure.gravatar.com/avatar/a1f9c72c19c30b3ad8724ef3248a61e4?s=44&d=mm&r=g"
 											 srcset="https://secure.gravatar.com/avatar/a1f9c72c19c30b3ad8724ef3248a61e4?s=88&d=mm&r=g 2x"
 											 class="avatar avatar-44 photo"
-											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="http://www.lifebodybuilding.com" class="url" rel="ugc external nofollow">Vince de LifeBodybuilding.com</a></em>
+											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="https://www.lifebodybuilding.com" class="url" rel="ugc external nofollow">Vince de LifeBodybuilding.com</a></em>
 								
 								<time datetime="[object Object]" itemprop="commentTime">18 janvier 2013 à 13 h 44 min</time>
 								<a href="#18">
@@ -183,7 +187,7 @@ Comme je l’ai indiqué, le .htaccess proposé par [seo-mix](http://www.seomix.
 		<div class="aside pl2 pt2">
 			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
 			<div class="textwidget">
-				<ol><li><a href="#sauf-que">Sauf que</a></li><li><a href="#.htaccess">.htaccess</a></li><li><a href="#comments">Commentaires</a></li></ol>
+				<ol><li><a href="#sauf-que">Sauf que</a></li><li><a href="#htaccess">.htaccess</a></li><li><a href="#comments">Commentaires</a></li></ol>
 			</div>
 		</div>
 	</aside>

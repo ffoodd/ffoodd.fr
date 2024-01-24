@@ -120,7 +120,7 @@ WPMX Day&nbsp;— 06 juin 2015
 
 * **Page de l’événement**&nbsp;: [WPMX Day&nbsp;: le 1er événement WordPress pour les professionnels](https://2015.wpmx.org/)&nbsp;;
 * [Lire les _slides_ de «&nbsp;Accessibilité et efficience&nbsp;»](https://www.ffoodd.fr/wpmx/)&nbsp;;
-* [Regarder la vidéo de «&nbsp;Accessibilité et efficience&nbsp;»](http://wpmx.org/conferences-wpmx-day-2015-video/).
+* [Regarder la vidéo de «&nbsp;Accessibilité et efficience&nbsp;»](https://wpmx.org/conferences-wpmx-day-2015-video/).
 
 ### Les thèmes enfants
 
@@ -155,5 +155,5 @@ Et ne le répétez pas mais j’ai commencé en 2007 par faire du Flash.
 
 ## Parcours scolaire
 
-* **2008&nbsp;— 2009**&nbsp;: **licence** professionnelle ATC à [l’IUT de Bobigny](http://www.iut-bobigny.univ-paris13.fr/)&nbsp;;
-* **2006&nbsp;— 2008**&nbsp;: **BTS** communication visuelle option Multimédia au [lycée Eugénie Cotton](http://lyceecotton.net/joom/) à Montreuil.
+* **2008&nbsp;— 2009**&nbsp;: **licence** professionnelle ATC à [l’IUT de Bobigny](https://www.iut-bobigny.univ-paris13.fr/)&nbsp;;
+* **2006&nbsp;— 2008**&nbsp;: **BTS** communication visuelle option Multimédia au [lycée Eugénie Cotton](https://lyceecotton.net/joom/) à Montreuil.

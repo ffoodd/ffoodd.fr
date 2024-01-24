@@ -54,11 +54,13 @@
 				</header>
 				
 	<article role="article" itemscope itemtype="https://schema.org/Article">
-		<time class="screen-reader-text" datetime="2016-03-30T10:07:39" itemprop="datePublished">30 mars 2016</time><div itemprop="articleBody">
-				<p>Le dernier article rédigé par <a href="http://mrmrs.cc/">Adam Morse</a> est amplement diffusé ces derniers jours, vous lʼaurez certainement déjà lu : « <a href="http://mrmrs.io/writing/2016/03/24/scalable-css/"><em>CSS and Scalability</em></a> » — vous pouvez en lire <a href="http://blog.perrien.fr/css-et-evolutivite/">une traduction en Français</a> sur le blog de Marc Perrien. Il y prône une méthode de rédaction des CSS dite « atomiques », issue du formidable travail de <a href="http://cssmojo.com/">Thierry Koblentz</a> de Yahoo sur le projet <a href="http://acss.io/">Atomic CSS</a>.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
-<h2 id="les-css-atomiques-%E2%9A%9B" tabindex="-1">Les CSS atomiques ⚛</h2>
-<p>La métaphore est la même que celle utilisée par <a href="http://bradfrost.com/">Brad Frost</a> dans <a href="http://atomicdesign.bradfrost.com/">son livre (en cours de rédaction) sur le design atomique</a>. Cependant là où Brad Frost file la métaphore jusquʼà la matière, les CSS atomiques se contentent des atomes et vous laissent vous débrouiller avec le reste.</p>
-<p>Pour résumer, <strong>une classe atomique ne dispose que dʼune seule propriété, avec une seule valeur</strong>. Voici un exemple — tiré directement de <a href="http://acss.io/frequently-asked-questions.html#how-is-atomic-css-different-than-using-inline-styles-">la foire aux questions dʼAtomic CSS</a> — qui devrait être plus clair :</p>
+		<time class="screen-reader-text" datetime="2016-03-30T10:07:39" itemprop="datePublished">30 mars 2016</time>
+		
+			<div itemprop="articleBody">
+				<p>Le dernier article rédigé par <a href="https://mrmrs.cc/">Adam Morse</a> est amplement diffusé ces derniers jours, vous lʼaurez certainement déjà lu : « <a href="https://mrmrs.io/writing/2016/03/24/scalable-css/"><em>CSS and Scalability</em></a> » — vous pouvez en lire <a href="https://blog.perrien.fr/css-et-evolutivite/">une traduction en Français</a> sur le blog de Marc Perrien. Il y prône une méthode de rédaction des CSS dite « atomiques », issue du formidable travail de <a href="https://cssmojo.com/">Thierry Koblentz</a> de Yahoo sur le projet <a href="https://acss.io/">Atomic CSS</a>.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<h2 id="les-css-atomiques" tabindex="-1">Les CSS atomiques ⚛</h2>
+<p>La métaphore est la même que celle utilisée par <a href="https://bradfrost.com/">Brad Frost</a> dans <a href="https://atomicdesign.bradfrost.com/">son livre (en cours de rédaction) sur le design atomique</a>. Cependant là où Brad Frost file la métaphore jusquʼà la matière, les CSS atomiques se contentent des atomes et vous laissent vous débrouiller avec le reste.</p>
+<p>Pour résumer, <strong>une classe atomique ne dispose que dʼune seule propriété, avec une seule valeur</strong>. Voici un exemple — tiré directement de <a href="https://acss.io/frequently-asked-questions.html#how-is-atomic-css-different-than-using-inline-styles-">la foire aux questions dʼAtomic CSS</a> — qui devrait être plus clair :</p>
 <pre><code class="language-css">.Fz(large) {
   font-size: 18px;
 }
@@ -71,24 +73,24 @@
 <p>Je trouve ça bien. Et vous ? Cette méthode est indubitablement la meilleure <strong>à lʼheure actuelle</strong> pour qui cherche à réduire ses CSS, ainsi que leur coût de production.<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
 <p>Toutefois je pense que cette technique est à réserver exclusivement aux sites monstrueux, massifs, des balourds. Pour un intégrateur commun, qui travaille sur des sites plus ou moins simples, <strong>je suis persuadé que le jeu nʼen vaut pas la chandelle.</strong> À mon avis, le site dʼAtomic CSS et lʼarticle dʼAdam Morse devraient le préciser : plus le site est petit, plus cette méthode coûte cher. Et je ne parle pas que sur le plan technique.</p>
 <h2 id="interrogeons-la-destination-des-css" tabindex="-1">Interrogeons la destination des CSS</h2>
-<h3 id="%C3%A0-qui-s%CA%BCadressent-les-css-atomiques-%3F" tabindex="-1">À qui sʼadressent les CSS atomiques ?</h3>
+<h3 id="a-qui-sadressent-les-css-atomiques" tabindex="-1">À qui sʼadressent les CSS atomiques ?</h3>
 <p>Conceptuellement, cette approche déplace un certain nombre de chose. Pour commencer, elle induit quʼun intervenant ne touche plus les CSS directement.<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></p>
 <p>Cependant afin que la magie opère, la plupart des sélecteurs comprenant des caractères spéciaux vont être échappés. <strong>Cʼest (très) difficile à lire pour un humain.</strong> Pourtant jʼai déjà eu lʼoccasion de lire des CSS écrits de la sorte — notamment dans <a href="https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L194">debugCSS</a>.<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></p>
 <p>Je pense que ce procédé est <strong>une technique dʼobfuscation des CSS</strong>. Ces CSS ne sont pas fait pour être lus par un œil humain. Ils sont lʼexpression du système technique qui sous-tend une intégration graphique. Ils sont optimisés pour la machine.</p>
-<h3 id="et-l%CA%BChumain%2C-dans-tout-%C3%A7a-%3F" tabindex="-1">Et lʼhumain, dans tout ça ?</h3>
+<h3 id="et-lhumain-dans-tout-ca" tabindex="-1">Et lʼhumain, dans tout ça ?</h3>
 <p>Vous lʼaurez compris, cet aspect me dérange un peu. <strong>Jʼaime rédiger mes CSS en imaginant que quelquʼun les lira</strong>, que ce soit par curiosité — comme le fait Adam Morse.<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup></p>
 <p>Il nʼy aura pas de problème particulier à reprendre un projet intégré à lʼaide de CSS atomiques, en revanche je subodore que ça semblera bien terne et froid. Aucun parti-pris, aucune manière personnelle de travailler, probablement <strong>aucun commentaire rigolo dans les sources</strong>.<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup></p>
 <p>Bref, aucune identité.</p>
-<h2 id="d%CA%BCo%C3%B9-viennent-mes-css-%3F" tabindex="-1">Dʼoù viennent mes CSS ?</h2>
+<h2 id="dou-viennent-mes-css" tabindex="-1">Dʼoù viennent mes CSS ?</h2>
 <p>Jʼai une opinion, peut-être très mauvaise, sur lʼobjet des CSS : à mon avis, ils équivalent à une charte graphique. On y précise ce qui peut ou ne peut pas être fait, ce qui doit ou ne doit pas être fait.</p>
-<p>Et quand je parle de ce qui peut / doit être fait, <strong>je parle du HTML</strong>. Je fais un peu mon <em>coming-out</em>, mais oui, mon CSS sert de garde-fous pour le HTML. À dire vrai, un autre article à été largement diffusé il y a quelque temps déjà, à contre-courant de ce système nucléaire. Vous pourrez lire sur le blog dʼEbay <a href="http://www.ebaytechblog.com/2015/11/04/how-our-css-framework-helps-enforce-accessibility/">comment leur framework CSS les aide à renforcer lʼaccessibilité</a>.<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup></p>
+<p>Et quand je parle de ce qui peut / doit être fait, <strong>je parle du HTML</strong>. Je fais un peu mon <em>coming-out</em>, mais oui, mon CSS sert de garde-fous pour le HTML. À dire vrai, un autre article à été largement diffusé il y a quelque temps déjà, à contre-courant de ce système nucléaire. Vous pourrez lire sur le blog dʼEbay <a href="https://www.ebaytechblog.com/2015/11/04/how-our-css-framework-helps-enforce-accessibility/">comment leur framework CSS les aide à renforcer lʼaccessibilité</a>.<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup></p>
 <p>Et cʼest chouette, je suis content de travailler de la sorte.Je ne suis jamais seul à intervenir, ni sur le HTML ni sur le CSS, et suis pourtant le seul intégrateur de métier dans mon équipe actuelle (comme dans la précédente lors de mon arrivée). Et ce genre de sélecteur qui se rapporte à un composant graphique est nettement plus <strong>compréhensible</strong> par des profils non experts, voire même carrément <strong>attractif</strong>. Et pour cause, en ne nécessitant pas dʼajouter des dizaines de classes précises pour former un composant mais une seule sur le conteneur, les développeurs sont heureux. Ils écrivent le bon HTML — chopé sur un guide de style, par exemple — et hop, ça marche.</p>
 <p>Nʼest-ce pas merveilleux ?</p>
 <p>Ce qui lʼest encore plus, cʼest que si jamais le HTML ne correspond pas (disons, par exemple, quʼil manque lʼattribut <code>alt</code> sur une image) et bien les styles ne sʼappliquent pas. Que fait alors la personne qui se trompe, pour peu que vous lʼayez prévenue que ceci pourrait arriver ? Elle va lire vos CSS pour comprendre ce quʼil manque.</p>
 <p>Par ailleurs je trouve beaucoup plus naturel dʼécrire les styles de cette façon : on décrit quelque chose, après tout CSS est un langage descriptif. De plus <strong>nous pouvons parler facilement de ce sur quoi nous travaillons</strong>, et pouvons même nous référer à un élément commun dans un guide de style ou une documentation quelconque.</p>
 <p>Nos CSS ne sont pas censées gonfler lorsquʼon a défini une architecture en amont. On a une somme peu ou prou figée pour nos besoins précis. En cas de refonte graphique la structure ne bouge pas, puisquʼelle est <strong>solidaire</strong> du contenu.</p>
 <p>Je n’ai pas une vision mécanique de mes CSS, j’en ai une vision humaine : quelquʼun dʼautre (une personne) va les lire, chercher à les comprendre, les utiliser, les modifier peut-être. <strong>Je communique avec cette personne</strong>, je documente, je commente, jʼinduis des erreurs pour obliger à lire, comprendre et respecter certaines bonnes pratiques.</p>
-<h2 id="je-fais-erreur%2C-et-apr%C3%A8s-%3F" tabindex="-1">Je fais erreur, et après ?</h2>
+<h2 id="je-fais-erreur-et-apres" tabindex="-1">Je fais erreur, et après ?</h2>
 <p>Je sais, oui. Peu importe lʼapproche sur mes propos, <strong>il existe des façons de travailler qui ne me font pas écrire mes CSS de manière démodée</strong>. On peut utiliser des outils pour vérifier que le HTML est correct.<sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup></p>
 <p>Donc encore une fois, <strong>je sais que mes propos ne feront pas le poids</strong> comparés aux gains multiples en terme de performance, de vitesse, de maintenabilité, dʼautomatisation. Mais soyons honnêtes, le gain de poids pour un site <em>lambda</em> nʼest pas si énorme<a href="https://www.ffoodd.fr/a-qui-parlent-vos-css/#note-10" title="Les chiffres avancés par Thierry Koblentz sont issus de sites très, très gros, pour lesquels les gains sont forcément énormes. Un site vitrine pour la boulangerie du coin aura assez peu à y gagner par rapport à une feuille de styles légère et précise, je pense.">[10]</a>. Certes, il reste dommageable pour un utilisateur de télécharger un octet supplémentaire, donc je suis dʼaccord : les CSS atomiques sont une idée absolument géniale, <strong>un gain véritable et très intelligent tant pour lʼutilisateur que pour le matériel</strong>.</p>
 <p>Je trouve tout de même un intérêt bien supérieur dans mes échanges avec mes collègues ou camarades de métier. Jʼaime répondre aux questions. Jʼespère quʼun nouvel arrivant parcourant mes styles éprouvera du confort et aura envie dʼécrire de cette façon, tout comme un curieux qui lirait mes sources.</p>
@@ -112,7 +114,9 @@
 </li>
 
 
-			</div><footer class="small mt2">
+			</div>
+		
+		<footer class="small mt2">
 			<p class="pl2 mt0 pt1">
 				Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
 				Modifié le <time class="updated" datetime="2019-06-20T14:31:24" itemprop="dateModified">20 juin 2019</time>.
@@ -168,7 +172,7 @@
 											 src="https://secure.gravatar.com/avatar/03363d4c017e8d11320687f2efa722a0?s=44&d=mm&r=g"
 											 srcset="https://secure.gravatar.com/avatar/03363d4c017e8d11320687f2efa722a0?s=88&d=mm&r=g 2x"
 											 class="avatar avatar-44 photo"
-											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="http://www.nicolas-hoffmann.net/" class="url" rel="ugc external nofollow">Nico</a></em>
+											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="https://www.nicolas-hoffmann.net/" class="url" rel="ugc external nofollow">Nico</a></em>
 								
 								<time datetime="[object Object]" itemprop="commentTime">5 avril 2016 à 11 h 31 min</time>
 								<a href="#8537">
@@ -192,7 +196,7 @@
 		<div class="aside pl2 pt2">
 			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
 			<div class="textwidget">
-				<ol><li><a href="#les-css-atomiques-%E2%9A%9B">Les CSS atomiques ⚛</a></li><li><a href="#interrogeons-la-destination-des-css">Interrogeons la destination des CSS</a></li><li><a href="#d%CA%BCo%C3%B9-viennent-mes-css-%3F">Dʼoù viennent mes CSS ?</a></li><li><a href="#je-fais-erreur%2C-et-apr%C3%A8s-%3F">Je fais erreur, et après ?</a></li><li><a href="#comments">Commentaires</a></li></ol>
+				<ol><li><a href="#les-css-atomiques">Les CSS atomiques ⚛</a></li><li><a href="#interrogeons-la-destination-des-css">Interrogeons la destination des CSS</a></li><li><a href="#dou-viennent-mes-css">Dʼoù viennent mes CSS ?</a></li><li><a href="#je-fais-erreur-et-apres">Je fais erreur, et après ?</a></li><li><a href="#comments">Commentaires</a></li></ol>
 			</div>
 		</div>
 	</aside>

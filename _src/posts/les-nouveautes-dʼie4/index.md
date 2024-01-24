@@ -99,8 +99,8 @@ Alors pour paraphraser le Doc, je dirais seulement&nbsp;:
 Pour les survivants qui sont parvenus jusqu’au donjon, voici vos récompenses&nbsp;:
 
 * [la page Wikipédia d’Internet Explorer 4 (en anglais)](https://en.wikipedia.org/wiki/Internet_Explorer_4)&nbsp;;
-* [un site fabuleux pour découvrir IE4, en anglais](http://www.actden.com/ie4/) — qui n’est pas sans rappeler ce fameux trombone pot de colle dans les produits Microsoft du début des années 2000&nbsp;;
-* [un historique d’Internet Explorer 1 à 6, en anglais](http://www.blooberry.com/indexdot/history/ie.htm) —&nbsp;comme ça, vous avez le choix dans les dates&nbsp;;
+* [un site fabuleux pour découvrir IE4, en anglais](https://www.actden.com/ie4/) — qui n’est pas sans rappeler ce fameux trombone pot de colle dans les produits Microsoft du début des années 2000&nbsp;;
+* [un historique d’Internet Explorer 1 à 6, en anglais](https://www.blooberry.com/indexdot/history/ie.htm) —&nbsp;comme ça, vous avez le choix dans les dates&nbsp;;
 * [une page implémentant les transitions interpages](https://www.nicolas-hoffmann.net/tacamaca/).[^6]
 
 [^6]: Un indice, il faut regarder le code source.

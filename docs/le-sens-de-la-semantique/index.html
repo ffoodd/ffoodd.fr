@@ -54,9 +54,11 @@
 				</header>
 				
 	<article role="article" itemscope itemtype="https://schema.org/Article">
-		<time class="screen-reader-text" datetime="2016-06-24T16:06:10" itemprop="datePublished">24 juin 2016</time><div itemprop="articleBody">
+		<time class="screen-reader-text" datetime="2016-06-24T16:06:10" itemprop="datePublished">24 juin 2016</time>
+		
+			<div itemprop="articleBody">
 				<p>Mais probablement pas pour les raisons auxquelles vous pourriez penser de prime abord, je pense. Attention, ceci nʼest quʼune réflexion et sera peut-être truffée dʼerreurs, pleine de non sens et de raccourcis.</p>
-<h2 id="la-s%C3%A9paration-du-fond-et-de-la-forme" tabindex="-1">La séparation du fond et de la forme</h2>
+<h2 id="la-separation-du-fond-et-de-la-forme" tabindex="-1">La séparation du fond et de la forme</h2>
 <p>Ce principe est assez clair. Parfois on lʼassocie également à un autre principe, celui de la répartition des responsabilités — en anglais, <em>separation of concern</em> — et on aboutit généralement à celui de la responsabilité unique — <em>single responsibility</em>, toujours chez nos amis anglophones.</p>
 <p>Dans mes langages dʼaffection que sont le HTML et le CSS, ça se traduit actuellement par les CSS atomiques — dont jʼai déjà parlé, et sur lesquels je vous invite à vous renseigner.</p>
 <p>En développement web et notamment sur le <em>front-end</em>, la conception MV* en est le digne représentant. Sommairement, chaque couche a une responsabilité précise :</p>
@@ -66,7 +68,7 @@
 <li>et le reste sert à manipuler tout ça comme un marionnettiste — la plupart du temps, on parle de contrôleur.</li>
 </ul>
 <p>Super, le tour du propriétaire est terminé. Vous voulez mon avis ? <strong>Cʼest nul et non applicable aux couches HTML et CSS.</strong></p>
-<h2 id="l%CA%BCimportance-du-html" tabindex="-1">Lʼimportance du HTML</h2>
+<h2 id="limportance-du-html" tabindex="-1">Lʼimportance du HTML</h2>
 <p>Un rapide cours dʼhistoire est déjà fait dans lʼintroduction de lʼarticle. Le mauvais emploi de balises HTML à des fins de présentation a traumatisé pas mal de monde, il y a de ça 10 ou 15 ans. Les tableaux, les éléments — coucou <code>font</code>, <code>big</code>, <code>blink</code>, <code>center</code>, <code>marquee</code> ou <code>spacer</code> — et attributs dédiés en sont pour beaucoup.</p>
 <p>Là encore, je souhaite nuancer : ce ne sont que des outils. Les ouvriers qui sʼen sont servis ont fait nʼimporte quoi avec. Cʼest ça, la véritable histoire. On sʼest donc mis en tête de récupérer un vieux principe de programmation et de lʼappliquer tant bien que mal sur HTML et CSS en disant :</p>
 <blockquote>
@@ -75,18 +77,18 @@
 <p>Cʼétait un moyen simple et efficace dʼéjecter du versant HTML ce qui avait trait à la présentation. Et ça, c’était bien. En effet le HTML doit être employé pour sa sémantique, <strong>le sens quʼil apporte au contenu quʼil balise</strong>. Car cʼest tout ce quʼest censé faire ce langage : décrire le contenu sur le plan sémantique.<br>
 **<br>
 Utiliser des propriétés de style dans le HTML revient à corrompre la sémantique** : le contenu ne sera plus marqué correctement et pourra donc être mal interprété. Et ça, cʼest mal.</p>
-<h3 id="en-quoi-est-ce-contradictoire-avec-la-s%C3%A9paration-fond%2Fforme-%3F" tabindex="-1">En quoi est-ce contradictoire avec la séparation fond/forme ?</h3>
+<h3 id="en-quoi-est-ce-contradictoire-avec-la-separation-fondforme" tabindex="-1">En quoi est-ce contradictoire avec la séparation fond/forme ?</h3>
 <p>Jʼai esquissé pourquoi il fallait éviter de mettre des informations de styles dans le HTML. Cʼétait pas trop compliqué.</p>
 <p>Cependant aujourdʼhui, cet argumentaire ressurgit pour justifier lʼutilisation de classes partout, tout le temps, dans nos CSS. On nous recommande de ne pas utiliser de sélecteurs dʼéléments ou dʼattributs — voire même dʼimbrications comme <code>ul &gt; li</code> — car elles induisent un lien trop fort avec le HTML et enfreigne donc ce concept de séparation du fond et de la forme.</p>
 <p>Précisons mon avis sur le sujet : <strong>ce principe ne vaut pas pour les CSS</strong>. Je poursuis sur ma lancée.</p>
-<h2 id="%C3%A0-quoi-sert-le-style-%3F" tabindex="-1">À quoi sert le style ?</h2>
+<h2 id="a-quoi-sert-le-style" tabindex="-1">À quoi sert le style ?</h2>
 <p>Selon moi, il sert à hiérarchiser visuellement les éléments les uns des autres. Un « gros titre », les « petites lignes »… Ces expressions décrivent un contenu dʼaprès leur aspect visuel mais aussi et surtout, leur (relative) importance sémantique.</p>
 <p>Pour résumer le fond de ma pensé : si un élément est important sémantiquement côté HTML, il devrait avoir <strong>une représentation visuelle qui reflète cette importance</strong>.</p>
 <p>Pourquoi ?</p>
 <p>Mais ma bonne dame, parce que sinon vous induirez une distinction entre diverses méthodes de lecture de votre contenu — entre les technologies qui lisent le code (les robots, les lecteurs d’écrans, les moteurs en tous genres) et celles qui regardent le style (les personnes bien voyantes, les captures dʼécran, et certains moteurs tels que les outils de test de régression visuelle). Et ça, cʼest pas terrible. Cʼest même plutôt pourri, à mon avis.</p>
 <p>En fait jʼirais encore plus loin : si vous séparez trop votre forme de votre fond .<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
 <p><strong>Lʼaspect graphique devrait renforcer la structure de lʼinformation et la hiérarchisation des contenus</strong>, pas la gommer ni la falsifier.</p>
-<h2 id="encore-un-peu-d%CA%BChistoire" tabindex="-1">Encore un peu dʼhistoire</h2>
+<h2 id="encore-un-peu-dhistoire" tabindex="-1">Encore un peu dʼhistoire</h2>
 <p>Au fait, vous souvenez-vous que CSS est ce qu’on appelle un langage descriptif ? Dʼailleurs, les plus vieux dʼentre vous se rappelleront sans doute quʼà lʼorigine <strong>CSS nʼétait pas destiné aux styles visuels</strong> mais à la description de la présentation du contenu. Et non, ce nʼest pas pareil. Cela comprenait lʼaspect graphique, mais aussi <a href="https://www.w3.org/TR/CSS2/media.html#media-types">dʼautres médias oubliés, de nos jours</a>. Voyez plutôt.</p>
 <ul>
 <li>La vocalisation avec le média <code>speech</code> — on parlait de feuille de styles orales (en CSS1, le média se nommait dʼailleurs <code>aural</code>), qui comprenaient le contrôle du volume, de la vitesse, mais aussi du type de voix (masculine ou féminine, par exemple). <a href="https://www.w3.org/TR/CSS2/aural.html">Jetez un œil à lʼappendice à la spécification CSS2 (en anglais)</a>. Tout ceci nʼa jamais vraiment été implémenté, sauf par Opéra il y a fort longtemps.</li>
@@ -95,7 +97,7 @@ Utiliser des propriétés de style dans le HTML revient à corrompre la sémanti
 <li>Les téléscripteurs (ou prompteurs), terminaux et tous les systèmes avec des capacités dʼaffichage limitées aux fontes monospaces avec le média <code>tty</code>.</li>
 </ul>
 <p>Dès la deuxième partie des années 90, les personnes travaillant sur la spécification CSS envisageaient cette multitude de façon dʼaccéder au contenu. Et aujourdʼhui on se gausse de faire un site qui sʼaffiche sur la plupart des écrans…</p>
-<h2 id="morale-de-l%CA%BChistoire" tabindex="-1">Morale de lʼhistoire</h2>
+<h2 id="morale-de-lhistoire" tabindex="-1">Morale de lʼhistoire</h2>
 <p>Simplifions.</p>
 <p><strong>CSS ne devrait pas être utilisé pour altérer lʼimportance sémantique d’un contenu.</strong> Et par extension, utiliser les sélecteurs dʼéléments ou dʼattributs semble une bonne idée. Je reformule au cas où : séparer le fond de la forme est une bonne idée, mais pas séparer la forme du fond. <strong>La forme dépend du fond, là où le fond ne dépend pas de la forme</strong>.</p>
 <p>Pour ceux qui ont tenu jusque là, je vous invite à prendre le temps de lire <a href="https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade">la page Wikipédia dédiée à CSS</a>. Cʼest fort intéressant .<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></p>
@@ -108,7 +110,9 @@ Utiliser des propriétés de style dans le HTML revient à corrompre la sémanti
 </li>
 
 
-			</div><footer class="small mt2">
+			</div>
+		
+		<footer class="small mt2">
 			<p class="pl2 mt0 pt1">
 				Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
 				Modifié le <time class="updated" datetime="2016-06-27T12:42:49" itemprop="dateModified">27 juin 2016</time>.
@@ -128,7 +132,7 @@ Utiliser des propriétés de style dans le HTML revient à corrompre la sémanti
 											 src="https://secure.gravatar.com/avatar/03363d4c017e8d11320687f2efa722a0?s=44&d=mm&r=g"
 											 srcset="https://secure.gravatar.com/avatar/03363d4c017e8d11320687f2efa722a0?s=88&d=mm&r=g 2x"
 											 class="avatar avatar-44 photo"
-											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="http://www.nicolas-hoffmann.net/" class="url" rel="ugc external nofollow">Nico</a></em>
+											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="https://www.nicolas-hoffmann.net/" class="url" rel="ugc external nofollow">Nico</a></em>
 								
 								<time datetime="[object Object]" itemprop="commentTime">24 juin 2016 à 17 h 09 min</time>
 								<a href="#8888">
@@ -141,7 +145,7 @@ Utiliser des propriétés de style dans le HTML revient à corrompre la sémanti
 &gt; Lʼaspect graphique devrait renforcer la structure de lʼinformation et la hiérarchisation des contenus, pas la gommer ni la falsifier.</p>
 <p>Sur le principe, 100% d’accord. En pratique, la réalité fait qu’il y a toujours des entorses à ce principe, même si je reconnais que ça devient de plus en plus rare (j’ai déjà dû faire des sites délirants où la structure hx est complètement décorrélée des classes hx que j’y appliquais…). Heureusement que ça disparait petit à petit (enfin, de mon point de vue limité).</p>
 <p>Rigolo d’ailleurs, quand on sait que l’attribut class était à l’origine pensé pour ajouter du sens (l’ancêtre des micro-datas), je crois que c’est Bert Bos qui avait expliqué ça à Sud Web 2012.</p>
-<p>Tu devrais lire <a href="http://www.la-grange.net/2013/07/24/html">http://www.la-grange.net/2013/07/24/html</a> de Karl, très intéressant.</p>
+<p>Tu devrais lire <a href="https://www.la-grange.net/2013/07/24/html">https://www.la-grange.net/2013/07/24/html</a> de Karl, très intéressant.</p>
 </div>
 					</li></ol>
 		</div>
@@ -152,7 +156,7 @@ Utiliser des propriétés de style dans le HTML revient à corrompre la sémanti
 		<div class="aside pl2 pt2">
 			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
 			<div class="textwidget">
-				<ol><li><a href="#la-s%C3%A9paration-du-fond-et-de-la-forme">La séparation du fond et de la forme</a></li><li><a href="#l%CA%BCimportance-du-html">Lʼimportance du HTML</a></li><li><a href="#%C3%A0-quoi-sert-le-style-%3F">À quoi sert le style ?</a></li><li><a href="#encore-un-peu-d%CA%BChistoire">Encore un peu dʼhistoire</a></li><li><a href="#morale-de-l%CA%BChistoire">Morale de lʼhistoire</a></li><li><a href="#comments">Commentaires</a></li></ol>
+				<ol><li><a href="#la-separation-du-fond-et-de-la-forme">La séparation du fond et de la forme</a></li><li><a href="#limportance-du-html">Lʼimportance du HTML</a></li><li><a href="#a-quoi-sert-le-style">À quoi sert le style ?</a></li><li><a href="#encore-un-peu-dhistoire">Encore un peu dʼhistoire</a></li><li><a href="#morale-de-lhistoire">Morale de lʼhistoire</a></li><li><a href="#comments">Commentaires</a></li></ol>
 			</div>
 		</div>
 	</aside>

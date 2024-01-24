@@ -52,6 +52,6 @@ Au-delà de la métaphore du vivant, ces interactions basiques définissent la p
 
 Cette problématique me donne matière à réflexion tous les jours, mais par bonheur certains grands designers m’inspirent régulièrement. Voici deux articles et un livre qui m’ont particulièrement intéressé sur le sujet :
 
-* [**Motion/Emotion** par David Desandro](http://desandro.github.com/motion-emotion/)
-* [**INTERACTION** par Dave Rupert](http://daverupert.com/2011/07/interaction/)
-* [**Designing for emotion** par Aaron Walter](http://www.abookapart.com/products/designing-for-emotion)
+* [**Motion/Emotion** par David Desandro](https://desandro.github.com/motion-emotion/)
+* [**INTERACTION** par Dave Rupert](https://daverupert.com/2011/07/interaction/)
+* [**Designing for emotion** par Aaron Walter](https://www.abookapart.com/products/designing-for-emotion)

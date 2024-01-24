@@ -52,7 +52,9 @@
 				</header>
 				
 	<article role="article" itemscope itemtype="https://schema.org/Article">
-		<time class="screen-reader-text" datetime="2022-12-22T16:53:57" itemprop="datePublished">22 décembre 2022</time><div itemprop="articleBody">
+		<time class="screen-reader-text" datetime="2022-12-22T16:53:57" itemprop="datePublished">22 décembre 2022</time>
+		
+			<div itemprop="articleBody">
 				<p><strong>Note</strong> : cet article est la traduction de <a href="https://www.htmhell.dev/adventcalendar/2022/17/">ma contribution au calendrier de l’avent de HTMHell, Modern HTML as a foundation for progressive enhancement</a> !</p>
 <p>Vous êtes peut-être familier avec le concept d’amélioration progressive. En résumé, c’est une méthode permettant de s’assurer que l’utilisateur dispose d’<strong>une version viable</strong> de votre page quelque soit son contexte — connexion limitée, navigateur désuet, etc. — mais aussi de rendre ladite page plus <strong>résiliente</strong> (par exemple aux erreurs JavaScript).</p>
 <p>L’amélioration progressive débute par la base :</p>
@@ -86,7 +88,7 @@
 <p><a href="https://codepen.io/ffoodd/pen/rNvqGBB">Rendons <code>&lt;output&gt;</code> encore plus robuste en le transformant en <em>live region</em> ARIA (sur CodePen)</a> !</p>
 <p>Vous vous en souvenez peut-être, expliciter les rôles des éléments HTML était nécessaire il y a quelques années — pour les <em>landmarks</em>, principalement — afin d’améliorer le support des navigateurs et technologies d’assistance. C’est d’ailleurs toujours une pratique encouragée par <a href="https://www.numerique.gouv.fr/publications/rgaa-accessibilite/methode-rgaa/criteres/#crit-12-6">le critère 12.6 du RGAA</a>. Nous nous sommes habitués à écrire <code>&lt;main role=&quot;main&quot;&gt;</code>, <code>&lt;header role=&quot;banner&quot;&gt;</code>, etc.</p>
 <p>Un autre point positif avec <code>&lt;output role=&quot;status&quot;&gt;</code> est que ça vous permet de styler vos <em>live regions</em> en sélectionnant l’élément <code>output</code> : spécificité moins élevée, et la possibilité d’appliquer des styles de base renforcés — avec <em>CSS containment</em>, par exemple ?</p>
-<h3 id="une-live-region-particuli%C3%A8re-%3A-le-toast-!" tabindex="-1">Une <em>live region</em> particulière : le toast !</h3>
+<h3 id="une-live-region-particuliere-le-toast" tabindex="-1">Une <em>live region</em> particulière : le toast !</h3>
 <p>Il existe aussi un cas d’usage pour une <em>live region</em> affichée visuellement. Je n’irais pas très loin sur le sujet, car il a déjà été traité dans un grand nombre d’articles de grande qualité :</p>
 <ul>
 <li><a href="https://www.scottohara.me/blog/2019/07/10/the-output-element.html">Scott O’Hara l’a mentionné dans The Output Element</a>,</li>
@@ -94,7 +96,7 @@
 <li>mais aussi <a href="https://adrianroselli.com/2020/01/defining-toast-messages.html">Adrian Roselli avec Defining toast message</a>.</li>
 </ul>
 <p><strong>Attention</strong> : si votre toast ou votre <em>live region</em> contient des éléments interactifs, vous devriez probablement utiliser un rôle <code>dialog</code> ou <code>alertdialog</code> au lieu d’un élément <code>&lt;output&gt;</code>. Cela dit… il y a peut-être un élément HTML plus indiqué pour ça !</p>
-<h2 id="une-bo%C3%AEte-de-dialog" tabindex="-1">Une boîte de <code>dialog</code></h2>
+<h2 id="une-boite-de-dialog" tabindex="-1">Une boîte de <code>dialog</code></h2>
 <p>Je ne vais pas creuser beaucoup <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/dialog">l’élément <code>&lt;dialog&gt;</code></a>, mais explorons tout de même ce qu’il fait nativement comparé au <a href="https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal/">modèle de conception ARIA dialog</a> :</p>
 <ul>
 <li>il a un rôle <code>dialog</code> implicite,</li>
@@ -124,7 +126,9 @@
 <p>Je crois que c’est le genre de choses qu’HTML permet : <code>&lt;details&gt;</code> et <code>&lt;summary&gt;</code> finiront par être implémentés et restitués de façon cohérente aux technologies d’assistance, rendant les enrichissements avec ARIA caduques. Le travail de Scott, du test très avancé aux articles de blogs et à l’ouverture de tickets de bug, est la voie à suivre. Les implémentations complètes dans les bibliothèques comme <a href="https://a11y-dialog.netlify.app/">a11y-dialog de Kitty Giraudel</a> permettent de gagner en maturité et de clarifier les attentes pour ces composants. Et avec l’augmentation des usages, les navigateurs et technologies d’assistance vont certainement reconsidérer leurs priorisations, dans des opérations comme Interop ou <a href="https://aria-at.w3.org/">ARIA-AT</a>.</p>
 <p>Alors utilisons, testons, et aidons les navigateurs et technologies d’assistance à supporter ces nouveaux éléments HTML !</p>
 
-			</div><footer class="small mt2">
+			</div>
+		
+		<footer class="small mt2">
 			<p class="pl2 mt0 pt1">
 				Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
 				Modifié le <time class="updated" datetime="2022-12-22T16:54:59" itemprop="dateModified">22 décembre 2022</time>.
@@ -140,7 +144,7 @@
 		<div class="aside pl2 pt2">
 			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
 			<div class="textwidget">
-				<ol><li><a href="#details-et-summary-comme-base-pour-le-motif-de-conception-disclosure">details et summary comme base pour le motif de conception disclosure</a></li><li><a href="#output-comme-une-live-region">output comme une live region</a></li><li><a href="#une-bo%C3%AEte-de-dialog">Une boîte de dialog</a></li><li><a href="#conclusion">Conclusion</a></li></ol>
+				<ol><li><a href="#details-et-summary-comme-base-pour-le-motif-de-conception-disclosure">details et summary comme base pour le motif de conception disclosure</a></li><li><a href="#output-comme-une-live-region">output comme une live region</a></li><li><a href="#une-boite-de-dialog">Une boîte de dialog</a></li><li><a href="#conclusion">Conclusion</a></li></ol>
 			</div>
 		</div>
 	</aside>

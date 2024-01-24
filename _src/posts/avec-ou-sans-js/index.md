@@ -106,7 +106,7 @@ C’est là qu’on rigole&nbsp;! Lisez plutôt, je vous explique ensuite&nbsp;:
 }
 ```
 
-Dans un premier temps, je définis la règle `@keyframes` pour mon animation. Son seul contenu est **l’état final**&nbsp;: pas de translation, l’élément est visible, et les délais de transition sont ajustés. [En terme de support](http://caniuse.com/#search=keyframes) on abandonne donc IE9 et ses aïeux, ainsi qu’Opéra Mini.
+Dans un premier temps, je définis la règle `@keyframes` pour mon animation. Son seul contenu est **l’état final**&nbsp;: pas de translation, l’élément est visible, et les délais de transition sont ajustés. [En terme de support](https://caniuse.com/#search=keyframes) on abandonne donc IE9 et ses aïeux, ainsi qu’Opéra Mini.
 
 Dans un second temps, j’applique cette animation sur la navigation lorsque la balise `<html>` porte la classe `.no-js`. C’est sa classe par défaut, qui n’est retirée que si JS est activé.
 
@@ -118,9 +118,9 @@ Et voilà&nbsp;! **On profite en sus d’une bien jolie animation qui fait entre
 
 ## Démonstration
 
-Si vous êtes curieux de voir ce que ça donne ou de jouer avec, j’ai monté un [CodePen de démonstration](http://codepen.io/ffoodd/pen/apGqpQ) dans lequel vous pourrez lire le code.
+Si vous êtes curieux de voir ce que ça donne ou de jouer avec, j’ai monté un [CodePen de démonstration](https://codepen.io/ffoodd/pen/apGqpQ) dans lequel vous pourrez lire le code.
 
-Pour jouer avec le JS désactivé, vous devrez [consulter la vue complète](http://codepen.io/ffoodd/full/apGqpQ/).[^2]
+Pour jouer avec le JS désactivé, vous devrez [consulter la vue complète](https://codepen.io/ffoodd/full/apGqpQ/).[^2]
 
 [^2]: CodePen affiche un bien joli message si vous désactivé JavaScript.
 

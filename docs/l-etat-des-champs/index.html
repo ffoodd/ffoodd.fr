@@ -54,14 +54,16 @@
 				</header>
 				
 	<article role="article" itemscope itemtype="https://schema.org/Article">
-		<time class="screen-reader-text" datetime="2017-12-21T14:09:15" itemprop="datePublished">21 décembre 2017</time><div itemprop="articleBody">
+		<time class="screen-reader-text" datetime="2017-12-21T14:09:15" itemprop="datePublished">21 décembre 2017</time>
+		
+			<div itemprop="articleBody">
 				<p>Mais en arrivant sur la page, ledit champ est vide — et par conséquent, invalide.</p>
 <h2 id="le-souci" tabindex="-1">Le souci</h2>
 <p>Lorsque vous appliquez des styles à un champ invalide (en utilisant la pseudo-classe <code>:invalid</code>), ils seront donc appliqués dès le chargement de la page si ce champ est également affublé de l’attribut <code>required</code>. Dommage !</p>
 <p>C’est ce qui a conduit <a href="https://nota-bene.org/">Stéphane Deschamps</a> à ouvrir <a href="https://github.com/w3c/html/issues/1073">une issue sur le Github du W3C</a>.</p>
-<h3 id="l%E2%80%99%C3%A9tat-ind%C3%A9termin%C3%A9" tabindex="-1">L’état indéterminé</h3>
+<h3 id="letat-indetermine" tabindex="-1">L’état indéterminé</h3>
 <p>Quelques échanges plus tard, on évoque l’existence de l’état indéterminé pour les cases à cocher, boutons radios et barres de progression <a href="https://www.w3.org/TR/html5/disabled-elements.html#selector-indeterminate">dans la spécification HTML5</a> qui pourrait porter le statu quo sur l’invalidité de notre champ. Cet état est facile à cibler en CSS à l’aide de la pseudo-classe <code>:indeterminate</code>.</p>
-<h3 id="le-brouillon-du-module-4-des-s%C3%A9lecteurs" tabindex="-1">Le brouillon du module 4 des sélecteurs</h3>
+<h3 id="le-brouillon-du-module-4-des-selecteurs" tabindex="-1">Le brouillon du module 4 des sélecteurs</h3>
 <p>Dans <a href="https://drafts.csswg.org/selectors-4/#user-pseudos">le brouillon du module de niveau 4 des sélecteurs CSS</a>, une nouvelle pseudo-classe tente de résoudre ce problème : <code>:user-invalid</code>. Vous noterez par ailleurs que le paragraphe descriptif n’est pas à jour puisqu’il évoque la première dénomination de ce nouveau sélecteur, à savoir <code>:user-error</code>.</p>
 <p>Mais vous l’aurez compris, il s’agit d’un brouillon et ce nouveau sélecteur est très loin d’avoir été implémenté où que ce soit.</p>
 <h2 id="un-contournement-possible" tabindex="-1">Un contournement possible</h2>
@@ -88,14 +90,14 @@ Et bonne nouvelle, <a href="https://caniuse.com/#feat=css-placeholder-shown"><co
 <li><strong>Note</strong> : <a href="https://twitter.com/GaetanBt/status/943842968754061312">Gaëtan me signale</a> que sur Chrome, le placeholder ne peut pas être vide pour que cette astuce fonctionne.</li>
 <li><strong>Note</strong> : <a href="https://twitter.com/johan_ramon/status/943844529597272065">Johan me signale</a> que le comportement observé de visu était également vocalisé par les lecteurs d’écran. Là, ça devient vraiment gênant !</li>
 </ul>
-<h3 id="pourquoi-pas-%3Anot()" tabindex="-1">Pourquoi pas <code>:not()</code></h3>
+<h3 id="pourquoi-pas-not" tabindex="-1">Pourquoi pas <code>:not()</code></h3>
 <p>Peut-être supposez-vous (à juste titre) qu’au lieu d’utiliser deux sélecteurs différents, nous pourrions styler directement les champs invalides dont le <code>placeholder</code> n’est pas affiché, grâce à <code>input:invalid:not(:placeholder-shown)</code>.</p>
 <p>Le fait est que le support de <code>:invalid</code> est <a href="https://caniuse.com/#search=%3Ainvalid">bien meilleur</a> que celui de <code>:placeholder-shown</code> ; de plus, vous n’êtes pas sans savoir que CSS est un langage tolérant à l’erreur. Quand un navigateur rencontre un sélecteur qu’il ne comprend pas, <strong>il ignore l’ensemble du bloc de déclaration concerné</strong> — et ce pour une bonne raison : être capable d’appliquer les styles suivants.</p>
 <p>Ainsi les navigateurs ne comprenant pas <code>:placeholder-shown</code> (Internet Explorer et Edge au premier rang) n’appliqueraient pas nos styles dédiés aux champs invalides. Et ça, a priori, ce n’est pas ce qu’on veut ! Alors en utilisant deux sélecteurs, le seul inconvénient est que <strong>les navigateurs ne comprenant pas le second sélecteur conservent leur comportement actuel</strong>.</p>
 <p>Et ça, c’est mieux.</p>
 <h2 id="au-final" tabindex="-1">Au final</h2>
 <p>Je ne pense pas que ce soit une bonne idée, je tiens à le préciser. Cette combinaison n’a pas vocation à être employée de la sorte, ce n’est qu’un détournement un peu tordu, il est vrai. Mais bon, j’aime les petits défis en CSS, ne m’en voulez pas !</p>
-<h3 id="un-pr%C3%A9c%C3%A9dent" tabindex="-1">Un précédent</h3>
+<h3 id="un-precedent" tabindex="-1">Un précédent</h3>
 <p>Après de petites recherches sur les internets, j’ai trouvé plusieurs références à cette combinaison de sélecteurs antérieures à cet article, toutes remontant finalement à <a href="https://css-tricks.com/form-validation-ux-html-css/">un article sur la validation des formulaires en CSS</a> rédigé par <a href="https://twitter.com/chriscoyier">Chris Coyier</a> en 2016.<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
 <p>Un véritable <em>CSS trick</em> !</p>
 <ol class="footnotes-list small mt2 pt2 pb2">
@@ -105,7 +107,9 @@ Et bonne nouvelle, <a href="https://caniuse.com/#feat=css-placeholder-shown"><co
 </li>
 
 
-			</div><footer class="small mt2">
+			</div>
+		
+		<footer class="small mt2">
 			<p class="pl2 mt0 pt1">
 				Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
 				Modifié le <time class="updated" datetime="2022-12-22T16:55:46" itemprop="dateModified">22 décembre 2022</time>.

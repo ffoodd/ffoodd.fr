@@ -9,7 +9,7 @@ format: "standard"
 tags: "posts"
 description: "Les façons dʼécrire nos <abbr lang=\"en\" title=\"Cascading StyleSheet\">CSS</abbr> se multiplient et se mélangent, me laissant une question sur le bout de la langue&nbsp;: pour qui écrit-on ces styles&nbsp;?"
 ---
-Le dernier article rédigé par [Adam Morse](http://mrmrs.cc/) est amplement diffusé ces derniers jours, vous lʼaurez certainement déjà lu&nbsp;: «&nbsp;[_CSS and Scalability_](http://mrmrs.io/writing/2016/03/24/scalable-css/)&nbsp;» —&nbsp;vous pouvez en lire [une traduction en Français](http://blog.perrien.fr/css-et-evolutivite/) sur le blog de Marc Perrien. Il y prône une méthode de rédaction des CSS dite «&nbsp;atomiques&nbsp;», issue du formidable travail de [Thierry Koblentz](http://cssmojo.com/) de Yahoo sur le projet [Atomic CSS](http://acss.io/).[^1]
+Le dernier article rédigé par [Adam Morse](https://mrmrs.cc/) est amplement diffusé ces derniers jours, vous lʼaurez certainement déjà lu&nbsp;: «&nbsp;[_CSS and Scalability_](https://mrmrs.io/writing/2016/03/24/scalable-css/)&nbsp;» —&nbsp;vous pouvez en lire [une traduction en Français](https://blog.perrien.fr/css-et-evolutivite/) sur le blog de Marc Perrien. Il y prône une méthode de rédaction des CSS dite «&nbsp;atomiques&nbsp;», issue du formidable travail de [Thierry Koblentz](https://cssmojo.com/) de Yahoo sur le projet [Atomic CSS](https://acss.io/).[^1]
 
 [^1]: Filez lire en détail le site en question, il se montre réellement instructif.
 
@@ -17,9 +17,9 @@ Le dernier article rédigé par [Adam Morse](http://mrmrs.cc/) est amplement dif
 
 ## Les CSS atomiques&nbsp;⚛
 
-La métaphore est la même que celle utilisée par [Brad Frost](http://bradfrost.com/) dans [son livre (en cours de rédaction) sur le design atomique](http://atomicdesign.bradfrost.com/). Cependant là où Brad Frost file la métaphore jusquʼà la matière, les CSS atomiques se contentent des atomes et vous laissent vous débrouiller avec le reste.
+La métaphore est la même que celle utilisée par [Brad Frost](https://bradfrost.com/) dans [son livre (en cours de rédaction) sur le design atomique](https://atomicdesign.bradfrost.com/). Cependant là où Brad Frost file la métaphore jusquʼà la matière, les CSS atomiques se contentent des atomes et vous laissent vous débrouiller avec le reste.
 
-Pour résumer, **une classe atomique ne dispose que dʼune seule propriété, avec une seule valeur**. Voici un exemple —&nbsp;tiré directement de [la foire aux questions dʼAtomic CSS](http://acss.io/frequently-asked-questions.html#how-is-atomic-css-different-than-using-inline-styles-)&nbsp;— qui devrait être plus clair&nbsp;:
+Pour résumer, **une classe atomique ne dispose que dʼune seule propriété, avec une seule valeur**. Voici un exemple —&nbsp;tiré directement de [la foire aux questions dʼAtomic CSS](https://acss.io/frequently-asked-questions.html#how-is-atomic-css-different-than-using-inline-styles-)&nbsp;— qui devrait être plus clair&nbsp;:
 
 ```css
 .Fz(large) {
@@ -79,7 +79,7 @@ Bref, aucune identité.
 
 Jʼai une opinion, peut-être très mauvaise, sur lʼobjet des CSS&nbsp;: à mon avis, ils équivalent à une charte graphique. On y précise ce qui peut ou ne peut pas être fait, ce qui doit ou ne doit pas être fait.
 
-Et quand je parle de ce qui peut / doit être fait, **je parle du HTML**. Je fais un peu mon _coming-out_, mais oui, mon CSS sert de garde-fous pour le HTML. À dire vrai, un autre article à été largement diffusé il y a quelque temps déjà, à contre-courant de ce système nucléaire. Vous pourrez lire sur le blog dʼEbay [comment leur framework CSS les aide à renforcer lʼaccessibilité](http://www.ebaytechblog.com/2015/11/04/how-our-css-framework-helps-enforce-accessibility/).[^7]
+Et quand je parle de ce qui peut / doit être fait, **je parle du HTML**. Je fais un peu mon _coming-out_, mais oui, mon CSS sert de garde-fous pour le HTML. À dire vrai, un autre article à été largement diffusé il y a quelque temps déjà, à contre-courant de ce système nucléaire. Vous pourrez lire sur le blog dʼEbay [comment leur framework CSS les aide à renforcer lʼaccessibilité](https://www.ebaytechblog.com/2015/11/04/how-our-css-framework-helps-enforce-accessibility/).[^7]
 
 [^7]: Je suis ravi de retrouver parmi les commentaires un article dʼHeydon Pickering sur Smashing Magazine à propos des sélecteurs intelligents. Et également surpris dʼy découvrir que Daniel Eden a poussé sur les CSS de DropBox une fonctionnalité qui ressemble beaucoup à celle dʼa11y.css, via un mixin simple. Je vais lire tout ça en détail !
 

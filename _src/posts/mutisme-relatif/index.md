@@ -7,7 +7,7 @@ permalink: "mutisme-relatif/index.html"
 excerpt: "Restant muet depuis plusieurs semaines, il m’a semblé bon de faire un point sur le pourquoi du comment. Les changements opérés en quelques mois, les nouveautés à afficher ainsi que les projets en cours et à venir devraient me permettre de me projeter dans cette année qui s’annonce très riche !"
 format: "standard"
 tags: "posts"
-description: "Beaucoup de choses se sont passées depuis le mois de mars qui expliquent ce silence radio —&nbsp;notamment mon embauche chez <a href=\"http://www.kosmos.fr\">Kosmos</a>. Cela a engendré certains changements et me demande un peu plus de souplesse pour continuer mes publications sur ce blog."
+description: "Beaucoup de choses se sont passées depuis le mois de mars qui expliquent ce silence radio —&nbsp;notamment mon embauche chez <a href=\"https://www.kosmos.fr\">Kosmos</a>. Cela a engendré certains changements et me demande un peu plus de souplesse pour continuer mes publications sur ce blog."
 ---
 Voici un&nbsp;résumé de&nbsp;mes activités des derniers mois, ainsi que de mes projets pour cette année. Je souhaite seulement signaler que cette baisse de régime dans mes publications n’est que temporaire.
 
@@ -15,15 +15,15 @@ Voici un&nbsp;résumé de&nbsp;mes activités des derniers mois, ainsi que de me
 
 ### Le plan professionnel
 
-Le principal événement&nbsp;qui s’est produit&nbsp;est mon changement d’employeur&nbsp;: je travaille désormais chez Kosmos, toujours à Nantes. C’est un travail d’un tout autre genre que celui que j’effectuais pour l’[agence 1-ter-net](http://www.1-ter-net.com "(nouvelle fenêtre)")&nbsp;puisque Kosmos est un éditeur de progiciel. Pour être plus précis je vais travailler sur le _front-end_ de la solution K-d’école, afin d’en améliorer la qualité globale, l’accessibilité —&nbsp;et d’en faciliter la prise en main, la personnalisation et les évolutions futures.
+Le principal événement&nbsp;qui s’est produit&nbsp;est mon changement d’employeur&nbsp;: je travaille désormais chez Kosmos, toujours à Nantes. C’est un travail d’un tout autre genre que celui que j’effectuais pour l’[agence 1-ter-net](https://www.1-ter-net.com "(nouvelle fenêtre)")&nbsp;puisque Kosmos est un éditeur de progiciel. Pour être plus précis je vais travailler sur le _front-end_ de la solution K-d’école, afin d’en améliorer la qualité globale, l’accessibilité —&nbsp;et d’en faciliter la prise en main, la personnalisation et les évolutions futures.
 
 J’apporte avec moi certaines compétences sur les aspects graphiques et ergonomiques qui participeront aussi à conserver un _front-end_ et un _look & feel_ homogènes pour&nbsp;renforcer l’identité de la solution.
 
 ### Le plan personnel
 
-Après mon travail sur [La Nizanerie](http://www.lanizanerie.com) l’an passé —&nbsp;qui reste un projet vivant&nbsp;— j’ai aidé à mettre en ligne le site du [Petit Marché Nature](http://aupetitmarchenature.fr/)&nbsp;pour des amis. Ce fut plus un accompagnement qu’une création de site puisque nous nous sommes basés sur un thème Prestashop à peine revu.
+Après mon travail sur [La Nizanerie](https://www.lanizanerie.com) l’an passé —&nbsp;qui reste un projet vivant&nbsp;— j’ai aidé à mettre en ligne le site du [Petit Marché Nature](https://aupetitmarchenature.fr/)&nbsp;pour des amis. Ce fut plus un accompagnement qu’une création de site puisque nous nous sommes basés sur un thème Prestashop à peine revu.
 
-J’ai également soutenu mon frère [Luc Poupard](http://www.kloh.ch)&nbsp;(a.k.a [KlohFR](https://twitter.com/klohFR)) à personnaliser mon thème [ffeeeedd](https://github.com/ffoodd/ffeeeedd) et à approfondir ses connaissances de WordPress, dans le cadre de son projet [Continuum(s)](http://continuums.ma3yt.com/)&nbsp;mené avec son ami plasticien&nbsp;[Olivier Vary](http://www.olivier-vary.com/)&nbsp;(a.k.a [Bendder](https://twitter.com/Bendder08)). C’est également un projet enrichissant puisque Luc a permis de faire évoluer mon thème, son fonctionnement et certaines extensions et ainsi gagner en qualité et en souplesse.
+J’ai également soutenu mon frère [Luc Poupard](https://www.kloh.ch)&nbsp;(a.k.a [KlohFR](https://twitter.com/klohFR)) à personnaliser mon thème [ffeeeedd](https://github.com/ffoodd/ffeeeedd) et à approfondir ses connaissances de WordPress, dans le cadre de son projet [Continuum(s)](https://continuums.ma3yt.com/)&nbsp;mené avec son ami plasticien&nbsp;[Olivier Vary](https://www.olivier-vary.com/)&nbsp;(a.k.a [Bendder](https://twitter.com/Bendder08)). C’est également un projet enrichissant puisque Luc a permis de faire évoluer mon thème, son fonctionnement et certaines extensions et ainsi gagner en qualité et en souplesse.
 
 Ce qui m’amène aux projets personnels qui m’occupent, depuis longtemps et _a priori_ encore pour un bon moment.
 
@@ -69,6 +69,6 @@ Et il se pourrait que vous entendiez à nouveau parler de tout ça avant la fin 
 
 Honnêtement, je vais travailler. Beaucoup. Mon nouvel emploi va me demander beaucoup de temps, de lectures et de recherches pour mener ce travail de front !
 
-Mais parmi les choses dont je suis sûr, c’est que je vais aller à Paris Web cette année encore mais aussi assister au tout frais [WPTech](https://twitter.com/WPTechNantes) qui va naître à Nantes fin 2014 —&nbsp;grâce à l’initiative de [Willy Bahuaud](http://www.wabeo.fr) et [Daniel Roch](http://www.seomix.fr).
+Mais parmi les choses dont je suis sûr, c’est que je vais aller à Paris Web cette année encore mais aussi assister au tout frais [WPTech](https://twitter.com/WPTechNantes) qui va naître à Nantes fin 2014 —&nbsp;grâce à l’initiative de [Willy Bahuaud](https://www.wabeo.fr) et [Daniel Roch](https://www.seomix.fr).
 
 Alors, on se voit quand pour discuter de tout ça ?

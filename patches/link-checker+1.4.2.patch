@@ -1,0 +1,57 @@
+diff --git a/node_modules/link-checker/link-checker.js b/node_modules/link-checker/link-checker.js
+index 70d8c75..022e1a0 100644
+--- a/node_modules/link-checker/link-checker.js
++++ b/node_modules/link-checker/link-checker.js
+@@ -56,7 +56,7 @@ module.exports = function(directory, options = {}, callback) {
+ 
+     function getOverrideFor(target) {
+         const url = target instanceof Error && target.response ? target.response.request.url // superagent error
+-            : typeof target === "object" ? target.request.url // superagent response
++            : typeof target === "object" && target.request ? target.request.url // superagent response
+             : typeof target === "string" ? target // plain URL
+             : null
+ 
+@@ -139,11 +139,11 @@ module.exports = function(directory, options = {}, callback) {
+ 				}
+ 			}
+ 
+-			if (href.indexOf('http://') != 0 && href.indexOf('https://') != 0) {
++			if (!href.startsWith('http://') && !href.startsWith('https://')) {
+ 				if (options['external-only']) {
+ 					return
+ 				}
+-				if (href.split('').pop() == '/') {
++				if (href.endsWith('/')) {
+ 					debug('append index.html to ' + href, filePath)
+ 					href = href + 'index.html'
+ 				} else if (href.substr(href.length - 2) == '..') {
+@@ -188,7 +188,15 @@ module.exports = function(directory, options = {}, callback) {
+ 				href = url + '#' + urlencode.decode(anchor)
+ 			}
+ 
+-			const resolvedHref = path.join(path.dirname(filePath), href)
++			let resolvedHref
++			if (href.startsWith('/')) {
++				// absolute paths are expected to be fully resolved to the root directory
++				// so only remove the leading slash
++				resolvedHref = href.substr(1)
++			} else {
++				resolvedHref = path.join(path.dirname(filePath), href)
++			}
++
+ 			debug('text content for ' + resolvedHref, $this.html())
+  			if (href.indexOf('http://') == 0 || href.indexOf('https://') == 0) {
+ 				if (href.indexOf('#') == -1) {
+@@ -410,9 +418,9 @@ module.exports = function(directory, options = {}, callback) {
+ 		.map(p => p.catch(error => error)))
+ 		.then(responses => {
+ 			responses.forEach((response, index) => {
+-                if(!response.request && !response.response.request) {
+-                    console.error(response)
+-                }
++                // if(!response.request && !response.response.request) {
++                //     console.error(response)
++                // }
+                 const linkSpecificOptions = getOverrideFor(response)
+ 				const target = remoteAnchorLinksArray[index]
+ 				const source = remoteAnchorLinks.get(target)

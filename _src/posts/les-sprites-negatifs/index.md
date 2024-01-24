@@ -8,7 +8,7 @@ excerpt: "L’utilisation des sprites est connue de – presque – tous. Et dan
 format: "standard"
 tags: "posts"
 ---
-L’utilisation des sprites est connue de – presque – tous. Et dans le cas ou vous feriez partie du presque, voici un [très bon article](http://www.alsacreations.com/tuto/lire/1068-sprites-css-background-position.html) en français sur le sujet. Ma réflexion aujourd’hui ne portera donc pas sur l’intérêt des sprites, mais sur une façon de pousser plus loin **la quête du moindre octet**.
+L’utilisation des sprites est connue de – presque – tous. Et dans le cas ou vous feriez partie du presque, voici un [très bon article](https://www.alsacreations.com/tuto/lire/1068-sprites-css-background-position.html) en français sur le sujet. Ma réflexion aujourd’hui ne portera donc pas sur l’intérêt des sprites, mais sur une façon de pousser plus loin **la quête du moindre octet**.
 
 ## La Genèse
 
@@ -20,7 +20,7 @@ Mon premier écueil : la **performance**. Afin d’intégrer les variations colo
 
 C’est alors que j’ai réalisé : ces icônes étaient systématiquement sur un fond blanc. **Eurêka.**
 
-En précisant un peu mes recherches, je suis tombé sur “[Transparent CSS Sprites](http://coding.smashingmagazine.com/2010/10/31/transparent-css-sprites/)” par Trevor Morris. L’idée est simple : puisque la seule variation est la couleur de l’icône elle-même, il suffit de créer ce sprite en réservant la forme des icônes, ou plus simplement : en négatif. Voila un exemple plus concret :
+En précisant un peu mes recherches, je suis tombé sur “[Transparent CSS Sprites](https://coding.smashingmagazine.com/2010/10/31/transparent-css-sprites/)” par Trevor Morris. L’idée est simple : puisque la seule variation est la couleur de l’icône elle-même, il suffit de créer ce sprite en réservant la forme des icônes, ou plus simplement : en négatif. Voila un exemple plus concret :
 
 ![Le-super-sprite-de-la-mort-qui-tue](/images/2012/06/sprite.png "Alors, heureux ?")
 

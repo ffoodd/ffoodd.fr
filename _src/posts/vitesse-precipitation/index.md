@@ -12,7 +12,7 @@ Les transitions représentent une formidable avancée en matière de CSS, dans l
 
 ## Au commencement
 
-Dans une époque ( pas si ) reculée, javascript était indispensable dès lors qu’on envisageait une interaction. Dan Cederholm s’en souvient dans son livre «&nbsp;[CSS3 FOR WEBDESIGNERS](http://www.abookapart.com/products/css3-for-web-designers)&nbsp;» disponible en Français [aux éditions Eyrolles](http://www.eyrolles.com/Informatique/Livre/css3-pour-les-web-designers-9782212129878).
+Dans une époque ( pas si ) reculée, javascript était indispensable dès lors qu’on envisageait une interaction. Dan Cederholm s’en souvient dans son livre «&nbsp;[CSS3 FOR WEBDESIGNERS](https://www.abookapart.com/products/css3-for-web-designers)&nbsp;» disponible en Français [aux éditions Eyrolles](https://www.eyrolles.com/Informatique/Livre/css3-pour-les-web-designers-9782212129878).
 
 > It was 1997 and I was sitting in a terribly run-down apartment in beautiful Allston, Massachusetts. A typical late night of viewing source and teaching myself HTML followed a day of packing CDs at a local record label for peanuts (hence the run-down apartment). I’m sure you can relate.
 > 
@@ -26,13 +26,13 @@ Le :hover a été une première bénédiction – malgré ses différends avec I
 
 Si l’utilisation des transitions est claire et limpide, leur présence au sein du CSS implique une nouvelle dimension : **le temps**. Hors vous n’êtes pas sans savoir qu’une page web, ça met du temps à se charger. Pas beaucoup certes, mais suffisamment pour que **le chargement soit perceptible à l’œil nu**.
 
-Hors comme le décrit Chris Coyier dans [son article](http://css-tricks.com/transitions-only-after-page-load/), lorsqu’une page se charge elle se dessine progressivement. Certains éléments sont déplacés via CSS – à l’aide de position, float ou margin pour ne citer qu’eux. Concrètement, votre navigateur place d’abord ces éléments dans le flux, puis les déplace à l’endroit spécifié en CSS ; c’est la que le bas blesse, puisque si ces éléments sont dotés de transition, **on les voit se positionner**.
+Hors comme le décrit Chris Coyier dans [son article](https://css-tricks.com/transitions-only-after-page-load/), lorsqu’une page se charge elle se dessine progressivement. Certains éléments sont déplacés via CSS – à l’aide de position, float ou margin pour ne citer qu’eux. Concrètement, votre navigateur place d’abord ces éléments dans le flux, puis les déplace à l’endroit spécifié en CSS ; c’est la que le bas blesse, puisque si ces éléments sont dotés de transition, **on les voit se positionner**.
 
 Ces pauvres navigateurs n’y peuvent rien. Il leur faudrait prioriser l’application des CSS par couches : grille de positionnement, aspect visuel, puis dimension temporelle… Pas besoin d’être expert pour comprendre la difficulté. Mais en l’état, il y a **confusion entre vitesse et précipitation**.
 
 ## Temporisation
 
-L’article «&nbsp;[Transitions only after page load](http://css-tricks.com/transitions-only-after-page-load/)&nbsp;» sur Css-Tricks inclut la solution proposée par&nbsp;**Chris Coyier**, très simple : une classe preload annule les transitions, et lorsque la page est chargée on la retire via Jquery. C’est extrêmement futé ! Mais elle implique de charger Jquery et ça, c’est dommage.
+L’article «&nbsp;[Transitions only after page load](https://css-tricks.com/transitions-only-after-page-load/)&nbsp;» sur Css-Tricks inclut la solution proposée par&nbsp;**Chris Coyier**, très simple : une classe preload annule les transitions, et lorsque la page est chargée on la retire via Jquery. C’est extrêmement futé ! Mais elle implique de charger Jquery et ça, c’est dommage.
 
 **J’ai donc entrepris d’effectuer la même action, mais en javascript pur**. Quelques interférences font varier le fonctionnement, comme par exemple l’impossibilité ( à ma connaissance ) de cibler une valeur dans un attribut. Or mon attribut «&nbsp;class&nbsp;» m’est utile : j’ai donc préféré utiliser un id. La syntaxe javascript, insérée juste avant la fermeture du body, est la suivante :
 

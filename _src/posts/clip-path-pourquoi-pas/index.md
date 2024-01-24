@@ -9,7 +9,7 @@ format: "standard"
 tags: "posts"
 description: "D’ordinaire je ne suis pas un adepte de l’expérimentation des nouvelles propriétés&nbsp;: le pragmatisme lié aux contraintes de production dans mon travail rend l’effort relativement vain."
 ---
-Mais lorsque [Kitty Giraudel](https://twitter.com/KittyGiraudel "Sur Twitter") a lancé son [CSS brain teaser](http://kittygiraudel.com/2014/02/19/the-magic-circle-a-css-brain-teaser/).[^1]
+Mais lorsque [Kitty Giraudel](https://twitter.com/KittyGiraudel "Sur Twitter") a lancé son [CSS brain teaser](https://kittygiraudel.com/2014/02/19/the-magic-circle-a-css-brain-teaser/).[^1]
 
 [^1]: Papa, Maman : j’aime les casses-têtes.
 
@@ -19,10 +19,10 @@ Mais lorsque [Kitty Giraudel](https://twitter.com/KittyGiraudel "Sur Twitter") a
 
 Ne connaissant que de très loin cette propriété, il a fallu me mettre à jour. `clip-path`, à l’instar de `clip`, sert à délimiter la zone d’affichage d’un contenu. Je m’oriente vers les spécifications pour compléter cet embryon de culture&nbsp;— et là, c’est le drame&nbsp;:
 
-* [La spécification de la propriété](http://www.w3.org/TR/css-masking-1/#the-clip-path "en Anglais") `clip-path` au sein du module _CSS masking_, encore à l’état de brouillon;
-* Qui nous renvoie [aux formes basiques](http://www.w3.org/TR/2013/WD-css-shapes-1-20130620/#basic-shapes-from-svg-syntax "en Anglais") en SVG;
-* Tout cela en se référant sans arrêt à [l’élément SVG `ClipPath`](http://www.w3.org/TR/css-masking-1/#ClipPathElement "en Anglais");
-* De fil en aiguille, citons également le module _Masking_ de la spécification SVG — et notamment [la section sur les _Clipping paths_](http://www.w3.org/TR/SVG/masking.html#ClippingPaths "en Anglais").
+* [La spécification de la propriété](https://www.w3.org/TR/css-masking-1/#the-clip-path "en Anglais") `clip-path` au sein du module _CSS masking_, encore à l’état de brouillon;
+* Qui nous renvoie [aux formes basiques](https://www.w3.org/TR/2013/WD-css-shapes-1-20130620/#basic-shapes-from-svg-syntax "en Anglais") en SVG;
+* Tout cela en se référant sans arrêt à [l’élément SVG `ClipPath`](https://www.w3.org/TR/css-masking-1/#ClipPathElement "en Anglais");
+* De fil en aiguille, citons également le module _Masking_ de la spécification SVG — et notamment [la section sur les _Clipping paths_](https://www.w3.org/TR/SVG/masking.html#ClippingPaths "en Anglais").
 
 On peut d’ores et déjà noter une différence remarquable entre les états de ces deux spécifications&nbsp;: l’une est en brouillon, l’autre en recommandation. La spécification SVG est extrêmement aboutie et claire, les ressources ne manquent pas.[^2]
 
@@ -52,7 +52,7 @@ Mais ceci devrait fonctionner également — en appelant un élément SVG&nbsp;:
 
 ## Les origines
 
-Il faut sonder un peu les origines de ce module CSS pour en comprendre l’obscurité. Bien que déjà en cours d’élaboration dans le cadre technique du SVG, la possibilité de masquer des éléments en CSS existait depuis CSS 2.1 grâce à la propriété `clip`, désormais [dépréciée](http://www.w3.org/TR/css-masking-1/#clip-property "en Anglais").[^3]
+Il faut sonder un peu les origines de ce module CSS pour en comprendre l’obscurité. Bien que déjà en cours d’élaboration dans le cadre technique du SVG, la possibilité de masquer des éléments en CSS existait depuis CSS 2.1 grâce à la propriété `clip`, désormais [dépréciée](https://www.w3.org/TR/css-masking-1/#clip-property "en Anglais").[^3]
 
 [^3]: La propriété est dépréciée mais très bien supportée, et le W3C indique que les agents utilisateurs (navigateurs web) doivent la supporter malgré sa déprécation.
 
@@ -79,10 +79,10 @@ Là, j’ai vu poindre le problème&nbsp;: la spécification CSS en cours d’é
 
 Il est fort peu probable que personne avant moi ne s’y soit intéressé. Et en effet, quatre ressources principales sont indispensables pour appréhender `clip-path`&nbsp;:
 
-* [CSS Masking](http://www.html5rocks.com/en/tutorials/masking/adobe/ "en Anglais") sur HTML5Rocks;
-* L’article dédié sur [Web Platform Docs](http://docs.webplatform.org/wiki/css/properties/clip-path "en Anglais");
-* Un tutoriel avancé sur [The Nitty Gritty](http://thenittygritty.co/css-masking "en Anglais");
-* L’article de l’Avent par Vincent De Oliveira sur [24 jours de web](http://www.24joursdeweb.fr/2013/les-masques-css/);
+* [CSS Masking](https://www.html5rocks.com/en/tutorials/masking/adobe/ "en Anglais") sur HTML5Rocks;
+* L’article dédié sur [Web Platform Docs](https://docs.webplatform.org/wiki/css/properties/clip-path "en Anglais");
+* Un tutoriel avancé sur [The Nitty Gritty](https://thenittygritty.co/css-masking "en Anglais");
+* L’article de l’Avent par Vincent De Oliveira sur [24 jours de web](https://www.24joursdeweb.fr/2013/les-masques-css/);
 
 Comme vous vous en apercevrez en les lisant, le contenu est disparate. La compatibilité navigateur est abordée différemment.[^6]
 
@@ -144,7 +144,7 @@ Malgré le support disparate et le funambulisme nécessaire pour aboutir à un r
 
 Ce repli implique de perdre les formes personnalisées au profit d’un rectangle «&nbsp;simple&nbsp;», ce qui fut considéré comme acceptable lors de l’avènement de `border-radius` par exemple. Et je suppose que dans la plupart des cas, cette solution reste acceptable.
 
-Vous trouverez donc ma solution au casse-tête proposé par Kitty [sur CodePen](http://codepen.io/ffoodd/pen/Eolkb "en Anglais"), détaillée, commentée, agrémentée de diverses précisions — en Anglais.
+Vous trouverez donc ma solution au casse-tête proposé par Kitty [sur CodePen](https://codepen.io/ffoodd/pen/Eolkb "en Anglais"), détaillée, commentée, agrémentée de diverses précisions — en Anglais.
 
 Tout retour sera le bienvenu 🙂 .
 
@@ -152,6 +152,6 @@ Tout retour sera le bienvenu 🙂 .
 
 Moins d’une semaine avant la publication de mon article, le brouillon du W3C concernant la notation des formes basiques a évolué. Je cite [Vincent De Oliveira](https://twitter.com/iamvdo), qui a partagé l’information avec moi&nbsp;:
 
-> Par contre, la notation des basic-shapes ont (encore) changées récemment! 😛 [dev.w3.org](http://dev.w3.org/csswg/css-shapes/#basic-shape-functions "en Anglais")
+> Par contre, la notation des basic-shapes ont (encore) changées récemment! 😛 [dev.w3.org](https://dev.w3.org/csswg/css-shapes/#basic-shape-functions "en Anglais")
 
 Ô joie. Merci à Vincent en tout cas !

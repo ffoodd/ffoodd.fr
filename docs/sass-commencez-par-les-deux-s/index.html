@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Sass : commencez par les deux « S » — La vie en #ffoodd</title>
-		<meta name="description" content="&lt;a href=&quot;http://sass-lang.com/&quot; target=&quot;_blank&quot; title=&quot;Le site du pré-processeur Sass (nouvelle fenêtre)&quot;&gt;Sass&lt;/a&gt; est super&amp;thinsp;:&amp;nbsp;il donne une dimension dynamique à un langage déclaratif. Premier piège&amp;nbsp;! &lt;abbr lang=&quot;en&quot; title=&quot;Cascading StyleSheet&quot;&gt;CSS&lt;/abbr&gt; reste un langage déclaratif, avec ou sans pré-processeur&amp;thinsp;:&amp;nbsp;ça signifie que seul le fichier CSS de sortie est important&amp;thinsp;&amp;mdash;&amp;thinsp;et par conséquent, qu’&lt;strong&gt;il faut systématiquement le vérifier&lt;/strong&gt;.">
+		<meta name="description" content="&lt;a href=&quot;https://sass-lang.com/&quot; target=&quot;_blank&quot; title=&quot;Le site du pré-processeur Sass (nouvelle fenêtre)&quot;&gt;Sass&lt;/a&gt; est super&amp;thinsp;:&amp;nbsp;il donne une dimension dynamique à un langage déclaratif. Premier piège&amp;nbsp;! &lt;abbr lang=&quot;en&quot; title=&quot;Cascading StyleSheet&quot;&gt;CSS&lt;/abbr&gt; reste un langage déclaratif, avec ou sans pré-processeur&amp;thinsp;:&amp;nbsp;ça signifie que seul le fichier CSS de sortie est important&amp;thinsp;&amp;mdash;&amp;thinsp;et par conséquent, qu’&lt;strong&gt;il faut systématiquement le vérifier&lt;/strong&gt;.">
 		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 		<link rel="stylesheet" href="/assets/styles.min.css" media="all">
 		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
@@ -49,15 +49,17 @@
 
 					
 					
-						<h2 class="h3-like description" itemprop="description"><a href="http://sass-lang.com/" target="_blank" title="Le site du pré-processeur Sass (nouvelle fenêtre)">Sass</a> est super&thinsp;:&nbsp;il donne une dimension dynamique à un langage déclaratif. Premier piège&nbsp;! <abbr lang="en" title="Cascading StyleSheet">CSS</abbr> reste un langage déclaratif, avec ou sans pré-processeur&thinsp;:&nbsp;ça signifie que seul le fichier CSS de sortie est important&thinsp;&mdash;&thinsp;et par conséquent, qu’<strong>il faut systématiquement le vérifier</strong>.</h2>
+						<h2 class="h3-like description" itemprop="description"><a href="https://sass-lang.com/" target="_blank" title="Le site du pré-processeur Sass (nouvelle fenêtre)">Sass</a> est super&thinsp;:&nbsp;il donne une dimension dynamique à un langage déclaratif. Premier piège&nbsp;! <abbr lang="en" title="Cascading StyleSheet">CSS</abbr> reste un langage déclaratif, avec ou sans pré-processeur&thinsp;:&nbsp;ça signifie que seul le fichier CSS de sortie est important&thinsp;&mdash;&thinsp;et par conséquent, qu’<strong>il faut systématiquement le vérifier</strong>.</h2>
 					
 				</header>
 				
 	<article role="article" itemscope itemtype="https://schema.org/Article">
-		<time class="screen-reader-text" datetime="2013-11-28T14:26:04" itemprop="datePublished">28 novembre 2013</time><div itemprop="articleBody">
+		<time class="screen-reader-text" datetime="2013-11-28T14:26:04" itemprop="datePublished">28 novembre 2013</time>
+		
+			<div itemprop="articleBody">
 				<p>Malheureusement, vous aurez peut-être déjà fait ce constat : ce réflexe n’est que trop rarement encouragé. J’ai beau parcourir des dizaines d’articles, de tutoriaux, de <em>frameworks</em> CSS ou de Gist, trop peu font ce rappel : testez, relisez, améliorez, testez à nouveau et finalement améliorez encore. <strong>Ça devrait se passer comme ça.</strong> On peut argumenter qu’un bon intégrateur le ferait — mais c’est trop facile, non ?</p>
 <h2 id="premier-contact-avec-sass" tabindex="-1">Premier contact avec Sass</h2>
-<p>Après avoir lu énormément de ressources sur <a href="http://lesscss.org/" title="Site du pré-processeur Less (nouvelle fenêtre)">Less</a> puis Sass pendant longtemps, je ne m’étais toujours pas décidé à franchir le pas pour plusieurs raisons :</p>
+<p>Après avoir lu énormément de ressources sur <a href="https://lesscss.org/" title="Site du pré-processeur Less (nouvelle fenêtre)">Less</a> puis Sass pendant longtemps, je ne m’étais toujours pas décidé à franchir le pas pour plusieurs raisons :</p>
 <ul>
 <li>le changement bien sûr : rien de plus naturel que la résistance au changement;</li>
 <li>la perspective d’une « naturalisation » des avancées intéressantes dans les évolutions prévues de CSS .<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></li>
@@ -66,21 +68,21 @@
 <li>l’intérêt limité — ou imitable —  de certaines fonctionnalités .<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></li>
 </ul>
 <p>Dans l’ensemble, je pensais — et je pense toujours — que l’utilisation de Sass n’avait pas d’intérêt à mon échelle : petits projets, récupération de code, très peu de collaboration… J’y percevais plus de risques et d’inconvénients que d’avantages, et certaines de mes lectures le confirmaient.</p>
-<p>L’évolution de mon projet personnel ffeeeedd conjointe à la lecture de l’excellent <a href="http://www.css-maintenables.fr/" title="Le site du livre CSS maintenables (nouvelle fenêtre)">CSS maintenables</a> puis de <a href="https://www.ffoodd.fr/sass-compass-avance/" title="Sass &amp; Compass avancé">Sass &amp; Compass avancé</a> m’ont finalement motivé : bien qu’à l’aise avec mon <em>workflow</em>, je voulais l’améliorer et Sass m’a semblé être l’outil idéal.</p>
-<h2 id="d%C3%A9couvertes-particuli%C3%A8res" tabindex="-1">Découvertes particulières</h2>
+<p>L’évolution de mon projet personnel ffeeeedd conjointe à la lecture de l’excellent <a href="https://www.css-maintenables.fr/" title="Le site du livre CSS maintenables (nouvelle fenêtre)">CSS maintenables</a> puis de <a href="https://www.ffoodd.fr/sass-compass-avance/" title="Sass &amp; Compass avancé">Sass &amp; Compass avancé</a> m’ont finalement motivé : bien qu’à l’aise avec mon <em>workflow</em>, je voulais l’améliorer et Sass m’a semblé être l’outil idéal.</p>
+<h2 id="decouvertes-particulieres" tabindex="-1">Découvertes particulières</h2>
 <p>J’y suis allé pas à pas, dans l’ordre de la documentation. Des règles imbriquées aux fonctions, j’ai pris un temps considérable et me suis consciencieusement appliqué à découvrir le résultat de chacune des fonctionnalités .<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></p>
 <p>La définition de variables — et par extension, la structuration d’un projet — est un gain de clarté évident. La compilation automatique est un gain de temps remarquable, et la qualité est au rendez-vous. Les fonctions, mixins et autres boucles sont extrêmement intéressantes, mais on touche aussi aux limites de l’outil : <strong>il faut de très, très bonnes bases en CSS pour s’en servir de façon optimale</strong>.</p>
 <p>Étendre une classe est un piège parfait, probablement le plus efficient en tant que piège ; les nombreuses subtilités des fonctions et mixins peuvent également générer des erreurs très discrètement — et elles peuvent donc rester, pour peu que l’utilisateur ne soit pas consciencieux.</p>
 <p><strong>Je ne gâcherais pourtant pas mon plaisir : créer des mixins, fonctions et placeholders pour factoriser mes feuilles de styles « sources » est terriblement agréable 😀 .</strong></p>
-<h2 id="une-simplification%2C-vraiment-%3F" tabindex="-1">Une simplification, vraiment ?</h2>
+<h2 id="une-simplification-vraiment" tabindex="-1">Une simplification, vraiment ?</h2>
 <p>Je suis encore en phase de découverte et pourtant me voilà sur ma faim : beaucoup de choses sont considérablement simplifiées, mais je garde l’impression que la complexité « d’avant » est simplement déportée vers les fonctionnalités dynamiques .<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></p>
 <p>La distance « cognitive » entre les fonctions/mixins et leur contexte d’utilisation, ainsi que la séparation des feuilles de styles en fragments .<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup></p>
-<h2 id="sass-n%E2%80%99est-qu%E2%80%99un-outil" tabindex="-1">Sass n’est qu’un outil</h2>
+<h2 id="sass-nest-quun-outil" tabindex="-1">Sass n’est qu’un outil</h2>
 <p>Vous connaissez le dicton :</p>
 <blockquote>
 <p>Il n’y a pas de mauvais outil, il n’y a que de mauvais ouvriers.</p>
 </blockquote>
-<p>Et bien elle se vérifie avec Sass. Ce qui ne me convainquait pas l’an dernier ne me convainc toujours pas : les articles vantant les mérites des pré-processeurs sont relativement évasifs, et l’élan massif vers l’adoption de Sass me fait penser au <a href="http://www.youtube.com/watch?v=I8Qu7_unkg4" title="Voir la vidéo sur Youtube (nouvelle fenêtre)">crime passionnel au pays des Toupoutous</a>.</p>
+<p>Et bien elle se vérifie avec Sass. Ce qui ne me convainquait pas l’an dernier ne me convainc toujours pas : les articles vantant les mérites des pré-processeurs sont relativement évasifs, et l’élan massif vers l’adoption de Sass me fait penser au <a href="https://www.youtube.com/watch?v=I8Qu7_unkg4" title="Voir la vidéo sur Youtube (nouvelle fenêtre)">crime passionnel au pays des Toupoutous</a>.</p>
 <p>Oui, Sass est un outil formidable qui peut grandement faciliter et accélerer votre travail d’intégration ; oui, les possibilités semblent infinies ; oui, son utilisation est plutôt simple…</p>
 <p>Mais n’oublions que Sass reste un outil, et en tant que tel sa vocation est seulement de faciliter votre travail et pas d’en améliorer la qualité. <strong>Ce n’est pas le marteau qui fait en sorte que le clou rentre droit, c’est votre geste.</strong></p>
 <ol class="footnotes-list small mt2 pt2 pb2">
@@ -96,7 +98,9 @@
 </li>
 
 
-			</div><footer class="small mt2">
+			</div>
+		
+		<footer class="small mt2">
 			<p class="pl2 mt0 pt1">
 				Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
 				Modifié le <time class="updated" datetime="2015-07-03T10:49:17" itemprop="dateModified">3 juillet 2015</time>.
@@ -112,7 +116,7 @@
 		<div class="aside pl2 pt2">
 			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
 			<div class="textwidget">
-				<ol><li><a href="#premier-contact-avec-sass">Premier contact avec Sass</a></li><li><a href="#d%C3%A9couvertes-particuli%C3%A8res">Découvertes particulières</a></li><li><a href="#une-simplification%2C-vraiment-%3F">Une simplification, vraiment ?</a></li><li><a href="#sass-n%E2%80%99est-qu%E2%80%99un-outil">Sass n’est qu’un outil</a></li></ol>
+				<ol><li><a href="#premier-contact-avec-sass">Premier contact avec Sass</a></li><li><a href="#decouvertes-particulieres">Découvertes particulières</a></li><li><a href="#une-simplification-vraiment">Une simplification, vraiment ?</a></li><li><a href="#sass-nest-quun-outil">Sass n’est qu’un outil</a></li></ol>
 			</div>
 		</div>
 	</aside>

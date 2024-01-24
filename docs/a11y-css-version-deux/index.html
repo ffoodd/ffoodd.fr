@@ -54,7 +54,9 @@
 				</header>
 				
 	<article role="article" itemscope itemtype="https://schema.org/Article">
-		<time class="screen-reader-text" datetime="2015-03-02T19:45:32" itemprop="datePublished">2 mars 2015</time><div itemprop="articleBody">
+		<time class="screen-reader-text" datetime="2015-03-02T19:45:32" itemprop="datePublished">2 mars 2015</time>
+		
+			<div itemprop="articleBody">
 				<p>Ainsi depuis la toute première mouture (en CSS) de cette feuille de style de diagnostic, beaucoup de choses ont changé. Voyons ça en détail 🙂</p>
 <h2 id="corrections-multiples" tabindex="-1">Corrections multiples</h2>
 <p>Comme vous pourrez le voir <a href="https://github.com/ffoodd/a11y.css/issues?q=is%3Aissue+is%3Aclosed">sur Github</a>, pas moins de 97 issues ont été résolues. Cela a été possible grâce aux retours de quelques personnes, que je tiens à citer et remercier à nouveau :</p>
@@ -67,7 +69,7 @@
 <li><a href="https://github.com/a5e">Antoine</a> ;</li>
 <li><a href="https://twitter.com/goetsu">Aurélien Levy</a> ;</li>
 <li><a href="https://github.com/olamedia">Olamedia</a> ;</li>
-<li><a href="http://bveneman.nl/">Bart Veneman</a>.</li>
+<li><a href="https://bveneman.nl/">Bart Veneman</a>.</li>
 </ul>
 <p>Entre les bugs et les découvertes diverses, la <strong>qualité</strong> et la <strong>pertinence</strong> d’a11y.css ont considérablement progressé.</p>
 <h3 id="compteurs-css" tabindex="-1">Compteurs CSS</h3>
@@ -75,20 +77,20 @@
 <p>Les fonctions CSS de compteurs font partie des outils qui trouvent rarement un contexte d’utilisation pertinent. Pour une fois, c’est le cas !</p>
 <h2 id="personnalisation" tabindex="-1">Personnalisation</h2>
 <p>Après la fastidieuse relecture <a href="https://github.com/ffoodd/a11y.css/blob/master/README-fr.md#r%C3%A9f%C3%A9rences-et-inspirations">de mes différentes sources</a>, ce qui n’était qu’un simple fichier CSS de diagnostic est devenu un <strong>système complexe basé sur Sass</strong> — dont le fichier de sortie final compressé pèse 80kb !</p>
-<p>Il devenait indispensable de permettre aux utilisateurs le désirant de charger seulement les portions qui leur sont utiles. Avec l’aide de <a href="http://kittygiraudel.com/">Kitty Giraudel</a>, deux mécanismes ont été mis en place.</p>
-<h3 id="g%C3%A9n%C3%A9rateur-de-bookmarklet" tabindex="-1">Générateur de <em>bookmarklet</em></h3>
+<p>Il devenait indispensable de permettre aux utilisateurs le désirant de charger seulement les portions qui leur sont utiles. Avec l’aide de <a href="https://kittygiraudel.com/">Kitty Giraudel</a>, deux mécanismes ont été mis en place.</p>
+<h3 id="generateur-de-bookmarklet" tabindex="-1">Générateur de <em>bookmarklet</em></h3>
 <p>Il était déjà possible aux utilisateurs de Sass de ne compiler que les niveaux de critères qui les intéressaient. Désormais, ces fichiers nivelés sont mis <a href="https://github.com/ffoodd/a11y.css/tree/master/css">à disposition dans le projet</a>.</p>
-<p>Le <em>bookmarklet</em> existait depuis quelques temps déjà, mais désormais un petit formulaire <a href="http://ffoodd.github.io/a11y.css/">sur le site de présentation</a> permet de le paramétrer <strong>en définissant le niveau minimum</strong> nécessaire.</p>
-<h3 id="d%C3%A9sactivation-de-tests" tabindex="-1">Désactivation de tests</h3>
+<p>Le <em>bookmarklet</em> existait depuis quelques temps déjà, mais désormais un petit formulaire <a href="https://ffoodd.github.io/a11y.css/">sur le site de présentation</a> permet de le paramétrer <strong>en définissant le niveau minimum</strong> nécessaire.</p>
+<h3 id="desactivation-de-tests" tabindex="-1">Désactivation de tests</h3>
 <p>Pour que les utilisateurs de Sass aient toujours un intérêt à disposer du projet sur leur poste, mais aussi afin que les utilisateurs les plus avertis puissent personnaliser cet outil, Kitty a également <a href="https://github.com/ffoodd/a11y.css/blob/master/README-fr.md#d%C3%A9sactiver-des-tests">conçu une fonction</a> pour désactiver les tests au cas par cas. Par exemple, si vous voulez désactiver les erreurs à propos des mauvais <code>tabindex</code> et du <code>href</code> manquant, voici comment faire :</p>
 <pre><code class="language-css">
 @include disable-errors(&quot;tab-order, no-href&quot;);
 </code></pre>
 <p>Et ça, c’est plutôt pratique 😀 !</p>
 <h2 id="traduction" tabindex="-1">Traduction</h2>
-<p>Pour celle-ci, je vais applaudir discrètement et vous renvoyer vers <a href="http://kittygiraudel.com/2014/10/22/translation-system-in-sass/">l’article écrit par Kitty (en anglais)</a> qui détaille le fonctionnement de son <strong>système de traduction en Sass</strong>.</p>
-<p>Oui, vous avez bien lu :désormais a11y.css est multilingue en demeurant écrit uniquement en Sass. Outre la portée accrue de façon incroyable suite au passage en anglais, l’exploit technique de Kitty est incroyable. J’en profite pour signaler la parution de son premier livre « CSS3 : pratique du design web » <a href="http://www.eyrolles.com/Informatique/Livre/css3-9782212140231">en vente aux éditions Eyrolles</a>, que je vous recommande chaudement.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
-<h2 id="documentation-%26-test" tabindex="-1">Documentation &amp; test</h2>
+<p>Pour celle-ci, je vais applaudir discrètement et vous renvoyer vers <a href="https://kittygiraudel.com/2014/10/22/translation-system-in-sass/">l’article écrit par Kitty (en anglais)</a> qui détaille le fonctionnement de son <strong>système de traduction en Sass</strong>.</p>
+<p>Oui, vous avez bien lu :désormais a11y.css est multilingue en demeurant écrit uniquement en Sass. Outre la portée accrue de façon incroyable suite au passage en anglais, l’exploit technique de Kitty est incroyable. J’en profite pour signaler la parution de son premier livre « CSS3 : pratique du design web » <a href="https://www.eyrolles.com/Informatique/Livre/css3-9782212140231">en vente aux éditions Eyrolles</a>, que je vous recommande chaudement.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<h2 id="documentation-test" tabindex="-1">Documentation &amp; test</h2>
 <p>Vous vous en doutez, le projet est devenu relativement complexe. Les solutions apportées par les différents contributeurs on tellement enrichi ce projet que même moi, je ne m’y retrouvais plus.</p>
 <p>J’avais déjà mentionné lors de <a href="https://www.ffoodd.fr/wp-tech-2014/" title="WP Tech 2014">mon atelier au WP Tech</a> mon <strong>intérêt pour la documentation</strong> ; c’est donc tout naturellement que j’ai cherché à documenter plus précisément a11y.css. Et de mon point de vue, il y a deux aspects très différents à documenter :</p>
 <ul>
@@ -113,7 +115,7 @@
 <li>Un exemple de code HTML lisible ciblé par le test, et une version interprétée par le navigateur </li>
 <li>La capacité d’organiser les nombreux tests présents.</li>
 </ol>
-<p>C’est là qu’intervient <a href="http://trulia.github.io/hologram/">Hologram</a>, une gem Ruby créée par Trulia. Elle m’a semblé parfaite puisqu’elle repose sur des commentaires CSS formatés pour générer la documentation. Son objectif premier est la création et la maintenance de guides de style, ce qui n’est pas si loin du sens premier d’a11y.css : <strong>gérer et maintenir un ensemble de pratiques</strong> à vérifier.</p>
+<p>C’est là qu’intervient <a href="https://trulia.github.io/hologram/">Hologram</a>, une gem Ruby créée par Trulia. Elle m’a semblé parfaite puisqu’elle repose sur des commentaires CSS formatés pour générer la documentation. Son objectif premier est la création et la maintenance de guides de style, ce qui n’est pas si loin du sens premier d’a11y.css : <strong>gérer et maintenir un ensemble de pratiques</strong> à vérifier.</p>
 <p>Hologram est incroyablement simple à manipuler, puisqu’une fois la gem installée il suffit de commenter son CSS de la façon suivante :</p>
 <pre><code class="language-css">
 /*doc
@@ -135,13 +137,13 @@ hologram
 </code></pre>
 <p><strong>Et voilà !</strong> Hologram génère un mini-site statique grâce à un jeu de ressources très simple. Il est ainsi possible de personnaliser l’entête, le pied-de-page et les ressources statiques pour aménager sa documentation à volonté. <strong>Magique</strong> 🙂</p>
 <p>Et puisque j’avais déjà créé une branche pour servir de présentation en ligne sur Github, j’ai ajouté ces nouveaux fichiers HTML afin d’en faire <strong>un véritable site de démonstration</strong>.</p>
-<p>Jetez un œil au <a href="http://ffoodd.github.io/a11y.css/">site de démonstration d’a11y.css</a> !</p>
+<p>Jetez un œil au <a href="https://ffoodd.github.io/a11y.css/">site de démonstration d’a11y.css</a> !</p>
 <h3 id="sassdoc" tabindex="-1">SassDoc</h3>
 <p>Pour finir, l’architecture du projet s’étant alourdie d’options et de fonctionnalités, il fallait permettre aux utilisateurs de Sass de s’approprier plus facilement l’outil.</p>
-<p>Par chance, la majorité de ces enrichissements étaient l’œuvre de Kitty Giraudel, qui s’avère aussi être le créateur de <a href="http://sassdoc.com/">SassDoc</a>. La personne a tendance à faire des trucs un peu fou en Sass, et cet outil de documentation correspond à la perfection aux besoins d’une API Sass.</p>
+<p>Par chance, la majorité de ces enrichissements étaient l’œuvre de Kitty Giraudel, qui s’avère aussi être le créateur de <a href="https://sassdoc.com/">SassDoc</a>. La personne a tendance à faire des trucs un peu fou en Sass, et cet outil de documentation correspond à la perfection aux besoins d’une API Sass.</p>
 <p>Ni une ni deux, Kitty a mis en place SassDoc !</p>
 <p>Et voilà un projet <strong>complètement documenté</strong>.</p>
-<h2 id="ce-n%E2%80%99est-pas-fini-!" tabindex="-1">Ce n’est pas fini !</h2>
+<h2 id="ce-nest-pas-fini" tabindex="-1">Ce n’est pas fini !</h2>
 <p>Il reste quelques sujets à avancer :</p>
 <ul>
 <li>Mettre à niveau SassDoc pour utiliser la V2 ;</li>
@@ -151,7 +153,7 @@ hologram
 <li>Chercher de nouveaux tests à ajouter :D.</li>
 </ul>
 <p>Et, bien sûr, maintenir tout ça dans le temps !</p>
-<p>Je ne sais pas si ça se sent mais ce projet me passionne et je suis enchanté d’avoir pu <strong>partager mes réflexions, mes pratiques et mes idées</strong> avec toutes les personnes qui sont intervenues. J’ai énormément progressé grâce à ces échanges, et ma plus grande <strong>fierté</strong> est de voir a11y.css cité dans <a href="http://daisy.tetue.net/#debug">la section <em>debug</em> de la méthode Daisy</a>, créé par une personne que j’admire : <a href="http://romy.tetue.net/">Romy Duhem-Verdière</a>.</p>
+<p>Je ne sais pas si ça se sent mais ce projet me passionne et je suis enchanté d’avoir pu <strong>partager mes réflexions, mes pratiques et mes idées</strong> avec toutes les personnes qui sont intervenues. J’ai énormément progressé grâce à ces échanges, et ma plus grande <strong>fierté</strong> est de voir a11y.css cité dans <a href="https://daisy.tetue.net/#debug">la section <em>debug</em> de la méthode Daisy</a>, créé par une personne que j’admire : <a href="https://romy.tetue.net/">Romy Duhem-Verdière</a>.</p>
 <ol class="footnotes-list small mt2 pt2 pb2">
 <li id="fn1" class="footnote-item"><p>Sans rire, le mec est un génie alors achetez son livre et lisez son blog. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
 </li>
@@ -159,7 +161,9 @@ hologram
 </li>
 
 
-			</div><footer class="small mt2">
+			</div>
+		
+		<footer class="small mt2">
 			<p class="pl2 mt0 pt1">
 				Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
 				Modifié le <time class="updated" datetime="2021-03-05T17:11:08" itemprop="dateModified">5 mars 2021</time>.
@@ -175,7 +179,7 @@ hologram
 		<div class="aside pl2 pt2">
 			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
 			<div class="textwidget">
-				<ol><li><a href="#corrections-multiples">Corrections multiples</a></li><li><a href="#personnalisation">Personnalisation</a></li><li><a href="#traduction">Traduction</a></li><li><a href="#documentation-%26-test">Documentation &amp; test</a></li><li><a href="#ce-n%E2%80%99est-pas-fini-!">Ce n’est pas fini !</a></li></ol>
+				<ol><li><a href="#corrections-multiples">Corrections multiples</a></li><li><a href="#personnalisation">Personnalisation</a></li><li><a href="#traduction">Traduction</a></li><li><a href="#documentation-test">Documentation &amp; test</a></li><li><a href="#ce-nest-pas-fini">Ce n’est pas fini !</a></li></ol>
 			</div>
 		</div>
 	</aside>

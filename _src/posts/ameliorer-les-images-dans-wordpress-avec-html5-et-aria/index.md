@@ -9,16 +9,16 @@ format: "standard"
 tags: "posts"
 description: "WordPress est un bon outil, pour qui sait s'en servir. Parmi les défauts que je lui trouve, la gestion de la sémantique et de l’accessibilité sur le front-end sont assez sensibles. Voici le fruit de mes réflexions et recherches sur la thématique des images &mdash; un thème sensible s’il en est."
 ---
-Pour commencer, il faut comprendre une problématique de base en terme d’accessibilité&thinsp;:&nbsp;la distinction entre **les images décoratives** et **les images porteuses de sens**. Pour comprendre cette distinction et son importance, je vous recommande vivement la lecture d’[_«Accessibilité web»_](https://www.ffoodd.fr/lecture-accessibilite-web/ "Accessibilité web") par [Armony Altinier](http://www.armonyaltinier.fr/ "Le site d’Armony Altinier (nouvelle fenêtre)"). Comme souvent lorsque nous parlons d’**accessibilité web**, il s’agit de bon sens&thinsp;:&nbsp;une image porteuse de sens doit être restituée à tous les utilisateurs, tandis qu’une image décorative ne doit être montrée qu’aux utilisateurs disposant d’un affichage graphique complet.
+Pour commencer, il faut comprendre une problématique de base en terme d’accessibilité&thinsp;:&nbsp;la distinction entre **les images décoratives** et **les images porteuses de sens**. Pour comprendre cette distinction et son importance, je vous recommande vivement la lecture d’[_«Accessibilité web»_](https://www.ffoodd.fr/lecture-accessibilite-web/ "Accessibilité web") par [Armony Altinier](https://www.armonyaltinier.fr/ "Le site d’Armony Altinier (nouvelle fenêtre)"). Comme souvent lorsque nous parlons d’**accessibilité web**, il s’agit de bon sens&thinsp;:&nbsp;une image porteuse de sens doit être restituée à tous les utilisateurs, tandis qu’une image décorative ne doit être montrée qu’aux utilisateurs disposant d’un affichage graphique complet.
 
 ## Les limites de WordPress
 
-Tout le monde n’est pas sensible à ces questions, même s’il le faudrait&thinsp;:&nbsp;WordPress ne fait pas exception. Il donne cependant la possibilité à ses utilisateurs de servir des images de façon tout à fait correcte, en proposant de base pour tous les fichiers la capacité d’adjoindre un texte alternatif — ce qui remplit le critère principal des [bonnes pratiques d’OpQuast](http://checklists.opquast.com/fr/ "Les checklists OpQuast (nouvelle fenêtre)") et permet de satisfaire [la plupart des critères de niveau Bronze d’Accessiweb](http://www.accessiweb.org/index.php/accessiweb_2.2_liste_generale.html#images "La thématique image sur Accessiweb (nouvelle fenêtre)").
+Tout le monde n’est pas sensible à ces questions, même s’il le faudrait&thinsp;:&nbsp;WordPress ne fait pas exception. Il donne cependant la possibilité à ses utilisateurs de servir des images de façon tout à fait correcte, en proposant de base pour tous les fichiers la capacité d’adjoindre un texte alternatif — ce qui remplit le critère principal des [bonnes pratiques d’OpQuast](https://checklists.opquast.com/fr/ "Les checklists OpQuast (nouvelle fenêtre)") et permet de satisfaire [la plupart des critères de niveau Bronze d’Accessiweb](https://www.accessiweb.org/index.php/accessiweb_2.2_liste_generale.html#images "La thématique image sur Accessiweb (nouvelle fenêtre)").
 
 Pour autant WordPress ne va pas plus loin&thinsp;:
 
 * Dans le cas d’une image décorative, il l’ajoute dans une balise `<img />` et conserve l’attribut `alt` vide s’il n’est pas renseigné. **C’est une bonne façon de procéder**, car l’image n’est pas vocalisée par un lecteur d’écran et n’a aucun poids sémantique.
-* Dans le cas d’une image qui véhicule une information (&thinsp;ce que je suppose être le cas si la légende est renseignée&thinsp;), il encadre cette image d’une `<div>` et y intègre la description dans un `<p>` (&thinsp;_cf&thinsp;:_&nbsp; [le code source du shortcode](http://core.trac.wordpress.org/browser/tags/3.7.1/src/wp-includes/media.php#L614 "Le code source du shortcode (nouvelle fenêtre)")&thinsp;). **C’est problématique car il n’existe aucun lien sémantique entre l’image et sa description, et le balisage est neutre.**
+* Dans le cas d’une image qui véhicule une information (&thinsp;ce que je suppose être le cas si la légende est renseignée&thinsp;), il encadre cette image d’une `<div>` et y intègre la description dans un `<p>` (&thinsp;_cf&thinsp;:_&nbsp; [le code source du shortcode](https://core.trac.wordpress.org/browser/tags/3.7.1/src/wp-includes/media.php#L614 "Le code source du shortcode (nouvelle fenêtre)")&thinsp;). **C’est problématique car il n’existe aucun lien sémantique entre l’image et sa description, et le balisage est neutre.**
 
 Certes, c’est du fignolage. Mais c’est à priori dans les détails que l’on améliore sensiblement la qualité d’un site web.
 
@@ -31,13 +31,13 @@ Le cas des images véhiculant des informations demande donc quelques efforts&thi
   /**
  * @note : Le contenu est filtré pour remplacer le html généré pour les caption par du html5 sémantique. Astuce trouvée sur Reverie.
  * @author : Zhen Huang
- * @see : http://themefortress.com/reverie/
+ * @see : https://themefortress.com/reverie/
  * @see : https://github.com/milohuang/reverie/blob/master/lib/clean.php#LC151
  * @note : On y ajoute les microdonnées qui vont bien.
  * @author : Joost Kiens ( @joostkiens )
  * @see : https://gist.github.com/JoostKiens/4477366
  * @note : Et j’y ajoute les roles et attributs Aria nécessaires
- * @see : http://www.kloh.ch/craw2013-html5-aria-et-accessibilite-web-479
+ * @see : https://www.kloh.ch/craw2013-html5-aria-et-accessibilite-web-479
  */
   add_filter( ’img_caption_shortcode’, ’ffeeeedd__caption’, 10, 3 );
   function ffeeeedd__caption( $output, $attr, $content ) {
@@ -56,7 +56,7 @@ Le cas des images véhiculant des informations demande donc quelques efforts&thi
   }
   $content = str_replace( ’<img’, ’<img id="’ . $attr[’id’] . ’" itemprop="contentURL" aria-describedby="wp-caption--’ . $attr[’id’] . ’"’, $content );
   $attributes = ’ class="wp-caption inbl ’ . esc_attr( $attr[’align’] ) . ’"’;
-  $output = ’<figure’ . $attributes .’ role="group" itemscope itemtype="http://schema.org/ImageObject">’;
+  $output = ’<figure’ . $attributes .’ role="group" itemscope itemtype="https://schema.org/ImageObject">’;
   $output .= do_shortcode( $content );
   $output .= ’<figcaption class="wp-caption-text pt1 small" id="wp-caption--’ . $attr[’id’] . ’" itemprop="description">’ . $attr[’caption’] . ’</figcaption>’;
   $output .= ’</figure>’;
@@ -69,14 +69,14 @@ Le cas des images véhiculant des informations demande donc quelques efforts&thi
 La structure d’origine est conservée&thinsp;;&nbsp;je détaille ce qui a été fait&thinsp;:
 
 * Une couche sémantique HTML5 est appliquée en lieu et place du balisage «neutre» précédent&thinsp;:&nbsp;`figure` et `figcaption`&thinsp;;
-* Une couche ARIA améliore la compréhension de ce balisage parfois défaillant dans les technologies d’assistance, comme me l’a appris [le compte-rendu d’un atelier](http://www.kloh.ch/craw2013-html5-aria-et-accessibilite-web-479 "Compte-rendu de l’atelier de J.P. Villain par Luc (nouvelle fenêtre)") de [Jean-Pierre Vilain](https://twitter.com/villainjp "Profil Twitter de Jean-Pierre Villain (nouvelle fenêtre)") à la [CRAW2013](http://www.telono.com/fr/agence/conference-romande-accessibilite-web-2013/ "Conférence Romande sur l’Accessibilité Web 2013 (nouvelle fenêtre)") rédigé par [Luc](https://twitter.com/klohFR "Profil Twitter de Luc Poupard (nouvelle fenêtre)"). Dans notre cas, le `role="group"`.[^1]
+* Une couche ARIA améliore la compréhension de ce balisage parfois défaillant dans les technologies d’assistance, comme me l’a appris [le compte-rendu d’un atelier](https://www.kloh.ch/craw2013-html5-aria-et-accessibilite-web-479 "Compte-rendu de l’atelier de J.P. Villain par Luc (nouvelle fenêtre)") de [Jean-Pierre Vilain](https://twitter.com/villainjp "Profil Twitter de Jean-Pierre Villain (nouvelle fenêtre)") à la [CRAW2013](https://www.telono.com/fr/agence/conference-romande-accessibilite-web-2013/ "Conférence Romande sur l’Accessibilité Web 2013 (nouvelle fenêtre)") rédigé par [Luc](https://twitter.com/klohFR "Profil Twitter de Luc Poupard (nouvelle fenêtre)"). Dans notre cas, le `role="group"`.[^1]
 
 [^1]: En savoir plus sur le rôle «group»&thinsp;:&nbsp;https://developer.mozilla.org/en-US/docs/Accessibility/ARIA/ARIA_Techniques/Using_the_group_role
 
 
 * Et finalement une dernière couche est ajoutée&thinsp;:&nbsp;les micro-données.[^3]
 
-[^3]: Découvrir les micro-données pour enrichir les objets images&thinsp;:&nbsp;http://schema.org/ImageObject
+[^3]: Découvrir les micro-données pour enrichir les objets images&thinsp;:&nbsp;https://schema.org/ImageObject
 
 
 
@@ -88,7 +88,7 @@ Ce code n’est probablement pas parfait, car je ne l’ai pas testé avec un le
 
 Suite à un bref échange avec [Johan Ramon](https://twitter.com/johan_ramon "Johan Ramon sur Twitter (nouvelle fenêtre)"), je dois préciser un point important&thinsp;:&nbsp;l’alternative textuelle de l’image doit également mentionner la légende attenante, pour les technologies d’assistance qui ne prendraient pas en compte l’attribut `aria-describedby`. Voici les ressources utiles&thinsp;
 
-* [Discussion sur le critère 1.10 d’AccessiWeb 2.2](http://www.accessiweb.org/forumhtml5/viewtopic.php?id=39#p810 "Discussion sur le forum d’AccessiWeb (nouvelle fenêtre)")
-* [Support des attributs ARIA par les lecteurs d’écran](http://blog.atalan.fr/support-des-attributs-aria-par-les-lecteurs-decran/ "Article sur le blog de la société Atalan (nouvelle fenêtre)")
+* [Discussion sur le critère 1.10 d’AccessiWeb 2.2](https://www.accessiweb.org/forumhtml5/viewtopic.php?id=39#p810 "Discussion sur le forum d’AccessiWeb (nouvelle fenêtre)")
+* [Support des attributs ARIA par les lecteurs d’écran](https://blog.atalan.fr/support-des-attributs-aria-par-les-lecteurs-decran/ "Article sur le blog de la société Atalan (nouvelle fenêtre)")
 
 Comme souvent, cette dernière contrainte repose entièrement sur le contributeur qui doit être **informé** et **éduqué** à cette responsabilité.

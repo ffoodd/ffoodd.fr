@@ -16,7 +16,7 @@ Dès ma première utilisation de cette nouvelle mouture je suis tombé sur un pr
 > «&nbsp;Une erreur est survenue lors du téléchargement.  
 > Veuillez réessayer plus tard.&nbsp;»
 
-Malgré ça, ledit fichier a été ajouté à la bibliothèque des médias. De plus, impossible de parcourir la bibliothèque et d’insérer un fichier depuis cette même fenêtre modale ! Après une recherche rapide, il s’avère que [je ne suis pas le premier à rencontrer ce problème](http://wordpress.org/search/bug+3.5+media+insert "Wordpress 3.5 media insert bug").
+Malgré ça, ledit fichier a été ajouté à la bibliothèque des médias. De plus, impossible de parcourir la bibliothèque et d’insérer un fichier depuis cette même fenêtre modale ! Après une recherche rapide, il s’avère que [je ne suis pas le premier à rencontrer ce problème](https://wordpress.org/search/bug+3.5+media+insert "Wordpress 3.5 media insert bug").
 
 Or ce bug – connu depuis la bêta – peut avoir diverses origines :
 
@@ -43,8 +43,8 @@ Pour une raison ou pour une autre, appliquer le .htaccess que j’ai l’habitud
 
 À titre personnel, le .htaccess de base dont je me sers est un amalgame :
 
-* du .htaccess disponible dans le [html5 Boilerplate](http://html5boilerplate.com/ "HTML5 Boilerplate")
-* du .htaccess dédié à WordPress proposé par [seo-mix](http://www.seomix.fr/guide-htaccess-performances-et-temps-de-chargement/ "le .htaccess expliqué sur seo-mix")
+* du .htaccess disponible dans le [html5 Boilerplate](https://html5boilerplate.com/ "HTML5 Boilerplate")
+* du .htaccess dédié à WordPress proposé par [seo-mix](https://www.seomix.fr/guide-htaccess-performances-et-temps-de-chargement/ "le .htaccess expliqué sur seo-mix")
 
 Je suppose qu’il s’agit d’un entête http ou d’un type MIME incorrect qui nuit à la bonne compréhension du fichier par le serveur, sans toutefois en être sûr. Étant donné que j’avais jusqu’à présent l’habitude d’ajouter le .htaccess à la fin du développement, je me contenterais désormais de l’ajouter **dès le début du projet**.
 

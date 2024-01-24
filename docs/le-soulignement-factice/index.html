@@ -54,22 +54,24 @@
 				</header>
 				
 	<article role="article" itemscope itemtype="https://schema.org/Article">
-		<time class="screen-reader-text" datetime="2015-11-20T15:16:37" itemprop="datePublished">20 novembre 2015</time><div itemprop="articleBody">
-				<p>Je vous enjoins à lire la « <a href="http://letrainde13h37.fr/43/signaletique-hyperliens/">Signalétique des hyperliens</a> » sur le train de 13 h 37, par <a href="https://twitter.com/tetue">Romy Duhem-Verdière</a>. On y apprend notamment que — typographiquement parlant — le souligné nʼest dʼaucune utilité, sauf éventuellement à palier lʼabsence dʼitalique (ce qui est somme toute assez rare). En revanche sur le web, cʼest <strong>le meilleur moyen de signaler un lien</strong>.</p>
+		<time class="screen-reader-text" datetime="2015-11-20T15:16:37" itemprop="datePublished">20 novembre 2015</time>
+		
+			<div itemprop="articleBody">
+				<p>Je vous enjoins à lire la « <a href="https://letrainde13h37.fr/43/signaletique-hyperliens/">Signalétique des hyperliens</a> » sur le train de 13 h 37, par <a href="https://twitter.com/tetue">Romy Duhem-Verdière</a>. On y apprend notamment que — typographiquement parlant — le souligné nʼest dʼaucune utilité, sauf éventuellement à palier lʼabsence dʼitalique (ce qui est somme toute assez rare). En revanche sur le web, cʼest <strong>le meilleur moyen de signaler un lien</strong>.</p>
 <h2 id="graphiquement-grossier" tabindex="-1">Graphiquement grossier</h2>
 <p>Le souligné ordinaire est effectivement grossier : cʼest un reliquat des toutes premières typographies affichées sur un écran — que je nʼai pas eu la chance de croiser. Vous pouvez le constater avec cet exemple de souligné ordinaire.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
 <p>Sur le plan visuel, le souligné croise les jambages inférieures, ce qui crée un attroupement inopportun de pixels quʼon pourrait qualifier de « petits pâtés ».<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
-<p>Quelques tentatives existaient déjà il y a fort longtemps, comme en témoigne <a href="http://alistapart.com/article/customunderlines">lʼarticle de Susan Robertson sur A List Apart</a> qui utilisait <code>background-image</code> pour mettre un une image répétée en guise de soulignement. Ça peut sembler étrange — notamment quand vous aurez vu les exemples animés — mais en 2004, cʼétait parfaitement fabuleux.</p>
+<p>Quelques tentatives existaient déjà il y a fort longtemps, comme en témoigne <a href="https://alistapart.com/article/customunderlines">lʼarticle de Susan Robertson sur A List Apart</a> qui utilisait <code>background-image</code> pour mettre un une image répétée en guise de soulignement. Ça peut sembler étrange — notamment quand vous aurez vu les exemples animés — mais en 2004, cʼétait parfaitement fabuleux.</p>
 <h2 id="le-truchement-css" tabindex="-1">Le truchement CSS</h2>
 <p>On ne peut malheureusement pas <strong>encore</strong> intervenir sur la propriété <code>text-decoration: underline;</code> de façon satisfaisante. Ce sera en revanche le cas un jour avec <code>text-decoration-skip: ink;</code> qui est <a href="https://drafts.csswg.org/css-text-decor-3/#text-decoration-skip-property">à lʼétat de brouillon au W3C (en anglais)</a>. Il nʼexiste actuellement aucun support de cette propriété, cependant <a href="https://css-tricks.com/almanac/properties/t/text-decoration-skip/">celle-ci est émulée sur les engins Apple omme le mentionne Chris Coyier sur CSS-Tricks (en anglais)</a>. En attendant, vous allez voir que Susan Robertson était déjà sur la bonne piste il y a 10 ans.</p>
 <p>Lʼastuce — <em>a priori</em> trouvée par Marcin Wichary pour Medium et expliquée dans « <a href="https://medium.com/designing-medium/crafting-link-underlines-on-medium-7c03a9274f9#.hhqigq2dq">Crafting link underlines on Medium</a> » — consiste à supprimer le <code>text-decoration</code> et le trucher à lʼaide dʼun dégradé pour la ligne, et dʼune ombre portée sur le texte pour « nettoyer les jambages ». Comme Susan Robertson, nous allons nous servir de la propriété <code>background-image</code>, mais au lieu de charger un gif nous utiliserons la fonction <code>linear-gradient();</code>. Si vous nʼêtes pas encore familier avec les dégradés, prenez le temps de lire <a href="https://developer.mozilla.org/fr/docs/Web/CSS/linear-gradient">la page dédiée aux dégradés en CSS sur MDN</a>.</p>
-<h2 id="du-code%2C-du-code-!" tabindex="-1">Du code, du code !</h2>
+<h2 id="du-code-du-code" tabindex="-1">Du code, du code !</h2>
 <p>Jʼai croisé plusieurs implémentations de cette solution, toutes très intéressantes mais aucune ne fonctionnant « telle quelle ». En voici deux notables :</p>
 <ul>
 <li><a href="https://github.com/edwardtufte/tufte-css/blob/master/tufte.css#L237">la méthode utilisée par tufte-CSS (sur Github)</a> ;</li>
 <li><a href="https://eager.io/blog/smarter-link-underlines/">la réflexion menée par Adam Schwartz pour Eager (en anglais)</a> avec une illustration interactive particulièrement réussie.</li>
 </ul>
-<p>Ça donne suffisamment de matière pour avancer, donc jʼai trituré tout ça jusquʼà obtenir un résultat satisfaisant mes besoins. Vous en trouverez <a href="http://codepen.io/ffoodd/pen/jbRMqJ/">un aperçu rigolo sur CodePen</a>. Pour les feignasses, voici le CSS incriminé :</p>
+<p>Ça donne suffisamment de matière pour avancer, donc jʼai trituré tout ça jusquʼà obtenir un résultat satisfaisant mes besoins. Vous en trouverez <a href="https://codepen.io/ffoodd/pen/jbRMqJ/">un aperçu rigolo sur CodePen</a>. Pour les feignasses, voici le CSS incriminé :</p>
 <pre><code class="language-css">
 .underline {
   text-decoration: underline;
@@ -121,7 +123,7 @@
 </code></pre>
 <p>Vous noterez les occurrences multiples de la couleur blanche — tant sous la forme du mot-clé <code>white</code> que de sa notation <code>rgba()</code>. Simplement parce que mon exemple à un arrière-plan blanc. Évidemment si votre texte repose sur un fond coloré, ces valeurs doivent <strong>respecter la couleur dʼarrière-plan</strong>.<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></p>
 <p>Petite astuce à prendre en considération, le second paramètre du <em>mixin</em> concerne la position du soulignement <strong>par rapport à la hauteur de lʼélément</strong>. Je ne suis pas parvenu à rendre ça dispensable, le changement de corps et de caractères entraînant une trop grande variation sur la hauteur de ligne. Dans mes différents cas, la position varie entre 88% et 96%.</p>
-<h2 id="c%CA%BCest-pas-un-peu-verbeux-%3F" tabindex="-1">Cʼest pas un peu verbeux ?</h2>
+<h2 id="cest-pas-un-peu-verbeux" tabindex="-1">Cʼest pas un peu verbeux ?</h2>
 <p><strong>Si</strong>. Pour plusieurs raisons que je tente de vous expliquer :</p>
 <ul>
 <li>les propriétés dʼarrière-plan sont très riches, avec dans la notation raccourcie :
@@ -142,11 +144,11 @@
 <li>les classes de tests du support des dégradés CSS et de lʼactivation du mode de contrastes élevés.</li>
 </ul>
 <p>Ça fait beaucoup de code, mais tout est indispensable.</p>
-<h2 id="et-l%CA%BCaccessibilit%C3%A9-%3F" tabindex="-1">Et lʼaccessibilité ?</h2>
+<h2 id="et-laccessibilite" tabindex="-1">Et lʼaccessibilité ?</h2>
 <p>Pour commencer, il est nécessaire de mettre en place deux scripts fonctionnant sur le même principe :</p>
 <ol>
 <li>un test de fonctionnalité tel que <em>Modernizr</em> — <a href="https://modernizr.com/download?setclasses&amp;q=gradient">dont vous pouvez générer une version uniquement pour les dégradés CSS</a> — afin dʼappliquer ce CSS de soulignement uniquement si le navigateur supporte les dégradés ;</li>
-<li>un second test pour <strong>détecter lʼactivation du mode de contrastes élevés</strong> — qui supprime les arrières-plans et laisserait donc nos éléments soulignés complètement nus et sans soulignement — mais qui détecte également si <strong>lʼutilisateur a personnalisé la couleur des liens</strong> : vous trouverez la source sur <a href="http://jsfiddle.net/karlgroves/XR8Su/6/">un JSFiddle de Karl Groves</a> du Paciello Group (quʼil a lui-même récupéré de Hans Hillen) que jʼai modifié afin de tester un lien plutôt quʼune division.</li>
+<li>un second test pour <strong>détecter lʼactivation du mode de contrastes élevés</strong> — qui supprime les arrières-plans et laisserait donc nos éléments soulignés complètement nus et sans soulignement — mais qui détecte également si <strong>lʼutilisateur a personnalisé la couleur des liens</strong> : vous trouverez la source sur <a href="https://jsfiddle.net/karlgroves/XR8Su/6/">un JSFiddle de Karl Groves</a> du Paciello Group (quʼil a lui-même récupéré de Hans Hillen) que jʼai modifié afin de tester un lien plutôt quʼune division.</li>
 </ol>
 <p>Les navigateurs ne supportant pas les dégradés ou étant utilisé conjointement au mode de contrastes élevés resteront avec leur bon vieux <code>text-decoration: underline;</code>.</p>
 <p>Un autre cas pointu est à signaler : <strong>la sélection du texte en question</strong>. Il est impossible à ma connaissance de simplement supprimer les styles ajoutés (<code>unset</code> sert <em>a priori</em> à ça, mais son fonctionnement et son support ne sont pas convaincants). Il faut donc personnaliser la sélection, ce que je fais en inversant couleur dʼarrière-plan et couleur de texte et en supprimant lʼombre sous le texte <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::selection">à lʼaide du pseudo-élément dédié (en anglais)</a>.</p>
@@ -169,7 +171,7 @@
   text-decoration-skip: ink;
 }
 </code></pre>
-<p>Le <a href="http://codepen.io/ffoodd/pen/jbRMqJ/">CodePen</a> est à jour pour que vous jetiez un œil, et je l’ai <a href="https://gist.github.com/ffoodd/d4bee79e6af99c05f0a32542d66d5969">exporté dans un Gist</a> également.</p>
+<p>Le <a href="https://codepen.io/ffoodd/pen/jbRMqJ/">CodePen</a> est à jour pour que vous jetiez un œil, et je l’ai <a href="https://gist.github.com/ffoodd/d4bee79e6af99c05f0a32542d66d5969">exporté dans un Gist</a> également.</p>
 <p>Cet ajout a quelques effets notables :</p>
 <ul>
 <li>certains navigateurs sont désormais exclus par le manque de support de <code>@supports</code>, tels que le <em>Stock browser Adnroid</em>, <em>Blackberry Browser</em> ou <em>IE Mobile</em>. Ça me semble une bonne chose puisque ces styles sont relativement coûteux, ces vieux navigateurs mobiles seront épargnés ;</li>
@@ -180,7 +182,7 @@
 <p><a href="https://twitter.com/7studio/status/822116634542374914">Xavier Zalawa rencontre un bug de Blink gênant</a> impliquant <code>currentColor</code> dans un <code>linear-gradient</code> en cas de changement d’état. C’est le cas dans ce soulignement factice : <code>currentColor</code> utilisé dans le background n’est pas mis à jour lors du survol ou de la prise de focus, sans être répété— ce qui ruine littéralement l’intérêt de currentColor…</p>
 <p><a href="https://bugs.chromium.org/p/chromium/issues/detail?id=595467">Le bug est ouvert chez Chromium</a>.</p>
 <p><a href="https://twitter.com/iamvdo/status/822130026384592898">Vincent De Oliveira a cependant trouvé une astuce pour le faire fonctionner sans devoir répéter la propriété</a> et ça, c’est cool.</p>
-<p>En repassant donc sur le <a href="http://codepen.io/ffoodd/pen/jbRMqJ">CodePen</a> pour le mettre à jour, je me suis également rendu compte que la <em>media query</em> <code>-ms-high-contrast: active</code> était inutile ; je l’ai donc supprimée. Cette requête n’est comprise que par IE 11 et inférieur — cependant comme elle était imbriquée dans une règle @supports ces derniers ne pouvaient pas la lire. Hop, un peu de code en moins !</p>
+<p>En repassant donc sur le <a href="https://codepen.io/ffoodd/pen/jbRMqJ">CodePen</a> pour le mettre à jour, je me suis également rendu compte que la <em>media query</em> <code>-ms-high-contrast: active</code> était inutile ; je l’ai donc supprimée. Cette requête n’est comprise que par IE 11 et inférieur — cependant comme elle était imbriquée dans une règle @supports ces derniers ne pouvaient pas la lire. Hop, un peu de code en moins !</p>
 <ol class="footnotes-list small mt2 pt2 pb2">
 <li id="fn1" class="footnote-item"><p>Percevez-vous comme ce soulignement est affordant ? On a envie de cliquer dessus, pas vrai ? <a href="#fnref1" class="footnote-backref">↩︎</a></p>
 </li>
@@ -192,7 +194,9 @@
 </li>
 
 
-			</div><footer class="small mt2">
+			</div>
+		
+		<footer class="small mt2">
 			<p class="pl2 mt0 pt1">
 				Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
 				Modifié le <time class="updated" datetime="2017-01-20T11:20:39" itemprop="dateModified">20 janvier 2017</time>.
@@ -247,7 +251,7 @@
 											 src="https://secure.gravatar.com/avatar/6381f65810606a24c5f7086d072342f2?s=44&d=mm&r=g"
 											 srcset="https://secure.gravatar.com/avatar/6381f65810606a24c5f7086d072342f2?s=88&d=mm&r=g 2x"
 											 class="avatar avatar-44 photo"
-											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="http://marieguillaumet.com/" class="url" rel="ugc external nofollow">Marie Guillaumet</a></em>
+											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="https://marieguillaumet.com/" class="url" rel="ugc external nofollow">Marie Guillaumet</a></em>
 								
 								<time datetime="[object Object]" itemprop="commentTime">3 décembre 2015 à 17 h 27 min</time>
 								<a href="#8227">
@@ -306,7 +310,7 @@
 								</a>
 							</header>
 						</article>
-						<div itemprop="CommentText"><p>À noter, <a href="http://vincent-valentin.name/">Vincent Valentin</a> a proposé une variante bien plus intuitive à manipuler, en faisant concorder la hauteur de ligne avec la taille de l’arrière-plan. Vous trouverez <a href="http://codepen.io/ffoodd/pen/xZxOXL">une démonstration adaptée sur ce codePen</a>.</p>
+						<div itemprop="CommentText"><p>À noter, <a href="https://vincent-valentin.name/">Vincent Valentin</a> a proposé une variante bien plus intuitive à manipuler, en faisant concorder la hauteur de ligne avec la taille de l’arrière-plan. Vous trouverez <a href="https://codepen.io/ffoodd/pen/xZxOXL">une démonstration adaptée sur ce codePen</a>.</p>
 </div>
 					</li></ol>
 		</div>
@@ -317,7 +321,7 @@
 		<div class="aside pl2 pt2">
 			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
 			<div class="textwidget">
-				<ol><li><a href="#graphiquement-grossier">Graphiquement grossier</a></li><li><a href="#le-truchement-css">Le truchement CSS</a></li><li><a href="#du-code%2C-du-code-!">Du code, du code !</a></li><li><a href="#c%CA%BCest-pas-un-peu-verbeux-%3F">Cʼest pas un peu verbeux ?</a></li><li><a href="#et-l%CA%BCaccessibilit%C3%A9-%3F">Et lʼaccessibilité ?</a></li><li><a href="#modifications">Modifications</a></li><li><a href="#comments">Commentaires</a></li></ol>
+				<ol><li><a href="#graphiquement-grossier">Graphiquement grossier</a></li><li><a href="#le-truchement-css">Le truchement CSS</a></li><li><a href="#du-code-du-code">Du code, du code !</a></li><li><a href="#cest-pas-un-peu-verbeux">Cʼest pas un peu verbeux ?</a></li><li><a href="#et-laccessibilite">Et lʼaccessibilité ?</a></li><li><a href="#modifications">Modifications</a></li><li><a href="#comments">Commentaires</a></li></ol>
 			</div>
 		</div>
 	</aside>

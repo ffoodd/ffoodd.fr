@@ -7,13 +7,13 @@ permalink: "sass-commencez-par-les-deux-s/index.html"
 excerpt: "La principale chose à savoir avant de se lancer dans l’apprentissage de Sass, c’est qu’il faut en premier lieu maîtriser les CSS. Les pièges sont multiples, et même Indiana Jones se ferait avoir&nbsp;!"
 format: "standard"
 tags: "posts"
-description: "<a href=\"http://sass-lang.com/\" target=\"_blank\" title=\"Le site du pré-processeur Sass (nouvelle fenêtre)\">Sass</a> est super&thinsp;:&nbsp;il donne une dimension dynamique à un langage déclaratif. Premier piège&nbsp;! <abbr lang=\"en\" title=\"Cascading StyleSheet\">CSS</abbr> reste un langage déclaratif, avec ou sans pré-processeur&thinsp;:&nbsp;ça signifie que seul le fichier CSS de sortie est important&thinsp;&mdash;&thinsp;et par conséquent, qu’<strong>il faut systématiquement le vérifier</strong>."
+description: "<a href=\"https://sass-lang.com/\" target=\"_blank\" title=\"Le site du pré-processeur Sass (nouvelle fenêtre)\">Sass</a> est super&thinsp;:&nbsp;il donne une dimension dynamique à un langage déclaratif. Premier piège&nbsp;! <abbr lang=\"en\" title=\"Cascading StyleSheet\">CSS</abbr> reste un langage déclaratif, avec ou sans pré-processeur&thinsp;:&nbsp;ça signifie que seul le fichier CSS de sortie est important&thinsp;&mdash;&thinsp;et par conséquent, qu’<strong>il faut systématiquement le vérifier</strong>."
 ---
 Malheureusement, vous aurez peut-être déjà fait ce constat&thinsp;:&nbsp;ce réflexe n’est que trop rarement encouragé. J’ai beau parcourir des dizaines d’articles, de tutoriaux, de _frameworks_ CSS ou de Gist, trop peu font ce rappel&thinsp;:&nbsp;testez, relisez, améliorez, testez à nouveau et finalement améliorez encore. **Ça devrait se passer comme ça.** On peut argumenter qu’un bon intégrateur le ferait&thinsp;—&thinsp;mais c’est trop facile, non&nbsp;?
 
 ## Premier contact avec Sass
 
-Après avoir lu énormément de ressources sur [Less](http://lesscss.org/ "Site du pré-processeur Less (nouvelle fenêtre)") puis Sass pendant longtemps, je ne m’étais toujours pas décidé à franchir le pas pour plusieurs raisons&thinsp;:
+Après avoir lu énormément de ressources sur [Less](https://lesscss.org/ "Site du pré-processeur Less (nouvelle fenêtre)") puis Sass pendant longtemps, je ne m’étais toujours pas décidé à franchir le pas pour plusieurs raisons&thinsp;:
 
 * le changement bien sûr&thinsp;:&nbsp;rien de plus naturel que la résistance au changement;
 * la perspective d’une «&thinsp;naturalisation&thinsp;» des avancées intéressantes dans les évolutions prévues de CSS&thinsp;.[^1]
@@ -29,7 +29,7 @@ Après avoir lu énormément de ressources sur [Less](http://lesscss.org/ "Site 
 
 Dans l’ensemble, je pensais&thinsp;—&thinsp;et je pense toujours&thinsp;—&thinsp;que l’utilisation de Sass n’avait pas d’intérêt à mon échelle&thinsp;:&nbsp;petits projets, récupération de code, très peu de collaboration… J’y percevais plus de risques et d’inconvénients que d’avantages, et certaines de mes lectures le confirmaient.
 
-L’évolution de mon projet personnel ffeeeedd conjointe à la lecture de l’excellent [CSS maintenables](http://www.css-maintenables.fr/ "Le site du livre CSS maintenables (nouvelle fenêtre)") puis de [Sass & Compass avancé](https://www.ffoodd.fr/sass-compass-avance/ "Sass & Compass avancé") m’ont finalement motivé&thinsp;:&nbsp;bien qu’à l’aise avec mon _workflow_, je voulais l’améliorer et Sass m’a semblé être l’outil idéal.
+L’évolution de mon projet personnel ffeeeedd conjointe à la lecture de l’excellent [CSS maintenables](https://www.css-maintenables.fr/ "Le site du livre CSS maintenables (nouvelle fenêtre)") puis de [Sass & Compass avancé](https://www.ffoodd.fr/sass-compass-avance/ "Sass & Compass avancé") m’ont finalement motivé&thinsp;:&nbsp;bien qu’à l’aise avec mon _workflow_, je voulais l’améliorer et Sass m’a semblé être l’outil idéal.
 
 ## Découvertes particulières
 
@@ -65,7 +65,7 @@ Vous connaissez le dicton&thinsp;:
 
 > Il n’y a pas de mauvais outil, il n’y a que de mauvais ouvriers.
 
-Et bien elle se vérifie avec Sass. Ce qui ne me convainquait pas l’an dernier ne me convainc toujours pas&thinsp;:&nbsp;les articles vantant les mérites des pré-processeurs sont relativement évasifs, et l’élan massif vers l’adoption de Sass me fait penser au [crime passionnel au pays des Toupoutous](http://www.youtube.com/watch?v=I8Qu7_unkg4 "Voir la vidéo sur Youtube (nouvelle fenêtre)").
+Et bien elle se vérifie avec Sass. Ce qui ne me convainquait pas l’an dernier ne me convainc toujours pas&thinsp;:&nbsp;les articles vantant les mérites des pré-processeurs sont relativement évasifs, et l’élan massif vers l’adoption de Sass me fait penser au [crime passionnel au pays des Toupoutous](https://www.youtube.com/watch?v=I8Qu7_unkg4 "Voir la vidéo sur Youtube (nouvelle fenêtre)").
 
 Oui, Sass est un outil formidable qui peut grandement faciliter et accélerer votre travail d’intégration&thinsp;;&nbsp;oui, les possibilités semblent infinies&thinsp;;&nbsp;oui, son utilisation est plutôt simple…
 

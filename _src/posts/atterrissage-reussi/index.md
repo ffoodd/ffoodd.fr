@@ -23,7 +23,7 @@ Un seul constat : mon site était devenu obsolète : en deux ans, j’ai progres
 
 ## La roue existe déjà
 
-C’est un adage bien connu des professionnels du web. Je ne m’étendrais pas sur le processus de refonte graphique et technique – je trouve la série d’articles de [Marie Guillaumet](http://marieguillaumet.com/)&nbsp;sur ce sujet absolument remarquables, et je vous invite à les lire.
+C’est un adage bien connu des professionnels du web. Je ne m’étendrais pas sur le processus de refonte graphique et technique – je trouve la série d’articles de [Marie Guillaumet](https://marieguillaumet.com/)&nbsp;sur ce sujet absolument remarquables, et je vous invite à les lire.
 
 Cet article ne précisera donc pas tout ce qui a été fait, mais je peux d’ores et déjà annoncer une série d’articles à venir sur les problématiques rencontrées et leurs résolutions respectives. De nombreuses références et ressources viendront appuyer et enrichir ces articles, comme à mon habitude.
 
@@ -36,6 +36,6 @@ Certaines auront peut-être du succès !
 
 ## Objectif atteint
 
-Je m’étais fixé comme objectif de mettre le site en ligne avant [Paris Web 2013](http://www.paris-web.fr/), car pour la première fois je vais pouvoir y assister (merci à [kloh](http://www.kloh.ch "Le site de Luc Poupard"), le grand frère qui m’a aidé à acheter mes tickets).
+Je m’étais fixé comme objectif de mettre le site en ligne avant [Paris Web 2013](https://www.paris-web.fr/), car pour la première fois je vais pouvoir y assister (merci à [kloh](https://www.kloh.ch "Le site de Luc Poupard"), le grand frère qui m’a aidé à acheter mes tickets).
 
 J’y suis parvenu avec une semaine d’avance, et cela m’enchante ! Le travail n’est pas pour autant terminé, car j’ai encore sur le feu une présentation de mes travaux plus agréable à l’œil et plus flatteuse pour eux. Revenez voir de temps en temps 😉

@@ -52,27 +52,29 @@
 				</header>
 				
 	<article role="article" itemscope itemtype="https://schema.org/Article">
-		<time class="screen-reader-text" datetime="2012-05-11T17:19:25" itemprop="datePublished">11 mai 2012</time><div itemprop="articleBody">
+		<time class="screen-reader-text" datetime="2012-05-11T17:19:25" itemprop="datePublished">11 mai 2012</time>
+		
+			<div itemprop="articleBody">
 				<p>Comme beaucoup d’intégrateurs, je me suis heurté à la <strong>schizophrénie sémantique</strong> du logo. Vous rêvez de l’inclure dans un h1 plein de bon texte pour le SEO, mais m**d* ! Votre logo est une image.</p>
-<h2 id="que-dois-je-faire%2C-docteur-%3F" tabindex="-1">Que dois-je faire, Docteur ?</h2>
-<p>De nombreux remèdes ont vu le jour pour combattre ce symptôme, à tel point que l’excellent Chris Coyier en a érigé un <a href="http://css-tricks.com/examples/ImageReplacement/">mémorial</a>.<br>
-De mon côté, j’ai beaucoup apprécié l’élégance et la légèreté de la <a href="http://nicolasgallagher.com/another-css-image-replacement-technique/">proposition</a> de Nicolas Gallagher, notamment utilisée dans le fameux <a href="http://html5boilerplate.com/">HTML5 Boilerplate</a>. Et c’est cette option que j’utilise et recommande.</p>
-<h2 id="mais-%C3%A7a-d%C3%A9mange-encore-!" tabindex="-1">Mais ça démange encore !</h2>
+<h2 id="que-dois-je-faire-docteur" tabindex="-1">Que dois-je faire, Docteur ?</h2>
+<p>De nombreux remèdes ont vu le jour pour combattre ce symptôme, à tel point que l’excellent Chris Coyier en a érigé un <a href="https://css-tricks.com/examples/ImageReplacement/">mémorial</a>.<br>
+De mon côté, j’ai beaucoup apprécié l’élégance et la légèreté de la <a href="https://nicolasgallagher.com/another-css-image-replacement-technique/">proposition</a> de Nicolas Gallagher, notamment utilisée dans le fameux <a href="https://html5boilerplate.com/">HTML5 Boilerplate</a>. Et c’est cette option que j’utilise et recommande.</p>
+<h2 id="mais-ca-demange-encore" tabindex="-1">Mais ça démange encore !</h2>
 <p>Il reste un symptôme gênant : l’image elle-même. On se retrouve avec un fichier à charger – et donc une <strong>requête HTTP supplémentaire</strong> – et qui nécessitera de <strong>refaire</strong> l’image en cas de modification. Ennuyeux. Mais deux techniques supplémentaires viennent à notre rescousse : <strong>@font-face</strong> et <strong>base64</strong>.</p>
-<h2 id="%40font-face" tabindex="-1">@font-face</h2>
+<h2 id="font-face" tabindex="-1">@font-face</h2>
 <p>Une astuce relativement simple a vu le jour récemment, qui permet d’incorporer des images dans un seul fichier et pouvoir les styler via CSS : les icon-fonts. Cette technique est plébiscitée en ce moment, et j’ai donc eu tout le loisir de me documenter :</p>
 <ul>
-<li><a href="http://css-tricks.com/examples/IconFont/">Icon Fonts are Awesome</a> de Chris Coyier</li>
-<li><a href="http://trentwalton.com/2012/05/04/icon-fonts/">Icon Fonts</a> de Trent Walton</li>
-<li><a href="http://24ways.org/2011/displaying-icons-with-fonts-and-data-attributes">Displaying Icons with Fonts and Data- Attributes</a> de John Hicks</li>
-<li><a href="http://blog.goetter.fr/post/18017100624/icones-font-face-et-accessibilite">ICÔNES “@FONT-FACE” ET ACCESSIBILITÉ</a> par Raphaël Goetter</li>
+<li><a href="https://css-tricks.com/examples/IconFont/">Icon Fonts are Awesome</a> de Chris Coyier</li>
+<li><a href="https://trentwalton.com/2012/05/04/icon-fonts/">Icon Fonts</a> de Trent Walton</li>
+<li><a href="https://24ways.org/2011/displaying-icons-with-fonts-and-data-attributes">Displaying Icons with Fonts and Data- Attributes</a> de John Hicks</li>
+<li><a href="https://blog.goetter.fr/post/18017100624/icones-font-face-et-accessibilite">ICÔNES “@FONT-FACE” ET ACCESSIBILITÉ</a> par Raphaël Goetter</li>
 </ul>
-<p>Certains points sont abordés, notamment pourquoi le SVG ne suffit pas actuellement ( indice : IE8 ) mais aussi la question de l’accessibilité. J’ai d’abord été attiré par l’implémentation de Trent Walton de son logo. Mais dans une correction de son billet, Raphaël Goetter a ajouté une proposition de Keyamoon pour son outil <a href="http://keyamoon.com/icomoon/#toHome">IcoMoon</a>. Cette solution est particulièrement propre car il s’agit simplement d’ajouter <strong>un attribut</strong> à la balise visée. J’adopte !</p>
-<p>À noter cependant : pour inclure une image dans une typographie, il est nécessaire de disposer d’un outil efficace – et ça n’est pas si simple. Il existe un <a href="http://www.webdesignerdepot.com/2012/01/how-to-make-your-own-icon-webfont/">tutoriel intéressant</a> pour y parvenir, ou encore le site <a href="http://fontstruct.com/">Fontstruct</a> qui vous permet de dessiner directement vos caractères.</p>
-<p>Je tiens à remercier <a href="http://damien-collot.com/">Damien Collot</a> pour l’aide qu’il m’a apporté sur le sujet.</p>
+<p>Certains points sont abordés, notamment pourquoi le SVG ne suffit pas actuellement ( indice : IE8 ) mais aussi la question de l’accessibilité. J’ai d’abord été attiré par l’implémentation de Trent Walton de son logo. Mais dans une correction de son billet, Raphaël Goetter a ajouté une proposition de Keyamoon pour son outil <a href="https://keyamoon.com/icomoon/#toHome">IcoMoon</a>. Cette solution est particulièrement propre car il s’agit simplement d’ajouter <strong>un attribut</strong> à la balise visée. J’adopte !</p>
+<p>À noter cependant : pour inclure une image dans une typographie, il est nécessaire de disposer d’un outil efficace – et ça n’est pas si simple. Il existe un <a href="https://www.webdesignerdepot.com/2012/01/how-to-make-your-own-icon-webfont/">tutoriel intéressant</a> pour y parvenir, ou encore le site <a href="https://fontstruct.com/">Fontstruct</a> qui vous permet de dessiner directement vos caractères.</p>
+<p>Je tiens à remercier <a href="https://damien-collot.com/">Damien Collot</a> pour l’aide qu’il m’a apporté sur le sujet.</p>
 <h2 id="base64" tabindex="-1">Base64</h2>
-<p>Au fil de mes pérégrinations, j’ai un jour remarqué cette option sur le générateur de kits @font-face de <a href="http://www.fontsquirrel.com/">font-squirrel</a> : encoder en Base64. Quelques rapides recherches – et cet <a href="http://www.alsacreations.com/article/lire/1439-data-uri-schema.html">excellent article sur Alsacréations</a> – m’ont appris qu’encoder un petit fichier en Base64 permettait d’économiser une requête HTTP : Eurêka !</p>
-<h2 id="r%C3%A9sultat" tabindex="-1">Résultat</h2>
+<p>Au fil de mes pérégrinations, j’ai un jour remarqué cette option sur le générateur de kits @font-face de <a href="https://www.fontsquirrel.com/">font-squirrel</a> : encoder en Base64. Quelques rapides recherches – et cet <a href="https://www.alsacreations.com/article/lire/1439-data-uri-schema.html">excellent article sur Alsacréations</a> – m’ont appris qu’encoder un petit fichier en Base64 permettait d’économiser une requête HTTP : Eurêka !</p>
+<h2 id="resultat" tabindex="-1">Résultat</h2>
 <p>Ne cherchez plus, c’est la technique que j’ai utilisée sur le logo de ce site. En HTML cela donne simplement :</p>
 <pre><code class="language-markup">
 &lt;h1&gt;
@@ -109,7 +111,9 @@ h1 a:before {
 </ol>
 <p>Le principal inconvénient est le <strong>support d’IE8</strong> : il ne reconnaît que les fichiers .eot dans @font-face, ce qui nous force à ajouter un fichier .eot difficile à convertir en Base64. Mais si vous pouvez m’y aider, je suis tout ouï !</p>
 
-			</div><footer class="small mt2">
+			</div>
+		
+		<footer class="small mt2">
 			<p class="pl2 mt0 pt1">
 				Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
 				Modifié le <time class="updated" datetime="2013-10-18T09:56:22" itemprop="dateModified">18 octobre 2013</time>.
@@ -125,7 +129,7 @@ h1 a:before {
 		<div class="aside pl2 pt2">
 			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
 			<div class="textwidget">
-				<ol><li><a href="#que-dois-je-faire%2C-docteur-%3F">Que dois-je faire, Docteur ?</a></li><li><a href="#mais-%C3%A7a-d%C3%A9mange-encore-!">Mais ça démange encore !</a></li><li><a href="#%40font-face">@font-face</a></li><li><a href="#base64">Base64</a></li><li><a href="#r%C3%A9sultat">Résultat</a></li><li><a href="#conclusion">Conclusion</a></li></ol>
+				<ol><li><a href="#que-dois-je-faire-docteur">Que dois-je faire, Docteur ?</a></li><li><a href="#mais-ca-demange-encore">Mais ça démange encore !</a></li><li><a href="#font-face">@font-face</a></li><li><a href="#base64">Base64</a></li><li><a href="#resultat">Résultat</a></li><li><a href="#conclusion">Conclusion</a></li></ol>
 			</div>
 		</div>
 	</aside>

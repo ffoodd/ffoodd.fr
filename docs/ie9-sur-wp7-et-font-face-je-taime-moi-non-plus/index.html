@@ -49,33 +49,37 @@
 
 					
 					
-						<h2 class="h3-like description" itemprop="description">J'ose le dire : j'aime Internet Explorer. Comme je l'ai précédemment <a title="css {    expérience:inherit; }" href="http://www.ffoodd.fr/css-experienceinherit/">évoqué</a>, c'est le seul navigateur qui réagisse normalement à un doctype invalide et ce genre de petit détail de l'intégration. Je considère qu'une compatibilité IE8 sans râler ni coller de hacks à tout va est un gage de qualité pour un intégrateur.</h2>
+						<h2 class="h3-like description" itemprop="description">J'ose le dire : j'aime Internet Explorer. Comme je l'ai précédemment <a title="css {    expérience:inherit; }" href="https://www.ffoodd.fr/css-experienceinherit/">évoqué</a>, c'est le seul navigateur qui réagisse normalement à un doctype invalide et ce genre de petit détail de l'intégration. Je considère qu'une compatibilité IE8 sans râler ni coller de hacks à tout va est un gage de qualité pour un intégrateur.</h2>
 					
 				</header>
 				
 	<article role="article" itemscope itemtype="https://schema.org/Article">
-		<time class="screen-reader-text" datetime="2013-07-24T17:16:35" itemprop="datePublished">24 juillet 2013</time><div itemprop="articleBody">
+		<time class="screen-reader-text" datetime="2013-07-24T17:16:35" itemprop="datePublished">24 juillet 2013</time>
+		
+			<div itemprop="articleBody">
 				<p><strong>Cependant, je dois également avouer que certaines choses me surprendront toujours : c’est le cas du support de <code>@font-face</code> sur Windows Phone 7.</strong> </p>
-<h2 id="un-jour%2C-j%E2%80%99ai-fait-un-test" tabindex="-1">Un jour, j’ai fait un test</h2>
-<p>Raphaël Goetter a annoncé aujourd’hui la refonte de son site principal, <a href="http://goetter.fr" title="Le site de Raphaël Goetter (nouvelle fenêtre)">goetter.fr</a>, sur <a href="http://blog.goetter.fr/post/56263951583/faites-un-site-web-perso" title="Article sur la refonte de goetter.fr (nouvelle fenêtre)">son blog</a>. Étant donné que nous avions discuté quelques jours auparavant de ligatures <a href="https://twitter.com/ffoodd_fr/status/357798486227435520" title="Discussion au sujet des ligatures sur Twitter (nouvelle fenêtre)">sur Twitter</a>, j’ai lâché un commentaire au sujet de cette nouveauté sur le site de M. Goetter. Cependant sa réponse m’a légèrement surpris, puisque je ne m’attendais pas à ce qu’il doive se séparer de cet ornement sur mobile – pour d’excellentes raisons au demeurant.</p>
-<p>Pris de curiosité, j’ai alors décidé d’y jeter un œil sur mon smartphone : un Lumia 800 tournant sur Windows Phone 7.10, et Internet Explorer 9. Outre l’absence de la typographie <em>«Calendas Plus»</em>, j’ai constaté que la typographie générée sur <a href="http://icomoon.io/" title="Icomoon (nouvelle fenêtre)">Icomoon</a> pour gérer les icônes était également absente.</p>
+<h2 id="un-jour-jai-fait-un-test" tabindex="-1">Un jour, j’ai fait un test</h2>
+<p>Raphaël Goetter a annoncé aujourd’hui la refonte de son site principal, <a href="https://goetter.fr" title="Le site de Raphaël Goetter (nouvelle fenêtre)">goetter.fr</a>, sur <a href="https://blog.goetter.fr/post/56263951583/faites-un-site-web-perso" title="Article sur la refonte de goetter.fr (nouvelle fenêtre)">son blog</a>. Étant donné que nous avions discuté quelques jours auparavant de ligatures <a href="https://twitter.com/ffoodd_fr/status/357798486227435520" title="Discussion au sujet des ligatures sur Twitter (nouvelle fenêtre)">sur Twitter</a>, j’ai lâché un commentaire au sujet de cette nouveauté sur le site de M. Goetter. Cependant sa réponse m’a légèrement surpris, puisque je ne m’attendais pas à ce qu’il doive se séparer de cet ornement sur mobile – pour d’excellentes raisons au demeurant.</p>
+<p>Pris de curiosité, j’ai alors décidé d’y jeter un œil sur mon smartphone : un Lumia 800 tournant sur Windows Phone 7.10, et Internet Explorer 9. Outre l’absence de la typographie <em>«Calendas Plus»</em>, j’ai constaté que la typographie générée sur <a href="https://icomoon.io/" title="Icomoon (nouvelle fenêtre)">Icomoon</a> pour gérer les icônes était également absente.</p>
 <p>Je remonte ce problème ni une ni deux à l’auteur, qui est dans l’impossibilité de tester lui-même. Je décide donc de le faire, en commençant par regarder mon propre site – je ne disposais pas encore de ce téléphone lorsque cette version est apparue : sans appel, <a href="https://www.ffoodd.fr/la-schizophrenie-semantique-dun-logo/">mon logo basé sur <code>@font-face</code></a> n’apparaît pas non plus.</p>
-<h2 id="un-doute-m%E2%80%99habite" tabindex="-1">Un doute m’habite</h2>
-<p>Dès lors je sens poindre l’éventualité de l’absence de support de @font-face… Je fais donc le tour de plusieurs sites réalisés au sein de l’<a href="http://www.1-ter-net.com" title="Création de site internet à Nantes (nouvelle fenêtre)">agence 1-ter-net</a> et utilisant <code>@font-face</code>. La encore, aucun doute possible : <code>@font-face</code> ne fonctionne sur aucun d’entre eux.</p>
+<h2 id="un-doute-mhabite" tabindex="-1">Un doute m’habite</h2>
+<p>Dès lors je sens poindre l’éventualité de l’absence de support de @font-face… Je fais donc le tour de plusieurs sites réalisés au sein de l’<a href="https://www.1-ter-net.com" title="Création de site internet à Nantes (nouvelle fenêtre)">agence 1-ter-net</a> et utilisant <code>@font-face</code>. La encore, aucun doute possible : <code>@font-face</code> ne fonctionne sur aucun d’entre eux.</p>
 <p>Au cas ou, j’emprunte le smartphone d’une collègue, lui aussi sur Windows Phone 7. C’est le drame.</p>
-<h2 id="google-m%E2%80%99a-r%C3%A9pondu-!" tabindex="-1">Google m’a répondu !</h2>
+<h2 id="google-ma-repondu" tabindex="-1">Google m’a répondu !</h2>
 <p>Je vous laisse le soin de parcourir les résultats les plus intéressants :</p>
 <ul>
-<li><a href="http://blogs.msdn.com/b/thebeebs/archive/2011/12/14/font-face-isn-t-working-on-ie9-inside-of-windows-phone-7.aspx" title="Font-Face isn’t working on IE9 inside of Windows Phone 7 (nouvelle fenêtre)">Font-Face isn’t working on IE9 inside of Windows Phone 7</a></li>
-<li><a href="http://blogs.msdn.com/b/iemobile/archive/2010/11/10/supported-fonts-on-ie-for-windows-phone-7.aspx" title="Supported fonts on IE for Windows Phone 7 (nouvelle fenêtre)">Supported fonts on IE for Windows Phone 7</a></li>
-<li><a href="http://www.ubelly.com/2011/11/the-differences-between-ie9-on-the-desktop-and-ie9-on-wp7/" title="The differences between IE9 for desktop and IE9 on WP7 (nouvelle fenêtre)">The differences between IE9 for desktop and IE9 on WP7</a></li>
+<li><a href="https://blogs.msdn.com/b/thebeebs/archive/2011/12/14/font-face-isn-t-working-on-ie9-inside-of-windows-phone-7.aspx" title="Font-Face isn’t working on IE9 inside of Windows Phone 7 (nouvelle fenêtre)">Font-Face isn’t working on IE9 inside of Windows Phone 7</a></li>
+<li><a href="https://blogs.msdn.com/b/iemobile/archive/2010/11/10/supported-fonts-on-ie-for-windows-phone-7.aspx" title="Supported fonts on IE for Windows Phone 7 (nouvelle fenêtre)">Supported fonts on IE for Windows Phone 7</a></li>
+<li><a href="https://www.ubelly.com/2011/11/the-differences-between-ie9-on-the-desktop-and-ie9-on-wp7/" title="The differences between IE9 for desktop and IE9 on WP7 (nouvelle fenêtre)">The differences between IE9 for desktop and IE9 on WP7</a></li>
 </ul>
 <p>Sans équivoque : <strong>IE9 sur WP7 supporte <code>@font-face</code> mais ne chargera pas de fichiers typographiques externes.</strong> Ça explique également le <a href="https://github.com/Modernizr/Modernizr/issues/538" title="Faut-positif de Modernizr (nouvelle fenêtre)">faux-positif de Modernizr</a> concernant la détection de cette fonctionnalité.</p>
 <p>Vous voilà prévenus : <strong>définir un fallback est un minimum</strong> pour se prémunir contre ce problème; cependant le cas des icon-fonts est plus ennuyeux puisqu’on s’appuie souvent sur des caractères unicodes indisponibles dans la plupart des typographies, et un remplacement d’images conditionnel semble compliqué…</p>
 <p>Si quelqu’un connait un moyen de cibler uniquement IE9 sur Windows Phone 7, je suis preneur ! De plus, je n’ai aucun moyen de tester IE sur Windows Phone 8 pour le moment, je ne saurais donc préciser si ce problème existe toujours dans les versions les plus récentes.</p>
 <p><strong>Edit :</strong> La nuit portant conseil, l’astuce dans le cas d’une icon-font semble finalement «simple». Il s’agira de les baser sur des caractères unicodes ayant un intérêt ( par exemple, ☎ ). Cependant, cette astuce n’est possible que lorsqu’on a le choix des glyphes utilisés comme support – ce qui, je crois, est le cas dans IcoMoon – et de disposer d’un caractère unicode signifiant.</p>
 
-			</div><footer class="small mt2">
+			</div>
+		
+		<footer class="small mt2">
 			<p class="pl2 mt0 pt1">
 				Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
 				Modifié le <time class="updated" datetime="2013-11-13T12:25:49" itemprop="dateModified">13 novembre 2013</time>.
@@ -95,7 +99,7 @@
 											 src="https://secure.gravatar.com/avatar/597de7db40f20c3c0d8afba20cee2292?s=44&d=mm&r=g"
 											 srcset="https://secure.gravatar.com/avatar/597de7db40f20c3c0d8afba20cee2292?s=88&d=mm&r=g 2x"
 											 class="avatar avatar-44 photo"
-											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="http://www.kloh.ch" class="url" rel="ugc external nofollow">Luc</a></em>
+											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="https://www.kloh.ch" class="url" rel="ugc external nofollow">Luc</a></em>
 								
 								<time datetime="[object Object]" itemprop="commentTime">25 juillet 2013 à 12 h 27 min</time>
 								<a href="#20">
@@ -130,7 +134,7 @@ Mais ça veut dire qu’aucun fichier de font ne peut jamais être chargé tout 
 											 src="https://secure.gravatar.com/avatar/6381f65810606a24c5f7086d072342f2?s=44&d=mm&r=g"
 											 srcset="https://secure.gravatar.com/avatar/6381f65810606a24c5f7086d072342f2?s=88&d=mm&r=g 2x"
 											 class="avatar avatar-44 photo"
-											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="http://marieguillaumet.com/" class="url" rel="ugc external nofollow">Marie Guillaumet</a></em>
+											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="https://marieguillaumet.com/" class="url" rel="ugc external nofollow">Marie Guillaumet</a></em>
 								
 								<time datetime="[object Object]" itemprop="commentTime">16 juin 2015 à 11 h 41 min</time>
 								<a href="#5961">
@@ -164,7 +168,7 @@ Mais ça veut dire qu’aucun fichier de font ne peut jamais être chargé tout 
 											 src="https://secure.gravatar.com/avatar/6381f65810606a24c5f7086d072342f2?s=44&d=mm&r=g"
 											 srcset="https://secure.gravatar.com/avatar/6381f65810606a24c5f7086d072342f2?s=88&d=mm&r=g 2x"
 											 class="avatar avatar-44 photo"
-											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="http://marieguillaumet.com/" class="url" rel="ugc external nofollow">Marie Guillaumet</a></em>
+											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="https://marieguillaumet.com/" class="url" rel="ugc external nofollow">Marie Guillaumet</a></em>
 								
 								<time datetime="[object Object]" itemprop="commentTime">16 juin 2015 à 11 h 49 min</time>
 								<a href="#5964">
@@ -184,7 +188,7 @@ Mais ça veut dire qu’aucun fichier de font ne peut jamais être chargé tout 
 		<div class="aside pl2 pt2">
 			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
 			<div class="textwidget">
-				<ol><li><a href="#un-jour%2C-j%E2%80%99ai-fait-un-test">Un jour, j’ai fait un test</a></li><li><a href="#un-doute-m%E2%80%99habite">Un doute m’habite</a></li><li><a href="#google-m%E2%80%99a-r%C3%A9pondu-!">Google m’a répondu !</a></li><li><a href="#comments">Commentaires</a></li></ol>
+				<ol><li><a href="#un-jour-jai-fait-un-test">Un jour, j’ai fait un test</a></li><li><a href="#un-doute-mhabite">Un doute m’habite</a></li><li><a href="#google-ma-repondu">Google m’a répondu !</a></li><li><a href="#comments">Commentaires</a></li></ol>
 			</div>
 		</div>
 	</aside>

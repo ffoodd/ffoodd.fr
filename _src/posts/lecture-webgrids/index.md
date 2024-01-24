@@ -7,14 +7,14 @@ permalink: "lecture-webgrids/index.html"
 excerpt: "L’adret Ma formation en communication visuelle m’a enseigné les règles typographiques, de mise en page, l’histoire de l’imprimerie et les différents mouvements qui ont heurté l’histoire du graphisme et de l’impression. L’ubac Mon expérience professionnelle dans le web m’a éduqué aux contraintes spécifiques du support : affichage sur écran divers et variés, dans des navigateurs […]"
 format: "status"
 tags: "posts"
-description: "Bien que familier avec les deux versants du graphisme web - à savoir : le graphisme <strong>&amp;</strong> le web - force m'est de constater que ces deux versants d'une même montagne sont opposés, à l'instar de l'<a title=\"Définition sur Wikipédia\" href=\"http://fr.wikipedia.org/wiki/Adret\" target=\"_blank\">adret</a> et l'<a title=\"Définition sur Wikipédia\" href=\"http://fr.wikipedia.org/wiki/Ubac\" target=\"_blank\">ubac</a>."
+description: "Bien que familier avec les deux versants du graphisme web - à savoir : le graphisme <strong>&amp;</strong> le web - force m'est de constater que ces deux versants d'une même montagne sont opposés, à l'instar de l'<a title=\"Définition sur Wikipédia\" href=\"https://fr.wikipedia.org/wiki/Adret\" target=\"_blank\">adret</a> et l'<a title=\"Définition sur Wikipédia\" href=\"https://fr.wikipedia.org/wiki/Ubac\" target=\"_blank\">ubac</a>."
 editeur: "Atelier Perrousseaux"
 auteur: "Anne-Sophie Fradier"
 date_de_parution: "12/04/2012"
 ean13: "9782911220449"
 nombre_de_pages: "128"
 collection: ""
-lien: "http://www.adverbum.fr/webgrids-fradier-anne-sophie-atelier-perrousseaux_ouvrage-perrousseaux_4kd26i9rxoms.html"
+lien: "https://www.adverbum.fr/webgrids-fradier-anne-sophie-atelier-perrousseaux_ouvrage-perrousseaux_4kd26i9rxoms.html"
 note: "5"
 ---
 ## L’adret
@@ -35,4 +35,4 @@ Et ce n’est qu’un extrait de la première page. Ce livre fourmille d’expli
 
 **Ce livre permet d’atteindre le sommet, ce point si compliqué à atteindre mais bel et bien le seul ou se rejoignent l’ubac et l’adret. Réconciliez le web et la mise en page avancée, lisez ce livre !**
 
-À noter : un autre excellent ouvrage est disponible dans la même collection aux Ateliers Perrousseaux : [**Typo & web**](http://www.google.fr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0CCgQFjAA&url=http%3A%2F%2Fwww.adverbum.fr%2Ftypo--web-foutoyet-aurelien-atelier-perrousseaux_ouvrage-perrousseaux_4kd262gul963.html&ei=a2qaUPyeA8zJ0AWTuIBo&usg=AFQjCNHTBxoRhkz_blvdiieipO2aKwgNmQ&sig2=2EEx_g_E2KITmKdRn-4bmA). Je vous le recommande chaudement – et il fera peut-être l’objet d’un article similaire dans le futur.
+À noter : un autre excellent ouvrage est disponible dans la même collection aux Ateliers Perrousseaux : [**Typo & web**](https://www.google.fr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0CCgQFjAA&url=http%3A%2F%2Fwww.adverbum.fr%2Ftypo--web-foutoyet-aurelien-atelier-perrousseaux_ouvrage-perrousseaux_4kd262gul963.html&ei=a2qaUPyeA8zJ0AWTuIBo&usg=AFQjCNHTBxoRhkz_blvdiieipO2aKwgNmQ&sig2=2EEx_g_E2KITmKdRn-4bmA). Je vous le recommande chaudement – et il fera peut-être l’objet d’un article similaire dans le futur.

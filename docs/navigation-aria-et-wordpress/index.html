@@ -54,7 +54,9 @@
 				</header>
 				
 	<article role="article" itemscope itemtype="https://schema.org/Article">
-		<time class="screen-reader-text" datetime="2013-10-09T13:31:19" itemprop="datePublished">9 octobre 2013</time><div itemprop="articleBody">
+		<time class="screen-reader-text" datetime="2013-10-09T13:31:19" itemprop="datePublished">9 octobre 2013</time>
+		
+			<div itemprop="articleBody">
 				<p>Dans sa version basique, la navigation de WordPress n’a rien de particulier (si ce n’est la multitude de classes générées sur chaque élément 🙁 ). Or ARIA permet d’ajouter une couche sémantique non négligeable et relativement simple à mettre en place, améliorant ainsi l’accessibilité de la navigation.</p>
 <h2 id="notre-objectif" tabindex="-1">Notre objectif</h2>
 <p>L’implémentation d’ARIA sur une navigation est simple ‐ bien qu’il soit assez compliqué d’en trouver une documentation ou un exemple concret. Voici le résultat attendu sur ffoodd (je vous épargne les classes et identifiants, pour cette fois 😉 ) :</p>
@@ -70,8 +72,8 @@
 &lt;/nav&gt;
 </code></pre>
 <p>Vous connaissiez sans doute déjà le rôle « navigation », qui identifie la zone majeure du contenu destinée à la navigation. Les autres rôle et attributs sont explicites, et on en saisit facilement l’intérêt sur cet extrait de code. Voyons maintenant comment obtenir ce résultat avec WordPress.</p>
-<h2 id="wordpress-et-le-walker-d%C3%A9di%C3%A9-%C3%A0-la-navigation" tabindex="-1">WordPress et le Walker dédié à la navigation</h2>
-<p>Ce sympathique walker se nomme <strong>Walker_Nav_Menu</strong>. Je l’avais rencontré la première fois en farfouillant dans le code de <a href="http://themefortress.com/reverie/" title="Reverie - un starter theme pour WordPress (nouvelle fenêtre)">Reverie</a>, sans en saisir l’intérêt à l’époque. Puis mes compétences et réflexions évoluant avec le temps, lorsque je le recroisais sur le blog de <a href="https://twitter.com/willybahuaud" title="Willy Bahuaud sur Twitter (nouvelle fenêtre)">Willy Bahuaud</a> dans <a href="http://wabeo.fr/blog/construire-walker-wordpress/" title="Construire un walker WordPress (nouvelle fenêtre)">son article présentant les walkers</a>, j’en saisis rapidement l’intérêt et me mit en tête de m’en servir sur mon thème ffeeeedd.</p>
+<h2 id="wordpress-et-le-walker-dedie-a-la-navigation" tabindex="-1">WordPress et le Walker dédié à la navigation</h2>
+<p>Ce sympathique walker se nomme <strong>Walker_Nav_Menu</strong>. Je l’avais rencontré la première fois en farfouillant dans le code de <a href="https://themefortress.com/reverie/" title="Reverie - un starter theme pour WordPress (nouvelle fenêtre)">Reverie</a>, sans en saisir l’intérêt à l’époque. Puis mes compétences et réflexions évoluant avec le temps, lorsque je le recroisais sur le blog de <a href="https://twitter.com/willybahuaud" title="Willy Bahuaud sur Twitter (nouvelle fenêtre)">Willy Bahuaud</a> dans <a href="https://wabeo.fr/blog/construire-walker-wordpress/" title="Construire un walker WordPress (nouvelle fenêtre)">son article présentant les walkers</a>, j’en saisis rapidement l’intérêt et me mit en tête de m’en servir sur mon thème ffeeeedd.</p>
 <p>Je vous recommande chaudement de lire l’article de Willy sur le sujet, qui est une entrée en matière extrêmement intéressante.</p>
 <h2 id="les-mains-dans-le-code" tabindex="-1">Les mains dans le code</h2>
 <p>Voilà sans plus attendre le code obtenu après quelques recherche :</p>
@@ -80,9 +82,9 @@
  * @note : Un walker nous permet de amnipuler le html généré pour la navigation afin d’y ajouter les roles aria qui vont bien.
  * @author : Gaël Poupard
  * @see : https://twitter.com/ffoodd_fr
- * @see : http://wabeo.fr/blog/construire-walker-wordpress/
+ * @see : https://wabeo.fr/blog/construire-walker-wordpress/
  * @author : Willy Bahuaud
- * @see : http://core.trac.wordpress.org/browser/tags/3.6.1//wp-includes/nav-menu-template.php#L0
+ * @see : https://core.trac.wordpress.org/browser/tags/3.6.1//wp-includes/nav-menu-template.php#L0
  */
   class ffeeeedd__walker extends Walker_Nav_Menu {
   function start_el( &amp;$output, $item, $depth = 1, $args = array(), $id = 0 ) {
@@ -129,13 +131,15 @@
 </code></pre>
 <p>Le walker manipule chaque niveau de rendu de la navigation, ce qui nous permet d’ajouter les rôles très facilement. La seule intervention astucieuse consiste à récupérer l’intitulé de l’item afin de l’utiliser comme label pour la navigation.</p>
 <p>Et voilà ! Simple, non ?</p>
-<h2 id="les-%C3%A9volutions-%C3%A0-venir" tabindex="-1">Les évolutions à venir</h2>
+<h2 id="les-evolutions-a-venir" tabindex="-1">Les évolutions à venir</h2>
 <p>Bien qu’intéressante, cette astuce n’est pas parfaite. En effet la spécification ARIA prévoit des états pour les éléments, afin d’expliciter les interactions.</p>
 <p>Dans notre cas, il va falloir appliquer l’attribut booléen <strong>aria-selected</strong> sur les items de navigation, en passant sa valeur de true à false selon l’item actif.</p>
 <p>Bien qu’ayant déjà appliqué ce comportement sur des boîtes à onglets notamment, j’aimerais parvenir à le faire sur ma navigation sans passer par du javascript. J’ai cherché des pistes pour utiliser le walker (qui à priori devrait être capable de repérer l’item actif) mais sans résultat pour le moment, donc <strong>n’hésitez pas à commenter l’article ou à me contacter par mail si vous avez la moindre piste à me suggérer</strong> (voire même la solution, hein :D).</p>
 <p>De plus, un comportement (en javascript à priori) est également à prévoir pour les sous-menu, qui pourront s’avérer plus complexes à gérer ‐ bien qu’ARIA soit très complète sur ce sujet.</p>
 
-			</div><footer class="small mt2">
+			</div>
+		
+		<footer class="small mt2">
 			<p class="pl2 mt0 pt1">
 				Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
 				Modifié le <time class="updated" datetime="2013-11-13T12:12:38" itemprop="dateModified">13 novembre 2013</time>.
@@ -155,7 +159,7 @@
 											 src="https://secure.gravatar.com/avatar/597de7db40f20c3c0d8afba20cee2292?s=44&d=mm&r=g"
 											 srcset="https://secure.gravatar.com/avatar/597de7db40f20c3c0d8afba20cee2292?s=88&d=mm&r=g 2x"
 											 class="avatar avatar-44 photo"
-											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="http://www.kloh.ch" class="url" rel="ugc external nofollow">Luc</a></em>
+											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="https://www.kloh.ch" class="url" rel="ugc external nofollow">Luc</a></em>
 								
 								<time datetime="[object Object]" itemprop="commentTime">14 octobre 2013 à 08 h 44 min</time>
 								<a href="#80">
@@ -195,7 +199,7 @@ Sinon j’ai l’impression qu’il manque un truc dans ton premier paragraphe d
 		<div class="aside pl2 pt2">
 			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
 			<div class="textwidget">
-				<ol><li><a href="#notre-objectif">Notre objectif</a></li><li><a href="#wordpress-et-le-walker-d%C3%A9di%C3%A9-%C3%A0-la-navigation">WordPress et le Walker dédié à la navigation</a></li><li><a href="#les-mains-dans-le-code">Les mains dans le code</a></li><li><a href="#les-%C3%A9volutions-%C3%A0-venir">Les évolutions à venir</a></li><li><a href="#comments">Commentaires</a></li></ol>
+				<ol><li><a href="#notre-objectif">Notre objectif</a></li><li><a href="#wordpress-et-le-walker-dedie-a-la-navigation">WordPress et le Walker dédié à la navigation</a></li><li><a href="#les-mains-dans-le-code">Les mains dans le code</a></li><li><a href="#les-evolutions-a-venir">Les évolutions à venir</a></li><li><a href="#comments">Commentaires</a></li></ol>
 			</div>
 		</div>
 	</aside>

@@ -11,7 +11,7 @@ description: "Il m&apos;arrive souvent de devoir masquer visuellement du texte e
 ---
 Et j’ai beau trouver ça idiot —&nbsp;masquer du texte pour certains utilisateurs et pas pour d’autres, ça me paraît incohérent avec l’accessibilité&nbsp;— c’est un besoin récurrent.
 
-Il existe de nombreuses façons de faire, que je ne détaillerai pas ici. Depuis quelques années, lorsque je le peux, j’utilise celle de [Thierry Koblentz](https://twitter.com/thierrykoblentz) pour Yahoo! qui est décrite [sur le blog technique de Yahoo!](https://developer.yahoo.com/blogs/ydn/clip-hidden-content-better-accessibility-53456.html) [sur le blog de Thierry](http://cssmojo.com/hide-content-from-sighted-users/). C’est de loin la plus complète, et la seule à ma connaissance à supporter la direction de texte de droite à gauche.
+Il existe de nombreuses façons de faire, que je ne détaillerai pas ici. Depuis quelques années, lorsque je le peux, j’utilise celle de [Thierry Koblentz](https://twitter.com/thierrykoblentz) pour Yahoo! qui est décrite [sur le blog technique de Yahoo!](https://developer.yahoo.com/blogs/ydn/clip-hidden-content-better-accessibility-53456.html) [sur le blog de Thierry](https://cssmojo.com/hide-content-from-sighted-users/). C’est de loin la plus complète, et la seule à ma connaissance à supporter la direction de texte de droite à gauche.
 
 Mais elle n’est pas exempte de problème, désormais.
 
@@ -19,7 +19,7 @@ Mais elle n’est pas exempte de problème, désormais.
 
 La «&nbsp;magie&nbsp;» de cette solution repose sur la propriété `clip`. Elle est simple à comprendre et très efficace. Seul bémol&nbsp;: `clip` est **déprécié par le module _[CSS masking](https://drafts.fxtf.org/css-masking-1/#clip-property)_** de niveau 1.
 
-Pas de souci. La technique basée sur `clip` date un peu, il est normal qu’elle tombe en désuétude. La nouvelle spécification recommande l’utilisation de `clip-path` pour remplacer `clip`. Ce qui nous laisse pantois, puisque [le support de `clip-path` est encore tout à fait relatif](http://caniuse.com/#feat=css-clip-path). **Nous devons conserver `clip` et ajouter `clip-path` en guise d’amélioration progressive**.
+Pas de souci. La technique basée sur `clip` date un peu, il est normal qu’elle tombe en désuétude. La nouvelle spécification recommande l’utilisation de `clip-path` pour remplacer `clip`. Ce qui nous laisse pantois, puisque [le support de `clip-path` est encore tout à fait relatif](https://caniuse.com/#feat=css-clip-path). **Nous devons conserver `clip` et ajouter `clip-path` en guise d’amélioration progressive**.
 
 Cependant la syntaxe est différente également. Après quelques recherches, [Yvain Liechti a proposé la version la plus courte pour obtenir le résultat attendu](https://twitter.com/ryuran78/status/778943389819604992)&nbsp;:
 
@@ -93,14 +93,14 @@ C’est à mon avis la meilleure façon de faire —&nbsp;et étant donné les c
 
 Vous pouvez retrouver ces classes à plusieurs endroits&nbsp;:
 
-* [sur CodePen](http://codepen.io/ffoodd/pen/gwKZyq?editors=1100#)&nbsp;;
+* [sur CodePen](https://codepen.io/ffoodd/pen/gwKZyq?editors=1100#)&nbsp;;
 * [dans un Gist](https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034).
 
 Qu’en dites-vous&nbsp;?
 
 ### Version anglaise
 
-[Kitty Giraudel](https://twitter.com/KittyGiraudel) m’a fait l’honneur de [traduire cet article en anglais et le publier sur son blog](http://kittygiraudel.com/2016/10/13/css-hide-and-seek/). Merci&nbsp;!
+[Kitty Giraudel](https://twitter.com/KittyGiraudel) m’a fait l’honneur de [traduire cet article en anglais et le publier sur son blog](https://kittygiraudel.com/2016/10/13/css-hide-and-seek/). Merci&nbsp;!
 
 ## Modifications
 

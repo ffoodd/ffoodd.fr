@@ -4,10 +4,10 @@ title: "Un test Modernizr pour les contrastes élevés"
 date: "2015-11-25T15:06:44"
 modified: "2015-11-25T15:06:44"
 permalink: "un-test-modernizr-pour-les-contrastes-eleves/index.html"
-excerpt: "Comme promis dans le précédent article «&nbsp;[Le soulignement factice](http://www.ffoodd.fr/le-soulignement-factice/)&nbsp;», voici un portage sur Modernizr du test sur le mode contrastes élevés. Jʼattends votre avis&nbsp;!"
+excerpt: "Comme promis dans le précédent article «&nbsp;[Le soulignement factice](https://www.ffoodd.fr/le-soulignement-factice/)&nbsp;», voici un portage sur Modernizr du test sur le mode contrastes élevés. Jʼattends votre avis&nbsp;!"
 format: "standard"
 tags: "posts"
-description: "Le test conçu par Hans Hillen et présenté par Karl Groves <a hreflang=\"en\" href=\"http://jsfiddle.net/karlgroves/XR8Su/6/\">sur JS Fiddle</a> est top."
+description: "Le test conçu par Hans Hillen et présenté par Karl Groves <a hreflang=\"en\" href=\"https://jsfiddle.net/karlgroves/XR8Su/6/\">sur JS Fiddle</a> est top."
 ---
 Malheureusement, il ne répond pas correctement lorsque lʼutilisateur a personnalisé les couleurs des liens ou utilise un thème navigateur aux contrastes élevés —&nbsp;ce que jʼai testé avec Firefox. En sus, et bien quʼil soit conçu de façon à renvoyer un booléen, il se couple difficilement avec un outil spécialisé tel que [Modernizr](https://modernizr.com/).
 
@@ -41,7 +41,7 @@ Modernizr.addTest("highcontrast", function() {
 });
 ```
 
-Rien de bien méchant&nbsp;😊 Jʼai créé [un CodePen dédié uniquement à ce test](http://codepen.io/ffoodd/pen/RWmmOO) avec quelques commentaires et une illustration basique en HTML.
+Rien de bien méchant&nbsp;😊 Jʼai créé [un CodePen dédié uniquement à ce test](https://codepen.io/ffoodd/pen/RWmmOO) avec quelques commentaires et une illustration basique en HTML.
 
 ## La couverture
 

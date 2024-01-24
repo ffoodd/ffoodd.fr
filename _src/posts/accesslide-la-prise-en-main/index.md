@@ -4,10 +4,10 @@ title: "AccesSlide&nbsp;: la prise en main"
 date: "2015-05-24T11:06:51"
 modified: "2015-05-26T09:03:59"
 permalink: "accesslide-la-prise-en-main/index.html"
-excerpt: "Auriez-vous ‒&nbsp;par hasard&nbsp;‒ déjà cherché une solution pour créer des diaporamas accessibles&nbsp;? De nombreuses solutions existent, mais aucune n’était réellement satisfaisante… C’est désormais le cas avec [AccesSlide](http://accesslide.net/), dont j’avais découvert l’existence après le petit jeu du 1er avril organisé par [Access42](http://www.access42.net/). Ma première prise en main a été très agréable alors me voilà lancé dans quelques explications et une démonstration pour en vanter les mérites&nbsp;!"
+excerpt: "Auriez-vous ‒&nbsp;par hasard&nbsp;‒ déjà cherché une solution pour créer des diaporamas accessibles&nbsp;? De nombreuses solutions existent, mais aucune n’était réellement satisfaisante… C’est désormais le cas avec [AccesSlide](https://www.accesslide.net/), dont j’avais découvert l’existence après le petit jeu du 1er avril organisé par [Access42](https://www.access42.net/). Ma première prise en main a été très agréable alors me voilà lancé dans quelques explications et une démonstration pour en vanter les mérites&nbsp;!"
 format: "standard"
 tags: "posts"
-description: "La conférence que je m’apprête à donner lors du <a href=\"http://2015.wpmx.org/\">WPMX Day</a> est l’occasion de créer un nouveau diaporama. C’est là qu’intervient <a href=\"http://www.access42.net\">Access42</a> et son superbe outil <a href=\"htt//www.accesslide.net\">AccesSlide</a>&nbsp;!"
+description: "La conférence que je m’apprête à donner lors du <a href=\"https://2015.wpmx.org/\">WPMX Day</a> est l’occasion de créer un nouveau diaporama. C’est là qu’intervient <a href=\"https://www.access42.net\">Access42</a> et son superbe outil <a href=\"https://www.accesslide.net\">AccesSlide</a>&nbsp;!"
 ---
 Access42 est la société créée conjointement par Armony Altinier (rédactrice du livre «&nbsp;Accessibilité web&nbsp;» dont j’ai écrit [un compte-rendu de lecture](https://www.ffoodd.fr/lecture-accessibilite-web/)) et Jean-Pierre Villain après qu’ils aient remporté le marché de refonte du RGAA3\. Ils ont été rapidement rejoint par Sylvie Duchateau et Audrey Maniez.
 
@@ -15,9 +15,9 @@ Si vous ne connaissez pas ces noms, sachez qu’ils sont **incontournables dans 
 
 ## Premier contact
 
-Pour commencer, je tiens à signaler la manière tout à fait **attractive** qu’a trouvé d’Access42 pour communiquer sur ce nouvel outil&nbsp;: c’est suite à ma participation à leur [jeu-concours&nbsp;: le secret de la licorne](http://access42.net/MAJ-Jeu-concours-le-secret-de-la-licorne.html) que j’ai reçu un mail signalant dans un premier temps [le dépôt Github d’AccesSlide](https://github.com/access42/AccesSlide).
+Pour commencer, je tiens à signaler la manière tout à fait **attractive** qu’a trouvé d’Access42 pour communiquer sur ce nouvel outil&nbsp;: c’est suite à ma participation à leur [jeu-concours&nbsp;: le secret de la licorne](https://access42.net/MAJ-Jeu-concours-le-secret-de-la-licorne.html) que j’ai reçu un mail signalant dans un premier temps [le dépôt Github d’AccesSlide](https://github.com/access42/AccesSlide).
 
-C’est bête, mais ça donne envie de regarder&nbsp;! Étant donné que j’avais déjà cherché une solution lors de la préparation de mon atelier pour le [WP Tech](http://2014.wptech.fr/) et que je prépare une conférence pour le [WPMX](http://2015.wpmx.org/), je me suis lancé dans l’utilisation de cet outil.
+C’est bête, mais ça donne envie de regarder&nbsp;! Étant donné que j’avais déjà cherché une solution lors de la préparation de mon atelier pour le [WP Tech](https://2014.wptech.fr/) et que je prépare une conférence pour le [WPMX](https://2015.wpmx.org/), je me suis lancé dans l’utilisation de cet outil.
 
 De prime abord, **cette solution est très riche**. Le **sommaire** ainsi que **les réglages utilisateurs** sont de très gros atouts pour ce système de diaporama.
 
@@ -31,7 +31,7 @@ Partie cruciale s’il en est, AccesSlide permet de rédiger ces slides de faço
 <section class="slide"> [votre diapo] </section>
 ```
 
-Il est difficile de faire plus simple, et c’est équivalent en terme d’efficacité aux solutions populaires telles que [Reveal.js](http://lab.hakim.se/reveal-js/#/). **Ainsi pour la saisie du contenu, c’est top&nbsp;!**
+Il est difficile de faire plus simple, et c’est équivalent en terme d’efficacité aux solutions populaires telles que [Reveal.js](https://lab.hakim.se/reveal-js/#/). **Ainsi pour la saisie du contenu, c’est top&nbsp;!**
 
 ## La personnalisation
 
@@ -125,7 +125,7 @@ Et le tour est joué&nbsp;☺.
 
 Pour le moment mon thème est trop éloigné de la solution originelle pour que je puisse le proposer simplement, mais avec un peu de réécriture ce devrait être faisable (tout comme l’animation). **Je tenterai de les proposer à Access42 dès que mon temps libre me le permettra**&nbsp;!
 
-Même si je ne m’en suis pas servi, je tiens également à souligner l’utilisation de fichiers partiels et du post-processeur [Myth](http://www.myth.io/) pour générer les sources. Le découpage en fichiers partiels rend l’orientation dans les fichiers encore plus clair. Côté compilation, une configuration basique pour Grunt est aussi mise à disposition.
+Même si je ne m’en suis pas servi, je tiens également à souligner l’utilisation de fichiers partiels et du post-processeur [Myth](https://www.myth.io/) pour générer les sources. Le découpage en fichiers partiels rend l’orientation dans les fichiers encore plus clair. Côté compilation, une configuration basique pour Grunt est aussi mise à disposition.
 
 **Tout est fait pour que quiconque puisse s’approprier la solution rapidement.**
 
@@ -142,4 +142,4 @@ Plutôt pas mal, non&nbsp;☺&nbsp;?
 
 ## Épilogue
 
-Il me reste un point important remonté par [Sophie Schuermans](http://anysurfer.be/fr) concernant l’aspect responsive que j’ai un peu endommagé. Et je tiens également à remercier [Nicolas Hoffmann](http://www.nicolas-hoffmann.net/source/) pour sa relecture attentive et ses conseils, ainsi qu’[Olivier Nourry](http://accessiblog.fr/) pour son intérêt&nbsp;!
+Il me reste un point important remonté par [Sophie Schuermans](https://anysurfer.be/fr) concernant l’aspect responsive que j’ai un peu endommagé. Et je tiens également à remercier [Nicolas Hoffmann](https://www.nicolas-hoffmann.net/source/) pour sa relecture attentive et ses conseils, ainsi qu’[Olivier Nourry](https://accessiblog.fr/) pour son intérêt&nbsp;!

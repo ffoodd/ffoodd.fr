@@ -15,7 +15,7 @@ Object.keys(pages).forEach((p, i) => {
 	// Cleanup URLs
 	let content = page.content.rendered
 		.replace(/http:\/\/www.ffoodd.fr\/wp-content\/uploads/g, '/images')
-		.replace(/http:\/\/www.ffoodd.fr/g, 'https://www.ffoodd.fr');
+		.replace(/http:\/\//g, 'https://');
 
 	// Convert to Markdown
 	let newContent =  turndownService.turndown(content)

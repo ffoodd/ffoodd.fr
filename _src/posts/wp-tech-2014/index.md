@@ -4,10 +4,10 @@ title: "WP Tech 2014"
 date: "2014-12-04T21:08:44"
 modified: "2014-12-04T21:22:40"
 permalink: "wp-tech-2014/index.html"
-excerpt: "Le premier WP Tech s’est déroulé samedi à Nantes. Cet événement orienté sur la technique a été un franc succès, et pour cause&nbsp;: les organisateurs [Daniel Roch](http://www.seomix.fr) et [Willy Bahuaud](http://www.wabeo.fr) ont été extraordinaires, avec le soutien bienvenu de plusieurs bénévoles."
+excerpt: "Le premier WP Tech s’est déroulé samedi à Nantes. Cet événement orienté sur la technique a été un franc succès, et pour cause&nbsp;: les organisateurs [Daniel Roch](https://www.seomix.fr) et [Willy Bahuaud](https://www.wabeo.fr) ont été extraordinaires, avec le soutien bienvenu de plusieurs bénévoles."
 format: "standard"
 tags: "posts"
-description: "Cette journée fut très instructive, dans une atmosphère vraiment agréable. Chaque intervention m’a appris quelque chose —&nbsp;et pour en lire un compte-rendu d’excellente facture, je vous invite à lire celui de <a href=\"http://wpmarmite.com/wp-tech-2014/\">WP Marmite</a>. "
+description: "Cette journée fut très instructive, dans une atmosphère vraiment agréable. Chaque intervention m’a appris quelque chose —&nbsp;et pour en lire un compte-rendu d’excellente facture, je vous invite à lire celui de <a href=\"https://wpmarmite.com/wp-tech-2014/\">WP Marmite</a>. "
 ---
 Car non, je ne vais pas vous en faire un compte-rendu&nbsp;: j’étais orateur, et ça me fait beaucoup de choses à raconter&nbsp;!
 
@@ -25,7 +25,7 @@ J’ai évidemment été parmi les premiers à répondre à leur sondage. Parmi 
 
 Et devinez quoi&nbsp;?
 
-[Il a été retenu](http://2014.wptech.fr/session/framework-themes-enfants/).
+[Il a été retenu](https://2014.wptech.fr/session/framework-themes-enfants/).
 
 ## La préparation
 
@@ -53,13 +53,13 @@ Me voilà fin prêt à rédiger ma présentation, le plus compliqué étant d’
 
 Malgré le _stress_ qui montait, je me suis rendu au dîner des orateurs et des bénévoles, la veille de l’événement. Et j’ai été très chaleureusement accueilli par Daniel, puis eut le loisir d’échanger avec Emmanuel, Simon, Stéphanie et Amaury durant le repas.
 
-Comme pour l’ensemble du WP Tech, je suis seulement déçu par **le manque de temps**&nbsp;: j’ai raté pas mal d’occasion pour rencontrer certaines personnes que je côtoie sur le web depuis longtemps, telles que [Julio Potier](http://boiteaweb.fr/), [Julien Maury](http://tweetpressfr.github.io/blog/), [Aurélien Denis](http://wpchannel.com/), et même Willy et Daniel que je n’ai finalement fait que croiser (comme tout le monde, je pense&nbsp;:D).
+Comme pour l’ensemble du WP Tech, je suis seulement déçu par **le manque de temps**&nbsp;: j’ai raté pas mal d’occasion pour rencontrer certaines personnes que je côtoie sur le web depuis longtemps, telles que [Julio Potier](https://boiteaweb.fr/), [Julien Maury](https://tweetpressfr.github.io/blog/), [Aurélien Denis](https://wpchannel.com/), et même Willy et Daniel que je n’ai finalement fait que croiser (comme tout le monde, je pense&nbsp;:D).
 
 ## Le jour-même
 
 Levé à 6h, la tête dans la pâté, mais très, très motivé&nbsp;! L’accueil à l’Epitech par l’équipe était vraiment agréable, et parmi les _goodies_ nous avons pu trouver un T-shirt et des _stickers_ à ajouter sur nos badges. Le choix était amusant&nbsp;: entre déclaration d’amour et _troll_ en bonne et due forme, tout le monde y a trouvé son bonheur. Sans surprise, j’ai choisi «&nbsp;Mes thèmes enfants ne parlent avec des inconnus&nbsp;».
 
-Je vous enjoins à nouveau à lire **l’excellent compte-rendu** sur [WP Marmite](http://wpmarmite.com/wp-tech-2014/), car je vais directement passer à ma prestation.
+Je vous enjoins à nouveau à lire **l’excellent compte-rendu** sur [WP Marmite](https://wpmarmite.com/wp-tech-2014/), car je vais directement passer à ma prestation.
 
 J’en suis relativement content, bien que je doive avouer qu’elle ne s’est pas déroulée du tout comme je l’avais prévue&nbsp;! Je souhaitais **générer des échanges** tout au long de l’atelier, mais très vite je me suis aperçu que je n’y parviendrais pas&nbsp;: j’avais trop de choses à dire.
 

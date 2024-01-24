@@ -24,7 +24,7 @@ Object.keys(posts).forEach((p, i) => {
 	// Cleanup URLs
 	let content = post.content.rendered
 		.replace(/http:\/\/www.ffoodd.fr\/wp-content\/uploads/g, '/images')
-		.replace(/http:\/\/www.ffoodd.fr/g, 'https://www.ffoodd.fr');
+		.replace(/http:\/\//g, 'https://');
 
 	// Convert to Markdown
 	let newContent =  turndownService.turndown(content)
@@ -42,6 +42,7 @@ Object.keys(posts).forEach((p, i) => {
 
 
 	let newExcerpt = turndownService.turndown(post.excerpt.rendered)
+		.replace(/http:\/\//g, 'https://')
 		.replace(/\[(.*?)\]\((.*?) "(.*?)"\)/g, "[$1]($2 '$3')")
 		.replace(/\s\[Lire la suite de «\u00A0.*\u00A0» →\]\(https:\/\/www\.ffoodd\.fr\/.*\/\)/g, '')
 		.replace(/\u00A0/g, '&nbsp;')

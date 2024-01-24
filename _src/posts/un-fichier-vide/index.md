@@ -13,7 +13,7 @@ Et c’est bien normal. C’est ainsi que nous découvrons nos outils, les perso
 
 ## Éternels insatisfaits
 
-Cependant aucun outil magique n’existe. Parmi les outils auxquels je pense, [Bootstrap](http://getbootstrap.com/) et [Foundation](http://foundation.zurb.com/) se tirent la bourre depuis quelques années pour le titre de «&nbsp;Meilleur _framework_ de l’année&nbsp;». Cependant tout le monde leur trouve **des défauts**&nbsp;:
+Cependant aucun outil magique n’existe. Parmi les outils auxquels je pense, [Bootstrap](https://getbootstrap.com/) et [Foundation](https://foundation.zurb.com/) se tirent la bourre depuis quelques années pour le titre de «&nbsp;Meilleur _framework_ de l’année&nbsp;». Cependant tout le monde leur trouve **des défauts**&nbsp;:
 
 * trop de dépendances&nbsp;;
 * trop de composants&nbsp;;
@@ -21,7 +21,7 @@ Cependant aucun outil magique n’existe. Parmi les outils auxquels je pense, [B
 * des partis-pris graphiques trop saillant&nbsp;;
 * etc.
 
-Un peu plus récemment sont apparues **des alternatives** —&nbsp;plus légères, agnostiques et moins élaborées graphiquement. On peut citer [Röcssti](https://rocssti.net/) de [Nicolas Hoffmann](http://www.nicolas-hoffmann.net/) ou [Knacss](http://knacss.com/) de [Raphaël Goetter](http://www.goetter.fr/).
+Un peu plus récemment sont apparues **des alternatives** —&nbsp;plus légères, agnostiques et moins élaborées graphiquement. On peut citer [Röcssti](https://rocssti.net/) de [Nicolas Hoffmann](https://www.nicolas-hoffmann.net/) ou [Knacss](https://knacss.com/) de [Raphaël Goetter](https://www.goetter.fr/).
 
 Elles corrigent certains défauts des usines à gaz précédemment citées, mais ne sont pas pour autant exemptes de travers&nbsp;: elles reflètent les choix de leurs auteurs, et généralement **nous n’aurions pas fait les mêmes**.
 

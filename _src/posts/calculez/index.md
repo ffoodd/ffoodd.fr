@@ -30,7 +30,7 @@ Et si je vous rappelle que sur la même valeur, Chrome va **arrondir à la treiz
 
 Admettons. On ne vit qu’une fois, après tout…
 
-C’est probablement anecdotique effectivement, puisque dans le pire des cas vous n’aurez qu’un pixel de plus ou de moins. Cependant si ce «&nbsp;détail&nbsp;» vous intrigue, il est plutôt bien détaillé dans cet article d’Alex Kilgour intitulé [Browser Rounding and Fractional Pixels](http://cruft.io/posts/percentage-calculations-in-ie/).
+C’est probablement anecdotique effectivement, puisque dans le pire des cas vous n’aurez qu’un pixel de plus ou de moins. Cependant si ce «&nbsp;détail&nbsp;» vous intrigue, il est plutôt bien détaillé dans cet article d’Alex Kilgour intitulé [Browser Rounding and Fractional Pixels](https://cruft.io/posts/percentage-calculations-in-ie/).
 
 Personnellement, je me sens un peu sale en laissant traîner des valeurs arbitraires —&nbsp;comme je l’ai déjà évoqué quand je parlais de [calcul magique](https://www.ffoodd.fr/decouvrez-le-calcul-magique/).
 
@@ -53,6 +53,6 @@ Et voilà.[^1]
 
 ### Compatibilité
 
-Et le top, c’est la compatibilité&nbsp;: **tout est au vert depuis IE&nbsp;9**. Voyez plutôt le tableau sur [Can I Use?](http://caniuse.com/#search=calc). Les seules tâches qui subsistent concernent des navigateurs pour téléphones, pour lesquels on peut raisonnablement supposer qu’un affichage d’un tiers de la largeur ne sera pas utile.
+Et le top, c’est la compatibilité&nbsp;: **tout est au vert depuis IE&nbsp;9**. Voyez plutôt le tableau sur [Can I Use?](https://caniuse.com/#search=calc). Les seules tâches qui subsistent concernent des navigateurs pour téléphones, pour lesquels on peut raisonnablement supposer qu’un affichage d’un tiers de la largeur ne sera pas utile.
 
 Alors, demeure-t-il une raison valable d’utiliser des valeurs décimales arbitraires, selon vous&nbsp;?

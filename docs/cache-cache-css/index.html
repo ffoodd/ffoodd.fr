@@ -54,18 +54,20 @@
 				</header>
 				
 	<article role="article" itemscope itemtype="https://schema.org/Article">
-		<time class="screen-reader-text" datetime="2016-10-13T13:11:13" itemprop="datePublished">13 octobre 2016</time><div itemprop="articleBody">
+		<time class="screen-reader-text" datetime="2016-10-13T13:11:13" itemprop="datePublished">13 octobre 2016</time>
+		
+			<div itemprop="articleBody">
 				<p>Et j’ai beau trouver ça idiot — masquer du texte pour certains utilisateurs et pas pour d’autres, ça me paraît incohérent avec l’accessibilité — c’est un besoin récurrent.</p>
-<p>Il existe de nombreuses façons de faire, que je ne détaillerai pas ici. Depuis quelques années, lorsque je le peux, j’utilise celle de <a href="https://twitter.com/thierrykoblentz">Thierry Koblentz</a> pour Yahoo! qui est décrite <a href="https://developer.yahoo.com/blogs/ydn/clip-hidden-content-better-accessibility-53456.html">sur le blog technique de Yahoo!</a> <a href="http://cssmojo.com/hide-content-from-sighted-users/">sur le blog de Thierry</a>. C’est de loin la plus complète, et la seule à ma connaissance à supporter la direction de texte de droite à gauche.</p>
+<p>Il existe de nombreuses façons de faire, que je ne détaillerai pas ici. Depuis quelques années, lorsque je le peux, j’utilise celle de <a href="https://twitter.com/thierrykoblentz">Thierry Koblentz</a> pour Yahoo! qui est décrite <a href="https://developer.yahoo.com/blogs/ydn/clip-hidden-content-better-accessibility-53456.html">sur le blog technique de Yahoo!</a> <a href="https://cssmojo.com/hide-content-from-sighted-users/">sur le blog de Thierry</a>. C’est de loin la plus complète, et la seule à ma connaissance à supporter la direction de texte de droite à gauche.</p>
 <p>Mais elle n’est pas exempte de problème, désormais.</p>
-<h2 id="propri%C3%A9t%C3%A9-d%C3%A9pr%C3%A9ci%C3%A9e" tabindex="-1">Propriété dépréciée</h2>
+<h2 id="propriete-depreciee" tabindex="-1">Propriété dépréciée</h2>
 <p>La « magie » de cette solution repose sur la propriété <code>clip</code>. Elle est simple à comprendre et très efficace. Seul bémol : <code>clip</code> est <strong>déprécié par le module <em><a href="https://drafts.fxtf.org/css-masking-1/#clip-property">CSS masking</a></em></strong> de niveau 1.</p>
-<p>Pas de souci. La technique basée sur <code>clip</code> date un peu, il est normal qu’elle tombe en désuétude. La nouvelle spécification recommande l’utilisation de <code>clip-path</code> pour remplacer <code>clip</code>. Ce qui nous laisse pantois, puisque <a href="http://caniuse.com/#feat=css-clip-path">le support de <code>clip-path</code> est encore tout à fait relatif</a>. <strong>Nous devons conserver <code>clip</code> et ajouter <code>clip-path</code> en guise d’amélioration progressive</strong>.</p>
+<p>Pas de souci. La technique basée sur <code>clip</code> date un peu, il est normal qu’elle tombe en désuétude. La nouvelle spécification recommande l’utilisation de <code>clip-path</code> pour remplacer <code>clip</code>. Ce qui nous laisse pantois, puisque <a href="https://caniuse.com/#feat=css-clip-path">le support de <code>clip-path</code> est encore tout à fait relatif</a>. <strong>Nous devons conserver <code>clip</code> et ajouter <code>clip-path</code> en guise d’amélioration progressive</strong>.</p>
 <p>Cependant la syntaxe est différente également. Après quelques recherches, <a href="https://twitter.com/ryuran78/status/778943389819604992">Yvain Liechti a proposé la version la plus courte pour obtenir le résultat attendu</a> :</p>
 <pre><code class="language-css">clip-path: inset(50%);
 </code></pre>
 <p>Banco. Un problème résolu !</p>
-<h2 id="le-texte-ratatin%C3%A9" tabindex="-1">Le texte ratatiné</h2>
+<h2 id="le-texte-ratatine" tabindex="-1">Le texte ratatiné</h2>
 <p><a href="https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe">J. Renée Beach a signalé</a> que la propriété <code>width: 1px;</code> avait des effets négatifs sur le rendu du texte et par conséquent sa vocalisation par un lecteur d’écran.</p>
 <p>La solution proposée est à la fois logique et simple : empêcher le texte de passer à la ligne et ainsi <strong>garantir que les espaces entre les mots sont conservés</strong>.</p>
 <p>Une seule propriété suffit :</p>
@@ -110,14 +112,14 @@
 <h2 id="code-et-traduction" tabindex="-1">Code et traduction</h2>
 <p>Vous pouvez retrouver ces classes à plusieurs endroits :</p>
 <ul>
-<li><a href="http://codepen.io/ffoodd/pen/gwKZyq?editors=1100#">sur CodePen</a> ;</li>
+<li><a href="https://codepen.io/ffoodd/pen/gwKZyq?editors=1100#">sur CodePen</a> ;</li>
 <li><a href="https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034">dans un Gist</a>.</li>
 </ul>
 <p>Qu’en dites-vous ?</p>
 <h3 id="version-anglaise" tabindex="-1">Version anglaise</h3>
-<p><a href="https://twitter.com/KittyGiraudel">Kitty Giraudel</a> m’a fait l’honneur de <a href="http://kittygiraudel.com/2016/10/13/css-hide-and-seek/">traduire cet article en anglais et le publier sur son blog</a>. Merci !</p>
+<p><a href="https://twitter.com/KittyGiraudel">Kitty Giraudel</a> m’a fait l’honneur de <a href="https://kittygiraudel.com/2016/10/13/css-hide-and-seek/">traduire cet article en anglais et le publier sur son blog</a>. Merci !</p>
 <h2 id="modifications" tabindex="-1">Modifications</h2>
-<h3 id="les-lecteurs-d%E2%80%99%C3%A9cran-sur-mobile" tabindex="-1">Les lecteurs d’écran sur mobile</h3>
+<h3 id="les-lecteurs-decran-sur-mobile" tabindex="-1">Les lecteurs d’écran sur mobile</h3>
 <p>19 octobre 2016</p>
 <p>Ayant besoin de tests sur cette version pour vérifier qu’elle n’introduit pas de régressions, <a href="https://twitter.com/johan_ramon/status/788372720224526336">Johan Ramon m’a remonté un bug étrange sur VoiceOver</a>. En creusant un peu avec <a href="https://github.com/PigeardSylvain">Sylvain Pigeard</a>, il nous est apparu que <code>position: static</code> posait problème lors de la prise de focus d’un lien ayant la classe <code>.sr-only-focusable</code>.</p>
 <p>Nous étions contents, lorsqu’en cherchant à avertir l’équipe de Bootstrap nous sommes tombés sur <a href="https://github.com/twbs/bootstrap/issues/20732">un ticket ouvert récemment qui implique également TalkBack</a>. <a href="https://twitter.com/patrick_h_lauke">Patrick H. Lauke</a>, en investiguant, a décelé de nombreuses incohérences dans la gestion du focus entre les diverses technologies d’assistance sur mobile. Il a ainsi ouvert des tickets un peu partout :</p>
@@ -129,15 +131,17 @@
 <li><a href="https://bugs.webkit.org/show_bug.cgi?id=163658">Webkit</a>, encore.</li>
 </ul>
 <p>L’état des lieux est assez sombre : <strong>les liens d’évitement ne marchent globalement pas sur les interfaces tactiles lorsqu’on utilise un lecteur d’écran</strong>. Ô joie.</p>
-<h3 id="le-r%C3%A9f%C3%A9rencement-naturel" tabindex="-1">Le référencement naturel</h3>
+<h3 id="le-referencement-naturel" tabindex="-1">Le référencement naturel</h3>
 <p>19 octobre 2016</p>
 <p><a href="https://twitter.com/stevefaulkner">Steve Faulkner</a> — du <a href="https://www.paciellogroup.com/blog/">Paciello Group</a> — a posé la question au forum de support pour <em>webmasters</em> de Google : <a href="https://productforums.google.com/forum/#!msg/webmasters/YJcZUhtMIE4/XkOEzVakBAAJ">les contextes supplémentaires pour utilisateurs malvoyants ont-ils un effet négatif sur le positionnement dans les résultats de recherche ?</a></p>
 <p>Réponse courte : <strong>non</strong> Cependant étant donné que ce texte n’apparaît pas de prime abord il est considéré comme du contenu secondaire et a donc un très faible impact sur le positionnement, et c’est une excellente chose puisque cela dissuade d’en abuser.</p>
-<h3 id="les-d%C3%A9bordements-inopin%C3%A9s" tabindex="-1">Les débordements inopinés</h3>
+<h3 id="les-debordements-inopines" tabindex="-1">Les débordements inopinés</h3>
 <p>18 janvier 2019</p>
 <p>De multiples problèmes de débordements ont été observés, notamment sur Chrome, lorsque les éléments masqués sont contenus dans un élément avec <code>overflow: auto;</code>. <a href="https://github.com/Orange-OpenSource/Orange-Boosted-Bootstrap/issues/84">Le problème est résolu dans Boosted</a> en ajoutant <code>margin: -1px;</code>.</p>
 
-			</div><footer class="small mt2">
+			</div>
+		
+		<footer class="small mt2">
 			<p class="pl2 mt0 pt1">
 				Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
 				Modifié le <time class="updated" datetime="2021-03-05T17:07:37" itemprop="dateModified">5 mars 2021</time>.
@@ -157,7 +161,7 @@
 											 src="https://secure.gravatar.com/avatar/a458e575146daa6b981863b801aadfea?s=44&d=mm&r=g"
 											 srcset="https://secure.gravatar.com/avatar/a458e575146daa6b981863b801aadfea?s=88&d=mm&r=g 2x"
 											 class="avatar avatar-44 photo"
-											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="http://ryuran.info" class="url" rel="ugc external nofollow">Yvain Liechti</a></em>
+											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="https://ryuran.info" class="url" rel="ugc external nofollow">Yvain Liechti</a></em>
 								
 								<time datetime="[object Object]" itemprop="commentTime">13 octobre 2016 à 13 h 25 min</time>
 								<a href="#8917">
@@ -263,7 +267,7 @@ Il faudrait avoir un petit benchmark du comportement des différentes solutions 
 						<div itemprop="CommentText"><p>Bonjour Michel,</p>
 <p>J’utilise systématiquement <code>!important</code> sur les classes utilitaires qui ont vocation à figer une propriété, ce qui est le cas ici. L’objectif étant que même incorporé dans un environnement sauvage (plusieurs bibliothèques de styles, des styles supplémentaires rédigés à la main par un débutant, etc.) ces styles soient appliqués. Vous utilisez cette classe pour masquer visuellement un élément’: si cela n’est plus le cas, retirez la classe au lieu de surcharger le style.</p>
 <p>Si d’aventure la personne qui intervient est tentée de retirer le <code>!important</code> — ou d’en ajouter pour le surcharger — elle commet une erreur : c’est la classe sur l’élément HTML qu’elle devrait retirer.</p>
-<p><a href="http://csswizardry.com/2016/05/the-importance-of-important/">Harry Roberts a écrit un article intéressant sur ce sujet, dans lequel il parle d’immuabilité</a>.</p>
+<p><a href="https://csswizardry.com/2016/05/the-importance-of-important/">Harry Roberts a écrit un article intéressant sur ce sujet, dans lequel il parle d’immuabilité</a>.</p>
 <p>C’est de l’ordre du choix, évidemment rien ne vous oblige à les conserver si cela va à l’encontre de vos pratiques.</p>
 </div>
 					</li><li id="9111" class="mb2" itemscope itemtype="https://schema.org/UserComments">
@@ -272,7 +276,7 @@ Il faudrait avoir un petit benchmark du comportement des différentes solutions 
 											 src="https://secure.gravatar.com/avatar/ce82bc828376d978362c1e905b8ea32c?s=44&d=mm&r=g"
 											 srcset="https://secure.gravatar.com/avatar/ce82bc828376d978362c1e905b8ea32c?s=88&d=mm&r=g 2x"
 											 class="avatar avatar-44 photo"
-											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="http://tzi.fr" class="url" rel="ugc external nofollow">tzi</a></em>
+											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="https://tzi.fr" class="url" rel="ugc external nofollow">tzi</a></em>
 								
 								<time datetime="[object Object]" itemprop="commentTime">21 février 2017 à 11 h 37 min</time>
 								<a href="#9111">
@@ -293,7 +297,7 @@ Thomas.</p>
 											 src="https://secure.gravatar.com/avatar/cef8086ec4a82e22034c088b11358aaa?s=44&d=mm&r=g"
 											 srcset="https://secure.gravatar.com/avatar/cef8086ec4a82e22034c088b11358aaa?s=88&d=mm&r=g 2x"
 											 class="avatar avatar-44 photo"
-											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="http://accessiblog.fr" class="url" rel="ugc external nofollow">Olivier Nourry</a></em>
+											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="https://accessiblog.fr" class="url" rel="ugc external nofollow">Olivier Nourry</a></em>
 								
 								<time datetime="[object Object]" itemprop="commentTime">14 juin 2017 à 09 h 32 min</time>
 								<a href="#9586">
@@ -333,7 +337,7 @@ Je viens de faire une passe sur tous mes projets en cours, pour créer un ticket
 		<div class="aside pl2 pt2">
 			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
 			<div class="textwidget">
-				<ol><li><a href="#propri%C3%A9t%C3%A9-d%C3%A9pr%C3%A9ci%C3%A9e">Propriété dépréciée</a></li><li><a href="#le-texte-ratatin%C3%A9">Le texte ratatiné</a></li><li><a href="#la-totale">La totale</a></li><li><a href="#code-et-traduction">Code et traduction</a></li><li><a href="#modifications">Modifications</a></li><li><a href="#comments">Commentaires</a></li></ol>
+				<ol><li><a href="#propriete-depreciee">Propriété dépréciée</a></li><li><a href="#le-texte-ratatine">Le texte ratatiné</a></li><li><a href="#la-totale">La totale</a></li><li><a href="#code-et-traduction">Code et traduction</a></li><li><a href="#modifications">Modifications</a></li><li><a href="#comments">Commentaires</a></li></ol>
 			</div>
 		</div>
 	</aside>

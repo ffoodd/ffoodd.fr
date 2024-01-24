@@ -26,8 +26,8 @@ Cette liste pourrait continuer très longtemps&thinsp;:&nbsp;j’ai réalisé qu
 
 On retrouve cette inspiration dans les balises classiques. La plupart tirent leur origine de l’imprimerie traditionnelle et de la mise en page, mais certaines sont plus amusantes&thinsp;:&nbsp;
 
-* Les boutons `radio` [inspirés des radios et autoradios](http://fr.wikipedia.org/wiki/Bouton_radio "Les origines des boutons radio sur Wikipédia (nouvelle fenêtre)");
-* L’élément `canvas` dont l’origine vient [de la tapisserie et de la broderie](http://fr.wikipedia.org/wiki/Canevas "Définition de canevas sur Wikipédia (nouvelle fenêtre)"), ce qui est plutôt rigolo.
+* Les boutons `radio` [inspirés des radios et autoradios](https://fr.wikipedia.org/wiki/Bouton_radio "Les origines des boutons radio sur Wikipédia (nouvelle fenêtre)");
+* L’élément `canvas` dont l’origine vient [de la tapisserie et de la broderie](https://fr.wikipedia.org/wiki/Canevas "Définition de canevas sur Wikipédia (nouvelle fenêtre)"), ce qui est plutôt rigolo.
 
 Bien qu’amusant, ce sont des choses relativement connues (et évidentes dans l’univers anglophone) mais que j’ai réalisées petit à petit, au fil de ma progression et de mes pérégrinations professionnelles.
 

@@ -32,7 +32,7 @@ Vous connaissiez sans doute déjà le rôle «&nbsp;navigation&nbsp;», qui iden
 
 ## WordPress et le Walker dédié à la navigation
 
-Ce sympathique walker se nomme **Walker\_Nav\_Menu**. Je l’avais rencontré la première fois en farfouillant dans le code de [Reverie](http://themefortress.com/reverie/ "Reverie - un starter theme pour WordPress (nouvelle fenêtre)"), sans en saisir l’intérêt à l’époque. Puis mes compétences et réflexions évoluant avec le temps, lorsque je le recroisais sur le blog de [Willy Bahuaud](https://twitter.com/willybahuaud "Willy Bahuaud sur Twitter (nouvelle fenêtre)") dans [son article présentant les walkers](http://wabeo.fr/blog/construire-walker-wordpress/ "Construire un walker WordPress (nouvelle fenêtre)"), j’en saisis rapidement l’intérêt et me mit en tête de m’en servir sur mon thème ffeeeedd.
+Ce sympathique walker se nomme **Walker\_Nav\_Menu**. Je l’avais rencontré la première fois en farfouillant dans le code de [Reverie](https://themefortress.com/reverie/ "Reverie - un starter theme pour WordPress (nouvelle fenêtre)"), sans en saisir l’intérêt à l’époque. Puis mes compétences et réflexions évoluant avec le temps, lorsque je le recroisais sur le blog de [Willy Bahuaud](https://twitter.com/willybahuaud "Willy Bahuaud sur Twitter (nouvelle fenêtre)") dans [son article présentant les walkers](https://wabeo.fr/blog/construire-walker-wordpress/ "Construire un walker WordPress (nouvelle fenêtre)"), j’en saisis rapidement l’intérêt et me mit en tête de m’en servir sur mon thème ffeeeedd.
 
 Je vous recommande chaudement de lire l’article de Willy sur le sujet, qui est une entrée en matière extrêmement intéressante.
 
@@ -46,9 +46,9 @@ Voilà sans plus attendre le code obtenu après quelques recherche :
  * @note : Un walker nous permet de amnipuler le html généré pour la navigation afin d’y ajouter les roles aria qui vont bien.
  * @author : Gaël Poupard
  * @see : https://twitter.com/ffoodd_fr
- * @see : http://wabeo.fr/blog/construire-walker-wordpress/
+ * @see : https://wabeo.fr/blog/construire-walker-wordpress/
  * @author : Willy Bahuaud
- * @see : http://core.trac.wordpress.org/browser/tags/3.6.1//wp-includes/nav-menu-template.php#L0
+ * @see : https://core.trac.wordpress.org/browser/tags/3.6.1//wp-includes/nav-menu-template.php#L0
  */
   class ffeeeedd__walker extends Walker_Nav_Menu {
   function start_el( &$output, $item, $depth = 1, $args = array(), $id = 0 ) {

@@ -15,7 +15,7 @@ date_de_parution: "18/07/2014"
 ean13: "9781118531648"
 nombre_de_pages: "640"
 collection: "Wiley"
-lien: "http://eu.wiley.com/WileyCDA/WileyTitle/productCd-1118531647.html"
+lien: "https://eu.wiley.com/WileyCDA/WileyTitle/productCd-1118531647.html"
 note: "4"
 ---
 Ce livre vise à faire le premier pas vers une utilisation correcte du JS. Il explique en détail les concepts clés du langage.

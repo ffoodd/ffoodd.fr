@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Un test Modernizr pour les contrastes élevés — La vie en #ffoodd</title>
-		<meta name="description" content="Le test conçu par Hans Hillen et présenté par Karl Groves &lt;a hreflang=&quot;en&quot; href=&quot;http://jsfiddle.net/karlgroves/XR8Su/6/&quot;&gt;sur JS Fiddle&lt;/a&gt; est top.">
+		<meta name="description" content="Le test conçu par Hans Hillen et présenté par Karl Groves &lt;a hreflang=&quot;en&quot; href=&quot;https://jsfiddle.net/karlgroves/XR8Su/6/&quot;&gt;sur JS Fiddle&lt;/a&gt; est top.">
 		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 		<link rel="stylesheet" href="/assets/styles.min.css" media="all">
 		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
@@ -49,12 +49,14 @@
 
 					
 					
-						<h2 class="h3-like description" itemprop="description">Le test conçu par Hans Hillen et présenté par Karl Groves <a hreflang="en" href="http://jsfiddle.net/karlgroves/XR8Su/6/">sur JS Fiddle</a> est top.</h2>
+						<h2 class="h3-like description" itemprop="description">Le test conçu par Hans Hillen et présenté par Karl Groves <a hreflang="en" href="https://jsfiddle.net/karlgroves/XR8Su/6/">sur JS Fiddle</a> est top.</h2>
 					
 				</header>
 				
 	<article role="article" itemscope itemtype="https://schema.org/Article">
-		<time class="screen-reader-text" datetime="2015-11-25T15:06:44" itemprop="datePublished">25 novembre 2015</time><div itemprop="articleBody">
+		<time class="screen-reader-text" datetime="2015-11-25T15:06:44" itemprop="datePublished">25 novembre 2015</time>
+		
+			<div itemprop="articleBody">
 				<p>Malheureusement, il ne répond pas correctement lorsque lʼutilisateur a personnalisé les couleurs des liens ou utilise un thème navigateur aux contrastes élevés — ce que jʼai testé avec Firefox. En sus, et bien quʼil soit conçu de façon à renvoyer un booléen, il se couple difficilement avec un outil spécialisé tel que <a href="https://modernizr.com/">Modernizr</a>.</p>
 <h2 id="les-changements" tabindex="-1">Les changements</h2>
 <p>On va faire simple, puisque vous avez lʼexemple de Karl Groves en amont ! Les seules modifications apportées sont :</p>
@@ -77,7 +79,7 @@ Modernizr.addTest(&quot;highcontrast&quot;, function() {
   return strColor !== &quot;rgb(31,41,59)&quot;;
 });
 </code></pre>
-<p>Rien de bien méchant 😊 Jʼai créé <a href="http://codepen.io/ffoodd/pen/RWmmOO">un CodePen dédié uniquement à ce test</a> avec quelques commentaires et une illustration basique en HTML.</p>
+<p>Rien de bien méchant 😊 Jʼai créé <a href="https://codepen.io/ffoodd/pen/RWmmOO">un CodePen dédié uniquement à ce test</a> avec quelques commentaires et une illustration basique en HTML.</p>
 <h2 id="la-couverture" tabindex="-1">La couverture</h2>
 <p>Pour commencer, cette version est un test Modernizr. Nul besoin de télécharger tout la bibliothèque de tests cependant, sa seule et unique dépendance est la méthode <code>addTest()</code>, dont lʼoutil de construction personnalisée de Modernizr indique quʼelle pèse 2,53 kB (et 1,08 kB une fois compressé avec gzip).</p>
 <p>Ensuite et pour le cas ou vous ne liriez pas couramment le JavaScript, le test procède ainsi :</p>
@@ -101,7 +103,9 @@ Modernizr.addTest(&quot;highcontrast&quot;, function() {
 </li>
 
 
-			</div><footer class="small mt2">
+			</div>
+		
+		<footer class="small mt2">
 			<p class="pl2 mt0 pt1">
 				Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
 				Modifié le <time class="updated" datetime="2015-11-25T15:06:44" itemprop="dateModified">25 novembre 2015</time>.

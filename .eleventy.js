@@ -5,6 +5,8 @@ const figure = require("markdown-it-image-figures");
 const footnote = require("markdown-it-footnote");
 const tocPlugin = require("eleventy-plugin-toc");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const string = require('string')
+const slugify = s => string(s).slugify().toString()
 
 module.exports = function (eleventyConfig) {
 
@@ -42,7 +44,7 @@ module.exports = function (eleventyConfig) {
 		typographer: true,
 		quotes: ['«\xA0', '\xA0»', '‹\xA0', '\xA0›'],
 	})
-		.use(anchor)
+		.use(anchor, { slugify })
 		.use(footnote)
 		.use(figure, {
 			figcaption: true,
@@ -75,8 +77,6 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.setServerOptions({
 		liveReload: true
 	})
-
-	// @todo Vérifier les 404 (sur les images notamment)
 
 	return {
 			dir: {

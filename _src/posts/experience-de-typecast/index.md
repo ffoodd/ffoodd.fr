@@ -7,7 +7,7 @@ permalink: "experience-de-typecast/index.html"
 excerpt: "Typecast est un outil conçu pour vous faciliter la recherche de typographies : échelle typographique, association, couleurs, et même CSS. Piochez dans le catalogue de grandes fonderies et designez !"
 format: "standard"
 tags: "posts"
-description: "La précédente version de ffoodd manquait de lisibilité. J'ai donc axé le travail de refonte sur la typographie, et ai enfin eu l'occasion de tester l'outil approprié : <a href=\"http://typecast.com/\" title=\"Typecast (nouvelle fenêtre)\" target=\"_blank\">Typecast</a>."
+description: "La précédente version de ffoodd manquait de lisibilité. J'ai donc axé le travail de refonte sur la typographie, et ai enfin eu l'occasion de tester l'outil approprié : <a href=\"https://typecast.com/\" title=\"Typecast (nouvelle fenêtre)\" target=\"_blank\">Typecast</a>."
 ---
 ## Présentation
 
@@ -23,10 +23,10 @@ De charmantes intentions !
 L’outil propose un large choix de typographie, bien pratique pour le casting à venir. Vous pouvez parcourir plusieurs grandes fonderies disposant de plans de distribution adaptés au web :
 
 * [Typekit](https://typekit.com/fonts "Typekit (nouvelle fenêtre)")
-* [Fonts.com](http://www.fonts.com/ "Fonts.com (nouvelle fenêtre)")
-* [FontDeck](http://fontdeck.com/ "FontDeck (nouvelle fenêtre)")
-* [Google](http://www.google.com/fonts "Google Webfont (nouvelle fenêtre)")
-* [Webtype](http://www.webtype.com/ "WebType (nouvelle fenêtre)")
+* [Fonts.com](https://www.fonts.com/ "Fonts.com (nouvelle fenêtre)")
+* [FontDeck](https://fontdeck.com/ "FontDeck (nouvelle fenêtre)")
+* [Google](https://www.google.com/fonts "Google Webfont (nouvelle fenêtre)")
+* [Webtype](https://www.webtype.com/ "WebType (nouvelle fenêtre)")
 
 Autant ne pas vous le cacher : **quel plaisir de parcourir le catalogue de ces fonderies** ! Le bas blesse légèrement malgré tout car aucune distinction n’est faite entre les typographies gratuites ou payantes, ce qui peut réserver des surprises 🙂
 

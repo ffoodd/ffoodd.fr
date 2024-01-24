@@ -14,7 +14,7 @@ date_de_parution: "25/10/2012"
 ean13: "9782212128895"
 nombre_de_pages: "332"
 collection: "Accès libre"
-lien: "http://www.eyrolles.com/Informatique/Livre/accessibilite-web-9782212128895"
+lien: "https://www.eyrolles.com/Informatique/Livre/accessibilite-web-9782212128895"
 note: "5"
 ---
 Une fois passée l’appréhension due au format du livre et au thème ‐ qui a la réputation d’être lourd, cognitivement parlant ‐ on est pris dans l’engrenage : de la première à la dernière page, impossible de décrocher.
@@ -23,9 +23,9 @@ Une fois passée l’appréhension due au format du livre et au thème ‐ qui a
 
 Parmi les professionnels du web en France, le sujet semble avoir mauvaise haleine : hormis les entreprises spécialisées, les experts qualifiés et quelques pointures de la qualité web, le sujet semble tabou. L’image d’un domaine compliqué, difficile à mettre en place comme à apprendre et coûteux pour le client comme pour le prestataire lui colle aux basques.
 
-Ce livre d’[Armony Altinier](http://www.armonyaltinier.fr/ "Le site d’Armony Altinier (nouvelle fenêtre)")&nbsp;et Dominique Burger commence donc sereinement par replacer l’accessibilité web dans un contexte historique, technologique et juridique : j’ai énormément appris ! Cette seule première partie vaut le détour, car ces informations rendent la question de l’accessibilité web naturelle, voire évidente. Mais attention : le livre n’est pas indigeste pour autant. Les auteurs tentent judicieusement d’impliquer la compréhension des lecteurs, en mettant en scène des événements qui peuvent arriver à tout le monde : un bras cassé ou une panne de souris, par exemple.
+Ce livre d’[Armony Altinier](https://www.armonyaltinier.fr/ "Le site d’Armony Altinier (nouvelle fenêtre)")&nbsp;et Dominique Burger commence donc sereinement par replacer l’accessibilité web dans un contexte historique, technologique et juridique : j’ai énormément appris ! Cette seule première partie vaut le détour, car ces informations rendent la question de l’accessibilité web naturelle, voire évidente. Mais attention : le livre n’est pas indigeste pour autant. Les auteurs tentent judicieusement d’impliquer la compréhension des lecteurs, en mettant en scène des événements qui peuvent arriver à tout le monde : un bras cassé ou une panne de souris, par exemple.
 
-La partie historique est également enrichissante, notamment en ce qui concerne les deux référentiels Français : [Accessiweb](http://www.accessiweb.org/ "Accessiweb.org (nouvelle fenêtre)") et [RGAA](http://references.modernisation.gouv.fr/rgaa-accessibilite "Présentation du Référentiel Général d’Accessibilité pour les Administrations (nouvelle fenêtre)"). L’accessibilité est un sujet mouvant et bien que disposant de référentiels aux critères précis, ils ne sont pas pour autant tous pertinents. **Tout est toujours une affaire de contexte.**
+La partie historique est également enrichissante, notamment en ce qui concerne les deux référentiels Français : [Accessiweb](https://www.accessiweb.org/ "Accessiweb.org (nouvelle fenêtre)") et [RGAA](https://references.modernisation.gouv.fr/rgaa-accessibilite "Présentation du Référentiel Général d’Accessibilité pour les Administrations (nouvelle fenêtre)"). L’accessibilité est un sujet mouvant et bien que disposant de référentiels aux critères précis, ils ne sont pas pour autant tous pertinents. **Tout est toujours une affaire de contexte.**
 
 ## Détail des thématiques Accessiweb
 

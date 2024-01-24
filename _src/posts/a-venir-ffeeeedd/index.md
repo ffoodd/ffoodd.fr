@@ -11,10 +11,10 @@ description: "Au fil des années de pratique qui se succèdent, chaque professio
 ---
 On a ainsi vu germer ces dernières années une multitude d’outils, proposés par des professionnels aguerris et basés sur leur expérience et leur envie de partager leurs connaissances. Certains sont l’œuvre d’un seul, d’autres le fruit d’une communauté de passionnés. On peut en citer quelques-uns :
 
-* [HTML5 Boilerplate](http://html5boilerplate.com/) par Nicolas Gallagher, Hans Christian Reinl, Cãtãlin Mariş, Mathias Bynens, Paul Irish, & Divya Manian ( et une communauté gigantesque ).
-* [Knacss](http://knacss.com/ "Knacss") par Raphaël Goetter
-* [Starkers](http://viewportindustries.com/products/starkers/ "Viewport Industries’ Starkers") Par Viewport Industries
-* [Reverie](http://themefortress.com/reverie/ "Reverie") Par ThemeFortress et basé sur [Foundation](http://foundation.zurb.com/)
+* [HTML5 Boilerplate](https://html5boilerplate.com/) par Nicolas Gallagher, Hans Christian Reinl, Cãtãlin Mariş, Mathias Bynens, Paul Irish, & Divya Manian ( et une communauté gigantesque ).
+* [Knacss](https://knacss.com/ "Knacss") par Raphaël Goetter
+* [Starkers](https://viewportindustries.com/products/starkers/ "Viewport Industries’ Starkers") Par Viewport Industries
+* [Reverie](https://themefortress.com/reverie/ "Reverie") Par ThemeFortress et basé sur [Foundation](https://foundation.zurb.com/)
 
 J’ai parcouru, décortiqué et utilisé beaucoup d’outils de ce type. Mais un constat demeure : aucun n’a jamais été parfaitement accordé à mes besoins, et c’est tout à fait normal.
 

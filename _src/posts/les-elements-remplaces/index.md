@@ -4,7 +4,7 @@ title: "Les éléments remplacés"
 date: "2015-11-16T19:16:54"
 modified: "2015-11-30T10:34:36"
 permalink: "les-elements-remplaces/index.html"
-excerpt: "En travaillant sur [a11y.css](http://ffoodd.github.io/a11y.css/ 'a11y.css sur Github (en anglais)'), les balises auto-fermantes et éléments remplacés [mʼont causé quelques tracas](https://github.com/ffoodd/a11y.css/blob/master/README-fr.md#cas-particuliers-et-probl%C3%A8mes-connus). Jʼen remets une couche aujourdʼhui avec un cas particulier au sein de ces cas particuliers&nbsp;: les **boutons**."
+excerpt: "En travaillant sur [a11y.css](https://ffoodd.github.io/a11y.css/ 'a11y.css sur Github (en anglais)'), les balises auto-fermantes et éléments remplacés [mʼont causé quelques tracas](https://github.com/ffoodd/a11y.css/blob/master/README-fr.md#cas-particuliers-et-probl%C3%A8mes-connus). Jʼen remets une couche aujourdʼhui avec un cas particulier au sein de ces cas particuliers&nbsp;: les **boutons**."
 format: "standard"
 tags: "posts"
 description: "Les ressources sont rares sur le sujet, et le sujet des éléments remplacés se mélange parfois avec celui des balises auto-fermantes."
@@ -15,7 +15,7 @@ Pourtant —&nbsp;et malgré le fait que **la plupart** des éléments remplacé
 
 ### La définition de Dudley Storey
 
-La plus connue est celle proposée par Dudley Storey dans son article «&nbsp;[What’s A Replaced Element?](http://thenewcode.com/461/What-The-Heck-Is-A-Replaced-Element)&nbsp;» (traduit en Français sur [La Cascade](https://la-cascade.io/quest-ce-quun-element-remplace/)) que voici&nbsp;:
+La plus connue est celle proposée par Dudley Storey dans son article «&nbsp;[What’s A Replaced Element?](https://thenewcode.com/461/What-The-Heck-Is-A-Replaced-Element)&nbsp;» (traduit en Français sur [La Cascade](https://la-cascade.io/quest-ce-quun-element-remplace/)) que voici&nbsp;:
 
 > Les éléments remplacés sont essentiellement des éléments qui ont des dimensions pré-déterminées, sans bénéficier de CSS. Une autre façon de comprendre les éléments remplacés est “&nbsp;ce sont les éléments dont le contenu est remplacé par une source extérieure&nbsp;”.
 
@@ -27,7 +27,7 @@ Cʼest très bien, mais ça nʼest pas tout à fait ça. En réalité **cette d�
 
 ### La référence de SitePoint
 
-SitePoint propose [une définition un peu plus pointue (en anglais)](http://reference.sitepoint.com/css/replacedelements) indiquant quʼun élément remplacé est un élément dont lʼapparence et les dimensions sont définies par une ressource externe. Les détails sont assez intéressants (notamment le dernier paragraphe sur le contexte _inline_) mais là encore cʼest **en léger décalage avec la réalité**.
+SitePoint propose [une définition un peu plus pointue (en anglais)](https://reference.sitepoint.com/css/replacedelements) indiquant quʼun élément remplacé est un élément dont lʼapparence et les dimensions sont définies par une ressource externe. Les détails sont assez intéressants (notamment le dernier paragraphe sur le contexte _inline_) mais là encore cʼest **en léger décalage avec la réalité**.
 
 En revanche ce qui est amusant, cʼest que **la définition réelle est cachée dans le troisième paragraphe**&nbsp;: «&nbsp;Les éléments remplacés peuvent également avoir des pré-requis de mise en forme imposés par lʼélément, **hors du contrôle du CSS**&nbsp;; par exemple, les contrôles de lʼinterface utilisateur rendus pour les éléments de formulaires&nbsp;».
 
@@ -35,7 +35,7 @@ En fait ils ne se contentent pas de pouvoir.
 
 ## La spécification cachée
 
-Soyons honnête, elle est vraiment galère à trouver. Le W3C précise [dans CSS2.1 (en anglais)](http://www.w3.org/TR/CSS21/conform.html#replaced-element) quʼun élément remplacé «&nbsp;est un élément dont le contenu est hors de la portée du modèle de mise en forme CSS&nbsp;». Si vous en avez le courage, [la spécification HTML5](http://www.w3.org/TR/html51/rendering.html#replaced-elements) est plus absconse mais rejoint globalement ce qui est dit précédemment.
+Soyons honnête, elle est vraiment galère à trouver. Le W3C précise [dans CSS2.1 (en anglais)](https://www.w3.org/TR/CSS21/conform.html#replaced-element) quʼun élément remplacé «&nbsp;est un élément dont le contenu est hors de la portée du modèle de mise en forme CSS&nbsp;». Si vous en avez le courage, [la spécification HTML5](https://www.w3.org/TR/html51/rendering.html#replaced-elements) est plus absconse mais rejoint globalement ce qui est dit précédemment.
 
 **Simple, non&nbsp;?** Ça inclut effectivement les éléments qui ont des dimensions intrinsèques, même lorsquʼelles peuvent être surchargées _via_ CSS. [La liste dont je dispose est documentée sur a11y.css](https://github.com/ffoodd/a11y.css/blob/master/README-fr.md#cas-particuliers-et-problèmes-connus). Elle contient lʼensemble des balises auto-fermantes, ainsi que les éléments de formulaires et les objets multimédias.
 
@@ -63,7 +63,7 @@ button {
 
 Jʼavais tendance à penser que ce CSS ne produirait rien, puisquʼ**on ne peut pas définir de dimension sur un élément _inline_**. Sauf quʼun bouton a donc des dimensions intrinsèques quʼon peut surcharger —&nbsp;alors même que ces styles sont considérés comme hors de portée de CSS. La magie opère&nbsp;: **un bouton en ligne obéira à une définition de sa largeur**.
 
-Vous pouvez jouer avec [ce dabblet](http://dabblet.com/gist/d94397d5d22a7cc9c1eb) pour vous en convaincre.
+Vous pouvez jouer avec [ce dabblet](https://dabblet.com/gist/d94397d5d22a7cc9c1eb) pour vous en convaincre.
 
 ## Un réel problème&nbsp;?
 

@@ -4,16 +4,16 @@ title: "Les champs images cassés"
 date: "2016-03-31T10:27:00"
 modified: "2016-03-31T10:27:00"
 permalink: "les-champs-images-casses/index.html"
-excerpt: "Il y a quelques jours, [Ire Aderinokun](http://bitsofco.de/) a dévoilé que les images cassées supportaient les pseudo-éléments. En bossant sur [a11y.css](https://github.com/ffoodd/a11y.css), je me suis aperçu que ça valait également pour les champs images."
+excerpt: "Il y a quelques jours, [Ire Aderinokun](https://bitsofco.de/) a dévoilé que les images cassées supportaient les pseudo-éléments. En bossant sur [a11y.css](https://github.com/ffoodd/a11y.css), je me suis aperçu que ça valait également pour les champs images."
 format: "standard"
 tags: "posts"
 description: "Il est rare de sʼen servir de nos jours, je sais bien. Nʼempêche, je mʼen sers sur <a href=\"https://github.com/ffoodd/a11y.css\" hreflang=\"en\">a11y.css</a> et cʼest ma joie."
 ---
-[Ire Aderinokun](http://bitsofco.de/) a brisé un mythe il y a quelques jours à propos des pseudos-éléments sur la balise `img`.
+[Ire Aderinokun](https://bitsofco.de/) a brisé un mythe il y a quelques jours à propos des pseudos-éléments sur la balise `img`.
 
 ## On récapitule, pour ceux du fond
 
-Lʼélément `img` est ce quʼon appelle **un élément remplacé**. Je vous conseille à ce propos la lecture de «&nbsp;[Qu’est-ce qu’un élément remplacé&nbsp;?](http://la-cascade.ghost.io/quest-ce-quun-element-remplace/)&nbsp;», traduction en français sur La Cascade de «&nbsp;[What The Heck Is A Replaced Element?](https://demosthenes.info/blog/461/What-The-Heck-Is-A-Replaced-Element#)&nbsp;» écrit par [Dudley Storey](https://twitter.com/dudleystorey).
+Lʼélément `img` est ce quʼon appelle **un élément remplacé**. Je vous conseille à ce propos la lecture de «&nbsp;[Qu’est-ce qu’un élément remplacé&nbsp;?](https://la-cascade.ghost.io/quest-ce-quun-element-remplace/)&nbsp;», traduction en français sur La Cascade de «&nbsp;[What The Heck Is A Replaced Element?](https://demosthenes.info/blog/461/What-The-Heck-Is-A-Replaced-Element#)&nbsp;» écrit par [Dudley Storey](https://twitter.com/dudleystorey).
 
 Cela signifie que la balise nʼest fonctionnelle que si le contenu qui est censé le remplacer est présent. Pour la plupart des éléments remplacés, ça a peu dʼincidence puisque cʼest le système qui sʼen charge —&nbsp;cʼest notamment le cas des éléments de formulaire tels que `input`, `textarea` ou `select`.
 
@@ -21,13 +21,13 @@ En revanche dʼautres éléments ont besoin quʼon leur dise par quoi ils vont �
 
 ## Le test de la source manquante dans a11y.css
 
-Comble de lʼironie, ça fait bientôt deux ans que jʼapplique [un test dans a11y.css pour vérifier que la source est mentionnée](http://ffoodd.github.io/a11y.css/errors.html#no-src).[^1]
+Comble de lʼironie, ça fait bientôt deux ans que jʼapplique [un test dans a11y.css pour vérifier que la source est mentionnée](https://ffoodd.github.io/a11y.css/errors.html#no-src).[^1]
 
 [^1]: Impossible de vérifier, lorsque la source est présente, quʼelle est bel et bien valide. Dommage.
 
 
 
-Mais alors, se pourrait-il que cette astuce fonctionne également sur ce type de champ&nbsp;? **Et bien oui.** Je vous ai préparé [un codePen de démonstration avec le champ de type image](http://codepen.io/ffoodd/pen/vGJPLe).
+Mais alors, se pourrait-il que cette astuce fonctionne également sur ce type de champ&nbsp;? **Et bien oui.** Je vous ai préparé [un codePen de démonstration avec le champ de type image](https://codepen.io/ffoodd/pen/vGJPLe).
 
 Ce nʼest pas une révolution —&nbsp;et globalement personne ne sʼen servira&nbsp;— mais allez savoir.
 

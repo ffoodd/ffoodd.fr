@@ -54,15 +54,17 @@
 				</header>
 				
 	<article role="article" itemscope itemtype="https://schema.org/Article">
-		<time class="screen-reader-text" datetime="2014-03-11T15:44:26" itemprop="datePublished">11 mars 2014</time><div itemprop="articleBody">
-				<p>Mais lorsque <a href="https://twitter.com/KittyGiraudel" title="Sur Twitter">Kitty Giraudel</a> a lancé son <a href="http://kittygiraudel.com/2014/02/19/the-magic-circle-a-css-brain-teaser/">CSS brain teaser</a>.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
-<h2 id="les-sp%C3%A9cifications-actuelles" tabindex="-1">Les spécifications actuelles</h2>
+		<time class="screen-reader-text" datetime="2014-03-11T15:44:26" itemprop="datePublished">11 mars 2014</time>
+		
+			<div itemprop="articleBody">
+				<p>Mais lorsque <a href="https://twitter.com/KittyGiraudel" title="Sur Twitter">Kitty Giraudel</a> a lancé son <a href="https://kittygiraudel.com/2014/02/19/the-magic-circle-a-css-brain-teaser/">CSS brain teaser</a>.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<h2 id="les-specifications-actuelles" tabindex="-1">Les spécifications actuelles</h2>
 <p>Ne connaissant que de très loin cette propriété, il a fallu me mettre à jour. <code>clip-path</code>, à l’instar de <code>clip</code>, sert à délimiter la zone d’affichage d’un contenu. Je m’oriente vers les spécifications pour compléter cet embryon de culture — et là, c’est le drame :</p>
 <ul>
-<li><a href="http://www.w3.org/TR/css-masking-1/#the-clip-path" title="en Anglais">La spécification de la propriété</a> <code>clip-path</code> au sein du module <em>CSS masking</em>, encore à l’état de brouillon;</li>
-<li>Qui nous renvoie <a href="http://www.w3.org/TR/2013/WD-css-shapes-1-20130620/#basic-shapes-from-svg-syntax" title="en Anglais">aux formes basiques</a> en SVG;</li>
-<li>Tout cela en se référant sans arrêt à <a href="http://www.w3.org/TR/css-masking-1/#ClipPathElement" title="en Anglais">l’élément SVG <code>ClipPath</code></a>;</li>
-<li>De fil en aiguille, citons également le module <em>Masking</em> de la spécification SVG — et notamment <a href="http://www.w3.org/TR/SVG/masking.html#ClippingPaths" title="en Anglais">la section sur les <em>Clipping paths</em></a>.</li>
+<li><a href="https://www.w3.org/TR/css-masking-1/#the-clip-path" title="en Anglais">La spécification de la propriété</a> <code>clip-path</code> au sein du module <em>CSS masking</em>, encore à l’état de brouillon;</li>
+<li>Qui nous renvoie <a href="https://www.w3.org/TR/2013/WD-css-shapes-1-20130620/#basic-shapes-from-svg-syntax" title="en Anglais">aux formes basiques</a> en SVG;</li>
+<li>Tout cela en se référant sans arrêt à <a href="https://www.w3.org/TR/css-masking-1/#ClipPathElement" title="en Anglais">l’élément SVG <code>ClipPath</code></a>;</li>
+<li>De fil en aiguille, citons également le module <em>Masking</em> de la spécification SVG — et notamment <a href="https://www.w3.org/TR/SVG/masking.html#ClippingPaths" title="en Anglais">la section sur les <em>Clipping paths</em></a>.</li>
 </ul>
 <p>On peut d’ores et déjà noter une différence remarquable entre les états de ces deux spécifications : l’une est en brouillon, l’autre en recommandation. La spécification SVG est extrêmement aboutie et claire, les ressources ne manquent pas.<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
 <p>En revanche le module CSS est obscur. Il existe un lien étroit entre les deux spécifications, car le brouillon du module <em>CSS Masking</em> s’appuie énormément sur la spécification SVG — et qu’en SVG il existe l’attribut <code>clip-path</code>. Ça génère des incompréhensions qui ne vont pas faciliter la prise en main de cette propriété.</p>
@@ -79,7 +81,7 @@
 }
 </code></pre>
 <h2 id="les-origines" tabindex="-1">Les origines</h2>
-<p>Il faut sonder un peu les origines de ce module CSS pour en comprendre l’obscurité. Bien que déjà en cours d’élaboration dans le cadre technique du SVG, la possibilité de masquer des éléments en CSS existait depuis CSS 2.1 grâce à la propriété <code>clip</code>, désormais <a href="http://www.w3.org/TR/css-masking-1/#clip-property" title="en Anglais">dépréciée</a>.<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></p>
+<p>Il faut sonder un peu les origines de ce module CSS pour en comprendre l’obscurité. Bien que déjà en cours d’élaboration dans le cadre technique du SVG, la possibilité de masquer des éléments en CSS existait depuis CSS 2.1 grâce à la propriété <code>clip</code>, désormais <a href="https://www.w3.org/TR/css-masking-1/#clip-property" title="en Anglais">dépréciée</a>.<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></p>
 <p>Cette propriété n’a jamais réellement trouvé son public, car elle a deux inconvénients majeurs :</p>
 <ol>
 <li>L’élément masqué doit être en position absolue;</li>
@@ -90,14 +92,14 @@
 <h2 id="des-ressources-dissonantes" tabindex="-1">Des ressources dissonantes</h2>
 <p>Il est fort peu probable que personne avant moi ne s’y soit intéressé. Et en effet, quatre ressources principales sont indispensables pour appréhender <code>clip-path</code> :</p>
 <ul>
-<li><a href="http://www.html5rocks.com/en/tutorials/masking/adobe/" title="en Anglais">CSS Masking</a> sur HTML5Rocks;</li>
-<li>L’article dédié sur <a href="http://docs.webplatform.org/wiki/css/properties/clip-path" title="en Anglais">Web Platform Docs</a>;</li>
-<li>Un tutoriel avancé sur <a href="http://thenittygritty.co/css-masking" title="en Anglais">The Nitty Gritty</a>;</li>
-<li>L’article de l’Avent par Vincent De Oliveira sur <a href="http://www.24joursdeweb.fr/2013/les-masques-css/">24 jours de web</a>;</li>
+<li><a href="https://www.html5rocks.com/en/tutorials/masking/adobe/" title="en Anglais">CSS Masking</a> sur HTML5Rocks;</li>
+<li>L’article dédié sur <a href="https://docs.webplatform.org/wiki/css/properties/clip-path" title="en Anglais">Web Platform Docs</a>;</li>
+<li>Un tutoriel avancé sur <a href="https://thenittygritty.co/css-masking" title="en Anglais">The Nitty Gritty</a>;</li>
+<li>L’article de l’Avent par Vincent De Oliveira sur <a href="https://www.24joursdeweb.fr/2013/les-masques-css/">24 jours de web</a>;</li>
 </ul>
 <p>Comme vous vous en apercevrez en les lisant, le contenu est disparate. La compatibilité navigateur est abordée différemment.<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup></p>
 <p>À l’instar de la spécification qui intègre les clips <strong>et</strong> les masques, ces ressources présentent les deux techniques. Dommage car deux articles distincts auraient été bien plus clairs !</p>
-<h2 id="un-bilan-mitig%C3%A9" tabindex="-1">Un bilan mitigé</h2>
+<h2 id="un-bilan-mitige" tabindex="-1">Un bilan mitigé</h2>
 <p>Après avoir compulsé maladivement les spécifications, articles, tutoriaux et autres exemples pendant quelques jours, j’ai abouti à un exemple ressemblant à ceci :</p>
 <pre><code class="language-css">
 /**
@@ -135,12 +137,12 @@
 <h2 id="une-solution-correcte" tabindex="-1">Une solution correcte</h2>
 <p>Malgré le support disparate et le funambulisme nécessaire pour aboutir à un résultat viable, j’ai trouvé <code>clip-path</code> extrêmement intéressant — et notamment grâce à la dégradation possible à l’aide de <code>clip</code> sur de très vieux navigateurs et de façon simplissime.</p>
 <p>Ce repli implique de perdre les formes personnalisées au profit d’un rectangle « simple », ce qui fut considéré comme acceptable lors de l’avènement de <code>border-radius</code> par exemple. Et je suppose que dans la plupart des cas, cette solution reste acceptable.</p>
-<p>Vous trouverez donc ma solution au casse-tête proposé par Kitty <a href="http://codepen.io/ffoodd/pen/Eolkb" title="en Anglais">sur CodePen</a>, détaillée, commentée, agrémentée de diverses précisions — en Anglais.</p>
+<p>Vous trouverez donc ma solution au casse-tête proposé par Kitty <a href="https://codepen.io/ffoodd/pen/Eolkb" title="en Anglais">sur CodePen</a>, détaillée, commentée, agrémentée de diverses précisions — en Anglais.</p>
 <p>Tout retour sera le bienvenu 🙂 .</p>
-<h3 id="mise-%C3%A0-jour" tabindex="-1">Mise à jour</h3>
+<h3 id="mise-a-jour" tabindex="-1">Mise à jour</h3>
 <p>Moins d’une semaine avant la publication de mon article, le brouillon du W3C concernant la notation des formes basiques a évolué. Je cite <a href="https://twitter.com/iamvdo">Vincent De Oliveira</a>, qui a partagé l’information avec moi :</p>
 <blockquote>
-<p>Par contre, la notation des basic-shapes ont (encore) changées récemment! 😛 <a href="http://dev.w3.org/csswg/css-shapes/#basic-shape-functions" title="en Anglais">dev.w3.org</a></p>
+<p>Par contre, la notation des basic-shapes ont (encore) changées récemment! 😛 <a href="https://dev.w3.org/csswg/css-shapes/#basic-shape-functions" title="en Anglais">dev.w3.org</a></p>
 </blockquote>
 <p>Ô joie. Merci à Vincent en tout cas !</p>
 <ol class="footnotes-list small mt2 pt2 pb2">
@@ -160,7 +162,9 @@
 </li>
 
 
-			</div><footer class="small mt2">
+			</div>
+		
+		<footer class="small mt2">
 			<p class="pl2 mt0 pt1">
 				Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
 				Modifié le <time class="updated" datetime="2021-03-05T17:09:34" itemprop="dateModified">5 mars 2021</time>.
@@ -180,7 +184,7 @@
 											 src="https://secure.gravatar.com/avatar/63b84c41c052160d9254fcea2001c3d5?s=44&d=mm&r=g"
 											 srcset="https://secure.gravatar.com/avatar/63b84c41c052160d9254fcea2001c3d5?s=88&d=mm&r=g 2x"
 											 class="avatar avatar-44 photo"
-											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="http://thomas-ruffier.com" class="url" rel="ugc external nofollow">Thomas Ruffier</a></em>
+											 height="44" width="44"><em itemprop="creator" class="pl1"><a href="https://thomas-ruffier.com" class="url" rel="ugc external nofollow">Thomas Ruffier</a></em>
 								
 								<time datetime="[object Object]" itemprop="commentTime">22 mai 2015 à 15 h 55 min</time>
 								<a href="#5385">
@@ -200,7 +204,7 @@
 		<div class="aside pl2 pt2">
 			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
 			<div class="textwidget">
-				<ol><li><a href="#les-sp%C3%A9cifications-actuelles">Les spécifications actuelles</a></li><li><a href="#les-origines">Les origines</a></li><li><a href="#des-ressources-dissonantes">Des ressources dissonantes</a></li><li><a href="#un-bilan-mitig%C3%A9">Un bilan mitigé</a></li><li><a href="#une-solution-correcte">Une solution correcte</a></li><li><a href="#comments">Commentaires</a></li></ol>
+				<ol><li><a href="#les-specifications-actuelles">Les spécifications actuelles</a></li><li><a href="#les-origines">Les origines</a></li><li><a href="#des-ressources-dissonantes">Des ressources dissonantes</a></li><li><a href="#un-bilan-mitige">Un bilan mitigé</a></li><li><a href="#une-solution-correcte">Une solution correcte</a></li><li><a href="#comments">Commentaires</a></li></ol>
 			</div>
 		</div>
 	</aside>

@@ -54,9 +54,11 @@
 				</header>
 				
 	<article role="article" itemscope itemtype="https://schema.org/Article">
-		<time class="screen-reader-text" datetime="2017-02-03T17:02:05" itemprop="datePublished">3 février 2017</time><div itemprop="articleBody">
+		<time class="screen-reader-text" datetime="2017-02-03T17:02:05" itemprop="datePublished">3 février 2017</time>
+		
+			<div itemprop="articleBody">
 				<p>Vous avez déjà vécu ça, pas vrai ?</p>
-<h2 id="l%E2%80%99am%C3%A9lioration-progressive" tabindex="-1">L’amélioration progressive</h2>
+<h2 id="lamelioration-progressive" tabindex="-1">L’amélioration progressive</h2>
 <p>Quand on cherche à bien faire ces interactions qui affichent et masquent un élément à l’aide de JavaScript, une des fondations est de <strong>s’assurer que le contenu soit accessible sans JavaScript</strong>. Ça fait partie intégrante de l’amélioration progressive, que je synthétise comme suit :</p>
 <ol>
 <li>le HTML est propre, lisible, cohérent, et permet d’<strong>accéder au contenu sans obstacle</strong> ;</li>
@@ -79,10 +81,10 @@ document.documentElement.classList.remove(’no-js’);
 document.documentElement.classList.add(’js’);
 </code></pre>
 <p>Et en bonus, <strong>on peut réfléchir et utiliser CSS</strong>.</p>
-<h2 id="les-styles-%C3%A0-la-rescousse" tabindex="-1">Les styles à la rescousse</h2>
+<h2 id="les-styles-a-la-rescousse" tabindex="-1">Les styles à la rescousse</h2>
 <p>La base du fonctionnement que je propose est l’astuce utilisée par <a href="https://www.nicolas-hoffmann.net/source/">Nicolas Hoffmann</a> sur <a href="https://a11y.nicolas-hoffmann.net/">ses composants jQuery accessibles</a>. <em>Grosso modo</em>, il effectue une transition sur <code>max-height</code> pour la partie animée, et sur <code>visibility</code> avec un délai pour <strong>masquer réellement</strong> le contenu.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
 <p>J’aime beaucoup cette technique, dont le seul inconvénient — à mon avis — est d’animer <code>max-height</code>, ce qui nous oblige à utiliser un <a href="https://www.ffoodd.fr/decouvrez-le-calcul-magique/">chiffre magique</a> pour une hauteur maximum inatteignable.</p>
-<h3 id="l%E2%80%99%C3%A9tat-de-base" tabindex="-1">L’état de base</h3>
+<h3 id="letat-de-base" tabindex="-1">L’état de base</h3>
 <p>Voici l’état de base de ma navigation :</p>
 <pre><code class="language-css">[id=&quot;nav&quot;] {
   transform: translate3d(-100%, 0, 0);
@@ -96,7 +98,7 @@ document.documentElement.classList.add(’js’);
 </code></pre>
 <p>Elle est décalée vers la gauche de la totalité de sa largeur, afin de <strong>sortir de l’écran</strong> ; et est masquée.</p>
 <p>Notez que nous avons un délai sur nos deux transitions. Pour le moment, seul celui sur <code>visibility</code> est important, puisqu’il permet de faire coïncider le changement de visibilité avec la durée de la transformation.</p>
-<h3 id="l%E2%80%99ouverture-gr%C3%A2ce-%C3%A0-js" tabindex="-1">L’ouverture grâce à JS</h3>
+<h3 id="louverture-grace-a-js" tabindex="-1">L’ouverture grâce à JS</h3>
 <p>Là, c’est tout bête. Le JS ajoute une classe <code>.is-opened</code> à la navigation, je m’en sers pour accrocher mes styles :</p>
 <pre><code class="language-css">
 .is-opened {
@@ -106,7 +108,7 @@ document.documentElement.classList.add(’js’);
 }
 </code></pre>
 <p>Et pour ceux qui me connaissent, je désamorce une question : je n’utilise pas <code>:not([aria-hidden])</code>, car cet attribut est ajouté <em>via</em> JS. Ainsi la navigation commencerait à apparaître au chargement, puis serait masquée après l’exécution du script — <strong>exactement le comportement qu’on cherche à corriger</strong>.</p>
-<h3 id="et-si-js-est-d%C3%A9sactiv%C3%A9" tabindex="-1">Et si JS est désactivé</h3>
+<h3 id="et-si-js-est-desactive" tabindex="-1">Et si JS est désactivé</h3>
 <p>C’est là qu’on rigole ! Lisez plutôt, je vous explique ensuite :</p>
 <pre><code class="language-css">
 @keyframes no-js {
@@ -121,14 +123,14 @@ document.documentElement.classList.add(’js’);
   animation: 300ms ease-in 300ms forwards no-js;
 }
 </code></pre>
-<p>Dans un premier temps, je définis la règle <code>@keyframes</code> pour mon animation. Son seul contenu est <strong>l’état final</strong> : pas de translation, l’élément est visible, et les délais de transition sont ajustés. <a href="http://caniuse.com/#search=keyframes">En terme de support</a> on abandonne donc IE9 et ses aïeux, ainsi qu’Opéra Mini.</p>
+<p>Dans un premier temps, je définis la règle <code>@keyframes</code> pour mon animation. Son seul contenu est <strong>l’état final</strong> : pas de translation, l’élément est visible, et les délais de transition sont ajustés. <a href="https://caniuse.com/#search=keyframes">En terme de support</a> on abandonne donc IE9 et ses aïeux, ainsi qu’Opéra Mini.</p>
 <p>Dans un second temps, j’applique cette animation sur la navigation lorsque la balise <code>&lt;html&gt;</code> porte la classe <code>.no-js</code>. C’est sa classe par défaut, qui n’est retirée que si JS est activé.</p>
 <p>Pour éviter que l’animation ne se joue pendant le chargement de la page, je lui intime l’ordre de <strong>patienter</strong> 300 millisecondes et de <strong>durer</strong> 300 millisecondes — soit un délai généralement suffisant pour que JS ait magouillé les classes sur <code>&lt;html&gt;</code>.</p>
 <p>Et ceux qui ont déjà joué avec les animations le savent, elles reviennent par défaut à l’état initial (soit dans notre cas, le menu masqué). Bien sûr, ça ne va pas : j’ai donc précisé grâce au mot-clé <code>forwards</code> que l’animation devait <strong>conserver son état final</strong>.</p>
 <p>Et voilà ! <strong>On profite en sus d’une bien jolie animation qui fait entrer notre navigation dans l’écran</strong> au lieu de la fuir. Et une page animée avec JS désactivé, je trouve ça cool. 🙂</p>
-<h2 id="d%C3%A9monstration" tabindex="-1">Démonstration</h2>
-<p>Si vous êtes curieux de voir ce que ça donne ou de jouer avec, j’ai monté un <a href="http://codepen.io/ffoodd/pen/apGqpQ">CodePen de démonstration</a> dans lequel vous pourrez lire le code.</p>
-<p>Pour jouer avec le JS désactivé, vous devrez <a href="http://codepen.io/ffoodd/full/apGqpQ/">consulter la vue complète</a>.<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
+<h2 id="demonstration" tabindex="-1">Démonstration</h2>
+<p>Si vous êtes curieux de voir ce que ça donne ou de jouer avec, j’ai monté un <a href="https://codepen.io/ffoodd/pen/apGqpQ">CodePen de démonstration</a> dans lequel vous pourrez lire le code.</p>
+<p>Pour jouer avec le JS désactivé, vous devrez <a href="https://codepen.io/ffoodd/full/apGqpQ/">consulter la vue complète</a>.<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
 <ol class="footnotes-list small mt2 pt2 pb2">
 <li id="fn1" class="footnote-item"><p>Il explique tout ça très bien dans la documentation de ses divers composants. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
 </li>
@@ -136,7 +138,9 @@ document.documentElement.classList.add(’js’);
 </li>
 
 
-			</div><footer class="small mt2">
+			</div>
+		
+		<footer class="small mt2">
 			<p class="pl2 mt0 pt1">
 				Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
 				Modifié le <time class="updated" datetime="2017-02-06T12:42:12" itemprop="dateModified">6 février 2017</time>.
@@ -236,7 +240,7 @@ De plus ca répond à ton postulat de départ :</p>
 		<div class="aside pl2 pt2">
 			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
 			<div class="textwidget">
-				<ol><li><a href="#l%E2%80%99am%C3%A9lioration-progressive">L’amélioration progressive</a></li><li><a href="#la-limite-du-js">La limite du JS</a></li><li><a href="#les-styles-%C3%A0-la-rescousse">Les styles à la rescousse</a></li><li><a href="#d%C3%A9monstration">Démonstration</a></li><li><a href="#comments">Commentaires</a></li></ol>
+				<ol><li><a href="#lamelioration-progressive">L’amélioration progressive</a></li><li><a href="#la-limite-du-js">La limite du JS</a></li><li><a href="#les-styles-a-la-rescousse">Les styles à la rescousse</a></li><li><a href="#demonstration">Démonstration</a></li><li><a href="#comments">Commentaires</a></li></ol>
 			</div>
 		</div>
 	</aside>

@@ -4,12 +4,12 @@ title: "Le soulignement factice"
 date: "2015-11-20T15:16:37"
 modified: "2017-01-20T11:20:39"
 permalink: "le-soulignement-factice/index.html"
-excerpt: "Malgré lʼarrivée des fonctionnalités _OpenType_ et [leur support plus que décent](http://caniuse.com/#feat=font-feature 'leur support plus que décent (en anglais)'), la typographie sur le web manque encore de raffinement si on compare ses possibilités dans le monde imprimé. Parmi les artefacts qui illustrent encore à ce jour la grossièreté de la **typographie sur le web**, le soulignement est le plus courant. Mais des techniques existent pour enrichir ce soulignement&nbsp;!"
+excerpt: "Malgré lʼarrivée des fonctionnalités _OpenType_ et [leur support plus que décent](https://caniuse.com/#feat=font-feature 'leur support plus que décent (en anglais)'), la typographie sur le web manque encore de raffinement si on compare ses possibilités dans le monde imprimé. Parmi les artefacts qui illustrent encore à ce jour la grossièreté de la **typographie sur le web**, le soulignement est le plus courant. Mais des techniques existent pour enrichir ce soulignement&nbsp;!"
 format: "standard"
 tags: "posts"
 description: "Le soulignement standard sur le web est si laid que la plupart des sites le suppriment purement et simplement. Il est pourtant indispensable pour identifier ce qui différencie le texte de l&#700;imprimé&nbsp;: les hyperliens."
 ---
-Je vous enjoins à lire la «&nbsp;[Signalétique des hyperliens](http://letrainde13h37.fr/43/signaletique-hyperliens/)&nbsp;» sur le train de 13&nbsp;h&nbsp;37, par [Romy Duhem-Verdière](https://twitter.com/tetue). On y apprend notamment que —&nbsp;typographiquement parlant&nbsp;— le souligné nʼest dʼaucune utilité, sauf éventuellement à palier lʼabsence dʼitalique (ce qui est somme toute assez rare). En revanche sur le web, cʼest **le meilleur moyen de signaler un lien**.
+Je vous enjoins à lire la «&nbsp;[Signalétique des hyperliens](https://letrainde13h37.fr/43/signaletique-hyperliens/)&nbsp;» sur le train de 13&nbsp;h&nbsp;37, par [Romy Duhem-Verdière](https://twitter.com/tetue). On y apprend notamment que —&nbsp;typographiquement parlant&nbsp;— le souligné nʼest dʼaucune utilité, sauf éventuellement à palier lʼabsence dʼitalique (ce qui est somme toute assez rare). En revanche sur le web, cʼest **le meilleur moyen de signaler un lien**.
 
 ## Graphiquement grossier
 
@@ -25,7 +25,7 @@ Sur le plan visuel, le souligné croise les jambages inférieures, ce qui crée 
 
 
 
-Quelques tentatives existaient déjà il y a fort longtemps, comme en témoigne [lʼarticle de Susan Robertson sur A List Apart](http://alistapart.com/article/customunderlines) qui utilisait `background-image` pour mettre un une image répétée en guise de soulignement. Ça peut sembler étrange —&nbsp;notamment quand vous aurez vu les exemples animés&nbsp;— mais en 2004, cʼétait parfaitement fabuleux.
+Quelques tentatives existaient déjà il y a fort longtemps, comme en témoigne [lʼarticle de Susan Robertson sur A List Apart](https://alistapart.com/article/customunderlines) qui utilisait `background-image` pour mettre un une image répétée en guise de soulignement. Ça peut sembler étrange —&nbsp;notamment quand vous aurez vu les exemples animés&nbsp;— mais en 2004, cʼétait parfaitement fabuleux.
 
 ## Le truchement CSS
 
@@ -40,7 +40,7 @@ Jʼai croisé plusieurs implémentations de cette solution, toutes très intére
 * [la méthode utilisée par tufte-CSS (sur Github)](https://github.com/edwardtufte/tufte-css/blob/master/tufte.css#L237)&nbsp;;
 * [la réflexion menée par Adam Schwartz pour Eager (en anglais)](https://eager.io/blog/smarter-link-underlines/) avec une illustration interactive particulièrement réussie.
 
-Ça donne suffisamment de matière pour avancer, donc jʼai trituré tout ça jusquʼà obtenir un résultat satisfaisant mes besoins. Vous en trouverez [un aperçu rigolo sur CodePen](http://codepen.io/ffoodd/pen/jbRMqJ/). Pour les feignasses, voici le CSS incriminé&nbsp;:
+Ça donne suffisamment de matière pour avancer, donc jʼai trituré tout ça jusquʼà obtenir un résultat satisfaisant mes besoins. Vous en trouverez [un aperçu rigolo sur CodePen](https://codepen.io/ffoodd/pen/jbRMqJ/). Pour les feignasses, voici le CSS incriminé&nbsp;:
 
 ```css
 
@@ -128,7 +128,7 @@ Petite astuce à prendre en considération, le second paramètre du _mixin_ conc
 Pour commencer, il est nécessaire de mettre en place deux scripts fonctionnant sur le même principe&nbsp;:
 
 1.  un test de fonctionnalité tel que _Modernizr_ —&nbsp;[dont vous pouvez générer une version uniquement pour les dégradés CSS](https://modernizr.com/download?setclasses&q=gradient)&nbsp;— afin dʼappliquer ce CSS de soulignement uniquement si le navigateur supporte les dégradés&nbsp;;
-2.  un second test pour **détecter lʼactivation du mode de contrastes élevés** —&nbsp;qui supprime les arrières-plans et laisserait donc nos éléments soulignés complètement nus et sans soulignement&nbsp;— mais qui détecte également si **lʼutilisateur a personnalisé la couleur des liens**&nbsp;: vous trouverez la source sur [un JSFiddle de Karl Groves](http://jsfiddle.net/karlgroves/XR8Su/6/) du Paciello Group (quʼil a lui-même récupéré de Hans Hillen) que jʼai modifié afin de tester un lien plutôt quʼune division.
+2.  un second test pour **détecter lʼactivation du mode de contrastes élevés** —&nbsp;qui supprime les arrières-plans et laisserait donc nos éléments soulignés complètement nus et sans soulignement&nbsp;— mais qui détecte également si **lʼutilisateur a personnalisé la couleur des liens**&nbsp;: vous trouverez la source sur [un JSFiddle de Karl Groves](https://jsfiddle.net/karlgroves/XR8Su/6/) du Paciello Group (quʼil a lui-même récupéré de Hans Hillen) que jʼai modifié afin de tester un lien plutôt quʼune division.
 
 Les navigateurs ne supportant pas les dégradés ou étant utilisé conjointement au mode de contrastes élevés resteront avec leur bon vieux `text-decoration: underline;`.
 
@@ -159,7 +159,7 @@ Tout peut se résumer comme suit&nbsp;:
 }
 ```
 
-Le [CodePen](http://codepen.io/ffoodd/pen/jbRMqJ/) est à jour pour que vous jetiez un œil, et je l’ai [exporté dans un Gist](https://gist.github.com/ffoodd/d4bee79e6af99c05f0a32542d66d5969) également.
+Le [CodePen](https://codepen.io/ffoodd/pen/jbRMqJ/) est à jour pour que vous jetiez un œil, et je l’ai [exporté dans un Gist](https://gist.github.com/ffoodd/d4bee79e6af99c05f0a32542d66d5969) également.
 
 Cet ajout a quelques effets notables&nbsp;:
 
@@ -176,4 +176,4 @@ Mais nous voilà avec un pied dans le futur&nbsp;!
 
 [Vincent De Oliveira a cependant trouvé une astuce pour le faire fonctionner sans devoir répéter la propriété](https://twitter.com/iamvdo/status/822130026384592898) et ça, c’est cool.
 
-En repassant donc sur le [CodePen](http://codepen.io/ffoodd/pen/jbRMqJ) pour le mettre à jour, je me suis également rendu compte que la _media query_ `-ms-high-contrast: active` était inutile&nbsp;; je l’ai donc supprimée. Cette requête n’est comprise que par IE 11 et inférieur —&nbsp;cependant comme elle était imbriquée dans une règle @supports ces derniers ne pouvaient pas la lire. Hop, un peu de code en moins&nbsp;!
+En repassant donc sur le [CodePen](https://codepen.io/ffoodd/pen/jbRMqJ) pour le mettre à jour, je me suis également rendu compte que la _media query_ `-ms-high-contrast: active` était inutile&nbsp;; je l’ai donc supprimée. Cette requête n’est comprise que par IE 11 et inférieur —&nbsp;cependant comme elle était imbriquée dans une règle @supports ces derniers ne pouvaient pas la lire. Hop, un peu de code en moins&nbsp;!
