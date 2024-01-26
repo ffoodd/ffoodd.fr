@@ -35,7 +35,7 @@
 				</div>
 				<header class="center pt1 mb1" role="banner">
 					<h1 class="mb0 mt0 tk-bello-pro" itemprop="name">Le web en kit</h1>
-					
+
 						<nav role="navigation" aria-labelledby="here" class="print-hidden small mt2 mb1">
 	<span id="here">Vous êtes ici&nbsp;: </span>
 	<div class="inbl" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
@@ -47,15 +47,15 @@
 	</div>
 </nav>
 
-					
-					
+
+
 						<h2 class="h3-like description" itemprop="description"><abbr lang="en" title="Too Long, Didn't Read">tl;dr</abbr>&nbsp;: jetez un œil <a href="https://dabblet.com/gist/08fddf3666c39ebc62ca">à ce dabblet</a> sur Edge —&nbsp;qui gère <code>-webkit-background-clip: text;</code> sans broncher.</h2>
-					
+
 				</header>
-				
+
 	<article role="article" itemscope itemtype="https://schema.org/Article">
 		<time class="screen-reader-text" datetime="2015-10-30T10:11:52" itemprop="datePublished">30 octobre 2015</time>
-		
+
 			<div itemprop="articleBody">
 				<p>Beaucoup de gens qui fabriquent le web se sont plaints de lʼhégémonie dʼIE6.</p>
 <p>Pour protester, ils se sont rués sur les nouveaux arrivants : Firefox et Chrome. Puis les produits Apple ont débarqué, apportant avec eux Safari. Cʼétait encore une révolution — et de fait, le nouvel endroit ou aller. Or Safari fonctionne sur la même base que Chrome, à savoir le moteur de rendu Webkit. Et petit à petit, nous nous sommes retrouvés <strong>avec un nouveau monopole</strong>.</p>
@@ -77,7 +77,7 @@
 [class=&quot;rainbow&quot;] {
   color: #fff;
   display: inline-block;
-  /* -webkit-only: Chrome, Safari, Opera */  
+  /* -webkit-only: Chrome, Safari, Opera */
   background: -webkit-linear-gradient(…);
   background: -o-linear-gradient(…);
   -webkit-text-fill-color: transparent;
@@ -94,11 +94,11 @@
 <p><a href="https://www.ffoodd.fr/ie9-sur-wp7-et-font-face-je-taime-moi-non-plus/">Une fois nʼest pas coutume</a>, Windows Phone et son IE représentent une configuration particulière. En lʼoccurrence, IE11 interprète les valeurs <code>-webkit-linear-gradient(…)</code> mais est incapable dʼappliquer la valeur <code>text</code> pour la proriété <code>background-clip</code>. Oups 🙈 !</p>
 <h2 id="captures-a-lappui" tabindex="-1">Captures à lʼappui</h2>
 <p>Dans un monde merveilleux et homogène, nous « devrions » voir ceci :</p>
-<figure><img src="/images/2015/10/chrome-300x31.png" alt="Capture dʼécran de Chrome" loading="lazy"><figcaption>Un arc-en-ciel incrusté au texte en CSS, visible sur les navigateurs WebKit et Edge</figcaption></figure>
+<figure><img src="/images/2015/10/chrome.png" alt="Capture dʼécran de Chrome" loading="lazy"><figcaption>Un arc-en-ciel incrusté au texte en CSS, visible sur les navigateurs WebKit et Edge</figcaption></figure>
 <p>Et, le cas échéant si votre navigateur est allergique aux arc-en-ciels, voici le résultat attendu :</p>
-<p><img src="/images/2015/10/firefox-300x30.png" alt="Capture dʼécran sur Firefox">↔&quot;Le texte est simplement blanc sur Firefox et IE, pas dʼarc-en-ciel à lʼhorizon&quot;)</p>
+<p><img src="/images/2015/10/firefox.png" alt="Capture dʼécran sur Firefox">↔&quot;Le texte est simplement blanc sur Firefox et IE, pas dʼarc-en-ciel à lʼhorizon&quot;)</p>
 <p>Jusque là, tout va bien. La mécanique est belle, aucun danger grâce à la solution de repli évoquée précédemment. Maintenant, cassons tout ! Voici le rendu sur IE11 <strong>et <em>UC Browser</em></strong> sur Windows Phone 8.1 :</p>
-<p><img src="/images/2015/10/windowsphone-300x169.jpg" alt="capture dʼécran sur Windows Phone 8.1">↔&quot;Le texte est blanc, mais lʼarrière-plan arc-en-ciel est appliqué&quot;)</p>
+<p><img src="/images/2015/10/windowsphone.jpg" alt="capture dʼécran sur Windows Phone 8.1">↔&quot;Le texte est blanc, mais lʼarrière-plan arc-en-ciel est appliqué&quot;)</p>
 <p>Difficile de garantir quoi que ce soit dans ces conditions. <em>A priori</em> ce problème nʼexiste pas dans les versions antérieures de Windows Phone, et il faut noter que la version bureau dʼIE11 nʼapplique pas lʼarrière-plan !</p>
 <p>Si vous voulez tester par vous-mêmes ou compléter mes propos, nʼhésitez pas à dupliquer <a href="https://dabblet.com/gist/08fddf3666c39ebc62ca">mon dabblet</a>.</p>
 <p>Et pour ceux qui rigolent dans le fond, sachez que <a href="https://gs.statcounter.com/#mobile_os-FR-monthly-201507-201509-bar">Windows Phone représente 4% de parts de marché des systèmes dʼexploitation sur mobile en France, entre juillet et septembre 2015 (en anglais)</a>. Ce nʼest pas négligeable, si tant est quʼon admette négliger une population.<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
@@ -110,7 +110,7 @@
 
 
 			</div>
-		
+
 		<footer class="small mt2">
 			<p class="pl2 mt0 pt1">
 				Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
@@ -119,8 +119,8 @@
 		</footer>
 	</article>
 
-				
-				
+
+
 			</main>
 
 			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary" id="sommaire">
