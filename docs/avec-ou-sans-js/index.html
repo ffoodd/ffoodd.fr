@@ -10,7 +10,10 @@
 		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
 		<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/index.xml"></head>
 	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
-		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+		
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#sommaire">Aller au sommaire</a>
+
 		<div class="row">
 			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation" aria-label="Menu principal">
 				<ul class="menu aside p-reset m-reset ul-reset">
@@ -76,53 +79,49 @@ Plusieurs pistes existent pour palier ce problème :</p>
 <li>on peut aussi se la jouer <em>old school</em> en <strong>dupliquant le contenu masqué</strong> dans une balise <code>&lt;noscript&gt;</code> — mais on ne se sent pas vraiment propre, après ça.</li>
 </ol>
 <p>Comme le signale Lionel dans les commentaires, conserver la modification des classes dès le <code>&lt;head&gt;</code> reste une étape incontournable pour optimiser ce mécanisme. Un exemple :</p>
-<pre><code class="language-javascript">
-document.documentElement.classList.remove(’no-js’);
-document.documentElement.classList.add(’js’);
-</code></pre>
+<pre class="language-javascript" tabindex="0"><code class="language-javascript">
+document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>’no<span class="token operator">-</span>js’<span class="token punctuation">)</span><span class="token punctuation">;</span>
+document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>’js’<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>Et en bonus, <strong>on peut réfléchir et utiliser CSS</strong>.</p>
 <h2 id="les-styles-a-la-rescousse" tabindex="-1">Les styles à la rescousse</h2>
 <p>La base du fonctionnement que je propose est l’astuce utilisée par <a href="https://www.nicolas-hoffmann.net/source/">Nicolas Hoffmann</a> sur <a href="https://a11y.nicolas-hoffmann.net/">ses composants jQuery accessibles</a>. <em>Grosso modo</em>, il effectue une transition sur <code>max-height</code> pour la partie animée, et sur <code>visibility</code> avec un délai pour <strong>masquer réellement</strong> le contenu.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
 <p>J’aime beaucoup cette technique, dont le seul inconvénient — à mon avis — est d’animer <code>max-height</code>, ce qui nous oblige à utiliser un <a href="https://www.ffoodd.fr/decouvrez-le-calcul-magique/">chiffre magique</a> pour une hauteur maximum inatteignable.</p>
 <h3 id="letat-de-base" tabindex="-1">L’état de base</h3>
 <p>Voici l’état de base de ma navigation :</p>
-<pre><code class="language-css">[id=&quot;nav&quot;] {
-  transform: translate3d(-100%, 0, 0);
-  transition:
-  transform 300ms ease-in 50ms,
-  visibility 0s linear 300ms;
-  visibility: hidden;
-  width: 18.75rem;
-  will-change: transform, visibility;
-}
-</code></pre>
+<pre class="language-css" tabindex="0"><code class="language-css"><span class="token selector">[id="nav"]</span> <span class="token punctuation">{</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate3d</span><span class="token punctuation">(</span>-100%<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span>
+  transform 300ms ease-in 50ms<span class="token punctuation">,</span>
+  visibility 0s linear 300ms<span class="token punctuation">;</span>
+  <span class="token property">visibility</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 18.75rem<span class="token punctuation">;</span>
+  <span class="token property">will-change</span><span class="token punctuation">:</span> transform<span class="token punctuation">,</span> visibility<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p>Elle est décalée vers la gauche de la totalité de sa largeur, afin de <strong>sortir de l’écran</strong> ; et est masquée.</p>
 <p>Notez que nous avons un délai sur nos deux transitions. Pour le moment, seul celui sur <code>visibility</code> est important, puisqu’il permet de faire coïncider le changement de visibilité avec la durée de la transformation.</p>
 <h3 id="louverture-grace-a-js" tabindex="-1">L’ouverture grâce à JS</h3>
 <p>Là, c’est tout bête. Le JS ajoute une classe <code>.is-opened</code> à la navigation, je m’en sers pour accrocher mes styles :</p>
-<pre><code class="language-css">
-.is-opened {
-  transform: none;
-  transition-delay: 0ms;
-  visibility: visible;
-}
-</code></pre>
+<pre class="language-css" tabindex="0"><code class="language-css">
+<span class="token selector">.is-opened</span> <span class="token punctuation">{</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token property">transition-delay</span><span class="token punctuation">:</span> 0ms<span class="token punctuation">;</span>
+  <span class="token property">visibility</span><span class="token punctuation">:</span> visible<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p>Et pour ceux qui me connaissent, je désamorce une question : je n’utilise pas <code>:not([aria-hidden])</code>, car cet attribut est ajouté <em>via</em> JS. Ainsi la navigation commencerait à apparaître au chargement, puis serait masquée après l’exécution du script — <strong>exactement le comportement qu’on cherche à corriger</strong>.</p>
 <h3 id="et-si-js-est-desactive" tabindex="-1">Et si JS est désactivé</h3>
 <p>C’est là qu’on rigole ! Lisez plutôt, je vous explique ensuite :</p>
-<pre><code class="language-css">
-@keyframes no-js {
-  to {
-  transform: none;
-  transition-delay: 50ms, 0ms;
-  visibility: visible;
-  }
-}
+<pre class="language-css" tabindex="0"><code class="language-css">
+<span class="token atrule"><span class="token rule">@keyframes</span> no-js</span> <span class="token punctuation">{</span>
+  <span class="token selector">to</span> <span class="token punctuation">{</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token property">transition-delay</span><span class="token punctuation">:</span> 50ms<span class="token punctuation">,</span> 0ms<span class="token punctuation">;</span>
+  <span class="token property">visibility</span><span class="token punctuation">:</span> visible<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-.no-js [id=&quot;nav&quot;] {
-  animation: 300ms ease-in 300ms forwards no-js;
-}
-</code></pre>
+<span class="token selector">.no-js [id="nav"]</span> <span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> 300ms ease-in 300ms forwards no-js<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p>Dans un premier temps, je définis la règle <code>@keyframes</code> pour mon animation. Son seul contenu est <strong>l’état final</strong> : pas de translation, l’élément est visible, et les délais de transition sont ajustés. <a href="https://caniuse.com/#search=keyframes">En terme de support</a> on abandonne donc IE9 et ses aïeux, ainsi qu’Opéra Mini.</p>
 <p>Dans un second temps, j’applique cette animation sur la navigation lorsque la balise <code>&lt;html&gt;</code> porte la classe <code>.no-js</code>. C’est sa classe par défaut, qui n’est retirée que si JS est activé.</p>
 <p>Pour éviter que l’animation ne se joue pendant le chargement de la page, je lui intime l’ordre de <strong>patienter</strong> 300 millisecondes et de <strong>durer</strong> 300 millisecondes — soit un délai généralement suffisant pour que JS ait magouillé les classes sur <code>&lt;html&gt;</code>.</p>

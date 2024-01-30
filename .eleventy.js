@@ -4,7 +4,8 @@ const anchor = require("markdown-it-anchor");
 const figure = require("markdown-it-image-figures");
 const footnote = require("markdown-it-footnote");
 const tocPlugin = require("eleventy-plugin-toc");
-const pluginRss = require("@11ty/eleventy-plugin-rss");
+const rssPlugin = require("@11ty/eleventy-plugin-rss");
+const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const string = require('string')
 const slugify = s => string(s).slugify().toString()
 
@@ -56,17 +57,25 @@ module.exports = function (eleventyConfig) {
 	// @note Beurk, mais permet d’ajouter le lien vers les commentaires
 	md.renderer.rules.footnote_block_close = () => ('\n')
 
-	// @todo Syntax highlighting
-	// @link https://www.11ty.dev/docs/plugins/syntaxhighlight/
-	// @note Les portions de code existantes fonctionnent toujours : privilégier PrismJS pour la rétro-compatibilité ?
 	eleventyConfig.setLibrary("md", md)
+
+	// @todo Gérer les dimensions des images
+	// @note récupérer les dimensions des images et les ajouter dans les attributes width et height
+	// @note @11ty/eleventy-img requière l’utilisation d’un _shortcode_ :/
+	// @todo Corriger les liens externes morts
+	// @note Lancer `npm run docs:lint:external`
 
 	// Plugins
 	eleventyConfig.addPlugin(tocPlugin, {
 		tags: ["h2"],
 		wrapper: ''
 	})
-	eleventyConfig.addPlugin(pluginRss)
+	eleventyConfig.addPlugin(rssPlugin)
+	eleventyConfig.addPlugin(syntaxHighlightPlugin, {
+		preAttributes: {
+			tabindex: 0
+		}
+	})
 
 	// Passe-plat
 	eleventyConfig.addPassthroughCopy("_src/favicon.svg")
@@ -79,10 +88,10 @@ module.exports = function (eleventyConfig) {
 	})
 
 	return {
-			dir: {
-					input: '_src',
-					output: 'docs'
-			},
-			markdownTemplateEngine: 'njk'
+		dir: {
+			input: '_src',
+			output: 'docs'
+		},
+		markdownTemplateEngine: 'njk'
 	}
 }

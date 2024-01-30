@@ -10,7 +10,10 @@
 		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
 		<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/index.xml"></head>
 	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
-		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+		
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#sommaire">Aller au sommaire</a>
+
 		<div class="row">
 			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation" aria-label="Menu principal">
 				<ul class="menu aside p-reset m-reset ul-reset">
@@ -77,33 +80,31 @@
 <h2 id="la-persistance-des-liens-devitement" tabindex="-1">La persistance des liens d’évitement</h2>
 <p>En recherchant plus d’informations sur cette technique, je suis tombé sur le blog de la société Atalan pour laquelle travaille Johan – et sur <a href="https://blog.atalan.fr/des-liens-devitement-astucieux/" title="Article sur les liens d’évitement astucieux (nouvelle fenêtre)">un article dédié au sujet</a>. Des ressources très intéressantes sont données, cependant toutes sont basées sur jQuery pour ajouter une classe aux liens après leur première prise de focus. <strong>Dommage, je n’utilise pas jQuery sur ffoodd.fr.</strong></p>
 <p>Voici donc le bout de code correspondant, en vanilla javascript :</p>
-<pre><code class="language-javascript">
-/* Lien d’évitement &gt; Persistance de l’affichage
+<pre class="language-javascript" tabindex="0"><code class="language-javascript">
+<span class="token comment">/* Lien d’évitement > Persistance de l’affichage
  * @see : https://blog.atalan.fr/des-liens-devitement-astucieux/
-*/
-[].forEach.call(document.querySelectorAll(&quot;.skip&quot;), function(el) {
-  el.addEventListener(&quot;focus&quot;, function() {
-  el.classList.add(&quot;show&quot;);
-  });
-});
-</code></pre>
+*/</span>
+<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">".skip"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">el</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  el<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"focus"</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  el<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"show"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>Et voilà ! Pour faire simple, je cible les liens disposant de la classe « skip » pour leur ajouter la classe « show » au focus. Et le CSS fait le reste.</p>
 <p>À noter que « dans certains cas rares » Chrome et IE ne transportent pas le focus sur la cible du lien d’évitement lorsqu’il a été activé. Un petit script vient facilement s’assurer que le focus est bien transporté :</p>
-<pre><code class="language-javascript">
-/* Correction du bug des ancres sous Chrome
+<pre class="language-javascript" tabindex="0"><code class="language-javascript">
+<span class="token comment">/* Correction du bug des ancres sous Chrome
  * @see : https://www.nczonline.net/blog/2013/01/15/fixing-skip-to-content-links/
  * @see : https://blog.atalan.fr/des-liens-devitement-astucieux/
-*/
-window.addEventListener(&quot;hashchange&quot;, function(event) {
-  var element = document.getElementById(location.hash.substring(1));
-  if (element) {
-    if (!/^(?:a|select|input|button)$/i.test(element.tagName)) {
-    element.tabIndex = -1;
-    }
-    element.focus();
-  }
-}, false);
-</code></pre>
+*/</span>
+window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"hashchange"</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> element <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span>location<span class="token punctuation">.</span>hash<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>element<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^(?:a|select|input|button)$</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>element<span class="token punctuation">.</span>tagName<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    element<span class="token punctuation">.</span>tabIndex <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    element<span class="token punctuation">.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h2 id="la-qualite-de-lexperience" tabindex="-1">La qualité de l’expérience</h2>
 <p>Ce sont certes des détails, mais ces détails améliorent le confort de navigation et rendent un site agréable : l’internaute appréciera cette expérience, et reviendra (pour peu que vos contenus soient à la hauteur).</p>
 <ol class="footnotes-list small mt2 pt2 pb2">

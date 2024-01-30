@@ -51,7 +51,7 @@ Cʼest donc la-dessus que va se baser la création du visuel dʼattente. Sur le 
 
 
 
-![Gabarit de carte de profil twitter](/images/2015/12/twitter-placeholder-300x201.png)↔"Gabarit de carte de profil twitter représenté en masses colorées")
+![Gabarit de carte de profil twitter](/images/2015/12/twitter-placeholder.png "Gabarit de carte de profil twitter représenté en masses colorées")
 
 Bon, jʼadmets également avoir exporté un SVG plutôt quʼune bête image bitmap. Pour tout vous dire ça nʼest pas nécessairement le meilleur choix, étant donné que pour une image aussi simple **le SVG est plus lourd** quʼun PNG bien optimisé et quʼ**on perd nécessairement en support navigateur**.
 

@@ -41,11 +41,11 @@ J’ai donc mis en valeur la **qualité web**, et comment les thèmes enfants co
 
 Mon cursus de communication visuelle m’aura enseigné de nombreuses façons de cultiver mes idées. Je suis donc parti, de façon assez ordinaire, sur une **carte heuristique**&nbsp;:
 
-[![Carte heuristique](/images/2014/12/carte-heuristique-1024x574.jpg)](/images/2014/12/carte-heuristique.jpg "Carte heuristique des concepts liés à l’utilisation de thèmes enfants dans WordPress")
+[![Carte heuristique](/images/2014/12/carte-heuristique.jpg)](/images/2014/12/carte-heuristique.jpg "Carte heuristique des concepts liés à l’utilisation de thèmes enfants dans WordPress")
 
 Comme toute bonne carte heuristique, c’est touffu. Une fois les termes clés regroupés autour de thèmes principaux, j’ai formalisé et éclairci le tout en créant un simple tableau&nbsp;:
 
-[![tableau des concepts](/images/2014/12/tri-150x150.jpg)](/images/2014/12/tri.jpg)↔"Tableau des concepts clés")
+[![tableau des concepts](/images/2014/12/tri.jpg)](/images/2014/12/tri.jpg "Tableau des concepts clés")
 
 Me voilà fin prêt à rédiger ma présentation, le plus compliqué étant d’en trouver **des illustrations techniques en cohérence avec mes propos**. Mais je pense avoir réussi&nbsp;:). Si le cœur vous en dit, vous pouvez consulter la présentation de l’atelier «&nbsp;[Les thèmes enfants&nbsp;: au-delà de la bonne pratique](https://www.ffoodd.fr/wp-tech)&nbsp;».
 

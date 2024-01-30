@@ -82,11 +82,11 @@ Dans un monde merveilleux et homogène, nous «&nbsp;devrions&nbsp;» voir ceci&
 
 Et, le cas échéant si votre navigateur est allergique aux arc-en-ciels, voici le résultat attendu&nbsp;:
 
-![Capture dʼécran sur Firefox](/images/2015/10/firefox-300x30.png)↔"Le texte est simplement blanc sur Firefox et IE, pas dʼarc-en-ciel à lʼhorizon")
+![Capture dʼécran sur Firefox](/images/2015/10/firefox.png "Le texte est simplement blanc sur Firefox et IE, pas dʼarc-en-ciel à lʼhorizon")
 
 Jusque là, tout va bien. La mécanique est belle, aucun danger grâce à la solution de repli évoquée précédemment. Maintenant, cassons tout&nbsp;! Voici le rendu sur IE11 **et _UC Browser_** sur Windows Phone 8.1&nbsp;:
 
-![capture dʼécran sur Windows Phone 8.1](/images/2015/10/windowsphone-300x169.jpg)↔"Le texte est blanc, mais lʼarrière-plan arc-en-ciel est appliqué")
+![capture dʼécran sur Windows Phone 8.1](/images/2015/10/windowsphone.jpg "Le texte est blanc, mais lʼarrière-plan arc-en-ciel est appliqué")
 
 Difficile de garantir quoi que ce soit dans ces conditions. _A priori_ ce problème nʼexiste pas dans les versions antérieures de Windows Phone, et il faut noter que la version bureau dʼIE11 nʼapplique pas lʼarrière-plan&nbsp;!
 

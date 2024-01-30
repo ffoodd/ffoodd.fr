@@ -10,7 +10,10 @@
 		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
 		<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/index.xml"></head>
 	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
-		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+		
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#sommaire">Aller au sommaire</a>
+
 		<div class="row">
 			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation" aria-label="Menu principal">
 				<ul class="menu aside p-reset m-reset ul-reset">
@@ -84,17 +87,16 @@
 <p>En octobre 2016, il a créé <a href="https://github.com/jakearchibald/navigation-transitions/blob/master/README.md">un répertoire sur Github intitulé navigation-transition</a>, dans lequel il explore la complexité d’effectuer des transitions entre les pages en respectant l’historique de navigation.</p>
 <p>C’est chouette, il évoque <strong>des pistes en CSS</strong> lancées par Google en 2014 puis Mozilla en 2015, et sa propre exploration. Je suis sûr que ça en fait baver plus d’un !</p>
 <p>Je vous présente <a href="https://msdn.microsoft.com/en-us/library/ms532847(v=vs.85).aspx#Interpage_Transition">les transitions interpages</a> introduites par Microsoft dans Internet Explorer 4 en 1997. Concrètement, ce sont des filtres Microsoft utilisés dans des balises <code>meta</code>, comme suit :</p>
-<pre><code class="language-markup">
-&lt;META http-equiv=&quot;Page-Enter&quot; 
-  CONTENT=&quot;progid:DXImageTransform.Microsoft.Blinds(
+<pre class="language-markup" tabindex="0"><code class="language-markup">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>META</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Page-Enter<span class="token punctuation">"</span></span> 
+  <span class="token attr-name">CONTENT</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>progid:DXImageTransform.Microsoft.Blinds(
   Duration=4
-  )&quot; /&gt;
-&lt;META http-equiv=&quot;Page-Exit&quot; 
-  CONTENT=&quot;progid:DXImageTransform.Microsoft.Slide(
+  )<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>META</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Page-Exit<span class="token punctuation">"</span></span> 
+  <span class="token attr-name">CONTENT</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>progid:DXImageTransform.Microsoft.Slide(
   Duration=2.500,
   slidestyle=’HIDE’
-  )&quot; /&gt;
-</code></pre>
+  )<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></code></pre>
 <p>C’est pas beau, ça ?</p>
 <h2 id="de-retour-du-passe" tabindex="-1">De retour du passé</h2>
 <p>Vous pensiez que le web de 1997 était révolu, et que tout ce que je viens de déterrer reste obsolète ? Je vous présente mes deux trollons.<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></p>

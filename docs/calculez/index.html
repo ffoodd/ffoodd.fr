@@ -10,7 +10,10 @@
 		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
 		<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/index.xml"></head>
 	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
-		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+		
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#sommaire">Aller au sommaire</a>
+
 		<div class="row">
 			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation" aria-label="Menu principal">
 				<ul class="menu aside p-reset m-reset ul-reset">
@@ -74,11 +77,10 @@ OSEF !</p>
 <p>Personnellement, je me sens un peu sale en laissant traîner des valeurs arbitraires — comme je l’ai déjà évoqué quand je parlais de <a href="https://www.ffoodd.fr/decouvrez-le-calcul-magique/">calcul magique</a>.</p>
 <h2 id="la-fonction-calc" tabindex="-1">La fonction calc</h2>
 <p>Finis les tours de passe-passe : <code>calc()</code> vous permet d’écrire de manière concise et <strong>précise</strong> une valeur égale à un tiers.</p>
-<pre><code class="language-css">
-.⅓ {
-  width: calc(100% / 3);
-}
-</code></pre>
+<pre class="language-css" tabindex="0"><code class="language-css">
+<span class="token selector">.⅓</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>100% / 3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p>Et voilà.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
 <h3 id="compatibilite" tabindex="-1">Compatibilité</h3>
 <p>Et le top, c’est la compatibilité : <strong>tout est au vert depuis IE 9</strong>. Voyez plutôt le tableau sur <a href="https://caniuse.com/#search=calc">Can I Use?</a>. Les seules tâches qui subsistent concernent des navigateurs pour téléphones, pour lesquels on peut raisonnablement supposer qu’un affichage d’un tiers de la largeur ne sera pas utile.</p>

@@ -10,7 +10,10 @@
 		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
 		<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/index.xml"></head>
 	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
-		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+		
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#sommaire">Aller au sommaire</a>
+
 		<div class="row">
 			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation" aria-label="Menu principal">
 				<ul class="menu aside p-reset m-reset ul-reset">
@@ -61,10 +64,9 @@
 <h2 id="les-css-atomiques" tabindex="-1">Les CSS atomiques ⚛</h2>
 <p>La métaphore est la même que celle utilisée par <a href="https://bradfrost.com/">Brad Frost</a> dans <a href="https://atomicdesign.bradfrost.com/">son livre (en cours de rédaction) sur le design atomique</a>. Cependant là où Brad Frost file la métaphore jusquʼà la matière, les CSS atomiques se contentent des atomes et vous laissent vous débrouiller avec le reste.</p>
 <p>Pour résumer, <strong>une classe atomique ne dispose que dʼune seule propriété, avec une seule valeur</strong>. Voici un exemple — tiré directement de <a href="https://acss.io/frequently-asked-questions.html#how-is-atomic-css-different-than-using-inline-styles-">la foire aux questions dʼAtomic CSS</a> — qui devrait être plus clair :</p>
-<pre><code class="language-css">.Fz(large) {
-  font-size: 18px;
-}
-</code></pre>
+<pre class="language-css" tabindex="0"><code class="language-css"><span class="token selector">.Fz(large)</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 18px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p>Vous démultipliez ce principe pour tous vos styles redondants, et vous obtenez des CSS atomiques. Il sʼagit dʼune optimisation massive des CSS en terme de poids, de spécificité, de portabilité. Les chiffres avancés par Thierry Koblentz sont ahurissants, et les explications données par ses présentations et la foire aux questions sont <strong>très convaincantes</strong>.</p>
 <p>Cʼest lʼapproche également défendue par Adam Morse dans son article. Il pousse la réflexion encore plus loin en précisant que si cette conception est menée correctement, alors écrire du CSS devrait être lʼexception et non la règle.</p>
 <blockquote>

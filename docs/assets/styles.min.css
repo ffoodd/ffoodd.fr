@@ -1194,6 +1194,19 @@ pre[class*="language-"] {
 	padding: 1em 0 1em 3em;
 }
 
+pre[class*="language-"][tabindex] {
+	background:
+		local linear-gradient(to right, #efeee3 30%, #0000) 0 0 / 2.5rem 100% no-repeat,
+		local linear-gradient(to right, #0000, #efeee3 70%) 100% / 2.5rem 100% no-repeat,
+		scroll radial-gradient(farthest-side at 0% 50%, #0004, #0000) 0 0 / 1rem 100% no-repeat,
+		#efeee3
+		scroll radial-gradient(farthest-side at 100% 50%, #0004, #0000) 100% / 1rem 100% no-repeat;
+	max-width: calc(100% + 3em);
+	-webkit-overflow-scrolling: touch;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+
 /* Inline code */
 :not(pre) > code[class*="language-"] {
 	padding: .1em;

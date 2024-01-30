@@ -1,5 +1,10 @@
 {% extends "../base.njk" %}
 
+{% block skiplinks %}
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#sommaire">Aller au sommaire</a>
+{% endblock %}
+
 {% block content %}
 	<article role="article" itemscope itemtype="https://schema.org/{% if format === 'status' %}Book{% else %}Article{% endif %}">
 		<time class="screen-reader-text" datetime="{{ date }}" itemprop="datePublished">{{ date | date }}</time>

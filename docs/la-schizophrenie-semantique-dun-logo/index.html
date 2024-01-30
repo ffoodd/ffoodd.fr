@@ -10,7 +10,10 @@
 		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
 		<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/index.xml"></head>
 	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
-		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+		
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#sommaire">Aller au sommaire</a>
+
 		<div class="row">
 			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation" aria-label="Menu principal">
 				<ul class="menu aside p-reset m-reset ul-reset">
@@ -76,30 +79,28 @@ De mon côté, j’ai beaucoup apprécié l’élégance et la légèreté de la
 <p>Au fil de mes pérégrinations, j’ai un jour remarqué cette option sur le générateur de kits @font-face de <a href="https://www.fontsquirrel.com/">font-squirrel</a> : encoder en Base64. Quelques rapides recherches – et cet <a href="https://www.alsacreations.com/article/lire/1439-data-uri-schema.html">excellent article sur Alsacréations</a> – m’ont appris qu’encoder un petit fichier en Base64 permettait d’économiser une requête HTTP : Eurêka !</p>
 <h2 id="resultat" tabindex="-1">Résultat</h2>
 <p>Ne cherchez plus, c’est la technique que j’ai utilisée sur le logo de ce site. En HTML cela donne simplement :</p>
-<pre><code class="language-markup">
-&lt;h1&gt;
-  &lt;a data-icon=&quot;a&quot;&gt;Gaël Poupard&lt;/a&gt;
-&lt;/h1&gt;
-</code></pre>
+<pre class="language-markup" tabindex="0"><code class="language-markup">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">data-icon</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>a<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Gaël Poupard<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span></code></pre>
 <p>et en css :</p>
-<pre><code class="language-css">
-@font-face {
-  font-family: ’logo’;
-  src: url(’font/logo.eot’);
-  src: local(’?’), url(data:font/woff;charset=utf-8;base64,...;
-  font-weight: normal;
-  font-style: normal;
-}
-h1 a {
-  font: 0/0 a;
-  text-decoration: none;
-}
-h1 a:before {
-  content: attr(data-icon);
-  font: 200px/250px ’logo’;
-  text-decoration: none;
-}
-</code></pre>
+<pre class="language-css" tabindex="0"><code class="language-css">
+<span class="token atrule"><span class="token rule">@font-face</span></span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> ’logo’<span class="token punctuation">;</span>
+  <span class="token property">src</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>’font/logo.eot’<span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+  <span class="token property">src</span><span class="token punctuation">:</span> <span class="token function">local</span><span class="token punctuation">(</span>’?’<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">url</span><span class="token punctuation">(</span><span class="token property">data</span><span class="token punctuation">:</span>font/woff<span class="token punctuation">;</span>charset=utf-8<span class="token punctuation">;</span>base64<span class="token punctuation">,</span>...<span class="token punctuation">;</span>
+  <span class="token property">font-weight</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
+  <span class="token property">font-style</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">h1 a</span> <span class="token punctuation">{</span>
+  <span class="token property">font</span><span class="token punctuation">:</span> 0/0 a<span class="token punctuation">;</span>
+  <span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">h1 a:before</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">attr</span><span class="token punctuation">(</span>data-icon<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">font</span><span class="token punctuation">:</span> 200px/250px ’logo’<span class="token punctuation">;</span>
+  <span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p>Et c’est tout ! Le résultat est particulièrement propre et simple. Il nécessite un travail préparatoire assez long, mais c’est une mécanique intéressante à connaître.</p>
 <h2 id="conclusion" tabindex="-1">Conclusion</h2>
 <p>Trois techniques relativement avancées permettent d’obtenir cet excellent résultat. Le logo est :</p>

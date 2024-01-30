@@ -10,7 +10,10 @@
 		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
 		<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/index.xml"></head>
 	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
-		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+		
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#sommaire">Aller au sommaire</a>
+
 		<div class="row">
 			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation" aria-label="Menu principal">
 				<ul class="menu aside p-reset m-reset ul-reset">
@@ -35,7 +38,7 @@
 				</div>
 				<header class="center pt1 mb1" role="banner">
 					<h1 class="mb0 mt0 tk-bello-pro" itemprop="name">Découvrez le calcul magique</h1>
-
+					
 						<nav role="navigation" aria-labelledby="here" class="print-hidden small mt2 mb1">
 	<span id="here">Vous êtes ici&nbsp;: </span>
 	<div class="inbl" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
@@ -47,15 +50,15 @@
 	</div>
 </nav>
 
-
-
+					
+					
 						<h2 class="h3-like description" itemprop="description">Le nombre magique était un symptôme d’une maladie répandue, la quête du <i lang="en">pixel perfect</i>. On se retrouvait à tout caler au pixel près.</h2>
-
+					
 				</header>
-
+				
 	<article role="article" itemscope itemtype="https://schema.org/Article">
 		<time class="screen-reader-text" datetime="2015-03-30T14:30:04" itemprop="datePublished">30 mars 2015</time>
-
+		
 			<div itemprop="articleBody">
 				<p>Et ça, c’était pas terrible. Non, vraiment pas. On cherchait frénétiquement à obtenir le même rendu sur tous les navigateurs et tous les écrans. Aujourd’hui, c’est drôle — à l’époque, c’était le nerf de la guerre.</p>
 <h2 id="les-valeurs-uniques" tabindex="-1">Les valeurs uniques</h2>
@@ -77,7 +80,7 @@
 <p><strong>Ça commence à faire un certain nombre de calculs, vous ne trouvez pas ?</strong></p>
 <h2 id="la-situation-complexe" tabindex="-1">La situation complexe</h2>
 <p>Textuellement, ça n’est pas forcément évident. Voici une petite illustration, dans laquelle la zone blanche est le nouvel élément, et le bloc rouge est la bordure dont je devais ajuster la dimension :</p>
-<figure><img src="/images/2015/03/calc.png" alt="Représentation graphique des proportions entre les blocs" loading="lazy"><figcaption>Représentation graphique des proportions entre les blocs</figcaption></figure>
+<figure><img src="/images/2015/03/calc-300x209.png" alt="Représentation graphique des proportions entre les blocs" loading="lazy"><figcaption>Représentation graphique des proportions entre les blocs</figcaption></figure>
 <p>Finalement, je suis parvenu à simplifier le calcul en tournant autour du ratio de l’image utilisée (en blanc sur le schéma), soit <strong>431:950</strong>. Il s’agissait donc d’exprimer la hauteur de la bordure selon 3 valeurs :</p>
 <ol>
 <li>la proportion en largeur que représente ce nouveau bloc par rapport au <em>viewport</em>, soit <code>72%</code> ;</li>
@@ -86,16 +89,15 @@
 </ol>
 <h2 id="la-magie-opere" tabindex="-1">La magie opère</h2>
 <p>Et voilà comment on aboutit à :</p>
-<pre><code class="language-css">aside {
-  border-top-width: calc( 72vw * 431 / 950 + 4.8em);
-}
-</code></pre>
+<pre class="language-css" tabindex="0"><code class="language-css"><span class="token selector">aside</span> <span class="token punctuation">{</span>
+  <span class="token property">border-top-width</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span> 72vw * 431 / 950 + 4.8em<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p>Grâce à ce calcul, le décalage reste correct et proportionnel au reste de l’écran, et l’aspect graphique est homogène dans tous les contextes d’affichage.</p>
 <h2 id="les-supplements" tabindex="-1">Les suppléments</h2>
 <p>Depuis ce POC, j’ai découvert le travail de <a href="https://gasteroprod.com/">Nicolas Hoizey</a> sur <a href="https://github.com/nhoizey/esviji">esviji V2</a>, qui utilise <a href="https://github.com/nhoizey/esviji/blob/master/src/sass/_screen.scss">les ratios, les calculs et les unités de viewport</a> pour atteindre un degré d’adaptation aux écrans extraordinaire. Je vous conseille de garder un œil sur son projet, et surtout de parcourir <a href="https://gist.github.com/nhoizey/f31cf92114a376a23155">la feuille de styles générée</a> qui est remarquablement écrite !</p>
 
 			</div>
-
+		
 		<footer class="small mt2">
 			<p class="pl2 mt0 pt1">
 				Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
@@ -104,8 +106,8 @@
 		</footer>
 	</article>
 
-
-
+				
+				
 			</main>
 
 			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary" id="sommaire">

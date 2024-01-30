@@ -10,7 +10,10 @@
 		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
 		<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/index.xml"></head>
 	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
-		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+		
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#sommaire">Aller au sommaire</a>
+
 		<div class="row">
 			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation" aria-label="Menu principal">
 				<ul class="menu aside p-reset m-reset ul-reset">
@@ -67,18 +70,17 @@
 </ul>
 <h2 id="le-code" tabindex="-1">Le code</h2>
 <p>Pas de miracle, lʼajout de test dans Modernizr est <a href="https://modernizr.com/docs#modernizr-addtest">bien documenté</a>. Voici ce que jʼai réalisé — qui est probablement améliorable.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
-<pre><code class="language-javascript">
-Modernizr.addTest(&quot;highcontrast&quot;, function() {
-  var objA = document.createElement(&quot;a&quot;),
-  strColor;
-  objA.style.color = &quot;rgb(31, 41, 59)&quot;;
-  document.documentElement.appendChild(objA);
-  strColor = document.defaultView ? document.defaultView.getComputedStyle(objA, null).color : objA.currentStyle.color;
-  strColor = strColor.replace(/ /g, &quot;&quot;);
-  document.documentElement.removeChild(objA);
-  return strColor !== &quot;rgb(31,41,59)&quot;;
-});
-</code></pre>
+<pre class="language-javascript" tabindex="0"><code class="language-javascript">
+Modernizr<span class="token punctuation">.</span><span class="token function">addTest</span><span class="token punctuation">(</span><span class="token string">"highcontrast"</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> objA <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  strColor<span class="token punctuation">;</span>
+  objA<span class="token punctuation">.</span>style<span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token string">"rgb(31, 41, 59)"</span><span class="token punctuation">;</span>
+  document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>objA<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  strColor <span class="token operator">=</span> document<span class="token punctuation">.</span>defaultView <span class="token operator">?</span> document<span class="token punctuation">.</span>defaultView<span class="token punctuation">.</span><span class="token function">getComputedStyle</span><span class="token punctuation">(</span>objA<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">.</span>color <span class="token operator">:</span> objA<span class="token punctuation">.</span>currentStyle<span class="token punctuation">.</span>color<span class="token punctuation">;</span>
+  strColor <span class="token operator">=</span> strColor<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex"> </span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>objA<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> strColor <span class="token operator">!==</span> <span class="token string">"rgb(31,41,59)"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>Rien de bien méchant 😊 Jʼai créé <a href="https://codepen.io/ffoodd/pen/RWmmOO">un CodePen dédié uniquement à ce test</a> avec quelques commentaires et une illustration basique en HTML.</p>
 <h2 id="la-couverture" tabindex="-1">La couverture</h2>
 <p>Pour commencer, cette version est un test Modernizr. Nul besoin de télécharger tout la bibliothèque de tests cependant, sa seule et unique dépendance est la méthode <code>addTest()</code>, dont lʼoutil de construction personnalisée de Modernizr indique quʼelle pèse 2,53 kB (et 1,08 kB une fois compressé avec gzip).</p>

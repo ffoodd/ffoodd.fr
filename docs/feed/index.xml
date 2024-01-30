@@ -117,19 +117,18 @@
 &lt;h2 id=&quot;un-contournement-possible&quot; tabindex=&quot;-1&quot;&gt;Un contournement possible&lt;/h2&gt;
 &lt;p&gt;Une idée m’est venue en lisant un article du calendrier de l’avent Digitpaint intitulé &lt;a href=&quot;https://advent2017.digitpaint.nl/2/&quot;&gt;Fantastic form pseudo selectors&lt;/a&gt;, dans lequel le premier exemple implémente un label flottant non pas au &lt;code&gt;:focus&lt;/code&gt; sur le champ, mais lors du début de saisie grâce à la pseudo-classe &lt;code&gt;:placeholder-shown&lt;/code&gt;. Génie !&lt;/p&gt;
 &lt;p&gt;Cette pseudo-classe est active uniquement lorsque le &lt;code&gt;placeholder&lt;/code&gt; est affiché, autrement dit tant qu’aucune saisie n’a été effectuée dans le champ. Et ça, ça ressemble beaucoup à une partie de l’énoncé de notre problème du jour. Nous pourrions donc faire en sorte de &lt;strong&gt;distinguer un champ invalide vierge d’un champ invalide ayant été saisi&lt;/strong&gt;, avec les sélecteurs suivants :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;
-input:invalid {
-  box-shadow: none;
-}
+&lt;pre class=&quot;language-css&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;
+&lt;span class=&quot;token selector&quot;&gt;input:invalid&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;box-shadow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; none&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-input:invalid:not(:focus) {
-  box-shadow: 0 0 0 2px red;
-}
+&lt;span class=&quot;token selector&quot;&gt;input:invalid:not(:focus)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;box-shadow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0 0 0 2px red&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-input:invalid:placeholder-shown {
-  box-shadow: none;
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;token selector&quot;&gt;input:invalid:placeholder-shown&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;box-shadow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; none&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Et bien a priori, ça fonctionne !&lt;br /&gt;
 Et bonne nouvelle, &lt;a href=&quot;https://caniuse.com/#feat=css-placeholder-shown&quot;&gt;&lt;code&gt;:placeholder-shown&lt;/code&gt; est décemment supporté&lt;/a&gt;. Je vous ai même fait &lt;a href=&quot;https://codepen.io/ffoodd/pen/PEzoYO&quot;&gt;un petit CodePen pour jouer&lt;/a&gt;.&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://www.ffoodd.fr/l-etat-des-champs/#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;h3 id=&quot;remarques-post-publication&quot; tabindex=&quot;-1&quot;&gt;Remarques post-publication&lt;/h3&gt;
@@ -179,11 +178,10 @@ OSEF !&lt;/p&gt;
 &lt;p&gt;Personnellement, je me sens un peu sale en laissant traîner des valeurs arbitraires — comme je l’ai déjà évoqué quand je parlais de &lt;a href=&quot;https://www.ffoodd.fr/decouvrez-le-calcul-magique/&quot;&gt;calcul magique&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;la-fonction-calc&quot; tabindex=&quot;-1&quot;&gt;La fonction calc&lt;/h2&gt;
 &lt;p&gt;Finis les tours de passe-passe : &lt;code&gt;calc()&lt;/code&gt; vous permet d’écrire de manière concise et &lt;strong&gt;précise&lt;/strong&gt; une valeur égale à un tiers.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;
-.⅓ {
-  width: calc(100% / 3);
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-css&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;
+&lt;span class=&quot;token selector&quot;&gt;.⅓&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;calc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;100% / 3&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Et voilà.&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://www.ffoodd.fr/calculez/#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;h3 id=&quot;compatibilite&quot; tabindex=&quot;-1&quot;&gt;Compatibilité&lt;/h3&gt;
 &lt;p&gt;Et le top, c’est la compatibilité : &lt;strong&gt;tout est au vert depuis IE 9&lt;/strong&gt;. Voyez plutôt le tableau sur &lt;a href=&quot;https://caniuse.com/#search=calc&quot;&gt;Can I Use?&lt;/a&gt;. Les seules tâches qui subsistent concernent des navigateurs pour téléphones, pour lesquels on peut raisonnablement supposer qu’un affichage d’un tiers de la largeur ne sera pas utile.&lt;/p&gt;
@@ -219,53 +217,49 @@ Plusieurs pistes existent pour palier ce problème :&lt;/p&gt;
 &lt;li&gt;on peut aussi se la jouer &lt;em&gt;old school&lt;/em&gt; en &lt;strong&gt;dupliquant le contenu masqué&lt;/strong&gt; dans une balise &lt;code&gt;&amp;lt;noscript&amp;gt;&lt;/code&gt; — mais on ne se sent pas vraiment propre, après ça.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Comme le signale Lionel dans les commentaires, conserver la modification des classes dès le &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; reste une étape incontournable pour optimiser ce mécanisme. Un exemple :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;
-document.documentElement.classList.remove(’no-js’);
-document.documentElement.classList.add(’js’);
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-javascript&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;
+document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;documentElement&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;classList&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;remove&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;’no&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;js’&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;documentElement&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;classList&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;’js’&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Et en bonus, &lt;strong&gt;on peut réfléchir et utiliser CSS&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;les-styles-a-la-rescousse&quot; tabindex=&quot;-1&quot;&gt;Les styles à la rescousse&lt;/h2&gt;
 &lt;p&gt;La base du fonctionnement que je propose est l’astuce utilisée par &lt;a href=&quot;https://www.nicolas-hoffmann.net/source/&quot;&gt;Nicolas Hoffmann&lt;/a&gt; sur &lt;a href=&quot;https://a11y.nicolas-hoffmann.net/&quot;&gt;ses composants jQuery accessibles&lt;/a&gt;. &lt;em&gt;Grosso modo&lt;/em&gt;, il effectue une transition sur &lt;code&gt;max-height&lt;/code&gt; pour la partie animée, et sur &lt;code&gt;visibility&lt;/code&gt; avec un délai pour &lt;strong&gt;masquer réellement&lt;/strong&gt; le contenu.&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://www.ffoodd.fr/avec-ou-sans-js/#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;J’aime beaucoup cette technique, dont le seul inconvénient — à mon avis — est d’animer &lt;code&gt;max-height&lt;/code&gt;, ce qui nous oblige à utiliser un &lt;a href=&quot;https://www.ffoodd.fr/decouvrez-le-calcul-magique/&quot;&gt;chiffre magique&lt;/a&gt; pour une hauteur maximum inatteignable.&lt;/p&gt;
 &lt;h3 id=&quot;letat-de-base&quot; tabindex=&quot;-1&quot;&gt;L’état de base&lt;/h3&gt;
 &lt;p&gt;Voici l’état de base de ma navigation :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;[id=&amp;quot;nav&amp;quot;] {
-  transform: translate3d(-100%, 0, 0);
-  transition:
-  transform 300ms ease-in 50ms,
-  visibility 0s linear 300ms;
-  visibility: hidden;
-  width: 18.75rem;
-  will-change: transform, visibility;
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-css&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;[id=&quot;nav&quot;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;translate3d&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;-100%&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 0&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 0&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  transform 300ms ease-in 50ms&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  visibility 0s linear 300ms&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;visibility&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; hidden&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 18.75rem&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;will-change&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; transform&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; visibility&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Elle est décalée vers la gauche de la totalité de sa largeur, afin de &lt;strong&gt;sortir de l’écran&lt;/strong&gt; ; et est masquée.&lt;/p&gt;
 &lt;p&gt;Notez que nous avons un délai sur nos deux transitions. Pour le moment, seul celui sur &lt;code&gt;visibility&lt;/code&gt; est important, puisqu’il permet de faire coïncider le changement de visibilité avec la durée de la transformation.&lt;/p&gt;
 &lt;h3 id=&quot;louverture-grace-a-js&quot; tabindex=&quot;-1&quot;&gt;L’ouverture grâce à JS&lt;/h3&gt;
 &lt;p&gt;Là, c’est tout bête. Le JS ajoute une classe &lt;code&gt;.is-opened&lt;/code&gt; à la navigation, je m’en sers pour accrocher mes styles :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;
-.is-opened {
-  transform: none;
-  transition-delay: 0ms;
-  visibility: visible;
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-css&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;
+&lt;span class=&quot;token selector&quot;&gt;.is-opened&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; none&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;transition-delay&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0ms&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;visibility&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; visible&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Et pour ceux qui me connaissent, je désamorce une question : je n’utilise pas &lt;code&gt;:not([aria-hidden])&lt;/code&gt;, car cet attribut est ajouté &lt;em&gt;via&lt;/em&gt; JS. Ainsi la navigation commencerait à apparaître au chargement, puis serait masquée après l’exécution du script — &lt;strong&gt;exactement le comportement qu’on cherche à corriger&lt;/strong&gt;.&lt;/p&gt;
 &lt;h3 id=&quot;et-si-js-est-desactive&quot; tabindex=&quot;-1&quot;&gt;Et si JS est désactivé&lt;/h3&gt;
 &lt;p&gt;C’est là qu’on rigole ! Lisez plutôt, je vous explique ensuite :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;
-@keyframes no-js {
-  to {
-  transform: none;
-  transition-delay: 50ms, 0ms;
-  visibility: visible;
-  }
-}
+&lt;pre class=&quot;language-css&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;
+&lt;span class=&quot;token atrule&quot;&gt;&lt;span class=&quot;token rule&quot;&gt;@keyframes&lt;/span&gt; no-js&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token selector&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; none&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;transition-delay&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 50ms&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 0ms&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;visibility&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; visible&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-.no-js [id=&amp;quot;nav&amp;quot;] {
-  animation: 300ms ease-in 300ms forwards no-js;
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;token selector&quot;&gt;.no-js [id=&quot;nav&quot;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;animation&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 300ms ease-in 300ms forwards no-js&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Dans un premier temps, je définis la règle &lt;code&gt;@keyframes&lt;/code&gt; pour mon animation. Son seul contenu est &lt;strong&gt;l’état final&lt;/strong&gt; : pas de translation, l’élément est visible, et les délais de transition sont ajustés. &lt;a href=&quot;https://caniuse.com/#search=keyframes&quot;&gt;En terme de support&lt;/a&gt; on abandonne donc IE9 et ses aïeux, ainsi qu’Opéra Mini.&lt;/p&gt;
 &lt;p&gt;Dans un second temps, j’applique cette animation sur la navigation lorsque la balise &lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt; porte la classe &lt;code&gt;.no-js&lt;/code&gt;. C’est sa classe par défaut, qui n’est retirée que si JS est activé.&lt;/p&gt;
 &lt;p&gt;Pour éviter que l’animation ne se joue pendant le chargement de la page, je lui intime l’ordre de &lt;strong&gt;patienter&lt;/strong&gt; 300 millisecondes et de &lt;strong&gt;durer&lt;/strong&gt; 300 millisecondes — soit un délai généralement suffisant pour que JS ait magouillé les classes sur &lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt;.&lt;/p&gt;
@@ -315,17 +309,16 @@ document.documentElement.classList.add(’js’);
 &lt;p&gt;En octobre 2016, il a créé &lt;a href=&quot;https://github.com/jakearchibald/navigation-transitions/blob/master/README.md&quot;&gt;un répertoire sur Github intitulé navigation-transition&lt;/a&gt;, dans lequel il explore la complexité d’effectuer des transitions entre les pages en respectant l’historique de navigation.&lt;/p&gt;
 &lt;p&gt;C’est chouette, il évoque &lt;strong&gt;des pistes en CSS&lt;/strong&gt; lancées par Google en 2014 puis Mozilla en 2015, et sa propre exploration. Je suis sûr que ça en fait baver plus d’un !&lt;/p&gt;
 &lt;p&gt;Je vous présente &lt;a href=&quot;https://msdn.microsoft.com/en-us/library/ms532847(v=vs.85).aspx#Interpage_Transition&quot;&gt;les transitions interpages&lt;/a&gt; introduites par Microsoft dans Internet Explorer 4 en 1997. Concrètement, ce sont des filtres Microsoft utilisés dans des balises &lt;code&gt;meta&lt;/code&gt;, comme suit :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-markup&quot;&gt;
-&amp;lt;META http-equiv=&amp;quot;Page-Enter&amp;quot; 
-  CONTENT=&amp;quot;progid:DXImageTransform.Microsoft.Blinds(
+&lt;pre class=&quot;language-markup&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-markup&quot;&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;META&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;http-equiv&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;Page-Enter&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; 
+  &lt;span class=&quot;token attr-name&quot;&gt;CONTENT&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;progid:DXImageTransform.Microsoft.Blinds(
   Duration=4
-  )&amp;quot; /&amp;gt;
-&amp;lt;META http-equiv=&amp;quot;Page-Exit&amp;quot; 
-  CONTENT=&amp;quot;progid:DXImageTransform.Microsoft.Slide(
+  )&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;META&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;http-equiv&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;Page-Exit&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; 
+  &lt;span class=&quot;token attr-name&quot;&gt;CONTENT&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;progid:DXImageTransform.Microsoft.Slide(
   Duration=2.500,
   slidestyle=’HIDE’
-  )&amp;quot; /&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+  )&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;C’est pas beau, ça ?&lt;/p&gt;
 &lt;h2 id=&quot;de-retour-du-passe&quot; tabindex=&quot;-1&quot;&gt;De retour du passé&lt;/h2&gt;
 &lt;p&gt;Vous pensiez que le web de 1997 était révolu, et que tout ce que je viens de déterrer reste obsolète ? Je vous présente mes deux trollons.&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://www.ffoodd.fr/les-nouveautes-d%CA%BCie4/#fn4&quot; id=&quot;fnref4&quot;&gt;[4]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
@@ -376,51 +369,47 @@ document.documentElement.classList.add(’js’);
 &lt;p&gt;La « magie » de cette solution repose sur la propriété &lt;code&gt;clip&lt;/code&gt;. Elle est simple à comprendre et très efficace. Seul bémol : &lt;code&gt;clip&lt;/code&gt; est &lt;strong&gt;déprécié par le module &lt;em&gt;&lt;a href=&quot;https://drafts.fxtf.org/css-masking-1/#clip-property&quot;&gt;CSS masking&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt; de niveau 1.&lt;/p&gt;
 &lt;p&gt;Pas de souci. La technique basée sur &lt;code&gt;clip&lt;/code&gt; date un peu, il est normal qu’elle tombe en désuétude. La nouvelle spécification recommande l’utilisation de &lt;code&gt;clip-path&lt;/code&gt; pour remplacer &lt;code&gt;clip&lt;/code&gt;. Ce qui nous laisse pantois, puisque &lt;a href=&quot;https://caniuse.com/#feat=css-clip-path&quot;&gt;le support de &lt;code&gt;clip-path&lt;/code&gt; est encore tout à fait relatif&lt;/a&gt;. &lt;strong&gt;Nous devons conserver &lt;code&gt;clip&lt;/code&gt; et ajouter &lt;code&gt;clip-path&lt;/code&gt; en guise d’amélioration progressive&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Cependant la syntaxe est différente également. Après quelques recherches, &lt;a href=&quot;https://twitter.com/ryuran78/status/778943389819604992&quot;&gt;Yvain Liechti a proposé la version la plus courte pour obtenir le résultat attendu&lt;/a&gt; :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;clip-path: inset(50%);
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-css&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token property&quot;&gt;clip-path&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;inset&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;50%&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Banco. Un problème résolu !&lt;/p&gt;
 &lt;h2 id=&quot;le-texte-ratatine&quot; tabindex=&quot;-1&quot;&gt;Le texte ratatiné&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe&quot;&gt;J. Renée Beach a signalé&lt;/a&gt; que la propriété &lt;code&gt;width: 1px;&lt;/code&gt; avait des effets négatifs sur le rendu du texte et par conséquent sa vocalisation par un lecteur d’écran.&lt;/p&gt;
 &lt;p&gt;La solution proposée est à la fois logique et simple : empêcher le texte de passer à la ligne et ainsi &lt;strong&gt;garantir que les espaces entre les mots sont conservés&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Une seule propriété suffit :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;white-space: nowrap;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-css&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token property&quot;&gt;white-space&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; nowrap&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Et voilà, second problème résolu.&lt;/p&gt;
 &lt;h2 id=&quot;la-totale&quot; tabindex=&quot;-1&quot;&gt;La totale&lt;/h2&gt;
 &lt;p&gt;Voilà la version finale que je propose actuellement :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;
-.sr-only {
-  border: 0 !important;
-  clip: rect(1px, 1px, 1px, 1px) !important;
-  -webkit-clip-path: inset(50%) !important;
-    clip-path: inset(50%) !important;
-  height: 1px !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  padding: 0 !important;
-  position: absolute !important;
-  width: 1px !important;
-  white-space: nowrap !important;
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-css&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;
+&lt;span class=&quot;token selector&quot;&gt;.sr-only&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0 &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;clip&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;rect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;1px&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 1px&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 1px&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 1px&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;-webkit-clip-path&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;inset&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;50%&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;clip-path&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;inset&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;50%&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 1px &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; -1px &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;overflow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; hidden &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0 &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; absolute &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 1px &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;white-space&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; nowrap &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&quot;avertissement&quot; tabindex=&quot;-1&quot;&gt;Avertissement&lt;/h3&gt;
 &lt;p&gt;Normalement, vous ne devriez utiliser ceci &lt;strong&gt;que pour du texte&lt;/strong&gt;. Autrement dit, il ne devrait jamais y avoir d’élément capable de recevoir le &lt;code&gt;:focus&lt;/code&gt; dans un élément masqué de la sorte. Cela pourrait conduire à des comportements étonnants, puisque le navigateur cherchera à positionner le &lt;em&gt;scroll&lt;/em&gt; à l’endroit où est placé le &lt;code&gt;:focus&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Cependant, si l’élément masqué peut lui-même recevoir le &lt;code&gt;:focus&lt;/code&gt;, il nous faut pouvoir l’afficher de nouveau. &lt;strong&gt;C’est généralement le cas pour les liens d’évitement&lt;/strong&gt;. Lisez &lt;a href=&quot;https://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1&quot;&gt;la technique G1 des WCAG&lt;/a&gt; pour en savoir plus.&lt;/p&gt;
 &lt;p&gt;Pour ce genre de cas, &lt;a href=&quot;https://github.com/twbs/bootstrap/blob/v4-dev/scss/mixins/_screen-reader.scss&quot;&gt;Bootstrap propose une classe supplémentaire&lt;/a&gt; pour remettre à zéro nos valeurs de masquage.&lt;/p&gt;
 &lt;p&gt;C’est à mon avis la meilleure façon de faire — et étant donné les changements apportés sur la classe de masquage, cette seconde classe doit être revue elle aussi. Voici ma version :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;
-.sr-only-focusable:focus,
-.sr-only-focusable:active {
-  clip: auto !important;
-  -webkit-clip-path: none !important;
-    clip-path: none !important;
-  height: auto !important;
-  margin: auto !important;
-  overflow: visible !important;
-  width: auto !important;
-  white-space: normal !important;
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-css&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;
+&lt;span class=&quot;token selector&quot;&gt;.sr-only-focusable:focus,
+.sr-only-focusable:active&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;clip&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; auto &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;-webkit-clip-path&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; none &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;clip-path&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; none &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; auto &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; auto &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;overflow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; visible &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; auto &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;white-space&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; normal &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&quot;code-et-traduction&quot; tabindex=&quot;-1&quot;&gt;Code et traduction&lt;/h2&gt;
 &lt;p&gt;Vous pouvez retrouver ces classes à plusieurs endroits :&lt;/p&gt;
 &lt;ul&gt;
@@ -553,10 +542,9 @@ Utiliser des propriétés de style dans le HTML revient à corrompre la sémanti
 &lt;h2 id=&quot;les-css-atomiques&quot; tabindex=&quot;-1&quot;&gt;Les CSS atomiques ⚛&lt;/h2&gt;
 &lt;p&gt;La métaphore est la même que celle utilisée par &lt;a href=&quot;https://bradfrost.com/&quot;&gt;Brad Frost&lt;/a&gt; dans &lt;a href=&quot;https://atomicdesign.bradfrost.com/&quot;&gt;son livre (en cours de rédaction) sur le design atomique&lt;/a&gt;. Cependant là où Brad Frost file la métaphore jusquʼà la matière, les CSS atomiques se contentent des atomes et vous laissent vous débrouiller avec le reste.&lt;/p&gt;
 &lt;p&gt;Pour résumer, &lt;strong&gt;une classe atomique ne dispose que dʼune seule propriété, avec une seule valeur&lt;/strong&gt;. Voici un exemple — tiré directement de &lt;a href=&quot;https://acss.io/frequently-asked-questions.html#how-is-atomic-css-different-than-using-inline-styles-&quot;&gt;la foire aux questions dʼAtomic CSS&lt;/a&gt; — qui devrait être plus clair :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;.Fz(large) {
-  font-size: 18px;
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-css&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;.Fz(large)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 18px&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Vous démultipliez ce principe pour tous vos styles redondants, et vous obtenez des CSS atomiques. Il sʼagit dʼune optimisation massive des CSS en terme de poids, de spécificité, de portabilité. Les chiffres avancés par Thierry Koblentz sont ahurissants, et les explications données par ses présentations et la foire aux questions sont &lt;strong&gt;très convaincantes&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Cʼest lʼapproche également défendue par Adam Morse dans son article. Il pousse la réflexion encore plus loin en précisant que si cette conception est menée correctement, alors écrire du CSS devrait être lʼexception et non la règle.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -757,15 +745,14 @@ Utiliser des propriétés de style dans le HTML revient à corrompre la sémanti
 &lt;p&gt;Bon, jʼadmets également avoir exporté un SVG plutôt quʼune bête image bitmap. Pour tout vous dire ça nʼest pas nécessairement le meilleur choix, étant donné que pour une image aussi simple &lt;strong&gt;le SVG est plus lourd&lt;/strong&gt; quʼun PNG bien optimisé et quʼ&lt;strong&gt;on perd nécessairement en support navigateur&lt;/strong&gt;.&lt;/p&gt;
 &lt;h3 id=&quot;implementer-une-alternative-accessible&quot; tabindex=&quot;-1&quot;&gt;Implémenter une alternative accessible&lt;/h3&gt;
 &lt;p&gt;Pour celui-ci aucun mérite, puisque lʼaccessibilité des SVG commence à être bien documentée. Je vous laisse farfouiller un peu les artères du web pour trouver votre bonheur — personnellement jʼai abouti à ceci :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-markup&quot;&gt;
-&amp;lt;svg viewBox=&amp;quot;0 0 320 215&amp;quot; width=&amp;quot;320&amp;quot; height=&amp;quot;215&amp;quot;
-   aria-labelledby=&amp;quot;title desc&amp;quot; role=&amp;quot;img&amp;quot;
-   xmlns=&amp;quot;https://www.w3.org/2000/svg&amp;quot;&amp;gt; 
-  &amp;lt;title id=&amp;quot;title&amp;quot;&amp;gt;Chargement en cours…&amp;lt;/title&amp;gt;
-  &amp;lt;desc id=&amp;quot;desc&amp;quot;&amp;gt;La carte de profil est en chemin !&amp;lt;/desc&amp;gt;
-  &amp;lt;path role=&amp;quot;presentation&amp;quot; d=&amp;quot;…&amp;quot; /&amp;gt;
-&amp;lt;/svg&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-markup&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-markup&quot;&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;svg&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;viewBox&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;0 0 320 215&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;320&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;215&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;
+   &lt;span class=&quot;token attr-name&quot;&gt;aria-labelledby&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;title desc&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;role&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;img&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;
+   &lt;span class=&quot;token attr-name&quot;&gt;xmlns&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;https://www.w3.org/2000/svg&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; 
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;title&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;title&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;Chargement en cours…&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;title&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;desc&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;desc&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;La carte de profil est en chemin !&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;desc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;path&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;role&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;presentation&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;…&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;svg&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Je vous passe les détails sordides des multiples &lt;code&gt;&amp;lt;path&amp;gt;&lt;/code&gt; dans le SVG, vous pourrez jouer avec dans la démo — et accessoirement, cʼest une partie que vous devrez personnaliser, donc… Mais normalement ce magnifique assortiment de &lt;code&gt;&amp;lt;title&amp;gt;&lt;/code&gt; et &lt;code&gt;&amp;lt;desc&amp;gt;&lt;/code&gt; liés au SVG &lt;em&gt;via&lt;/em&gt; &lt;code&gt;aria-labelledby&lt;/code&gt; fait lʼaffaire et rend le tout intelligible.&lt;/p&gt;
 &lt;h3 id=&quot;implementer-une-animation&quot; tabindex=&quot;-1&quot;&gt;Implémenter une animation&lt;/h3&gt;
 &lt;h4 id=&quot;on-est-dans-du-svg&quot; tabindex=&quot;-1&quot;&gt;On est dans du SVG&lt;/h4&gt;
@@ -787,37 +774,35 @@ Utiliser des propriétés de style dans le HTML revient à corrompre la sémanti
 &lt;p&gt;Cʼest donc un poil plus complexe que de simplement remplir le SVG avec un dégradé qui sʼanime tout seul, mais bon ! En revanche il ne vous aura probablement pas échappé quʼil nous faut cette animation &lt;strong&gt;devant&lt;/strong&gt; le SVG. Et pour cela un pseudo-élément serait fort agréable. Malheureusement &lt;a href=&quot;https://github.com/ffoodd/a11y.css/blob/master/README-fr.md#cas-particuliers-et-probl%C3%A8mes-connus&quot;&gt;SVG est un élément remplacé&lt;/a&gt;, ce qui empêche de lui appliquer un pseudo-élément. Pour pouvoir implémenter lʼanimation, il nous faut donc un élément conteneur qui portera le pseudo-élément (ce même conteneur qui pourrait fort bien vous servir dans un contexte adaptatif ou simplement pour la mise en page).&lt;/p&gt;
 &lt;h2 id=&quot;la-demonstration&quot; tabindex=&quot;-1&quot;&gt;La démonstration&lt;/h2&gt;
 &lt;p&gt;En supposant que vous utilisez une division comme conteneur, voici les styles du pseudo-élément :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;
-div::after {
-  animation: placeholder 2s linear infinite;
-  background-image: 
-  linear-gradient( 
-  110deg, 
-  rgba( 255, 255, 255, 0) 10%, 
-  rgba( 255, 255, 255, .33) 30%, 
-  rgba( 255, 255, 255, 0) 60% 
-  );
-  background-size: 20em 13.4375em;
-  bottom: 0;
-  content: &amp;quot;&amp;quot;;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 2;
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-css&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;
+&lt;span class=&quot;token selector&quot;&gt;div::after&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;animation&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; placeholder 2s linear infinite&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;background-image&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 
+  &lt;span class=&quot;token function&quot;&gt;linear-gradient&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; 
+  110deg&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 
+  &lt;span class=&quot;token function&quot;&gt;rgba&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; 255&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 255&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 255&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 0&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; 10%&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 
+  &lt;span class=&quot;token function&quot;&gt;rgba&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; 255&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 255&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 255&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; .33&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; 30%&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 
+  &lt;span class=&quot;token function&quot;&gt;rgba&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; 255&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 255&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 255&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 0&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; 60% 
+  &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;background-size&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 20em 13.4375em&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;bottom&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; absolute&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;z-index&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 2&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Un détail peut vous surprendre : je nʼutilise pas le mot-clé &lt;code&gt;transparent&lt;/code&gt; mais la notation &lt;code&gt;rgba( 255, 255, 255, 0 )&lt;/code&gt;. Peut-être le savez-vous déjà mais le mot-clé qui semble définir la transparence est en réalité une notation raccourcie de &lt;code&gt;rgba( 0, 0, 0, 0 )&lt;/code&gt;, &lt;a href=&quot;https://www.w3.org/TR/css3-color/#transparent&quot;&gt;comme le précise la spécification du module « Couleurs » de CSS3&lt;/a&gt;. Ça nʼa lʼair de rien comme ça, mais ça a son importance si vous appliquez un dégradé — disons du blanc au transparent, par exemple — et que vous regardez le résultat sur Safari : il interpole le dégradé en tendant vers le noir (ce qui est relativement logique) et vous donne donc un intermédiaire immonde entre votre blanc nacré et votre transparence parfaite. Un gros pâté noir, quoi. &lt;strong&gt;Bref, cʼest moche&lt;/strong&gt;. Utiliser le blanc avec une opacité nulle résout facilement ce travers.&lt;/p&gt;
 &lt;p&gt;Ensuite pour animer le dégradé, cʼest plutôt simple puisque vous avez déjà vu lʼappel à lʼanimation &lt;code&gt;placeholder&lt;/code&gt;, pour une durée de deux secondes et en boucle. Elle se contente de déplacer le fond dʼune distance équivalente à la largeur du bloc, afin de générer une véritable boucle visuelle.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;
-@keyframes placeholder {  
-  from { 
-  background-position: -10em 0; 
-  } to { 
-  background-position: 10em 0; 
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-css&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;
+&lt;span class=&quot;token atrule&quot;&gt;&lt;span class=&quot;token rule&quot;&gt;@keyframes&lt;/span&gt; placeholder&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;  
+  &lt;span class=&quot;token selector&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; 
+  &lt;span class=&quot;token property&quot;&gt;background-position&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; -10em 0&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; 
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token selector&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; 
+  &lt;span class=&quot;token property&quot;&gt;background-position&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 10em 0&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; 
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;Et voilà !&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Si vous souhaitez jouer avec ou le reprendre, &lt;a href=&quot;https://dabblet.com/gist/466b6a47db1b4ac14ecb&quot;&gt;vous trouverez le tout sur Dabblet&lt;/a&gt;. Rien de bien complexe, mais cʼest tellement simple et efficace quʼil serait dommage de sʼen priver 😇&lt;/p&gt;
 &lt;ol class=&quot;footnotes-list small mt2 pt2 pb2&quot;&gt;
@@ -842,18 +827,17 @@ div::after {
 &lt;/ul&gt;
 &lt;h2 id=&quot;le-code&quot; tabindex=&quot;-1&quot;&gt;Le code&lt;/h2&gt;
 &lt;p&gt;Pas de miracle, lʼajout de test dans Modernizr est &lt;a href=&quot;https://modernizr.com/docs#modernizr-addtest&quot;&gt;bien documenté&lt;/a&gt;. Voici ce que jʼai réalisé — qui est probablement améliorable.&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://www.ffoodd.fr/un-test-modernizr-pour-les-contrastes-eleves/#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;
-Modernizr.addTest(&amp;quot;highcontrast&amp;quot;, function() {
-  var objA = document.createElement(&amp;quot;a&amp;quot;),
-  strColor;
-  objA.style.color = &amp;quot;rgb(31, 41, 59)&amp;quot;;
-  document.documentElement.appendChild(objA);
-  strColor = document.defaultView ? document.defaultView.getComputedStyle(objA, null).color : objA.currentStyle.color;
-  strColor = strColor.replace(/ /g, &amp;quot;&amp;quot;);
-  document.documentElement.removeChild(objA);
-  return strColor !== &amp;quot;rgb(31,41,59)&amp;quot;;
-});
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-javascript&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;
+Modernizr&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;addTest&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;highcontrast&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; objA &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;createElement&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;a&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  strColor&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  objA&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;style&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;color &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;rgb(31, 41, 59)&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;documentElement&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;appendChild&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;objA&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  strColor &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;defaultView &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;defaultView&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getComputedStyle&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;objA&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;color &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; objA&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;currentStyle&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;color&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  strColor &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; strColor&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token regex&quot;&gt;&lt;span class=&quot;token regex-delimiter&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token regex-source language-regex&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token regex-delimiter&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token regex-flags&quot;&gt;g&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;documentElement&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;removeChild&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;objA&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; strColor &lt;span class=&quot;token operator&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;rgb(31,41,59)&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Rien de bien méchant 😊 Jʼai créé &lt;a href=&quot;https://codepen.io/ffoodd/pen/RWmmOO&quot;&gt;un CodePen dédié uniquement à ce test&lt;/a&gt; avec quelques commentaires et une illustration basique en HTML.&lt;/p&gt;
 &lt;h2 id=&quot;la-couverture&quot; tabindex=&quot;-1&quot;&gt;La couverture&lt;/h2&gt;
 &lt;p&gt;Pour commencer, cette version est un test Modernizr. Nul besoin de télécharger tout la bibliothèque de tests cependant, sa seule et unique dépendance est la méthode &lt;code&gt;addTest()&lt;/code&gt;, dont lʼoutil de construction personnalisée de Modernizr indique quʼelle pèse 2,53 kB (et 1,08 kB une fois compressé avec gzip).&lt;/p&gt;
@@ -900,55 +884,54 @@ Modernizr.addTest(&amp;quot;highcontrast&amp;quot;, function() {
 &lt;li&gt;&lt;a href=&quot;https://eager.io/blog/smarter-link-underlines/&quot;&gt;la réflexion menée par Adam Schwartz pour Eager (en anglais)&lt;/a&gt; avec une illustration interactive particulièrement réussie.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Ça donne suffisamment de matière pour avancer, donc jʼai trituré tout ça jusquʼà obtenir un résultat satisfaisant mes besoins. Vous en trouverez &lt;a href=&quot;https://codepen.io/ffoodd/pen/jbRMqJ/&quot;&gt;un aperçu rigolo sur CodePen&lt;/a&gt;. Pour les feignasses, voici le CSS incriminé :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;
-.underline {
-  text-decoration: underline;
-}
+&lt;pre class=&quot;language-css&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;
+&lt;span class=&quot;token selector&quot;&gt;.underline&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;text-decoration&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; underline&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-.no-highcontrast.cssgradients .underline {
-  background: white 0 88% / 100% 0.1rem no-repeat content-box content-box;
-  background-image: 
-  linear-gradient(
-  rgba(255, 255, 255, .67), 
-  rgba(255, 255, 255, .67)
-  ), 
-  linear-gradient(
-  currentColor, 
+&lt;span class=&quot;token selector&quot;&gt;.no-highcontrast.cssgradients .underline&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; white 0 88% / 100% 0.1rem no-repeat content-box content-box&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;background-image&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 
+  &lt;span class=&quot;token function&quot;&gt;linear-gradient&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;rgba&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;255&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 255&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 255&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; .67&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 
+  &lt;span class=&quot;token function&quot;&gt;rgba&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;255&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 255&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 255&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; .67&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 
+  &lt;span class=&quot;token function&quot;&gt;linear-gradient&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+  currentColor&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 
   currentColor
-  );
-  display: inline;
-  text-decoration: none;
-  text-shadow: 
-  .05rem 0 0 white, 
- -.05rem 0 0 white, 
-  .1rem 0 0 white, 
- -.1rem 0 0 white, 
-  .2rem 0 0 white, 
- -.2rem 0 0 white;
-  width: auto;
-}
+  &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; inline&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;text-decoration&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; none&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;text-shadow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 
+  .05rem 0 0 white&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 
+ -.05rem 0 0 white&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 
+  .1rem 0 0 white&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 
+ -.1rem 0 0 white&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 
+  .2rem 0 0 white&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 
+ -.2rem 0 0 white&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; auto&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-/* Pour la sélection */
-/* https://developer.mozilla.org/en-US/docs/Web/CSS/::selection */
-.no-highcontrast.cssgradients .underline::-moz-selection {
-  background-color: black;
-  color: white;
-  text-shadow: none;
-}
+&lt;span class=&quot;token comment&quot;&gt;/* Pour la sélection */&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;/* https://developer.mozilla.org/en-US/docs/Web/CSS/::selection */&lt;/span&gt;
+&lt;span class=&quot;token selector&quot;&gt;.no-highcontrast.cssgradients .underline::-moz-selection&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; black&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; white&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;text-shadow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; none&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-.no-highcontrast.cssgradients .underline::selection {
-  background-color: black;
-  color: white;
-  text-shadow: none;
-}
+&lt;span class=&quot;token selector&quot;&gt;.no-highcontrast.cssgradients .underline::selection&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; black&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; white&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;text-shadow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; none&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-@media screen and (-ms-high-contrast: active) {
-  .underline {
-  background: none !important;
-  text-decoration: underline !important;
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;token atrule&quot;&gt;&lt;span class=&quot;token rule&quot;&gt;@media&lt;/span&gt; screen &lt;span class=&quot;token keyword&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token property&quot;&gt;-ms-high-contrast&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; active&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token selector&quot;&gt;.underline&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; none &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;text-decoration&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; underline &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Vous noterez les occurrences multiples de la couleur blanche — tant sous la forme du mot-clé &lt;code&gt;white&lt;/code&gt; que de sa notation &lt;code&gt;rgba()&lt;/code&gt;. Simplement parce que mon exemple à un arrière-plan blanc. Évidemment si votre texte repose sur un fond coloré, ces valeurs doivent &lt;strong&gt;respecter la couleur dʼarrière-plan&lt;/strong&gt;.&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://www.ffoodd.fr/le-soulignement-factice/#fn3&quot; id=&quot;fnref3&quot;&gt;[3]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;Petite astuce à prendre en considération, le second paramètre du &lt;em&gt;mixin&lt;/em&gt; concerne la position du soulignement &lt;strong&gt;par rapport à la hauteur de lʼélément&lt;/strong&gt;. Je ne suis pas parvenu à rendre ça dispensable, le changement de corps et de caractères entraînant une trop grande variation sur la hauteur de ligne. Dans mes différents cas, la position varie entre 88% et 96%.&lt;/p&gt;
 &lt;h2 id=&quot;cest-pas-un-peu-verbeux&quot; tabindex=&quot;-1&quot;&gt;Cʼest pas un peu verbeux ?&lt;/h2&gt;
@@ -994,11 +977,10 @@ Modernizr.addTest(&amp;quot;highcontrast&amp;quot;, function() {
 &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/fr/docs/Web/CSS/text-decoration-skip&quot;&gt;&lt;code&gt;text-decoration-skip&lt;/code&gt;, également sur MDN&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Tout peut se résumer comme suit :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;
-@supports (text-decoration-skip: ink) {
-  text-decoration-skip: ink;
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-css&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;
+&lt;span class=&quot;token atrule&quot;&gt;&lt;span class=&quot;token rule&quot;&gt;@supports&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token property&quot;&gt;text-decoration-skip&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ink&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;text-decoration-skip&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ink&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Le &lt;a href=&quot;https://codepen.io/ffoodd/pen/jbRMqJ/&quot;&gt;CodePen&lt;/a&gt; est à jour pour que vous jetiez un œil, et je l’ai &lt;a href=&quot;https://gist.github.com/ffoodd/d4bee79e6af99c05f0a32542d66d5969&quot;&gt;exporté dans un Gist&lt;/a&gt; également.&lt;/p&gt;
 &lt;p&gt;Cet ajout a quelques effets notables :&lt;/p&gt;
 &lt;ul&gt;
@@ -1053,12 +1035,11 @@ Modernizr.addTest(&amp;quot;highcontrast&amp;quot;, function() {
 &lt;h2 id=&quot;la-singularite&quot; tabindex=&quot;-1&quot;&gt;La singularité&lt;/h2&gt;
 &lt;p&gt;Les éléments remplacés ont donc des dimensions intrinsèques, et ça inclut les boutons. Lorsque vous spécifiez une largeur sur un élément remplacé, &lt;strong&gt;vous écrasez sa largeur intrinsèque&lt;/strong&gt;. Jusque là, tout va bien. Vous pouvez jouer avec une image, effectivement cʼest chouette.&lt;/p&gt;
 &lt;p&gt;Maintenant pour rigoler, prenez un &lt;code&gt;&amp;lt;button&amp;gt;&lt;/code&gt; et affublez-le de ce CSS :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;
-button {
-  display: inline;
-  width: 20em;
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-css&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;
+&lt;span class=&quot;token selector&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; inline&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 20em&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Jʼavais tendance à penser que ce CSS ne produirait rien, puisquʼ&lt;strong&gt;on ne peut pas définir de dimension sur un élément &lt;em&gt;inline&lt;/em&gt;&lt;/strong&gt;. Sauf quʼun bouton a donc des dimensions intrinsèques quʼon peut surcharger — alors même que ces styles sont considérés comme hors de portée de CSS. La magie opère : &lt;strong&gt;un bouton en ligne obéira à une définition de sa largeur&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Vous pouvez jouer avec &lt;a href=&quot;https://dabblet.com/gist/d94397d5d22a7cc9c1eb&quot;&gt;ce dabblet&lt;/a&gt; pour vous en convaincre.&lt;/p&gt;
 &lt;h2 id=&quot;un-reel-probleme&quot; tabindex=&quot;-1&quot;&gt;Un réel problème ?&lt;/h2&gt;
@@ -1090,17 +1071,16 @@ Mais bon sang, quelle aventure pour un bête bouton qui ne veut pas se mettre en
 &lt;p&gt;Cette propriété fait partie intégrante de &lt;a href=&quot;https://drafts.csswg.org/css-backgrounds-3/#the-background-clip&quot;&gt;la spécification (en anglais&lt;/a&gt;) depuis longtemps. La valeur &lt;code&gt;text&lt;/code&gt; a été &lt;a href=&quot;https://www.webkit.org/blog/164/background-clip-text/&quot;&gt;proposée en 2008 par WebKit (en anglais)&lt;/a&gt;, et nʼétait — jusquʼà preuve du contraire — supportée que par les navigateurs basés sur WebKit.&lt;/p&gt;
 &lt;h2 id=&quot;edge-gere&quot; tabindex=&quot;-1&quot;&gt;Edge gère !&lt;/h2&gt;
 &lt;p&gt;Edge lʼinterprète, cette valeur exotique — et sans souci. Jʼai découvert ça inopinément, en me disant que &lt;a href=&quot;https://nimbupani.com/using-background-clip-for-text-with-css-fallback.html&quot;&gt;la solution de repli proposée par Divya Manian (en anglais)&lt;/a&gt; était robuste. En terme de logique, elle est imparable : lʼarrière-plan est conçu pour ne sʼappliquer que si le clip est interprété, car lʼensemble est préfixé par &lt;code&gt;-webkit-&lt;/code&gt;. Voyez plutôt :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;
-[class=&amp;quot;rainbow&amp;quot;] {
-  color: #fff;
-  display: inline-block;
-  /* -webkit-only: Chrome, Safari, Opera */  
-  background: -webkit-linear-gradient(…);
-  background: -o-linear-gradient(…);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-css&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;
+&lt;span class=&quot;token selector&quot;&gt;[class=&quot;rainbow&quot;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #fff&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; inline-block&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;/* -webkit-only: Chrome, Safari, Opera */&lt;/span&gt;  
+  &lt;span class=&quot;token property&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;-webkit-linear-gradient&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;…&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;-o-linear-gradient&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;…&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;-webkit-text-fill-color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; transparent&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;-webkit-background-clip&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; text&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Mais Edge considère désormais les préfixes &lt;code&gt;-webkit-&lt;/code&gt; comme des &lt;em&gt;aliases&lt;/em&gt;, et les mange tout crus. Ça aurait pu être un problème dans ce cas précis, puisque théoriquement la paire &lt;code&gt;background-clip: text;&lt;/code&gt; nʼest reconnue que par les navigateurs basés sur WebKit. Là encore : &lt;strong&gt;surprise&lt;/strong&gt; ! Edge lʼapplique sans rechigner.&lt;/p&gt;
 &lt;h3 id=&quot;cas-isole&quot; tabindex=&quot;-1&quot;&gt;Cas isolé ?&lt;/h3&gt;
 &lt;p&gt;De nombreuses techniques ont vu le jour et nʼont vécu que pour WebKit. Je mʼinterroge donc : parmi ces techniques que nous pensons réservées à WebKit, &lt;strong&gt;combien dʼautres encore ont atterri dans Edge discrètement ?&lt;/strong&gt;&lt;/p&gt;
@@ -1251,8 +1231,7 @@ Mais bon sang, quelle aventure pour un bête bouton qui ne veut pas se mettre en
 &lt;p&gt;&lt;strong&gt;Commençons par créer le contenu  !&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&quot;la-contribution&quot; tabindex=&quot;-1&quot;&gt;La contribution&lt;/h2&gt;
 &lt;p&gt;Partie cruciale s’il en est, AccesSlide permet de rédiger ces slides de façon extrêmement simple, en imposant &lt;strong&gt;très peu de contraintes sur le balisage&lt;/strong&gt;. Il suffit d’une section avec la bonne classe, et le tour est joué :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-markup&quot;&gt;&amp;lt;section class=&amp;quot;slide&amp;quot;&amp;gt; [votre diapo] &amp;lt;/section&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-markup&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-markup&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;section&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;slide&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; [votre diapo] &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;section&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Il est difficile de faire plus simple, et c’est équivalent en terme d’efficacité aux solutions populaires telles que &lt;a href=&quot;https://lab.hakim.se/reveal-js/#/&quot;&gt;Reveal.js&lt;/a&gt;. &lt;strong&gt;Ainsi pour la saisie du contenu, c’est top !&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&quot;la-personnalisation&quot; tabindex=&quot;-1&quot;&gt;La personnalisation&lt;/h2&gt;
 &lt;p&gt;L’équipe d’Access42 a gardé cet aspect important pour l’appropriation en tête, &lt;strong&gt;et c’est tant mieux&lt;/strong&gt;. Un système de thèmes fonctionne très bien, ce qui m’a permis d’implémenter très rapidement des styles qui correspondent à la fois à ce site mais aussi à ma précédente présentation. Quelques ajustements ont évidemment été nécessaires, mais rien de bien compliqué.&lt;/p&gt;
@@ -1263,61 +1242,58 @@ Mais bon sang, quelle aventure pour un bête bouton qui ne veut pas se mettre en
 &lt;h3 id=&quot;les-pictogrammes-en-svg&quot; tabindex=&quot;-1&quot;&gt;Les pictogrammes en SVG&lt;/h3&gt;
 &lt;p&gt;Mon dada du moment. Les boutons et liens icônes sont intégrés à l’aide d’une police d’icône dans la version « officielle » proposée par Access42. Personnellement, je n’aime pas cette technique, que je trouve moins robuste qu’une bonne vieille balise image avec une source vectorielle. J’ai donc changé la façon de gérer ces boutons. Ça m’amène à une première remarque d’ordre général, mais sans être expert &lt;strong&gt;je pense que le javascript peut encore être amélioré&lt;/strong&gt; car on trouve beaucoup de répétitions.&lt;/p&gt;
 &lt;p&gt;Pour information, il s’avère que si une balise image a une source svg, il faut ajouter le rôle image afin que VoiceOver accède à l’alternative textuelle :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-markup&quot;&gt;&amp;lt;img src=&amp;quot;*.svg&amp;quot; alt=&amp;quot;Quel essai !&amp;quot; role=&amp;quot;img&amp;quot; 
-   width=&amp;quot;8&amp;quot; height=&amp;quot;8&amp;quot; /&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-markup&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-markup&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;img&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;*.svg&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;Quel essai !&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;role&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;img&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; 
+   &lt;span class=&quot;token attr-name&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;8&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;8&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Étant donné que ça ne constitue pas un effort insurmontable ni même complexe, je préfère toujours cette version (qui fonctionne à partir d’IE9).&lt;/p&gt;
 &lt;p&gt;Un petit coucou et un grand merci à Nicolas Hoffmann qui, suite à mon interrogation, a permis de confirmer ce diagnostic en haranguant la plèbe sur Twitter. Lisez &lt;a href=&quot;https://twitter.com/Nico3333fr/status/601687531218931712&quot;&gt;le fil de discussion&lt;/a&gt;, c’est très intéressant !&lt;/p&gt;
 &lt;h3 id=&quot;la-transition-en-css&quot; tabindex=&quot;-1&quot;&gt;La transition en CSS&lt;/h3&gt;
 &lt;p&gt;J’avais particulièrement apprécié la gestion des transitions sur Reveal.js, plutôt simple et efficace à l’aide de CSS. Aucun des effets proposés par AccesSlide ne correspondaient à celui que j’utilisais précédemment, alors je l’ai re-créé et ajouté !&lt;/p&gt;
 &lt;p&gt;Là encore, &lt;strong&gt;ce fut extrêmement facile&lt;/strong&gt; en déclarant la nouvelle animation &lt;a href=&quot;https://github.com/access42/AccesSlide/blob/master/AccesSlide.js#L63&quot;&gt;conformément aux isntructions laissées dans le fichier javascript principal&lt;/a&gt;. Côté utilisateur, vous pourrez voir cette animation en la choisissant dans les réglages : je l’ai nommée « Coulisse vers la gauche » puisque c’est ce qu’elle fait !&lt;/p&gt;
 &lt;p&gt;Ainsi le conteneur principal se voit affubler d’un attribut &lt;code&gt;data-effect&lt;/code&gt; dont la valeur est le nom de l’effet. Il n’en faut pas plus pour appliquer la transition CSS de mes rêves (même si je dois avouer devoir truander un peu afin de ne pas toucher aux fichiers originels) :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;[data-effect=&amp;quot;ffoodd&amp;quot;] .slide {
-  display: block !important;
-  opacity: 0;
-  margin: .5rem;
-  position: absolute;
-  top: 0 !important;
-  visibility: hidden;
-  transform-style: preserve-3d;
-  transition: 
-  transform-origin .8s cubic-bezier(.26, .86, .44, .985),
-  transform .8s cubic-bezier(.26, .86, .44, .985),
-  visibility .8s cubic-bezier(.26, .86, .44, .985),
-  opacity .8s cubic-bezier(.26, .86, .44, .985);
-}
+&lt;pre class=&quot;language-css&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;[data-effect=&quot;ffoodd&quot;] .slide&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; block &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;opacity&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; .5rem&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; absolute&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0 &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;visibility&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; hidden&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;transform-style&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; preserve-3d&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 
+  transform-origin .8s &lt;span class=&quot;token function&quot;&gt;cubic-bezier&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;.26&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; .86&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; .44&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; .985&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  transform .8s &lt;span class=&quot;token function&quot;&gt;cubic-bezier&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;.26&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; .86&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; .44&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; .985&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  visibility .8s &lt;span class=&quot;token function&quot;&gt;cubic-bezier&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;.26&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; .86&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; .44&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; .985&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  opacity .8s &lt;span class=&quot;token function&quot;&gt;cubic-bezier&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;.26&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; .86&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; .44&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; .985&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-[data-effect=&amp;quot;ffoodd&amp;quot;] .slide[style*=&amp;quot;display: none&amp;quot;] {
-  opacity: 0;
-  pointer-events: none;
-  position: absolute;
-  transform: translate3d( -150%, 0, 0 );
-  visibility: hidden;
-}
+&lt;span class=&quot;token selector&quot;&gt;[data-effect=&quot;ffoodd&quot;] .slide[style*=&quot;display: none&quot;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;opacity&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;pointer-events&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; none&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; absolute&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;translate3d&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; -150%&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 0&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 0 &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;visibility&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; hidden&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-/* C’est là que je truande :P */
-[data-effect=&amp;quot;ffoodd&amp;quot;] .slide[style*=&amp;quot;display: block&amp;quot;] {
-  opacity: 1    !important;
-  position: relative  !important;
-  visibility: visible !important;
-}
+&lt;span class=&quot;token comment&quot;&gt;/* C’est là que je truande :P */&lt;/span&gt;
+&lt;span class=&quot;token selector&quot;&gt;[data-effect=&quot;ffoodd&quot;] .slide[style*=&quot;display: block&quot;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;opacity&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 1    &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; relative  &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;visibility&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; visible &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-[data-effect=&amp;quot;ffoodd&amp;quot;] .slide[style*=&amp;quot;display: block&amp;quot;] ~ .slide[style*=&amp;quot;display: none&amp;quot;] {
-  transform: translate3d( 150%, 0, 0 );
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;token selector&quot;&gt;[data-effect=&quot;ffoodd&quot;] .slide[style*=&quot;display: block&quot;] ~ .slide[style*=&quot;display: none&quot;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;translate3d&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; 150%&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 0&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 0 &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Et puis pour le fun, j’ai ajouté une animation au chargement de la page :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;@keyframes move-up {
-  from {
-  transform: translateY( 100% ) translateZ( 0 );
-  opacity: 0;
-  }
-}
+&lt;pre class=&quot;language-css&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token atrule&quot;&gt;&lt;span class=&quot;token rule&quot;&gt;@keyframes&lt;/span&gt; move-up&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token selector&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;translateY&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; 100% &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;translateZ&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; 0 &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;opacity&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-[data-effect=&amp;quot;ffoodd&amp;quot;] #wrapper {
-  animation: move-up .8s cubic-bezier(.165, .840, .440, 1);
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;token selector&quot;&gt;[data-effect=&quot;ffoodd&quot;] #wrapper&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;animation&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; move-up .8s &lt;span class=&quot;token function&quot;&gt;cubic-bezier&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;.165&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; .840&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; .440&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 1&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Et le tour est joué ☺.&lt;/p&gt;
 &lt;h2 id=&quot;participez&quot; tabindex=&quot;-1&quot;&gt;Participez !&lt;/h2&gt;
 &lt;p&gt;Pour le moment mon thème est trop éloigné de la solution originelle pour que je puisse le proposer simplement, mais avec un peu de réécriture ce devrait être faisable (tout comme l’animation). &lt;strong&gt;Je tenterai de les proposer à Access42 dès que mon temps libre me le permettra&lt;/strong&gt; !&lt;/p&gt;
@@ -1412,10 +1388,9 @@ Mais bon sang, quelle aventure pour un bête bouton qui ne veut pas se mettre en
 &lt;/ol&gt;
 &lt;h2 id=&quot;la-magie-opere&quot; tabindex=&quot;-1&quot;&gt;La magie opère&lt;/h2&gt;
 &lt;p&gt;Et voilà comment on aboutit à :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;aside {
-  border-top-width: calc( 72vw * 431 / 950 + 4.8em);
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-css&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;aside&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;border-top-width&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;calc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; 72vw * 431 / 950 + 4.8em&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Grâce à ce calcul, le décalage reste correct et proportionnel au reste de l’écran, et l’aspect graphique est homogène dans tous les contextes d’affichage.&lt;/p&gt;
 &lt;h2 id=&quot;les-supplements&quot; tabindex=&quot;-1&quot;&gt;Les suppléments&lt;/h2&gt;
 &lt;p&gt;Depuis ce POC, j’ai découvert le travail de &lt;a href=&quot;https://gasteroprod.com/&quot;&gt;Nicolas Hoizey&lt;/a&gt; sur &lt;a href=&quot;https://github.com/nhoizey/esviji&quot;&gt;esviji V2&lt;/a&gt;, qui utilise &lt;a href=&quot;https://github.com/nhoizey/esviji/blob/master/src/sass/_screen.scss&quot;&gt;les ratios, les calculs et les unités de viewport&lt;/a&gt; pour atteindre un degré d’adaptation aux écrans extraordinaire. Je vous conseille de garder un œil sur son projet, et surtout de parcourir &lt;a href=&quot;https://gist.github.com/nhoizey/f31cf92114a376a23155&quot;&gt;la feuille de styles générée&lt;/a&gt; qui est remarquablement écrite !&lt;/p&gt;
@@ -1503,9 +1478,8 @@ Mais bon sang, quelle aventure pour un bête bouton qui ne veut pas se mettre en
 &lt;p&gt;Le &lt;em&gt;bookmarklet&lt;/em&gt; existait depuis quelques temps déjà, mais désormais un petit formulaire &lt;a href=&quot;https://ffoodd.github.io/a11y.css/&quot;&gt;sur le site de présentation&lt;/a&gt; permet de le paramétrer &lt;strong&gt;en définissant le niveau minimum&lt;/strong&gt; nécessaire.&lt;/p&gt;
 &lt;h3 id=&quot;desactivation-de-tests&quot; tabindex=&quot;-1&quot;&gt;Désactivation de tests&lt;/h3&gt;
 &lt;p&gt;Pour que les utilisateurs de Sass aient toujours un intérêt à disposer du projet sur leur poste, mais aussi afin que les utilisateurs les plus avertis puissent personnaliser cet outil, Kitty a également &lt;a href=&quot;https://github.com/ffoodd/a11y.css/blob/master/README-fr.md#d%C3%A9sactiver-des-tests&quot;&gt;conçu une fonction&lt;/a&gt; pour désactiver les tests au cas par cas. Par exemple, si vous voulez désactiver les erreurs à propos des mauvais &lt;code&gt;tabindex&lt;/code&gt; et du &lt;code&gt;href&lt;/code&gt; manquant, voici comment faire :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;
-@include disable-errors(&amp;quot;tab-order, no-href&amp;quot;);
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-css&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;
+&lt;span class=&quot;token atrule&quot;&gt;&lt;span class=&quot;token rule&quot;&gt;@include&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;disable-errors&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;tab-order, no-href&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Et ça, c’est plutôt pratique 😀 !&lt;/p&gt;
 &lt;h2 id=&quot;traduction&quot; tabindex=&quot;-1&quot;&gt;Traduction&lt;/h2&gt;
 &lt;p&gt;Pour celle-ci, je vais applaudir discrètement et vous renvoyer vers &lt;a href=&quot;https://kittygiraudel.com/2014/10/22/translation-system-in-sass/&quot;&gt;l’article écrit par Kitty (en anglais)&lt;/a&gt; qui détaille le fonctionnement de son &lt;strong&gt;système de traduction en Sass&lt;/strong&gt;.&lt;/p&gt;
@@ -1537,24 +1511,22 @@ Mais bon sang, quelle aventure pour un bête bouton qui ne veut pas se mettre en
 &lt;/ol&gt;
 &lt;p&gt;C’est là qu’intervient &lt;a href=&quot;https://trulia.github.io/hologram/&quot;&gt;Hologram&lt;/a&gt;, une gem Ruby créée par Trulia. Elle m’a semblé parfaite puisqu’elle repose sur des commentaires CSS formatés pour générer la documentation. Son objectif premier est la création et la maintenance de guides de style, ce qui n’est pas si loin du sens premier d’a11y.css : &lt;strong&gt;gérer et maintenir un ensemble de pratiques&lt;/strong&gt; à vérifier.&lt;/p&gt;
 &lt;p&gt;Hologram est incroyablement simple à manipuler, puisqu’une fois la gem installée il suffit de commenter son CSS de la façon suivante :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;
-/*doc
+&lt;pre class=&quot;language-css&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;
+&lt;span class=&quot;token comment&quot;&gt;/*doc
 ---
-title: &amp;quot;[tabindex] &amp;gt; 0&amp;quot;
+title: &quot;[tabindex] &gt; 0&quot;
 name: tab-order
 category: Errors
 ---
 The `[tabindex]` attribute should never be greater than 0.
-* &amp;lt;https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L337&amp;gt;
+* &amp;lt;https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L337&gt;
 ```html_example
-&amp;lt;button tabindex=&amp;quot;1&amp;quot;&amp;gt;Positive tabindex is bad&amp;lt;/button&amp;gt;
+&amp;lt;button tabindex=&quot;1&quot;&gt;Positive tabindex is bad&amp;lt;/button&gt;
 ```
-*/
-&lt;/code&gt;&lt;/pre&gt;
+*/&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;La syntaxe est intelligible, et reste utile sans Hologram pour générer la documentation. Un point que j’apprécie ! Pour générer la documentation, c’est très simple :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;
-hologram
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-css&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;
+hologram&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;Et voilà !&lt;/strong&gt; Hologram génère un mini-site statique grâce à un jeu de ressources très simple. Il est ainsi possible de personnaliser l’entête, le pied-de-page et les ressources statiques pour aménager sa documentation à volonté. &lt;strong&gt;Magique&lt;/strong&gt; 🙂&lt;/p&gt;
 &lt;p&gt;Et puisque j’avais déjà créé une branche pour servir de présentation en ligne sur Github, j’ai ajouté ces nouveaux fichiers HTML afin d’en faire &lt;strong&gt;un véritable site de démonstration&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Jetez un œil au &lt;a href=&quot;https://ffoodd.github.io/a11y.css/&quot;&gt;site de démonstration d’a11y.css&lt;/a&gt; !&lt;/p&gt;
@@ -1752,17 +1724,15 @@ hologram
 &lt;p&gt;On peut d’ores et déjà noter une différence remarquable entre les états de ces deux spécifications : l’une est en brouillon, l’autre en recommandation. La spécification SVG est extrêmement aboutie et claire, les ressources ne manquent pas.&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://www.ffoodd.fr/clip-path-pourquoi-pas/#fn2&quot; id=&quot;fnref2&quot;&gt;[2]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;En revanche le module CSS est obscur. Il existe un lien étroit entre les deux spécifications, car le brouillon du module &lt;em&gt;CSS Masking&lt;/em&gt; s’appuie énormément sur la spécification SVG — et qu’en SVG il existe l’attribut &lt;code&gt;clip-path&lt;/code&gt;. Ça génère des incompréhensions qui ne vont pas faciliter la prise en main de cette propriété.&lt;/p&gt;
 &lt;p&gt;Pour éclaircir un peu tout ça — et vous épargner la lecture des spécifications — vous devriez pouvoir écrire ceci pour utiliser une forme basique :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;
-.clip { 
-  clip-path: circle( 50%, 50%, 5em );
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-css&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;
+&lt;span class=&quot;token selector&quot;&gt;.clip&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; 
+  &lt;span class=&quot;token property&quot;&gt;clip-path&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;circle&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; 50%&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 50%&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 5em &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Mais ceci devrait fonctionner également — en appelant un élément SVG :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;
-.clip { 
-  clip-path: url(#circle);
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-css&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;
+&lt;span class=&quot;token selector&quot;&gt;.clip&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; 
+  &lt;span class=&quot;token property&quot;&gt;clip-path&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token url&quot;&gt;&lt;span class=&quot;token function&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;#circle&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&quot;les-origines&quot; tabindex=&quot;-1&quot;&gt;Les origines&lt;/h2&gt;
 &lt;p&gt;Il faut sonder un peu les origines de ce module CSS pour en comprendre l’obscurité. Bien que déjà en cours d’élaboration dans le cadre technique du SVG, la possibilité de masquer des éléments en CSS existait depuis CSS 2.1 grâce à la propriété &lt;code&gt;clip&lt;/code&gt;, désormais &lt;a href=&quot;https://www.w3.org/TR/css-masking-1/#clip-property&quot; title=&quot;en Anglais&quot;&gt;dépréciée&lt;/a&gt;.&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://www.ffoodd.fr/clip-path-pourquoi-pas/#fn3&quot; id=&quot;fnref3&quot;&gt;[3]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;Cette propriété n’a jamais réellement trouvé son public, car elle a deux inconvénients majeurs :&lt;/p&gt;
@@ -1784,31 +1754,29 @@ hologram
 &lt;p&gt;À l’instar de la spécification qui intègre les clips &lt;strong&gt;et&lt;/strong&gt; les masques, ces ressources présentent les deux techniques. Dommage car deux articles distincts auraient été bien plus clairs !&lt;/p&gt;
 &lt;h2 id=&quot;un-bilan-mitige&quot; tabindex=&quot;-1&quot;&gt;Un bilan mitigé&lt;/h2&gt;
 &lt;p&gt;Après avoir compulsé maladivement les spécifications, articles, tutoriaux et autres exemples pendant quelques jours, j’ai abouti à un exemple ressemblant à ceci :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;
-/**
+&lt;pre class=&quot;language-css&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;
+&lt;span class=&quot;token comment&quot;&gt;/**
  * 1. Définition d’une forme rectangulaire de repli pour les navigateurs ne supportant pas clip-path;
  * 2. Création d’une forme SVG basique, circulaire;
  * 3. Appel d’un fichier SVG contenant un élément clipPath. 
- */
-.clip { 
-  clip: rect( 7em, 30em, 17em, 20em ); /* 1 */
-  -webkit-clip-path: circle( 50%, 50%, 5em ); /* 2 */
-  clip-path: url(#circle); /* 3 */
-}
-&lt;/code&gt;&lt;/pre&gt;
+ */&lt;/span&gt;
+&lt;span class=&quot;token selector&quot;&gt;.clip&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; 
+  &lt;span class=&quot;token property&quot;&gt;clip&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;rect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; 7em&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 30em&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 17em&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 20em &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;/* 1 */&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;-webkit-clip-path&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;circle&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; 50%&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 50%&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 5em &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;/* 2 */&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;clip-path&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token url&quot;&gt;&lt;span class=&quot;token function&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;#circle&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;/* 3 */&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Évidemment, cela implique un balisage précis côté HTML :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-markup&quot;&gt;
-&amp;lt;p class=&amp;quot;clip&amp;quot;&amp;gt;
+&lt;pre class=&quot;language-markup&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-markup&quot;&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;p&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;clip&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
   ♬ Tout, tout, tout : vous saurez tout sur le clip-path ♬
-&amp;lt;/p&amp;gt;
-&amp;lt;svg width=&amp;quot;200&amp;quot; height=&amp;quot;200&amp;quot;&amp;gt;
-  &amp;lt;defs&amp;gt;
-  &amp;lt;clipPath id=&amp;quot;circle&amp;quot;&amp;gt;
-  &amp;lt;circle cx=&amp;quot;50%&amp;quot; cy=&amp;quot;50%&amp;quot; r=&amp;quot;80&amp;quot; /&amp;gt;
-  &amp;lt;/clipPath&amp;gt;  
-  &amp;lt;/defs&amp;gt;
-&amp;lt;/svg&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;p&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;svg&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;200&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;200&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;defs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;clipPath&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;circle&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;circle&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;cx&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;50%&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;cy&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;50%&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;80&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;clipPath&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;  
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;defs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;svg&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Ainsi je tente de vous livrer un état des lieux aussi complet que possible.&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://www.ffoodd.fr/clip-path-pourquoi-pas/#fn7&quot; id=&quot;fnref7&quot;&gt;[7]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Chrome 23, Safari 6.1 et Opéra 15&lt;/strong&gt; supportent &lt;code&gt;clip-path&lt;/code&gt; sous toutes ses formes — incluant la définition de formes SVG basiques dans le CSS;&lt;/li&gt;
@@ -2105,8 +2073,8 @@ hologram
 &lt;p&gt;Certes, c’est du fignolage. Mais c’est à priori dans les détails que l’on améliore sensiblement la qualité d’un site web.&lt;/p&gt;
 &lt;h2 id=&quot;les-images-porteuses-de-sens&quot; tabindex=&quot;-1&quot;&gt;Les images porteuses de sens&lt;/h2&gt;
 &lt;p&gt;Le cas des images véhiculant des informations demande donc quelques efforts : il faut intercepter le shortcode afin de le ré-interpréter &lt;strong&gt;avant&lt;/strong&gt; qu’il ne soit renvoyé côté client. Voici ce à quoi j’ai pu aboutir : &lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-php&quot;&gt;  /* == @section Remplace le code généré par [caption] ==================== */
-  /**
+&lt;pre class=&quot;language-php&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-php&quot;&gt;  &lt;span class=&quot;token comment&quot;&gt;/* == @section Remplace le code généré par [caption] ==================== */&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;/**
  * @note : Le contenu est filtré pour remplacer le html généré pour les caption par du html5 sémantique. Astuce trouvée sur Reverie.
  * @author : Zhen Huang
  * @see : https://themefortress.com/reverie/
@@ -2116,31 +2084,30 @@ hologram
  * @see : https://gist.github.com/JoostKiens/4477366
  * @note : Et j’y ajoute les roles et attributs Aria nécessaires
  * @see : https://www.kloh.ch/craw2013-html5-aria-et-accessibilite-web-479
- */
-  add_filter( ’img_caption_shortcode’, ’ffeeeedd__caption’, 10, 3 );
-  function ffeeeedd__caption( $output, $attr, $content ) {
-  if ( is_feed() ) {
-  return $output;
-  }
-  $defaults = array(
-  ’id’ =&amp;gt; ’’,
-  ’align’ =&amp;gt; ’alignnone’,
-  ’width’ =&amp;gt; ’’,
-  ’caption’ =&amp;gt; ’’
-  );
-  $attr = shortcode_atts( $defaults, $attr );
-  if ( 1 &amp;gt; (int) $attr[’width’] || empty( $attr[’caption’] ) ) {
-  return $content;
-  }
-  $content = str_replace( ’&amp;lt;img’, ’&amp;lt;img id=&amp;quot;’ . $attr[’id’] . ’&amp;quot; itemprop=&amp;quot;contentURL&amp;quot; aria-describedby=&amp;quot;wp-caption--’ . $attr[’id’] . ’&amp;quot;’, $content );
-  $attributes = ’ class=&amp;quot;wp-caption inbl ’ . esc_attr( $attr[’align’] ) . ’&amp;quot;’;
-  $output = ’&amp;lt;figure’ . $attributes .’ role=&amp;quot;group&amp;quot; itemscope itemtype=&amp;quot;https://schema.org/ImageObject&amp;quot;&amp;gt;’;
-  $output .= do_shortcode( $content );
-  $output .= ’&amp;lt;figcaption class=&amp;quot;wp-caption-text pt1 small&amp;quot; id=&amp;quot;wp-caption--’ . $attr[’id’] . ’&amp;quot; itemprop=&amp;quot;description&amp;quot;&amp;gt;’ . $attr[’caption’] . ’&amp;lt;/figcaption&amp;gt;’;
-  $output .= ’&amp;lt;/figure&amp;gt;’;
-  return $output;
-  }
-&lt;/code&gt;&lt;/pre&gt;
+ */&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;add_filter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; ’img_caption_shortcode’&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; ’ffeeeedd__caption’&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function-definition function&quot;&gt;ffeeeedd__caption&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$output&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$attr&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$content&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;is_feed&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$output&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token variable&quot;&gt;$defaults&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+  ’id’ &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; ’’&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  ’align’ &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; ’alignnone’&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  ’width’ &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; ’’&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  ’caption’ &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; ’’
+  &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token variable&quot;&gt;$attr&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;shortcode_atts&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$defaults&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$attr&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword type-casting&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$attr&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;’width’&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$attr&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;’caption’&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$content&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token variable&quot;&gt;$content&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;str_replace&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; ’&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;img’&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; ’&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;img id&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string double-quoted-string&quot;&gt;&quot;’ . &lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$attr&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;’id’&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/span&gt; . ’&quot;&lt;/span&gt; itemprop&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string double-quoted-string&quot;&gt;&quot;contentURL&quot;&lt;/span&gt; aria&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;describedby&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string double-quoted-string&quot;&gt;&quot;wp-caption--’ . &lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$attr&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;’id’&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/span&gt; . ’&quot;&lt;/span&gt;’&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$content&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token variable&quot;&gt;$attributes&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; ’ &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string double-quoted-string&quot;&gt;&quot;wp-caption inbl ’ . esc_attr( &lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$attr&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;’align’&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/span&gt; ) . ’&quot;&lt;/span&gt;’&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token variable&quot;&gt;$output&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; ’&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;figure’ &lt;span class=&quot;token operator&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$attributes&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;.&lt;/span&gt;’ role&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string double-quoted-string&quot;&gt;&quot;group&quot;&lt;/span&gt; itemscope itemtype&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string double-quoted-string&quot;&gt;&quot;https://schema.org/ImageObject&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;’&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token variable&quot;&gt;$output&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;.=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;do_shortcode&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$content&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token variable&quot;&gt;$output&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;.=&lt;/span&gt; ’&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;figcaption &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string double-quoted-string&quot;&gt;&quot;wp-caption-text pt1 small&quot;&lt;/span&gt; id&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string double-quoted-string&quot;&gt;&quot;wp-caption--’ . &lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$attr&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;’id’&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/span&gt; . ’&quot;&lt;/span&gt; itemprop&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string double-quoted-string&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;’ &lt;span class=&quot;token operator&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$attr&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;’caption’&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;.&lt;/span&gt; ’&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;figcaption&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;’&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token variable&quot;&gt;$output&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;.=&lt;/span&gt; ’&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;figure&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;’&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$output&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&quot;lintervention-detaillee&quot; tabindex=&quot;-1&quot;&gt;L’intervention détaillée&lt;/h2&gt;
 &lt;p&gt;La structure d’origine est conservée ; je détaille ce qui a été fait :&lt;/p&gt;
 &lt;ul&gt;
@@ -2282,33 +2249,31 @@ hologram
 &lt;h2 id=&quot;la-persistance-des-liens-devitement&quot; tabindex=&quot;-1&quot;&gt;La persistance des liens d’évitement&lt;/h2&gt;
 &lt;p&gt;En recherchant plus d’informations sur cette technique, je suis tombé sur le blog de la société Atalan pour laquelle travaille Johan – et sur &lt;a href=&quot;https://blog.atalan.fr/des-liens-devitement-astucieux/&quot; title=&quot;Article sur les liens d’évitement astucieux (nouvelle fenêtre)&quot;&gt;un article dédié au sujet&lt;/a&gt;. Des ressources très intéressantes sont données, cependant toutes sont basées sur jQuery pour ajouter une classe aux liens après leur première prise de focus. &lt;strong&gt;Dommage, je n’utilise pas jQuery sur ffoodd.fr.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Voici donc le bout de code correspondant, en vanilla javascript :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;
-/* Lien d’évitement &amp;gt; Persistance de l’affichage
+&lt;pre class=&quot;language-javascript&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;
+&lt;span class=&quot;token comment&quot;&gt;/* Lien d’évitement &gt; Persistance de l’affichage
  * @see : https://blog.atalan.fr/des-liens-devitement-astucieux/
-*/
-[].forEach.call(document.querySelectorAll(&amp;quot;.skip&amp;quot;), function(el) {
-  el.addEventListener(&amp;quot;focus&amp;quot;, function() {
-  el.classList.add(&amp;quot;show&amp;quot;);
-  });
-});
-&lt;/code&gt;&lt;/pre&gt;
+*/&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;querySelectorAll&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;.skip&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;el&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  el&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;focus&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  el&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;classList&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;show&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Et voilà ! Pour faire simple, je cible les liens disposant de la classe « skip » pour leur ajouter la classe « show » au focus. Et le CSS fait le reste.&lt;/p&gt;
 &lt;p&gt;À noter que « dans certains cas rares » Chrome et IE ne transportent pas le focus sur la cible du lien d’évitement lorsqu’il a été activé. Un petit script vient facilement s’assurer que le focus est bien transporté :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;
-/* Correction du bug des ancres sous Chrome
+&lt;pre class=&quot;language-javascript&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;
+&lt;span class=&quot;token comment&quot;&gt;/* Correction du bug des ancres sous Chrome
  * @see : https://www.nczonline.net/blog/2013/01/15/fixing-skip-to-content-links/
  * @see : https://blog.atalan.fr/des-liens-devitement-astucieux/
-*/
-window.addEventListener(&amp;quot;hashchange&amp;quot;, function(event) {
-  var element = document.getElementById(location.hash.substring(1));
-  if (element) {
-    if (!/^(?:a|select|input|button)$/i.test(element.tagName)) {
-    element.tabIndex = -1;
-    }
-    element.focus();
-  }
-}, false);
-&lt;/code&gt;&lt;/pre&gt;
+*/&lt;/span&gt;
+window&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;hashchange&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; element &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;location&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;hash&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;substring&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;element&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;token regex&quot;&gt;&lt;span class=&quot;token regex-delimiter&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token regex-source language-regex&quot;&gt;^(?:a|select|input|button)$&lt;/span&gt;&lt;span class=&quot;token regex-delimiter&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token regex-flags&quot;&gt;i&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;element&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;tagName&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    element&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;tabIndex &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    element&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;focus&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&quot;la-qualite-de-lexperience&quot; tabindex=&quot;-1&quot;&gt;La qualité de l’expérience&lt;/h2&gt;
 &lt;p&gt;Ce sont certes des détails, mais ces détails améliorent le confort de navigation et rendent un site agréable : l’internaute appréciera cette expérience, et reviendra (pour peu que vos contenus soient à la hauteur).&lt;/p&gt;
 &lt;ol class=&quot;footnotes-list small mt2 pt2 pb2&quot;&gt;
@@ -2326,75 +2291,73 @@ window.addEventListener(&amp;quot;hashchange&amp;quot;, function(event) {
 				<description>&lt;p&gt;Dans sa version basique, la navigation de WordPress n’a rien de particulier (si ce n’est la multitude de classes générées sur chaque élément 🙁 ). Or ARIA permet d’ajouter une couche sémantique non négligeable et relativement simple à mettre en place, améliorant ainsi l’accessibilité de la navigation.&lt;/p&gt;
 &lt;h2 id=&quot;notre-objectif&quot; tabindex=&quot;-1&quot;&gt;Notre objectif&lt;/h2&gt;
 &lt;p&gt;L’implémentation d’ARIA sur une navigation est simple ‐ bien qu’il soit assez compliqué d’en trouver une documentation ou un exemple concret. Voici le résultat attendu sur ffoodd (je vous épargne les classes et identifiants, pour cette fois 😉 ) :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-markup&quot;&gt;&amp;lt;nav id=&amp;quot;nav&amp;quot; role=&amp;quot;navigation&amp;quot;&amp;gt;
-  &amp;lt;ul role=&amp;quot;menubar&amp;quot;&amp;gt;
-  &amp;lt;li role=&amp;quot;menuitem&amp;quot; aria-labelledby=&amp;quot;ffoodd&amp;quot;&amp;gt;
-  &amp;lt;a href=&amp;quot;https://www.ffoodd.fr&amp;quot; id=&amp;quot;ffoodd&amp;quot;&amp;gt;ffoodd&amp;lt;/a&amp;gt;
-  &amp;lt;/li&amp;gt;
-  &amp;lt;li role=&amp;quot;menuitem&amp;quot; aria-labelledby=&amp;quot;travaux&amp;quot;&amp;gt;
-  &amp;lt;a href=&amp;quot;https://www.ffoodd.fr/travaux/&amp;quot; id=&amp;quot;travaux&amp;quot;&amp;gt;Travaux&amp;lt;/a&amp;gt;
-  &amp;lt;/li&amp;gt;
-  &amp;lt;/ul&amp;gt; 
-&amp;lt;/nav&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-markup&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-markup&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;nav&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;nav&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;role&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;navigation&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;ul&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;role&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;menubar&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;li&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;role&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;menuitem&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;aria-labelledby&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;ffoodd&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;a&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;https://www.ffoodd.fr&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;ffoodd&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;ffoodd&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;a&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;li&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;li&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;role&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;menuitem&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;aria-labelledby&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;travaux&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;a&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;https://www.ffoodd.fr/travaux/&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;travaux&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;Travaux&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;a&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;li&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;ul&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; 
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;nav&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Vous connaissiez sans doute déjà le rôle « navigation », qui identifie la zone majeure du contenu destinée à la navigation. Les autres rôle et attributs sont explicites, et on en saisit facilement l’intérêt sur cet extrait de code. Voyons maintenant comment obtenir ce résultat avec WordPress.&lt;/p&gt;
 &lt;h2 id=&quot;wordpress-et-le-walker-dedie-a-la-navigation&quot; tabindex=&quot;-1&quot;&gt;WordPress et le Walker dédié à la navigation&lt;/h2&gt;
 &lt;p&gt;Ce sympathique walker se nomme &lt;strong&gt;Walker_Nav_Menu&lt;/strong&gt;. Je l’avais rencontré la première fois en farfouillant dans le code de &lt;a href=&quot;https://themefortress.com/reverie/&quot; title=&quot;Reverie - un starter theme pour WordPress (nouvelle fenêtre)&quot;&gt;Reverie&lt;/a&gt;, sans en saisir l’intérêt à l’époque. Puis mes compétences et réflexions évoluant avec le temps, lorsque je le recroisais sur le blog de &lt;a href=&quot;https://twitter.com/willybahuaud&quot; title=&quot;Willy Bahuaud sur Twitter (nouvelle fenêtre)&quot;&gt;Willy Bahuaud&lt;/a&gt; dans &lt;a href=&quot;https://wabeo.fr/blog/construire-walker-wordpress/&quot; title=&quot;Construire un walker WordPress (nouvelle fenêtre)&quot;&gt;son article présentant les walkers&lt;/a&gt;, j’en saisis rapidement l’intérêt et me mit en tête de m’en servir sur mon thème ffeeeedd.&lt;/p&gt;
 &lt;p&gt;Je vous recommande chaudement de lire l’article de Willy sur le sujet, qui est une entrée en matière extrêmement intéressante.&lt;/p&gt;
 &lt;h2 id=&quot;les-mains-dans-le-code&quot; tabindex=&quot;-1&quot;&gt;Les mains dans le code&lt;/h2&gt;
 &lt;p&gt;Voilà sans plus attendre le code obtenu après quelques recherche :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-php&quot;&gt;  /* == @section Amélioration de la navigation ==================== */
-  /**
+&lt;pre class=&quot;language-php&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-php&quot;&gt;  &lt;span class=&quot;token comment&quot;&gt;/* == @section Amélioration de la navigation ==================== */&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;/**
  * @note : Un walker nous permet de amnipuler le html généré pour la navigation afin d’y ajouter les roles aria qui vont bien.
  * @author : Gaël Poupard
  * @see : https://twitter.com/ffoodd_fr
  * @see : https://wabeo.fr/blog/construire-walker-wordpress/
  * @author : Willy Bahuaud
  * @see : https://core.trac.wordpress.org/browser/tags/3.6.1//wp-includes/nav-menu-template.php#L0
- */
-  class ffeeeedd__walker extends Walker_Nav_Menu {
-  function start_el( &amp;amp;$output, $item, $depth = 1, $args = array(), $id = 0 ) {
-  $indent = ( $depth ) ? str_repeat( &amp;quot;&#92;t&amp;quot;, $depth ) : ’’;
+ */&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name-definition class-name&quot;&gt;ffeeeedd__walker&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Walker_Nav_Menu&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function-definition function&quot;&gt;start_el&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;$output&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$depth&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$args&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$id&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token variable&quot;&gt;$indent&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$depth&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;str_repeat&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token string double-quoted-string&quot;&gt;&quot;&#92;t&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$depth&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ’’&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-  $class_names = $value = ’’;
+  &lt;span class=&quot;token variable&quot;&gt;$class_names&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$value&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; ’’&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-  $classes = empty( $item-&amp;gt;classes ) ? array() : (array) $item-&amp;gt;classes;
-  $classes[] = ’menu-item-’ . $item-&amp;gt;ID;
+  &lt;span class=&quot;token variable&quot;&gt;$classes&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;&lt;span class=&quot;token property&quot;&gt;classes&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword type-casting&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;&lt;span class=&quot;token property&quot;&gt;classes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token variable&quot;&gt;$classes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; ’menu&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;item&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;’ &lt;span class=&quot;token operator&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;ID&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-  $class_names = join( ’ ’, apply_filters( ’nav_menu_css_class’, array_filter( $classes ), $item, $args ) );
-  $class_names = $class_names ? ’ class=&amp;quot;’ . esc_attr( $class_names ) . ’&amp;quot;’ : ’’;
+  &lt;span class=&quot;token variable&quot;&gt;$class_names&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; ’ ’&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;apply_filters&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; ’nav_menu_css_class’&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;array_filter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$classes&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$args&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token variable&quot;&gt;$class_names&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$class_names&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; ’ &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string double-quoted-string&quot;&gt;&quot;’ . esc_attr( &lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$class_names&lt;/span&gt;&lt;/span&gt; ) . ’&quot;&lt;/span&gt;’ &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ’’&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-  $id = apply_filters( ’nav_menu_item_id’, ’menu-item-’. $item-&amp;gt;ID, $item, $args );
-  $id = $id ? ’ id=&amp;quot;’ . esc_attr( $id ) . ’&amp;quot;’ : ’’;
+  &lt;span class=&quot;token variable&quot;&gt;$id&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;apply_filters&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; ’nav_menu_item_id’&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; ’menu&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;item&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;’&lt;span class=&quot;token operator&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;ID&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$args&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token variable&quot;&gt;$id&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$id&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; ’ id&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string double-quoted-string&quot;&gt;&quot;’ . esc_attr( &lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$id&lt;/span&gt;&lt;/span&gt; ) . ’&quot;&lt;/span&gt;’ &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ’’&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-  $output .= $indent . ’&amp;lt;li’ . $id . $value . $class_names .’ role=&amp;quot;menuitem&amp;quot; aria-labelledby=&amp;quot;item-’ . sanitize_html_class( apply_filters( ’the_title’, $item-&amp;gt;title, $item-&amp;gt;ID ) ) . ’&amp;quot;&amp;gt;’;
+  &lt;span class=&quot;token variable&quot;&gt;$output&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;.=&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$indent&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;.&lt;/span&gt; ’&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;li’ &lt;span class=&quot;token operator&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$id&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$value&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$class_names&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;.&lt;/span&gt;’ role&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string double-quoted-string&quot;&gt;&quot;menuitem&quot;&lt;/span&gt; aria&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;labelledby&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string double-quoted-string&quot;&gt;&quot;item-’ . sanitize_html_class( apply_filters( ’the_title’, &lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;&lt;span class=&quot;token property&quot;&gt;title&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;ID&lt;/span&gt;&lt;/span&gt; ) ) . ’&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;’&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-  $atts = array();
-  $atts[’title’] = ! empty( $item-&amp;gt;attr_title ) ? $item-&amp;gt;attr_title : ’’;
-  $atts[’target’] = ! empty( $item-&amp;gt;target ) ? $item-&amp;gt;target : ’’;
-  $atts[’rel’] = ! empty( $item-&amp;gt;xfn ) ? $item-&amp;gt;xfn : ’’;
-  $atts[’href’] = ! empty( $item-&amp;gt;url ) ? $item-&amp;gt;url : ’’;
+  &lt;span class=&quot;token variable&quot;&gt;$atts&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token variable&quot;&gt;$atts&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;’title’&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;&lt;span class=&quot;token property&quot;&gt;attr_title&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;&lt;span class=&quot;token property&quot;&gt;attr_title&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ’’&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token variable&quot;&gt;$atts&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;’target’&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;&lt;span class=&quot;token property&quot;&gt;target&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;&lt;span class=&quot;token property&quot;&gt;target&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ’’&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token variable&quot;&gt;$atts&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;’rel’&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;&lt;span class=&quot;token property&quot;&gt;xfn&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;&lt;span class=&quot;token property&quot;&gt;xfn&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ’’&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token variable&quot;&gt;$atts&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;’href’&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;&lt;span class=&quot;token property&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;&lt;span class=&quot;token property&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ’’&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-  $atts = apply_filters( ’nav_menu_link_attributes’, $atts, $item, $args );
+  &lt;span class=&quot;token variable&quot;&gt;$atts&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;apply_filters&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; ’nav_menu_link_attributes’&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$atts&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$args&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-  $attributes = ’’;
-  foreach ( $atts as $attr =&amp;gt; $value ) {
-    if ( ! empty( $value ) ) {
-    $value = ( ’href’ === $attr ) ? esc_url( $value ) : esc_attr( $value );
-    $attributes .= ’ ’ . $attr . ’=&amp;quot;’ . $value . ’&amp;quot;’;
-    }
-  }
+  &lt;span class=&quot;token variable&quot;&gt;$attributes&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; ’’&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;foreach&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$atts&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$attr&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$value&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$value&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token variable&quot;&gt;$value&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; ’href’ &lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$attr&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;esc_url&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$value&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token class-name return-type&quot;&gt;esc_attr&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$value&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token variable&quot;&gt;$attributes&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;.=&lt;/span&gt; ’ ’ &lt;span class=&quot;token operator&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$attr&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;.&lt;/span&gt; ’&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string double-quoted-string&quot;&gt;&quot;’ . &lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$value&lt;/span&gt;&lt;/span&gt; . ’&quot;&lt;/span&gt;’&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-  $item_output = $args-&amp;gt;before;
-  $item_output .= ’&amp;lt;a’. $attributes .’ id=&amp;quot;item-’ . sanitize_html_class( apply_filters( ’the_title’, $item-&amp;gt;title, $item-&amp;gt;ID ) ) . ’&amp;quot;&amp;gt;’;
-  $item_output .= $args-&amp;gt;link_before . apply_filters( ’the_title’, $item-&amp;gt;title, $item-&amp;gt;ID ) . $args-&amp;gt;link_after;
-  $item_output .= ’&amp;lt;/a&amp;gt;’;
-  $item_output .= $args-&amp;gt;after;
+  &lt;span class=&quot;token variable&quot;&gt;$item_output&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$args&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;&lt;span class=&quot;token property&quot;&gt;before&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token variable&quot;&gt;$item_output&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;.=&lt;/span&gt; ’&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;a’&lt;span class=&quot;token operator&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$attributes&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;.&lt;/span&gt;’ id&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string double-quoted-string&quot;&gt;&quot;item-’ . sanitize_html_class( apply_filters( ’the_title’, &lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;&lt;span class=&quot;token property&quot;&gt;title&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;ID&lt;/span&gt;&lt;/span&gt; ) ) . ’&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;’&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token variable&quot;&gt;$item_output&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;.=&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$args&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;&lt;span class=&quot;token property&quot;&gt;link_before&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;apply_filters&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; ’the_title’&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;&lt;span class=&quot;token property&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;ID&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$args&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;&lt;span class=&quot;token property&quot;&gt;link_after&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token variable&quot;&gt;$item_output&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;.=&lt;/span&gt; ’&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;a&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;’&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token variable&quot;&gt;$item_output&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;.=&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$args&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;&lt;span class=&quot;token property&quot;&gt;after&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-  $output .= apply_filters( ’walker_nav_menu_start_el’, $item_output, $item, $depth, $args );
-  }
-  }
-&lt;/code&gt;&lt;/pre&gt;
+  &lt;span class=&quot;token variable&quot;&gt;$output&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;.=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;apply_filters&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; ’walker_nav_menu_start_el’&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$item_output&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$depth&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$args&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Le walker manipule chaque niveau de rendu de la navigation, ce qui nous permet d’ajouter les rôles très facilement. La seule intervention astucieuse consiste à récupérer l’intitulé de l’item afin de l’utiliser comme label pour la navigation.&lt;/p&gt;
 &lt;p&gt;Et voilà ! Simple, non ?&lt;/p&gt;
 &lt;h2 id=&quot;les-evolutions-a-venir&quot; tabindex=&quot;-1&quot;&gt;Les évolutions à venir&lt;/h2&gt;
@@ -2895,30 +2858,28 @@ De mon côté, j’ai beaucoup apprécié l’élégance et la légèreté de la
 &lt;p&gt;Au fil de mes pérégrinations, j’ai un jour remarqué cette option sur le générateur de kits @font-face de &lt;a href=&quot;https://www.fontsquirrel.com/&quot;&gt;font-squirrel&lt;/a&gt; : encoder en Base64. Quelques rapides recherches – et cet &lt;a href=&quot;https://www.alsacreations.com/article/lire/1439-data-uri-schema.html&quot;&gt;excellent article sur Alsacréations&lt;/a&gt; – m’ont appris qu’encoder un petit fichier en Base64 permettait d’économiser une requête HTTP : Eurêka !&lt;/p&gt;
 &lt;h2 id=&quot;resultat&quot; tabindex=&quot;-1&quot;&gt;Résultat&lt;/h2&gt;
 &lt;p&gt;Ne cherchez plus, c’est la technique que j’ai utilisée sur le logo de ce site. En HTML cela donne simplement :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-markup&quot;&gt;
-&amp;lt;h1&amp;gt;
-  &amp;lt;a data-icon=&amp;quot;a&amp;quot;&amp;gt;Gaël Poupard&amp;lt;/a&amp;gt;
-&amp;lt;/h1&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-markup&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-markup&quot;&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;a&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;data-icon&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;Gaël Poupard&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;a&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;et en css :&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;
-@font-face {
-  font-family: ’logo’;
-  src: url(’font/logo.eot’);
-  src: local(’?’), url(data:font/woff;charset=utf-8;base64,...;
-  font-weight: normal;
-  font-style: normal;
-}
-h1 a {
-  font: 0/0 a;
-  text-decoration: none;
-}
-h1 a:before {
-  content: attr(data-icon);
-  font: 200px/250px ’logo’;
-  text-decoration: none;
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-css&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;
+&lt;span class=&quot;token atrule&quot;&gt;&lt;span class=&quot;token rule&quot;&gt;@font-face&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ’logo’&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token url&quot;&gt;&lt;span class=&quot;token function&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;’font/logo.eot’&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;local&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;’?’&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token property&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;font/woff&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;charset=utf-8&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;base64&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;...&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;font-weight&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; normal&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;font-style&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; normal&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token selector&quot;&gt;h1 a&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;font&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0/0 a&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;text-decoration&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; none&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token selector&quot;&gt;h1 a:before&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;attr&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;data-icon&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;font&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 200px/250px ’logo’&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;text-decoration&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; none&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Et c’est tout ! Le résultat est particulièrement propre et simple. Il nécessite un travail préparatoire assez long, mais c’est une mécanique intéressante à connaître.&lt;/p&gt;
 &lt;h2 id=&quot;conclusion&quot; tabindex=&quot;-1&quot;&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;Trois techniques relativement avancées permettent d’obtenir cet excellent résultat. Le logo est :&lt;/p&gt;

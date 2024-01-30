@@ -10,7 +10,10 @@
 		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
 		<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/index.xml"></head>
 	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
-		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+		
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#sommaire">Aller au sommaire</a>
+
 		<div class="row">
 			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation" aria-label="Menu principal">
 				<ul class="menu aside p-reset m-reset ul-reset">
@@ -68,8 +71,8 @@
 <p>Certes, c’est du fignolage. Mais c’est à priori dans les détails que l’on améliore sensiblement la qualité d’un site web.</p>
 <h2 id="les-images-porteuses-de-sens" tabindex="-1">Les images porteuses de sens</h2>
 <p>Le cas des images véhiculant des informations demande donc quelques efforts : il faut intercepter le shortcode afin de le ré-interpréter <strong>avant</strong> qu’il ne soit renvoyé côté client. Voici ce à quoi j’ai pu aboutir : </p>
-<pre><code class="language-php">  /* == @section Remplace le code généré par [caption] ==================== */
-  /**
+<pre class="language-php" tabindex="0"><code class="language-php">  <span class="token comment">/* == @section Remplace le code généré par [caption] ==================== */</span>
+  <span class="token comment">/**
  * @note : Le contenu est filtré pour remplacer le html généré pour les caption par du html5 sémantique. Astuce trouvée sur Reverie.
  * @author : Zhen Huang
  * @see : https://themefortress.com/reverie/
@@ -79,31 +82,30 @@
  * @see : https://gist.github.com/JoostKiens/4477366
  * @note : Et j’y ajoute les roles et attributs Aria nécessaires
  * @see : https://www.kloh.ch/craw2013-html5-aria-et-accessibilite-web-479
- */
-  add_filter( ’img_caption_shortcode’, ’ffeeeedd__caption’, 10, 3 );
-  function ffeeeedd__caption( $output, $attr, $content ) {
-  if ( is_feed() ) {
-  return $output;
-  }
-  $defaults = array(
-  ’id’ =&gt; ’’,
-  ’align’ =&gt; ’alignnone’,
-  ’width’ =&gt; ’’,
-  ’caption’ =&gt; ’’
-  );
-  $attr = shortcode_atts( $defaults, $attr );
-  if ( 1 &gt; (int) $attr[’width’] || empty( $attr[’caption’] ) ) {
-  return $content;
-  }
-  $content = str_replace( ’&lt;img’, ’&lt;img id=&quot;’ . $attr[’id’] . ’&quot; itemprop=&quot;contentURL&quot; aria-describedby=&quot;wp-caption--’ . $attr[’id’] . ’&quot;’, $content );
-  $attributes = ’ class=&quot;wp-caption inbl ’ . esc_attr( $attr[’align’] ) . ’&quot;’;
-  $output = ’&lt;figure’ . $attributes .’ role=&quot;group&quot; itemscope itemtype=&quot;https://schema.org/ImageObject&quot;&gt;’;
-  $output .= do_shortcode( $content );
-  $output .= ’&lt;figcaption class=&quot;wp-caption-text pt1 small&quot; id=&quot;wp-caption--’ . $attr[’id’] . ’&quot; itemprop=&quot;description&quot;&gt;’ . $attr[’caption’] . ’&lt;/figcaption&gt;’;
-  $output .= ’&lt;/figure&gt;’;
-  return $output;
-  }
-</code></pre>
+ */</span>
+  <span class="token function">add_filter</span><span class="token punctuation">(</span> ’img_caption_shortcode’<span class="token punctuation">,</span> ’ffeeeedd__caption’<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">3</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">function</span> <span class="token function-definition function">ffeeeedd__caption</span><span class="token punctuation">(</span> <span class="token variable">$output</span><span class="token punctuation">,</span> <span class="token variable">$attr</span><span class="token punctuation">,</span> <span class="token variable">$content</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span> <span class="token function">is_feed</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token variable">$output</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token variable">$defaults</span> <span class="token operator">=</span> <span class="token keyword">array</span><span class="token punctuation">(</span>
+  ’id’ <span class="token operator">=></span> ’’<span class="token punctuation">,</span>
+  ’align’ <span class="token operator">=></span> ’alignnone’<span class="token punctuation">,</span>
+  ’width’ <span class="token operator">=></span> ’’<span class="token punctuation">,</span>
+  ’caption’ <span class="token operator">=></span> ’’
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token variable">$attr</span> <span class="token operator">=</span> <span class="token function">shortcode_atts</span><span class="token punctuation">(</span> <span class="token variable">$defaults</span><span class="token punctuation">,</span> <span class="token variable">$attr</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span> <span class="token number">1</span> <span class="token operator">></span> <span class="token punctuation">(</span><span class="token keyword type-casting">int</span><span class="token punctuation">)</span> <span class="token variable">$attr</span><span class="token punctuation">[</span>’width’<span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token keyword">empty</span><span class="token punctuation">(</span> <span class="token variable">$attr</span><span class="token punctuation">[</span>’caption’<span class="token punctuation">]</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token variable">$content</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token variable">$content</span> <span class="token operator">=</span> <span class="token function">str_replace</span><span class="token punctuation">(</span> ’<span class="token operator">&lt;</span>img’<span class="token punctuation">,</span> ’<span class="token operator">&lt;</span>img id<span class="token operator">=</span><span class="token string double-quoted-string">"’ . <span class="token interpolation"><span class="token variable">$attr</span><span class="token punctuation">[</span>’id’<span class="token punctuation">]</span></span> . ’"</span> itemprop<span class="token operator">=</span><span class="token string double-quoted-string">"contentURL"</span> aria<span class="token operator">-</span>describedby<span class="token operator">=</span><span class="token string double-quoted-string">"wp-caption--’ . <span class="token interpolation"><span class="token variable">$attr</span><span class="token punctuation">[</span>’id’<span class="token punctuation">]</span></span> . ’"</span>’<span class="token punctuation">,</span> <span class="token variable">$content</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token variable">$attributes</span> <span class="token operator">=</span> ’ <span class="token keyword">class</span><span class="token operator">=</span><span class="token string double-quoted-string">"wp-caption inbl ’ . esc_attr( <span class="token interpolation"><span class="token variable">$attr</span><span class="token punctuation">[</span>’align’<span class="token punctuation">]</span></span> ) . ’"</span>’<span class="token punctuation">;</span>
+  <span class="token variable">$output</span> <span class="token operator">=</span> ’<span class="token operator">&lt;</span>figure’ <span class="token operator">.</span> <span class="token variable">$attributes</span> <span class="token operator">.</span>’ role<span class="token operator">=</span><span class="token string double-quoted-string">"group"</span> itemscope itemtype<span class="token operator">=</span><span class="token string double-quoted-string">"https://schema.org/ImageObject"</span><span class="token operator">></span>’<span class="token punctuation">;</span>
+  <span class="token variable">$output</span> <span class="token operator">.=</span> <span class="token function">do_shortcode</span><span class="token punctuation">(</span> <span class="token variable">$content</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token variable">$output</span> <span class="token operator">.=</span> ’<span class="token operator">&lt;</span>figcaption <span class="token keyword">class</span><span class="token operator">=</span><span class="token string double-quoted-string">"wp-caption-text pt1 small"</span> id<span class="token operator">=</span><span class="token string double-quoted-string">"wp-caption--’ . <span class="token interpolation"><span class="token variable">$attr</span><span class="token punctuation">[</span>’id’<span class="token punctuation">]</span></span> . ’"</span> itemprop<span class="token operator">=</span><span class="token string double-quoted-string">"description"</span><span class="token operator">></span>’ <span class="token operator">.</span> <span class="token variable">$attr</span><span class="token punctuation">[</span>’caption’<span class="token punctuation">]</span> <span class="token operator">.</span> ’<span class="token operator">&lt;</span><span class="token operator">/</span>figcaption<span class="token operator">></span>’<span class="token punctuation">;</span>
+  <span class="token variable">$output</span> <span class="token operator">.=</span> ’<span class="token operator">&lt;</span><span class="token operator">/</span>figure<span class="token operator">></span>’<span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token variable">$output</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span></code></pre>
 <h2 id="lintervention-detaillee" tabindex="-1">L’intervention détaillée</h2>
 <p>La structure d’origine est conservée ; je détaille ce qui a été fait :</p>
 <ul>

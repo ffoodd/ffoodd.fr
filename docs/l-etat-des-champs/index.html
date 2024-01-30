@@ -10,7 +10,10 @@
 		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
 		<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/index.xml"></head>
 	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
-		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+		
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#sommaire">Aller au sommaire</a>
+
 		<div class="row">
 			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation" aria-label="Menu principal">
 				<ul class="menu aside p-reset m-reset ul-reset">
@@ -69,19 +72,18 @@
 <h2 id="un-contournement-possible" tabindex="-1">Un contournement possible</h2>
 <p>Une idée m’est venue en lisant un article du calendrier de l’avent Digitpaint intitulé <a href="https://advent2017.digitpaint.nl/2/">Fantastic form pseudo selectors</a>, dans lequel le premier exemple implémente un label flottant non pas au <code>:focus</code> sur le champ, mais lors du début de saisie grâce à la pseudo-classe <code>:placeholder-shown</code>. Génie !</p>
 <p>Cette pseudo-classe est active uniquement lorsque le <code>placeholder</code> est affiché, autrement dit tant qu’aucune saisie n’a été effectuée dans le champ. Et ça, ça ressemble beaucoup à une partie de l’énoncé de notre problème du jour. Nous pourrions donc faire en sorte de <strong>distinguer un champ invalide vierge d’un champ invalide ayant été saisi</strong>, avec les sélecteurs suivants :</p>
-<pre><code class="language-css">
-input:invalid {
-  box-shadow: none;
-}
+<pre class="language-css" tabindex="0"><code class="language-css">
+<span class="token selector">input:invalid</span> <span class="token punctuation">{</span>
+  <span class="token property">box-shadow</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-input:invalid:not(:focus) {
-  box-shadow: 0 0 0 2px red;
-}
+<span class="token selector">input:invalid:not(:focus)</span> <span class="token punctuation">{</span>
+  <span class="token property">box-shadow</span><span class="token punctuation">:</span> 0 0 0 2px red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-input:invalid:placeholder-shown {
-  box-shadow: none;
-}
-</code></pre>
+<span class="token selector">input:invalid:placeholder-shown</span> <span class="token punctuation">{</span>
+  <span class="token property">box-shadow</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p>Et bien a priori, ça fonctionne !<br>
 Et bonne nouvelle, <a href="https://caniuse.com/#feat=css-placeholder-shown"><code>:placeholder-shown</code> est décemment supporté</a>. Je vous ai même fait <a href="https://codepen.io/ffoodd/pen/PEzoYO">un petit CodePen pour jouer</a>.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
 <h3 id="remarques-post-publication" tabindex="-1">Remarques post-publication</h3>

@@ -10,7 +10,10 @@
 		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
 		<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/index.xml"></head>
 	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
-		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+		
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#sommaire">Aller au sommaire</a>
+
 		<div class="row">
 			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation" aria-label="Menu principal">
 				<ul class="menu aside p-reset m-reset ul-reset">
@@ -66,8 +69,7 @@
 <p><strong>Commençons par créer le contenu  !</strong></p>
 <h2 id="la-contribution" tabindex="-1">La contribution</h2>
 <p>Partie cruciale s’il en est, AccesSlide permet de rédiger ces slides de façon extrêmement simple, en imposant <strong>très peu de contraintes sur le balisage</strong>. Il suffit d’une section avec la bonne classe, et le tour est joué :</p>
-<pre><code class="language-markup">&lt;section class=&quot;slide&quot;&gt; [votre diapo] &lt;/section&gt;
-</code></pre>
+<pre class="language-markup" tabindex="0"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> [votre diapo] <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span></code></pre>
 <p>Il est difficile de faire plus simple, et c’est équivalent en terme d’efficacité aux solutions populaires telles que <a href="https://lab.hakim.se/reveal-js/#/">Reveal.js</a>. <strong>Ainsi pour la saisie du contenu, c’est top !</strong></p>
 <h2 id="la-personnalisation" tabindex="-1">La personnalisation</h2>
 <p>L’équipe d’Access42 a gardé cet aspect important pour l’appropriation en tête, <strong>et c’est tant mieux</strong>. Un système de thèmes fonctionne très bien, ce qui m’a permis d’implémenter très rapidement des styles qui correspondent à la fois à ce site mais aussi à ma précédente présentation. Quelques ajustements ont évidemment été nécessaires, mais rien de bien compliqué.</p>
@@ -78,61 +80,58 @@
 <h3 id="les-pictogrammes-en-svg" tabindex="-1">Les pictogrammes en SVG</h3>
 <p>Mon dada du moment. Les boutons et liens icônes sont intégrés à l’aide d’une police d’icône dans la version « officielle » proposée par Access42. Personnellement, je n’aime pas cette technique, que je trouve moins robuste qu’une bonne vieille balise image avec une source vectorielle. J’ai donc changé la façon de gérer ces boutons. Ça m’amène à une première remarque d’ordre général, mais sans être expert <strong>je pense que le javascript peut encore être amélioré</strong> car on trouve beaucoup de répétitions.</p>
 <p>Pour information, il s’avère que si une balise image a une source svg, il faut ajouter le rôle image afin que VoiceOver accède à l’alternative textuelle :</p>
-<pre><code class="language-markup">&lt;img src=&quot;*.svg&quot; alt=&quot;Quel essai !&quot; role=&quot;img&quot; 
-   width=&quot;8&quot; height=&quot;8&quot; /&gt;
-</code></pre>
+<pre class="language-markup" tabindex="0"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>*.svg<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Quel essai !<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>img<span class="token punctuation">"</span></span> 
+   <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>8<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></code></pre>
 <p>Étant donné que ça ne constitue pas un effort insurmontable ni même complexe, je préfère toujours cette version (qui fonctionne à partir d’IE9).</p>
 <p>Un petit coucou et un grand merci à Nicolas Hoffmann qui, suite à mon interrogation, a permis de confirmer ce diagnostic en haranguant la plèbe sur Twitter. Lisez <a href="https://twitter.com/Nico3333fr/status/601687531218931712">le fil de discussion</a>, c’est très intéressant !</p>
 <h3 id="la-transition-en-css" tabindex="-1">La transition en CSS</h3>
 <p>J’avais particulièrement apprécié la gestion des transitions sur Reveal.js, plutôt simple et efficace à l’aide de CSS. Aucun des effets proposés par AccesSlide ne correspondaient à celui que j’utilisais précédemment, alors je l’ai re-créé et ajouté !</p>
 <p>Là encore, <strong>ce fut extrêmement facile</strong> en déclarant la nouvelle animation <a href="https://github.com/access42/AccesSlide/blob/master/AccesSlide.js#L63">conformément aux isntructions laissées dans le fichier javascript principal</a>. Côté utilisateur, vous pourrez voir cette animation en la choisissant dans les réglages : je l’ai nommée « Coulisse vers la gauche » puisque c’est ce qu’elle fait !</p>
 <p>Ainsi le conteneur principal se voit affubler d’un attribut <code>data-effect</code> dont la valeur est le nom de l’effet. Il n’en faut pas plus pour appliquer la transition CSS de mes rêves (même si je dois avouer devoir truander un peu afin de ne pas toucher aux fichiers originels) :</p>
-<pre><code class="language-css">[data-effect=&quot;ffoodd&quot;] .slide {
-  display: block !important;
-  opacity: 0;
-  margin: .5rem;
-  position: absolute;
-  top: 0 !important;
-  visibility: hidden;
-  transform-style: preserve-3d;
-  transition: 
-  transform-origin .8s cubic-bezier(.26, .86, .44, .985),
-  transform .8s cubic-bezier(.26, .86, .44, .985),
-  visibility .8s cubic-bezier(.26, .86, .44, .985),
-  opacity .8s cubic-bezier(.26, .86, .44, .985);
-}
+<pre class="language-css" tabindex="0"><code class="language-css"><span class="token selector">[data-effect="ffoodd"] .slide</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block <span class="token important">!important</span><span class="token punctuation">;</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> .5rem<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 0 <span class="token important">!important</span><span class="token punctuation">;</span>
+  <span class="token property">visibility</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+  <span class="token property">transform-style</span><span class="token punctuation">:</span> preserve-3d<span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> 
+  transform-origin .8s <span class="token function">cubic-bezier</span><span class="token punctuation">(</span>.26<span class="token punctuation">,</span> .86<span class="token punctuation">,</span> .44<span class="token punctuation">,</span> .985<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  transform .8s <span class="token function">cubic-bezier</span><span class="token punctuation">(</span>.26<span class="token punctuation">,</span> .86<span class="token punctuation">,</span> .44<span class="token punctuation">,</span> .985<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  visibility .8s <span class="token function">cubic-bezier</span><span class="token punctuation">(</span>.26<span class="token punctuation">,</span> .86<span class="token punctuation">,</span> .44<span class="token punctuation">,</span> .985<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  opacity .8s <span class="token function">cubic-bezier</span><span class="token punctuation">(</span>.26<span class="token punctuation">,</span> .86<span class="token punctuation">,</span> .44<span class="token punctuation">,</span> .985<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-[data-effect=&quot;ffoodd&quot;] .slide[style*=&quot;display: none&quot;] {
-  opacity: 0;
-  pointer-events: none;
-  position: absolute;
-  transform: translate3d( -150%, 0, 0 );
-  visibility: hidden;
-}
+<span class="token selector">[data-effect="ffoodd"] .slide[style*="display: none"]</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">pointer-events</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate3d</span><span class="token punctuation">(</span> -150%<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0 <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">visibility</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-/* C’est là que je truande :P */
-[data-effect=&quot;ffoodd&quot;] .slide[style*=&quot;display: block&quot;] {
-  opacity: 1    !important;
-  position: relative  !important;
-  visibility: visible !important;
-}
+<span class="token comment">/* C’est là que je truande :P */</span>
+<span class="token selector">[data-effect="ffoodd"] .slide[style*="display: block"]</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 1    <span class="token important">!important</span><span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> relative  <span class="token important">!important</span><span class="token punctuation">;</span>
+  <span class="token property">visibility</span><span class="token punctuation">:</span> visible <span class="token important">!important</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-[data-effect=&quot;ffoodd&quot;] .slide[style*=&quot;display: block&quot;] ~ .slide[style*=&quot;display: none&quot;] {
-  transform: translate3d( 150%, 0, 0 );
-}
-</code></pre>
+<span class="token selector">[data-effect="ffoodd"] .slide[style*="display: block"] ~ .slide[style*="display: none"]</span> <span class="token punctuation">{</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate3d</span><span class="token punctuation">(</span> 150%<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0 <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p>Et puis pour le fun, j’ai ajouté une animation au chargement de la page :</p>
-<pre><code class="language-css">@keyframes move-up {
-  from {
-  transform: translateY( 100% ) translateZ( 0 );
-  opacity: 0;
-  }
-}
+<pre class="language-css" tabindex="0"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> move-up</span> <span class="token punctuation">{</span>
+  <span class="token selector">from</span> <span class="token punctuation">{</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateY</span><span class="token punctuation">(</span> 100% <span class="token punctuation">)</span> <span class="token function">translateZ</span><span class="token punctuation">(</span> 0 <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-[data-effect=&quot;ffoodd&quot;] #wrapper {
-  animation: move-up .8s cubic-bezier(.165, .840, .440, 1);
-}
-</code></pre>
+<span class="token selector">[data-effect="ffoodd"] #wrapper</span> <span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> move-up .8s <span class="token function">cubic-bezier</span><span class="token punctuation">(</span>.165<span class="token punctuation">,</span> .840<span class="token punctuation">,</span> .440<span class="token punctuation">,</span> 1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p>Et le tour est joué ☺.</p>
 <h2 id="participez" tabindex="-1">Participez !</h2>
 <p>Pour le moment mon thème est trop éloigné de la solution originelle pour que je puisse le proposer simplement, mais avec un peu de réécriture ce devrait être faisable (tout comme l’animation). <strong>Je tenterai de les proposer à Access42 dès que mon temps libre me le permettra</strong> !</p>

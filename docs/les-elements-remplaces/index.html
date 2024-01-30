@@ -10,7 +10,10 @@
 		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
 		<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/index.xml"></head>
 	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
-		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+		
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#sommaire">Aller au sommaire</a>
+
 		<div class="row">
 			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation" aria-label="Menu principal">
 				<ul class="menu aside p-reset m-reset ul-reset">
@@ -81,12 +84,11 @@
 <h2 id="la-singularite" tabindex="-1">La singularité</h2>
 <p>Les éléments remplacés ont donc des dimensions intrinsèques, et ça inclut les boutons. Lorsque vous spécifiez une largeur sur un élément remplacé, <strong>vous écrasez sa largeur intrinsèque</strong>. Jusque là, tout va bien. Vous pouvez jouer avec une image, effectivement cʼest chouette.</p>
 <p>Maintenant pour rigoler, prenez un <code>&lt;button&gt;</code> et affublez-le de ce CSS :</p>
-<pre><code class="language-css">
-button {
-  display: inline;
-  width: 20em;
-}
-</code></pre>
+<pre class="language-css" tabindex="0"><code class="language-css">
+<span class="token selector">button</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> inline<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 20em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p>Jʼavais tendance à penser que ce CSS ne produirait rien, puisquʼ<strong>on ne peut pas définir de dimension sur un élément <em>inline</em></strong>. Sauf quʼun bouton a donc des dimensions intrinsèques quʼon peut surcharger — alors même que ces styles sont considérés comme hors de portée de CSS. La magie opère : <strong>un bouton en ligne obéira à une définition de sa largeur</strong>.</p>
 <p>Vous pouvez jouer avec <a href="https://dabblet.com/gist/d94397d5d22a7cc9c1eb">ce dabblet</a> pour vous en convaincre.</p>
 <h2 id="un-reel-probleme" tabindex="-1">Un réel problème ?</h2>

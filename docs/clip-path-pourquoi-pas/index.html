@@ -10,7 +10,10 @@
 		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
 		<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/index.xml"></head>
 	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
-		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+		
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#sommaire">Aller au sommaire</a>
+
 		<div class="row">
 			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation" aria-label="Menu principal">
 				<ul class="menu aside p-reset m-reset ul-reset">
@@ -69,17 +72,15 @@
 <p>On peut d’ores et déjà noter une différence remarquable entre les états de ces deux spécifications : l’une est en brouillon, l’autre en recommandation. La spécification SVG est extrêmement aboutie et claire, les ressources ne manquent pas.<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
 <p>En revanche le module CSS est obscur. Il existe un lien étroit entre les deux spécifications, car le brouillon du module <em>CSS Masking</em> s’appuie énormément sur la spécification SVG — et qu’en SVG il existe l’attribut <code>clip-path</code>. Ça génère des incompréhensions qui ne vont pas faciliter la prise en main de cette propriété.</p>
 <p>Pour éclaircir un peu tout ça — et vous épargner la lecture des spécifications — vous devriez pouvoir écrire ceci pour utiliser une forme basique :</p>
-<pre><code class="language-css">
-.clip { 
-  clip-path: circle( 50%, 50%, 5em );
-}
-</code></pre>
+<pre class="language-css" tabindex="0"><code class="language-css">
+<span class="token selector">.clip</span> <span class="token punctuation">{</span> 
+  <span class="token property">clip-path</span><span class="token punctuation">:</span> <span class="token function">circle</span><span class="token punctuation">(</span> 50%<span class="token punctuation">,</span> 50%<span class="token punctuation">,</span> 5em <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p>Mais ceci devrait fonctionner également — en appelant un élément SVG :</p>
-<pre><code class="language-css">
-.clip { 
-  clip-path: url(#circle);
-}
-</code></pre>
+<pre class="language-css" tabindex="0"><code class="language-css">
+<span class="token selector">.clip</span> <span class="token punctuation">{</span> 
+  <span class="token property">clip-path</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>#circle<span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <h2 id="les-origines" tabindex="-1">Les origines</h2>
 <p>Il faut sonder un peu les origines de ce module CSS pour en comprendre l’obscurité. Bien que déjà en cours d’élaboration dans le cadre technique du SVG, la possibilité de masquer des éléments en CSS existait depuis CSS 2.1 grâce à la propriété <code>clip</code>, désormais <a href="https://www.w3.org/TR/css-masking-1/#clip-property" title="en Anglais">dépréciée</a>.<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></p>
 <p>Cette propriété n’a jamais réellement trouvé son public, car elle a deux inconvénients majeurs :</p>
@@ -101,31 +102,29 @@
 <p>À l’instar de la spécification qui intègre les clips <strong>et</strong> les masques, ces ressources présentent les deux techniques. Dommage car deux articles distincts auraient été bien plus clairs !</p>
 <h2 id="un-bilan-mitige" tabindex="-1">Un bilan mitigé</h2>
 <p>Après avoir compulsé maladivement les spécifications, articles, tutoriaux et autres exemples pendant quelques jours, j’ai abouti à un exemple ressemblant à ceci :</p>
-<pre><code class="language-css">
-/**
+<pre class="language-css" tabindex="0"><code class="language-css">
+<span class="token comment">/**
  * 1. Définition d’une forme rectangulaire de repli pour les navigateurs ne supportant pas clip-path;
  * 2. Création d’une forme SVG basique, circulaire;
  * 3. Appel d’un fichier SVG contenant un élément clipPath. 
- */
-.clip { 
-  clip: rect( 7em, 30em, 17em, 20em ); /* 1 */
-  -webkit-clip-path: circle( 50%, 50%, 5em ); /* 2 */
-  clip-path: url(#circle); /* 3 */
-}
-</code></pre>
+ */</span>
+<span class="token selector">.clip</span> <span class="token punctuation">{</span> 
+  <span class="token property">clip</span><span class="token punctuation">:</span> <span class="token function">rect</span><span class="token punctuation">(</span> 7em<span class="token punctuation">,</span> 30em<span class="token punctuation">,</span> 17em<span class="token punctuation">,</span> 20em <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* 1 */</span>
+  <span class="token property">-webkit-clip-path</span><span class="token punctuation">:</span> <span class="token function">circle</span><span class="token punctuation">(</span> 50%<span class="token punctuation">,</span> 50%<span class="token punctuation">,</span> 5em <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* 2 */</span>
+  <span class="token property">clip-path</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>#circle<span class="token punctuation">)</span></span><span class="token punctuation">;</span> <span class="token comment">/* 3 */</span>
+<span class="token punctuation">}</span></code></pre>
 <p>Évidemment, cela implique un balisage précis côté HTML :</p>
-<pre><code class="language-markup">
-&lt;p class=&quot;clip&quot;&gt;
+<pre class="language-markup" tabindex="0"><code class="language-markup">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>clip<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   ♬ Tout, tout, tout : vous saurez tout sur le clip-path ♬
-&lt;/p&gt;
-&lt;svg width=&quot;200&quot; height=&quot;200&quot;&gt;
-  &lt;defs&gt;
-  &lt;clipPath id=&quot;circle&quot;&gt;
-  &lt;circle cx=&quot;50%&quot; cy=&quot;50%&quot; r=&quot;80&quot; /&gt;
-  &lt;/clipPath&gt;  
-  &lt;/defs&gt;
-&lt;/svg&gt;
-</code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>svg</span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>200<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>200<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>defs</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>clipPath</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>circle<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>circle</span> <span class="token attr-name">cx</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>50%<span class="token punctuation">"</span></span> <span class="token attr-name">cy</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>50%<span class="token punctuation">"</span></span> <span class="token attr-name">r</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>80<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>clipPath</span><span class="token punctuation">></span></span>  
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>defs</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>svg</span><span class="token punctuation">></span></span></code></pre>
 <p>Ainsi je tente de vous livrer un état des lieux aussi complet que possible.<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup></p>
 <ul>
 <li><strong>Chrome 23, Safari 6.1 et Opéra 15</strong> supportent <code>clip-path</code> sous toutes ses formes — incluant la définition de formes SVG basiques dans le CSS;</li>

@@ -10,7 +10,10 @@
 		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
 		<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/index.xml"></head>
 	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
-		<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+		
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#sommaire">Aller au sommaire</a>
+
 		<div class="row">
 			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation" aria-label="Menu principal">
 				<ul class="menu aside p-reset m-reset ul-reset">
@@ -64,51 +67,47 @@
 <p>La « magie » de cette solution repose sur la propriété <code>clip</code>. Elle est simple à comprendre et très efficace. Seul bémol : <code>clip</code> est <strong>déprécié par le module <em><a href="https://drafts.fxtf.org/css-masking-1/#clip-property">CSS masking</a></em></strong> de niveau 1.</p>
 <p>Pas de souci. La technique basée sur <code>clip</code> date un peu, il est normal qu’elle tombe en désuétude. La nouvelle spécification recommande l’utilisation de <code>clip-path</code> pour remplacer <code>clip</code>. Ce qui nous laisse pantois, puisque <a href="https://caniuse.com/#feat=css-clip-path">le support de <code>clip-path</code> est encore tout à fait relatif</a>. <strong>Nous devons conserver <code>clip</code> et ajouter <code>clip-path</code> en guise d’amélioration progressive</strong>.</p>
 <p>Cependant la syntaxe est différente également. Après quelques recherches, <a href="https://twitter.com/ryuran78/status/778943389819604992">Yvain Liechti a proposé la version la plus courte pour obtenir le résultat attendu</a> :</p>
-<pre><code class="language-css">clip-path: inset(50%);
-</code></pre>
+<pre class="language-css" tabindex="0"><code class="language-css"><span class="token property">clip-path</span><span class="token punctuation">:</span> <span class="token function">inset</span><span class="token punctuation">(</span>50%<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>Banco. Un problème résolu !</p>
 <h2 id="le-texte-ratatine" tabindex="-1">Le texte ratatiné</h2>
 <p><a href="https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe">J. Renée Beach a signalé</a> que la propriété <code>width: 1px;</code> avait des effets négatifs sur le rendu du texte et par conséquent sa vocalisation par un lecteur d’écran.</p>
 <p>La solution proposée est à la fois logique et simple : empêcher le texte de passer à la ligne et ainsi <strong>garantir que les espaces entre les mots sont conservés</strong>.</p>
 <p>Une seule propriété suffit :</p>
-<pre><code class="language-css">white-space: nowrap;
-</code></pre>
+<pre class="language-css" tabindex="0"><code class="language-css"><span class="token property">white-space</span><span class="token punctuation">:</span> nowrap<span class="token punctuation">;</span></code></pre>
 <p>Et voilà, second problème résolu.</p>
 <h2 id="la-totale" tabindex="-1">La totale</h2>
 <p>Voilà la version finale que je propose actuellement :</p>
-<pre><code class="language-css">
-.sr-only {
-  border: 0 !important;
-  clip: rect(1px, 1px, 1px, 1px) !important;
-  -webkit-clip-path: inset(50%) !important;
-    clip-path: inset(50%) !important;
-  height: 1px !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  padding: 0 !important;
-  position: absolute !important;
-  width: 1px !important;
-  white-space: nowrap !important;
-}
-</code></pre>
+<pre class="language-css" tabindex="0"><code class="language-css">
+<span class="token selector">.sr-only</span> <span class="token punctuation">{</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 0 <span class="token important">!important</span><span class="token punctuation">;</span>
+  <span class="token property">clip</span><span class="token punctuation">:</span> <span class="token function">rect</span><span class="token punctuation">(</span>1px<span class="token punctuation">,</span> 1px<span class="token punctuation">,</span> 1px<span class="token punctuation">,</span> 1px<span class="token punctuation">)</span> <span class="token important">!important</span><span class="token punctuation">;</span>
+  <span class="token property">-webkit-clip-path</span><span class="token punctuation">:</span> <span class="token function">inset</span><span class="token punctuation">(</span>50%<span class="token punctuation">)</span> <span class="token important">!important</span><span class="token punctuation">;</span>
+    <span class="token property">clip-path</span><span class="token punctuation">:</span> <span class="token function">inset</span><span class="token punctuation">(</span>50%<span class="token punctuation">)</span> <span class="token important">!important</span><span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 1px <span class="token important">!important</span><span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> -1px <span class="token important">!important</span><span class="token punctuation">;</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> hidden <span class="token important">!important</span><span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 0 <span class="token important">!important</span><span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute <span class="token important">!important</span><span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 1px <span class="token important">!important</span><span class="token punctuation">;</span>
+  <span class="token property">white-space</span><span class="token punctuation">:</span> nowrap <span class="token important">!important</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <h3 id="avertissement" tabindex="-1">Avertissement</h3>
 <p>Normalement, vous ne devriez utiliser ceci <strong>que pour du texte</strong>. Autrement dit, il ne devrait jamais y avoir d’élément capable de recevoir le <code>:focus</code> dans un élément masqué de la sorte. Cela pourrait conduire à des comportements étonnants, puisque le navigateur cherchera à positionner le <em>scroll</em> à l’endroit où est placé le <code>:focus</code>.</p>
 <p>Cependant, si l’élément masqué peut lui-même recevoir le <code>:focus</code>, il nous faut pouvoir l’afficher de nouveau. <strong>C’est généralement le cas pour les liens d’évitement</strong>. Lisez <a href="https://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1">la technique G1 des WCAG</a> pour en savoir plus.</p>
 <p>Pour ce genre de cas, <a href="https://github.com/twbs/bootstrap/blob/v4-dev/scss/mixins/_screen-reader.scss">Bootstrap propose une classe supplémentaire</a> pour remettre à zéro nos valeurs de masquage.</p>
 <p>C’est à mon avis la meilleure façon de faire — et étant donné les changements apportés sur la classe de masquage, cette seconde classe doit être revue elle aussi. Voici ma version :</p>
-<pre><code class="language-css">
-.sr-only-focusable:focus,
-.sr-only-focusable:active {
-  clip: auto !important;
-  -webkit-clip-path: none !important;
-    clip-path: none !important;
-  height: auto !important;
-  margin: auto !important;
-  overflow: visible !important;
-  width: auto !important;
-  white-space: normal !important;
-}
-</code></pre>
+<pre class="language-css" tabindex="0"><code class="language-css">
+<span class="token selector">.sr-only-focusable:focus,
+.sr-only-focusable:active</span> <span class="token punctuation">{</span>
+  <span class="token property">clip</span><span class="token punctuation">:</span> auto <span class="token important">!important</span><span class="token punctuation">;</span>
+  <span class="token property">-webkit-clip-path</span><span class="token punctuation">:</span> none <span class="token important">!important</span><span class="token punctuation">;</span>
+    <span class="token property">clip-path</span><span class="token punctuation">:</span> none <span class="token important">!important</span><span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> auto <span class="token important">!important</span><span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> auto <span class="token important">!important</span><span class="token punctuation">;</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> visible <span class="token important">!important</span><span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> auto <span class="token important">!important</span><span class="token punctuation">;</span>
+  <span class="token property">white-space</span><span class="token punctuation">:</span> normal <span class="token important">!important</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <h2 id="code-et-traduction" tabindex="-1">Code et traduction</h2>
 <p>Vous pouvez retrouver ces classes à plusieurs endroits :</p>
 <ul>

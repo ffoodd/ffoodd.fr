@@ -42,7 +42,6 @@ Object.keys(posts).forEach((p, i) => {
 
 	// @todo Gérer les dimensions des images :
 	// @note Virer les -nnn×nnn.(png,jpg)
-	// @note récupérer les dimensions des images et les ajouter dans les attributes width et height
 
 	let newExcerpt = turndownService.turndown(post.excerpt.rendered)
 		.replace(/http:\/\//g, 'https://')
