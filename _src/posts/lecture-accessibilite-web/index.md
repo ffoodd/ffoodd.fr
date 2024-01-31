@@ -14,7 +14,7 @@ date_de_parution: "25/10/2012"
 ean13: "9782212128895"
 nombre_de_pages: "332"
 collection: "Accès libre"
-lien: "https://www.eyrolles.com/Informatique/Livre/accessibilite-web-9782212128895"
+lien: "http://www.eyrolles.com/Informatique/Livre/accessibilite-web-9782212128895"
 note: "5"
 ---
 Une fois passée l’appréhension due au format du livre et au thème ‐ qui a la réputation d’être lourd, cognitivement parlant ‐ on est pris dans l’engrenage : de la première à la dernière page, impossible de décrocher.

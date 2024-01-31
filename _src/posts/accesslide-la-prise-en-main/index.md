@@ -4,10 +4,10 @@ title: "AccesSlide&nbsp;: la prise en main"
 date: "2015-05-24T11:06:51"
 modified: "2015-05-26T09:03:59"
 permalink: "accesslide-la-prise-en-main/index.html"
-excerpt: "Auriez-vous ‒&nbsp;par hasard&nbsp;‒ déjà cherché une solution pour créer des diaporamas accessibles&nbsp;? De nombreuses solutions existent, mais aucune n’était réellement satisfaisante… C’est désormais le cas avec [AccesSlide](https://www.accesslide.net/), dont j’avais découvert l’existence après le petit jeu du 1er avril organisé par [Access42](https://www.access42.net/). Ma première prise en main a été très agréable alors me voilà lancé dans quelques explications et une démonstration pour en vanter les mérites&nbsp;!"
+excerpt: "Auriez-vous ‒&nbsp;par hasard&nbsp;‒ déjà cherché une solution pour créer des diaporamas accessibles&nbsp;? De nombreuses solutions existent, mais aucune n’était réellement satisfaisante… C’est désormais le cas avec [AccesSlide](https://accesslide.net/), dont j’avais découvert l’existence après le petit jeu du 1er avril organisé par [Access42](https://www.access42.net/). Ma première prise en main a été très agréable alors me voilà lancé dans quelques explications et une démonstration pour en vanter les mérites&nbsp;!"
 format: "standard"
 tags: "posts"
-description: "La conférence que je m’apprête à donner lors du <a href=\"https://2015.wpmx.org/\">WPMX Day</a> est l’occasion de créer un nouveau diaporama. C’est là qu’intervient <a href=\"https://www.access42.net\">Access42</a> et son superbe outil <a href=\"https://www.accesslide.net\">AccesSlide</a>&nbsp;!"
+description: "La conférence que je m’apprête à donner lors du <a href=\"http://2015.wpmx.org/\">WPMX Day</a> est l’occasion de créer un nouveau diaporama. C’est là qu’intervient <a href=\"http://www.access42.net\">Access42</a> et son superbe outil <a href=\"htt//www.accesslide.net\">AccesSlide</a>&nbsp;!"
 ---
 Access42 est la société créée conjointement par Armony Altinier (rédactrice du livre «&nbsp;Accessibilité web&nbsp;» dont j’ai écrit [un compte-rendu de lecture](https://www.ffoodd.fr/lecture-accessibilite-web/)) et Jean-Pierre Villain après qu’ils aient remporté le marché de refonte du RGAA3\. Ils ont été rapidement rejoint par Sylvie Duchateau et Audrey Maniez.
 

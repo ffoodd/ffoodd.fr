@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Le web en kit — La vie en #ffoodd</title>
-		<meta name="description" content="&lt;abbr lang=&quot;en&quot; title=&quot;Too Long, Didn&#39;t Read&quot;&gt;tl;dr&lt;/abbr&gt;&amp;nbsp;: jetez un œil &lt;a href=&quot;https://dabblet.com/gist/08fddf3666c39ebc62ca&quot;&gt;à ce dabblet&lt;/a&gt; sur Edge —&amp;nbsp;qui gère &lt;code&gt;-webkit-background-clip: text;&lt;/code&gt; sans broncher.">
+		<meta name="description" content="&lt;abbr lang=&quot;en&quot; title=&quot;Too Long, Didn&#39;t Read&quot;&gt;tl;dr&lt;/abbr&gt;&amp;nbsp;: jetez un œil &lt;a href=&quot;http://dabblet.com/gist/08fddf3666c39ebc62ca&quot;&gt;à ce dabblet&lt;/a&gt; sur Edge —&amp;nbsp;qui gère &lt;code&gt;-webkit-background-clip: text;&lt;/code&gt; sans broncher.">
 		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 		<link rel="stylesheet" href="/assets/styles.min.css" media="all">
 		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
@@ -52,7 +52,7 @@
 
 					
 					
-						<h2 class="h3-like description" itemprop="description"><abbr lang="en" title="Too Long, Didn't Read">tl;dr</abbr>&nbsp;: jetez un œil <a href="https://dabblet.com/gist/08fddf3666c39ebc62ca">à ce dabblet</a> sur Edge —&nbsp;qui gère <code>-webkit-background-clip: text;</code> sans broncher.</h2>
+						<h2 class="h3-like description" itemprop="description"><abbr lang="en" title="Too Long, Didn't Read">tl;dr</abbr>&nbsp;: jetez un œil <a href="http://dabblet.com/gist/08fddf3666c39ebc62ca">à ce dabblet</a> sur Edge —&nbsp;qui gère <code>-webkit-background-clip: text;</code> sans broncher.</h2>
 					
 				</header>
 				
@@ -96,11 +96,11 @@
 <p><a href="https://www.ffoodd.fr/ie9-sur-wp7-et-font-face-je-taime-moi-non-plus/">Une fois nʼest pas coutume</a>, Windows Phone et son IE représentent une configuration particulière. En lʼoccurrence, IE11 interprète les valeurs <code>-webkit-linear-gradient(…)</code> mais est incapable dʼappliquer la valeur <code>text</code> pour la proriété <code>background-clip</code>. Oups 🙈 !</p>
 <h2 id="captures-a-lappui" tabindex="-1">Captures à lʼappui</h2>
 <p>Dans un monde merveilleux et homogène, nous « devrions » voir ceci :</p>
-<figure><img src="/images/2015/10/chrome-300x31.png" alt="Capture dʼécran de Chrome" loading="lazy"><figcaption>Un arc-en-ciel incrusté au texte en CSS, visible sur les navigateurs WebKit et Edge</figcaption></figure>
+<figure><img src="/images/2015/10/chrome.png" alt="Capture dʼécran de Chrome" width="300" height="31" loading="lazy" decoding="async"><figcaption>Un arc-en-ciel incrusté au texte en CSS, visible sur les navigateurs WebKit et Edge</figcaption></figure>
 <p>Et, le cas échéant si votre navigateur est allergique aux arc-en-ciels, voici le résultat attendu :</p>
-<p><img src="/images/2015/10/firefox-300x30.png" alt="Capture dʼécran sur Firefox">↔&quot;Le texte est simplement blanc sur Firefox et IE, pas dʼarc-en-ciel à lʼhorizon&quot;)</p>
+<figure><img src="/images/2015/10/firefox.png" alt="Capture dʼécran sur Firefox" width="300" height="30" loading="lazy" decoding="async"><figcaption>Le texte est simplement blanc sur Firefox et IE, pas dʼarc-en-ciel à lʼhorizon</figcaption></figure>
 <p>Jusque là, tout va bien. La mécanique est belle, aucun danger grâce à la solution de repli évoquée précédemment. Maintenant, cassons tout ! Voici le rendu sur IE11 <strong>et <em>UC Browser</em></strong> sur Windows Phone 8.1 :</p>
-<p><img src="/images/2015/10/windowsphone-300x169.jpg" alt="capture dʼécran sur Windows Phone 8.1">↔&quot;Le texte est blanc, mais lʼarrière-plan arc-en-ciel est appliqué&quot;)</p>
+<figure><img src="/images/2015/10/windowsphone.jpg" alt="capture dʼécran sur Windows Phone 8.1" width="300" height="169" loading="lazy" decoding="async"><figcaption>Le texte est blanc, mais lʼarrière-plan arc-en-ciel est appliqué</figcaption></figure>
 <p>Difficile de garantir quoi que ce soit dans ces conditions. <em>A priori</em> ce problème nʼexiste pas dans les versions antérieures de Windows Phone, et il faut noter que la version bureau dʼIE11 nʼapplique pas lʼarrière-plan !</p>
 <p>Si vous voulez tester par vous-mêmes ou compléter mes propos, nʼhésitez pas à dupliquer <a href="https://dabblet.com/gist/08fddf3666c39ebc62ca">mon dabblet</a>.</p>
 <p>Et pour ceux qui rigolent dans le fond, sachez que <a href="https://gs.statcounter.com/#mobile_os-FR-monthly-201507-201509-bar">Windows Phone représente 4% de parts de marché des systèmes dʼexploitation sur mobile en France, entre juillet et septembre 2015 (en anglais)</a>. Ce nʼest pas négligeable, si tant est quʼon admette négliger une population.<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>

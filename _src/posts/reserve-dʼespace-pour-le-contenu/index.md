@@ -43,7 +43,7 @@ Il ne faudrait pas omettre que lʼobjectif est avant tout de faire patienter lʼ
 
 Pour démarrer, on va choisir un contenu quʼon pourrait attendre. Jʼen ai choisi un assez connu et avec un gabarit familier et reconnaissable&nbsp;: la carte de profil sur Twitter.
 
-![Ma carte de profil sur Twitter](/images/2015/12/profil-twitter-300x202.png "La carte de profil indique le nom, le pseudonyme et l’avatar Twitter, mais aussi les nombres de tweets, d’abonnements et d’abonnés.")
+![Ma carte de profil sur Twitter](/images/2015/12/profil-twitter.png "La carte de profil indique le nom, le pseudonyme et l’avatar Twitter, mais aussi les nombres de tweets, d’abonnements et d’abonnés." =300x202)
 
 Cʼest donc la-dessus que va se baser la création du visuel dʼattente. Sur le principe, je me contente de créer un bloc en aplat gris par élément, afin de **représenter sa masse visuelle**.[^1]
 
@@ -51,7 +51,7 @@ Cʼest donc la-dessus que va se baser la création du visuel dʼattente. Sur le 
 
 
 
-![Gabarit de carte de profil twitter](/images/2015/12/twitter-placeholder.png "Gabarit de carte de profil twitter représenté en masses colorées")
+![Gabarit de carte de profil twitter](/images/2015/12/twitter-placeholder.png "Gabarit de carte de profil twitter représenté en masses colorées" =300x201)
 
 Bon, jʼadmets également avoir exporté un SVG plutôt quʼune bête image bitmap. Pour tout vous dire ça nʼest pas nécessairement le meilleur choix, étant donné que pour une image aussi simple **le SVG est plus lourd** quʼun PNG bien optimisé et quʼ**on perd nécessairement en support navigateur**.
 

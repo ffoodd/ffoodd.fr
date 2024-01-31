@@ -29,7 +29,7 @@ Object.keys(posts).forEach((p, i) => {
 	// Convert to Markdown
 	let newContent =  turndownService.turndown(content)
 		// <figcaption>
-		.replace(')↔"', ' "')
+		.replace(/\)↔"/g, ' "')
 		// Handling footnotes
 		.replace(/\[\\\[(\d)\\\]\]\(.*?"(.*?)"\).+/gm, ".[^$1]\n\n[^$1]: $2\n\n")
 		.replace(/\[\\\[(\d)\\\]\]\(.*?"(.*?)"\)+/gm, ".[^$1]\n\n[^$1]: $2\n\n")
@@ -40,15 +40,17 @@ Object.keys(posts).forEach((p, i) => {
 		.replace(/\'/g, '’')
 		.replace(/   /g, ' ');
 
-	// @todo Gérer les dimensions des images :
-	// @note Virer les -nnn×nnn.(png,jpg)
+	newContent = newContent
+		.replaceAll(/\[(.*?)\]\((.*)-(.*)x(.*)\.(.*) "(.*?)"\)/g, '[$1]($2.$5 "$6" =$3x$4)');
 
 	let newExcerpt = turndownService.turndown(post.excerpt.rendered)
 		.replace(/http:\/\//g, 'https://')
-		.replace(/\[(.*?)\]\((.*?) "(.*?)"\)/g, "[$1]($2 '$3')")
 		.replace(/\s\[Lire la suite de «\u00A0.*\u00A0» →\]\(https:\/\/www\.ffoodd\.fr\/.*\/\)/g, '')
 		.replace(/\u00A0/g, '&nbsp;')
 		.replace(/\u005C/g, '');
+
+	newExcerpt = newExcerpt
+		.replaceAll(/\[(.*?)\]\((.*)-(.*)x(.*)\.(.*) "(.*?)"\)/g, '[$1]($2.$5 "$6" =$3x$4)');
 
 	let newSlug = post.slug.replace('%ca%bc', 'ʼ');
 

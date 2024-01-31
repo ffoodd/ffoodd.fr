@@ -42,7 +42,7 @@ Bien, utilisons une bordure en haut pour gérer le décalage&nbsp;!
 
 Textuellement, ça n’est pas forcément évident. Voici une petite illustration, dans laquelle la zone blanche est le nouvel élément, et le bloc rouge est la bordure dont je devais ajuster la dimension&nbsp;:
 
-![Représentation graphique des proportions entre les blocs](/images/2015/03/calc-300x209.png "Représentation graphique des proportions entre les blocs")
+![Représentation graphique des proportions entre les blocs](/images/2015/03/calc.png "Représentation graphique des proportions entre les blocs" =300x209)
 
 Finalement, je suis parvenu à simplifier le calcul en tournant autour du ratio de l’image utilisée (en blanc sur le schéma), soit **431:950**. Il s’agissait donc d’exprimer la hauteur de la bordure selon 3 valeurs&nbsp;:
 

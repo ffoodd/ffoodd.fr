@@ -65,7 +65,7 @@
 <h2 id="et-la-lumiere-fut" tabindex="-1">Et la lumière fut</h2>
 <p>C’est alors que j’ai réalisé : ces icônes étaient systématiquement sur un fond blanc. <strong>Eurêka.</strong></p>
 <p>En précisant un peu mes recherches, je suis tombé sur “<a href="https://coding.smashingmagazine.com/2010/10/31/transparent-css-sprites/">Transparent CSS Sprites</a>” par Trevor Morris. L’idée est simple : puisque la seule variation est la couleur de l’icône elle-même, il suffit de créer ce sprite en réservant la forme des icônes, ou plus simplement : en négatif. Voila un exemple plus concret :</p>
-<figure><img src="/images/2012/06/sprite.png" alt="Le-super-sprite-de-la-mort-qui-tue" loading="lazy"><figcaption>Alors, heureux ?</figcaption></figure>
+<figure><img src="/images/2012/06/sprite.png" alt="Le-super-sprite-de-la-mort-qui-tue" loading="lazy" decoding="async"><figcaption>Alors, heureux ?</figcaption></figure>
 <p>Tout est alors plus simple. <strong>Survolez cette image</strong> afin de vous en rendre compte, et observez-la dans votre outil de dev ou dans un nouvel onglet. Il suffit d’appliquer un <strong>background-color</strong> à cette image et de le changer au <strong>:hover</strong> afin d’obtenir le même résultat qu’un déplacement du sprite. Le code – allégé en matière grasse :</p>
 <p>img {
 background: #269;
@@ -85,7 +85,7 @@ background: #045175;
 <h2 id="qui-dit-sprite-dit-sprite" tabindex="-1">Qui dit sprite dit sprite</h2>
 <p>Effectivement, il reste nécessaire de <strong>“recadrer”</strong> ce sprite. Usuellement, on le fait via css en appelant le sprite dans une background-image. Le hic : sans texte d’accompagnement, ce n’est vraiment, vraiment pas accessible. La seule solution : <strong>une balise &lt; img / &gt;</strong>.</p>
 <p>On peut le faire de façon très simple : un parent conteneur aux dimensions fixes et un overflow hidden. Il ne reste plus qu’à déplacer l’image au sein de ce parent grâce à d’une position relative :</p>
-<figure><img src="/images/2012/06/sprite.png" alt="Et voila !" loading="lazy"><figcaption>Le-super-sprite-de-la-mort-qui-tue</figcaption></figure>
+<figure><img src="/images/2012/06/sprite.png" alt="Et voila !" loading="lazy" decoding="async"><figcaption>Le-super-sprite-de-la-mort-qui-tue</figcaption></figure>
 <p><strong>Rien de plus simple !</strong><br>
 Accessibilité :</p>
 <p>Pour conclure, la solution qui émerge est :</p>

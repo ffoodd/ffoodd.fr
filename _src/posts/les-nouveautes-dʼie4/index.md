@@ -107,6 +107,6 @@ Pour les survivants qui sont parvenus jusqu’au donjon, voici vos récompenses&
 
 
 
-Voilà. Comme **je me suis beaucoup amusé** à rassembler toutes ces informations et à écrire cet article, je tiens à remercier [les vieux croûtons du web](https://www.paris-web.fr/2015/conferences/la-veille-techno-pour-les-vieux-croutons.php "Conférence intitulée « La veille techno pour les vieux croûtons » présentée par Thibault Jouannic à Paris Web le vendredi 02 octobre 2015") qui ont éclairé ma lanterne lors de mes recherches. Ils se reconnaîtront, et si vous les cherchez vous trouverez la liste de leurs _nicknames_ connectés au salon `##openweb` sur IRC.
+Voilà. Comme **je me suis beaucoup amusé** à rassembler toutes ces informations et à écrire cet article, je tiens à remercier [les vieux croûtons du web](https://www.paris-web.fr/2015/conferences/la-veille-techno-pour-les.php "Conférence intitulée « La veille techno pour les vieux croûtons » présentée par Thibault Jouannic à Paris Web le vendredi 02 octobre 2015" =vieux-croutons) qui ont éclairé ma lanterne lors de mes recherches. Ils se reconnaîtront, et si vous les cherchez vous trouverez la liste de leurs _nicknames_ connectés au salon `##openweb` sur IRC.
 
 Merci les copains.

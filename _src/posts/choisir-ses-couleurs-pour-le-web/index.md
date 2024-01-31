@@ -14,7 +14,7 @@ date_de_parution: "02/10/2014"
 ean13: "9782212140415"
 nombre_de_pages: "144"
 collection: ""
-lien: "https://www.eyrolles.com/Informatique/Livre/choisir-ses-couleurs-pour-le-web-9782212140415"
+lien: "http://www.eyrolles.com/Informatique/Livre/choisir-ses-couleurs-pour-le-web-9782212140415"
 note: "4"
 ---
 Ce livre nous donne quelques clés pour en apprendre les tenants et les aboutissants.

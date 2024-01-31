@@ -79,9 +79,9 @@
 <h2 id="super-ca-donne-quoi" tabindex="-1">Super ! Ça donne quoi ?</h2>
 <h3 id="creer-limage-dattente" tabindex="-1">Créer lʼimage dʼattente</h3>
 <p>Pour démarrer, on va choisir un contenu quʼon pourrait attendre. Jʼen ai choisi un assez connu et avec un gabarit familier et reconnaissable : la carte de profil sur Twitter.</p>
-<figure><img src="/images/2015/12/profil-twitter-300x202.png" alt="Ma carte de profil sur Twitter" loading="lazy"><figcaption>La carte de profil indique le nom, le pseudonyme et l’avatar Twitter, mais aussi les nombres de tweets, d’abonnements et d’abonnés.</figcaption></figure>
+<figure><img src="/images/2015/12/profil-twitter.png" alt="Ma carte de profil sur Twitter" width="300" height="202" loading="lazy" decoding="async"><figcaption>La carte de profil indique le nom, le pseudonyme et l’avatar Twitter, mais aussi les nombres de tweets, d’abonnements et d’abonnés.</figcaption></figure>
 <p>Cʼest donc la-dessus que va se baser la création du visuel dʼattente. Sur le principe, je me contente de créer un bloc en aplat gris par élément, afin de <strong>représenter sa masse visuelle</strong>.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
-<p><img src="/images/2015/12/twitter-placeholder-300x201.png" alt="Gabarit de carte de profil twitter">↔&quot;Gabarit de carte de profil twitter représenté en masses colorées&quot;)</p>
+<figure><img src="/images/2015/12/twitter-placeholder.png" alt="Gabarit de carte de profil twitter" width="300" height="201" loading="lazy" decoding="async"><figcaption>Gabarit de carte de profil twitter représenté en masses colorées</figcaption></figure>
 <p>Bon, jʼadmets également avoir exporté un SVG plutôt quʼune bête image bitmap. Pour tout vous dire ça nʼest pas nécessairement le meilleur choix, étant donné que pour une image aussi simple <strong>le SVG est plus lourd</strong> quʼun PNG bien optimisé et quʼ<strong>on perd nécessairement en support navigateur</strong>.</p>
 <h3 id="implementer-une-alternative-accessible" tabindex="-1">Implémenter une alternative accessible</h3>
 <p>Pour celui-ci aucun mérite, puisque lʼaccessibilité des SVG commence à être bien documentée. Je vous laisse farfouiller un peu les artères du web pour trouver votre bonheur — personnellement jʼai abouti à ceci :</p>
@@ -160,7 +160,64 @@
 		</footer>
 	</article>
 
-				
+				<div id="comments" class="comments-area pl2 pt2 mt2 print-hidden">
+			<h2 class="comments-title" itemprop="interactionCount" content="UserComments:2">
+				2 commentaires sur
+				<span class="tk-bello-pro h2-like" itemprop="discusses">«&nbsp;Réserve d’espace pour le contenu&nbsp;»</span>
+				<a href="#sommaire" class="scroll small" title="Retour au sommaire">⤴</a>
+			</h2>
+			<ol class="commentlist ul-reset pl0" itemprop="comment"><li id="8224" class="mb2" itemscope itemtype="https://schema.org/UserComments">
+						<article>
+							<header><img alt="" loading="lazy"
+											 src="https://secure.gravatar.com/avatar/b43b95b000a1aac0c9718a339caf2b41?s=44&d=mm&r=g"
+											 srcset="https://secure.gravatar.com/avatar/b43b95b000a1aac0c9718a339caf2b41?s=88&d=mm&r=g 2x"
+											 class="avatar avatar-44 photo"
+											 height="44" width="44"><em itemprop="creator" class="pl1">Pascal</em>
+								
+								<time datetime="[object Object]" itemprop="commentTime">3 décembre 2015 à 13 h 36 min</time>
+								<a href="#8224">
+									<span class="screen-reader-text">Ancre vers ce commentaire</span>
+									<span aria-hidden="true">⚓</span>
+								</a>
+							</header>
+						</article>
+						<div itemprop="CommentText"><p>Hello,</p>
+<p>Quelques remarques :</p>
+<ol>
+<li>pour le svg, des <code>&lt;rect&gt;</code> devrait alléger</li>
+<li>Je vois 2 problèmes à l’utilisation d’une image :</li>
+</ol>
+<ul>
+<li>les différents contenus n’apparaissent pas forcément au même moment : à quel moment disparaît l’image pour laisser place au vrai contenu ? Cela peut « casser » momentanément la structure…</li>
+<li>sur du responsive : refaire chaque interface × n breakpoints ? Faire un svg responsive ? Ça peut faire vite beaucoup de boulot non ?</li>
+<li>Peut-être jouer avec :empty en css pour donner des largeurs et hauteurs aux composants avant que leur contenu soit disponible ?</li>
+</ul>
+</div>
+					</li><li id="8225" class="mb2" itemscope itemtype="https://schema.org/UserComments">
+						<article>
+							<header><img alt="" loading="lazy"
+											 src="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=44&d=mm&r=g"
+											 srcset="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=88&d=mm&r=g 2x"
+											 class="avatar avatar-44 photo"
+											 height="44" width="44"><em itemprop="creator" class="pl1">Gaël Poupard <small>(Rédacteur)</small></em>
+								
+								<time datetime="[object Object]" itemprop="commentTime">3 décembre 2015 à 14 h 45 min</time>
+								<a href="#8225">
+									<span class="screen-reader-text">Ancre vers ce commentaire</span>
+									<span aria-hidden="true">⚓</span>
+								</a>
+							</header>
+						</article>
+						<div itemprop="CommentText"><p>Merci Pascal, je vais tenter de comparer avec des rectangles 🙂</p>
+<p>Pour tes remarques :</p>
+<ul>
+<li>lʼeffet dʼapparition est tout simplement absent (dans mon cas) car en réalité le contenu apparaît à la place de lʼimage. Si les masses colorées respectent bien le design du contenu, ça nʼest même pas brusque. On peut cependant envisager toute sorte dʼapparition, par exemple dans une liste on peut considérer que lʼimage dʼattente est le premier item de la liste, et une fois quʼil nʼest plus le seul enfant de la liste, le faire disparaitre de façon plus élégante. Mais pour moi lʼabsence de transition est importante, et on ne sʼembête que rarement à faire disparaitre élégamment un gif de chargement…</li>
+<li>pour le responsive, tout dépend de comment ton contenu évolue en <em>responsive</em>. Lʼimage dʼattente doit respecter cette évolution, donc ça peut effectivement devenir pénible (mais là encore je pense que ça vaudra le coup, quitte à devoir gérer 3 ou 4 SVG et autant de <em>media queries</em> pour les afficher). Mon cas réel nʼest pas très éloigné de la démonstration, avec un bloc très simple qui nʼévolue pas en responsive. Je vais peut-être faire évoluer cette démonstration pour obtenir un POC plus complet.</li>
+</ul>
+<p><code>:empty</code> peut effectivement être une piste intéressante, si les éléments sont déjà présents dans le DOM ça peut fonctionner. Dans mon cas le contenu est chargé après le DOM donc je ne pourrais pas tenter ça. Mais là encore ça aura une place certaine dans un POC complet 🙂</p>
+</div>
+					</li></ol>
+		</div>
 				
 			</main>
 
@@ -168,7 +225,7 @@
 		<div class="aside pl2 pt2">
 			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
 			<div class="textwidget">
-				<ol><li><a href="#quelques-recherches-pour-demarrer">Quelques recherches pour démarrer</a></li><li><a href="#faire-plus-simple">Faire plus simple</a></li><li><a href="#super-ca-donne-quoi">Super ! Ça donne quoi ?</a></li><li><a href="#la-demonstration">La démonstration</a></li></ol>
+				<ol><li><a href="#quelques-recherches-pour-demarrer">Quelques recherches pour démarrer</a></li><li><a href="#faire-plus-simple">Faire plus simple</a></li><li><a href="#super-ca-donne-quoi">Super ! Ça donne quoi ?</a></li><li><a href="#la-demonstration">La démonstration</a></li><li><a href="#comments">Commentaires</a></li></ol>
 			</div>
 		</div>
 	</aside>

@@ -7,7 +7,7 @@ permalink: "le-web-en-kit/index.html"
 excerpt: "Le web, cʼest compliqué. Je dirais même plus&nbsp;: cʼest la jungle. De multiples sources, de multiples protocoles dʼéchange de données, de multiple manière dʼaccéder aux contenus. Et aussi plein de gens qui fabriquent des morceaux de web. Ceux-là sont un minimum flemmards —&nbsp;je le sais bien, jʼen fais partie. Alors régulièrement, nous cédons à la facilité et cela produit des perturbations dans La Force. Un exemple&nbsp;? Les sites `-webkit-` _only_. Parlons-en&nbsp;!"
 format: "standard"
 tags: "posts"
-description: "<abbr lang=\"en\" title=\"Too Long, Didn't Read\">tl;dr</abbr>&nbsp;: jetez un œil <a href=\"https://dabblet.com/gist/08fddf3666c39ebc62ca\">à ce dabblet</a> sur Edge —&nbsp;qui gère <code>-webkit-background-clip: text;</code> sans broncher."
+description: "<abbr lang=\"en\" title=\"Too Long, Didn't Read\">tl;dr</abbr>&nbsp;: jetez un œil <a href=\"http://dabblet.com/gist/08fddf3666c39ebc62ca\">à ce dabblet</a> sur Edge —&nbsp;qui gère <code>-webkit-background-clip: text;</code> sans broncher."
 ---
 Beaucoup de gens qui fabriquent le web se sont plaints de lʼhégémonie dʼIE6.
 
@@ -78,15 +78,15 @@ Figurez-vous que **cʼest pourtant le cas** (je suis sûr que vous nʼavez rien 
 
 Dans un monde merveilleux et homogène, nous «&nbsp;devrions&nbsp;» voir ceci&nbsp;:
 
-![Capture dʼécran de Chrome](/images/2015/10/chrome-300x31.png "Un arc-en-ciel incrusté au texte en CSS, visible sur les navigateurs WebKit et Edge")
+![Capture dʼécran de Chrome](/images/2015/10/chrome.png "Un arc-en-ciel incrusté au texte en CSS, visible sur les navigateurs WebKit et Edge" =300x31)
 
 Et, le cas échéant si votre navigateur est allergique aux arc-en-ciels, voici le résultat attendu&nbsp;:
 
-![Capture dʼécran sur Firefox](/images/2015/10/firefox.png "Le texte est simplement blanc sur Firefox et IE, pas dʼarc-en-ciel à lʼhorizon")
+![Capture dʼécran sur Firefox](/images/2015/10/firefox.png "Le texte est simplement blanc sur Firefox et IE, pas dʼarc-en-ciel à lʼhorizon" =300x30)
 
 Jusque là, tout va bien. La mécanique est belle, aucun danger grâce à la solution de repli évoquée précédemment. Maintenant, cassons tout&nbsp;! Voici le rendu sur IE11 **et _UC Browser_** sur Windows Phone 8.1&nbsp;:
 
-![capture dʼécran sur Windows Phone 8.1](/images/2015/10/windowsphone.jpg "Le texte est blanc, mais lʼarrière-plan arc-en-ciel est appliqué")
+![capture dʼécran sur Windows Phone 8.1](/images/2015/10/windowsphone.jpg "Le texte est blanc, mais lʼarrière-plan arc-en-ciel est appliqué" =300x169)
 
 Difficile de garantir quoi que ce soit dans ces conditions. _A priori_ ce problème nʼexiste pas dans les versions antérieures de Windows Phone, et il faut noter que la version bureau dʼIE11 nʼapplique pas lʼarrière-plan&nbsp;!
 

@@ -14,7 +14,9 @@ Object.keys(comments).forEach((p, i) => {
 	let commentSlug = comment.link
 		.replace('https:\/\/www.ffoodd.fr\/', '')
 		.split('#');
-	let slug = commentSlug[0].replace('/', '');
+	let slug = commentSlug[0]
+		.replace('/', '')
+		.replace('%ca%bc', 'ʼ');
 	let hash = commentSlug[1].replace('comment-', '');
 	let content = turndownService.turndown(comment.content.rendered)
 		.replace(/http:\/\//g, 'https://')

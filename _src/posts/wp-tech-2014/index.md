@@ -7,7 +7,7 @@ permalink: "wp-tech-2014/index.html"
 excerpt: "Le premier WP Tech s’est déroulé samedi à Nantes. Cet événement orienté sur la technique a été un franc succès, et pour cause&nbsp;: les organisateurs [Daniel Roch](https://www.seomix.fr) et [Willy Bahuaud](https://www.wabeo.fr) ont été extraordinaires, avec le soutien bienvenu de plusieurs bénévoles."
 format: "standard"
 tags: "posts"
-description: "Cette journée fut très instructive, dans une atmosphère vraiment agréable. Chaque intervention m’a appris quelque chose —&nbsp;et pour en lire un compte-rendu d’excellente facture, je vous invite à lire celui de <a href=\"https://wpmarmite.com/wp-tech-2014/\">WP Marmite</a>. "
+description: "Cette journée fut très instructive, dans une atmosphère vraiment agréable. Chaque intervention m’a appris quelque chose —&nbsp;et pour en lire un compte-rendu d’excellente facture, je vous invite à lire celui de <a href=\"http://wpmarmite.com/wp-tech-2014/\">WP Marmite</a>. "
 ---
 Car non, je ne vais pas vous en faire un compte-rendu&nbsp;: j’étais orateur, et ça me fait beaucoup de choses à raconter&nbsp;!
 
@@ -41,11 +41,11 @@ J’ai donc mis en valeur la **qualité web**, et comment les thèmes enfants co
 
 Mon cursus de communication visuelle m’aura enseigné de nombreuses façons de cultiver mes idées. Je suis donc parti, de façon assez ordinaire, sur une **carte heuristique**&nbsp;:
 
-[![Carte heuristique](/images/2014/12/carte-heuristique.jpg)](/images/2014/12/carte-heuristique.jpg "Carte heuristique des concepts liés à l’utilisation de thèmes enfants dans WordPress")
+[![Carte heuristique](/images/2014/12/carte-heuristique.jpg "Carte heuristique des concepts liés à l’utilisation de thèmes enfants dans WordPress" =1024x574.jpg)](/images/2014/12/carte-heuristique)
 
 Comme toute bonne carte heuristique, c’est touffu. Une fois les termes clés regroupés autour de thèmes principaux, j’ai formalisé et éclairci le tout en créant un simple tableau&nbsp;:
 
-[![tableau des concepts](/images/2014/12/tri.jpg)](/images/2014/12/tri.jpg "Tableau des concepts clés")
+[![tableau des concepts](/images/2014/12/tri.jpg "Tableau des concepts clés" =150x150.jpg)](/images/2014/12/tri)
 
 Me voilà fin prêt à rédiger ma présentation, le plus compliqué étant d’en trouver **des illustrations techniques en cohérence avec mes propos**. Mais je pense avoir réussi&nbsp;:). Si le cœur vous en dit, vous pouvez consulter la présentation de l’atelier «&nbsp;[Les thèmes enfants&nbsp;: au-delà de la bonne pratique](https://www.ffoodd.fr/wp-tech)&nbsp;».
 

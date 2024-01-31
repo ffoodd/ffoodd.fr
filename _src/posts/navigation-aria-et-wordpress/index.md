@@ -32,7 +32,7 @@ Vous connaissiez sans doute déjà le rôle «&nbsp;navigation&nbsp;», qui iden
 
 ## WordPress et le Walker dédié à la navigation
 
-Ce sympathique walker se nomme **Walker\_Nav\_Menu**. Je l’avais rencontré la première fois en farfouillant dans le code de [Reverie](https://themefortress.com/reverie/ "Reverie - un starter theme pour WordPress (nouvelle fenêtre)"), sans en saisir l’intérêt à l’époque. Puis mes compétences et réflexions évoluant avec le temps, lorsque je le recroisais sur le blog de [Willy Bahuaud](https://twitter.com/willybahuaud "Willy Bahuaud sur Twitter (nouvelle fenêtre)") dans [son article présentant les walkers](https://wabeo.fr/blog/construire-walker-wordpress/ "Construire un walker WordPress (nouvelle fenêtre)"), j’en saisis rapidement l’intérêt et me mit en tête de m’en servir sur mon thème ffeeeedd.
+Ce sympathique walker se nomme **Walker\_Nav\_Menu**. Je l’avais rencontré la première fois en farfouillant dans le code de [Reverie](https://themefortress.com/reverie/ "Reverie .fr/blog/construire-walker-wordpress/ "Construire un walker WordPress (nouvelle fenêtre)" = un starter theme pour WordPress (nouvelle fenêtre)"), sans en saisir l’intérêt à l’époque. Puis mes compétences et réflexions évoluant avec le temps, lorsque je le recroisais sur le blog de [Willy Bahuaud](https://twitter.com/willybahuaud "Willy Bahuaud sur Twitter (nouvelle fenêtre)") dans [son article présentant les walkers](https://wabeo), j’en saisis rapidement l’intérêt et me mit en tête de m’en servir sur mon thème ffeeeedd.
 
 Je vous recommande chaudement de lire l’article de Willy sur le sujet, qui est une entrée en matière extrêmement intéressante.
 
