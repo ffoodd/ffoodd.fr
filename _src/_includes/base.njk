@@ -91,7 +91,9 @@
 			<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
 				{%- for contactPoint in contactPoints -%}
 					<li class="inbl pa1" itemscope itemprop="contactPoint">
-						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__{{ contactPoint.name | lower }}" href="{{ contactPoint.url }}" itemprop="url" title="{% if contactPoint.name === "RSS" %}La vie en #ffoodd | Flux RSS{% else %}Gaël Poupard sur {{ contactPoint.name }}{% endif %}">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__{{ contactPoint.name | lower }}" href="{{ contactPoint.url }}" itemprop="url"
+							 {% if contactPoint.name === 'Mastodon' %} rel="me"{% endif %}
+							 title="{% if contactPoint.name === "RSS" %}La vie en #ffoodd | Flux RSS{% else %}Gaël Poupard sur {{ contactPoint.name }}{% endif %}">
 							<span itemprop="name">{{ contactPoint.name }}</span>
 						</a>
 					</li>
