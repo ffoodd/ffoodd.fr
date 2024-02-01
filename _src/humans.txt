@@ -1,0 +1,22 @@
+/* TEAM */
+
+Gaël Poupard
+— mastodon : @ffoodd@mamot.fr
+— email    : gael@ffoodd.fr
+— www      : ffoodd.fr
+— github   : github.com/ffoodd
+
+
+/* SITE */
+
+Tools
+— 11ty
+  — www : 11ty.dev
+
+Fonts
+— Bello Pro
+  — by  : Underware
+  — www : https://www.underware.nl/fonts/bello/preface
+— Museo Slab
+  — by  : Exljbris
+  — www : https://www.exljbris.com/museoslab.html
