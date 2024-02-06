@@ -16,78 +16,79 @@ Et j’espère que cette liste continuera d’évoluer&nbsp;!
 DevFest Nantes 2023 — 19 octobre 2023
 
 * **Page de l’événement**&nbsp;: [DevFest Nantes 2023](https://devfest2023.gdgnantes.com/sessions/dessine_moi_un_graphique__en_css_/)&nbsp;;
-* [Lire les _slides_ de « Dessine-moi un graphique (en CSS) »](https://www.ffoodd.fr/devfest.2023).
+* [Lire les _slides_ de «&nbsp;Dessine-moi un graphique (en CSS)&nbsp;»](https://www.ffoodd.fr/devfest.2023).
+* [Regarder la vidéo de «&nbsp;Dessine-moi un graphique (en CSS)&nbsp;» au devFest Nantes 2023 (sur YouTube)](https://www.youtube.com/watch?v=VjS7SLFYxYk&list=PLuZ_sYdawLiUHU4E1i5RrFsRN_lQcgPwT)
 
 ### Découvrez «&nbsp;le bon HTML&nbsp;» et économisez du JS et du CSS
 
 DevFest Nantes 2022 — 21 octobre 2022
 
 * **Page de l’événement**&nbsp;: [DevFest Nantes 2022](https://devfest2022.gdgnantes.com/sessions/decouvrez_le_bon_html_et_economisez_du_js_et_du_css)&nbsp;;
-* [Lire les _slides_ de « Découvrez «&nbsp;le bon HTML&nbsp;» et économisez du JS et du CSS »](https://www.ffoodd.fr/devfest) ;
-* [Regarder la vidéo de « Découvrez «&nbsp;le bon HTML&nbsp;» et économisez du JS et du CSS » au DevFest Nantes 2022 (sur YouTube)](https://www.youtube.com/watch?v=VhMqwbsyXPo&list=PLuZ_sYdawLiWIRK-QW6zpEJMSeCtspXP8).
+* [Lire les _slides_ de «&nbsp;Découvrez «&nbsp;le bon HTML&nbsp;» et économisez du JS et du CSS&nbsp;»](https://www.ffoodd.fr/devfest) ;
+* [Regarder la vidéo de «&nbsp;Découvrez «&nbsp;le bon HTML&nbsp;» et économisez du JS et du CSS&nbsp;» au DevFest Nantes 2022 (sur YouTube)](https://www.youtube.com/watch?v=VhMqwbsyXPo&list=PLuZ_sYdawLiWIRK-QW6zpEJMSeCtspXP8).
 
 ### Découvrez «&nbsp;le bon HTML&nbsp;» et économisez du JS et du CSS
 
 Paris Web 2022 — 7 octobre 2022
 
 * **Page de l’événement**&nbsp;: [Paris Web 2022](https://www.paris-web.fr/2022/conferences/decouvrez-le-bon-html-et-economisez-du-js-et-du-css.php)&nbsp;;
-* [Lire les _slides_ de « Découvrez «&nbsp;le bon HTML&nbsp;» et économisez du JS et du CSS »](https://www.ffoodd.fr/paris-web.2022/#slide-1) ;
-* [Regarder la vidéo de « Découvrez «&nbsp;le bon HTML&nbsp;» et économisez du JS et du CSS » à Paris Web 2022 (sur YouTube)](https://www.youtube.com/watch?t=653&v=ym2sI8Jlu6A&feature=emb_imp_woyt).
+* [Lire les _slides_ de «&nbsp;Découvrez "le bon HTML" et économisez du JS et du CSS&nbsp;»](https://www.ffoodd.fr/paris-web.2022/#slide-1) ;
+* [Regarder la vidéo de «&nbsp;Découvrez "le bon HTML" et économisez du JS et du CSS&nbsp;» à Paris Web 2022 (sur YouTube)](https://www.youtube.com/watch?t=653&v=ym2sI8Jlu6A&feature=emb_imp_woyt).
 
 ### Le jargon web, avant le web
 
 Paris Web 2021 — 8 octobre 2021
 
 * **Page de l’événement**&nbsp;: [Paris Web 2021](https://www.paris-web.fr/2021/conferences/le-jargon-web-avant-le-web.php)&nbsp;;
-* [Lire les _slides_ de « Le jargon web, avant le web »](https://www.ffoodd.fr/paris-web.2021/) ;
-* [Regarder la vidéo de « Le jargon web, avant le web » sur Viméo](https://vimeo.com/640408851).
+* [Lire les _slides_ de «&nbsp;Le jargon web, avant le web&nbsp;»](https://www.ffoodd.fr/paris-web.2021/) ;
+* [Regarder la vidéo de «&nbsp;Le jargon web, avant le web&nbsp;» (sur Viméo)](https://vimeo.com/640408851).
 
 ### Comprendre et prendre en compte les situations de handicap sur le web
 
 Nantes Numérique Responsable — 22 octobre 2020
 
 * **Page de l’événement** : [Nantes Numérique Responsable (sur meetup.com)](https://www.meetup.com/fr-FR/nantesnr/events/273921309/) ;
-* [Lire les _slides_ de « Comprendre et prendre en compte les situations de handicap sur le web »](https://www.ffoodd.fr/nnr/).
+* [Lire les _slides_ de «&nbsp;Comprendre et prendre en compte les situations de handicap sur le web&nbsp;»](https://www.ffoodd.fr/nnr/).
 
 ### Des propriétés personnalisées très, très personnalisées
 
 Paris Web 2020 — 1 octobre 2020
 
 * **Page de l’événement** : [Paris Web 2020](https://www.paris-web.fr/2020/conferences/des-proprietes-personnalisees-tres-tres-personnalisees.php) ;
-* [Lire les _slides_ de « Des propriétés personnalisées très, très personnalisées »](https://www.ffoodd.fr/paris-web.2020/) ;
-* [Regarder la vidéo de « Des propriétés personnalisées très, très personnalisées » sur Viméo](https://vimeo.com/462093074).
+* [Lire les _slides_ de «&nbsp;Des propriétés personnalisées très, très personnalisées&nbsp;»](https://www.ffoodd.fr/paris-web.2020/) ;
+* [Regarder la vidéo de «&nbsp;Des propriétés personnalisées très, très personnalisées&nbsp;» (sur Viméo)](https://vimeo.com/462093074).
 
 ### La donnée graphique avec HTML et CSS
 
 Web2Day — 5 juin 2019
 
 * **Page de l’événement** : [Web2Day](https://web2day.co/event/les-graphiques-de-donnees-avec-html-et-css/) ;
-* [Lire les _slides_ de « La donnée graphique avec HTML et CSS »](https://www.ffoodd.fr/web2day/) ;
-* [Regarder la vidéo de « La donnée graphique avec HTML et CSS » sur YouTube](https://www.youtube.com/watch?v=1AHBcoKe56E&list=PLAgO0SKz6lC8lUo46-smKn_bpfv32iPYL&index=37&t=0s).
+* [Lire les _slides_ de «&nbsp;La donnée graphique avec HTML et CSS&nbsp;»](https://www.ffoodd.fr/web2day/) ;
+* [Regarder la vidéo de «&nbsp;La donnée graphique avec HTML et CSS&nbsp;» (sur YouTube)](https://www.youtube.com/watch?v=1AHBcoKe56E&list=PLAgO0SKz6lC8lUo46-smKn_bpfv32iPYL&index=37&t=0s).
 
 ### La donnée graphique avec HTML et CSS
 
 Paris Web 2018 — 4 octobre 2018
 
 * **Page de l’événement** : [Paris Web 2018](https://www.paris-web.fr/2018/) ;
-* [Lire les _slides_ de « La donnée graphique avec HTML et CSS »](https://www.ffoodd.fr/paris-web.2018/) ;
-* [Regarder la vidéo de « La donnée graphique avec HTML et CSS » sur Viméo](https://vimeo.com/296245804).
+* [Lire les _slides_ de «&nbsp;La donnée graphique avec HTML et CSS&nbsp;»](https://www.ffoodd.fr/paris-web.2018/) ;
+* [Regarder la vidéo de «&nbsp;La donnée graphique avec HTML et CSS&nbsp;» (sur Viméo)](https://vimeo.com/296245804).
 
 ### Un plan de tests automatisés pour votre _front-end_
 
 WP Tech Lyon — 28 avril 2018
 
 * **Page de l’événement** : [WPTECH\[2018\]](https://2018.wptech.fr/) ;
-* [Lire les _slides_ de « Un plan de tests automatisés pour votre _front-end_ »](https://www.ffoodd.fr/wp-tech.2018/)&nbsp;;
-* [Regarder la vidéo de « Un plan de tests automatisés pour votre _front-end_ » sur YouTube](https://www.youtube.com/watch?v=JD1nrs2yH88&feature=youtu.be&a=).
+* [Lire les _slides_ de «&nbsp;Un plan de tests automatisés pour votre _front-end_&nbsp;»](https://www.ffoodd.fr/wp-tech.2018/)&nbsp;;
+* [Regarder la vidéo de «&nbsp;Un plan de tests automatisés pour votre _front-end_&nbsp;» (sur YouTube)](https://www.youtube.com/watch?v=JD1nrs2yH88&feature=youtu.be&a=).
 
 ### Visite guidée du _customizer_
 
 Meetup WordPress Nantes — 28 septembre 2017
 
 * **Page de l’événement** : [meetup.com](https://www.meetup.com/fr-FR/Nantes-WordPress-Meetup/events/243486324/) ;
-* [Lire les _slides_ de « Visite guidée du _customizer_ »](https://www.ffoodd.fr/customizer/)&nbsp;;
-* [Regarder la vidéo de « Visite guidée du _customizer_ » sur YouTube](https://www.youtube.com/watch?v=5umS5IDY-SU).
+* [Lire les _slides_ de «&nbsp;Visite guidée du _customizer_&nbsp;»](https://www.ffoodd.fr/customizer/)&nbsp;;
+* [Regarder la vidéo de «&nbsp;Visite guidée du _customizer_&nbsp;» (sur YouTube)](https://www.youtube.com/watch?v=5umS5IDY-SU).
 
 ### Il n’y a pas que `class` et `id` dans la vie
 
@@ -95,7 +96,7 @@ Paris Web 2016&nbsp;— 29 septembre 2016
 
 * **Page de l’événement**&nbsp;: [Paris Web 2016](https://www.paris-web.fr/)&nbsp;;
 * [Lire les _slides_ de «&nbsp;Il n’y a pas que `class` et `id` dans la vie&nbsp;»](https://www.ffoodd.fr/paris-web/index-transcript.html)&nbsp;;
-* [Regarder la vidéo de «&nbsp;Il n’y a pas que `class` et `id` dans la vie&nbsp;»](https://www.paris-web.fr/2016/conferences/il-ny-a-pas-que-class-et-id-dans-la-vie.php)
+* [Regarder la vidéo de «&nbsp;Il n’y a pas que `class` et `id` dans la vie&nbsp;» (sur Viméo)](https://vimeo.com/197170990)
 
 ### _Workflow_ moderne cherche graphiste à l’ancienne
 
@@ -103,7 +104,7 @@ KiwiParty édition 2016&nbsp;— 03 juin 2016
 
 * **Page de l’événement**&nbsp;: [KiwiParty édition 2016](https://www.kiwiparty.fr/)&nbsp;;
 * [Lire les _slides_ de «&nbsp;_Workflow_ moderne cherche graphiste à l’ancienne&nbsp;»](https://www.ffoodd.fr/kiwiparty/)
-* [Regarder la vidéo de «&nbsp;_Workflow_ moderne cherche graphiste à l’ancienne&nbsp;» sur Viméo](https://vimeo.com/181158986)
+* [Regarder la vidéo de «&nbsp;_Workflow_ moderne cherche graphiste à l’ancienne&nbsp;» (sur Viméo)](https://vimeo.com/181158986)
 
 ### L’accessibilité _via_ les thèmes enfants
 
@@ -129,7 +130,7 @@ WP Tech&nbsp;— 29 novembre 2014
 
 * **Page de l’événement**&nbsp;: [WP Tech 2014&nbsp;: l’évènement WordPress technique à Nantes](https://2014.wptech.fr/)&nbsp;;
 * [Lire les _slides_ de «&nbsp;Les thèmes enfants&nbsp;»](https://www.ffoodd.fr/wp-tech/)&nbsp;;
-* [Regarder la vidéo de «&nbsp;Les thèmes enfants&nbsp;» sur YouTube](https://www.youtube.com/watch?v=WqBVKpq4dGA)&nbsp;;
+* [Regarder la vidéo de «&nbsp;Les thèmes enfants&nbsp;» (sur YouTube)](https://www.youtube.com/watch?v=WqBVKpq4dGA)&nbsp;;
 * [Regarder l’interview donnée à l’occasion (sur YouTube)](https://www.youtube.com/watch?v=mVJLNIzpnAk).
 
 ## Publications

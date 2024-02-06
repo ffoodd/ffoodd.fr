@@ -120,8 +120,7 @@ Et bonne nouvelle, <a href="https://caniuse.com/#feat=css-placeholder-shown"><co
 		</footer>
 	</article>
 
-				<div id="comments" class="comments-area pl2 pt2 mt2 print-hidden">
-			<h2 class="comments-title" itemprop="interactionCount" content="UserComments:1">
+				<div id="comments" class="comments-area pl2 pt2 mt2 print-hidden"><h2 class="comments-title" itemprop="interactionCount" content="UserComments:1">
 				1 commentaire sur
 				<span class="tk-bello-pro h2-like" itemprop="discusses">«&nbsp;L’état des champs&nbsp;»</span>
 				<a href="#sommaire" class="scroll small" title="Retour au sommaire">⤴</a>
@@ -144,8 +143,39 @@ Et bonne nouvelle, <a href="https://caniuse.com/#feat=css-placeholder-shown"><co
 						<div itemprop="CommentText"><p>We think that a third indeterminate state should be added, and the browser should, for instance, consider the field as invalid only when one tabs/clicks out of it (AKA when the blur event is triggered) or when one submits the form.</p>
 <p>Pour la petite histoire, ce serait un *état*, et pas seulement un moyen de faire un rendu visuel propre mais aussi de donner la bonne information aux agents utilisateurs qui en ont besoin (au hasard : les technologies d’assistance).</p>
 </div>
-					</li></ol>
+					</li></ol><div class="comment-respond">
+			<h3>Laisser un commentaire</h3>
+			<form action="https://www.ffoodd.fr/wp-comments-post.php" method="post" class="comment-form">
+				<p class="comment-notes">
+					Votre adresse e-mail ne sera pas publiée.<br>
+					Les champs obligatoires sont indiqués avec <span class="required">*</span>.
+				</p>
+				<p>
+					<label for="comment">Commentaire <span class="required">*</span></label>
+					<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" required="required"></textarea>
+				</p>
+				<p>
+					<label for="author">Nom <span class="required">*</span></label>
+					<input id="author" name="author" type="text"
+								 aria-required="true" required="required" autocomplete="name">
+				</p>
+				<p>
+					<label for="email">Email <span class="required">*</span></label>
+					<input id="email" name="email" type="email"
+					 			 aria-required="true" required="required" autocomplete="email">
+				</p>
+				<p>
+					<label for="url">Site</label>
+					<input id="url" name="url" placeholder="http://" type="url" autocomplete="url">
+				</p>
+				<p class="form-submit">
+					<input name="submit" type="submit" id="submit" class="submit" value="Laisser un commentaire">
+					<!-- @todo Regarder dans la doc WP pour comment_form() -->
+					<input type="hidden" name="comment_post_ID" value="363863" id="comment_post_ID">
+				</p>
+			</form>
 		</div>
+
 				
 			</main>
 

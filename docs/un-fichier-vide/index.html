@@ -98,8 +98,7 @@
 		</footer>
 	</article>
 
-				<div id="comments" class="comments-area pl2 pt2 mt2 print-hidden">
-			<h2 class="comments-title" itemprop="interactionCount" content="UserComments:12">
+				<div id="comments" class="comments-area pl2 pt2 mt2 print-hidden"><h2 class="comments-title" itemprop="interactionCount" content="UserComments:12">
 				12 commentaires sur
 				<span class="tk-bello-pro h2-like" itemprop="discusses">«&nbsp;Un fichier vide&nbsp;»</span>
 				<a href="#sommaire" class="scroll small" title="Retour au sommaire">⤴</a>
@@ -348,8 +347,39 @@ Puis appliquer un premier niveau d’ « assemblage » pour ensuite aller vers
 <p>Pour les espacements — et bien que je sois tombé dans ce biais moi aussi — il me semble que varier les valeurs d’espacements devrait être le standard, au lieu d’avoir une valeur standard. En terme de communication visuelle, l’aération graphique est primordiale et sert des objectifs précis : je doute fort que tous nos sites aient les mêmes objectifs.</p>
 <p>C’est un standard par défaut plus qu’un choix conscient, je crois.</p>
 </div>
-					</li></ol>
+					</li></ol><div class="comment-respond">
+			<h3>Laisser un commentaire</h3>
+			<form action="https://www.ffoodd.fr/wp-comments-post.php" method="post" class="comment-form">
+				<p class="comment-notes">
+					Votre adresse e-mail ne sera pas publiée.<br>
+					Les champs obligatoires sont indiqués avec <span class="required">*</span>.
+				</p>
+				<p>
+					<label for="comment">Commentaire <span class="required">*</span></label>
+					<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" required="required"></textarea>
+				</p>
+				<p>
+					<label for="author">Nom <span class="required">*</span></label>
+					<input id="author" name="author" type="text"
+								 aria-required="true" required="required" autocomplete="name">
+				</p>
+				<p>
+					<label for="email">Email <span class="required">*</span></label>
+					<input id="email" name="email" type="email"
+					 			 aria-required="true" required="required" autocomplete="email">
+				</p>
+				<p>
+					<label for="url">Site</label>
+					<input id="url" name="url" placeholder="http://" type="url" autocomplete="url">
+				</p>
+				<p class="form-submit">
+					<input name="submit" type="submit" id="submit" class="submit" value="Laisser un commentaire">
+					<!-- @todo Regarder dans la doc WP pour comment_form() -->
+					<input type="hidden" name="comment_post_ID" value="363863" id="comment_post_ID">
+				</p>
+			</form>
 		</div>
+
 				
 			</main>
 
