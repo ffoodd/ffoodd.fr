@@ -149,120 +149,88 @@ document<span class="token punctuation">.</span>documentElement<span class="toke
 	</article>
 
 				<div id="comments" class="comments-area pl2 pt2 mt2 print-hidden"><h2 class="comments-title" itemprop="interactionCount" content="UserComments:4">
-				4 commentaires sur
-				<span class="tk-bello-pro h2-like" itemprop="discusses">«&nbsp;Avec ou sans JS&nbsp;?&nbsp;»</span>
-				<a href="#sommaire" class="scroll small" title="Retour au sommaire">⤴</a>
-			</h2>
-			<ol class="commentlist ul-reset pl0" itemprop="comment"><li id="9060" class="mb2" itemscope itemtype="https://schema.org/UserComments">
-						<article>
-							<header><img alt="" loading="lazy"
-											 src="https://secure.gravatar.com/avatar/03edc8b4edc19d91202e69c65c5baeff?s=44&d=mm&r=g"
-											 srcset="https://secure.gravatar.com/avatar/03edc8b4edc19d91202e69c65c5baeff?s=88&d=mm&r=g 2x"
-											 class="avatar avatar-44 photo"
-											 height="44" width="44"><em itemprop="creator" class="pl1">lionelb</em>
-								
-								<time datetime="[object Object]" itemprop="commentTime">3 février 2017 à 17 h 55 min</time>
-								<a href="#9060">
-									<span class="screen-reader-text">Ancre vers ce commentaire</span>
-									<span aria-hidden="true">⚓</span>
-								</a>
-							</header>
-						</article>
-						<div itemprop="CommentText"><p>Pour le JS qui prend du temps, pourquoi ne pas utiliser un script dans le <code>head</code>, qui va juste modifier la <code>class</code> ? Ça évite d’avoir a utiliser un durée d’animation qui ne corrigera pas le problème sur les connexion lentes (j’ai testé en utilisant le <em>network throttling</em> de Chrome : on voit le menu à partir d’une connexion 3g).<br>
+					4 commentaires sur
+					<span class="tk-bello-pro h2-like" itemprop="discusses">«&nbsp;Avec ou sans JS&nbsp;?&nbsp;»</span>
+					<a href="#sommaire" class="scroll small" title="Retour au sommaire">⤴</a>
+				</h2>
+				<ol class="commentlist ul-reset pl0" itemprop="comment"><li id="9060" class="mb2" itemscope itemtype="https://schema.org/UserComments">
+							<article>
+								<header><img alt="" loading="lazy"
+												 src="https://secure.gravatar.com/avatar/03edc8b4edc19d91202e69c65c5baeff?s=44&d=mm&r=g"
+												 srcset="https://secure.gravatar.com/avatar/03edc8b4edc19d91202e69c65c5baeff?s=88&d=mm&r=g 2x"
+												 class="avatar avatar-44 photo"
+												 height="44" width="44"><em itemprop="creator" class="pl1">lionelb</em>
+									
+									<time datetime="[object Object]" itemprop="commentTime">3 février 2017 à 17 h 55 min</time>
+									<a href="#9060">
+										<span class="screen-reader-text">Ancre vers ce commentaire</span>
+										<span aria-hidden="true">⚓</span>
+									</a>
+								</header>
+							</article>
+							<div itemprop="CommentText"><p>Pour le JS qui prend du temps, pourquoi ne pas utiliser un script dans le <code>head</code>, qui va juste modifier la <code>class</code> ? Ça évite d’avoir a utiliser un durée d’animation qui ne corrigera pas le problème sur les connexion lentes (j’ai testé en utilisant le <em>network throttling</em> de Chrome : on voit le menu à partir d’une connexion 3g).<br>
 <code>document.documentElement.classList.remove(’no-js’).add(’js’)</code></p>
 </div>
-					</li><li id="9064" class="mb2" itemscope itemtype="https://schema.org/UserComments">
-						<article>
-							<header><img alt="" loading="lazy"
-											 src="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=44&d=mm&r=g"
-											 srcset="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=88&d=mm&r=g 2x"
-											 class="avatar avatar-44 photo"
-											 height="44" width="44"><em itemprop="creator" class="pl1">Gaël Poupard <small>(Rédacteur)</small></em>
-								
-								<time datetime="[object Object]" itemprop="commentTime">6 février 2017 à 08 h 58 min</time>
-								<a href="#9064">
-									<span class="screen-reader-text">Ancre vers ce commentaire</span>
-									<span aria-hidden="true">⚓</span>
-								</a>
-							</header>
-						</article>
-						<div itemprop="CommentText"><p>Et bien en fait c’est ma première proposition, dans le paragraphe « La limite du JS » 🙂</p>
+						</li><li id="9064" class="mb2" itemscope itemtype="https://schema.org/UserComments">
+							<article>
+								<header><img alt="" loading="lazy"
+												 src="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=44&d=mm&r=g"
+												 srcset="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=88&d=mm&r=g 2x"
+												 class="avatar avatar-44 photo"
+												 height="44" width="44"><em itemprop="creator" class="pl1">Gaël Poupard <small>(Rédacteur)</small></em>
+									
+									<time datetime="[object Object]" itemprop="commentTime">6 février 2017 à 08 h 58 min</time>
+									<a href="#9064">
+										<span class="screen-reader-text">Ancre vers ce commentaire</span>
+										<span aria-hidden="true">⚓</span>
+									</a>
+								</header>
+							</article>
+							<div itemprop="CommentText"><p>Et bien en fait c’est ma première proposition, dans le paragraphe « La limite du JS » 🙂</p>
 <p>Comme je l’explique, ça ne fait que décaler le problème — et je cherchais avant tout une solution alternative. Cependant déclencher ce changement de classe depuis <code>head</code> <strong>en plus</strong> de l’animation permet de réduire les cas « gênants » comme celui que tu évoques, la faible connexion.</p>
 </div>
-					</li><li id="9065" class="mb2" itemscope itemtype="https://schema.org/UserComments">
-						<article>
-							<header><img alt="" loading="lazy"
-											 src="https://secure.gravatar.com/avatar/03edc8b4edc19d91202e69c65c5baeff?s=44&d=mm&r=g"
-											 srcset="https://secure.gravatar.com/avatar/03edc8b4edc19d91202e69c65c5baeff?s=88&d=mm&r=g 2x"
-											 class="avatar avatar-44 photo"
-											 height="44" width="44"><em itemprop="creator" class="pl1">lionelb</em>
-								
-								<time datetime="[object Object]" itemprop="commentTime">6 février 2017 à 12 h 00 min</time>
-								<a href="#9065">
-									<span class="screen-reader-text">Ancre vers ce commentaire</span>
-									<span aria-hidden="true">⚓</span>
-								</a>
-							</header>
-						</article>
-						<div itemprop="CommentText"><p>Je comprend pas en quoi ça décale le problème, j’ai plutôt l’impression que ça le résous et de manière plus robuste que d’avoir recours à une durée d’animation arbitraire qui ne prend pas en compte la connexion / la puissance du <em>device</em>.<br>
+						</li><li id="9065" class="mb2" itemscope itemtype="https://schema.org/UserComments">
+							<article>
+								<header><img alt="" loading="lazy"
+												 src="https://secure.gravatar.com/avatar/03edc8b4edc19d91202e69c65c5baeff?s=44&d=mm&r=g"
+												 srcset="https://secure.gravatar.com/avatar/03edc8b4edc19d91202e69c65c5baeff?s=88&d=mm&r=g 2x"
+												 class="avatar avatar-44 photo"
+												 height="44" width="44"><em itemprop="creator" class="pl1">lionelb</em>
+									
+									<time datetime="[object Object]" itemprop="commentTime">6 février 2017 à 12 h 00 min</time>
+									<a href="#9065">
+										<span class="screen-reader-text">Ancre vers ce commentaire</span>
+										<span aria-hidden="true">⚓</span>
+									</a>
+								</header>
+							</article>
+							<div itemprop="CommentText"><p>Je comprend pas en quoi ça décale le problème, j’ai plutôt l’impression que ça le résous et de manière plus robuste que d’avoir recours à une durée d’animation arbitraire qui ne prend pas en compte la connexion / la puissance du <em>device</em>.<br>
 De plus ca répond à ton postulat de départ :</p>
 <blockquote>
 <p>C’est là où le bât blesse. Le temps que notre JS soit exécuté, nous voyons l’élément affiché (même si ça ne dure qu’une fraction de seconde).</p>
 </blockquote>
 <p>Le document n’a peut-être pas fini d’être parsé, le js n’a peut être même pas commencé à être téléchargé, la classe js sera déjà en place.</p>
 </div>
-					</li><li id="9066" class="mb2" itemscope itemtype="https://schema.org/UserComments">
-						<article>
-							<header><img alt="" loading="lazy"
-											 src="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=44&d=mm&r=g"
-											 srcset="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=88&d=mm&r=g 2x"
-											 class="avatar avatar-44 photo"
-											 height="44" width="44"><em itemprop="creator" class="pl1">Gaël Poupard <small>(Rédacteur)</small></em>
-								
-								<time datetime="[object Object]" itemprop="commentTime">6 février 2017 à 12 h 34 min</time>
-								<a href="#9066">
-									<span class="screen-reader-text">Ancre vers ce commentaire</span>
-									<span aria-hidden="true">⚓</span>
-								</a>
-							</header>
-						</article>
-						<div itemprop="CommentText"><p>Et pourtant il y a vraisemblablement des conditions dans lesquelles ce délai extrêmement rapide ne suffit pas : c’est la solution que j’utilise depuis des lustres — à l’époque où l’on passait encore par une expression régulière sur <code>.className</code> — et ce problème existait…</p>
+						</li><li id="9066" class="mb2" itemscope itemtype="https://schema.org/UserComments">
+							<article>
+								<header><img alt="" loading="lazy"
+												 src="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=44&d=mm&r=g"
+												 srcset="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=88&d=mm&r=g 2x"
+												 class="avatar avatar-44 photo"
+												 height="44" width="44"><em itemprop="creator" class="pl1">Gaël Poupard <small>(Rédacteur)</small></em>
+									
+									<time datetime="[object Object]" itemprop="commentTime">6 février 2017 à 12 h 34 min</time>
+									<a href="#9066">
+										<span class="screen-reader-text">Ancre vers ce commentaire</span>
+										<span aria-hidden="true">⚓</span>
+									</a>
+								</header>
+							</article>
+							<div itemprop="CommentText"><p>Et pourtant il y a vraisemblablement des conditions dans lesquelles ce délai extrêmement rapide ne suffit pas : c’est la solution que j’utilise depuis des lustres — à l’époque où l’on passait encore par une expression régulière sur <code>.className</code> — et ce problème existait…</p>
 <p>Par ailleurs pour jouer avec <code>.classList</code>, il semble que chaîner <code>.add()</code> et <code>.remove()</code> ne fonctionne pas : il faut les séparer.</p>
 <p>Quant à l’astuce de l’animation, elle reste pertinente dans la mesure où la distinction reste de toute façon plus évidente en partant de l’état masqué. Elle a également le mérite de dispenser un peu d’animation (et donc une potentielle scénarisation et mise en scène) du site quand JS est désactivé. 🙂</p>
 </div>
-					</li></ol><div class="comment-respond">
-			<h3>Laisser un commentaire</h3>
-			<form action="https://www.ffoodd.fr/wp-comments-post.php" method="post" class="comment-form">
-				<p class="comment-notes">
-					Votre adresse e-mail ne sera pas publiée.<br>
-					Les champs obligatoires sont indiqués avec <span class="required">*</span>.
-				</p>
-				<p>
-					<label for="comment">Commentaire <span class="required">*</span></label>
-					<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" required="required"></textarea>
-				</p>
-				<p>
-					<label for="author">Nom <span class="required">*</span></label>
-					<input id="author" name="author" type="text"
-								 aria-required="true" required="required" autocomplete="name">
-				</p>
-				<p>
-					<label for="email">Email <span class="required">*</span></label>
-					<input id="email" name="email" type="email"
-					 			 aria-required="true" required="required" autocomplete="email">
-				</p>
-				<p>
-					<label for="url">Site</label>
-					<input id="url" name="url" placeholder="http://" type="url" autocomplete="url">
-				</p>
-				<p class="form-submit">
-					<input name="submit" type="submit" id="submit" class="submit" value="Laisser un commentaire">
-					<!-- @todo Regarder dans la doc WP pour comment_form() -->
-					<input type="hidden" name="comment_post_ID" value="363863" id="comment_post_ID">
-				</p>
-			</form>
-		</div>
-
+						</li></ol></div>
 				
 			</main>
 

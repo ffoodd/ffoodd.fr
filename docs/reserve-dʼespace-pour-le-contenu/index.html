@@ -162,26 +162,26 @@
 	</article>
 
 				<div id="comments" class="comments-area pl2 pt2 mt2 print-hidden"><h2 class="comments-title" itemprop="interactionCount" content="UserComments:2">
-				2 commentaires sur
-				<span class="tk-bello-pro h2-like" itemprop="discusses">«&nbsp;Réserve d’espace pour le contenu&nbsp;»</span>
-				<a href="#sommaire" class="scroll small" title="Retour au sommaire">⤴</a>
-			</h2>
-			<ol class="commentlist ul-reset pl0" itemprop="comment"><li id="8224" class="mb2" itemscope itemtype="https://schema.org/UserComments">
-						<article>
-							<header><img alt="" loading="lazy"
-											 src="https://secure.gravatar.com/avatar/b43b95b000a1aac0c9718a339caf2b41?s=44&d=mm&r=g"
-											 srcset="https://secure.gravatar.com/avatar/b43b95b000a1aac0c9718a339caf2b41?s=88&d=mm&r=g 2x"
-											 class="avatar avatar-44 photo"
-											 height="44" width="44"><em itemprop="creator" class="pl1">Pascal</em>
-								
-								<time datetime="[object Object]" itemprop="commentTime">3 décembre 2015 à 13 h 36 min</time>
-								<a href="#8224">
-									<span class="screen-reader-text">Ancre vers ce commentaire</span>
-									<span aria-hidden="true">⚓</span>
-								</a>
-							</header>
-						</article>
-						<div itemprop="CommentText"><p>Hello,</p>
+					2 commentaires sur
+					<span class="tk-bello-pro h2-like" itemprop="discusses">«&nbsp;Réserve d’espace pour le contenu&nbsp;»</span>
+					<a href="#sommaire" class="scroll small" title="Retour au sommaire">⤴</a>
+				</h2>
+				<ol class="commentlist ul-reset pl0" itemprop="comment"><li id="8224" class="mb2" itemscope itemtype="https://schema.org/UserComments">
+							<article>
+								<header><img alt="" loading="lazy"
+												 src="https://secure.gravatar.com/avatar/b43b95b000a1aac0c9718a339caf2b41?s=44&d=mm&r=g"
+												 srcset="https://secure.gravatar.com/avatar/b43b95b000a1aac0c9718a339caf2b41?s=88&d=mm&r=g 2x"
+												 class="avatar avatar-44 photo"
+												 height="44" width="44"><em itemprop="creator" class="pl1">Pascal</em>
+									
+									<time datetime="[object Object]" itemprop="commentTime">3 décembre 2015 à 13 h 36 min</time>
+									<a href="#8224">
+										<span class="screen-reader-text">Ancre vers ce commentaire</span>
+										<span aria-hidden="true">⚓</span>
+									</a>
+								</header>
+							</article>
+							<div itemprop="CommentText"><p>Hello,</p>
 <p>Quelques remarques :</p>
 <ol>
 <li>pour le svg, des <code>&lt;rect&gt;</code> devrait alléger</li>
@@ -193,22 +193,22 @@
 <li>Peut-être jouer avec :empty en css pour donner des largeurs et hauteurs aux composants avant que leur contenu soit disponible ?</li>
 </ul>
 </div>
-					</li><li id="8225" class="mb2" itemscope itemtype="https://schema.org/UserComments">
-						<article>
-							<header><img alt="" loading="lazy"
-											 src="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=44&d=mm&r=g"
-											 srcset="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=88&d=mm&r=g 2x"
-											 class="avatar avatar-44 photo"
-											 height="44" width="44"><em itemprop="creator" class="pl1">Gaël Poupard <small>(Rédacteur)</small></em>
-								
-								<time datetime="[object Object]" itemprop="commentTime">3 décembre 2015 à 14 h 45 min</time>
-								<a href="#8225">
-									<span class="screen-reader-text">Ancre vers ce commentaire</span>
-									<span aria-hidden="true">⚓</span>
-								</a>
-							</header>
-						</article>
-						<div itemprop="CommentText"><p>Merci Pascal, je vais tenter de comparer avec des rectangles 🙂</p>
+						</li><li id="8225" class="mb2" itemscope itemtype="https://schema.org/UserComments">
+							<article>
+								<header><img alt="" loading="lazy"
+												 src="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=44&d=mm&r=g"
+												 srcset="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=88&d=mm&r=g 2x"
+												 class="avatar avatar-44 photo"
+												 height="44" width="44"><em itemprop="creator" class="pl1">Gaël Poupard <small>(Rédacteur)</small></em>
+									
+									<time datetime="[object Object]" itemprop="commentTime">3 décembre 2015 à 14 h 45 min</time>
+									<a href="#8225">
+										<span class="screen-reader-text">Ancre vers ce commentaire</span>
+										<span aria-hidden="true">⚓</span>
+									</a>
+								</header>
+							</article>
+							<div itemprop="CommentText"><p>Merci Pascal, je vais tenter de comparer avec des rectangles 🙂</p>
 <p>Pour tes remarques :</p>
 <ul>
 <li>lʼeffet dʼapparition est tout simplement absent (dans mon cas) car en réalité le contenu apparaît à la place de lʼimage. Si les masses colorées respectent bien le design du contenu, ça nʼest même pas brusque. On peut cependant envisager toute sorte dʼapparition, par exemple dans une liste on peut considérer que lʼimage dʼattente est le premier item de la liste, et une fois quʼil nʼest plus le seul enfant de la liste, le faire disparaitre de façon plus élégante. Mais pour moi lʼabsence de transition est importante, et on ne sʼembête que rarement à faire disparaitre élégamment un gif de chargement…</li>
@@ -216,39 +216,7 @@
 </ul>
 <p><code>:empty</code> peut effectivement être une piste intéressante, si les éléments sont déjà présents dans le DOM ça peut fonctionner. Dans mon cas le contenu est chargé après le DOM donc je ne pourrais pas tenter ça. Mais là encore ça aura une place certaine dans un POC complet 🙂</p>
 </div>
-					</li></ol><div class="comment-respond">
-			<h3>Laisser un commentaire</h3>
-			<form action="https://www.ffoodd.fr/wp-comments-post.php" method="post" class="comment-form">
-				<p class="comment-notes">
-					Votre adresse e-mail ne sera pas publiée.<br>
-					Les champs obligatoires sont indiqués avec <span class="required">*</span>.
-				</p>
-				<p>
-					<label for="comment">Commentaire <span class="required">*</span></label>
-					<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" required="required"></textarea>
-				</p>
-				<p>
-					<label for="author">Nom <span class="required">*</span></label>
-					<input id="author" name="author" type="text"
-								 aria-required="true" required="required" autocomplete="name">
-				</p>
-				<p>
-					<label for="email">Email <span class="required">*</span></label>
-					<input id="email" name="email" type="email"
-					 			 aria-required="true" required="required" autocomplete="email">
-				</p>
-				<p>
-					<label for="url">Site</label>
-					<input id="url" name="url" placeholder="http://" type="url" autocomplete="url">
-				</p>
-				<p class="form-submit">
-					<input name="submit" type="submit" id="submit" class="submit" value="Laisser un commentaire">
-					<!-- @todo Regarder dans la doc WP pour comment_form() -->
-					<input type="hidden" name="comment_post_ID" value="363863" id="comment_post_ID">
-				</p>
-			</form>
-		</div>
-
+						</li></ol></div>
 				
 			</main>
 

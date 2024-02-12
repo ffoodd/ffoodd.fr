@@ -597,8 +597,7 @@ ul,
 ol,
 blockquote,
 pre,
-label,
-textarea {
+label {
 	font-size: 1em;
 	line-height: 1.5;
 	margin: 1.5em 0 0.75em;
@@ -1102,9 +1101,16 @@ blockquote,
 	border-radius: 50%;
 }
 
+.comment-respond label {
+	display: block;
+}
+
 .comment-respond input,
 .comment-respond textarea {
+	border: 1px solid #9faaad;
+	font: 300 1em/1.5 "museo-slab-1", "museo-slab-2", "Arial", sans-serif;
 	margin-left: -1em;
+	padding: .5em;
 	width: calc(100% + 1em);
 }
 
@@ -1127,7 +1133,9 @@ blockquote,
 	width: 55%;
 }
 
-.comment-respond input[type="submit"]:hover, .comment-respond input[type="submit"]:active, .comment-respond input[type="submit"]:focus {
+.comment-respond input[type="submit"]:hover,
+.comment-respond input[type="submit"]:active,
+.comment-respond input[type="submit"]:focus {
 	background-position: 98% center;
 	background-position: 98% center, 0 0;
 	color: #fff;

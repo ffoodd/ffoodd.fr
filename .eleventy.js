@@ -13,8 +13,6 @@ const tocPlugin = require("eleventy-plugin-toc")
 const rssPlugin = require("@11ty/eleventy-plugin-rss")
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight")
 
-
-
 module.exports = function (eleventyConfig) {
 
 	// Shortcodes

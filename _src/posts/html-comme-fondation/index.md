@@ -8,6 +8,7 @@ excerpt: "Traduction de [ma contribution au calendrier de l’avent de HTMHell](
 format: "standard"
 tags: "posts"
 alternate: "https://www.htmhell.dev/adventcalendar/2022/17/"
+commentsOpen: "true"
 ---
 **Note** : cet article est la traduction de [ma contribution au calendrier de l’avent de HTMHell, Modern HTML as a foundation for progressive enhancement](https://www.htmhell.dev/adventcalendar/2022/17/)&nbsp;!
 

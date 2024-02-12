@@ -99,80 +99,104 @@
 	{%- set slug = permalink | replace("/index.html", "") -%}
 	{%- set comments = collections.comments | comments(slug) -%}
 	{%- set commentsNumber = comments | length -%}
-	<div id="comments" class="comments-area pl2 pt2 mt2 print-hidden">
-		{%- if commentsNumber > 0 -%}
-			<h2 class="comments-title" itemprop="interactionCount" content="UserComments:{{ commentsNumber }}">
-				{{ commentsNumber }} commentaire{%- if commentsNumber > 1 -%}s{%- endif %} sur
-				<span class="tk-bello-pro h2-like" itemprop="discusses">«&nbsp;{{ title | safe }}&nbsp;»</span>
-				<a href="#sommaire" class="scroll small" title="Retour au sommaire">⤴</a>
-			</h2>
-			<ol class="commentlist ul-reset pl0" itemprop="comment">
-				{%- for comment in comments -%}
-					<li id="{{ comment.data.id }}" class="mb2" itemscope itemtype="https://schema.org/UserComments">
-						<article>
-							<header>
-								{%- if comment.data.author_avatar !== "" -%}
-									<img alt="" loading="lazy"
-											 src="{{ comment.data.author_avatar }}?s=44&d=mm&r=g"
-											 srcset="{{ comment.data.author_avatar }}?s=88&d=mm&r=g 2x"
-											 class="avatar avatar-44 photo"
-											 height="44" width="44">
-								{%- endif -%}
-								<em itemprop="creator" class="pl1">
-									{%- if comment.data.author_url !== "" -%}
-										<a href="{{ comment.data.author_url }}" class="url" rel="ugc external nofollow">{{ comment.data.author_name }}</a>
-									{%- elseif site.author.name === comment.data.author_name -%}
-										{{ comment.data.author_name }} <small>(Rédacteur)</small>
-									{%- else -%}
-										{{ comment.data.author_name }}
+	{%- if commentsOpen === 'true' or commentsNumber > 0 -%}
+		<div id="comments" class="comments-area pl2 pt2 mt2 print-hidden">
+			{%- if commentsNumber > 0 -%}
+				<h2 class="comments-title" itemprop="interactionCount" content="UserComments:{{ commentsNumber }}">
+					{{ commentsNumber }} commentaire{%- if commentsNumber > 1 -%}s{%- endif %} sur
+					<span class="tk-bello-pro h2-like" itemprop="discusses">«&nbsp;{{ title | safe }}&nbsp;»</span>
+					<a href="#sommaire" class="scroll small" title="Retour au sommaire">⤴</a>
+				</h2>
+				<ol class="commentlist ul-reset pl0" itemprop="comment">
+					{%- for comment in comments -%}
+						<li id="{{ comment.data.id }}" class="mb2" itemscope itemtype="https://schema.org/UserComments">
+							<article>
+								<header>
+									{%- if comment.data.author_avatar !== "" -%}
+										<img alt="" loading="lazy"
+												 src="{{ comment.data.author_avatar }}?s=44&d=mm&r=g"
+												 srcset="{{ comment.data.author_avatar }}?s=88&d=mm&r=g 2x"
+												 class="avatar avatar-44 photo"
+												 height="44" width="44">
 									{%- endif -%}
-								</em>
-								{% set date = comment.data.date | datetime %}
-								<time datetime="{{ comment.data }}" itemprop="commentTime">{{ date | replace(':', ' h ')}} min</time>
-								<a href="#{{ comment.data.id }}">
-									<span class="screen-reader-text">Ancre vers ce commentaire</span>
-									<span aria-hidden="true">⚓</span>
-								</a>
-							</header>
-						</article>
-						<div itemprop="CommentText">{{ comment.content | safe }}</div>
-					</li>
-				{%- endfor -%}
-			</ol>
-		{%- endif -%}
+									<em itemprop="creator" class="pl1">
+										{%- if comment.data.author_url !== "" -%}
+											<a href="{{ comment.data.author_url }}" class="url" rel="ugc external nofollow">{{ comment.data.author_name }}</a>
+										{%- elseif site.author.name === comment.data.author_name -%}
+											{{ comment.data.author_name }} <small>(Rédacteur)</small>
+										{%- else -%}
+											{{ comment.data.author_name }}
+										{%- endif -%}
+									</em>
+									{% set date = comment.data.date | datetime %}
+									<time datetime="{{ comment.data }}" itemprop="commentTime">{{ date | replace(':', ' h ')}} min</time>
+									<a href="#{{ comment.data.id }}">
+										<span class="screen-reader-text">Ancre vers ce commentaire</span>
+										<span aria-hidden="true">⚓</span>
+									</a>
+								</header>
+							</article>
+							<div itemprop="CommentText">{{ comment.content | safe }}</div>
+						</li>
+					{%- endfor -%}
+				</ol>
+			{%- endif -%}
 
-		<div class="comment-respond">
-			<h3>Laisser un commentaire</h3>
-			<form action="https://www.ffoodd.fr/wp-comments-post.php" method="post" class="comment-form">
-				<p class="comment-notes">
-					Votre adresse e-mail ne sera pas publiée.<br>
-					Les champs obligatoires sont indiqués avec <span class="required">*</span>.
-				</p>
-				<p>
-					<label for="comment">Commentaire <span class="required">*</span></label>
-					<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" required="required"></textarea>
-				</p>
-				<p>
-					<label for="author">Nom <span class="required">*</span></label>
-					<input id="author" name="author" type="text"
-								 aria-required="true" required="required" autocomplete="name">
-				</p>
-				<p>
-					<label for="email">Email <span class="required">*</span></label>
-					<input id="email" name="email" type="email"
-					 			 aria-required="true" required="required" autocomplete="email">
-				</p>
-				<p>
-					<label for="url">Site</label>
-					<input id="url" name="url" placeholder="http://" type="url" autocomplete="url">
-				</p>
-				<p class="form-submit">
-					<input name="submit" type="submit" id="submit" class="submit" value="Laisser un commentaire">
-					<!-- @todo Regarder dans la doc WP pour comment_form() -->
-					<input type="hidden" name="comment_post_ID" value="363863" id="comment_post_ID">
-				</p>
-			</form>
-		</div>
+			{%- if commentsOpen === 'true' -%}
+				{%- set commentID_1 = [1,2,3,4,5,6,7,8,9] | random -%}
+				{%- set commentID_2 = [1,2,3,4,5,6,7,8,9] | random -%}
+				{%- set commentID_3 = [1,2,3,4,5,6,7,8,9] | random -%}
+				{%- set commentID_4 = [1,2,3,4,5,6,7,8,9] | random -%}
+				{%- set commentID = [commentID_1,commentID_2,commentID_3,commentID_4] | join -%}
+				<div class="comment-respond">
+					<h3>Laisser un commentaire</h3>
+					<form action="https://github.com/ffoodd/ffoodd.fr/new/main/src/posts/{{ slug }}/comments/new?value=&filename={{ commentID }}.md" method="post" class="comment-form">
+						<p class="comment-notes">
+							Vous devez avoir un compte GitHub pour ajouter un commentaire.
+						</p>
+						<p>
+							<label for="pseudo">Pseudonyme GitHub <span class="required">(obligatoire)</span></label>
+							<input id="pseudo" name="pseudo" type="text"
+										 aria-required="true" required="required" autocomplete="nickname">
+						</p>
+						<p>
+							<label for="comment">Commentaire <span class="required">(obligatoire)</span></label>
+							<textarea id="comment" name="comment" cols="45" rows="8"
+												aria-required="true" required="required" aria-describedby="comment-note"></textarea>
+							<span id="comment-note" class="small">Markdown accepté.</span>
+						</p>
+						<p class="form-submit">
+							<input name="submit" type="submit" id="submit" class="submit" value="Laisser un commentaire">
+						</p>
+					</form>
+					<script>
+						const form = document.querySelector('.comment-form');
+
+						form.addEventListener('submit', async (event) => {
+							event.preventDefault();
+							const pseudo = document.getElementById('pseudo').value;
+							const comment = document.getElementById('comment').value;
+
+							const content = await fetch(`https://api.github.com/users/${pseudo}`)
+								.then(response => response.json())
+								.then(user => {
+									const content = encodeURIComponent(`---
+date: "${new Date().toISOString()}"
+author_name: "${user.name}"
+author_url: "${user.blog}"
+author_avatar: "${user.avatar_url}"
+id: "{{ commentID }}"
+tags: ["comments","{{ slug }}"]
+---
+${comment}`);
+
+									window.open(`https://github.com/ffoodd/ffoodd.fr/new/main/_src/posts/{{ slug }}/comments/?value=${content}&filename={{ commentID }}.md`)
+								});
+						});
+					</script>
+				{%- endif -%}
+			</div>
+		{%- endif -%}
 {% endblock %}
 
 {% block aside %}
