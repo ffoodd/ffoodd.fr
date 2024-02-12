@@ -13,6 +13,13 @@ Et j’espère que cette liste continuera d’évoluer&nbsp;!
 
 ### Dessine-moi un graphique (en CSS)
 
+Touraine Tech 2024 — 9 février 2024
+
+* **Page de l’événement**&nbsp;: [Touraine Tech 2024](https://touraine.tech/talk/ioc2x2nW4KV5zrt69ZQm)&nbsp;;
+* [Lire les _slides_ de «&nbsp;Dessine-moi un graphique (en CSS)&nbsp;»](https://www.ffoodd.fr/tnt).
+
+### Dessine-moi un graphique (en CSS)
+
 DevFest Nantes 2023 — 19 octobre 2023
 
 * **Page de l’événement**&nbsp;: [DevFest Nantes 2023](https://devfest2023.gdgnantes.com/sessions/dessine_moi_un_graphique__en_css_/)&nbsp;;
