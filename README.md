@@ -1,5 +1,17 @@
 # ffoodd.fr
 
+## À faire
+
+- [ ] Chasser les liens morts (avec `npm run docs:lint:external`)
+- [ ] Refondre graphiquement le site : passer à Sass (via LightningCSS ?)
+- [ ] Transformer les conférences en collection.
+  - Dynamiser la _sidebar_ avec les dernières conférences.
+- [ ] Intégrer les slides des conférences (en dur d’abord, puis en tant que collection)
+  - Base AccesSlide
+  - Base sliide
+  - En s’appuyant sur npm et 11ty
+
+
 ## Migration depuis WordPress
 
 On récupère les contenus depuis l’API Rest de WordPress, légèrement étendue pour contenir les champs ACF et les métadonnées personnalisées — puis le JSON obtenu est nettoyé avec [jq](https://jqlang.github.io/jq/) pour générer un fichier json sur-mesure contenant uniquement les clés qui nous intéressent.
