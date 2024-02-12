@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Des propriétés personnalisées très, très, très personnalisées</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Des propriétés personnalisées très, très, très personnalisées — conférence donnée lors de Paris Web 2020 par Gaël Poupard">
+  <meta name="author" content="Gaël Poupard">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/bello-pro.woff2"/>
+  <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/museo-slab-300.woff2"/>
+  <link rel="stylesheet" href="../accesslide/css/style.css" type="text/css" media="screen">
+  <link rel="stylesheet" id="currentCSS" href="../accesslide/css/ffoodd.css?5" type="text/css" media="screen">
+  <link rel="stylesheet" href="../accesslide/css/charts.css?37" type="text/css" media="screen">
+  <link rel="stylesheet" href="../accesslide/css/print.css" type="text/css" media="print">
+  <script src="../accesslide/js/AccesSlide.min.js"></script>
+  <script src="../accesslide/lang/lang_fr.js"></script>
+</head>
+<body>
+
+  <div id="screen" class="modeplan" data-effect="ffoodd">
+
+    <div id="volet"></div>
+
+    <header id="banner" role="banner" class="main-header clearfix">
+      <a href="https://www.ffoodd.fr">ffoodd</a>
+      <h1 class="main-title">
+        Des propriétés personnalisées très, très, très personnalisées
+      </h1>
+    </header>
+
+    <div id="nav" class="tool-bar footer-nav clearfix">
+      <div id="wrappernav">
+        <ul class="related">
+          <li>
+            <a href="https://www.ffoodd.fr">
+              <img src="../accesslide/img/ffoodd.svg?2" role="img" alt="Blog de Gaël Poupard" height="32" width="32" />
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/ffoodd_fr">
+              <img src="../accesslide/img/twitter.svg?2" role="img" alt="@ffoodd_fr sur Twitter" height="32" width="32" />
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/ffoodd/" hreflang="en">
+              <img src="../accesslide/img/github.svg?2" role="img" alt="@ffoodd sur Github" height="32" width="32" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <nav role="navigation" id="sommaire" class="tool-block tool-block-summary" tabindex="-1"></nav>
+
+    <div id="wrapper">
+
+      <main role="main" id="main">
+
+        <section class="slide full couv">
+          <h2>
+            Des propriétés personnalisées très, très, très personnalisées
+          </h2>
+          <p>
+            Retrouvez les slides en ligne sur<br>
+            <span aria-hidden="true">→&nbsp;</span><a href="https://www.ffoodd.fr/paris-web.2020/">ffoodd.fr/paris-web.2020</a><br>
+             et en version «&nbsp;commentée&nbsp;»<br>
+            <span aria-hidden="true">→&nbsp;</span><a href="https://www.ffoodd.fr/paris-web.2020/verbose.html">ffoodd.fr/paris-web.2020/verbose</a>.
+          </p>
+          <footer class="table">
+            <p class="col-50">Raconté par <a href="https://www.ffoodd.fr">Gaël Poupard</a></p>
+            <p class="col-50 col-t-right">
+              <a href="https://www.orange-business.com/fr">
+                <img src="../accesslide/img/OBS.jpg" width="175" height="64" alt="Orange Business Services" class="obs"/>
+              </a>
+            </p>
+          </footer>
+        </section>
+
+        <section class="slide full">
+          <h2>Les concepts-clés<span aria-hidden="true">&nbsp;&#128273;</span></h2>
+          <p class="h3">À digérer avant de jouer avec les propriétés personnalisées&nbsp;:</p>
+          <ul>
+            <li>La cascade&nbsp;;</li>
+            <li>L’héritage&nbsp;;</li>
+            <li>Les stratégies de repli&nbsp;;</li>
+            <li>Les particularités.</li>
+          </ul>
+          <p>Venez, on va bien rigoler&nbsp;!</p>
+          <p class="small">Si, si, promis…</p>
+        </section>
+
+        <section class="slide full">
+          <h2>Cascade<span aria-hidden="true">&nbsp;&#127752;</span></h2>
+          <h3>Hop, galipette<span aria-hidden="true">&nbsp;*</span>&nbsp;!</h3>
+          <p>La <dfn id="def-cascade">cascade</dfn> est l’algorithme décidant quel style est <strong>finalement</strong> appliqué.</p>
+          <p>Les propriétés personnalisées respectent la cascade, au même titre que les autres propriétés.</p>
+          <p class="small mt-auto"><span aria-hidden="true">*&nbsp;</span>Galipette réalisée par un professionnel, ne tentez pas ça chez vous.</p>
+        </section>
+
+        <section class="slide full">
+          <h2>L’héritage <small>(Mitsouko)</small><span aria-hidden="true">&nbsp;&#128131;</span></h2>
+          <h3><q>C’est comme ça-aaaaaa</q></h3>
+          <p>L’héritage intervient <strong>quand la cascade n’aboutit à aucune valeur</strong>.</p>
+          <ol>
+            <li>Toutes les propriétés ne sont pas héritées&nbsp;!</li>
+            <li>Les propriétés personnalisées sont héritées.</li>
+          </ol>
+        </section>
+
+        <section class="slide full">
+          <h2>Valeur de repli <span aria-hidden="true">&nbsp;&#128281;</span></h2>
+          <p>Quand une valeur n’est pas supportée, elle est ignorée et la cascade puis l’héritage interviennent.</p>
+          <div class="table">
+            <div class="Cmasque col-50">
+              <h3>Cascade</h3>
+              <pre class="language-css">
+                <code class="language-css">
+main {
+  color: red;
+  color: color(display-p3 1 .5 0);
+}</code>
+              </pre>
+            </div>
+            <div class="Cmasque col-50">
+              <h3>Héritage</h3>
+              <pre class="language-css">
+                <code class="language-css">
+html {
+  color: red;
+}
+
+main {
+  color: color(display-p3 1 .5 0);
+}</code>
+              </pre>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide full">
+          <h2>Les particularités</h2>
+          <h3>Une sorte de définition</h3>
+          <p>Les propriétés personnalisées&nbsp;:</p>
+          <ul>
+            <li>peuvent avoir <strong>plusieurs valeurs au même moment</strong>&nbsp;;</li>
+            <li>sont <strong>déclaratives</strong>, comme l’ensemble de CSS&nbsp;;</li>
+            <li>ne sont <strong>pas affectées</strong> par la propriéte <code>all</code>.</li>
+          </ul>
+          <p class="small mt-auto">Rien à voir avec <a hreflang="en" href="https://sass-lang.com/documentation/variables">les variables Sass</a>, donc<span aria-hidden="true">&nbsp;&#128520;</span>&nbsp;!</p>
+        </section>
+
+        <section class="slide full">
+          <h2>Les capacités</h2>
+          <h3>Qu’est-ce qu’on va bien pouvoir faire de ça<span aria-hidden="true">&nbsp;&#128519;</span>&nbsp;?</h3>
+        </section>
+
+        <section class="slide full">
+          <h2>Une palette de couleurs<span aria-hidden="true">&nbsp;&#127912;</span></h2>
+          <p>
+            <a hreflang="en" href="https://www.sarasoueidan.com/blog/hex-rgb-to-hsl/"><cite>Sara Soueidan</cite>
+            explique l’utilisation des propriétés personnalisées combinées à <code>hsl()</code></a>
+            pour gérer une palette de couleurs —&nbsp;et <a hreflang="en" href="https://una.im/css-color-theming/"><cite>Una Kravets</cite>
+            pousse la réflexion encore plus loin</a>.
+          </p>
+          <div class="table">
+            <pre class="language-css col-50">
+              <code class="language-css">
+:root {
+  --hue: 240;
+  --lightness: 30%;
+}
+
+main {
+  color: hsl(var(--hue), 100%, var(--lightness));
+}</code>
+            </pre>
+            <pre class="language-css col-50 Cmasque">
+              <code class="language-css">
+@media screen and (min-width: 32em) {
+  :root {
+    --lightness: 40%;
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --lightness: 80%;
+  }
+}</code>
+            </pre>
+          </div>
+        </section>
+
+        <section class="slide full">
+          <h2>De la configuration globale<span aria-hidden="true">&nbsp;&#9881;</span></h2>
+          <h3><q>Je s’appelle <code>:root</code></q></h3>
+          <p>
+            Vous pouvez utiliser les propriétés personnalisées comme une <abbr lang="en" title="Application Programming Interface" aria-label="Application Programming Interface">API</abbr>
+            de surface avec vos styles&nbsp;:
+          </p>
+          <div>
+            <figure class="Cmasque col-left">
+              <pre class="language-css">
+                <code class="language-css">
+:root {
+  --enable-shadows: none;
+}
+
+.component {
+  box-shadow: var(--enable-shadows, 0 .5rem 1rem #000);
+}</code>
+              </pre>
+              <figcaption class="small text-left">
+                <a hreflang="en" href="https://markdotto.com/2020/05/20/global-css-options-custom-properties/"><cite>Mark Otto</cite> propose des options globales</a>
+                pour (dés)activer des éléments de styles.
+              </figcaption>
+            </figure>
+            <figure class="Cmasque col-right">
+              <pre class="language-css">
+                <code class="language-css">
+:root {
+  --duration: 1;
+}
+
+.foobar {
+  transition-duration: calc(var(--duration) * 250ms);
+}</code>
+              </pre>
+              <figcaption class="small text-left">
+                <a hreflang="en" href="https://hugogiraudel.com/2018/03/19/implementing-a-reduced-motion-mode/"><cite>Hugo Giraudel</cite> suggère de réduire les animations globalement</a>
+                en se basant sur une unique propriété personnalisée.
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section  class="slide full">
+          <h2>Une cascade personnalisée</h2>
+          <h3>Hop, sans les mains<span aria-hidden="true">&nbsp;&#129335;</span></h3>
+          <p>
+            <a hreflang="en" href="https://codepen.io/mirisuzanne/full/vYNgodb"><cite>Miriam Suzanne</cite>
+            a conceptualisé les cascades personnalisées</a>, une imbrication de propriétés personnalisées
+            via les valeurs de replis.
+          </p>
+          <div class="table">
+            <pre class="language-css col-50">
+                  <code class="language-css">
+button {
+  background: var(--btn-bg--state,
+    var(--btn-bg,
+      var(--btn-bg--type,
+        var(--btn-bg--default)
+      )
+    )
+  );
+}</code>
+            </pre>
+            <pre class="language-css col-50 Cmasque">
+                  <code class="language-css">
+[disabled] {
+  --btn-bg--state: darkgray;
+}
+
+.warn {
+  --btn-bg--type: maroon;
+}</code>
+            </pre>
+          </div>
+        </section>
+
+        <section class="slide full">
+          <h2>Convertir un entier en chaîne<span aria-hidden="true">&nbsp;&#128279;</span></h2>
+          <h3>Ce n’est <em>que</em> du CSS</h3>
+          <p>
+            <a hreflang="en" href="https://codepen.io/cassie-codes/pen/22ea69e0f681d45f2f4c2ca5e6acf4ab"><cite>Cassie Evans</cite>
+            utilise <strong>les compteurs CSS</strong> pour afficher un entier dans la propiété <code>content</code></a>.
+          </p>
+          <pre class="language-css">
+                <code class="language-css">
+.icon {
+  --number-var: 23;
+}
+
+.icon::before {
+  counter-reset: number var(--number-var);
+  content: counter(number);
+}</code>
+          </pre>
+          <p class="small mt-auto">Ce n’est que du CSS, mais y’a quand même des données typées.<span aria-hidden="true">&nbsp;&#128519;</span></p>
+        </section>
+
+        <section class="slide full">
+          <h2>De la pseudo-logique<span aria-hidden="true">&nbsp;&#129300;</span></h2>
+          <h3>Ce n’est <em>toujours</em> que du CSS</h3>
+          <p>
+            <a hreflang="en" href="https://www.kizu.ru/conditions-for-css-variables/"><cite>Roman Komarov</cite>
+            propose d’utiliser des propriétés personnalisées pseudo-booléennes</a> pour qu’une propriété bascule
+            d’une valeur calculée à une autre.
+            <a hreflang="en" href="https://css-tricks.com/dry-switching-with-css-variables-the-difference-of-one-declaration/"><cite>Ana Tudor</cite>
+            décortique des exemples concrets de ce qu’elle baptise <em lang="en"><abbr title="Don’t repeat Yourself" aria-label="Don’t repeat Yourself">DRY</abbr> switching</em></a>.
+          </p>
+          <div class="table">
+            <pre class="language-css col-50">
+              <code class="language-css">
+:root {
+  --is-big: 0;
+}
+
+.is-big {
+  --is-big: 1;
+}</code>
+            </pre>
+            <pre class="language-css col-50">
+              <code class="language-css Cmasque">
+.block {
+  padding: calc(
+    25px * var(--is-big) +
+    10px * (1 - var(--is-big))
+  );
+}</code>
+            </pre>
+          </div>
+        </section>
+
+        <section class="slide full">
+          <h2>Du <em lang="en">responsive</em> sans <code>@media</code></h2>
+          <h3>Alias, ton univers impitoya-ableuh<span aria-hidden="true">&nbsp;&#128373;</span></h3>
+          <p>
+            <a hreflang="en" href="https://propjockey.github.io/css-media-vars/"><cite>James Atherton</cite>
+            utilise une astuce qu’il nomme <em lang="en">space toggler</em> pour se passer des <em lang="en">media queries</em></a>
+            dans son CSS —&nbsp;ou presque.
+          </p>
+          <div class="table">
+            <pre class="language-css col-50">
+              <code class="language-css">
+:root {
+  --media-lte-sm: initial;
+}
+
+div {
+  --small-borders: var(--media-lte-sm) 2px;
+  border: var(--small-borders, 15px) solid;
+}</code>
+            </pre>
+            <pre class="language-css col-50 Cmasque">
+              <code class="language-css">
+@media (min-width: 56.25em) {
+  :root {
+    --media-lte-sm: ;
+  }
+}</code>
+            </pre>
+          </div>
+        </section>
+
+        <section class="slide full">
+          <h2>Styler votre <em lang="en">shadow DOM</em><span aria-hidden="true">&nbsp;&#128101;</span></h2>
+          <h3>Une variable pour les gouverner tous, et dans les ténèbres les lier…</h3>
+          <p>
+            Pousser des styles vers le <em lang="en">shadow DOM</em> est impossible… mais hériter des propriétés personnalisées fonctionne&nbsp;!
+            <a hreflang="en" href="https://frontstuff.io/multi-colored-svg-symbol-icons-with-css-variables"><cite>Sarah Dayan</cite> donne un exemple
+            de symbôle SVG multicolore</a> conçu pour appeler des propriétés personnalisées définies hors de l’hôte.
+          </p>
+          <div class="table">
+            <pre class="language-markup col-66">
+              <code class="language-markup">
+&lt;svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  &lt;symbol id="my-first-icon" viewBox="0 0 20 20">
+    &lt;path fill="var(--color-1, red)" d="…"/>
+    &lt;path fill="var(--color-2, blue)" d="…"/>
+    &lt;path fill="var(--color-3, green)" d="…"/>
+  &lt;/symbol>
+&lt;/svg>
+
+&lt;svg class="icon icon-colors">
+  &lt;use xlink:href="#my-first-icon"/>
+&lt;/svg>
+</code>
+            </pre>
+            <pre class="language-css col-33">
+              <code class="language-css">
+.icon-colors {
+  --color-1: #c13127;
+  --color-2: #ef5b49;
+  --color-3: #cacaea;
+}
+</code>
+            </pre>
+          </div>
+        </section>
+
+        <section class="slide full">
+          <h2>Des styles réactifs<span aria-hidden="true">&nbsp;&#128165;</span></h2>
+          <p>
+            Dans <a href="https://ffoodd.github.io/chaarts/accueil.html">chaarts</a>, je mets en place divers type de graphiques de données
+            en CSS, qui dépendent de propriétés personnalisées déclarées côté HTML.
+          </p>
+          <p>
+            Autrement dit, ces graphiques <strong>réagissent à des changements de données en temps réels</strong> si vous mettez à jour
+            les propriétés personnalisées en JavaScript —&nbsp;de préférence à l’aide de la méthode <code>.setProperty</code>.
+          </p>
+          <div class="table">
+            <pre class="language-markup col-50">
+              <code class="language-markup">
+&lt;table class="chaarts radar"
+       style="--scale: 20; --step: 5; --items: 7;
+       --1: 14; --2: 11; --3: 13; --4: 16; --5: 10;
+       --6: 12; --7: 4; --8: var(--1);">
+  […]
+    &lt;td>&lt;span>14&lt;/span>&lt;/td>
+  […]
+&lt;/table>
+</code>
+            </pre>
+            <pre class="language-css col-50">
+              <code class="language-css">
+.chaarts[class*="radar"] td:nth-of-type(2) span {
+  --position: calc(100% - (var(--3) * 100% / (var(--scale) * var(--ratio))));
+  clip-path: polygon(
+    100% var(--position),
+    calc(100% - (var(--2) * 100% / var(--scale))) 100%,
+    100% 100%
+  );
+}
+</code>
+            </pre>
+          </div>
+        </section>
+
+        <section class="slide full">
+          <div class="fieldset">
+            <button type="button" class="fw-400 no-border p-relative disable-css"
+                    role="switch" aria-checked="true" aria-label="Permet de désactiver les styles sur le tableau suivant.">
+                    <span>Stylé</span>
+                    <span>Brut</span>
+            </button>
+            <button type="button" id="random" class="ml-auto">
+              <span class="sr-only">Random</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="v-middle"
+                   width="1em" height="1em" viewBox="0 0 100 125"
+                   focusable="false" aria-hidden="true">
+                <path fill="#fff" d="M42.25 28.97c9.04-6.74 16.8-8.81 32.68-9.01v-10L100 30.02 74.93 50v-9.88c-6.2.16-11.2.41-16.2 2.9 0 0-8.98-9.53-16.48-14.05zM18.73 51.95c-4.54 3.9-18.73 3-18.73 3v20.06c19.42.57 27.63-3.8 35.77-10.91-2.4-1.7-8.17-11.3-17.04-12.15zM100 69.98L74.93 50v11.06c-14-2.23-9.56-7.02-29.9-24.07C34.96 28.82 26.53 25.79 0 26.24v20.1c25.03-.7 28.46 2.8 37 11.84C54.07 77 61.75 79.92 74.93 81.06v8.98L100 69.98z"/>
+              </svg>
+            </button>
+          </div>
+          <table class="table-ffoodd table-charts radar step-1 step-2 step-3 step-4" id="radar"
+                 style="--scale: 20; --step: 5; --items: 7; --1: 14; --2: 11; --3: 13; --4: 16; --5: 10; --6: 12; --7: 4; --8: var(--1);">
+            <caption>Niveau d’intérêt par domaine, sur 20</caption>
+            <thead>
+             <tr>
+              <th scope="col">Accessibilité</th>
+              <th scope="col">Référencement</th>
+              <th scope="col">Performance</th>
+              <th scope="col">Compatibilité</th>
+              <th scope="col">Sécurité</th>
+              <th scope="col">Qualité de code</th>
+              <th scope="col">Test</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+              <td><span>14</span></td>
+              <td><span>11</span></td>
+              <td><span>13</span></td>
+              <td><span>16</span></td>
+              <td><span>10</span></td>
+              <td><span>12</span></td>
+              <td><span>4</span></td>
+             </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="slide full">
+          <h2>Factoriser votre code<span aria-hidden="true">&nbsp;&#128238;</span></h2>
+          <h3><abbr lang="en" title="Don’t repeat Yourself" aria-label="Don’t repeat Yourself">DRY</abbr></h3>
+          <p>
+            Si la même valeur à rallonge est utilisée plusieurs fois, simplifiez-vous la vie&nbsp;:
+            <strong>utilisez des propriétés personnalisées</strong>&nbsp;!
+          </p>
+          <pre class="language-css">
+            <code class="language-css">
+:root {
+  --stripes: url("data:image/svg+xml,%3Csvg width='6' height='6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff99'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+tr:nth-child(odd) {
+  background: white var(--stripes);
+}
+
+.hero {
+  background: rebeccapurple var(--stripes);
+}
+</code>
+          </pre>
+        </section>
+
+        <section class="slide full">
+          <h2>Conclusion</h2>
+          <h3>Les fausses bonnes idées<span aria-hidden="true">&nbsp;&#128161;</span></h3>
+          <p>Ça envoie du rêve, mais…</p>
+          <ul>
+            <li class="Cmasque"><a hreflang="en" href="https://adactio.com/journal/16993">Hors cascade, pas de repli possible —&nbsp;chez <cite>Jeremy Keith</cite></a>.</li>
+            <li class="Cmasque"><a hreflang="en" href="https://lisilinhart.info/posts/css-variables-performance/">Le changement, c’est pas forcément maintenant —&nbsp;par <cite>Lisi Linhardt</cite></a>.</li>
+            <li class="Cmasque"><a href="https://en.wikipedia.org/wiki/KISS_principle"><abbr lang="en" title="Keep It Simple, Stupid">KISS</abbr></a>&nbsp;: pour une seule valeur, aucun intérêt.</li>
+            <li class="Cmasque">Si vous gagnez du temps mais prenez du poids, <strong>vous faites fausse route</strong>.</li>
+          </ul>
+            <p class="Cmasque"><strong>Pensez à vos utilisateurs avant tout</strong>.</p>
+        </section>
+
+        <section class="slide end noprint">
+          <h2 class="end-title">Merci</h2>
+          <h3>Et à bientôt<span aria-hidden="true">&nbsp;&#9786;</span></h3>
+          <h4>Crédits</h4>
+          <ul class="credit">
+            <li>Moteur de présentation&nbsp;: <a href="https://github.com/access42/accesSlide" hreflang="en">AccesSlide</a> —&nbsp;par <a href="https://access42.net/">Access42</a>&nbsp;;</li>
+            <li>Pictogrammes&nbsp;: <a href="https://thenounproject.com/marekpolakovic/collection/rounded-ui" hreflang="en">Rounded UI</a> —&nbsp;par <a href="https://www.marekpolakovic.sk/">Marek Polakovic</a>&nbsp;;</li>
+            <li>Typographie de titraille&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/bello-pro">Bello Pro</a> —&nbsp;créée par <a hreflang="en" href="https://www.underware.nl/">Underware</a>&nbsp;;</li>
+            <li>Typographie de labeur&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/museo-slab">Museo Slab</a> —&nbsp;créée par <a hreflang="en" href="https://www.exljbris.com/">Exljbris</a>.</li>
+          </ul>
+        </section>
+
+      </main>
+
+    </div>
+
+    <div id="setting" class="tool-block tool-block-settings " role="dialog" tabindex="-1" style="display:none"></div>
+
+  </div>
+
+  <div id="Caudio"></div>
+  <div id="Dcourante" aria-live="polite" aria-atomic="true" aria-hidden="true"></div>
+
+  <script src="../accesslide/js/slide.min.js"></script>
+  <script src="../accesslide/js/prism.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const switches = document.querySelectorAll('[role="switch"]');
+
+      Array.prototype.forEach.call(switches, (el) => {
+        el.addEventListener('click', function() {
+          let checked = this.getAttribute('aria-checked') === 'true' || false;
+          this.setAttribute('aria-checked', !checked);
+
+          let chart = this.parentNode.nextElementSibling;
+          chart.classList.toggle('table-charts');
+        });
+      });
+
+      const min = 0,
+            chart = document.getElementById('radar'),
+            rows  = chart.querySelectorAll('tbody > tr > td'),
+            scale = parseInt(getComputedStyle(chart).getPropertyValue('--scale'));
+
+      function randomBetween(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
+
+      document.getElementById('random').addEventListener('click', () => {
+        rows.forEach( (row, index) => {
+          let value = randomBetween(min, scale);
+          row.innerHTML = `<span>${value}</span>`;
+          setTimeout( () => {
+              chart.style.setProperty(`--${index +1}`, ` ${value}`);
+          }, 200);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

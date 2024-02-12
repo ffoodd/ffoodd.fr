@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Découvrez « le bon HTML » et économisez du JS et du CSS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Découvrez « le bon HTML » et économisez du JS et du CSS — conférence donnée au DevFest Nantes 2022, par Gaël Poupard">
+  <meta name="author" content="Gaël Poupard">
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../accesslide/fonts/bello-pro.woff2"/>
+  <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../accesslide/fonts/museo-slab-300.woff2"/>
+  <link rel="stylesheet" href="../sliide/sliide.css?4" type="text/css" media="screen"/>
+  <link rel="stylesheet" href="../sliide/prism.min.css" type="text/css" media="screen"/>
+</head>
+<body>
+    <header role="banner">
+      <a href="https://www.ffoodd.fr">ffoodd</a>
+      <h1>Découvrez «&nbsp;le bon <abbr lang="en" title="HyperText Markup Language">HTML</abbr>&nbsp;»<span class="sr-only"> et économisez du <abbr lang="en" title="JavaScript">JS</abbr> et du <abbr lang="en" title="Cascading StyleSheet">CSS</abbr></span></h1>
+    </header>
+
+    <main role="main">
+      <section id="slide-1" class="d-flex flex-column justify-between">
+        <span class="h2">Découvrez «&nbsp;le bon <abbr lang="en" title="HyperText Markup Language">HTML</abbr>&nbsp;» et économisez du <abbr lang="en" title="JavaScript">JS</abbr> et du <abbr lang="en" title="Cascading StyleSheet">CSS</abbr></span>
+        <p>
+          Retrouvez les slides en ligne sur
+          <span aria-hidden="true">→&nbsp;</span><a href="https://www.ffoodd.fr/devfest/">ffoodd.fr/devfest/</a>.
+         </p>
+        <footer>
+          <p >Raconté par <a href="https://www.ffoodd.fr">Gaël Poupard</a></p>
+          <p>
+            <a href="https://www.groupeonepoint.com">
+              <img src="../accesslide/img/onepoint.svg" width="166" height="80" alt="onepoint"/>
+            </a>
+          </p>
+        </footer>
+      </section>
+
+      <section id="slide-2">
+        <h2>Le principe de moindre pouvoir <span aria-hidden="true">&nbsp;&#129412;</span></h2>
+        <p>
+          C’est <a hreflang="en" href="https://www.w3.org/DesignIssues/Principles.html">un des axiomes du web</a>,
+          proposés par <cite>Tim Berners-Lee</cite> en 1998
+          —&nbsp;à côté de <abbr lang="en" title="Keep It Simple, Stupid!">kiss</abbr>, du <i lang="en">design</i>
+          modulaire, de la <strong>tolérance</strong> ou de la <strong>décentralisation</strong>.
+        </p>
+        <p>
+          Le mantra de l’<strong>amélioration progressive</strong>, en somme…
+        </p>
+      </section>
+      <section id="slide-3">
+        <h2>L’arbre de décision <span aria-hidden="true">&nbsp;&#127795;</span></h2>
+        <div class="grid-1-2">
+          <ol>
+            <li><abbr lang="en" title="HyperText Markup Language">HTML</abbr></li>
+            <li><abbr lang="en" title="Cascading StyleSheet">CSS</abbr></li>
+            <li>JavaScript</li>
+            <li><abbr lang="en" title="Accessible Rich Internet Applications">ARIA</abbr></li>
+            <li><i lang="en">Polyfill</i></li>
+            <li><i lang="en">Framework</i></li>
+          </ol>
+          <div>
+            <h3>Le support et le bon sens</h3>
+            <p>
+              Suivez <strong>les spécifications</strong>, les ajouts ou retraits de fonctionnalités&nbsp;—
+              mais aussi les implémentations dans les navigateurs.
+              <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/hgroup#notes_dutilisation"><code>hgroup</code>
+                n’a jamais eu d’implémentation sémantique</a>, <code>:is()</code> et <code>:where()</code>
+              vous font gagner quelques octets au détriment du support navigateur…
+            </p>
+            <p class="small">Validez votre HTML, aussi.</p>
+          </div>
+        </div>
+      </section>
+      <section id="slide-4">
+        <h2>JavaScript est notre ami <span aria-hidden="true">&nbsp;&#128152;</span></h2>
+        <p class="lead">JavaScript est indispensable, tant pour l’accessibilité que pour une expérience utilisateur optimale.</p>
+        <p>
+          Mais il ne faut l’utiliser qu’en cas de nécessité, <a hreflang="en" href="https://www.w3.org/TR/using-aria/#rule1">à l’instar d’ARIA</a>.
+          L’objectif est seulement de vous faire découvrir du HTML que vous ne connaissez peut-être pas.
+        </p>
+        <p class="small"><strong>Opinion</strong>&nbsp;: l’écosystème <code>no-js</code> est peuplé de démonstration <i lang="en">CSS only</i>, ce qui est littéralement impossible.</p>
+      </section>
+      <section id="slide-5">
+        <h2>Dans le web, rien de nouveau <span aria-hidden="true">&nbsp;&#9851;&#65039;</span></h2>
+        <p class="lead">JavaScript a toujours poussé CSS dans ses retranchements.</p>
+        <ul>
+          <li>La gestion du survol avant l’apparition de <code>:hover</code>&nbsp;;</li>
+          <li>La gestion des typographies personnalisées avec <a hreflang="en" href="https://github.com/sorccu/cufon">Cufón</a>, en attendant le support de <code>@font-face</code>&nbsp;;</li>
+          <li>Le défilement doux, les éléments collants ou le «&nbsp;chargement paresseux&nbsp;» des images nécessitaient JavaScript il y a encore 3 ou 4 ans…</li>
+        </ul>
+        <p>
+          Tous ces usages, implémentés en JavaScript faute de mieux, ont fini par
+          aboutir à une standardisation dans HTML ou CSS.
+        </p>
+        <p class="small">Pensez un peu à l’impact de jQuery.</p>
+      </section>
+      <section id="slide-6">
+        <h2>Attention <span aria-hidden="true">&nbsp;&#9888;</span></h2>
+        <p class="lead">Si vos implémentations actuelles fonctionnent, gardez-les&nbsp;!</p>
+        <p>Si vous refondez vos composants pour du HTML moderne, prenez soin de tester&nbsp;:</p>
+        <ul>
+          <li>la compatibilité navigateur&nbsp;;</li>
+          <li>la restitution par les technologies d’assistance&nbsp;;</li>
+          <li>avec de la <abbr lang="en" title="Quality Assurance">QA</abbr> et des utilisateurs&nbsp;!</li>
+        </ul>
+      </section>
+
+      <section id="slide-7">
+        <h2>Liste de suggestions <span aria-hidden="true">&nbsp;&#128071;</span> </h2>
+        <p class="lead">Vous voulez proposer une liste de valeurs à l’utilisateur, en permettant aussi la saisie libre&nbsp;?</p>
+        <p>Pas besoin d’une bibliothèque, ni même d’un composant riche&nbsp;!</p>
+      </section>
+      <section id="slide-8" class="demo">
+        <h3 class="h2">Exemple de suggestion&nbsp;: pour du texte</h3>
+        <div class="markup">
+          <pre class="language-markup"><code class="language-markup">&lt;label for="language">
+  Quel est le meilleur langage de programmation&nbsp;?
+&lt;/label>
+&lt;input id="language" type="text" list="languages">
+&lt;datalist id="languages">
+  &lt;option>HTML&lt;/option>
+  &lt;option>CSS&lt;/option>
+  &lt;option>SVG&lt;/option>
+&lt;/datalist>
+            </code>
+          </pre>
+        </div>
+        <div class="playground">
+          <form>
+            <p>
+              <label for="language">Quel est le meilleur langage de programmation&nbsp;?</label>
+              <input id="language" type="text" list="languages">
+              <datalist id="languages">
+                <option>HTML</option>
+                <option>CSS</option>
+                <option>SVG</option>
+              </datalist>
+            </p>
+          </form>
+        </div>
+      </section>
+      <section id="slide-9" class="demo">
+        <h3 class="h2">Exemple de suggestion&nbsp;: pour une couleur</h3>
+        <div class="markup">
+          <pre class="language-markup"><code class="language-markup">&lt;label for="color">
+  Vous mettrez bien un peu de couleur&nbsp;?
+&lt;/label>
+&lt;input id="color" type="color" list="colors">
+&lt;datalist id="colors">
+  &lt;option value="#ff00dd">
+  &lt;option value="#991111">
+  &lt;option value="#bada55">
+&lt;/datalist>
+            </code>
+          </pre>
+        </div>
+        <div class="playground">
+          <form>
+            <p>
+              <label for="color">Vous mettrez bien un peu de couleur&nbsp;?</label>
+              <input id="color" type="color" list="colors">
+              <datalist id="colors">
+                <option value="#ff00dd">
+                <option value="#991111">
+                <option value="#bada55">
+              </datalist>
+            </p>
+          </form>
+        </div>
+      </section>
+      <section id="slide-10">
+        <h3 class="h2">Accessibilité et compatibilité</h3>
+        <h4>Compatibilité</h4>
+        <p>
+          <a hreflang="en" href="https://caniuse.com/datalist">Le support de <code>datalist</code> est très bon</a>,
+          avec une nuance pour Firefox qui ne supporte que le <code>type="text"</code>.
+        </p>
+        <p class="small">
+          Vous pouvez <a hreflang="en" href="https://demo.agektmr.com/datalist/">tester les différents
+          types de champs sur cette page de démonstration</a>, réalisée par Eiji Kitamura.
+        </p>
+        <h4>Accessibilité</h4>
+        <p>
+          <a hreflang="en" href="https://thepaciellogroup.github.io/AT-browser-tests/test-files/datalist.html">Le support
+            par les technologies d’assistance est excellent</a> —&nbsp;avec une limite&nbsp;:
+          <a hreflang="en" href="https://a11ysupport.io/tech/html/datalist_element">pas d’annonce lorsque la liste de suggestions est modifiée</a>.
+          Dans ce cas, il faudra recourir à une <i lang="en">live region</i> ARIA pour restituer le changement.
+        </p>
+      </section>
+
+      <section id="slide-11">
+        <h2>Auto-remplissage <span aria-hidden="true">&nbsp;&#128373;</span></h2>
+        <p class="lead">
+          Votre formulaire demande des données personnelles relatives à l’identité, l’adresse ou encore une carte de crédit&nbsp;?
+        </p>
+        <p>
+          Attendez un peu avant de dégainer une bibliothèque JavaScript pour «&nbsp;faciliter&nbsp;» la saisie à coup de masques
+          ou de déduction&nbsp;— voire d’appels <abbr lang="en" title="Application Programming Interface">API</abbr>&nbsp;:
+          <strong>l’utilisateur&nbsp;— et son navigateur&nbsp;— ont déjà l’information</strong>.
+        </p>
+      </section>
+      <section id="slide-12" class="demo">
+        <h3 class="h2">Exemple d’auto-remplissage</h3>
+        <div class="markup">
+          <pre class="language-markup"><code class="language-markup">&lt;input type="password" autocomplete="new-password">
+&lt;input type="email" autocomplete="email">
+&lt;input autocomplete="one-time-code">
+            </code>
+          </pre>
+        </div>
+        <form class="playground">
+          <p>
+            <label for="password">Mot de passe</label>
+            <input id="password" type="password" autocomplete="new-password">
+          </p>
+          <p>
+            <label for="email">Email</label>
+            <input id="email" type="email" autocomplete="email">
+          </p>
+        </form>
+      </section>
+      <section id="slide-13">
+        <h3 class="h2">Compatibilité et accessibilité</h3>
+        <h4>Compatibilité</h4>
+        <p>
+          <a hreflang="en" href="https://caniuse.com/input-autocomplete-onoff">Le support d’<code>autocomplete</code>
+            est excellent</a> — même si les navigateurs n’implémentent que partiellement la valeur <code>off</code> (volontairement).
+        </p>
+        <h4>Accessibilité</h4>
+        <p>
+          Non seulement <code>autocomplete</code> est pleinement accessible, mais est même requis par
+          <a hreflang="en" href="https://www.w3.org/TR/WCAG21/#input-purposes">
+            le critère 1.3.5 des <abbr lang="en" title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</a> et
+          <a href="https://www.numerique.gouv.fr/publications/rgaa-accessibilite/methode-rgaa/criteres/#crit-11-13">le
+            critère 11.13 du <abbr title="Référentiel Général d’Amélioration de l’Accessibilité">RGAA</abbr> 4.1</a>.
+        </p>
+      </section>
+
+      <section id="slide-14">
+        <h2>Formater la saisie <span aria-hidden="true">&nbsp;&#128291;</span></h2>
+        <p class="lead">Vous n’autorisez que certains caractères, ou avez besoin de normaliser les valeurs&nbsp;?</p>
+        <p>
+          Traiter la valeur fournie après soumission <strong>génère du risque</strong> et engendre un décalage malvenu&nbsp;—
+          «&nbsp;<a href="https://twitter.com/ffoodd_fr/status/664715045683752960/photo/1">Bonjour Ga%c3%abl</a>&nbsp;».
+        </p>
+        <p>
+          Des écouteurs d’événements pour annuler la saisie si elle ne nous convient pas n’est pas une meilleure
+          expérience pour l’utilisateur, causant des <strong>comportements inattendus</strong>.
+        </p>
+        <p class="small">Vous êtes-vous déjà demandé comment étaient restitués des masques de saisie, sur un lecteur d’écran&nbsp;?</p>
+        <p>HTML à la rescousse&nbsp;!</p>
+      </section>
+      <section id="slide-15" class="demo">
+        <h3 class="h2">Exemple de gestion du format</h3>
+        <div class="markup">
+          <pre class="language-markup"><code class="language-markup">&lt;label for="pattern">
+  Mot de passe
+  &lt;small>(obligatoire)&lt;/small>
+&lt;/label>
+&lt;input id="pattern" type="password"
+  required
+  pattern="[a-z]{4,8}"
+  spellcheck="false"
+  autocorrect="off"
+  autocapitalize="none">
+            </code>
+          </pre>
+        </div>
+        <div class="playground">
+          <form>
+            <p>
+              <label for="pattern">Mot de passe <small>(obligatoire)</small></label>
+              <input id="pattern" type="password" required
+                     pattern="[a-z]{4,8}"
+                     spellcheck="false"
+                     autocorrect="off"
+                     autocomplete="off"
+                     autocapitalize="none"
+                     aria-describedby="aide">
+              <small id="aide" class="d-block mt-1">
+                Votre mot de passe doit contenir quatre à huit minuscules uniquement.
+              </small>
+            </p>
+            <button>Valider</button>
+          </form>
+        </div>
+      </section>
+      <section id="slide-16">
+        <h3 class="h2">Accessibilité</h3>
+        <p>
+          L’attribut <code>pattern</code> n’est pas restitué par les technologies d’assistance&nbsp;:
+          il est donc de bon aloi de mentionner les contraintes avant la soumission du formulaire, à l’aide d’un
+          <a href="https://www.numerique.gouv.fr/publications/rgaa-accessibilite/methode-rgaa/glossaire/#passage-de-texte-lie-par-aria-labelledby-ou-aria-describedby">passage de texte</a>
+          visible&nbsp;— mais également de <a href="https://www.numerique.gouv.fr/publications/rgaa-accessibilite/methode-rgaa/criteres/#crit-11-11">fournir un exemple de saisie correcte</a>,
+          en cas d’erreur.
+        </p>
+        <h4>Sécurité</h4>
+        <p>
+          L’attribut <code>spellcheck="false"</code> est utile pour désactiver la vérification de l’orthographe&nbsp;—
+          ce qui a pour effet secondaire de <a hreflang="en" href="https://www.aaron-gustafson.com/notebook/spellcheckers-exfiltrating-pii_-not-so-fast/">ne
+          pas exfiltrer la saisie de l’utilisateur</a> pour «&nbsp;vérification&nbsp;».
+        </p>
+        <p class="small"><strong>Note</strong>&nbsp;: vous connaissez <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/Constraint_validation">l’API HTML de validation des contraintes</a>&nbsp;?</p>
+      </section>
+
+      <section id="slide-17">
+        <h2>D’autres bonus pour formulaires</h2>
+        <p>De nombreux autres attributs sont drôlement pratiques — certains récents, et d’autres… non&nbsp;:</p>
+        <ul>
+          <li><code>inputmode</code> pour déterminer le clavier à utiliser (sur mobile),</li>
+          <li><code>enterkeyhint</code> pour indiquer la fonction de la touche entrée (sur mobile également),</li>
+          <li><code>capture</code> pour alimenter un <code>[type="file"]</code> depuis la caméra&nbsp;;</li>
+          <li><code>for</code> et <code>id</code> pour associer un <code>label</code> à un champ,</li>
+          <li><code>name</code> pour les boutons radios et cases à cocher,</li>
+          <li><code>type</code> pour les boutons et éviter de soumettre les formulaires n’importe quand&nbsp;!</li>
+          <li><code>action</code>, <code>method</code> mais aussi <code>formaction</code> et <code>formmethod</code> (entre autres).</li>
+        </ul>
+        <p>
+          <a hreflang="en" href="https://www.smashingmagazine.com/2018/08/ux-html5-mobile-form-part-2/">
+            Stéphanie Walter a publié un guide extrêmement complet pour aider vos utilisateurs à remplir vos formulaires,
+            sur <cite>Smashing Magazine</cite>
+          </a>, et <a hreflang="en" href="https://better-mobile-inputs.netlify.app/">Alex Holacheck a créé un configurateur de champs de formulaires pour mobile</a>.
+        </p>
+      </section>
+
+      <section id="slide-18">
+        <h2>Un bloc dépliant <span aria-hidden="true">&nbsp;&#128194;</span></h2>
+        <p class="lead">Un contenu supplémentaire à afficher, caché derrière un bouton&nbsp;?</p>
+        <p>
+          Vous pouvez implémenter le motif de conception ARIA
+          <i lang="en">disclosure</i>, évidemment&nbsp;— mais nous avons déjà parlé
+          de <a hreflang="en" href="https://www.w3.org/TR/using-aria/#rule1">la première règle d’ARIA</a>&nbsp;!
+        </p>
+      </section>
+      <section id="slide-19" class="demo">
+        <h3 class="h2">Exemple de bloc dépliant</h3>
+        <div class="markup">
+          <pre class="language-markup"><code class="language-markup">&lt;details>
+  &lt;summary>Découvrez mes secrets…&lt;/summary>
+  Hé, à quoi vous vous attendiez&nbsp;!
+&lt;/details>
+            </code>
+          </pre>
+        </div>
+        <div class="playground">
+          <details class="mt-1">
+            <summary>Découvrez mes secrets…</summary>
+            Hé, à quoi vous vous attendiez&nbsp;!
+          </details>
+        </div>
+      </section>
+      <section id="slide-20">
+        <h3 class="h2">Accessibilité</h3>
+        <p>
+          <a hreflang="en" href="https://thepaciellogroup.github.io/AT-browser-tests/test-files/details-summary.html">L’implémentation par les différents navigateurs est complète</a>
+          et <a hreflang="en" href="https://thepaciellogroup.github.io/AT-browser-tests/test-files/details-summary.html">le support par les technologies d’assistance est excellent</a>.
+          Alors pourquoi faire un <i lang="en">slide</i> dédié&nbsp;?
+        </p>
+        <p class="float-left">
+          <a hreflang="en" href="https://adrianroselli.com/2019/04/details-summary-are-not-insert-control-here.html">Adrian Roselli
+            a explicité les détournements de <code>details</code> potentiellement inaccessibles</a>&nbsp;— en résumé, <code>details</code> n’est pas&nbsp;:
+          un <a hreflang="en" href="https://www.w3.org/WAI/ARIA/apg/patterns/accordion/">accordéon</a>,
+          un <a hreflang="en" href="https://www.w3.org/WAI/ARIA/apg/patterns/tabpanel/">onglet</a>,
+          un menu de navigation,
+          une <a hreflang="en" href="https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal/">fenêtre de dialogue</a>…
+        </p>
+        <p class="small">
+          Les principaux défauts sont l’impossibilité de mettre un titre dans un <code>summary</code>
+          (ce dernier ayant un <code>role="button"</code> implicite) et l’absence de gestion d’<kbd>Échap</kbd>
+          pour fermer le détail&nbsp;— <strong>mais est une fondation solide pour de l’amélioration progressive</strong>.
+        </p>
+        <p class="small">
+          Il reste quelques disparités entre navigateurs et technologies d’assistance&nbsp;:
+          <a hreflang="en" href="https://www.scottohara.me//blog/2022/09/12/details-summary.html">Scott O’Hara
+            détaille tout dans <cite lang="en">The details and summary elements, again</cite></a>.
+        </p>
+      </section>
+
+      <section id="slide-21">
+        <h2>Une fenêtre modale <span aria-hidden="true">&nbsp;&#129695;</span></h2>
+        <p class="lead">Vous devez exiger une interaction de l’utilisateur, pour confirmer une action&nbsp;?</p>
+        <p>Vous me voyez venir&nbsp;: pourquoi utiliser du JavaScript&nbsp;?</p>
+      </section>
+      <section id="slide-22" class="demo">
+        <h3 class="h2">Exemple de fenêtre modale</h3>
+        <div class="markup">
+          <pre class="language-markup"><code class="language-markup">&lt;dialog id="dialog">
+&lt;form method="dialog">
+    &lt;p>Bonjour, fenêtre&nbsp;!&lt;/p>
+    &lt;button>OK&lt;/button>
+  &lt;/form>
+&lt;/dialog>
+&lt;button onclick="dialog.showModal()">Aérer&lt;/button>
+&lt;!-- → Ouvrir la fenêtre -->
+            </code>
+          </pre>
+        </div>
+        <div class="playground d-flex">
+          <dialog id="dialog">
+            <form method="dialog">
+              <p>Bonjour, fenêtre&nbsp;!</p>
+              <button>OK</button>
+            </form>
+          </dialog>
+          <button onclick="dialog.showModal()" class="m-auto">Aérer</button>
+          <!-- → Ouvrir la fenêtre -->
+        </div>
+      </section>
+      <section id="slide-23">
+        <h3 class="h2">Compatibilité et accessibilité</h3>
+        <h4>Compatibilité</h4>
+        <p><a hreflang="en" href="https://caniuse.com/dialog">Le support navigateur est quelque peu récent</a>&nbsp;:</p>
+        <ul>
+          <li>
+            <strong>Firefox</strong> a retiré le <i lang="en">flag</i> début 2022&nbsp;—
+            après des années de support expérimental&nbsp;;
+          </li>
+          <li><strong>Safari</strong> n’a implémenté <code>dialog</code> que dans la version 15.4, soit début 2022 également…</li>
+        </ul>
+        <p>
+          Mais pour la note positive, sachez que <a hreflang="en" href="https://wpt.fyi/interop-2022?feature=interop-2022-dialog">le
+          support de <code>dialog</code> fait partie d’Interop 2022</a>.
+        </p>
+        <h4>Accessibilité</h4>
+        <p>
+          <a hreflang="en" href="https://www.scottohara.me/blog/2019/03/05/open-dialog.html">Scott O'Hara a fait
+            le point sur l’accessibilité de <code>dialog</code></a> et
+          <a hreflang="en" href="https://www.scottohara.me/blog/2023/01/26/use-the-dialog-element.html">estime que c’est le moment
+          de l’utiliser</a>.
+        </p>
+      </section>
+
+      <section id="slide-24">
+        <h2>Afficher un résultat <span aria-hidden="true">&nbsp;&#129518;</span></h2>
+        <p class="lead">
+          Mettre à jour un total dans un panier ou un tableau, ou
+          ajuster le résultat d’un calcul après un changement de paramètre&nbsp;?
+        </p>
+        <p>Encore une fois, HTML est là pour vous aider&nbsp;!</p>
+      </section>
+      <section id="slide-25" class="demo">
+        <h3 class="h2">Exemple d’<code>output</code></h3>
+        <div class="markup">
+          <pre class="language-markup"><code class="language-markup">&lt;fieldset>
+  &lt;legend>Addition&lt;/legend>
+  &lt;p>
+    &lt;label for="un">Chiffre&lt;/label>
+    &lt;input id="un" type="number" value="0"/>
+  &lt;/p>
+  &lt;p>
+    &lt;label for="deux">Autre chiffre&lt;/label>
+    &lt;input id="deux" type="number" value="0"/>
+  &lt;p>
+  &lt;output id="resultat" for="un deux" role="status">&lt;/output>
+&lt;/fieldset>
+            </code>
+          </pre>
+        </div>
+        <div class="playground">
+         <form id="addition">
+           <fieldset>
+             <legend>Addition</legend>
+             <div class="d-grid grid-2">
+               <div>
+                 <p>
+                   <label for="un">Chiffre</label>
+                   <input id="un" type="number" value="0"/>
+                 </p>
+                 <p>
+                   <label for="deux">Autre chiffre</label>
+                   <input id="deux" type="number" value="0"/>
+                 </p>
+               </div>
+               <output id="resultat" for="un deux" role="status"></output>
+             </div>
+           </fieldset>
+         </form>
+        </div>
+        <script>
+          const updateValue = () => {
+            document.getElementById('resultat').value = parseInt(document.getElementById('un').value) + parseInt(document.getElementById('deux').value);
+          }
+          document.addEventListener('DOMContentLoaded', () => {
+            updateValue();
+            document.getElementById('addition').addEventListener('input', () => {
+              updateValue();
+            });
+          });
+        </script>
+      </section>
+      <section id="slide-26">
+        <h3 class="h2">Compatibilité et accessibilité</h3>
+        <h4>Compatibilité</h4>
+        <p>
+          <code>output</code>
+          <a hreflang="en" href="https://caniuse.com/mdn-html_elements_output">est très bien supporté
+            par les navigateurs</a> et
+          <a hreflang="en" href="https://thepaciellogroup.github.io/AT-browser-tests/test-files/output.html">
+            est bien exposé aux technologies d’assistance</a>.
+        </p>
+        <h4>Accessibilité</h4>
+        <p>
+          Il y a tout de même quelques questionnements à avoir sur l’utilisation d’<code>output</code>.
+          <a hreflang="en" href="https://www.scottohara.me/blog/2019/07/10/the-output-element.html">
+            Scott O’Hara a rédigé un article détaillé sur l’accessibilité de l’élément <code>output</code>
+          </a>&nbsp;— en résumé, pensez à expliciter le <code>role="status"</code>.
+        </p>
+      </section>
+
+      <section id="slide-27">
+        <h2>Mettre une colonne en avant <span aria-hidden="true">&nbsp;&#128209;</span></h2>
+        <p class="lead">
+          Un tableau de données peut rapidement devenir illisible&nbsp;: mettre en avant une
+          donnée peut s’avérer crucial pour l’utilisateur.
+        </p>
+        <p>
+          <a hreflang="en" href="https://www.matuzo.at/blog/highlighting-columns/">
+            Manuel Matuzovic a partagé une technique de mise en avant de colonne de tableau sur son blog
+          </a>, basée sur HTML et CSS&nbsp;— notamment <code>:target</code>.
+        </p>
+        <p class="small">Certains superpouvoirs de HTML ont besoin de CSS pour devenir visibles.</p>
+      </section>
+      <section id="slide-28" class="demo">
+        <h3 class="h2">Exemple de colonne mise en avant</h3>
+        <div class="markup">
+          <pre class="language-markup"><code class="language-markup">&lt;table>
+  &lt;caption>Tableau bidon&lt;/caption>
+  &lt;colgroup>
+    &lt;col id="col-un">
+  &lt;/colgroup>
+  &lt;thead>
+    &lt;tr>
+      &lt;th scope="col">&lt;a href="#col-un">Un&lt;/a>&lt;/th>
+    &lt;/tr>
+  &lt;/thead>
+&lt;/table>
+            </code>
+          </pre>
+        </div>
+        <div class="playground">
+          <table class="w-100 mt-1">
+            <caption>Tableau bidon</caption>
+            <colgroup>
+              <col id="col-un">
+              <col id="col-deux">
+              <col id="col-trois">
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col"><a href="#col-un">Un</a></th>
+                <th scope="col"><a href="#col-deux">Deux</a></th>
+                <th scope="col"><a href="#col-trois">Trois</a></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Un truc</td>
+                <td>Deux trucs</td>
+                <td>Et non&nbsp;!</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="slide-29">
+        <h2>Du <i lang="en">live coding</i> grâce à <code>contenteditable</code> <span aria-hidden="true">&nbsp;&#128250;</span></h2>
+        <p class="lead">Vous montrez du CSS et voulez faire une démonstration interactive&nbsp;?</p>
+        <p>
+          <a hreflang="en" href="https://css-tricks.com/css-scroll-snap-slide-deck/#aa-live-editing-functionality">
+            Stephanie Eckles partage une solution outrageusement simple pour implémenter de la modification
+            en direct, en HTML
+          </a>.
+        </p>
+        <p class="small">
+          L’aperçu en direct ne fonctionne qu’avec CSS, mais on peut saupoudrer un peu de JavaScript pour
+          gérer le HTML&nbsp;!
+        </p>
+      </section>
+      <section id="slide-30" class="demo">
+        <h3 class="h2">Exemple de <i lang="en">live coding</i></h3>
+        <div class="style">
+<style contenteditable>.modern-container {
+  display: grid;
+  height: 100%;
+  place-content: center;
+}
+
+.box {
+  aspect-ratio: 1;
+  /* Changez la couleur, pour voir ! */
+  background-color: rebeccapurple;
+  color: white;
+  padding: 1rem;
+}</style>
+        </div>
+        <div class="playground d-flex">
+          <div class="modern-container m-auto">
+            <div class="box">container</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="slide-31">
+        <h3 class="h2">Compatibilité</h3>
+        <p class="lead">
+          <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Global_attributes/contenteditable#compatibilit%C3%A9_des_navigateurs">Le
+          support navigateur est excellent</a>.
+        </p>
+        <h3>Mais… pourquoi&nbsp;?</h3>
+        <p>
+          Cet attribut est la porte ouverte à tout un tas d’idées saugrenues, dont mon exemple favori est
+          <a hreflang="en" href="https://github.com/zserge/awfice">Awfice, une suite bureautique minimaliste</a>.
+        </p>
+        <p class="small">
+          Un exemple&nbsp;? Voici le bloc-notes&nbsp;: <code>data:text/html,&lt;html contenteditable&gt;</code>.
+        </p>
+        <p>
+          C’est aussi un socle d’amélioration progressive pour
+          <a hreflang="en" href="https://github.com/jacwright/wyg">wyg</a> ou
+          <a hreflang="en" href="https://quilljs.com/">Quill</a>, des éditeurs
+          <abbr lang="en" title="What You See Is What You Get">wysiwyg</abbr> légers et viables.
+        </p>
+      </section>
+
+      <section id="slide-32">
+        <h2>D’autres «&nbsp;nouveautés&nbsp;» <span aria-hidden="true">&nbsp;&#10024;</span></h2>
+        <ul>
+          <li><code>kbd</code>, <code>var</code> et <code>samp</code> pour la doc technique — vous écrivez de la doc, pas vrai&nbsp;?</li>
+          <li><code>time</code> et l’attribut <code>datetime</code> pour signaler une date ou un horaire,</li>
+          <li><code>progress</code> et <code>meter</code> pour représenter des mesures,</li>
+          <li><code>audio</code> et <code>video</code>&nbsp;— avec les attributs <code>track</code>, <code>kind</code> et <code>srclang</code>,</li>
+          <li>
+            <code>template</code>, <code>slot</code>, <code>is</code>, <code>part</code> et <code>exportparts</code>, et le
+            <i lang="en">Shadow <abbr title="Document Object Model">DOM</abbr></i>, aussi connu sous le sobriquet
+            de <i lang="en">Web Components</i>,
+          </li>
+          <li>
+            les attributs <code>data-*</code> et l’<abbr lang="en" title="Application Programming Interface">API</abbr>
+            <i lang="en">Dataset</i> pour faire porter des données au <i lang="en">markup</i>
+            tout en restant valide <abbr lang="en" title="World Wide Web Consortium">W3C</abbr>…
+          </li>
+        </ul>
+      </section>
+
+      <section id="slide-33">
+        <h2>Et les perfs <span aria-hidden="true">&nbsp;&#128640;</span></h2>
+        <ul>
+          <li>
+            <code>preload</code>, <code>prefetch</code>, <code>preconnect</code> pour
+            l’attribut <code>rel</code> sur l’élément <code>link</code>,
+          </li>
+          <li>
+            l’attribut <code>loading</code> pour gérer la stratégie de chargement des ressources statiques,
+            avec les valeurs <code>lazy</code> et <code>eager</code>,
+          </li>
+          <li><code>defer</code> et <code>async</code> pour les scripts,</li>
+          <li><code>fetchpriority</code>&nbsp;: pas encore sec…</li>
+        </ul>
+      </section>
+
+      <section id="slide-34">
+        <h2>Merci</h2>
+        <h3>Et à bientôt <span aria-hidden="true">&nbsp;&#128522;</span></h3>
+        <h4>Crédits</h4>
+        <ul>
+          <li>T-shirt HTML façon <span aria-hidden="true">&#129370;&nbsp;</span><b>AC/DC</b><span aria-hidden="true">&nbsp;&#129370;</span>&nbsp;: <a hreflang="en" href="https://www.etsy.com/fr/listing/1071868312/html-t-shirt-unisexe-a-manches-courtes">HTMLZ sur Etsy</a> —&nbsp;par <a hreflang="en" href="https://cdpn.io/stevef/debug/dyGeywr">Steve Faulkner</a>&nbsp;;</li>
+          <li>Pictogrammes&nbsp;: <a hreflang="en" href="https://thenounproject.com/marekpolakovic/collection/rounded-ui">Rounded UI</a> —&nbsp;par <a hreflang="en" href="https://www.marekpolakovic.sk/">Marek Polakovic</a>&nbsp;;</li>
+          <li>Emojis&nbsp;: <a hreflang="en" href="https://github.com/twitter/twemoji">Twemoji</a> —&nbsp;par Twitter&nbsp;;</li>
+          <li>Typographie de titraille&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/bello-pro">Bello Pro</a> —&nbsp;créée par <a hreflang="en" href="https://www.underware.nl/">Underware</a>&nbsp;;</li>
+          <li>Typographie de labeur&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/museo-slab">Museo Slab</a> —&nbsp;créée par <a hreflang="en" href="https://www.exljbris.com/">Exljbris</a>&nbsp;;</li>
+          <li>Moteur de présentation inspiré de <a hreflang="en" href="https://css-tricks.com/css-scroll-snap-slide-deck/">"<cite lang="en">CSS scroll-snap slide deck that supports live coding</cite>" de Stephanie Eckles sur Smashing Magazine</a>.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <ul role="list">
+        <li><a href="https://www.ffoodd.fr">
+            <img src="../accesslide/img/ffoodd.svg?2" alt="Blog de Gaël Poupard" height="32" width="32" />
+        </a></li>
+        <li><a href="https://twitter.com/ffoodd_fr">
+            <img src="../accesslide/img/twitter.svg?2" alt="@ffoodd_fr sur Twitter" height="32" width="32" />
+        </a></li>
+        <li><a href="https://github.com/ffoodd/" hreflang="en">
+            <img src="../accesslide/img/github.svg?2" alt="@ffoodd sur Github" height="32" width="32" />
+        </a></li>
+      </ul>
+    </footer>
+
+    <script src="../accesslide/js/prism.min.js"></script>
+    <script src="../accesslide/js/twemoji.min.js"></script>
+    <script>
+      twemoji.parse(document.body, {folder: 'svg', ext: '.svg'});
+      document.addEventListener('DOMContentLoaded', () => {
+        document.body.style.setProperty(
+          '--slides', String(document.querySelector('main').childElementCount)
+        );
+
+        let io = new IntersectionObserver(entries => {
+          if (entries[0].isIntersecting === true) {
+            history.pushState({}, "", `#${entries[0].target.id}`);
+          }
+        }, {
+          root: document.querySelector('main'),
+          threshold: [1]
+        });
+
+        const slides = document.querySelectorAll('section[id]');
+        for (let i = 0; i < slides.length; i++) {
+          io.observe(slides[i]);
+        }
+      });
+    </script>
+  </body>
+</html>

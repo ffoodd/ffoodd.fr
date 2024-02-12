@@ -1,0 +1,2095 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<title>Dessine-moi un graphique (en CSS)</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Dessine-moi un graphique (en CSS) — conférence donnée à Touraine Tech 2024, par Gaël Poupard">
+	<meta name="author" content="Gaël Poupard">
+	<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+	<link rel="preconnect" href="https://twemoji.maxcdn.com">
+	<link rel="preconnect" href="https://cdn.jsdelivr.net">
+	<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../accesslide/fonts/bello-pro.woff2">
+	<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../accesslide/fonts/museo-slab-300.woff2">
+	<link rel="stylesheet" href="tnt.css?3" type="text/css" media="screen">
+</head>
+<body>
+		<main role="main" tabindex="0">
+			<section id="slide-1" class="d-flex flex-column justify-between">
+				<p>
+					<span class="h2">Dessine-moi un graphique (en <abbr lang="en" title="Cascading StyleSheet">CSS</abbr>)</span><br>
+					Suite de «&nbsp;<cite>La donnée graphique avec HTML et CSS</cite>&nbsp;» donnée
+					<a href="https://vimeo.com/296245804">à Paris Web 2018 (Viméo)</a>.
+				</p>
+				<dl>
+					<dt>Slides en ligne</dt>
+					<dd><a href="https://www.ffoodd.fr/tnt/">ffoodd.fr/tnt</a></dd>
+					<dt>Documentation complète</dt>
+					<dd><a href="https://ffoodd.github.io/chaarts">ffoodd.github.io/chaarts</a></dd>
+				</dl>
+				<footer>
+					<div class="d-flex">
+						<p class="my-0">Raconté par <a href="https://www.ffoodd.fr">Gaël Poupard</a></p>
+						<ul role="list">
+							<li><a href="https://www.ffoodd.fr">
+								<img src="../accesslide/img/ffoodd.svg" alt="Blog de Gaël Poupard" height="32" width="32">
+							</a></li>
+							<li><a href="https://mamot.fr/@ffoodd">
+								<img src="../accesslide/img/mastodon.svg" alt="@ffoodd sur Mastodon" height="32" width="32">
+							</a></li>
+							<li><a href="https://github.com/ffoodd/">
+								<img src="../accesslide/img/github.svg" alt="@ffoodd sur Github" height="32" width="32">
+							</a></li>
+							<li><a href="https://www.linkedin.com/in/ga%C3%ABl-poupard-40117b30/">
+								<img src="../accesslide/img/linkedin.svg" alt="Gaël Poupard sur Linkedin" height="32" width="32">
+							</a></li>
+							<li><a href="https://www.paris-web.fr/">
+								<img src="../accesslide/img/pw.svg" alt="Paris Web" height="32" width="32">
+							</a></li>
+						</ul>
+					</div>
+					<p>
+						<a href="https://www.groupeonepoint.com">
+							<img src="../accesslide/img/onepoint.svg" width="166" height="80" alt="onepoint">
+						</a>
+					</p>
+				</footer>
+			</section>
+
+			<section id="slide-2">
+				<h2>Le principe de moindre pouvoir <span aria-hidden="true">&nbsp;&#129412;</span></h2>
+				<p>
+					C’est <a hreflang="en" href="https://www.w3.org/DesignIssues/Principles.html">un des axiomes du web</a>,
+					proposés par <cite>Tim Berners-Lee</cite> en 1998
+					—&nbsp;à côté de <abbr lang="en" title="Keep It Simple, Stupid!">kiss</abbr>, du <i lang="en">design</i>
+					modulaire, de la <strong>tolérance</strong> ou de la <strong>décentralisation</strong>.
+				</p>
+				<p>
+					Le mantra de l’<strong>amélioration progressive</strong>, en somme…
+				</p>
+			</section>
+
+			<section id="slide-3">
+				<h2>Définition<span aria-hidden="true">&nbsp;&#128200;</span></h2>
+				<p>Un <dfn>graphique de données</dfn> est&nbsp;:</p>
+				<ol>
+					<li>un ensemble de clés,<span aria-hidden="true">&nbsp;&#128273;</span></li>
+					<li>associées à une ou plusieurs valeurs,<span aria-hidden="true">&nbsp;&#128182;</span></li>
+					<li>disposées sur une échelle,<span aria-hidden="true">&nbsp;&#128207;</span></li>
+					<li>mises en forme afin d’en faciliter la compréhension.<span aria-hidden="true">&nbsp;&#128396;</span></li>
+				</ol>
+				<p class="small">
+					Vous pourrez en apprendre plus sur
+					<a href="https://fr.wikipedia.org/wiki/Repr%C3%A9sentation_graphique_de_donn%C3%A9es">la représentation graphique de données sur Wikipédia</a>.
+				</p>
+			</section>
+
+			<section id="slide-4">
+				<h2>Piqûre de rappel<span aria-hidden="true">&nbsp;&#128137;</span></h2>
+				<p>
+					Le plus important, c’est le contenu —&nbsp;et par extension, sa sémantique.<br>
+					Pour <strong>décrire</strong> un ensemble de clés et valeurs en <abbr lang="en" title="HyperText Markup Language" aria-label="HyperText Markup Language">html</abbr>, il n’existe pas moult choix —&nbsp;en fait, deux&nbsp;:
+				</p>
+				<ol>
+					<li>les listes de définitions&nbsp;: <code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code> et <code>&lt;dd&gt;</code>&nbsp;;</li>
+					<li>les <strong>tableaux de données</strong>, solution plébiscitée.</li>
+				</ol>
+				<p class="small">Et oui, ça sert à ça en vrai.</p>
+			</section>
+
+			<section id="slide-5">
+				<span class="h2" aria-hidden="true">Retour vers 2018<span class="back-to-the-future">&nbsp;⇠</span></span>
+				<ul class="galerie d-grid grid-6" role="list">
+					<li><img loading=lazy" height="180" class="m-auto" src="../devfest.2023/img/galerie/galerie-1.png" alt="Graphique en barres" width="315"></li>
+					<li><img loading=lazy" height="180" class="m-auto" src="../devfest.2023/img/galerie/galerie-2.png" alt="Graphique en chute d’eau" width="385"></li>
+					<li><img loading=lazy" height="180" class="m-auto" src="../devfest.2023/img/galerie/galerie-3.png" alt="Graphique linéaire de surface" width="394"></li>
+					<li><img loading=lazy" height="180" class="m-auto" src="../devfest.2023/img/galerie/galerie-4.png" alt="Graphique linéaire à points" width="316"></li>
+					<li><img loading=lazy" height="180" class="m-auto" src="../devfest.2023/img/galerie/galerie-5.png" alt="Histogramme simple" width="334"></li>
+					<li><img loading=lazy" height="180" class="m-auto" src="../devfest.2023/img/galerie/galerie-6.png" alt="Histogramme à double entrée" width="399"></li>
+					<li><img loading=lazy" height="180" class="m-auto" src="../devfest.2023/img/galerie/galerie-7.png" alt="Camembert simple" width="339"></li>
+					<li><img loading=lazy" height="180" class="m-auto" src="../devfest.2023/img/galerie/galerie-8.png" alt="Camembert avec interaction" width="340"></li>
+					<li><img loading=lazy" height="180" class="m-auto" src="../devfest.2023/img/galerie/galerie-9.png" alt="Graphique polaire" width="339"></li>
+					<li><img loading=lazy" height="180" class="m-auto" src="../devfest.2023/img/galerie/galerie-11.png" alt="Graphique en donut" width="310"></li>
+					<li><img loading=lazy" height="180" class="m-auto" src="../devfest.2023/img/galerie/galerie-12.png" alt="Graphique radar simple" width="168"></li>
+					<li><img loading=lazy" height="180" class="m-auto" src="../devfest.2023/img/galerie/galerie-10.png" alt="Graphique radar à double entrée" width="165"></li>
+				</ul>
+				<p class="small">
+					Avec en vrac des idées de Trys Mudford, Heydon Pickering, Greg Whitworth, Miriam Suzanne, Andy Bell,
+					Sebastian Shaw, Hidde De vries, Ire Aderinokun, Roman Komarov, Sara Soueidan, Michelle Barker, Cassie Evans,
+					Carter Li, Ana Tudor, Lea Verou, Stereokai et Patrick Brosset…
+				</p>
+			</section>
+
+			<section id="slide-6">
+				<span class="h2" aria-hidden="true">Retour vers 2018<span class="back-to-the-future">&nbsp;⇠</span></span>
+				<p class="lead">En résumé&nbsp;:</p>
+				<ul>
+					<li>Côté HTML, ce sont des tableaux&nbsp;;</li>
+					<li>Avec une couche de CSS très avancés&nbsp;;</li>
+					<li>Et un JavaScript minimaliste pour permettre à l’utilisateur de débrayer les styles.</li>
+				</ul>
+				<figure role="group">
+					<img alt="Image de l’interrupteur permettant de désactiver les styles sur les tableaux, passant du mode « guilleret » au mode « sobre »."
+							 loading="lazy" src="../devfest.2023/img/interrupteur.png" height="53" width="626">
+				</figure>
+				<p>
+					C’est donc <strong>accessible</strong>, <strong>performant</strong>, <strong>autonome</strong> et <strong>statique</strong>.
+					Mais nous sommes en 2023&nbsp;: on peut améliorer tout ça&nbsp;!
+					Lançons-nous avec un <strong>camembert interactif</strong>&nbsp;!
+				</p>
+			</section>
+
+			<section id="slide-7" class="demo">
+				<h2>Le tableau nu<span aria-hidden="true">&nbsp;&#128293;</span></h2>
+				<div class="markup">
+					<pre class="scrollable-container"><code class="language-markup">&lt;table&gt;
+	&lt;caption&gt;[…]&lt;/caption&gt;
+	&lt;thead&gt;
+	&lt;tr&gt;
+		&lt;th scope="col"&gt;[…]&lt;/th&gt;
+		&lt;th scope="col"&gt;[…]&lt;/th&gt;
+	&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+	&lt;tr&gt;
+		&lt;th scope="row"&gt;HTML&lt;/th&gt;
+		&lt;td&gt;2 %&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;[…]&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+				</div>
+				<div class="playground">
+					<table class="example">
+						<caption>
+							Distribution du poids des ressources pour
+							<a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a>
+						</caption>
+						<thead>
+							<tr>
+								<th scope="col">Ressource</th>
+								<th scope="col">Proportion</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">HTML</th>
+								<td>2&nbsp;%</td>
+							</tr>
+							<tr>
+								<th scope="row">CSS</th>
+								<td>2&nbsp;%</td>
+							</tr>
+							<tr>
+								<th scope="row">JS</th>
+								<td>32&nbsp;%</td>
+							</tr>
+							<tr>
+								<th scope="row">JSON</th>
+								<td>1&nbsp;%</td>
+							</tr>
+							<tr>
+								<th scope="row">Images</th>
+								<td>44&nbsp;%</td>
+							</tr>
+							<tr>
+								<th scope="row">Fontes</th>
+								<td>17&nbsp;%</td>
+							</tr>
+							<tr>
+								<th scope="row">Autre</th>
+								<td>2&nbsp;%</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+
+			<section id="slide-8" class="demo">
+				<h2>Un peu d’habillage<span aria-hidden="true">&nbsp;&#129510;</span></h2>
+				<div class="markup">
+					<pre class="scrollable-container language-css"><code class="language-css">@layer framework, element, chaarts;
+
+@import url("https://bootstrap.min.css") layer(framework);
+
+@layer element {
+	table {
+		border-collapse: collapse;
+		caption-side: top;
+		font-feature-settings: "tnum";
+		inline-size: 100%;
+		margin-block-end: 1.5rem;
+		vertical-align: top;
+	}
+
+	table > caption:first-child {
+		font-style: italic;
+	}
+}</code></pre>
+				</div>
+				<div class="playground">
+					<table class="chaarts">
+						<caption>
+							Distribution du poids des ressources pour
+							<a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a>
+						</caption>
+						<thead>
+							<tr>
+								<th scope="col">Ressource</th>
+								<th scope="col">Proportion</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">HTML</th>
+								<td>2&nbsp;%</td>
+							</tr>
+							<tr>
+								<th scope="row">CSS</th>
+								<td>2&nbsp;%</td>
+							</tr>
+							<tr>
+								<th scope="row">JS</th>
+								<td>32&nbsp;%</td>
+							</tr>
+							<tr>
+								<th scope="row">JSON</th>
+								<td>1&nbsp;%</td>
+							</tr>
+							<tr>
+								<th scope="row">Images</th>
+								<td>44&nbsp;%</td>
+							</tr>
+							<tr>
+								<th scope="row">Fontes</th>
+								<td>17&nbsp;%</td>
+							</tr>
+							<tr>
+								<th scope="row">Autre</th>
+								<td>2&nbsp;%</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+
+			<section id="slide-9" data-note="Indice de « scrollabilité » UX… Mais au clavier ?">
+				<h2>Un vrai défilé<span aria-hidden="true">&nbsp;&#128087;</span></h2>
+				<div class="demo">
+					<p>
+						<a hreflang="en" href="http://lea.verou.me/2012/04/background-attachment-local/">Technique créée par
+							<strong>Lea verou</strong></a>, <a hreflang="en" href="https://codepen.io/huijing/pen/XBGaNQ">adaptée
+						aux tableaux par <strong>Chen Hui Jing</strong></a>.
+					</p>
+					<div class="markup">
+						<pre class="scrollable-container language-css"><code class="language-css">@layer element {
+	.scrollable-container {
+		background:
+			local linear-gradient(to right, #fff 30%, #0000) 0 0 / 2.5rem 100% no-repeat,
+			local linear-gradient(to right, #0000, #fff 70%) 100% / 2.5rem 100% no-repeat,
+			scroll radial-gradient(farthest-side at 0% 50%, #0004, #0000) 0 0 / 1rem 100% no-repeat,
+			#fff
+			scroll radial-gradient(farthest-side at 100% 50%, #0004, #0000) 100% / 1rem 100% no-repeat;
+		max-inline-size: 100%;
+		-webkit-overflow-scrolling: touch;
+		overflow-x: auto;
+		overflow-y: hidden;
+	}
+}</code></pre>
+					</div>
+					<div class="playground">
+						<div class="scrollable-container example">
+							<table class="chaarts chaarts-one">
+								<caption>
+									Distribution du poids des ressources pour
+									<a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a>
+								</caption>
+								<thead>
+									<tr>
+										<th scope="col">Ressource</th>
+										<th scope="col">Proportion</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row">HTML</th>
+										<td>2&nbsp;%</td>
+									</tr>
+									<tr>
+										<th scope="row">CSS</th>
+										<td>2&nbsp;%</td>
+									</tr>
+									<tr>
+										<th scope="row">JS</th>
+										<td>32&nbsp;%</td>
+									</tr>
+									<tr>
+										<th scope="row">JSON</th>
+										<td>1&nbsp;%</td>
+									</tr>
+									<tr>
+										<th scope="row">Images</th>
+										<td>44&nbsp;%</td>
+									</tr>
+									<tr>
+										<th scope="row">Fontes</th>
+										<td>17&nbsp;%</td>
+									</tr>
+									<tr>
+										<th scope="row">Autre</th>
+										<td>2&nbsp;%</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="slide-10" data-note="Après le clavier, les styles de base">
+				<h2>Un défilé accessible<span aria-hidden="true">&nbsp;&#9855;</span></h2>
+				<p class="lead">
+					Pour qu’un élément défilable soit accessible au clavier, on a besoin d’un petit bout de JavaScript.
+				</p>
+				<div class="markup">
+					<pre class="scrollable-container"><code class="language-javascript">const regions = document.querySelectorAll('.scrollable-container');
+regions.forEach(region => {
+	const width = region.offsetWidth;
+	const child = region.querySelector('table') || region.querySelector('code');
+
+	if (child.offsetWidth > width) {
+		region.setAttribute('tabindex', '0');
+	} else {
+		if (region.hasAttribute('tabindex')) {
+			region.removeAttribute('tabindex');
+		}
+	}
+});</code></pre>
+				</div>
+			</section>
+
+			<section id="slide-11" class="demo" data-note="On crée un contexte et on nettoie le tableau… → légende sur une ligne">
+				<h2>Début de chantier<span aria-hidden="true">&nbsp;&#128679;</span></h2>
+				<div class="markup">
+					<pre class="scrollable-container language-css"><code class="language-css">@layer container {
+	.chaarts {
+		border-collapse: separate;
+		border-spacing: 0;
+		caption-side: bottom;
+		contain: content;
+		empty-cells: hide;
+		overflow: hidden;
+	}
+
+	.chaarts > caption:first-child {
+		font-style: normal;
+	}
+
+	.chaarts th,
+	.chaarts td	{
+		border: 0;
+		padding: 0;
+	}
+}</code></pre>
+				</div>
+				<div class="playground">
+					<div class="scrollable-container">
+						<table class="chaarts chaarts-one chaarts-two">
+							<caption>
+								Distribution du poids des ressources pour
+								<a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a>
+							</caption>
+							<thead>
+							<tr>
+								<th scope="col">Ressource</th>
+								<th scope="col">Proportion</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<th scope="row">HTML</th>
+								<td>2&nbsp;%</td>
+							</tr>
+							<tr>
+								<th scope="row">CSS</th>
+								<td>2&nbsp;%</td>
+							</tr>
+							<tr>
+								<th scope="row">JS</th>
+								<td>32&nbsp;%</td>
+							</tr>
+							<tr>
+								<th scope="row">JSON</th>
+								<td>1&nbsp;%</td>
+							</tr>
+							<tr>
+								<th scope="row">Images</th>
+								<td>44&nbsp;%</td>
+							</tr>
+							<tr>
+								<th scope="row">Fontes</th>
+								<td>17&nbsp;%</td>
+							</tr>
+							<tr>
+								<th scope="row">Autre</th>
+								<td>2&nbsp;%</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+
+			<section id="slide-12" class="demo" data-note="Ensuite : les couleurs">
+				<h2>Devenir légende<span aria-hidden="true">&nbsp&nbsp;&#129502;</span></h2>
+				<div class="markup">
+					<pre class="scrollable-container language-css"><code class="language-css">@layer chaarts {
+	@media screen and (min-width: 60rem) {
+		.chaarts tbody {
+			display: flex;
+		}
+
+		.chaarts tbody tr {
+			flex: 1 1 auto;
+		}
+	}
+
+	.chaarts tbody tr[scope="row"] {
+		padding-inline-end: .5rem;
+	}
+
+	.chaarts tbody [scope="row"]::before {
+		background: var(--color, currentcolor);
+		block-size: 1rem;
+		content: "";
+		display: inline-block;
+		inline-size: 1rem;
+		transform: translate3d(-.2rem, .1rem, 0);
+	}
+}</code></pre>
+				</div>
+				<div class="playground">
+					<div class="scrollable-container">
+						<table class="chaarts chaarts-one chaarts-two chaarts-three">
+							<caption>
+								Distribution du poids des ressources pour
+								<a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a>
+							</caption>
+							<thead>
+								<tr>
+									<th scope="col">Ressource</th>
+									<th scope="col">Proportion</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">HTML</th>
+									<td>2&nbsp;%</td>
+								</tr>
+								<tr>
+									<th scope="row">CSS</th>
+									<td>2&nbsp;%</td>
+								</tr>
+								<tr>
+									<th scope="row">JS</th>
+									<td>32&nbsp;%</td>
+								</tr>
+								<tr>
+									<th scope="row">JSON</th>
+									<td>1&nbsp;%</td>
+								</tr>
+								<tr>
+									<th scope="row">Images</th>
+									<td>44&nbsp;%</td>
+								</tr>
+								<tr>
+									<th scope="row">Fontes</th>
+									<td>17&nbsp;%</td>
+								</tr>
+								<tr>
+									<th scope="row">Autre</th>
+									<td>2&nbsp;%</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+
+			<section id="slide-13" class="demo" data-note="Et si on générait les couleurs ?">
+				<h2>Forger la légende<span aria-hidden="true">&nbsp&nbsp;&#128296;</span></h2>
+				<div class="markup">
+					<pre class="scrollable-container language-markup"><code class="language-markup">&lt;table class="chaarts pie"&gt;
+	&lt;caption&gt;[…]&lt;/caption&gt;
+	&lt;thead class="sr-only"&gt;
+		&lt;tr&gt;
+			&lt;th scope="col"&gt;[…]&lt;/th&gt;
+			&lt;th scope="col"&gt;[…]&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+		&lt;tr style="--color: purple;"&gt;
+			&lt;th scope="row"&gt;HTML&lt;/th&gt;
+			&lt;td&gt;2 %&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;[…]&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+					<pre class="scrollable-container language-css"><code class="language-css">
+					</code></pre>
+				</div>
+				<div class="playground">
+					<div class="scrollable-container">
+						<table class="chaarts chaarts-one chaarts-two chaarts-three">
+							<caption>
+								Distribution du poids des ressources pour
+								<a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a>
+							</caption>
+							<thead class="sr-only">
+								<tr>
+									<th scope="col">Ressource</th>
+									<th scope="col">Proportion</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr style="--color: purple;">
+									<th scope="row">HTML</th>
+									<td>2&nbsp;%</td>
+								</tr>
+								<tr style="--color: pink;">
+									<th scope="row">CSS</th>
+									<td>2&nbsp;%</td>
+								</tr>
+								<tr style="--color: blue;">
+									<th scope="row">JS</th>
+									<td>32&nbsp;%</td>
+								</tr>
+								<tr style="--color: yellow;">
+									<th scope="row">JSON</th>
+									<td>1&nbsp;%</td>
+								</tr>
+								<tr style="--color: green;">
+									<th scope="row">Images</th>
+									<td>44&nbsp;%</td>
+								</tr>
+								<tr style="--color: red;">
+									<th scope="row">Fontes</th>
+									<td>17&nbsp;%</td>
+								</tr>
+								<tr style="--color: grey;">
+									<th scope="row">Autre</th>
+									<td>2&nbsp;%</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+
+			<section id="slide-14" data-note="hsl + variables. → Démo !">
+				<h2>Une palette de couleurs automagique<span aria-hidden="true">&nbsp;&#127752;</span></h2>
+				<div class="demo grid-1-2">
+					<p>
+						<a hreflang="en" href="https://www.sarasoueidan.com/blog/hex-rgb-to-hsl/"><strong>Sara Soueidan</strong>
+						a détaillé la combinaison de <code>hsl()</code> et <code>calc()</code></a>.
+					</p>
+					<div class="markup">
+						<pre class="scrollable-container language-css"><code class="language-css">.chaarts-container {
+	--chaarts-purple: #639;
+	--chaarts-pink: #e11a81;
+	--chaarts-blue: #0172f0;
+	--chaarts-yellow: #fdc02f;
+	--chaarts-green: #39ca74;
+	--chaarts-red: #ff2d40;
+	--chaarts-gray: #585462;
+}</code></pre>
+					</div>
+					<div class="markup">
+						<pre class="scrollable-container language-css"><code class="language-css">.chaarts-container {
+	--hue: 270;
+	--lightness: 50%;
+	--saturation: 100%;
+	--chaarts-purple: hsl(var(--hue) calc(var(--saturation) / 2) var(--lightness));
+	--chaarts-pink: hsl(calc(var(--hue) + 60) var(--saturation) var(--lightness));
+	--chaarts-blue: hsl(calc(var(--hue) - 60) var(--saturation) var(--lightness));
+	--chaarts-yellow: hsl(40 var(--saturation) var(--lightness));
+	--chaarts-green: hsl(calc(var(--hue) - 120) var(--saturation) var(--lightness));
+	--chaarts-red: hsl(calc(var(--hue) + 90) var(--saturation) var(--lightness));
+	--chaarts-gray: hsl(0 0% var(--lightness));
+}</code></pre>
+					</div>
+				</div>
+			</section>
+
+			<section id="slide-15" data-note="→ dark mode !">
+				<h3 class="h2">Démonstration <i lang="en">live</i></h3>
+				<div class="style">
+					<style contenteditable>.demo-hue {
+	--hue: 270;
+	--lightness: 50%;
+	--saturation: 100%;
+	--chaarts-purple: hsl(var(--hue) calc(var(--saturation) / 2) var(--lightness));
+	--chaarts-pink: hsl(calc(var(--hue) + 60) var(--saturation) var(--lightness));
+	--chaarts-blue: hsl(calc(var(--hue) - 60) var(--saturation) var(--lightness));
+	--chaarts-yellow: hsl(40 var(--saturation) var(--lightness));
+	--chaarts-green: hsl(calc(var(--hue) - 120) var(--saturation) var(--lightness));
+	--chaarts-red: hsl(calc(var(--hue) + 90) var(--saturation) var(--lightness));
+	--chaarts-gray: hsl(0 0% var(--lightness));
+}
+
+@media (min-width: 30em) {
+	.demo-hue {}
+}</style>
+				</div>
+				<div class="playground d-grid grid-6 demo-hue">
+					<svg aria-hidden="true"><rect fill="var(--chaarts-purple)" width="100%" height="100%"></svg>
+					<svg aria-hidden="true"><rect fill="var(--chaarts-pink)" width="100%" height="100%"></svg>
+					<svg aria-hidden="true"><rect fill="var(--chaarts-blue)" width="100%" height="100%"></svg>
+					<svg aria-hidden="true"><rect fill="var(--chaarts-yellow)" width="100%" height="100%"></svg>
+					<svg aria-hidden="true"><rect fill="var(--chaarts-green)" width="100%" height="100%"></svg>
+					<svg aria-hidden="true"><rect fill="var(--chaarts-red)" width="100%" height="100%"></svg>
+				</div>
+			</section>
+
+			<section id="slide-16" data-note="→ contrastes élevés">
+				<h3 class="h2">Mode sombre / clair<span aria-hidden="true">&nbsp;&#127763;</span></h3>
+				<p class="lead">
+					Vous avez compris le principe&nbsp;: tous les arguments de <code>hsl()</code>
+					peuvent être ajustés&nbsp;!
+					<br>
+					<small>
+						Vous avez remarqué l’absence de virgules&nbsp;?
+						C’est la notation séparée par des espaces&nbsp;: <code>rgb(0 0 0 / .5)</code>.
+					</small>
+				</p>
+				<div class="markup">
+						<pre class="scrollable-container language-css"><code class="language-css">.chaarts-container {
+	color-scheme: light;
+	--background-lightness: 100%;
+	--foreground-lightness: 0%;
+	--background: hsl(0 0% var(--background-lightness));
+	--foreground: hsl(0 0% var(--foreground-lightness));
+	background-color: var(--background);
+	color: var(--foreground);
+}
+
+@media (prefers-color-scheme: dark) {
+	.chaarts-container {
+		color-scheme: dark;
+		--background-lightness: 0%;
+		--foreground-lightness: 100%;
+	}
+}</code></pre>
+				</div>
+			</section>
+
+			<section id="slide-17" data-note="→ Et sans couleur ?">
+				<h3 class="h2">Mode contrastes élevés<span aria-hidden="true">&nbsp;&#9680;</span></h3>
+				<div class="demo">
+					<p>
+						<a hreflang="en" href="https://adrianroselli.com/2021/02/whcm-and-system-colors.html"><strong>Adrian Roselli</strong>
+						a partagé une mine d’informations sur les contrastes élevés</a>.
+					</p>
+					<div class="markup">
+						<pre class="scrollable-container language-css"><code class="language-css">@media (prefers-contrast: more) {
+	.chaarts-container {
+		--background: Canvas;
+		--foreground: CanvasText;
+		--chaarts-purple: LinkText;
+		--chaarts-pink: CanvasText;
+		--chaarts-blue: Highlight;
+		--chaarts-yellow: ActiveText;
+		--chaarts-green: InactiveBorder;
+		--chaarts-red: VisitedText;
+		--chaarts-gray: ButtonShadow;
+	}
+}</code></pre>
+					</div>
+					<div class="playground d-grid grid-6 demo-hue">
+						<svg aria-hidden="true"><rect fill="var(--chaarts-purple)" width="100%" height="100%"></svg>
+						<svg aria-hidden="true"><rect fill="var(--chaarts-pink)" width="100%" height="100%"></svg>
+						<svg aria-hidden="true"><rect fill="var(--chaarts-blue)" width="100%" height="100%"></svg>
+						<svg aria-hidden="true"><rect fill="var(--chaarts-yellow)" width="100%" height="100%"></svg>
+						<svg aria-hidden="true"><rect fill="var(--chaarts-green)" width="100%" height="100%"></svg>
+						<svg aria-hidden="true"><rect fill="var(--chaarts-red)" width="100%" height="100%"></svg>
+
+						<svg aria-hidden="true"><rect fill="LinkText" width="100%" height="100%"></svg>
+						<svg aria-hidden="true"><rect fill="CanvasText" width="100%" height="100%"></svg>
+						<svg aria-hidden="true"><rect fill="Highlight" width="100%" height="100%"></svg>
+						<svg aria-hidden="true"><rect fill="ActiveText" width="100%" height="100%"></svg>
+						<svg aria-hidden="true"><rect fill="InactiveBorder" width="100%" height="100%"></svg>
+						<svg aria-hidden="true"><rect fill="VisitedText" width="100%" height="100%"></svg>
+					</div>
+				</div>
+			</section>
+
+			<section id="slide-18" data-note="On est bons pour la légende. → On attaque le dessin ?">
+				<h3 class="h2">Si la couleur n’existait pas…<span aria-hidden="true">&nbsp;&#9940;</span></h3>
+				<div class="demo">
+					<p>
+						Basé sur <a hreflang="en" href="https://www.trysmudford.com/blog/using-css-custom-properties/">une idée de <strong>Trys Mudford</strong>
+						pour limiter les requêtes</a>
+						et <a hreflang="en" href="https://chriscoyier.net/2023/01/26/un-encoded-svg-backgrounds-in-css-also-writing-css-in-css-lolz/">une
+						recommandation de <strong>Chris Coyier</strong> (via <strong>Charlotte Dann</strong>) sur ce qu’il faut encoder</a> —&nbsp;en
+						résumé, seulement l’octhotorpe (<code>#</code>).
+					</p>
+					<div class="markup scrollable-container">
+						<pre class="scrollable-container language-css"><code class="language-css">.chaarts-container {
+	--checkers: url("data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'&gt;&lt;g fill='hsl(0 0% 100% / .6)'&gt;&lt;path fill-rule='evenodd' d='M0 0h4v4H0V0zm4 4h4v4H4V4z'/&gt;&lt;/g&gt;&lt;/svg&gt;");
+	--hexagons: url("data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' width='14' height='24' viewBox='0 0 28 49'&gt;&lt;g fill-rule='evenodd'&gt;&lt;g fill='hsl(0 0% 100% / .6)' fill-rule='nonzero'&gt;&lt;path d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;");
+	--triangles: url("data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' width='8' height='16' viewBox='0 0 36 72'&gt;&lt;g fill-rule='evenodd'&gt;&lt;g fill='hsl(0 0% 100% / .6)'&gt;&lt;path d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;");
+	--zig: url("data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12'&gt;&lt;g fill-rule='evenodd'&gt;&lt;g fill='hsl(0 0% 100% / .6)'&gt;&lt;path d='M9.8 12L0 2.2V.8l10 10 10-10v1.4L10.2 12h-.4zm-4 0L0 6.2V4.8L7.2 12H5.8zm8.4 0L20 6.2V4.8L12.8 12h1.4zM9.8 0l.2.2.2-.2h-.4zm-4 0L10 4.2 14.2 0h-1.4L10 2.8 7.2 0H5.8z'/&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;");
+	--stripes: url("data:image/svg+xml,&lt;svg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'&gt;&lt;g fill='hsl(0 0% 100% / .6)' fill-rule='evenodd'&gt;&lt;path d='M5 0h1L0 6V5zM6 5v1H5z'/&gt;&lt;/g&gt;&lt;/svg&gt;");
+	--dots: url("data:image/svg+xml,&lt;svg width='10' height='10' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'&gt;&lt;g fill='hsl(0 0% 100% / .6)' fill-rule='evenodd'&gt;&lt;circle cx='3' cy='3' r='3'/&gt;&lt;circle cx='13' cy='13' r='3'/&gt;&lt;/g&gt;&lt;/svg&gt;");
+}
+
+.chaarts tr {
+	background: var(--color) var(--background);
+}
+
+.chaarts tr:nth-of-type(1n + 1) {
+ --background: var(--checkers);
+}
+
+.chaarts tr:nth-of-type(2n + 2) {
+ --background: var(--hexagons);
+}</code></pre>
+					</div>
+					<div class="playground d-grid grid-6 demo-hue demo-pattern">
+						<div style="--color: var(--chaarts-purple)"></div>
+						<div style="--color: var(--chaarts-pink)"></div>
+						<div style="--color: var(--chaarts-blue)"></div>
+						<div style="--color: var(--chaarts-yellow)"></div>
+						<div style="--color: var(--chaarts-green)"></div>
+						<div style="--color: var(--chaarts-red)"></div>
+
+						<div style="--color: LinkText"></div>
+						<div style="--color: CanvasText"></div>
+						<div style="--color: Highlight"></div>
+						<div style="--color: ActiveText"></div>
+						<div style="--color: InactiveBorder"></div>
+						<div style="--color: VisitedText"></div>
+
+						<div style="--color: gray"></div>
+						<div style="--color: gray"></div>
+						<div style="--color: gray"></div>
+						<div style="--color: gray"></div>
+						<div style="--color: gray"></div>
+						<div style="--color: gray"></div>
+					</div>
+				</div>
+			</section>
+
+			<section id="slide-19" class="demo">
+				<h2>Un peu d’espace<span aria-hidden="true">&nbsp;&#128752;</span></h2>
+				<div class="markup">
+					<pre class="scrollable-container language-css"><code class="language-css">.chaarts {
+	--radius: 32rem;
+
+	margin: 0 auto;
+	padding-block-start: calc(var(--radius) + 2rem);
+	position: relative;
+}</code></pre>
+				</div>
+				<div class="playground">
+					<div class="scrollable-container chaarts-container has-colors">
+						<table class="chaarts chaarts-one chaarts-two chaarts-three chaarts-four">
+							<caption>
+								Distribution du poids des ressources pour
+								<a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a>
+							</caption>
+							<thead class="sr-only">
+								<tr>
+									<th scope="col">Ressource</th>
+									<th scope="col">Proportion</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr style="--color: var(--chaarts-purple);">
+									<th scope="row">HTML</th>
+									<td>2&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-pink);">
+									<th scope="row">CSS</th>
+									<td>2&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-blue);">
+									<th scope="row">JS</th>
+									<td>32&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-yellow);">
+									<th scope="row">JSON</th>
+									<td>1&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-green);">
+									<th scope="row">Images</th>
+									<td>44&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-red);">
+									<th scope="row">Fontes</th>
+									<td>17&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-gray);">
+									<th scope="row">Autre</th>
+									<td>2&nbsp;%</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+
+			<section id="slide-20" class="demo" data-note="Les valeurs sont au même endroit. → On va couper !">
+				<h2>Coloniser l’espace<span aria-hidden="true">&nbsp;&#128640;</span></h2>
+				<div class="markup">
+	<pre class="scrollable-container"><code class="language-css">.chaarts td::before {
+	background: var(--color, currentcolor) var(--background);
+	block-size: var(--radius);
+	border-radius: 50%;
+	content: '';
+	inline-size: var(--radius);
+	inset-block-start: calc(var(--radius) / 2);
+	inset-inline-start: 50%;
+	position: absolute;
+	transform: translate3d(-50%, -50%, 0);
+	transform-origin: center;
+}</code></pre>
+				</div>
+				<div class="playground">
+					<div class="scrollable-container chaarts-container has-colors">
+						<table class="chaarts chaarts-one chaarts-two chaarts-three chaarts-four chaarts-five">
+							<caption>
+								Distribution du poids des ressources pour
+								<a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a>
+							</caption>
+							<thead class="sr-only">
+							<tr>
+								<th scope="col">Ressource</th>
+								<th scope="col">Proportion</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr style="--color: var(--chaarts-purple);">
+								<th scope="row">HTML</th>
+								<td>2&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-pink);">
+								<th scope="row">CSS</th>
+								<td>2&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-blue);">
+								<th scope="row">JS</th>
+								<td>32&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-yellow);">
+								<th scope="row">JSON</th>
+								<td>1&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-green);">
+								<th scope="row">Images</th>
+								<td>44&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-red);">
+								<th scope="row">Fontes</th>
+								<td>17&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-gray);">
+								<th scope="row">Autre</th>
+								<td>2&nbsp;%</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+
+			<section id="slide-21" class="demo">
+				<h2>Ça va couper<span aria-hidden="true">&nbsp;&#9773;</span></h2>
+				<div class="style">
+<style contenteditable="true">.demo-clip {
+	clip-path: polygon(
+		0% 0%,
+		50% 0%,
+		50% 50%
+	);
+}</style>
+				</div>
+				<div class="playground d-grid">
+					<div class="demo-clip"></div>
+				</div>
+			</section>
+
+			<section id="slide-22" data-note="Valeur magique ! → Comment on calcule les positions ?">
+				<h2>Découper la tarte<span aria-hidden="true">&nbsp;&#129383;</span></h2>
+				<div class="demo">
+					<p>Vous connaissez l’inspecteur de Firefox&nbsp;?</p>
+					<div class="markup">
+						<pre class="scrollable-container language-css" data-line="6"><code class="language-css" data-line="6">.chaarts td::before {
+	clip-path: polygon(
+		50% 50%,
+		50% 0%,
+		100% 0%,
+		93.8153% 25.9123%
+	);
+}</code></pre>
+					</div>
+					<div class="playground">
+						<div class="scrollable-container chaarts-container has-colors">
+							<table class="chaarts chaarts-one chaarts-two chaarts-three chaarts-four chaarts-five chaarts-six">
+								<caption>
+									Distribution du poids des ressources pour
+									<a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a>
+								</caption>
+								<thead class="sr-only">
+								<tr>
+									<th scope="col">Ressource</th>
+									<th scope="col">Proportion</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr style="--color: var(--chaarts-purple);">
+									<th scope="row">HTML</th>
+									<td>2&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-pink);">
+									<th scope="row">CSS</th>
+									<td>2&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-blue);">
+									<th scope="row">JS</th>
+									<td>32&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-yellow);">
+									<th scope="row">JSON</th>
+									<td>1&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-green);">
+									<th scope="row">Images</th>
+									<td>44&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-red);">
+									<th scope="row">Fontes</th>
+									<td>17&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-gray);">
+									<th scope="row">Autre</th>
+									<td>2&nbsp;%</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="slide-23" class="demo" data-note="Vous avez dit sinus ? → sin() !">
+				<h2>Cherchez l’angle<span aria-hidden="true">&nbsp;&#8894;</span></h2>
+				<div class="lead">
+					<p class="lead">Pour trouver le point sur le cercle&nbsp;:</p>
+					<ol>
+						<li>on identifie le <strong>triangle rectangle</strong> formé par le rayon du cercle, son centre, et notre point cible&nbsp;;</li>
+						<li>on connait son <strong>hypoténuse</strong> —&nbsp;le rayon&nbsp;;</li>
+						<li>mais également <strong>l’angle opposé</strong> —&nbsp;qu’on convertit en radians en le multipliant par <code>0.01745329251</code>, donc…</li>
+						<li>on peut appliquer <a href="https://fr.wikipedia.org/wiki/Loi_des_sinus">la loi des sinus</a> pour trouver la longueur des deux autres côtés&nbsp;! &#128519;</li>
+					</ol>
+				</div>
+				<div class="playground">
+					<div class="scrollable-container chaarts-container has-colors">
+						<table class="chaarts chaarts-one chaarts-two chaarts-three chaarts-four chaarts-five chaarts-six chaarts-seven">
+							<caption>
+								Distribution du poids des ressources pour
+								<a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a>
+							</caption>
+							<thead class="sr-only">
+							<tr>
+								<th scope="col">Ressource</th>
+								<th scope="col">Proportion</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr style="--color: var(--chaarts-purple);">
+								<th scope="row">HTML</th>
+								<td>2&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-pink);">
+								<th scope="row">CSS</th>
+								<td>2&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-blue);">
+								<th scope="row">JS</th>
+								<td>32&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-yellow);">
+								<th scope="row">JSON</th>
+								<td>1&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-green);">
+								<th scope="row">Images</th>
+								<td>44&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-red);">
+								<th scope="row">Fontes</th>
+								<td>17&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-gray);">
+								<th scope="row">Autre</th>
+								<td>2&nbsp;%</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+
+			<section id="slide-24" data-note="Ensuite : on se lance ?">
+				<h2>Les fonctions mathématiques<span aria-hidden="true">&nbsp;&#129400;</span></h2>
+				<h3>En 2018 &#129397;</h3>
+				<div class="markup">
+						<pre class="scrollable-container language-css"><code class="language-css">--sin-α-1: var(--α);
+--sin-α-2: calc((var(--α) * var(--α) * var(--α)) / 6);
+--sin-α-3: calc((var(--α) * var(--α) * var(--α) * var(--α) * var(--α)) / 120);
+--sin-α-4: calc((var(--α) * var(--α) * var(--α) * var(--α) * var(--α) * var(--α) * var(--α)) / 5040);
+--sin-α-5: calc((var(--α) * var(--α) * var(--α) * var(--α) * var(--α) * var(--α) * var(--α) * var(--α) * var(--α)) / 362880);
+/* Finalement ! */
+--sin-α: calc(var(--sin-α-1) - var(--sin-α-2) + var(--sin-α-3) - var(--sin-α-4) + var(--sin-α-5));
+						</code></pre>
+				</div>
+				<h3>En 2023 &#129327;</h3>
+				<div class="markup">
+						<pre class="scrollable-container language-css"><code class="language-css">--sin-α: sin(var(--a));
+						</code></pre>
+				</div>
+			</section>
+
+			<section id="slide-25" data-note="Super ! Mais cet exemple n’est que < 25">
+				<h2>Placer le point<span aria-hidden="true">&nbsp;&#127919;</span></h2>
+				<div class="demo">
+					<p>Pour vérifier vos résultats, <code>window.getComputedStyle(temp0, ':before').clipPath</code> dans la console&nbsp;!</p>
+					<div class="markup">
+						<pre class="scrollable-container language-css" data-line="11"><code class="language-css" data-line="11">.chaarts {
+	--to-radians: 0.01745329251;
+}
+
+.chaarts td::before {
+	--part: calc(var(--value) * 3.6);
+	--β: calc(var(--part) * var(--to-radians));
+	--α: calc((90 - var(--part)) * var(--to-radians));
+	--pos-B: calc(sin(var(--β)) * 50%);
+	--pos-A: calc(sin(var(--α)) * 50%);
+	clip-path: polygon(
+		50% 50%,
+		50% 0%,
+		100% 0%,
+		calc(50% + var(--pos-B)) calc(50% - var(--pos-A))
+	);
+}</code></pre>
+					</div>
+					<div class="playground">
+						<div class="scrollable-container chaarts-container has-colors">
+							<table class="chaarts chaarts-one chaarts-two chaarts-three chaarts-four chaarts-five chaarts-six chaarts-eight">
+								<caption>
+									Distribution du poids des ressources pour
+									<a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a>
+								</caption>
+								<thead class="sr-only">
+								<tr>
+									<th scope="col">Ressource</th>
+									<th scope="col">Proportion</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr style="--color: var(--chaarts-purple);">
+									<th scope="row">HTML</th>
+									<td>2&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-pink);">
+									<th scope="row">CSS</th>
+									<td>2&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-blue);">
+									<th scope="row">JS</th>
+									<td>32&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-yellow);">
+									<th scope="row">JSON</th>
+									<td>1&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-green);">
+									<th scope="row">Images</th>
+									<td>44&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-red);">
+									<th scope="row">Fontes</th>
+									<td>17&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-gray); --value: 17;">
+									<th scope="row">Autre</th>
+									<td>2&nbsp;%</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="slide-26" data-note="→ OK, mais comment ?">
+				<h2>Placer le<span class="u">s</span> point<span class="u">s</span><span aria-hidden="true">&nbsp;&#10024;</span></h2>
+				<p class="lead">
+					Les décalages par rapport au centre sont différents selon la tranche de valeur.
+				</p>
+				<ul class="galerie d-grid grid-3" role="list">
+					<li>
+						<figure>
+							<img src="../devfest.2023/img/tarte-1.png" width="425" height="426" loading="lazy" alt="">
+							<figcaption>Valeur entre 25 et 50%.</figcaption>
+						</figure>
+					</li>
+					<li>
+						<figure>
+							<img src="../devfest.2023/img/tarte-2.png" width="425" height="429" loading="lazy" alt="">
+							<figcaption>Valeur entre 50 et 75%.</figcaption>
+						</figure>
+					</li>
+					<li>
+						<figure>
+							<img src="../devfest.2023/img/tarte-3.png" width="424" height="429" loading="lazy" alt="">
+							<figcaption>Valeur entre 75 et 100%.</figcaption>
+						</figure>
+					</li>
+				</ul>
+				<p>
+					Nous avons quatre cadrants différents à gérer —&nbsp;mais un seul polygone…<br>
+					<strong>Certains points doivent donc basculer d’une position à une autre selon la valeur.</strong>
+				</p>
+				<p class="small">Il nous faudra dix points, au total.</p>
+			</section>
+
+			<section id="slide-27" class="demo" data-note="Mais les items sont superposés…">
+				<h2>Un booléen en CSS<span aria-hidden="true">&nbsp;&#129522;</span></h2>
+				<div>
+					<h3 class="mb-0">Des drapeaux<span aria-hidden="true">&nbsp;&#128681;</span></h3>
+					<p class="no-margin">
+						Basé sur <a hreflang="en" href="https://www.kizu.ru/conditions-for-css-variables/">une idée de <strong>Roma Komarov</strong></a>.
+					</p>
+					<div class="markup">
+							<pre class="scrollable-container language-css"><code class="language-css">.chaarts td {
+	--lt-25: clamp(0, 25 - var(--value), 1);
+	--gt-25: calc(1 - var(--lt-25));
+}</code></pre>
+					</div>
+					<h3>Des conditions<span aria-hidden="true">&nbsp;&#10067;</span></h3>
+					<div class="markup">
+						<pre class="scrollable-container language-css" data-line="3"><code class="language-css" data-line="3">.chaarts td::before {
+	clip-path: polygon(…
+		calc(var(--gt-25, 0) * 100%)
+	…);
+}</code></pre>
+					</div>
+					<h3>Des comparaisons<span aria-hidden="true">&nbsp;&#9878;</span></h3>
+					<div class="markup">
+							<pre class="scrollable-container language-css" data-line="3,4"><code class="language-css" data-line="3,4">.chaarts td::before {
+	clip-path: polygon(…
+		max(50%, var(--gt-25, 0) * 100%)
+		max(50%, var(--gt-25, 0) * 100%)
+	…);
+}</code></pre>
+					</div>
+				</div>
+				<div class="playground">
+					<div class="scrollable-container chaarts-container has-colors">
+						<table class="chaarts chaarts-one chaarts-two chaarts-three chaarts-four chaarts-five chaarts-six chaarts-nine">
+							<caption>
+								Distribution du poids des ressources pour
+								<a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a>
+							</caption>
+							<thead class="sr-only">
+							<tr>
+								<th scope="col">Ressource</th>
+								<th scope="col">Proportion</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr style="--color: var(--chaarts-purple); --value: 2;">
+								<th scope="row">HTML</th>
+								<td>2&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-pink); --value: 2;">
+								<th scope="row">CSS</th>
+								<td>2&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-blue); --value: 32;">
+								<th scope="row">JS</th>
+								<td>32&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-yellow); --value: 1;">
+								<th scope="row">JSON</th>
+								<td>1&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-green); --value: 44;">
+								<th scope="row">Images</th>
+								<td>44&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-red); --value: 17;">
+								<th scope="row">Fontes</th>
+								<td>17&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-gray); --value: 2;">
+								<th scope="row">Autre</th>
+								<td>2&nbsp;%</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+
+			<section id="slide-28" class="demo" data-note="Top ! On enrichit… au survol ?">
+				<h2>Distribution des parts<span aria-hidden="true">&nbsp;&#127829;</span></h2>
+				<div>
+					<h3>Côté HTML</h3>
+					<div class="markup">
+						<pre class="scrollable-container language-markup"><code class="language-markup">&lt;table style="--1: 2; --2: 2; --3: 32; --4: 1; --5: 44; --6: 17; --7: 2;"&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td style="--value: 17;"&gt;
+						</code></pre>
+					</div>
+					<h3>Côté CSS</h3>
+					<div class="markup">
+		<pre class="scrollable-container language-css"><code class="language-css">.chaarts.pie tr:first-child {
+  --value: var(--1);
+  --position: 0turn;
+}
+
+.chaarts.pie tr:nth-of-type(4n + 4) {
+  --value: var(--4);
+  --position: calc((var(--1) + var(--2) + var(--3)) * .01turn);
+}
+
+.chaarts td::before {
+	transform:
+		translate3d(-50%, -50%, 0)
+		rotate(var(--position)
+	);
+}</code></pre>
+					</div>
+				</div>
+				<div class="playground">
+					<div class="scrollable-container chaarts-container has-colors">
+						<table class="chaarts chaarts-one chaarts-two chaarts-three chaarts-four chaarts-five chaarts-six chaarts-nine chaarts-ten"
+									 style="--1: 2; --2: 2; --3: 32; --4: 1; --5: 44; --6: 17; --7: 2;">
+							<caption>
+								Distribution du poids des ressources pour
+								<a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a>
+							</caption>
+							<thead class="sr-only">
+							<tr>
+								<th scope="col">Ressource</th>
+								<th scope="col">Proportion</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr style="--color: var(--chaarts-purple); --value: 2;">
+								<th scope="row">HTML</th>
+								<td>2&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-pink); --value: 2;">
+								<th scope="row">CSS</th>
+								<td>2&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-blue); --value: 32;">
+								<th scope="row">JS</th>
+								<td>32&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-yellow); --value: 1;">
+								<th scope="row">JSON</th>
+								<td>1&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-green); --value: 44;">
+								<th scope="row">Images</th>
+								<td>44&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-red); --value: 17;">
+								<th scope="row">Fontes</th>
+								<td>17&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-gray); --value: 2;">
+								<th scope="row">Autre</th>
+								<td>2&nbsp;%</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+
+			<section id="slide-29" class="demo" data-note="Et si on affichait la valeur à côté de la zone ?">
+				<h2>Au survol<span aria-hidden="true">&nbsp;&#128641;</span></h2>
+				<div class="markup">
+					<pre class="scrollable-container language-css"><code class="language-css">.chaarts {
+	--enter: cubic-bezier(0, .5, .5, 1);
+	--exit: cubic-bezier(.5, 0, 1, .5);
+	--move: cubic-bezier(.5, 0, .5, 1);
+}
+
+.chaarts td::before {
+	--zoom: .75;
+	transform:
+		translate3d(-50%, -50%, 0)
+		rotate(var(--position))
+		scale(var(--zoom));
+	transition: transform .2s var(--move);
+}
+
+.chaarts tr:hover td::before {
+	--zoom: .8;
+}
+
+.chaarts tbody:hover tr {
+	opacity: .5;
+}
+
+.chaarts tbody:hover tr:hover {
+	opacity: 1;
+}</code></pre>
+				</div>
+				<div class="playground">
+					<div class="scrollable-container chaarts-container has-colors">
+						<table class="chaarts chaarts-one chaarts-two chaarts-three chaarts-four chaarts-five chaarts-six chaarts-nine chaarts-ten chaarts-eleven"
+									 style="--1: 2; --2: 2; --3: 32; --4: 1; --5: 44; --6: 17; --7: 2;">
+							<caption>
+								Distribution du poids des ressources pour
+								<a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a>
+							</caption>
+							<thead class="sr-only">
+							<tr>
+								<th scope="col">Ressource</th>
+								<th scope="col">Proportion</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr style="--color: var(--chaarts-purple); --value: 2;">
+								<th scope="row">HTML</th>
+								<td>2&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-pink); --value: 2;">
+								<th scope="row">CSS</th>
+								<td>2&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-blue); --value: 32;">
+								<th scope="row">JS</th>
+								<td>32&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-yellow); --value: 1;">
+								<th scope="row">JSON</th>
+								<td>1&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-green); --value: 44;">
+								<th scope="row">Images</th>
+								<td>44&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-red); --value: 17;">
+								<th scope="row">Fontes</th>
+								<td>17&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-gray); --value: 2;">
+								<th scope="row">Autre</th>
+								<td>2&nbsp;%</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+
+			<section id="slide-30" data-note="Saviez-vous que CSS était typé ?">
+				<h2>Encore plus d’altitude<span aria-hidden="true">&nbsp;&#9992;</span></h2>
+				<div class="demo">
+					<p>
+						Tiré d’<a hreflang="en" href="https://stackoverflow.com/questions/12813573/position-icons-into-circle">une réponse
+						d’<strong>Ana Tudor</strong> sur la distribution autour d’un cercle</a>.
+					</p>
+					<div class="markup">
+						<pre class="scrollable-container language-css"><code class="language-css">.chaarts td::after {
+	--axis: calc(
+		var(--position) - .25turn
+	  + var(--value) * .005turn
+	);
+	--away: calc(var(--radius) / 2 - 1rem);
+
+	background-color: var(--foreground-lighter);
+	color: var(--background-lighter);
+	content: "";
+	opacity: 0;
+	padding: .5rem;
+	pointer-events: none;
+	transform:
+		translate3d(-50%, -50%, 0)
+		rotate(var(--axis))
+		translate(var(--away))
+		rotate(calc(var(--axis) * -1))
+		perspective(1000px)
+		rotate3d(1, 0, 0, 45deg);
+	transform-origin: 50% calc(100% + 10px);
+	transition: opacity .2s var(--enter),
+	            transform .2s var(--enter);
+	z-index: 3;
+}</code></pre>
+					</div>
+					<div class="playground">
+						<div class="scrollable-container chaarts-container has-colors">
+							<table class="chaarts chaarts-one chaarts-two chaarts-three chaarts-four chaarts-five chaarts-six chaarts-nine chaarts-ten chaarts-eleven chaarts-twelve"
+										 style="--1: 2; --2: 2; --3: 32; --4: 1; --5: 44; --6: 17; --7: 2;">
+								<caption>
+									Distribution du poids des ressources pour
+									<a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a>
+								</caption>
+								<thead class="sr-only">
+								<tr>
+									<th scope="col">Ressource</th>
+									<th scope="col">Proportion</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr style="--color: var(--chaarts-purple); --term: 'HTML';">
+									<th scope="row">HTML</th>
+									<td style="--value: 2;">2&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-pink); --term: 'CSS';">
+									<th scope="row">CSS</th>
+									<td style="--value: 2;">2&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-blue); --term: 'JS';">
+									<th scope="row">JS</th>
+									<td style="--value: 32;">32&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-yellow); --term: 'JSON';">
+									<th scope="row">JSON</th>
+									<td style="--value: 1;">1&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-green); --term: 'Images';">
+									<th scope="row">Images</th>
+									<td style="--value: 44;">44&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-red); --term: 'Fontes';">
+									<th scope="row">Fontes</th>
+									<td style="--value: 17;">17&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-gray); --term: 'Autre';">
+									<th scope="row">Autre</th>
+									<td style="--value: 2;">2&nbsp;%</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="slide-31" data-note="Et conic-gradient alors ?">
+				<h2>Conversion de types<span aria-hidden="true">&nbsp;&#128190;</span></h2>
+				<div class="demo">
+					<p>
+						Basé sur <a hreflang="en" href="https://codepen.io/cassie-codes/pen/22ea69e0f681d45f2f4c2ca5e6acf4ab">une idée de
+						<strong>Cassie Evans</strong> pour convertir un entier en chaîne</a>.
+					</p>
+					<div class="markup">
+						<pre class="scrollable-container language-css"><code class="language-css">@property --integer {
+	inherits: false;
+	initial-value: 0;
+	syntax: "&lt;integer&gt;";
+}
+
+.chaarts td::after {
+	--integer: calc(var(--value));
+
+	content: var(--term) "\A0: " counter(value) "\A0%";
+	counter-reset: value var(--integer);
+}</code></pre>
+					</div>
+					<div class="playground">
+						<div class="scrollable-container chaarts-container has-colors">
+							<table class="chaarts chaarts-one chaarts-two chaarts-three chaarts-four chaarts-five chaarts-six chaarts-nine chaarts-ten chaarts-eleven chaarts-twelve chaarts-thirteen"
+										 style="--1: 2; --2: 2; --3: 32; --4: 1; --5: 44; --6: 17; --7: 2;">
+								<caption>
+									Distribution du poids des ressources pour
+									<a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a>
+								</caption>
+								<thead class="sr-only">
+								<tr>
+									<th scope="col">Ressource</th>
+									<th scope="col">Proportion</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr style="--color: var(--chaarts-purple); --term: 'HTML';">
+									<th scope="row">HTML</th>
+									<td style="--value: 2;">2&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-pink); --term: 'CSS';">
+									<th scope="row">CSS</th>
+									<td style="--value: 2;">2&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-blue); --term: 'JS';">
+									<th scope="row">JS</th>
+									<td style="--value: 32;">32&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-yellow); --term: 'JSON';">
+									<th scope="row">JSON</th>
+									<td style="--value: 1;">1&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-green); --term: 'Images';">
+									<th scope="row">Images</th>
+									<td style="--value: 44;">44&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-red); --term: 'Fontes';">
+									<th scope="row">Fontes</th>
+									<td style="--value: 17;">17&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-gray); --term: 'Autre';">
+									<th scope="row">Autre</th>
+									<td style="--value: 2;">2&nbsp;%</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="slide-32" data-note="Vous connaissez l’internationalisation ?">
+				<h2>Pourquoi pas <code>conic-gradient()</code><span aria-hidden="true">&nbsp;&#11088;</span></h2>
+				<div class="demo">
+					<p>
+						Ça nous épargnerait la trigonométrie, les conditions et comparaisons. <strong>Oui, mais…</strong>
+					</p>
+					<div class="markup">
+						<pre class="scrollable-container language-css"><code class="language-css">.chaarts td::before {
+	mask-image: conic-gradient(#ffff var(--value), #0000 0);
+}</code></pre>
+					</div>
+					<div class="playground">
+						<div class="scrollable-container chaarts-container has-colors">
+							<table class="chaarts chaarts-one chaarts-two chaarts-three chaarts-four chaarts-five chaarts-six chaarts-ten chaarts-eleven chaarts-twelve chaarts-thirteen chaarts-conic"
+										 style="--1: 2; --2: 2; --3: 32; --4: 1; --5: 44; --6: 17; --7: 2;">
+								<caption>
+									Distribution du poids des ressources pour
+									<a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a>
+								</caption>
+								<thead class="sr-only">
+								<tr>
+									<th scope="col">Ressource</th>
+									<th scope="col">Proportion</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr style="--color: var(--chaarts-purple); --term: 'HTML';">
+									<th scope="row">HTML</th>
+									<td style="--value: 2; --value-percent: 2%;">2&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-pink); --term: 'CSS';">
+									<th scope="row">CSS</th>
+									<td style="--value: 2; --value-percent: 2%;">2&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-blue); --term: 'JS';">
+									<th scope="row">JS</th>
+									<td style="--value: 32; --value-percent: 32%;">32&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-yellow); --term: 'JSON';">
+									<th scope="row">JSON</th>
+									<td style="--value: 1; --value-percent: 1%;">1&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-green); --term: 'Images';">
+									<th scope="row">Images</th>
+									<td style="--value: 44; --value-percent: 44%;">44&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-red); --term: 'Fontes';">
+									<th scope="row">Fontes</th>
+									<td style="--value: 17; --value-percent: 17%;">17&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-gray); --term: 'Autre';">
+									<th scope="row">Autre</th>
+									<td style="--value: 2; --value-percent: 2%;">2&nbsp;%</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="slide-33" class="demo" data-note="On y est presque…">
+				<h2>Le <abbr lang="en" title="Right To Left" aria-label="Right To Left">RTL</abbr> grâce aux propriétés logiques<span aria-hidden="true">&nbsp;&#129694;</span></h2>
+				<figure role="group">
+					<img src="../devfest.2023/img/logical-properties.avif" alt=""
+							 loading="lazy" width="800" height="559">
+					<figcaption>
+						Pour nous, l’axe <i lang="en">block</i> est l’axe vertical et l’axe <i lang="en">inline</i> est l’axe horizontal.<br>
+						Image tirée de l’article <a hreflang="en" href="https://web.dev/learn/css/logical-properties/">
+							<cite lang="en">Logical properties</cite> sur web.dev
+						</a>
+					</figcaption>
+				</figure>
+				<div class="playground" dir="rtl">
+					<div class="scrollable-container chaarts-container has-colors">
+						<table class="chaarts chaarts-one chaarts-two chaarts-three chaarts-four chaarts-five chaarts-six chaarts-nine chaarts-ten chaarts-eleven chaarts-twelve chaarts-thirteen"
+									 style="--1: 2; --2: 2; --3: 32; --4: 1; --5: 44; --6: 17; --7: 2;">
+							<caption>
+								Distribution du poids des ressources pour
+								<a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a>
+							</caption>
+							<thead class="sr-only">
+							<tr>
+								<th scope="col">Ressource</th>
+								<th scope="col">Proportion</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr style="--color: var(--chaarts-purple); --term: 'HTML';">
+								<th scope="row">HTML</th>
+								<td style="--value: 2;">2&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-pink); --term: 'CSS';">
+								<th scope="row">CSS</th>
+								<td style="--value: 2;">2&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-blue); --term: 'JS';">
+								<th scope="row">JS</th>
+								<td style="--value: 32;">32&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-yellow); --term: 'JSON';">
+								<th scope="row">JSON</th>
+								<td style="--value: 1;">1&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-green); --term: 'Images';">
+								<th scope="row">Images</th>
+								<td style="--value: 44;">44&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-red); --term: 'Fontes';">
+								<th scope="row">Fontes</th>
+								<td style="--value: 17;">17&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-gray); --term: 'Autre';">
+								<th scope="row">Autre</th>
+								<td style="--value: 2;">2&nbsp;%</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+
+			<section id="slide-34" data-note="Des variantes ?">
+				<h2>Quelques ajustements<span aria-hidden="true">&nbsp;&#128208;</span></h2>
+				<div class="demo">
+					<p>
+						<a hreflang="en" href="https://rtlstyling.com/posts/rtl-styling"><strong>Ahmad Shadeed</strong>
+							détaille les subtilités du RTL sur un site dédié</a>.
+					</p>
+					<div class="markup">
+						<pre class="scrollable-container language-css"><code class="language-css">[dir="rtl"] .chaarts {
+	--is-rtl: -1;
+}
+
+[dir="rtl"] .chaarts [scope="row"]::before {
+	translate: calc(-.2rem * var(--is-rtl, 1)) .1rem 0;
+}
+
+[dir="rtl"] .chaarts td::before {
+	transform:
+		translate3d(calc(-50% * var(--is-rtl, 1)), -50%, 0)
+		rotate(var(--position))
+		scale(var(--zoom));
+}</code></pre>
+					</div>
+					<div class="playground" dir="rtl">
+						<div class="scrollable-container chaarts-container has-colors">
+							<table class="chaarts chaarts-one chaarts-two chaarts-three chaarts-four chaarts-five chaarts-six chaarts-nine chaarts-ten chaarts-eleven chaarts-twelve chaarts-thirteen chaarts-fourteen"
+										 style="--1: 2; --2: 2; --3: 32; --4: 1; --5: 44; --6: 17; --7: 2;">
+								<caption>
+									Distribution du poids des ressources pour
+									<a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a>
+								</caption>
+								<thead class="sr-only">
+								<tr>
+									<th scope="col">Ressource</th>
+									<th scope="col">Proportion</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr style="--color: var(--chaarts-purple); --term: 'HTML';">
+									<th scope="row">HTML</th>
+									<td style="--value: 2;">2&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-pink); --term: 'CSS';">
+									<th scope="row">CSS</th>
+									<td style="--value: 2;">2&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-blue); --term: 'JS';">
+									<th scope="row">JS</th>
+									<td style="--value: 32;">32&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-yellow); --term: 'JSON';">
+									<th scope="row">JSON</th>
+									<td style="--value: 1;">1&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-green); --term: 'Images';">
+									<th scope="row">Images</th>
+									<td style="--value: 44;">44&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-red); --term: 'Fontes';">
+									<th scope="row">Fontes</th>
+									<td style="--value: 17;">17&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-gray); --term: 'Autre';">
+									<th scope="row">Autre</th>
+									<td style="--value: 2;">2&nbsp;%</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="slide-35" class="demo" data-note="Encore une ?">
+				<h2>Devenir donut<span aria-hidden="true">&nbsp;&#127849;</span></h2>
+				<div class="markup">
+					<pre class="scrollable-container language-css"><code class="language-css">.chaarts {
+	--offset: 8rem;
+	--mask: radial-gradient(
+		circle at 50% calc(50% - 2rem),
+		#0000 0 var(--offset),
+		#ffff calc(var(--offset) + 1px) 100%
+	);
+	mask-image: var(--mask);
+}
+
+.chaarts td::after {
+	--away: calc(var(--radius) / 2 - 2.5rem);
+}</code></pre>
+				</div>
+				<div class="playground">
+					<div class="scrollable-container chaarts-container has-colors">
+						<table class="chaarts chaarts-one chaarts-two chaarts-three chaarts-four chaarts-five chaarts-six chaarts-nine chaarts-ten chaarts-eleven chaarts-twelve chaarts-thirteen chaarts-fourteen chaarts-donut"
+									 style="--1: 2; --2: 2; --3: 32; --4: 1; --5: 44; --6: 17; --7: 2;">
+							<caption>
+								Distribution du poids des ressources pour
+								<a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a>
+							</caption>
+							<thead class="sr-only">
+							<tr>
+								<th scope="col">Ressource</th>
+								<th scope="col">Proportion</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr style="--color: var(--chaarts-purple); --term: 'HTML';">
+								<th scope="row">HTML</th>
+								<td style="--value: 2;">2&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-pink); --term: 'CSS';">
+								<th scope="row">CSS</th>
+								<td style="--value: 2;">2&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-blue); --term: 'JS';">
+								<th scope="row">JS</th>
+								<td style="--value: 32;">32&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-yellow); --term: 'JSON';">
+								<th scope="row">JSON</th>
+								<td style="--value: 1;">1&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-green); --term: 'Images';">
+								<th scope="row">Images</th>
+								<td style="--value: 44;">44&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-red); --term: 'Fontes';">
+								<th scope="row">Fontes</th>
+								<td style="--value: 17;">17&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-gray); --term: 'Autre';">
+								<th scope="row">Autre</th>
+								<td style="--value: 2;">2&nbsp;%</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+
+			<section id="slide-36" class="demo" data-note="L’accessibilité bulletproof">
+				<h2>Devenir polaire<span aria-hidden="true">&nbsp;&#10052;</span></h2>
+				<div class="markup">
+					<pre class="scrollable-container language-css"><code class="language-css">.chaarts td::before,
+.chaarts tr:hover td::before {
+	--zoom: 50;
+	transform:
+		translate3d(calc(-50% * var(--is-rtl, 1)), -50%, 0)
+		rotate(var(--position))
+		scale(calc((var(--zoom) + (var(--value) / (100 / var(--zoom)))) / 100));
+}</code></pre>
+				</div>
+				<div class="playground">
+					<div class="scrollable-container chaarts-container has-colors">
+						<table class="chaarts chaarts-one chaarts-two chaarts-three chaarts-four chaarts-five chaarts-six chaarts-nine chaarts-ten chaarts-eleven chaarts-twelve chaarts-thirteen chaarts-fourteen chaarts-polar"
+									 style="--1: 2; --2: 2; --3: 32; --4: 1; --5: 44; --6: 17; --7: 2;">
+							<caption>
+								Distribution du poids des ressources pour
+								<a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a>
+							</caption>
+							<thead class="sr-only">
+							<tr>
+								<th scope="col">Ressource</th>
+								<th scope="col">Proportion</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr style="--color: var(--chaarts-purple); --term: 'HTML';">
+								<th scope="row">HTML</th>
+								<td style="--value: 2;">2&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-pink); --term: 'CSS';">
+								<th scope="row">CSS</th>
+								<td style="--value: 2;">2&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-blue); --term: 'JS';">
+								<th scope="row">JS</th>
+								<td style="--value: 32;">32&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-yellow); --term: 'JSON';">
+								<th scope="row">JSON</th>
+								<td style="--value: 1;">1&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-green); --term: 'Images';">
+								<th scope="row">Images</th>
+								<td style="--value: 44;">44&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-red); --term: 'Fontes';">
+								<th scope="row">Fontes</th>
+								<td style="--value: 17;">17&nbsp;%</td>
+							</tr>
+							<tr style="--color: var(--chaarts-gray); --term: 'Autre';">
+								<th scope="row">Autre</th>
+								<td style="--value: 2;">2&nbsp;%</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+
+			<section id="slide-37" data-note="OK ça y est… Vraiment ?">
+				<h2>Interrupteur de styles<span aria-hidden="true">&nbsp;&#128283;</span></h2>
+				<div class="demo">
+					<p>
+						<strong>Adrian Roselli</strong> a découvert que <a hreflang="en" href="http://adrianroselli.com/2018/02/tables-css-display-properties-and-aria.html">
+						tripatouiller le <code>display</code> des tableaux abîme sa sémantique exposée</a>
+						—&nbsp;c’est pourquoi j’implémente <a hreflang="en" href="https://inclusive-components.design/toggle-button/">le composant inclusif du <i lang="en">toggle button</i></a>
+						conçu par <strong>Heydon Pickering</strong> pour désactiver les styles à volonté.
+					</p>
+					<div class="markup">
+						<pre class="scrollable-container language-javascript"><code class="language-javascript">const switches = document.querySelectorAll('[role="switch"]');
+switches.forEach(el => {
+	el.addEventListener('click', () => {
+		const checked = el.getAttribute('aria-checked') === 'true' || false;
+		el.setAttribute('aria-checked', !checked);
+
+		if (el.classList.contains('disable-css')) {
+			const chart = el.parentNode.nextElementSibling;
+			chart.classList.toggle('chaarts');
+		}
+	});
+});</code></pre>
+					</div>
+					<div class="playground">
+						<div class="scrollable-container chaarts-container has-colors">
+							<div class="d-flex align-center">
+								<p class="small">
+									<strong id="label-switch">Interrupteur</strong><br>
+									<span id="description-switch">Désactiver les styles sur le tableau ci-après.</span>
+								</p>
+								<button type="button" class="m-auto p-relative disable-css" role="switch" aria-checked="true" aria-labelledby="label-switch" aria-describedby="description-switch">
+									<span>Guilleret</span>
+									<span>Sobre</span>
+								</button>
+							</div>
+							<table class="chaarts chaarts-one chaarts-two chaarts-three chaarts-four chaarts-five chaarts-six chaarts-nine chaarts-ten chaarts-eleven chaarts-twelve chaarts-thirteen chaarts-fourteen"
+										 style="--radius: 24rem; --1: 2; --2: 2; --3: 32; --4: 1; --5: 44; --6: 17; --7: 2;">
+								<caption>
+									Distribution du poids des ressources pour
+									<a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a>
+								</caption>
+								<thead class="sr-only">
+								<tr>
+									<th scope="col">Ressource</th>
+									<th scope="col">Proportion</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr style="--color: var(--chaarts-purple); --term: 'HTML';">
+									<th scope="row">HTML</th>
+									<td style="--value: 2;">2&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-pink); --term: 'CSS';">
+									<th scope="row">CSS</th>
+									<td style="--value: 2;">2&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-blue); --term: 'JS';">
+									<th scope="row">JS</th>
+									<td style="--value: 32;">32&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-yellow); --term: 'JSON';">
+									<th scope="row">JSON</th>
+									<td style="--value: 1;">1&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-green); --term: 'Images';">
+									<th scope="row">Images</th>
+									<td style="--value: 44;">44&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-red); --term: 'Fontes';">
+									<th scope="row">Fontes</th>
+									<td style="--value: 17;">17&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-gray); --term: 'Autre';">
+									<th scope="row">Autre</th>
+									<td style="--value: 2;">2&nbsp;%</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="slide-38">
+				<h2>Vers l’infini et l’au-delà<span aria-hidden="true">&nbsp;&#128640;</span></h2>
+				<p class="lead">
+					Il y a d’autres types de graphiques sur <a hreflang="en" href="https://ffoodd.github.io/chaarts/">chaarts</a>,
+					basés sur d’autres astuces et avec d’autres opportunités d’améliorations&nbsp;!
+				</p>
+				<ul>
+					<li>Les animations avancées grâce à <code>@property</code>.</li>
+					<li>La simplification du code avec <code>:has()</code>.</li>
+					<li>Le <i lang="en">responsive</i> avec les <i lang="en">container queries</i>.</li>
+					<li><code>attr()</code> et <code>counter()</code> avec un typage faible et la possibilité de s’en servir ailleurs que dans la propriété <code>content</code>.</li>
+					<li>Les couleurs relatives&nbsp;: <code>color: hsl(from var(--color) calc(h + 180deg) s l);</code>.</li>
+					<li>Les fonctions de voisinnage&nbsp;: <code>sibling-index()</code> et <code>sibling-count()</code>.</li>
+					<li>Les courbes de bézier pour les tracés avec la fonction <code>d()</code>.</li>
+					<li>Les animations liées au défilement avec <code>animation-timeline: scroll()</code>.</li>
+					<li>Le défilement aimanté avec <code>scroll-snap</code>.</li>
+					<li>Les tracés d’animation avec <code>offset-path</code>.</li>
+				</ul>
+				<p>Rappelez-vous&nbsp;: <strong>ce n’est que du CSS</strong>&nbsp;!</p>
+			</section>
+
+			<section id="slide-39">
+				<h2>Merci</h2>
+				<h3>Et à bientôt <span aria-hidden="true">&nbsp;&#128522;</span></h3>
+				<div class="grid-2-1">
+					<div>
+						<h4>Crédits</h4>
+						<ul>
+							<li>Emojis&nbsp;: <a hreflang="en" href="https://github.com/twitter/twemoji">Twemoji</a> —&nbsp;par Twitter&nbsp;;</li>
+							<li>Typographie de titraille&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/bello-pro">Bello Pro</a> —&nbsp;créée par <a hreflang="en" href="https://www.underware.nl/">Underware</a>&nbsp;;</li>
+							<li>Typographie de labeur&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/museo-slab">Museo Slab</a> —&nbsp;créée par <a hreflang="en" href="https://www.exljbris.com/">Exljbris</a>&nbsp;;</li>
+							<li>Moteur de présentation inspiré de <a hreflang="en" href="https://css-tricks.com/css-scroll-snap-slide-deck/">"<cite lang="en">CSS scroll-snap slide deck that supports live coding</cite>" de Stephanie Eckles sur Smashing Magazine</a>.</li>
+						</ul>
+					</div>
+					<div>
+						<p class="float-right text-center mt-n3">
+							Laissez votre <i lang="en">feedback</i>
+							<a href="https://openfeedback.io/ja4pTWDgQDlDNBoFU5V1/2024-02-09/ioc2x2nW4KV5zrt69ZQm">
+								<img src="./img/qr.svg" alt="Openfeedback" width="400" height="400" loading="lazy">
+							</a>
+						</p>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<script src="../sliide/js/prism.min.js"></script>
+		<script src="../accesslide/js/twemoji.min.js"></script>
+		<script>
+			twemoji.parse(document.body, {folder: 'svg', ext: '.svg'});
+
+			let view;
+			switchSlide = (id) => {
+				// Historique
+				history.pushState({}, "", `#slide-${id}`);
+				// Vue présentateur
+				//// Aperçu du slide suivant
+				document.body.style.setProperty('--next', String(`-moz-element(#slide-${Number(id) + 1})`));
+				//// Synchro de la vue présentateur
+				if (view) {
+					view.postMessage(`slide-${id}`, 'https://localhost:8080/tnt/index.html');
+				}
+				//// Notes dans la vue présentateur
+				if('note' in document.getElementById(`slide-${id}`).dataset) {
+					document.body.dataset.note = document.getElementById(`slide-${id}`).dataset.note;
+				} else {
+					delete document.body.dataset.note;
+				}
+			}
+
+			document.addEventListener('DOMContentLoaded', () => {
+				const slides = document.querySelectorAll('section[id^="slide-"]');
+
+				// Nombre total de slides, pour la pagination
+				document.body.style.setProperty('--slides', String(slides.length));
+				document.body.style.setProperty('--next', String(`-moz-element(#slide-2)`));
+
+				// Gestion de l’historique
+				let io = new IntersectionObserver(entries => {
+					if (entries[0].isIntersecting === true) {
+						switchSlide(entries[0].target.id.split('-')[1]);
+					}
+				}, {
+					root: document.querySelector('main'),
+					threshold: [1]
+				});
+				slides.forEach(slide =>	io.observe(slide));
+
+				document.addEventListener('keydown', event => {
+					const index = Number(window.location.hash.split('-')[1]);
+					let id = null;
+					switch (event.key) {
+						// Activer la vue présentateur
+						case 's':
+							if (event.altKey) {
+								view = window.open('https://localhost:8080/tnt/index.html', 'speakerView');
+								view.addEventListener('load', () => {
+									view.document.body.classList.add('speaker');
+								})
+							}
+							break;
+						// Télécommande ++
+						case 'PageDown':
+							id = index + 1;
+							break;
+						// Télécommande --
+						case 'PageUp':
+							id = index - 1;
+							break;
+						default:
+							break;
+					}
+
+					if (id !== null && id >= 1) {
+						document.getElementById(`slide-${id}`).scrollIntoView({ behavior: 'smooth' });
+						switchSlide(id);
+					}
+				});
+			});
+
+			window.addEventListener('message', (e) => {
+				if (e.origin === 'https://localhost:8080') {
+					document.getElementById(e.data).scrollIntoView({ behavior: 'smooth' });
+					switchSlide(e.data.split('-')[1]);
+				}
+			}, false);
+		</script>
+		<script src="../devfest.2023/chaarts.js?2"></script>
+	</body>
+</html>

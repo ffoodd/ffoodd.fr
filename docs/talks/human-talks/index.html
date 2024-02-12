@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>HTML à la rescousse de l’UX des formulaires</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HTML à la rescousse de l’UX des formulaires — sujet présenté lors des Human Talks Nantes le 10 janvier 2023, par Gaël Poupard">
+  <meta name="author" content="Gaël Poupard">
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../accesslide/fonts/bello-pro.woff2"/>
+  <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../accesslide/fonts/museo-slab-300.woff2"/>
+  <link rel="stylesheet" href="../sliide/sliide.css?7" type="text/css" media="screen"/>
+  <link rel="stylesheet" href="../sliide/prism.min.css" type="text/css" media="screen"/>
+</head>
+<body>
+    <header role="banner">
+      <a href="https://www.ffoodd.fr">ffoodd</a>
+      <h1><abbr lang="en" title="HyperText Markup Language">HTML</abbr> à la rescousse</h1>
+    </header>
+
+    <main role="main">
+      <section id="slide-1" class="d-flex flex-column justify-between">
+        <span class="h2"><abbr lang="en" title="HyperText Markup Language">HTML</abbr> à la rescousse de l’<abbr lang="en" title="User eXperience">UX</abbr> des formulaires</span>
+        <p>
+          Retrouvez les slides en ligne sur
+          <span aria-hidden="true">→&nbsp;</span><a href="https://www.ffoodd.fr/human-talks/">ffoodd.fr/human-talks/</a>.
+         </p>
+        <footer>
+          <p >Raconté par <a href="https://www.ffoodd.fr">Gaël Poupard</a></p>
+          <p>
+            <a href="https://www.groupeonepoint.com">
+              <img src="../accesslide/img/onepoint.svg" width="166" height="80" alt="onepoint"/>
+            </a>
+          </p>
+        </footer>
+      </section>
+
+      <section id="slide-2" class="demo">
+        <h3 class="h2">Il était un champ…</h3>
+        <div class="playground">
+          <form>
+            <p>
+              <label for="email-1">Email</label>
+              <input id="email-1" type="text">
+            </p>
+          </form>
+        </div>
+        <div class="markup">
+          <pre class="language-markup"><code class="language-markup">&lt;label for="email-1">Email&lt;/label>
+&lt;input id="email-1" type="text">
+            </code>
+          </pre>
+        </div>
+      </section>
+      <section id="slide-3" class="demo">
+        <h3 class="h2">Avec un chic <code>type</code></h3>
+        <div class="playground">
+          <form>
+            <p>
+              <label for="email-2">Email</label>
+              <input id="email-2" type="email">
+            </p>
+          </form>
+        </div>
+        <div class="markup">
+          <pre class="language-markup"><code class="language-markup">&lt;label for="email-2">Email&lt;/label>
+&lt;input id="email-2" type="email">
+            </code>
+          </pre>
+        </div>
+      </section>
+      <section id="slide-4" class="demo">
+        <h3 class="h2">Qui manque de correction</h3>
+        <div class="playground">
+          <form>
+            <p>
+              <label for="email-3">Email</label>
+              <input id="email-3" type="email"
+                     autocorrect="off" autocapitalize="off">
+            </p>
+          </form>
+        </div>
+        <div class="markup">
+          <pre class="language-markup"><code class="language-markup">&lt;label for="email-3">Email&lt;/label>
+&lt;input id="email-3" type="email"
+          autocorrect="off" autocapitalize="off">
+            </code>
+          </pre>
+        </div>
+      </section>
+      <section id="slide-5" class="demo">
+        <h3 class="h2">Un champ poli demande d’abord</h3>
+        <div class="playground">
+          <form>
+            <p>
+              <label for="email-4">Email</label>
+              <input id="email-4" type="email"
+                     autocorrect="off" autocapitalize="off"
+                     autocomplete="email">
+            </p>
+          </form>
+        </div>
+        <div class="markup">
+          <pre class="language-markup"><code class="language-markup">&lt;label for="email-4">Email&lt;/label>
+&lt;input id="email-4" type="email"
+          autocorrect="off" autocapitalize="off"
+          autocomplete="email">
+            </code>
+          </pre>
+        </div>
+      </section>
+      <section id="slide-6" class="demo">
+        <h3 class="h2">Un champ qui ne manque pas de suggestions</h3>
+        <div class="playground">
+          <form>
+            <p>
+              <label for="email-5">Email</label>
+              <input id="email-5" type="email"
+                     autocorrect="off" autocapitalize="off"
+                     autocomplete="email"
+                     list="emails-5">
+              <datalist id="emails-5">
+                <option value="g.poupard@groupeonepoint.com">
+                <option value="gael@ffoodd.fr">
+              </datalist>
+            </p>
+          </form>
+        </div>
+        <div class="markup">
+          <pre class="language-markup"><code class="language-markup">&lt;label for="email-5">Email&lt;/label>
+&lt;input id="email-5" type="email"
+          autocorrect="off" autocapitalize="off"
+          autocomplete="email"
+          list="emails-5">
+&lt;datalist id="emails-5">
+  &lt;option value="g.poupard@groupeonepoint.com">
+  &lt;option value="gael@ffoodd.fr">
+&lt;/datalist></code>
+          </pre>
+        </div>
+      </section>
+      <section id="slide-7" class="demo">
+        <div>
+          <h3 class="h2">Un champ qui ne cafte pas&nbsp;!</h3>
+          <p class="lead">
+            Vous connaissez <a href="https://www.otto-js.com/news/article/chrome-and-edge-enhanced-spellcheck-features-expose-pii-even-your-passwords" hreflang="en">le
+            <i lang="en">spell-jacking</i></a>&nbsp;?
+          </p>
+        </div>
+        <div class="playground">
+          <form>
+            <p>
+              <label for="email-6">Email</label>
+              <input id="email-6" type="email"
+                     autocorrect="off" autocapitalize="off"
+                     autocomplete="email"
+                     list="emails-6"
+                     spellcheck="false">
+              <datalist id="emails-6">
+                <option value="g.poupard@groupeonepoint.com">
+                <option value="gael@ffoodd.fr">
+              </datalist>
+            </p>
+          </form>
+        </div>
+        <div class="markup">
+          <pre class="language-markup"><code class="language-markup">&lt;label for="email-6">Email&lt;/label>
+&lt;input id="email-6" type="email"
+          autocorrect="off" autocapitalize="off"
+          autocomplete="email"
+          list="emails-6"
+          spellcheck="false">
+&lt;datalist id="emails-6">
+  &lt;option value="g.poupard@groupeonepoint.com">
+  &lt;option value="gael@ffoodd.fr">
+&lt;/datalist></code>
+          </pre>
+        </div>
+      </section>
+
+      <section id="slide-8" class="demo">
+        <h3 class="h2">Dites un nombre</h3>
+        <div class="playground">
+          <form>
+            <p>
+              <label for="number-1">Nombre</label>
+              <input id="number-1" type="number">
+            </p>
+          </form>
+        </div>
+        <div class="markup">
+          <pre class="language-markup"><code class="language-markup">&lt;label for="number-1">Nombre&lt;/label>
+&lt;input id="number-1" type="number"></code>
+          </pre>
+        </div>
+      </section>
+      <section id="slide-9" class="demo">
+        <div>
+          <h3 class="h2">Nombre d’aides à la saisie</h3>
+          <p class="lead">
+            <a href="https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/"
+               hreflang="en">Le <i lang="en">design system</i> de <strong lang="en">GOV.uk</strong> a détaillé
+               en quoi le <code>type="number"</code> n’est pas optimal</a>.
+          </p>
+        </div>
+        <div class="playground">
+          <form>
+            <p>
+              <label for="number-2">Nombre</label>
+              <input id="number-2" type="text" inputmode="numeric" pattern="[0-9]*">
+            </p>
+          </form>
+        </div>
+        <div class="markup">
+          <pre class="language-markup"><code class="language-markup">&lt;label for="number-2">Nombre&lt;/label>
+&lt;input id="number-2" type="text"
+          inputmode="numeric"
+          pattern="[0-9]*"></code>
+          </pre>
+        </div>
+      </section>
+      <section id="slide-10" class="demo">
+        <div>
+          <h3 class="h2">Après la soumission…</h3>
+        </div>
+        <div class="playground">
+          <form>
+            <p>
+              <label for="number-3">Nombre</label>
+              <input id="number-3" type="text" inputmode="numeric" pattern="[0-9]*" enterkeyhint="search">
+            </p>
+          </form>
+        </div>
+        <div class="markup">
+          <pre class="language-markup"><code class="language-markup">&lt;label for="number-3">Nombre&lt;/label>
+&lt;input id="number-3" type="text"
+          inputmode="numeric"
+          pattern="[0-9]*"
+          enterkeyhint="search"></code>
+          </pre>
+        </div>
+      </section>
+
+      <section id="slide-11">
+        <h2>Merci, et à bientôt <span aria-hidden="true">&nbsp;&#128522;</span></h2>
+        <h3>Références</h3>
+        <p>
+          <a hreflang="en" href="https://www.smashingmagazine.com/2018/08/ux-html5-mobile-form-part-2/">
+            <strong>Stéphanie Walter</strong> a publié un guide extrêmement complet pour aider vos utilisateurs à remplir vos formulaires,
+            sur <cite>Smashing Magazine</cite>
+          </a>, et <a hreflang="en" href="https://better-mobile-inputs.netlify.app/"><strong>Alex Holacheck</strong> a
+          créé un configurateur de champs de formulaires pour mobile</a>.
+        </p>
+        <h3>Crédits</h3>
+        <ul>
+          <li>T-shirt HTML façon <b>AC/DC</b>&nbsp;: <a hreflang="en" href="https://www.etsy.com/fr/listing/1071868312/html-t-shirt-unisexe-a-manches-courtes">HTMLZ sur Etsy</a> —&nbsp;par <a hreflang="en" href="https://cdpn.io/stevef/debug/dyGeywr">Steve Faulkner</a>&nbsp;;</li>
+          <li>Pictogrammes&nbsp;: <a hreflang="en" href="https://thenounproject.com/marekpolakovic/collection/rounded-ui">Rounded UI</a> —&nbsp;par <a hreflang="en" href="https://www.marekpolakovic.sk/">Marek Polakovic</a>&nbsp;;</li>
+          <li>Emojis&nbsp;: <a hreflang="en" href="https://github.com/twitter/twemoji">Twemoji</a> —&nbsp;par Twitter&nbsp;;</li>
+          <li>Typographie de titraille&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/bello-pro">Bello Pro</a> —&nbsp;créée par <a hreflang="en" href="https://www.underware.nl/">Underware</a>&nbsp;;</li>
+          <li>Typographie de labeur&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/museo-slab">Museo Slab</a> —&nbsp;créée par <a hreflang="en" href="https://www.exljbris.com/">Exljbris</a>&nbsp;;</li>
+          <li>Moteur de présentation inspiré de <a hreflang="en" href="https://css-tricks.com/css-scroll-snap-slide-deck/">"<cite lang="en">CSS scroll-snap slide deck that supports live coding</cite>" de Stephanie Eckles sur Smashing Magazine</a>.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <ul role="list">
+        <li><a href="https://www.ffoodd.fr">
+            <img src="../accesslide/img/ffoodd.svg?2" alt="Blog de Gaël Poupard" height="32" width="32" />
+        </a></li>
+        <li><a href="https://twitter.com/ffoodd_fr">
+            <img src="../accesslide/img/twitter.svg?2" alt="@ffoodd_fr sur Twitter" height="32" width="32" />
+        </a></li>
+        <li><a href="https://github.com/ffoodd/" hreflang="en">
+            <img src="../accesslide/img/github.svg?2" alt="@ffoodd sur Github" height="32" width="32" />
+        </a></li>
+      </ul>
+    </footer>
+
+    <script src="../accesslide/js/prism.min.js"></script>
+    <script src="../accesslide/js/twemoji.min.js"></script>
+    <script>
+      twemoji.parse(document.body, {folder: 'svg', ext: '.svg'});
+      document.addEventListener('DOMContentLoaded', () => {
+        document.body.style.setProperty(
+          '--slides', String(document.querySelector('main').childElementCount)
+        );
+
+        let io = new IntersectionObserver(entries => {
+          if (entries[0].isIntersecting === true) {
+            history.pushState({}, "", `#${entries[0].target.id}`);
+          }
+        }, {
+          root: document.querySelector('main'),
+          threshold: [1]
+        });
+
+        const slides = document.querySelectorAll('section[id]');
+        for (let i = 0; i < slides.length; i++) {
+          io.observe(slides[i]);
+        }
+      });
+    </script>
+  </body>
+</html>

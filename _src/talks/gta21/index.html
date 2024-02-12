@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>L’accessibilité via les thèmes enfants</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="L’accessibilité via les thèmes enfants — Gaël Poupard lors du 21ème séminaire AccessiWeb">
+  <meta name="author" content="Gaël Poupard">
+  <link rel="stylesheet" href="../accesslide/css/style.css" type="text/css" media="screen">
+  <link rel="stylesheet" id="currentCSS" href="../accesslide/css/ffoodd.css?5" type="text/css" media="screen">
+  <link rel="stylesheet" href="../accesslide/css/print.css" type="text/css" media="print">
+  <script src="../accesslide/js/AccesSlide.min.js"></script>
+  <script src="../accesslide/js/lang/lang_fr.js"></script>
+  <script src="../accesslide/js/prism.min.js"></script>
+</head>
+<body>
+
+  <div id="screen" class="modeplan" data-effect="ffoodd">
+
+    <div id="volet"></div>
+
+    <header id="banner" role="banner" class="main-header clearfix">
+      <a href="http://www.ffoodd.fr">ffoodd</a>
+      <h1 class="main-title">L’accessibilité <i>via</i> les thèmes enfants</h1>
+    </header>
+
+    <div id="nav" class="tool-bar footer-nav clearfix">
+      <div id="wrappernav">
+        <ul class="related">
+          <li>
+            <a href="http://www.ffoodd.fr">
+              <img src="../accesslide/img/ffoodd.svg?2" role="img" alt="Blog de Gaël Poupard" height="32" width="32" />
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/ffoodd_fr">
+              <img src="../accesslide/img/twitter.svg?2" role="img" alt="@ffoodd_fr sur Twitter" height="32" width="32" />
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/ffoodd/" hreflang="en">
+              <img src="../accesslide/img/github.svg?2" role="img" alt="@ffoodd sur Github" height="32" width="32" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <nav role="navigation" id="sommaire" class="tool-block tool-block-summary" tabindex="-1"></nav>
+
+    <div id="wrapper">
+
+      <main role="main" id="main">
+
+        <section class="slide couv">
+          <h2>L’accessibilité <i>via</i> les thèmes enfants</h2>
+          <h3>Une mécanique pertinente de WordPress</h3>
+          <footer class="table">
+            <p class="col-50">présenté par <a href="http://www.ffoodd.fr">Gaël Poupard</a></p>
+            <p class="col-50"><a href="http://www.kosmos.fr"><img src="../accesslide/img/Kosmos.png" width="200" height="100" alt="Kosmos, Digital for Education" lang="en"/></a></p>
+          </footer>
+        </section>
+
+        <section class="slide">
+          <h2>La séparation des pouvoirs</h2>
+          <p>WordPress dispose de plusieurs points d’entrée pour ajouter ou personnaliser des fonctionnalités&nbsp;:</p>
+          <ol>
+            <li>les thèmes (et les thèmes <strong>enfants</strong>)&nbsp;;</li>
+            <li>les extensions (et les extensions <strong>obligatoires</strong>).</li>
+          </ol>
+          <p>C’est le <i lang="en">far-west</i> dans la plupart des projets<span aria-hidden="true">&nbsp;☠</span>. Afin d’éviter cela, leurs responsabilités sont séparées&nbsp;: on parle de <strong>territoires</strong>.</p>
+          <p class="small">Julio Potier a écrit un article pour <a href="http://boiteaweb.fr/ajouter-astuces-site-6606.html">déterminer ou ajouter une fonctionnalité</a>.</p>
+        </section>
+
+        <section class="slide">
+          <h2>Les thèmes enfants</h2>
+          <h3>Les enfants d’abord<span aria-hidden="true">&nbsp;⚓</span></h3>
+          <p>Contrairement au sens induit par leur nom, les thèmes enfants ne sont pas des surcharges&nbsp;: ils sont chargés <strong>avant</strong> leur thème parent.</p>
+          <p>Il est donc indispensable de disposer d’un thème parent <strong>adapté</strong>, de le choyer et de l’<strong>améliorer continuellement</strong> afin de <strong>capitaliser</strong> sur nos découvertes et nos recherches.</p>
+          <p class="small">Ça rend également insipide le bénéfice mis en avant par WordPress sur son codex, à savoir bénéficier sans risque des mises à jour du thème parent…</p>
+        </section>
+
+        <section class="slide">
+          <h2>Un patrimoine génétique</h2>
+          <p>Enrichir son thème parent grâce aux diverses fonctionnalités développées dans les thèmes enfants permet de <strong>réduire progressivement les coûts d’implémentation</strong> desdites fonctionnalités.</p>
+          <p>Cela inclut évidemment des fonctionnalités visant à améliorer l’<strong>accessibilité</strong>.</p>
+          <p class="small">Ce gain de qualité devient purement mécanique dès lors qu’on utilise un thème parent solide, et chaque thème enfant développé par la suite en héritera.</p>
+        </section>
+
+        <section class="slide">
+          <h2>Une question d’hygiène technique</h2>
+          <p>Il existe plusieurs avantages connexes à cette discipline de développement&nbsp;:</p>
+          <ul>
+            <li>la maintenance est grandement facilitée par la maîtrise de l’écosystème technique<span aria-hidden="true">&nbsp;⚙</span>&nbsp;;</li>
+            <li>le recyclage<span aria-hidden="true">&nbsp;♻</span> de fonctionnalités et de mécanismes améliore l’homogénéité du code et aide à définir puis appliquer des conventions d’écriture et de nommage&nbsp;;</li>
+            <li>l’architecture technique et la documentation<span aria-hidden="true">&nbsp;✍</span> ne coûteront presque plus rien.</li>
+          </ul>
+          <p>Ça ressemble à de bonnes habitudes, non&nbsp;?</p>
+        </section>
+
+        <section class="slide">
+          <h2>Les extensions (obligatoires)</h2>
+          <p>La majorité des travailleurs utilisant WordPress disposent de leur flotte d’extensions favories, utilisées systématiquement ou presque. <strong>Inconvénient</strong>&nbsp;: les extensions sont administrables.</p>
+          <p>Les <i lang="en"><abbr title="Must Use">mu</abbr>-plugins</i> ne le sont pas&nbsp;! Si elles sont présentes, elles sont activées et non administrables. Fini les accidents<span aria-hidden="true">&nbsp;⚠</span>.</p>
+          <p>C’est particulièrement utile pour <strong>personnaliser le <abbr title="What You See Is What You Get" lang="en">wysiwyg</abbr></strong>, par exemple.</p>
+          <p class="small">J’en ai quelques-unes amusantes, <a href="https://github.com/ffoodd/ffeeeedd--extensions/tree/master/mu-plugins">elles sont sur GitHub</a>.</p>
+        </section>
+
+        <section class="slide">
+          <h2>Les autres <abbr lang="en" title="Content Management System">cms</abbr></h2>
+          <p>La majorité des autres <abbr lang="en" title="Content Management System">cms</abbr> conseille de modifier directement les thèmes… Cela ne permet malheureusement pas de faciliter la maintenance, les évolutions ni le recyclage.
+Le travail est difficilement capitalisable.</p>
+          <h3>Drupal</h3>
+          <p><a href="https://www.drupal.org/node/225125" hreflang="en">Leur approche</a> est extrêmement intéressante puisque chaque thème peut adopter <strong>plusieurs</strong> sous-thèmes.</p>
+          <p>On peut ainsi imaginer des sous-thèmes <strong>spécialisés</strong>, ou une gestion par <strong>couches de l’interface</strong>.</p>
+        </section>
+
+        <section  class="slide end noprint">
+          <h2 class="end-title">Merci</h2>
+          <h3>Et à bientôt&nbsp;☺</h3>
+          <h4>Crédits</h4>
+          <ul class="credit">
+            <li>Moteur de présentation&nbsp;: <a href="https://github.com/access42/accesSlide" hreflang="en">AccesSlide</a> —&nbsp;par <a href="http://access42.net/">Access42</a>&nbsp;;</li>
+            <li>Pictogrammes&nbsp;: <a href="https://thenounproject.com/marekpolakovic/collection/rounded-ui" hreflang="en">Rounded UI</a> —&nbsp;par <a href="http://www.marekpolakovic.sk/">Marek Polakovic</a>&nbsp;;</li>
+            <li>Typographie de titraille&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/bello-pro">Bello Pro</a> —&nbsp;créée par <a hreflang="en" href="http://www.underware.nl/">Underware</a>&nbsp;;</li>
+            <li>Typographie de labeur&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/museo-slab">Museo Slab</a> —&nbsp;créée par <a hreflang="en" href="http://www.exljbris.com/">Exljbris</a>.</li>
+          </ul>
+        </section>
+
+      </main>
+
+    </div>
+
+    <div id="setting" class="tool-block tool-block-settings " role="dialog" tabindex="-1" style="display:none"></div>
+
+  </div>
+
+  <div id="Caudio"></div>
+  <div id="Dcourante" aria-live="polite" aria-atomic="true" aria-hidden="true"></div>
+
+  <script src="../accesslide/js/slide.min.js"></script>
+</body>
+</html>

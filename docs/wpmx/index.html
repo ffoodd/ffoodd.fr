@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Accessibilité et efficience</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Accessibilité et efficience — Conférence donnée lors du WPMX 2015 à Biarritz par Gaël Poupard">
+  <meta name="author" content="Gaël Poupard">
+  <link rel="stylesheet" href="../accesslide/css/style.css" type="text/css" media="screen">
+  <link rel="stylesheet" id="currentCSS" href="../accesslide/css/ffoodd.css?5" type="text/css" media="screen">
+  <link rel="stylesheet" href="../accesslide/css/print.css" type="text/css" media="print">
+  <script src="../accesslide/js/AccesSlide.min.js"></script>
+  <script src="../accesslide/lang/lang_fr.js"></script>
+  <script src="../accesslide/js/prism.min.js"></script>
+</head>
+<body>
+
+  <div id="screen" class="modeplan" data-effect="ffoodd">
+
+    <div id="volet"></div>
+
+    <header id="banner" role="banner" class="main-header clearfix">
+      <a href="http://www.ffoodd.fr">ffoodd</a>
+      <h1 class="main-title">Accessibilité et efficience</h1>
+    </header>
+
+    <div id="nav" class="tool-bar footer-nav clearfix">
+      <div id="wrappernav">
+        <ul class="related">
+          <li>
+            <a href="http://www.ffoodd.fr">
+              <img src="../accesslide/img/ffoodd.svg?2" role="img" alt="Blog de Gaël Poupard" height="32" width="32" />
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/ffoodd_fr">
+              <img src="../accesslide/img/twitter.svg?2" role="img" alt="@ffoodd_fr sur Twitter" height="32" width="32" />
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/ffoodd/" hreflang="en">
+              <img src="../accesslide/img/github.svg?2" role="img" alt="@ffoodd sur Github" height="32" width="32" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <nav role="navigation" id="sommaire" class="tool-block tool-block-summary" tabindex="-1"></nav>
+
+    <div id="wrapper">
+
+      <main role="main" id="main">
+
+        <section class="slide couv">
+          <h2>Accessibilité et efficience</h2>
+          <h3>Ce que vous faites et ce dont vous êtes capables</h3>
+          <footer class="table">
+            <p class="col-50">animé par <a href="http://www.ffoodd.fr">Gaël Poupard</a></p>
+            <p class="col-50"><a href="http://www.kosmos.fr"><img src="../accesslide/img/Kosmos.png" width="200" height="100" alt="Kosmos, Digital for Education" lang="en"/></a></p>
+          </footer>
+        </section>
+
+        <section class="slide">
+          <h2>Définition officielle<span aria-hidden="true">&nbsp;✔</span></h2>
+          <blockquote>
+            <p>Mettre le Web et ses services à la disposition de tous les individus, quel que soit leur matériel ou logiciel, leur infrastructure réseau, leur langue maternelle, leur culture, leur localisation géographique, ou leurs aptitudes physiques ou mentales.</p>
+            <cite>Tim Berners-Lee</cite>
+          </blockquote>
+          <p>Plutôt éloigné de la «&nbsp;prise en compte du handicap&nbsp;», pas vrai&nbsp;?</p>
+          <p><strong>Démystifions tout ça.</strong></p>
+        </section>
+
+        <section class="slide">
+          <h2>Les ❹ principes des <abbr title="Web Content Accessibility Guidelines" lang="en">wcag</abbr></h2>
+          <dl>
+            <dt class="Cmasque">Perceptible</dt>
+            <dd class="Cmasque">L’information et les composants de l’interface utilisateur doivent être présentés à l’utilisateur de façon à ce qu’il puisse les percevoir.</dd>
+            <dt class="Cmasque">Utilisable</dt>
+            <dd class="Cmasque">Les composants de l’interface utilisateur et de navigation doivent être utilisables.</dd>
+            <dt class="Cmasque">Compréhensible</dt>
+            <dd class="Cmasque">Les informations et l’utilisation de l’interface utilisateur doivent être compréhensibles.</dd>
+            <dt class="Cmasque">Robuste</dt>
+            <dd class="Cmasque">Le contenu doit être suffisamment robuste pour être interprété de manière fiable par une large variété d’agents utilisateurs, y compris les technologies d’assistance.</dd>
+          </dl>
+          <p class="Cmasque">Ça a l’air bien, non&nbsp;?<span aria-hidden="true">&nbsp;☺</span></p>
+        </section>
+
+        <section class="slide">
+          <h2>Situation de handicap<span aria-hidden="true">&nbsp;♿</span></h2>
+          <h3><em>Être handicapé</em> est relatif à un contexte</h3>
+          <p>De nombreux contextes peuvent mettre n’importe qui dans une situation de handicap&nbsp;:</p>
+          <ul>
+            <li class="Cmasque">Utiliser un ordinateur portable en extérieur alors qu’il fait grand soleil&nbsp;;</li>
+            <li class="Cmasque">Naviguer sur son smartphone tactile par -10°&nbsp;;</li>
+            <li class="Cmasque">Regarder une vidéo dans un lieu public avec le son coupé&nbsp;;</li>
+            <li class="Cmasque">Naviguer sur un site web avec une connexion bas débit&nbsp;;</li>
+            <li class="Cmasque">On sera tous vieux un jour<span aria-hidden="true">&nbsp;☺</span>.</li>
+          </ul>
+        </section>
+
+        <section class="slide">
+          <h2>100% accessible n’existe pas</h2>
+          <h3>Autant attaquer un moulin à vent sur une licorne</h3>
+          <p>Le <abbr title="World Wide Web Consortium" lang="en">w3c</abbr> lui-même —&nbsp;au travers de la <abbr lang="en" title="Web Accessibility Initiative">wai</abbr> et des <abbr lang="en" title="Web Content Accessibility Guidelines">wcag</abbr>&nbsp;— recommande de ne pas chercher à atteindre la conformité maximale.</p>
+          <p>Il faut privilégier une <strong>démarche</strong> de mise en accessibilité.</p>
+        </section>
+
+        <section class="slide">
+          <h2>Vous en faites déjà&nbsp;!</h2>
+          <h3>Tout le monde aime <em>bien faire</em> son travail<span aria-hidden="true">&nbsp;❤</span></h3>
+          <p>Chacun a son <strong>savoir-faire</strong> et ses règles de travail. Et nous apprécions tous de découvrir et implémenter de bonnes pratiques, c’est grisant.</p>
+          <p>Parlons-en&nbsp;! Quels sont vos <strong>critères de qualité</strong>, vos domaines d’expertise&nbsp;?</p>
+        </section>
+
+        <section class="slide">
+          <h2>Si je vous dis&hellip;</h2>
+          <ul>
+            <li class="Cmasque">Ergonomie&nbsp;;</li>
+            <li class="Cmasque">Performance&nbsp;;</li>
+            <li class="Cmasque"><abbr title="Responsive Web Design" lang="en">rwd</abbr>&nbsp;;</li>
+            <li class="Cmasque"><abbr title="Search Engine Optimization" lang="en">seo</abbr>&nbsp;;</li>
+            <li class="Cmasque">Lisibilité, hiérarchie de l’information&nbsp;;</li>
+            <li class="Cmasque">Internationalisation&hellip;</li>
+          </ul>
+          <p class="Cmasque">Tout le monde a déjà touché à <strong>un</strong> de ces machins, n’est-ce pas&nbsp;?</p>
+        </section>
+
+        <section class="slide">
+          <h2>Chaque métier contribue</h2>
+          <p>L’accessibilité n’est ni une compétence ni une prestation, puisqu’elle impacte <strong>chaque maillon<span aria-hidden="true">&nbsp;&#128279;</span></strong> de la chaîne de production.</p>
+          <p><strong>C’est une perspective différente sur la vie de vos projets</strong>.</p>
+          <p>Détaillons les implications par métiers, à travers des critères sélectionnés avec amour<span aria-hidden="true">&nbsp;&#10084;</span>.</p>
+        </section>
+
+        <section class="slide">
+          <h2>Décideur</h2>
+          <h3>Client, prospect ou <abbr title="Maîtrise d’ouvrage">moa</abbr></h3>
+          <p>Petite piqûre de rappel&nbsp;: la demande doit venir du décideur (être mentionnée dans l’appel d’offres, par ex.) voire est la <strong>responsabilité légale</strong> du décideur —&nbsp;dans le cas des organismes publics notamment. Un petit conseil, quand même&nbsp;:</p>
+          <blockquote>
+            <p>Ne pas vouloir copier ce que font les autres.</p>
+            <cite>Monique Brunel (@webatou)
+              <time><a href="https://twitter.com/webatou/status/608711588850335744">10 juin 2015</a></time>
+            </cite>
+          </blockquote>
+          <p>Ainsi pour un prestataire, <strong>une démarche cohérente au sujet de l’accessibilité est un atout</strong> lorsque vous êtes mis en concurrence.</p>
+        </section>
+
+        <section class="slide">
+          <h2>Dirigeants</h2>
+          <h3>De grandes responsabilités impliquent de grands pouvoirs</h3>
+          <p>Sans participer à la mise en conformité technique, les dirigeants sont responsables du <strong>super-critère<span aria-hidden="true">&nbsp;⚛</span></strong>&nbsp;: impulser dans les équipes la culture de l’accessibilité, et l’afficher fièrement.</p>
+          <p>Une manière simple et efficace d’y parvenir est de poser à vos interlocuteurs la question suivante, dans chaque discussion&nbsp;:</p>
+          <p>—&nbsp;<strong>Et l’accessibilité&nbsp;?</strong></p>
+        </section>
+
+        <section class="slide">
+          <h2>Avant-vente</h2>
+          <p>Là, on commence à rigoler&nbsp;: ici, vous interrogez probablement vos équipes pour bâtir une proposition convaincante.</p>
+          <p>C’est l’occasion rêvée de <strong>déterminer</strong>&nbsp;:
+          <ul>
+            <li>le niveau d’accessibilité à viser&nbsp;;</li>
+            <li>les thématiques et critères non applicables&nbsp;;</li>
+            <li>et parfois alerter le prospect sur des écueils potentiels.</li>
+          </ul>
+          <p><strong>Vous gagnerez en crédibilité et mettrez peut-être à l’amende certains concurrents</strong><span aria-hidden="true">&nbsp;✌</span>.</p>
+        </section>
+
+        <section class="slide">
+          <h2>Chef de projet</h2>
+          <p>Selon <a href="http://www.metiers.internet.gouv.fr/metier/chef-de-projet-fonctionnel-web">le portail des métiers de l’internet</a>, «&nbsp;il coordonne le travail de tous les acteurs du projet et <strong>veille au respect de la qualité</strong>, des délais et du budget&nbsp;». Ainsi il peut&nbsp;:<p>
+          <ul>
+            <li>accompagner les équipes vers le <strong>seuil de qualité</strong> visé (point trop n’en faut)&nbsp;;</li>
+            <li>proposer <a href="https://references.modernisation.gouv.fr/sites/default/files/RGAA3/guide_accompagnement.htm#__RefHeading__74796_1264946727">un échantillon représentatif</a> à tester&nbsp;;</li>
+            <li>se faire <strong>le relais</strong> de la direction en demandant sans cesse «&nbsp;Et l’accessibilité&nbsp;?&nbsp;».</li>
+          </ul>
+          <p>Par exemple, <strong>vérifier l’orthographe et la compréhensibilité de l’interface</strong> et connaître les notions de base vous permettront de maintenir un niveau confortable pour tous.</p>
+        </section>
+
+        <section class="slide">
+          <h2>Ergonome</h2>
+          <p>Plusieurs thématiques vont intéresser un concepteur/ergonome&nbsp;: <strong>formulaires</strong>, <strong>navigation</strong>, <strong>structuration</strong> et <strong>présentation de l’information</strong> notamment. Voyons un exemple&nbsp;:</p>
+          <blockquote class="Cmasque">
+            <h3>Critère 12.2 [AA]</h3>
+            <p>Dans chaque ensemble de pages, le menu ou les barres de navigation sont-ils toujours à la même place (hors cas particuliers)&nbsp;?</p>
+            <footer>
+              <cite><a href="https://references.modernisation.gouv.fr/referentiel-technique-0#crit-12-2"><abbr title="Référentiel Général d’Accessibilité">rgaa</abbr>3</a>, thématique «&nbsp;Navigation&nbsp;»</cite>
+            </footer>
+          </blockquote>
+        </section>
+
+        <section class="slide">
+          <h2>Ergonome, 2<sup>e</sup> acte</h2>
+          <p>On peut également citer&nbsp;:</p>
+          <ul>
+            <li class="Cmasque"><a href="https://references.modernisation.gouv.fr/referentiel-technique-0#crit-12-8">la présence du fil d’Ariane</a>&nbsp;;</li>
+            <li class="Cmasque"><a href="https://references.modernisation.gouv.fr/referentiel-technique-0#crit-12-12">l’indication de la page en cours de consultation</a>&nbsp;;</li>
+            <li class="Cmasque">ou encore <a href="https://references.modernisation.gouv.fr/referentiel-technique-0#crit-12-6">le moteur de recherche atteignable de la même façon sur l’ensemble des pages</a>.</li>
+          </ul>
+          <p class="Cmasque">Rien d’extraordinaire, n’est-ce pas&nbsp;? Et le mieux c’est que WordPress permet de gérer ça très facilement, <strong>au niveau du thème</strong>&nbsp;!</p>
+        </section>
+
+        <section class="slide">
+          <h2><abbr title="Directeur Artistique">da</abbr> et graphiste</h2>
+          <p>Les déficiences visuelles sont un trouble banal et pourtant rarement pris en compte dans les créations graphiques&nbsp;: dans l’assistance, combien de personnes portent des lunettes<span aria-hidden="true">&nbsp;☺</span>&nbsp;?</p>
+          <blockquote class="Cmasque">
+            <h3>Critère 3.3 [AA]</h3>
+            <p>Dans chaque page Web, le contraste entre la couleur du texte et la couleur de son arrière-plan est-il suffisamment élevé (hors cas particuliers)&nbsp;?</p>
+            <footer>
+              <cite><a href="https://references.modernisation.gouv.fr/referentiel-technique-0#crit-3-3"><abbr title="Référentiel Général d’Accessibilité">rgaa</abbr>3</a>, thématique «&nbsp;Couleurs&nbsp;»</cite>
+            </footer>
+          </blockquote>
+          <p class="Cmasque"><strong>Astuce</strong>&nbsp;: utilisez l’excellent <a href="http://contrast-finder.tanaguru.com/">Contrast-Finder</a> de <a href="http://www.tanaguru.com/fr/">Tanaguru</a>.</p>
+        </section>
+
+        <section class="slide">
+          <h2><abbr title="Directeur Artistique">da</abbr> et graphiste, 2<sup>e</sup> acte</h2>
+          <h3>Il n’y a pas que les contrastes dans la vie</h3>
+          <p>Je vous recommande chaudement ces critères&nbsp;:</p>
+          <ul>
+            <li class="Cmasque"><a href="https://references.modernisation.gouv.fr/referentiel-technique-0#crit-3-1">l’information ne doit pas être donnée que par la couleur</a>&nbsp;;</li>
+            <li class="Cmasque"><a href="http://wiki.accede-web.com/notices/graphique-ergonomique/conserver-les-accents-sur-les-lettres-capitales">conserver les accents sur les lettres capitales</a>&nbsp;;</li>
+            <li class="Cmasque"><a href="https://references.modernisation.gouv.fr/referentiel-technique-0#crit-10-11">les blocs de texte n’excèdent pas 80 caractères de largeur</a> (AAA)&nbsp;;</li>
+            <li class="Cmasque"><a href="https://references.modernisation.gouv.fr/referentiel-technique-0#test-11-10-2">les champs obligatoires doivent être indiqués visuellement</a>&nbsp;;</li>
+            <li class="Cmasque"><a href="https://references.modernisation.gouv.fr/referentiel-technique-0#crit-10-9">le texte ne doit pas être justifié</a>.</li>
+          </ul>
+          <p class="Cmasque">Mais surtout, <strong>dialoguez</strong> avec votre équipe car un graphiste peut apporter <strong>des solutions</strong> astucieuses, y compris à des problèmes purement techniques. <strong>N’hésitez pas&nbsp;!</strong></p>
+        </section>
+
+        <section class="slide">
+          <h2>Développeur</h2>
+          <p>Le rôle du développeur concerne (au minimum) la préparation des mécanismes <em lang="en">back-end</em> particuliers, tels que des contraintes sur les formulaires avancés&nbsp;:</p>
+          <blockquote class="Cmasque">
+            <h3>Critère 11.10 [A]</h3>
+            <p>Dans chaque formulaire, le contrôle de saisie est-il utilisé de manière pertinente&nbsp;?</p>
+            <footer>
+              <cite><a href="https://references.modernisation.gouv.fr/referentiel-technique-0#crit-11-10"><abbr title="Référentiel Général d’Accessibilité">rgaa</abbr>3</a>, thématique «&nbsp;Formulaires&nbsp;»</cite>
+            </footer>
+          </blockquote>
+          <p class="Cmasque">Une contrainte serveur ne prévient pas l’utilisateur, alors qu’un soupçon de <em lang="en">front-end</em> le fera pour vous&nbsp;!</p>
+          <p class="Cmasque small">En parlant de <em lang="en">front-end</em>, <strong>entrons dans le vif du sujet</strong><span aria-hidden="true">&nbsp;⚔</span>&nbsp;!</p>
+        </section>
+
+        <section class="slide">
+          <h2>Intégrateur</h2>
+          <h3>Le héraut de l’accessibilité<span aria-hidden="true">&nbsp;⚑</span></h3>
+          <p>Difficile de choisir un critère, tant l’intégrateur est la personne indiquée pour la majorité des cas. En voici un dont vous me direz des nouvelles<span aria-hidden="true">&nbsp;♻</span>&nbsp;:</p>
+          <blockquote class="Cmasque">
+            <h3>Critère 8.2 [A]</h3>
+            <p>Pour chaque page Web, le code source est-il valide selon le type de document spécifié (hors cas particuliers)&nbsp;?</p>
+            <footer>
+              <cite><a href="https://references.modernisation.gouv.fr/referentiel-technique-0#crit-8-2"><abbr title="Référentiel Général d’Accessibilité">rgaa</abbr>3</a>, thématique «&nbsp;Éléments obligatoires&nbsp;»</cite>
+            </footer>
+          </blockquote>
+        </section>
+
+        <section class="slide">
+          <h2>Référenceur</h2>
+          <p>Ici, pas de mystère&nbsp;: nous allons parler <strong>sémantique</strong>.</p>
+          <small>Et pour le clin d’œil, rappelons que le <abbr title="Référentiel Général d’Accessibilité">rgaa</abbr>3 comporte deux thématiques «&nbsp;Éléments obligatoires&nbsp;» et «&nbsp;Structuration de l’information&nbsp;» qui devraient particulièrement intéresser les <em lang="es">aficionados</em> du <abbr lang="en" title="Search Engine Optimization">seo</abbr>.</small>
+          <blockquote class="Cmasque">
+            <h3>Critère 9-1 [A]</h3>
+            <p>Dans chaque page Web, l’information est-elle structurée par l’utilisation appropriée de titres&nbsp;?</p>
+            <footer>
+              <cite><a href="https://references.modernisation.gouv.fr/referentiel-technique-0#crit-9-1"><abbr title="Référentiel Général d’Accessibilité">rgaa</abbr>3</a>, thématique «&nbsp;Structuration de l’information&nbsp;»</cite>
+            </footer>
+          </blockquote>
+          <p class="Cmasque"><strong>Astuce</strong>&nbsp;: vous pouvez utiliser l’extension <em lang="en">Web Developper</em> —&nbsp;disponible <a href="https://addons.mozilla.org/fr/firefox/addon/web-developer/">sur Firefox</a> et <a href="https://chrome.google.com/webstore/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm">sur Chrome</a>&nbsp;— pour afficher le plan du document.</p>
+        </section>
+
+        <section class="slide">
+          <h2>Contributeur<span aria-hidden="true">&nbsp;✍</span></h2>
+          <h3>La pertinence des contenus</h3>
+          <p>Ça ressemble à du bon sens, n’est-ce pas&nbsp;? C’est pourtant crucial pour la vie d’un site <strong>et pour ses utilisateurs</strong>. Pas étonnant que <strong>31 critères</strong> dans le <abbr title="Référentiel Général d’Accessibilité">rgaa</abbr>3 y soient dédiés&nbsp;!</p>
+          <p class="Cmasque">Sur WordPress, de nombreuses extensions permettent de contribuer des formulaires ou des iframes, par ex.</p>
+          <footer class="Cmasque small">
+            <ul>
+              <li>Contact Form 7 est une plaie<span aria-hidden="true">&nbsp;☠</span> —&nbsp;pour ne citer que lui&nbsp;— au point que <a href="https://www.joedolson.com/" lang="en">Joe Dolson</a> a créé <a href="https://wordpress.org/plugins/contact-form-7-accessible-defaults/" lang="en">une extension pour remplacer les formulaires générés par un équivalent accessible</a>&nbsp;;</li>
+              <li>Mon conseil&nbsp;: <strong>créez votre propre <em lang="en"><abbr title="Must Use">mu</abbr>-plugin</em></strong> pour personnaliser l’éditeur de contenus riches et ainsi <strong>favoriser</strong> la contribution de contenus accessibles. Vous trouverez le mien <a href="https://github.com/ffoodd/ffeeeedd--extensions">sur Github</a><span aria-hidden="true">&nbsp;☺</span>.</li>
+            </ul></footer>
+        </section>
+
+        <section class="slide">
+          <h2>Esprit d’équipe</h2>
+          <h3>Culture et <abbr title="Acide désoxyribonucléique">adn</abbr></h3>
+          <p>Pour être efficiente, une équipe doit intégrer sa démarche accessibilité à son quotidien —&nbsp;en commençant par l’évoquer régulièrement dans les discussions. Il s’agit donc de la rendre <strong>naturelle</strong> et transparente pour tous.</p>
+          <p><strong>L’important est d’instaurer une atmosphère bienveillante et motivante pour évoluer dans une mécanique de progression perpétuelle</strong>.</p>
+          <h3>Comment feriez-vous ça<span aria-hidden="true">&nbsp;⚙</span>&nbsp;?</h3>
+        </section>
+
+        <section class="slide">
+          <h2>Esprit d’équipe</h2>
+          <h3>Quelques pistes&nbsp;:</h3>
+          <ul>
+            <li>utiliser des <strong>composants réutilisables<span aria-hidden="true">&nbsp;♻</span></strong> et <strong>documentés</strong>&nbsp;: WordPress s’y prête bien grâce aux thèmes, thèmes enfants, extensions et extensions obligatoires&nbsp;;</li>
+            <li>déterminer <strong>ensemble<span aria-hidden="true">&nbsp;☮</span></strong> quels référentiels suivre et sur quelles ressources vous appuyer&nbsp;;</li>
+            <li>rendre ces tâches <strong>ludiques<span aria-hidden="true">&nbsp;♘</span></strong> et didactiques afin de les intégrer efficacement&nbsp;;</li>
+            <li>prendre du temps<span aria-hidden="true">&nbsp;⌚</span> pour <strong>dialoguer</strong>, <strong>échanger vos connaissances</strong> et <strong>faire découvrir</strong> aux autres des points méconnus.</li>
+          </ul>
+        </section>
+
+        <section class="slide">
+          <h2>Ressources<span aria-hidden="true">&nbsp;❤</span></h2>
+          <ul>
+            <li>Les <a href="http://wiki.accede-web.com">notices AcceDe Web</a> par <a href="http://blog.atalan.fr/">la société Atalan</a>&nbsp;;</li>
+            <li>Les <em lang="en">checklists</em> qualité <a href="http://checklists.opquast.com/fr/">Opquast</a> également disponibles sous forme d’<a href="https://desktop.opquast.com/fr/">extension pour Firefox</a>&nbsp;;</li>
+            <li>des ressources passionantes proposées par <a href="https://www.digitalpulse.pwc.com.au/resources/" hreflang="en">Digital Pulse (en anglais)</a>&nbsp;:
+              <ul>
+                <li><a href="https://www.digitalpulse.pwc.com.au/wp-content/uploads/2014/08/Attitude-Adjusters.compressed.pdf" download hreflang="en">un jeu de cartes (pdf en anglais, 740<abbr title="kilobyte">kB</abbr>)</a> pour «&nbsp;ajuster les attitudes&nbsp;» et devenir un champion de l’accessibilité&nbsp;;</li>
+                <li><a href="https://www.digitalpulse.pwc.com.au/wp-content/uploads/2014/08/WCAG20Map.pdf" download hreflang="en">cartographie des <abbr lang="en" title="Web Content Accessibility Guideline">wcag</abbr> (pdf en anglais, 320,2<abbr title="kilobyte">kB</abbr>)</a>.</li>
+              </ul>
+            </li>
+            <li>quelques réflexions partagées sur Openweb au sujet <a href="http://openweb.eu.org/articles/planifier_accessibilite">des pièges à éviter</a>&nbsp;;</li>
+            <li>une note de la <abbr lang="en" title="Web Accessibility Initiative">wai</abbr> sur <a href="http://www.w3.org/community/wai-engage/wiki/Accessibility_Responsibility_Breakdown" hreflang="en">le partage des responsabilités de l’accessibilité (en anglais)</a>.</li>
+          </ul>
+        </section>
+
+        <section  class="slide end noprint">
+          <h2 class="end-title">Merci</h2>
+          <h3>Et à bientôt&nbsp;☺</h3>
+          <h4>Crédits</h4>
+          <ul class="credit">
+            <li>Moteur de présentation&nbsp;: <a href="https://github.com/access42/accesSlide" hreflang="en">AccesSlide</a> —&nbsp;par <a href="http://access42.net/">Access42</a>&nbsp;;</li>
+            <li>Pictogrammes&nbsp;: <a href="https://thenounproject.com/marekpolakovic/collection/rounded-ui" hreflang="en">Rounded UI</a> —&nbsp;par <a href="http://www.marekpolakovic.sk/">Marek Polakovic</a>&nbsp;;</li>
+            <li>Typographie de titraille&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/bello-pro">Bello Pro</a> —&nbsp;créée par <a hreflang="en" href="http://www.underware.nl/">Underware</a>&nbsp;;</li>
+            <li>Typographie de labeur&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/museo-slab">Museo Slab</a> —&nbsp;créée par <a hreflang="en" href="http://www.exljbris.com/">Exljbris</a>.</li>
+          </ul>
+        </section>
+
+      </main>
+
+    </div>
+
+    <div id="setting" class="tool-block tool-block-settings " role="dialog" tabindex="-1" style="display:none"></div>
+
+  </div>
+
+  <div id="Caudio"></div>
+  <div id="Dcourante" aria-live="polite" aria-atomic="true" aria-hidden="true"></div>
+
+  <script src="../accesslide/js/slide.min.js"></script>
+</body>
+</html>

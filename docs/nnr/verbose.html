@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Comprendre et prendre en compte les situations de handicap sur le web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprendre et prendre en compte les situations de handicap sur le web — conférence donnée lors de Paris Web 2020 par Gaël Poupard">
+    <meta name="author" content="Gaël Poupard">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/bello-pro.woff2"/>
+    <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/museo-slab-300.woff2"/>
+    <link rel="stylesheet" href="../accesslide/css/style.css" type="text/css" media="screen">
+    <link rel="stylesheet" id="currentCSS" href="../accesslide/css/ffoodd.css?5" type="text/css" media="screen">
+    <link rel="stylesheet" href="../accesslide/css/charts.css?37" type="text/css" media="screen">
+    <link rel="stylesheet" href="../accesslide/css/print.css" type="text/css" media="print">
+    <script src="../accesslide/js/AccesSlideVerbose.min.js"></script>
+    <script src="../accesslide/lang/lang_fr.js"></script>
+    <style>
+      .grid {
+        flex: 1;
+        display: grid;
+        grid-template: repeat(var(--rows, 4), 1fr) / repeat(var(--cols, 8), 1fr);
+        gap: 2rem;
+        max-height: calc(82vh - 4em);
+      }
+
+      .grid > *:not(p) {
+        grid-area: var(--y, 2) / var(--x, 1) / span var(--span-y, var(--span, var(--s, 1))) / span var(--span-x, var(--span, var(--s,1)));
+        place-self: center;
+        font-family: "Twemoji Mozilla", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-size: clamp(2rem, var(--s, 1) * 4rem, 20vh);
+        line-height: 1;
+      }
+
+      .grid > * .emoji {
+        height: 1em;
+        width: 1em;
+      }
+
+      .grid > p {
+        grid-area: 4 / 1 / 4 / span 8;
+        align-self: end;
+      }
+
+      h2 {
+        font-size: 1.5em;
+      }
+
+      .slide {
+        overflow: hidden;
+      }
+
+      @media screen and (min-width: 48em) {
+        .modeplan .slide.full {
+          display: flex !important;
+          flex-direction: column;
+          height: 82vh;
+        }
+      }
+    </style>
+</head>
+<body>
+
+<div id="screen" class="modeplan" data-effect="ffoodd">
+
+    <div id="volet"></div>
+
+    <header id="banner" role="banner" class="main-header clearfix">
+        <a href="https://www.ffoodd.fr">ffoodd</a>
+        <h1 class="main-title">
+            Comprendre et prendre en compte les situations de handicap sur le web
+        </h1>
+    </header>
+
+    <div id="nav" class="tool-bar footer-nav clearfix">
+        <div id="wrappernav">
+            <ul class="related">
+                <li>
+                    <a href="https://www.ffoodd.fr">
+                        <img src="../accesslide/img/ffoodd.svg?2" role="img" alt="Blog de Gaël Poupard" height="32" width="32" />
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/ffoodd_fr">
+                        <img src="../accesslide/img/twitter.svg?2" role="img" alt="@ffoodd_fr sur Twitter" height="32" width="32" />
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/ffoodd/" hreflang="en">
+                        <img src="../accesslide/img/github.svg?2" role="img" alt="@ffoodd sur Github" height="32" width="32" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <nav role="navigation" id="sommaire" class="tool-block tool-block-summary" tabindex="-1"></nav>
+
+    <div id="wrapper">
+
+        <main role="main" id="main">
+
+          <section class="slide full couv">
+            <h2>
+              Comprendre et prendre en compte les situations de handicap sur le web
+            </h2>
+            <p>
+              Retrouvez les slides en ligne sur<br>
+              <span aria-hidden="true">→&nbsp;</span><a href="https://www.ffoodd.fr/nnr/">ffoodd.fr/nnr</a><br>
+              et en version «&nbsp;commentée&nbsp;»<br>
+              <span aria-hidden="true">→&nbsp;</span><a href="https://www.ffoodd.fr/nnr/verbose.html">ffoodd.fr/nnr/verbose</a>.
+            </p>
+            <footer class="table">
+              <p class="col-66">Raconté par <a href="https://www.ffoodd.fr">Gaël Poupard</a>, d’après un contenu original de <a href="https://vincent-valentin.name">Vincent Valentin</a>.</p>
+              <p class="col-33 col-t-right">
+                <a href="https://www.orange-business.com/fr">
+                  <img src="../accesslide/img/OBS.jpg" width="175" height="64" alt="Orange Business Services" class="obs"/>
+                </a>
+              </p>
+            </footer>
+          </section>
+
+          <section class="slide full">
+            <h2>Le handicap, tout un symbole</h2>
+            <div class="grid">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="1em" height="1em" fill="currentColor" role="presentation" style="--x:5">
+                <path d="M13.824 6.225c1.395-.13 2.478-1.33 2.478-2.735A2.75 2.75 0 0013.556.744a2.75 2.75 0 00-2.745 2.746c0 .461.128.933.343 1.33l.978 13.766 10.076.002 4.132 9.683 5.426-2.128-.84-2-3.036 1.095-3.999-9.23-9.368.062-.129-1.743 6.782.002v-2.58l-7.04-.002z"/>
+                <path d="M23.958 25.967c-1.7 3.361-5.26 5.576-9.057 5.576-5.576 0-10.124-4.548-10.124-10.124 0-3.916 2.373-7.554 5.914-9.167l.229 2.99c-2.094 1.32-3.385 3.701-3.385 6.197 0 4.045 3.299 7.345 7.344 7.345 3.7 0 6.857-2.84 7.287-6.484z"/>
+              </svg>
+              <p>Le symbole international du handicap représente une personne dans un fauteuil roulant ; mais il est forcément réducteur.</p>
+            </div>
+          </section>
+
+          <section class="slide full">
+            <h2>Les différentes facettes du handicap</h2>
+            <div class="grid">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="1em" height="1em" fill="currentColor" role="presentation">
+                <path d="M9.147 23.824c.592.31 1.207.588 1.837.83l1.792-1.792a7.236 7.236 0 01-1.645-1.022zM8.898 18.641l-3.06 3.055c.495.378 1.02.747 1.566 1.102l2.4-2.4a7.247 7.247 0 01-.906-1.757zM8.468 16.189c0-1.21.298-2.35.819-3.353l-6.341 6.34c.418.416.878.85 1.38 1.287l4.15-4.15c0-.041-.008-.082-.008-.124zM14.975 23.47l-1.84 1.84c.769.17 1.561.276 2.368.302l2.403-2.403a7.322 7.322 0 01-2.93.26z"/>
+                <path d="M4.774 3.832L3.441 5.166l4.221 4.222c-.394.23-.78.477-1.148.792L.381 16.317c.177.227.595.755 1.218 1.449l7.197-7.198 1.181 1.181c.007-.008.015-.016.021-.025l2.477 2.477c-.006.01-.014.017-.02.027l.423.422-.906.905a3.835 3.835 0 00-.056.63c0 .611.143 1.185.396 1.698l1.897-1.897 1.38 1.38-2.002 2.003a3.838 3.838 0 001.992.676l1.343-1.344.815.815.031-.022 2.496 2.496-.023.02.804.803-2.509 2.509c1.304-.284 2.55-.757 3.72-1.341l4.79 4.791 1.334-1.333-4.418-4.418c4.477-2.79 7.467-6.832 7.467-6.832s-6.97-9.43-15.571-9.43c-2.31 0-4.5.688-6.47 1.687zM15.801 8.86a7.33 7.33 0 017.33 7.329 7.277 7.277 0 01-1.532 4.468l-2.494-2.494a3.824 3.824 0 00.548-1.974 3.867 3.867 0 00-3.867-3.866c-.722 0-1.396.205-1.973.548l-2.48-2.48a7.277 7.277 0 014.468-1.531z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="1em" height="1em" fill="currentColor" role="presentation" style="--x:3">
+                <path d="M0 0v25.823c1.373 1.35 3.356 2.392 5.86 3.345 2.526.96 5.21 1.348 7.242.533.176-.071.358-.187.523-.338a2.1 2.1 0 00.341-.405c.241-.373.337-.824.27-1.334a.234.234 0 01-.002-.046s.006-.045-.04-.304c-.046-.26-.145-.706-.356-1.43 0-.003 0-.005-.002-.008a.685.685 0 01.16-.627c.143-.15.325-.239.514-.309.316-.118.53-.371.56-.598.03-.226-.069-.486-.586-.728-.015-.006-2.448-1.024-4.17-2.125-.245-.157-.064-.535.212-.443 0 0 3.17 1.046 5.084 1.046.154 0 .333.013.478-.039.144-.051.26-.128.318-.443.015-.113-.042-.39-.126-.697-.086-.309-.187-.654-.187-.999l.005.035a.507.507 0 01.07-.337c.114-.17.337-.287.707-.33.028-.004.076-.009.176-.027.1-.018.237-.05.39-.098.304-.098.669-.27.94-.55.272-.282.464-.662.438-1.256-.025-.593-.284-1.404-.96-2.48 0 0-.363-.582-.73-1.74s-.748-2.909-.815-5.295V7.79c0-1.204.205-4.337-.983-7.79zm28.634 0c.334 1.161.66 2.946.754 7.898 0 0 1.118-.293 1.345.595.395 1.55-.463 4.105-.349 4.874.525 3.537-.96 3.44-.96 3.44-.48 6.064-1.843 9.508-5.093 12.267-1.995 1.304-5.321 2.818-10.006.805-.487-.202-.569.046-1.038.28-2.22.89-4.896.816-7.487-.17S1.462 27.726.018 26.292L0 26.116V32h32V0zM9.617 8.686c.638-.02 1.276.315 1.67 1.411.13.361.145.545-.088.48-.413-.113-1.64-.597-3.567-.333-.377.052-.226-.246.05-.57.295-.348 1.115-.962 1.935-.988zm13.25.029c-.866.024-1.705.758-1.987 1.149-.248.345-.377.654-.004.573 1.9-.418 3.162-.033 3.582.047.238.045.207-.136.05-.485-.446-.986-1.05-1.301-1.641-1.284zm.707 13.526a.607.607 0 00-.185.045c-2.215.842-4.484.739-4.64.739-1.179 0-3.136-.28-4.727-.726-.324-.082-.475.275-.194.439.7.38 2.862 1.414 4.949 1.414 2.468 0 4.101-.881 4.878-1.475.133-.1.168-.202.107-.337a.192.192 0 00-.188-.099z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="1em" height="1em" fill="currentColor" role="presentation" style="--x:5">
+                <path d="M13.824 6.225c1.395-.13 2.478-1.33 2.478-2.735A2.75 2.75 0 0013.556.744a2.75 2.75 0 00-2.745 2.746c0 .461.128.933.343 1.33l.978 13.766 10.076.002 4.132 9.683 5.426-2.128-.84-2-3.036 1.095-3.999-9.23-9.368.062-.129-1.743 6.782.002v-2.58l-7.04-.002z"/>
+                <path d="M23.958 25.967c-1.7 3.361-5.26 5.576-9.057 5.576-5.576 0-10.124-4.548-10.124-10.124 0-3.916 2.373-7.554 5.914-9.167l.229 2.99c-2.094 1.32-3.385 3.701-3.385 6.197 0 4.045 3.299 7.345 7.344 7.345 3.7 0 6.857-2.84 7.287-6.484z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="1em" height="1em" fill="currentColor" role="presentation" style="--x:7">
+                <path d="M23.856 2.012L7.549 30.304l-2.772-1.63L16.599 8.127c-.326-.082-.652-.082-.978-.082-1.468 0-2.772.571-3.75 1.55-.409.326-.653.733-.898 1.222l-1.386-.733c.326-.571.652-1.142 1.142-1.631 1.223-1.223 2.935-1.957 4.892-1.957.652 0 1.223.082 1.793.245l.897-1.468a7.827 7.827 0 00-2.69-.49c-2.365 0-4.485.98-6.034 2.528-1.386 1.387-2.201 3.18-2.446 5.056l-2.364-1.468a11.414 11.414 0 013.016-5.381c1.957-1.957 4.73-3.262 7.828-3.262 1.386 0 2.69.326 3.913.734l1.55-2.609zm-2.528 7.582c.734 1.06 1.142 2.365 1.142 3.751 0 1.875-.816 3.588-2.039 4.81l-1.06-1.06c.897-.978 1.55-2.282 1.55-3.75 0-.815-.164-1.468-.49-2.201zm2.283-3.913c1.875 2.038 3.017 4.729 3.017 7.664 0 2.12-.652 4.158-1.712 5.87-2.772 4.485-1.06 12.15-9.214 12.15a7.46 7.46 0 01-5.3-2.202l-.244-.245 1.386-2.364c.163.326.408.57.652.815a4.927 4.927 0 003.506 1.468c5.545 0 4.322-6.523 7.094-10.926.815-1.386 1.304-2.935 1.304-4.566 0-2.038-.652-3.832-1.875-5.3z"/>
+              </svg>
+              <p>
+                Derrière ce pictogramme se cachent d’autres catégories : le handicap peut être physique, auditif, mental ou visuel.<br>
+                Il existe d’ailleurs d’autres méthodes de classement : on y ajoute les handicaps psychiques, cognitifs et les maladies invalidantes.<br>
+                Quelques exemples concrets : cécité, cataracte, trisomie 21, hémiplégie, surdité, acouphènes, dépression, troubles obsessionnels compulsif, dyslexie, diabète…
+              </p>
+            </div>
+          </section>
+
+          <section class="slide full">
+            <h2>Déficience et situation de handicap</h2>
+            <div class="grid" style="--s:2">
+              <span style="--x:3" aria-hidden="true" aria-hidden="true">&#129487;</span>
+              <span style="--x:5" aria-hidden="true" aria-hidden="true">&#128241;</span>
+              <p>
+                Il faut d’ailleurs distinguer déficience (un dysfonctionnement physique ou mental) et handicap (la gêne occasionnée par la déficience).<br>
+                Les handicaps peuvent donc être de naissance ou accidentels, temporaires ou permanents, graves ou légers.
+              </p>
+            </div>
+          </section>
+
+          <section class="slide full">
+            <h2>Représenter pour pouvoir exister</h2>
+            <div class="grid" style="--s:2">
+              <span aria-hidden="true">&#129455;</span>
+              <span style="--x:3" aria-hidden="true">&#129504;</span>
+              <span style="--x:5" aria-hidden="true">&#129469;</span>
+              <span style="--x:7" aria-hidden="true">&#129467;</span>
+              <p>Apple a ajouté à son dernier jeu d’emojis de nouveaux pictogrammes qui représentent le handicap sous différentes formes.</p>
+            </div>
+          </section>
+
+          <section class="slide full">
+            <h2>Les handicaps sont multiples</h2>
+            <div class="grid" style="--s:2">
+              <span aria-hidden="true">&#128083;</span>
+              <span style="--x:3" aria-hidden="true">&#129301;</span>
+              <span style="--x:5" aria-hidden="true">&#129470;</span>
+              <span style="--x:7" aria-hidden="true">&#129487;</span>
+              <p>Mais là encore, ce sont des représentations plus ou moins pertinentes. Ainsi le handicap mental – souvent invisible – semble difficile à représenter.</p>
+            </div>
+          </section>
+
+          <section class="slide full">
+            <h2>Statistique mondiale</h2>
+            <div class="grid">
+              <span style="--x:4;--y:1;--span-y:2;--span-x:3;--s:2" aria-hidden="true">&#128506;</span>
+              <span style="--x:3;--y:3" aria-hidden="true">&#129485;</span>
+              <span style="--x:4" aria-hidden="true">&#129485;</span>
+              <span style="--x:4;--y:3;--span-x:2" aria-hidden="true">&#129485;</span>
+              <span style="--x:5;--span-y:2" aria-hidden="true">&#129485;</span>
+              <span style="--x:6" aria-hidden="true">&#129485;</span>
+              <span style="--x:6;--y:3;--span-x:2" aria-hidden="true">&#129485;</span>
+              <span style="--x:7;--y:1;--span-y:2" aria-hidden="true">&#129485;</span>
+              <p>L’organisation mondiale de la santé estime le nombre de personnes souffrant d’un handicap à…</p>
+            </div>
+          </section>
+
+          <section class="slide full">
+            <h2 aria-hidden="true">Statistique mondiale</h2>
+            <div class="grid">
+              <span style="--x:4;--y:1;--span-y:2;--span-x:3;--s:2" aria-hidden="true">&#128506;</span>
+              <span style="--x:3;--y:3" aria-hidden="true">&#129485;</span>
+              <span style="--x:4" aria-hidden="true">&#129485;</span>
+              <span style="--x:4;--y:3;--span:2" aria-hidden="true">&#129485;</span>
+              <span style="--x:5;--span-y:2;transform:scaleX(-1)" aria-hidden="true">👨🦽</span>
+              <span style="--x:6" aria-hidden="true">&#129485;</span>
+              <span style="--x:6;--y:3;--span-x:2" aria-hidden="true">&#129485;</span>
+              <span style="--x:7;--y:1;--span-y:2" aria-hidden="true">&#129485;</span>
+              <p>…une personne sur sept. Environ 85 % des handicaps sont invisibles.</p>
+            </div>
+          </section>
+
+          <section class="slide full">
+            <h2>L’importance de la représentation</h2>
+            <div class="grid" style="--s:2">
+              <span style="--x:4" aria-hidden="true">&#9855;</span>
+              <p>D’autres initiatives sont menées pour mieux représenter le handicap : ici, le pictogramme est dynamisé pour casser l’image parfois comprise comme passive d’une personne en fauteuil.</p>
+            </div>
+          </section>
+
+          <section class="slide full">
+            <h2>Quelques marches à gravir&nbsp;?</h2>
+            <div class="grid" style="--s:2">
+              <span style="--x:3;transform:scaleX(-1)" aria-hidden="true">👨🦽</span>
+              <span style="--x:5;--y:1" aria-hidden="true">&#127968;</span>
+              <p>On peut se représenter l’accessibilité comme une rampe d’accès permettant de franchir une volée de marches en fauteuil. (Ce qui permettra aussi aux poussettes de passer.)</p>
+            </div>
+          </section>
+
+          <section class="slide full">
+            <h2>Une définition plus large</h2>
+            <div class="grid" style="--s:2">
+              <span style="--x:3;transform:scaleX(-1)" aria-hidden="true">&#128694;</span>
+              <span style="--x:5;--y:1" aria-hidden="true">&#127968;</span>
+              <span style="--x:5;--y:3" aria-hidden="true">&#127970;</span>
+              <span style="--x:7;--y:1" aria-hidden="true">&#127979;</span>
+              <span style="--x:7;--y:3" aria-hidden="true">&#127973;</span>
+              <p>En fait, cela ne concerne pas que les personnes en difficultés, et cela peut aussi concerner l’accès à des services : l’éducation, les soins, le monde de l’entreprise, la culture…</p>
+            </div>
+          </section>
+
+          <section class="slide full">
+            <h2>L’accessibilité numérique</h2>
+            <div class="grid" style="--s:2">
+              <span style="--x:3;transform:scaleX(-1)" aria-hidden="true">&#128694;</span>
+              <span style="--x:5;--y:1" aria-hidden="true">&#128376;</span>
+              <span style="--x:5;--y:3" aria-hidden="true">&#128187;</span>
+              <span style="--x:7;--y:1" aria-hidden="true">&#128250;</span>
+              <span style="--x:7;--y:3" aria-hidden="true">&#128241;</span>
+              <p>L'accessibilité numérique est une sous-catégorie qui concerne par exemple l’accès à la télévision, aux ordinateurs, aux téléphones mobiles ou au web.</p>
+            </div>
+          </section>
+
+          <section class="slide full">
+            <h2>L’accessibilité web</h2>
+            <div class="grid" style="--s:2">
+              <span style="--x:3;transform:scaleX(-1)" aria-hidden="true">&#128694;</span>
+              <span style="--x:5;--y:1" aria-hidden="true">&#128376;</span>
+              <span style="--x:5;--s:1" aria-hidden="true">&#128187;</span>
+              <p>L'accessibilité web se fait via un ordinateur ou un téléphone mobile.</p>
+            </div>
+          </section>
+
+          <section class="slide full">
+            <h2>Les travailleurs du web ont une responsabilité</h2>
+            <div class="grid" style="--s:2">
+              <span style="--x:3" aria-hidden="true">&#128119;</span>
+              <span style="--x:5;--y:1" aria-hidden="true">&#128376;</span>
+              <span style="--x:7" aria-hidden="true">👷♀️</span>
+              <p>Ne pas produire un site accessible, c’est briser la chaîne de l’accessibilité. Les ordinateurs et les téléphones mobiles en sont le premier maillon et sont globalement assez accessibles.</p>
+            </div>
+          </section>
+
+          <section class="slide full">
+            <h2>Le web est accessible</h2>
+            <div class="grid" style="--s:2">
+              <span style="--x:3" aria-hidden="true">&#128119;</span>
+              <span style="--x:5;--y:1" aria-hidden="true">&#128376;</span>
+              <span style="--x:7" aria-hidden="true">👷♀️</span>
+              <span style="--x:5;--y:3" aria-hidden="true">&#129520;</span>
+              <p>Les langages utilisés sur le web sont le second maillon et sont eux aussi pensés pour être accessibles.</p>
+            </div>
+          </section>
+
+          <section class="slide full">
+            <h2>Le travail du W3C</h2>
+            <div class="grid" style="--s:2">
+              <span style="--x:5;--y:1" aria-hidden="true">&#128376;</span>
+              <svg style="--x:3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="1em" height="1em" role="presentation">
+                <path fill="#e44d26" d="M5.398 6.64h21.989l-2.003 22.44-9.005 2.497-8.98-2.493z"/>
+                <path fill="#f16529" d="M25.38 8.475h-8.987v21.194l7.276-2.017z"/>
+                <path fill="#ebebeb" d="M9.49 11.228l.066.738.677 7.586h6.16v-2.753H12.75L12.5 13.98h3.894v-2.752h-.01zM10.741 25.25l5.639 1.566.013-.004v-2.864l-.012.003-3.066-.827-.196-2.196h-2.763z"/>
+                <path d="M7.444.54h1.4v1.382h1.279V.54h1.399v4.186h-1.4V3.324H8.844v1.402H7.444V.54zM13.361 1.928H12.13V.54h3.862v1.388H14.76v2.798h-1.399V1.928zM16.605.54h1.46l.896 1.47.897-1.47h1.459v4.186h-1.393V2.65L18.96 4.14h-.024l-.963-1.488v2.075h-1.369zM22.013.54h1.4v2.802h1.967v1.384h-3.367z"/>
+                <path fill="#fff" d="M22.026 25.25l.042-.465.647-7.247.067-.739h-6.399v2.753h3.39l-.32 3.57-3.07.829v2.863zM23.032 13.98l.055-.618.126-1.396.066-.738h-6.896v2.752h6.64z"/>
+              </svg>
+              <svg style="--x:7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="1em" height="1em" role="presentation">
+                <path fill="#264de4" d="M25.083 29.462l-9.226 2.558-9.2-2.554L4.605 6.469h22.528z"/>
+                <path fill="#2965f1" d="M15.87 8.35v21.715l7.455-2.067L25.08 8.35z"/>
+                <path fill="#ebebeb" d="M15.87 19.7v-2.821H9.307l.253 2.82zm-.01-8.53H8.799l.257 2.82h6.816v-2.82zm-6.175 9.94l.395 4.428 5.778 1.604.013-.004v-2.935l-.013.004-3.14-.848-.202-2.25H10.99z"/>
+                <path d="M9.908.22h3.416v1.428h-1.987v1.43h1.987v1.428H9.908zm4.1 0h3.415v1.242h-1.987v.249h1.987v2.857h-3.416V3.263h1.988v-.248h-1.988zm4.098 0h3.416v1.242h-1.987v.249h1.987v2.857h-3.416V3.263h1.988v-.248h-1.988z"/>
+                <path fill="#fff" d="M22.348 17.636l.069-.757.509-5.709h-7.065v2.82h3.974l-.257 2.889h-3.717v2.82h3.473l-.328 3.658-3.145.849v2.934l5.782-1.602.042-.477z"/>
+              </svg>
+              <svg style="--x:5;--y:3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="1em" height="1em" role="presentation">
+                <path d="M8.134 10.014l2.558 8.695 2.557-8.695h6.933v.864l-2.61 4.498c.916.294 1.61.83 2.08 1.605.47.776.706 1.687.706 2.733 0 1.294-.344 2.381-1.032 3.263-.688.881-1.579 1.322-2.672 1.322-.823 0-1.54-.262-2.151-.785-.612-.523-1.064-1.231-1.358-2.125l1.446-.6c.211.542.49.968.838 1.28.346.31.755.466 1.225.466.494 0 .911-.276 1.252-.828.341-.553.512-1.217.512-1.994 0-.858-.183-1.522-.547-1.992-.423-.553-1.088-.83-1.993-.83h-.705v-.846l2.469-4.268h-2.98l-.17.289-3.625 12.232h-.176l-2.646-8.853L5.4 24.298h-.176L.992 10.014h1.852L5.4 18.71l1.728-5.855-.846-2.84z" fill="#005a9c"/>
+                <path d="M29.805 10.014c-.364 0-.69.131-.938.383a1.38 1.38 0 00-.408.967c0 .356.139.686.394.945.258.262.592.405.952.405.352 0 .694-.143.96-.401.254-.248.393-.578.393-.949a1.348 1.348 0 00-1.353-1.35zm1.173 1.361c0 .312-.12.6-.34.814a1.186 1.186 0 01-.841.345c-.3 0-.596-.124-.817-.349a1.166 1.166 0 01-.345-.82 1.2 1.2 0 01.356-.84c.214-.218.502-.334.817-.334.323 0 .611.12.836.349.218.217.334.509.334.835zm-1.136-.802h-.577v1.53h.288v-.653h.285l.312.653h.322l-.341-.697c.22-.046.348-.195.348-.413 0-.277-.21-.42-.637-.42zm-.053.187c.27 0 .394.075.394.263 0 .18-.124.244-.386.244h-.244v-.507z"/>
+                <path d="M27.534 9.934l.3 1.824-1.061 2.031s-.408-.862-1.085-1.339c-.57-.402-.942-.489-1.524-.37-.746.155-1.592 1.047-1.962 2.148-.442 1.316-.446 1.954-.461 2.539-.025.938.123 1.493.123 1.493s-.645-1.193-.639-2.94c.004-1.247.2-2.377.777-3.493.508-.98 1.262-1.57 1.932-1.639.692-.071 1.239.262 1.662.623.444.38.892 1.208.892 1.208zM27.665 20.252s-.47.84-.761 1.162c-.293.324-.816.893-1.462 1.178-.646.284-.985.338-1.623.277-.638-.062-1.231-.431-1.44-.585-.207-.154-.738-.608-1.038-1.031-.3-.423-.77-1.27-.77-1.27s.262.848.426 1.209c.094.207.383.84.794 1.392.383.515 1.128 1.4 2.258 1.6 1.131.2 1.908-.307 2.1-.43.193-.123.598-.463.855-.737.268-.287.521-.652.662-.872.102-.16.27-.485.27-.485z"/>
+              </svg>
+              <p>C’est le travail du W.3.C. (un organisme de spécification) qui produit notamment le H.T.M.L. et le C.S.S.</p>
+            </div>
+          </section>
+
+          <section class="slide full">
+            <h2>Ne pas couper l’accès au web</h2>
+            <div class="grid" style="--s:2">
+              <span style="--x:3;transform:scaleX(-1)" aria-hidden="true">&#128694;</span>
+              <span style="--x:5;--y:1" aria-hidden="true">&#128376;</span>
+              <span style="--x:4;--s:1;--span-x:2" aria-hidden="true">&#128679;</span>
+              <p>Ne pas utiliser ces outils correctement, c’est bloquer l’accès au web à certains utilisateurs. Or, ce sont parfois ceux qui en ont le plus besoin.</p>
+            </div>
+          </section>
+
+          <section class="slide full">
+            <h2>Ne pas couper l’accès à l’information</h2>
+            <div class="grid" style="--s:2">
+              <span style="--x:3;transform:scaleX(-1)" aria-hidden="true">&#128694;</span>
+              <span style="--x:5;--y:1" aria-hidden="true">&#8505;</span>
+              <span style="--x:4;--s:1;--span-x:2" aria-hidden="true">&#128679;</span>
+              <p>Ne pas accéder au web, c’est ne pas accéder à l’information. Cet outil d’émancipation ne remplit alors plus son rôle.</p>
+            </div>
+          </section>
+
+          <section class="slide full">
+            <h2>Quelques motivations</h2>
+            <div class="grid">
+              <span class="Cmasque" aria-hidden="true">&#129309;</span>
+              <span style="--x:2;--span-x:2" class="Cmasque" aria-hidden="true">&#9878;</span>
+              <span style="--x:4;--span-x:2" class="Cmasque" aria-hidden="true">&#129299;</span>
+              <span style="--x:6;--span-x:2" class="Cmasque" aria-hidden="true">&#128506;</span>
+              <span style="--x:8" class="Cmasque" aria-hidden="true">&#128116;</span>
+              <p>
+                On peut vouloir agir par solidarité ou par civisme. En pratique, cela ne semble pas suffire et des aspects légaux entrent donc en jeu.<br>
+                De nombreux pays imposent que les sites soient accessibles pour ne pas discriminer des membres de leur population. On voit aussi de plus en plus d’actions en justice menées pour faire entendre ces droits.<br>
+                L’accessibilité web permet aussi aux utilisateurs avancés de naviguer plus rapidement. Par exemple avec la navigation clavier dans les formulaires.<br>
+                Une personne sur sept, c’est également 15 % de part de marché. Mais on peut aussi se dire qu’on finira tous un jour par vieillir, et par être plus ou moins concernés par l’accessibilité.
+              </p>
+            </div>
+          </section>
+
+          <section class="slide full">
+            <h2>Des outils adaptés…</h2>
+            <div class="grid" style="--s:2">
+              <span style="--x:3;transform:scaleX(-1)" aria-hidden="true">&#128694;</span>
+              <span style="--x:5;--y:1" aria-hidden="true">&#8505;</span>
+              <span style="--x:4;--s:1;--span-x:2" aria-hidden="true">&#128270;</span>
+              <p>Comment est-ce que ça fonctionne en pratique ? Prenons l’exemple d’un malvoyant : il va contourner son handicap en utilisant une technologie d’assistance, comme peut l’être une loupe d’écran.</p>
+            </div>
+          </section>
+
+          <section class="slide full">
+            <h2>Des outils adaptés… en fonction du handicap</h2>
+            <div class="grid">
+              <span aria-hidden="true">&#128483;</span>
+              <span style="--x:2;--span-x:2" aria-hidden="true">&#128292;</span>
+              <span style="--x:4;--span-x:2" aria-hidden="true">&#128270;</span>
+              <span style="--x:6;--span-x:2" aria-hidden="true">&#128434;</span>
+              <span style="--x:8" aria-hidden="true">&#128265;</span>
+              <p>On peut aussi lister : les commandes vocales, les sous-titres vidéos, les périphériques de pointages alternatifs, les lecteurs d’écrans…</p>
+            </div>
+          </section>
+
+          <section class="slide full">
+            <h2>Faire l’expérience</h2>
+            <div class="grid" style="--s:2">
+              <span style="--x:4" aria-hidden="true">&#129514;</span>
+              <p>J’aimerais ici vous inciter à tester par vous même l’accessibilité ou à vous documenter sur le sujet. Atalan, une entreprise spécialisée en accessibilité web propose pour cela <a href="https://www.atalan.fr/agissons/fr/index.html">un site pour se mettre en situation de handicap</a>.</p>
+            </div>
+          </section>
+
+          <section class="slide full">
+            <h2>Construire la culture de l’accessibilité</h2>
+            <div class="grid" style="--s:2">
+              <span aria-hidden="true">👨🎨</span>
+              <span style="--x:3;--y:1" aria-hidden="true">👨💼</span>
+              <span style="--x:4;--y:3" aria-hidden="true">&#128119;</span>
+              <span style="--x:6" aria-hidden="true">&#9855;</span>
+              <span style="--x:8;--y:3" aria-hidden="true">👩💻</span>
+              <p>L’accessibilité est l’affaire de tous. Chaque corps de métier doit prendre part dans ce processus : ce n’est pas qu’un souci technique à résoudre.</p>
+            </div>
+          </section>
+
+          <section class="slide full">
+            <h2>Quatre principes structurels</h2>
+            <div class="grid">
+              <span title="Perceptible" aria-hidden="true">&#128065;</span>
+              <span style="--x:3" title="Utilisable" aria-hidden="true">&#9881;️</span>
+              <span style="--x:5" title="Compréhensible" aria-hidden="true">&#129300;</span>
+              <span style="--x:7" title="Robuste" aria-hidden="true">&#128170;</span>
+              <p>
+                L’information et les composants de l’interface utilisateur doivent être présentés à l’utilisateur de façon à ce qu’il puisse les percevoir.<br>
+                Les composants de l’interface utilisateur et de navigation doivent être utilisables.<br>
+                Les informations et l’utilisation de l’interface utilisateur doivent être compréhensibles.<br>
+                Le contenu doit être suffisamment robuste pour être interprété de manière fiable par une large variété d’agents utilisateurs, y compris les technologies d’assistance.
+              </p>
+            </div>
+          </section>
+
+          <section class="slide full">
+            <h2>Par où commencer&nbsp;?</h2>
+            <div class="grid">
+              <span aria-hidden="true">&#9000;</span>
+              <span style="--x:2;--span-x:2" aria-hidden="true">&#128269;</span>
+              <span style="--x:4;--span-x:2" aria-hidden="true">&#129302;</span>
+              <span style="--x:6;--span-x:2" aria-hidden="true">&#127752;</span>
+              <span style="--x:8" aria-hidden="true">&#127374;</span>
+              <p>
+                La navigation au clavier est à la fois critique et extrêmement simple à vérifier : utiliser la touche <kbd>Tab</kbd>.<br>
+                Utilisez le zoom de votre navigateur pour détecter les points de rupture éventuels et la perte d’information.<br>
+                Utilisez des outils de tests, sous forme d’extensions navigateur ou de dépendances locales.<br>
+                Testez vos pages en noir et blanc : simple et efficace pour détecter les problèmes de contrastes.<br>
+                Déclarez la langue de vos pages, et clarifiez votre contenu autant que possible.
+              </p>
+            </div>
+          </section>
+
+          <section class="slide full">
+            <h2>Participez&nbsp;!</h2>
+            <div class="grid">
+              <span style="--x:4;--y:2;--s:2" aria-hidden="true">&#129470;</span>
+              <p>C’est un sujet important qui demande l’implication de chacun et j’espère vous avoir convaincus à participer à votre tour.</p>
+            </div>
+          </section>
+
+          <section class="slide end noprint">
+            <h2 class="end-title">Merci</h2>
+            <h3>Et à bientôt</h3>
+            <h4>Crédits</h4>
+            <ul class="credit">
+              <li>Contenu initial&nbsp;: <a href="https://vincent-valentin.name/presentations/Le%20handicap,%20tout%20un%20symbole.pdf">«&nbsp;Le handicap, tout un symbole&nbsp;» par <cite>Vincent Valentin</cite> — (PDF, 914ko)</a>&nbsp;;</li>
+              <li>Emojis&nbsp;: <a href="https://github.com/twitter/twemoji" hreflang="en">Twemoji</a> —&nbsp;par Twitter&nbsp;;</li>
+              <li>Moteur de présentation&nbsp;: <a href="https://github.com/access42/accesSlide" hreflang="en">AccesSlide</a> —&nbsp;par <a href="https://access42.net/">Access42</a>&nbsp;;</li>
+              <li>Pictogrammes&nbsp;: <a href="https://thenounproject.com/marekpolakovic/collection/rounded-ui" hreflang="en">Rounded UI</a> —&nbsp;par <a href="https://www.marekpolakovic.sk/">Marek Polakovic</a>&nbsp;;</li>
+              <li>Typographie de titraille&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/bello-pro">Bello Pro</a> —&nbsp;créée par <a hreflang="en" href="https://www.underware.nl/">Underware</a>&nbsp;;</li>
+              <li>Typographie de labeur&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/museo-slab">Museo Slab</a> —&nbsp;créée par <a hreflang="en" href="https://www.exljbris.com/">Exljbris</a>.</li>
+            </ul>
+          </section>
+
+        </main>
+
+    </div>
+
+    <div id="setting" class="tool-block tool-block-settings " role="dialog" tabindex="-1" style="display:none"></div>
+
+</div>
+
+<div id="Caudio"></div>
+<div id="Dcourante" aria-live="polite" aria-atomic="true" aria-hidden="true"></div>
+
+<script src="../accesslide/js/slide.min.js"></script>
+<script src="../accesslide/js/prism.min.js"></script>
+<script src="../accesslide/js/twemoji.min.js"></script>
+<script>twemoji.parse(document.body, {folder: 'svg', ext: '.svg'});</script>
+</body>
+</html>

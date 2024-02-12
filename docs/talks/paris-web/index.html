@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Il n&apos;y a pas que class et id dans la vie</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Il n&apos;y a pas que class et id dans la vie — Conférence donnée lors de Paris Web 2016 par Gaël Poupard">
+  <meta name="author" content="Gaël Poupard">
+  <link rel="stylesheet" href="../accesslide/css/style.css" type="text/css" media="screen">
+  <link rel="stylesheet" id="currentCSS" href="../accesslide/css/ffoodd.css?5" type="text/css" media="screen">
+  <link rel="stylesheet" href="../accesslide/css/print.css" type="text/css" media="print">
+  <script src="../accesslide/js/AccesSlide.min.js"></script>
+  <script src="../accesslide/lang/lang_fr.js"></script>
+  <script src="../accesslide/js/prism.min.js"></script>
+</head>
+<body>
+
+  <div id="screen" class="modeplan" data-effect="ffoodd">
+
+    <div id="volet"></div>
+
+    <header id="banner" role="banner" class="main-header clearfix">
+      <a href="http://www.ffoodd.fr">ffoodd</a>
+      <h1 class="main-title">Il n&apos;y a pas que class et id dans la vie</h1>
+    </header>
+
+    <div id="nav" class="tool-bar footer-nav clearfix">
+      <div id="wrappernav">
+        <ul class="related">
+          <li>
+            <a href="http://www.ffoodd.fr">
+              <img src="../accesslide/img/ffoodd.svg?2" role="img" alt="Blog de Gaël Poupard" height="32" width="32" />
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/ffoodd_fr">
+              <img src="../accesslide/img/twitter.svg?2" role="img" alt="@ffoodd_fr sur Twitter" height="32" width="32" />
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/ffoodd/" hreflang="en">
+              <img src="../accesslide/img/github.svg?2" role="img" alt="@ffoodd sur Github" height="32" width="32" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <nav role="navigation" id="sommaire" class="tool-block tool-block-summary" tabindex="-1"></nav>
+
+    <div id="wrapper">
+
+      <main role="main" id="main">
+
+        <section class="slide couv">
+          <h2>Il n&apos;y a pas que class et id dans la vie</h2>
+          <blockquote>
+            <p>
+              Les autres sélecteurs sont nos amis<span aria-hidden="true">&nbsp;&#127926;</span>
+              <br>Il faut les aimer aussi<span aria-hidden="true">&nbsp;&#9835;</span>
+            </p>
+          </blockquote>
+          <footer class="table">
+            <p class="col-50">Raconté par <a href="http://www.ffoodd.fr">Gaël Poupard</a></p>
+            <p class="col-50 col-t-right">
+              <a href="http://www.orange-business.com/fr">
+                <img src="../accesslide/img/OBS.jpg" width="175" height="64" alt="Orange Business Services" class="obs"/>
+              </a>
+            </p>
+          </footer>
+        </section>
+
+        <section class="slide">
+          <h2>À contre-courant</h2>
+          <div class="table">
+            <p class="col-50 v-top">
+              La tendance est l&apos;utilisation de classes, avec un objectif&nbsp;:
+              <a hreflang="en" href="http://csswizardry.com/2014/10/the-specificity-graph/">un graphique de spécificité</a> qu&apos;on devrait confondre avec un électro-encéphalogramme plat.
+              <br><strong>Genre, la mort.</strong>
+            </p>
+            <figure role="group" class="col-50 v-top">
+              <img src="img_slide/electro-encephalogramme.gif" width="500" height="375" alt="Un électro-encéphalogramme défilant à un rythme régulier" />
+              <figcaption>La vie, c&apos;est globalement mieux.</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="slide">
+          <h2>Démystifions</h2>
+          <h3>La contre-performance des sélecteurs</h3>
+          <p><strong>C&apos;est faux.</strong> Et <a href="https://benfrain.com/css-performance-revisited-selectors-bloat-expensive-styles/" hreflang="en">c&apos;est prouvé par Ben Frain en 2014</a>&nbsp;<span aria-hidden="true">&#10004;</span>.</p>
+        </section>
+
+        <section class="slide">
+          <h2>Démystifions encore</h2>
+          <h3>La séparation du fond et de la forme</h3>
+          <p>
+            Ça signifie seulement de <strong>ne pas utiliser d&apos;attributs de présentation dans le HTML ni de balises sémantiques pour leur aspect visuel</strong>.
+            Pour tous les autres cas&nbsp;: <strong>la forme dépend du fond</strong><span aria-hidden="true">&nbsp;&#128162;</span>.
+          </p>
+          <p class="small">J&apos;en ai parlé plus en détail dans «&nbsp;<a href="http://www.ffoodd.fr/le-sens-de-la-semantique/">Le sens de la sémantique</a>&nbsp;».</p>
+        </section>
+
+        <section class="slide">
+          <h2>Les sélecteurs pestiférés<span aria-hidden="true">&nbsp;&#9763;</span></h2>
+          <p>Échantillon gratuit&nbsp;:</p>
+          <ol>
+            <li class="Cmasque">Le sélecteur universel&nbsp;: <code>*</code>&nbsp;;</li>
+            <li class="Cmasque">Les sélecteurs d&apos;attributs complexes&nbsp;: <code>[attr*=""]</code>&nbsp;;</li>
+            <li class="Cmasque">Les sélecteurs d&apos;adjacence et de parenté&nbsp;: <code>* + *</code>, <code>* > *</code>, <code>* ~ *</code>&nbsp;;</li>
+            <li class="Cmasque">Les sélecteurs d&apos;élément surqualifiés&nbsp;: <code>html[class=""]</code>.</li>
+          </ol>
+          <p class="Cmasque">Voyons comment on peut <strong>s&apos;en servir de manière intelligente</strong>.</p>
+        </section>
+
+        <section class="slide">
+          <h2>Les micro-données<span aria-hidden="true">&nbsp;&#127881;</span></h2>
+          <p>Si vous les utilisez dans leur version <abbr lang="en" title="HyperText Markup Language">HTML</abbr>, <strong>ciblez les directement</strong>.</p>
+<pre>
+  <code class="language-css">
+    [itemprop="author"] {
+        font-variant: small-caps;
+    }
+  </code>
+</pre>
+          <p class="small">Notez qu&apos;à l&apos;origine, <code>[class]</code> devait servir à étendre la sémantique. Je vous invite à lire <a href="http://www.la-grange.net/2013/07/24/html">l&apos;article de Karl Dubost sur le sujet</a>.
+        </section>
+
+        <section class="slide">
+          <h2>Aria<span aria-hidden="true">&nbsp;&#9852;</span></h2>
+          <p>Pourquoi utiliser des classes quand vous disposez d&apos;<strong>une panoplie complète d&apos;attributs</strong>&nbsp;?</p>
+<pre>
+  <code class="language-css">
+    [role="tabpanel"][aria-hidden="true"] {
+        display: none;
+    }
+  </code>
+</pre>
+          <p>Et voilà&nbsp;!</p>
+          <p class="small">Avec ça, un nouvel intervenant comprendra que le motif <strong>repose sur ces attributs</strong> et pourra se <strong>familiariser</strong> avec plus facilement.</p>
+        </section>
+
+        <section class="slide">
+          <h2>L&apos;économique de répétition</h2>
+          <p>Les sélecteurs d&apos;attributs peuvent fonctionner <strong>comme des expressions régulières</strong>.</p>
+<pre>
+  <code class="language-css">
+    [class*="btn"] {
+      border-width: .25em;
+    }
+
+    [class*="primary"] {
+      background-color: #032c36;
+      color: #efeee3;
+    }
+
+    [class*="-xs"] {
+      font-size: smaller;
+    }
+  </code>
+</pre>
+          <p class="small">Vous le faites déjà avec des méthodologies comme <a href="https://en.bem.info/methodology/" hreflang="en-US">BEM</a>, <a href="https://smacss.com/" hreflang="en">SMACSS</a> ou <a href="http://oocss.org/" hreflang="en">OOCSS</a>.</p>
+        </section>
+
+        <section class="slide">
+          <h2>La chouette lobotomisée</h2>
+          <p>En guise d&apos;échauffement&nbsp;:</p>
+<pre>
+  <code class="language-css">
+    main * + * {
+        margin-top: 1.5rem;
+    }
+  </code>
+</pre>
+          <p class="small">Crédit à <a href="http://alistapart.com/article/axiomatic-css-and-lobotomized-owls" hreflang="en">Heydon Pickering sur A List Apart</a>.</p>
+        </section>
+
+        <section class="slide">
+          <h2>La chouette dubitative <small>et la chouette <i lang="en">duck face</i></small></h2>
+          <p><code>* ~ *</code> et <code>* > *</code>. Démonstration&nbsp;:</p>
+<pre>
+  <code class="language-css">
+    main > *:target ~ * {
+        display: none;
+    }
+  </code>
+</pre>
+          <p class="small">Cet exemple aussi est d&apos;<a href=" https://www.smashingmagazine.com/2015/12/reimagining-single-page-applications-progressive-enhancement/" hreflang="en">Heydon Pickering, sur Smashing Magazine</a> cette fois.</p>
+        </section>
+
+        <section class="slide">
+          <h2>Le garde-fou</h2>
+          <div class="Cmasque">
+            <h3>L&apos;astuce du <code>box-sizing</code> sur <code>html</code></h3>
+            <p class="small">
+              Vous la trouvez par exemple dans
+              <a href="https://github.com/zurb/foundation-sites/blob/develop/dist/foundation.css#L370)" hreflang="en">Foundation</a>
+              et dans <a href="https://github.com/twbs/bootstrap/blob/v4-dev/dist/css/bootstrap.css#L301)" hreflang="en">Bootstrap V4</a>.
+            </p>
+        </div>
+<pre class="Cmasque">
+  <code class="language-css">
+    html[lang] {
+      box-sizing: border-box;
+    }
+
+    *, *::after, *::before {
+      box-sizing: inherit;
+    }
+  </code>
+</pre>
+        </section>
+
+        <section class="slide">
+          <h2>L&apos;autre garde-fou</h2>
+          <div class="Cmasque">
+            <h3>Le coup du <code>max-width: 100%;</code> sur <code>img</code></h3>
+            <p class="small">
+              On le trouve
+              <a href="https://github.com/alsacreations/KNACSS/blob/master/css/knacss-unminified.css#L538" hreflang="en">dans Knacss</a>,
+              <a href="https://github.com/nico3333fr/ROCSSTI/blob/master/src/sass/rocssti-fr/05-layout-modules.scss#L5" hreflang="en">dans Röcssti</a> et
+              <a hreflang="en" href="https://github.com/twbs/bootstrap/blob/master/dist/css/bootstrap.css#L1118">dans Bootstrap</a>.
+            </p>
+          </div>
+<pre class="Cmasque">
+  <code class="language-css">
+    img[alt] {
+        max-width: 100%;
+    }
+  </code>
+</pre>
+        </section>
+
+        <section class="slide">
+          <h2>Une armée de garde-fous<span aria-hidden="true">&nbsp;&#128161;</span></h2>
+          <div class="table">
+            <div class="col-50">
+              <p>Quelques idées, en vrac&nbsp;:</p>
+              <ul>
+                <li class="Cmasque"><code>label[for]</code></li>
+                <li class="Cmasque"><code>abbr[title]</code></li>
+                <li class="Cmasque"><code>iframe[title]</code></li>
+                <li class="Cmasque"><code>video[controls]</code></li>
+                <li class="Cmasque"><code>audio[controls]</code></li>
+              </ul>
+            </div>
+            <div class="col-50">
+              <p class="Cmasque">Et je relance avec les balises sensibles&nbsp;:</p>
+              <ul>
+                <li class="Cmasque"><code>figure > figcaption</code></li>
+                <li class="Cmasque"><code>table > caption:first-child</code></li>
+                <li class="Cmasque"><code>fieldset > legend:first-child</code></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide">
+          <h2>Mise en œuvre</h2>
+          <ol>
+            <li>Un <i lang="en">mixin</i> compilé sous condition, d&apos;après l&apos;idée de Dan Eden <a href="https://github.com/dropbox/scooter/pull/4" hreflang="en">dans Scooter</a>&nbsp;:
+<pre>
+  <code class="language-css">
+    html {
+      @include assert-selector( '[lang]' );
+    }
+  </code>
+</pre>
+            </li>
+            <li>Une feuille de styles dédiée, à la manière d&apos;<a href="http://ffoodd.github.io/a11y.css/" hreflang="en">a11y.css</a>.</li>
+          </ol>
+        </section>
+
+        <section class="slide">
+          <h2>Conclusion<span aria-hidden="true">&nbsp;&#128165;</span></h2>
+          <p>
+            Certains attributs et motifs sont <strong>indispensables</strong> dans le HTML,
+            <strong>pourquoi s&apos;en passer dans le CSS&nbsp;?</strong>
+          </p>
+        </section>
+
+        <section  class="slide end noprint">
+          <h2 class="end-title">Merci</h2>
+          <h3>Et à bientôt&nbsp;☺</h3>
+          <h4>Crédits</h4>
+          <ul class="credit">
+            <li>Moteur de présentation&nbsp;: <a href="https://github.com/access42/accesSlide" hreflang="en">AccesSlide</a> —&nbsp;par <a href="http://access42.net/">Access42</a>&nbsp;;</li>
+            <li>Pictogrammes&nbsp;: <a href="https://thenounproject.com/marekpolakovic/collection/rounded-ui" hreflang="en">Rounded UI</a> —&nbsp;par <a href="http://www.marekpolakovic.sk/">Marek Polakovic</a>&nbsp;;</li>
+            <li>Typographie de titraille&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/bello-pro">Bello Pro</a> —&nbsp;créée par <a hreflang="en" href="http://www.underware.nl/">Underware</a>&nbsp;;</li>
+            <li>Typographie de labeur&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/museo-slab">Museo Slab</a> —&nbsp;créée par <a hreflang="en" href="http://www.exljbris.com/">Exljbris</a>.</li>
+          </ul>
+        </section>
+
+      </main>
+
+    </div>
+
+    <div id="setting" class="tool-block tool-block-settings " role="dialog" tabindex="-1" style="display:none"></div>
+
+  </div>
+
+  <div id="Caudio"></div>
+  <div id="Dcourante" aria-live="polite" aria-atomic="true" aria-hidden="true"></div>
+
+  <script src="../accesslide/js/slide.min.js"></script>
+</body>
+</html>

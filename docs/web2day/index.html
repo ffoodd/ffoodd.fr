@@ -1,0 +1,2113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>La donnée graphique avec HTML et CSS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="La donnée graphique avec HTML et CSS — Conférence donnée lors de Web2Day 2019 par Gaël Poupard">
+  <meta name="author" content="Gaël Poupard">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/bello-pro.woff2"/>
+  <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/museo-slab-300.woff2"/>
+  <link rel="stylesheet" href="../accesslide/css/style.css?2" type="text/css" media="screen">
+  <link rel="stylesheet" id="currentCSS" href="../accesslide/css/ffoodd.css?5" type="text/css" media="screen">
+  <link rel="stylesheet" href="../accesslide/css/charts.css?37" type="text/css" media="screen">
+  <link rel="stylesheet" href="../accesslide/css/print.css" type="text/css" media="print">
+  <script src="../accesslide/js/AccesSlide.min.js"></script>
+  <script src="../accesslide/lang/lang_fr.js"></script>
+</head>
+<body>
+
+  <div id="screen" class="modeplan" data-effect="ffoodd">
+
+    <div id="volet"></div>
+
+    <header id="banner" role="banner" class="main-header clearfix">
+      <a href="https://www.ffoodd.fr">ffoodd</a>
+      <h1 class="main-title">
+        La donnée graphique avec <abbr title="Hypertext Markup Language" lang="en">HTML</abbr>
+        et <abbr lang="en" title="Cascading StyleSheet">CSS</abbr>
+      </h1>
+    </header>
+
+    <div id="nav" class="tool-bar footer-nav clearfix">
+      <div id="wrappernav">
+        <ul class="related">
+          <li>
+            <a href="https://www.ffoodd.fr">
+              <img src="../accesslide/img/ffoodd.svg?2" role="img" alt="Blog de Gaël Poupard" height="32" width="32" />
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/ffoodd_fr">
+              <img src="../accesslide/img/twitter.svg?2" role="img" alt="@ffoodd_fr sur Twitter" height="32" width="32" />
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/ffoodd/" hreflang="en">
+              <img src="../accesslide/img/github.svg?2" role="img" alt="@ffoodd sur Github" height="32" width="32" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <nav role="navigation" id="sommaire" class="tool-block tool-block-summary" tabindex="-1"></nav>
+
+    <div id="wrapper">
+
+      <main role="main" id="main">
+
+        <section class="slide couv">
+          <h2>
+            La donnée graphique avec <abbr title="Hypertext Markup Language" lang="en">HTML</abbr>
+            et <abbr lang="en" title="Cascading StyleSheet">CSS</abbr>
+          </h2>
+          <p>
+            Retrouvez les slides en ligne sur<br>
+            <span aria-hidden="true">→&nbsp;</span><a href="https://www.ffoodd.fr/web2day/">ffoodd.fr/web2day</a><br>
+            et la documentation complète sur<br>
+            <span aria-hidden="true">→&nbsp;</span><a href="https://ffoodd.github.io/chaarts">ffoodd.github.io/chaarts</a>.
+          </p>
+          <footer class="table">
+            <p class="col-50">Raconté par <a href="https://www.ffoodd.fr">Gaël Poupard</a></p>
+            <p class="col-50 col-t-right">
+              <a href="https://www.orange-business.com/fr">
+                <img src="../accesslide/img/OBS.jpg" width="175" height="64" alt="Orange Business Services" class="obs"/>
+              </a>
+            </p>
+          </footer>
+        </section>
+
+        <section class="slide">
+          <h2>Le principe de moindre pouvoir<span aria-hidden="true">&nbsp;&#129412;</span></h2>
+          <p>
+            C’est <a hreflang="en" href="https://www.w3.org/DesignIssues/Principles.html">un des axiomes du web</a>,
+            proposés par <cite>Tim Berners-Lee</cite> en 1998
+            —&nbsp;à côté de <abbr lang="en" title="Keep It Simple, Stupid!">kiss</abbr>, du <i lang="en">design</i>
+            modulaire, de la <strong>tolérance</strong> ou de la <strong>décentralisation</strong>.
+          </p>
+          <p class="small">
+            Le mantra de l’<strong>amélioration progressive</strong>, en somme…
+          </p>
+        </section>
+
+        <section class="slide">
+          <h2>Définition<span aria-hidden="true">&nbsp;&#128200;</span></h2>
+          <p>Un <dfn>graphique de données</dfn> est&nbsp;:</p>
+          <ol>
+            <li class="Cmasque">un ensemble de clés,<span aria-hidden="true">&nbsp;&#128273;</span></li>
+            <li class="Cmasque">associées à une ou plusieurs valeurs,<span aria-hidden="true">&nbsp;&#128182;</span></li>
+            <li class="Cmasque">disposées sur une échelle,<span aria-hidden="true">&nbsp;&#128207;</span></li>
+            <li class="Cmasque">mises en forme afin d’en faciliter la compréhension.<span aria-hidden="true">&nbsp;&#128396;</span></li>
+          </ol>
+          <p class="Cmasque small">
+            Vous pourrez en apprendre plus sur
+            <a href="https://fr.wikipedia.org/wiki/Repr%C3%A9sentation_graphique_de_donn%C3%A9es">la représentation graphique de données sur Wikipédia</a>.
+          </p>
+        </section>
+
+        <section class="slide">
+          <h2>Piqûre de rappel<span aria-hidden="true">&nbsp;&#128137;</span></h2>
+          <p>
+            Le plus important, c’est le contenu —&nbsp;et par extension, sa sémantique.<br>
+            Pour <strong>décrire</strong> un ensemble de clés et valeurs en <abbr lang="en" title="HyperText Markup Language" aria-label="HyperText Markup Language">html</abbr>, il n’existe pas moult choix —&nbsp;en fait, deux&nbsp;:
+          </p>
+          <ol>
+            <li>les listes de définitions&nbsp;: <code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code> et <code>&lt;dd&gt;</code>&nbsp;;</li>
+            <li>les <strong>tableaux de données</strong>, solution plébiscitée.</li>
+          </ol>
+          <p class="small">Et oui, ça sert à ça en vrai.</p>
+        </section>
+
+        <!-- Step 1 -->
+        <section class="slide">
+          <h2>Un diagramme en barres<span aria-hidden="true">&nbsp;&#128202;</span></h2>
+<pre class="language-markup">
+  <code class="language-markup">
+&lt;table style="--scale: 3000">
+  &lt;caption>Temps de chargement pour ffoodd.fr&lt;/caption>
+  &lt;thead>
+    &lt;tr>
+      &lt;td>&lt;/td>
+      &lt;th scope="col">Temps de chargement cumulé&lt;/th>
+    &lt;/tr>
+  &lt;/thead>
+  &lt;tbody>
+    &lt;tr>
+      &lt;th scope="row">Trafic HTTP terminé&lt;/th>
+      &lt;td style="--value: 2980">
+        &lt;span>2980&nbsp;ms&lt;/span>
+      &lt;/td>
+    &lt;/tr>
+    &lt;tr>[…]&lt;/tr>
+  &lt;/tbody>
+&lt;/table>
+  </code>
+</pre>
+        </section>
+        <section class="slide">
+            <h3>Le tableau nu<span aria-hidden="true">&nbsp;&#128293;</span></h3>
+            <table style="--scale: 3000">
+        <caption>Temps de chargement pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
+        <thead>
+          <tr>
+            <td></td>
+            <th scope="col">Temps de chargement cumulé</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Temps&nbsp;: backend</th>
+            <td style="--value: 4">
+              <span>4&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Temps&nbsp;: Frontend</th>
+            <td style="--value: 96">
+              <span>96&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Délai&nbsp;: premier octet</th>
+            <td style="--value: 102">
+              <span>102&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Délai&nbsp;: dernier octet</th>
+            <td style="--value: 129">
+              <span>129&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Délai&nbsp;: première image</th>
+            <td style="--value: 188">
+              <span>188&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Délai&nbsp;: premier CSS</th>
+            <td style="--value: 194">
+              <span>194&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Délai&nbsp;: premier JS</th>
+            <td style="--value: 326">
+              <span>326&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">DOM Interactif</th>
+            <td style="--value: 836">
+              <span>836&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Chargement du DOM</th>
+            <td style="--value: 836">
+              <span>836&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">DOM complet</th>
+            <td style="--value: 2561">
+              <span>2561&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Trafic HTTP terminé</th>
+            <td style="--value: 2980">
+              <span>2980&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+        </section>
+
+        <!-- Step 2 -->
+        <section class="slide">
+          <h3>Un peu d’habillage<span aria-hidden="true">&nbsp;&#129510;</span></h3>
+<pre class="language-css">
+  <code class="language-css">
+@media screen and (min-width: 30em) {
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    caption-side: bottom;
+    contain: content;
+    empty-cells: hide;
+    font-feature-settings: "tnum";
+  }
+
+  th,
+  td {
+    border: 0;
+    padding: 0;
+  }
+}</code>
+</pre>
+        </section>
+        <section class="slide">
+          <h3>Le tableau en slip<span aria-hidden="true">&nbsp;&#129500;</span></h3>
+          <table class="table-ffoodd table-charts" style="--scale: 3000">
+            <caption>Temps de chargement pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
+            <thead class="sr-only">
+              <tr>
+                <td></td>
+                <th scope="col">Temps de chargement cumulé</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Temps&nbsp;: backend</th>
+                <td style="--value: 4">
+                  <span>4&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Temps&nbsp;: Frontend</th>
+                <td style="--value: 96">
+                  <span>96&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: premier octet</th>
+                <td style="--value: 102">
+                  <span>102&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: dernier octet</th>
+                <td style="--value: 129">
+                  <span>129&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: première image</th>
+                <td style="--value: 188">
+                  <span>188&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: premier CSS</th>
+                <td style="--value: 194">
+                  <span>194&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: premier JS</th>
+                <td style="--value: 326">
+                  <span>326&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">DOM Interactif</th>
+                <td style="--value: 836">
+                  <span>836&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Chargement du DOM</th>
+                <td style="--value: 836">
+                  <span>836&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">DOM complet</th>
+                <td style="--value: 2561">
+                  <span>2561&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Trafic HTTP terminé</th>
+                <td style="--value: 2980">
+                  <span>2980&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Step 3 -->
+        <section class="slide">
+          <h3>Un habillage structuré<span aria-hidden="true">&nbsp;	&#9637;</span></h3>
+            <p class="small">
+                Basé sur <a href="https://css-tricks.com/css-charts-grid-custom-properties/" hreflang="en">un article de <cite>Miriam Suzanne</cite> sur <abbr lang="en" title="Cascading StyleSheet">CSS</abbr> Tricks</a>.
+            </p>
+<pre class="language-css">
+  <code class="language-css">
+@supports (grid-template-columns: repeat(var(--scale, 100), minmax(0, 1fr))) {
+    tr {
+      display: grid;
+      grid-auto-rows: 1fr;
+      grid-row-gap: .5rem;
+      grid-template-columns:
+        minmax(min-content, 15em)
+        repeat(var(--scale, 100), minmax(0, 1fr))
+        10ch;
+    }
+
+    th {
+      grid-column: 1 / 1;
+    }
+
+    td {
+      grid-column: 2 / var(--value, 0);
+    }
+}
+  </code>
+</pre>
+        </section>
+        <section class="slide">
+          <h3>Le tableau en jeans<span aria-hidden="true">&nbsp;&#128086;</span></h3>
+          <table class="table-ffoodd table-charts bar step-1" style="--scale: 3000">
+            <caption>Temps de chargement pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
+            <thead class="sr-only">
+              <tr>
+                <td></td>
+                <th scope="col">Temps de chargement cumulé</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Temps&nbsp;: backend</th>
+                <td style="--value: 4">
+                  <span>4&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Temps&nbsp;: Frontend</th>
+                <td style="--value: 96">
+                  <span>96&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: premier octet</th>
+                <td style="--value: 102">
+                  <span>102&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: dernier octet</th>
+                <td style="--value: 129">
+                  <span>129&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: première image</th>
+                <td style="--value: 188">
+                  <span>188&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: premier CSS</th>
+                <td style="--value: 194">
+                  <span>194&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: premier JS</th>
+                <td style="--value: 326">
+                  <span>326&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">DOM Interactif</th>
+                <td style="--value: 836">
+                  <span>836&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Chargement du DOM</th>
+                <td style="--value: 836">
+                  <span>836&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">DOM complet</th>
+                <td style="--value: 2561">
+                  <span>2561&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Trafic HTTP terminé</th>
+                <td style="--value: 2980">
+                  <span>2980&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Step 4 -->
+        <section class="slide">
+          <h3>Un détail<span aria-hidden="true">&nbsp;&#128083;</span></h3>
+<pre class="language-css">
+  <code class="language-css">
+td span {
+  background: inherit;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  left: 100%;
+  position: absolute;
+}
+  </code>
+</pre>
+        </section>
+        <section class="slide">
+          <h3>Le tableau décemment vêtu<span aria-hidden="true">&nbsp;&#128085;</span></h3>
+          <table class="table-ffoodd table-charts bar step-1 step-2" style="--scale: 3000">
+            <caption>Temps de chargement pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
+            <thead class="sr-only">
+              <tr>
+                <td></td>
+                <th scope="col">Temps de chargement cumulé</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Temps&nbsp;: backend</th>
+                <td style="--value: 4">
+                  <span>4&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Temps&nbsp;: Frontend</th>
+                <td style="--value: 96">
+                  <span>96&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: premier octet</th>
+                <td style="--value: 102">
+                  <span>102&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: dernier octet</th>
+                <td style="--value: 129">
+                  <span>129&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: première image</th>
+                <td style="--value: 188">
+                  <span>188&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: premier CSS</th>
+                <td style="--value: 194">
+                  <span>194&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: premier JS</th>
+                <td style="--value: 326">
+                  <span>326&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">DOM Interactif</th>
+                <td style="--value: 836">
+                  <span>836&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Chargement du DOM</th>
+                <td style="--value: 836">
+                  <span>836&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">DOM complet</th>
+                <td style="--value: 2561">
+                  <span>2561&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Trafic HTTP terminé</th>
+                <td style="--value: 2980">
+                  <span>2980&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Step 5 -->
+        <section class="slide">
+          <h3>Un peu de classe<span aria-hidden="true">&nbsp;&#128188;</span></h3>
+          <p class="small">
+            Combinant <a hreflang="en" href="https://www.trysmudford.com/blog/using-css-custom-properties/">une technique
+              proposée par <cite>Trys Mudford</cite></a> et
+              <a hreflang="en" href="https://codepen.io/tigt/post/optimizing-svgs-in-data-uris">les astuces de <cite>Taylor Hunt</cite></a>.
+            </p>
+<pre class="language-css">
+  <code class="language-css">
+table {
+  --stripes: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E");
+  --zig: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E");
+}
+
+tr:nth-child(5n+5) {
+  --background: var(--stripes);
+}
+
+td {
+  background:
+    linear-gradient(to right, #3cb371, #444, #0000cd, #639, crimson)
+    calc(var(--value, 0) / var(--scale, 100) * 100%) 0% /
+    calc(var(--scale, 100) * 100%) 100%,
+    transparent var(--background) center / contain;
+  background-blend-mode: hard-light;
+}
+  </code>
+</pre>
+        </section>
+        <section class="slide">
+          <h3>Le tableau bien sapé<span aria-hidden="true">&nbsp;&#128084;</span></h3>
+          <table class="table-ffoodd table-charts bar step-1 step-2 step-3" style="--scale: 3000">
+            <caption>Temps de chargement pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
+            <thead class="sr-only">
+              <tr>
+                <td></td>
+                <th scope="col">Temps de chargement cumulé</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Temps&nbsp;: backend</th>
+                <td style="--value: 4">
+                  <span>4&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Temps&nbsp;: Frontend</th>
+                <td style="--value: 96">
+                  <span>96&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: premier octet</th>
+                <td style="--value: 102">
+                  <span>102&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: dernier octet</th>
+                <td style="--value: 129">
+                  <span>129&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: première image</th>
+                <td style="--value: 188">
+                  <span>188&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: premier CSS</th>
+                <td style="--value: 194">
+                  <span>194&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: premier JS</th>
+                <td style="--value: 326">
+                  <span>326&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">DOM Interactif</th>
+                <td style="--value: 836">
+                  <span>836&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Chargement du DOM</th>
+                <td style="--value: 836">
+                  <span>836&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">DOM complet</th>
+                <td style="--value: 2561">
+                  <span>2561&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Trafic HTTP terminé</th>
+                <td style="--value: 2980">
+                  <span>2980&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Step 6 -->
+        <section class="slide">
+          <h3>On peaufine les détails<span aria-hidden="true">&nbsp;&#128133;</span></h3>
+<pre class="language-css">
+  <code class="language-css">
+table:hover tr {
+  opacity: .5;
+}
+
+table:hover tr:hover {
+  opacity: 1;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  td {
+     background-image:
+       linear-gradient(to right, Window, ButtonFace, ButtonShadow, ButtonText, highlight),
+       var(--background);
+  }
+}
+  </code>
+</pre>
+        </section>
+        <section class="slide">
+          <h3>Le tableau du samedi soir<span aria-hidden="true">&nbsp;&#128378;</span></h3>
+          <table class="table-ffoodd table-charts bar step-1 step-2 step-3 step-4" style="--scale: 3000">
+            <caption>Temps de chargement pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
+            <thead class="sr-only">
+              <tr>
+                <td></td>
+                <th scope="col">Temps de chargement cumulé</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Temps&nbsp;: backend</th>
+                <td style="--value: 4">
+                  <span>4&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Temps&nbsp;: Frontend</th>
+                <td style="--value: 96">
+                  <span>96&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: premier octet</th>
+                <td style="--value: 102">
+                  <span>102&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: dernier octet</th>
+                <td style="--value: 129">
+                  <span>129&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: première image</th>
+                <td style="--value: 188">
+                  <span>188&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: premier CSS</th>
+                <td style="--value: 194">
+                  <span>194&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: premier JS</th>
+                <td style="--value: 326">
+                  <span>326&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">DOM Interactif</th>
+                <td style="--value: 836">
+                  <span>836&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Chargement du DOM</th>
+                <td style="--value: 836">
+                  <span>836&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">DOM complet</th>
+                <td style="--value: 2561">
+                  <span>2561&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Trafic HTTP terminé</th>
+                <td style="--value: 2980">
+                  <span>2980&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Step 7 -->
+        <section class="slide">
+          <h3>On fait des vagues<span aria-hidden="true">&nbsp;&#127754;</span></h3>
+          <h4>Dans le HTML</h4>
+<pre class="language-markup">
+  <code class="language-markup">
+&lt;table style="--scale: 3000; --1: 4; --2: 96; --3: 102; --4: 129; --5: 188;">
+  </code>
+</pre>
+            <h4>Dans le CSS</h4>
+<pre class="language-css">
+  <code class="language-css">
+tr:nth-of-type(5) td {
+  grid-column: var(--4, 0) / var(--value, 0);
+}
+  </code>
+</pre>
+        </section>
+        <section class="slide">
+          <h3>Le tableau du Niagara<span aria-hidden="true">&nbsp;&#127748;</span></h3>
+          <table class="table-ffoodd table-charts bar step-1 step-2 step-3 step-4 waterfall" style="--scale: 3000; --1: 4; --2: 96; --3: 102; --4: 129; --5: 188; --6: 194; --7: 326; --8: 836; --9: 836; --10: 2561; --11: 2980;">
+            <caption>Temps de chargement pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
+            <thead class="sr-only">
+              <tr>
+                <td></td>
+                <th scope="col">Temps de chargement cumulé</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Temps&nbsp;: backend</th>
+                <td style="--value: 4">
+                  <span>4&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Temps&nbsp;: Frontend</th>
+                <td style="--value: 96">
+                  <span>96&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: premier octet</th>
+                <td style="--value: 102">
+                  <span>102&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: dernier octet</th>
+                <td style="--value: 129">
+                  <span>129&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: première image</th>
+                <td style="--value: 188">
+                  <span>188&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: premier CSS</th>
+                <td style="--value: 194">
+                  <span>194&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: premier JS</th>
+                <td style="--value: 326">
+                  <span>326&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">DOM Interactif</th>
+                <td style="--value: 836">
+                  <span>836&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Chargement du DOM</th>
+                <td style="--value: 836">
+                  <span>836&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">DOM complet</th>
+                <td style="--value: 2561">
+                  <span>2561&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Trafic HTTP terminé</th>
+                <td style="--value: 2980">
+                  <span>2980&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Step 1 -->
+        <section class="slide">
+            <h2>Un diagramme linéaire<span aria-hidden="true">&nbsp;&#128480;</span></h2>
+<pre class="language-markup">
+  <code class="language-markup">
+&lt;table style="--y: 32; --x: 13; --t-1: 'Jan.'; --t-2: 'Fév.'; […]">
+  &lt;caption>Température mensuelle moyenne en 2017&lt;/caption>
+  &lt;thead>
+    &lt;tr>
+      &lt;th scope="col">Année&lt;/th>
+      &lt;th scope="col">Jan.&lt;/th>
+      &lt;th scope="col">[…]&lt;/th>
+    &lt;/tr>
+  &lt;/thead>
+  &lt;tbody>
+    &lt;tr style="--year: '2017'; --1: 8; --2: 6; --3: 9; --4: 12; --5: 15; --6: 21; --7: 24; --8: 25; --9: 22; --10: 19; --11: 14; --12: 9;">
+      &lt;th scope="row">2017&lt;/th>
+      &lt;td>8 °C&lt;/td>
+      &lt;td>[…]&lt;/td>
+    &lt;/tr>
+  &lt;/tbody>
+&lt;/table></code>
+</pre>
+        </section>
+        <section class="slide">
+          <h3>Le tableau linéaire<span aria-hidden="true">&nbsp;&#8863;</span></h3>
+          <table class="table-ffoodd table-charts" style="--y: 32; --x: 13; --t-1: 'Jan.'; --t-2: 'Fév.'; --t-3: 'Mar.'; --t-4: 'Avr.'; --t-5: 'Mai'; --t-6: 'Juin'; --t-7: 'Juil.'; --t-8: 'Août'; --t-9: 'Sept.'; --t-10: 'Oct.'; --t-11: 'Nov.'; --t-12: 'Déc.';">
+      <caption>Température mensuelle moyenne en 2017</caption>
+      <thead>
+        <tr>
+          <th scope="col">Année</th>
+          <th scope="col">Jan.</th>
+          <th scope="col">Fév.</th>
+          <th scope="col">Mars</th>
+          <th scope="col">Avr.</th>
+          <th scope="col">Mai</th>
+          <th scope="col">Juin</th>
+          <th scope="col">Juil.</th>
+          <th scope="col">Août</th>
+          <th scope="col">Sep.</th>
+          <th scope="col">Oct.</th>
+          <th scope="col">Nov.</th>
+          <th scope="col">Déc.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="--year: '2017'; --1: 8; --2: 6; --3: 9; --4: 12; --5: 15; --6: 21; --7: 24; --8: 25; --9: 22; --10: 19; --11: 14; --12: 9;">
+          <th scope="row">2017</th>
+          <td>8&nbsp;°C</td>
+          <td>6&nbsp;°C</td>
+          <td>9&nbsp;°C</td>
+          <td>12&nbsp;°C</td>
+          <td>15&nbsp;°C</td>
+          <td>21&nbsp;°C</td>
+          <td>24&nbsp;°C</td>
+          <td>25&nbsp;°C</td>
+          <td>22&nbsp;°C</td>
+          <td>19&nbsp;°C</td>
+          <td>14&nbsp;°C</td>
+          <td>9&nbsp;°C</td>
+        </tr>
+      </tbody>
+    </table>
+        </section>
+
+        <!-- Step 2 -->
+        <section class="slide">
+            <h3>Une échelle<span aria-hidden="true">&nbsp;&#128207;</span></h3>
+<pre class="language-css">
+  <code class="language-css">
+table {
+    padding: calc(24em - 2rem) 0 1rem;
+}
+
+table::after {
+  --scale: calc( ( 100% - ( var(--y) * 1px) ) / var(--y) );
+  background-image: repeating-linear-gradient(
+      to bottom,
+      white,
+      white var(--scale),
+      rgba(0, 0, 0, .25) calc(var(--scale) + .25rem)
+  );
+}</code>
+</pre>
+        </section>
+        <section class="slide">
+          <table class="table-ffoodd table-charts line step-1" style="--y: 32; --x: 13; --t-1: 'Jan.'; --t-2: 'Fév.'; --t-3: 'Mar.'; --t-4: 'Avr.'; --t-5: 'Mai'; --t-6: 'Juin'; --t-7: 'Juil.'; --t-8: 'Août'; --t-9: 'Sept.'; --t-10: 'Oct.'; --t-11: 'Nov.'; --t-12: 'Déc.';">
+      <caption>Température mensuelle moyenne en 2017</caption>
+      <thead>
+        <tr>
+          <th scope="col">Année</th>
+          <th scope="col">Jan.</th>
+          <th scope="col">Fév.</th>
+          <th scope="col">Mars</th>
+          <th scope="col">Avr.</th>
+          <th scope="col">Mai</th>
+          <th scope="col">Juin</th>
+          <th scope="col">Juil.</th>
+          <th scope="col">Août</th>
+          <th scope="col">Sep.</th>
+          <th scope="col">Oct.</th>
+          <th scope="col">Nov.</th>
+          <th scope="col">Déc.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="--year: '2017'; --1: 8; --2: 6; --3: 9; --4: 12; --5: 15; --6: 21; --7: 24; --8: 25; --9: 22; --10: 19; --11: 14; --12: 9;">
+          <th scope="row">2017</th>
+          <td>8&nbsp;°C</td>
+          <td>6&nbsp;°C</td>
+          <td>9&nbsp;°C</td>
+          <td>12&nbsp;°C</td>
+          <td>15&nbsp;°C</td>
+          <td>21&nbsp;°C</td>
+          <td>24&nbsp;°C</td>
+          <td>25&nbsp;°C</td>
+          <td>22&nbsp;°C</td>
+          <td>19&nbsp;°C</td>
+          <td>14&nbsp;°C</td>
+          <td>9&nbsp;°C</td>
+        </tr>
+      </tbody>
+    </table>
+        </section>
+
+        <!-- Step 3 -->
+        <section class="slide">
+            <h3>Un tracé<span aria-hidden="true">&nbsp;&#128393;</span></h3>
+<pre class="language-css">
+  <code class="language-css">
+@supports (clip-path: polygon(0% calc( 100% - ( var(--1) * 100% / var(--y))))) {
+    table {
+        --offset: calc((100% / var(--x)) / 2);
+    }
+
+    table [style]::before {
+        background: linear-gradient(to top, blue, red 75%);
+        clip-path: polygon(
+            0% 100%,
+            calc((100% / var(--x) * 1)) 100%,
+            calc((100% / var(--x) * 1)) calc(100% - (var(--1) / var(--y) * 100%)),
+            /* Premier point */
+            calc((100% / var(--x) * 1) + var(--offset)) calc(100% - (var(--1) / var(--y) * 100%)),
+            /* Deuxième point */
+            calc((100% / var(--x) * 2) + var(--offset)) calc(100% - (var(--2) / var(--y) * 100%)),
+            100% calc(100% - (var(--12) / var(--y) * 100%)),
+            100% 100%,
+            0% 100%
+        );
+    }
+}</code>
+</pre>
+        </section>
+        <section class="slide">
+          <table class="table-ffoodd table-charts line step-1 step-2" style="--y: 32; --x: 13; --t-1: 'Jan.'; --t-2: 'Fév.'; --t-3: 'Mar.'; --t-4: 'Avr.'; --t-5: 'Mai'; --t-6: 'Juin'; --t-7: 'Juil.'; --t-8: 'Août'; --t-9: 'Sept.'; --t-10: 'Oct.'; --t-11: 'Nov.'; --t-12: 'Déc.';">
+      <caption>Température mensuelle moyenne en 2017</caption>
+      <thead>
+        <tr>
+          <th scope="col">Année</th>
+          <th scope="col">Jan.</th>
+          <th scope="col">Fév.</th>
+          <th scope="col">Mars</th>
+          <th scope="col">Avr.</th>
+          <th scope="col">Mai</th>
+          <th scope="col">Juin</th>
+          <th scope="col">Juil.</th>
+          <th scope="col">Août</th>
+          <th scope="col">Sep.</th>
+          <th scope="col">Oct.</th>
+          <th scope="col">Nov.</th>
+          <th scope="col">Déc.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="--year: '2017'; --1: 8; --2: 6; --3: 9; --4: 12; --5: 15; --6: 21; --7: 24; --8: 25; --9: 22; --10: 19; --11: 14; --12: 9;">
+          <th scope="row">2017</th>
+          <td>8&nbsp;°C</td>
+          <td>6&nbsp;°C</td>
+          <td>9&nbsp;°C</td>
+          <td>12&nbsp;°C</td>
+          <td>15&nbsp;°C</td>
+          <td>21&nbsp;°C</td>
+          <td>24&nbsp;°C</td>
+          <td>25&nbsp;°C</td>
+          <td>22&nbsp;°C</td>
+          <td>19&nbsp;°C</td>
+          <td>14&nbsp;°C</td>
+          <td>9&nbsp;°C</td>
+        </tr>
+      </tbody>
+    </table>
+        </section>
+
+          <!-- Step 4 : tooltip -->
+        <section class="slide">
+            <h3>Des infobulles<span aria-hidden="true">&nbsp;&#128712;</span></h3>
+            <p class="small">
+              Reposant sur <a hreflang="en" href="https://codepen.io/cassie-codes/pen/22ea69e0f681d45f2f4c2ca5e6acf4ab">une
+              astuce de <cite>Cassie Evans</cite> utilisant les compteurs CSS</a> et
+              <a hreflang="en" href="https://lea.verou.me/2012/02/flexible-multiline-definition-lists-with-2-lines-of-css/">
+                une idée de <cite>Lea Verou</cite> pour gérer le retour à la ligne</a>.</p>
+<pre class="language-css">
+  <code class="language-css">
+td {
+
+}
+
+td:first-child {
+    --value: var(--1);
+    --term: var(--t-1);
+}
+
+td::after {
+    --top: calc( var(--height) - (var(--value) / var(--y) * 100%) );
+    counter-reset: value var(--value);
+    content: var(--term) " " var(--year) "\A " counter(value) "\A0°C";
+    pointer-events: none;
+    position: absolute;
+    top: var(--top, 100);
+    will-change: opacity, transform;
+    white-space: pre;
+}</code>
+</pre>
+        </section>
+        <section class="slide">
+          <table class="table-ffoodd table-charts line step-1 step-2 step-3" style="--y: 32; --x: 13; --t-1: 'Jan.'; --t-2: 'Fév.'; --t-3: 'Mar.'; --t-4: 'Avr.'; --t-5: 'Mai'; --t-6: 'Juin'; --t-7: 'Juil.'; --t-8: 'Août'; --t-9: 'Sept.'; --t-10: 'Oct.'; --t-11: 'Nov.'; --t-12: 'Déc.';">
+      <caption>Température mensuelle moyenne en 2017</caption>
+      <thead>
+        <tr>
+          <th scope="col">Année</th>
+          <th scope="col">Jan.</th>
+          <th scope="col">Fév.</th>
+          <th scope="col">Mars</th>
+          <th scope="col">Avr.</th>
+          <th scope="col">Mai</th>
+          <th scope="col">Juin</th>
+          <th scope="col">Juil.</th>
+          <th scope="col">Août</th>
+          <th scope="col">Sep.</th>
+          <th scope="col">Oct.</th>
+          <th scope="col">Nov.</th>
+          <th scope="col">Déc.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="--year: '2017'; --1: 8; --2: 6; --3: 9; --4: 12; --5: 15; --6: 21; --7: 24; --8: 25; --9: 22; --10: 19; --11: 14; --12: 9;">
+          <th scope="row">2017</th>
+          <td>8&nbsp;°C</td>
+          <td>6&nbsp;°C</td>
+          <td>9&nbsp;°C</td>
+          <td>12&nbsp;°C</td>
+          <td>15&nbsp;°C</td>
+          <td>21&nbsp;°C</td>
+          <td>24&nbsp;°C</td>
+          <td>25&nbsp;°C</td>
+          <td>22&nbsp;°C</td>
+          <td>19&nbsp;°C</td>
+          <td>14&nbsp;°C</td>
+          <td>9&nbsp;°C</td>
+        </tr>
+      </tbody>
+    </table>
+        </section>
+
+        <!-- Step 6 : points -->
+        <section class="slide">
+           <table class="table-ffoodd table-charts line step-1 step-2 step-3 points" style="--y: 32; --x: 13; --t-1: 'Jan.'; --t-2: 'Fév.'; --t-3: 'Mar.'; --t-4: 'Avr.'; --t-5: 'Mai'; --t-6: 'Juin'; --t-7: 'Juil.'; --t-8: 'Août'; --t-9: 'Sept.'; --t-10: 'Oct.'; --t-11: 'Nov.'; --t-12: 'Déc.';">
+      <caption>Température mensuelle moyenne en 2017</caption>
+      <thead>
+        <tr>
+          <th scope="col">Année</th>
+          <th scope="col">Jan.</th>
+          <th scope="col">Fév.</th>
+          <th scope="col">Mars</th>
+          <th scope="col">Avr.</th>
+          <th scope="col">Mai</th>
+          <th scope="col">Juin</th>
+          <th scope="col">Juil.</th>
+          <th scope="col">Août</th>
+          <th scope="col">Sep.</th>
+          <th scope="col">Oct.</th>
+          <th scope="col">Nov.</th>
+          <th scope="col">Déc.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="--color: #0172f0; --year: '2017'; --1: 8; --2: 6; --3: 9; --4: 12; --5: 15; --6: 21; --7: 24; --8: 25; --9: 22; --10: 19; --11: 14; --12: 9;">
+          <th scope="row">2017</th>
+          <td>8&nbsp;°C</td>
+          <td>6&nbsp;°C</td>
+          <td>9&nbsp;°C</td>
+          <td>12&nbsp;°C</td>
+          <td>15&nbsp;°C</td>
+          <td>21&nbsp;°C</td>
+          <td>24&nbsp;°C</td>
+          <td>25&nbsp;°C</td>
+          <td>22&nbsp;°C</td>
+          <td>19&nbsp;°C</td>
+          <td>14&nbsp;°C</td>
+          <td>9&nbsp;°C</td>
+        </tr>
+      </tbody>
+    </table>
+        </section>
+
+        <!-- Step 6 : multiples -->
+        <section class="slide">
+           <table class="table-ffoodd table-charts line step-1 step-2 step-3 points multiple" style="--y: 32; --x: 13; --t-1: 'Jan.'; --t-2: 'Fév.'; --t-3: 'Mar.'; --t-4: 'Avr.'; --t-5: 'Mai'; --t-6: 'Juin'; --t-7: 'Juil.'; --t-8: 'Août'; --t-9: 'Sept.'; --t-10: 'Oct.'; --t-11: 'Nov.'; --t-12: 'Déc.';">
+            <caption>Température mensuelle moyenne en 2017</caption>
+            <thead>
+              <tr>
+                <th scope="col">Année</th>
+                <th scope="col">Jan.</th>
+                <th scope="col">Fév.</th>
+                <th scope="col">Mars</th>
+                <th scope="col">Avr.</th>
+                <th scope="col">Mai</th>
+                <th scope="col">Juin</th>
+                <th scope="col">Juil.</th>
+                <th scope="col">Août</th>
+                <th scope="col">Sep.</th>
+                <th scope="col">Oct.</th>
+                <th scope="col">Nov.</th>
+                <th scope="col">Déc.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="--color: #0172f0; --year: '2017'; --1: 8; --2: 6; --3: 9; --4: 12; --5: 15; --6: 21; --7: 24; --8: 25; --9: 22; --10: 19; --11: 14; --12: 9;">
+                <th scope="row">2017</th>
+                <td>8&nbsp;°C</td>
+                <td>6&nbsp;°C</td>
+                <td>9&nbsp;°C</td>
+                <td>12&nbsp;°C</td>
+                <td>15&nbsp;°C</td>
+                <td>21&nbsp;°C</td>
+                <td>24&nbsp;°C</td>
+                <td>25&nbsp;°C</td>
+                <td>22&nbsp;°C</td>
+                <td>19&nbsp;°C</td>
+                <td>14&nbsp;°C</td>
+                <td>9&nbsp;°C</td>
+              </tr>
+              <tr style="--color: #ff2d40; --year: '2018'; --1: 10; --2: 4; --3: 7; --4: 13; --5: 17; --6: 20; --7: 22; --8: 23; --9: 26; --10: 17; --11: 14; --12: 10;">
+                <th scope="row">2018</th>
+                <td>10&nbsp;°C</td>
+                <td>4&nbsp;°C</td>
+                <td>7&nbsp;°C</td>
+                <td>13&nbsp;°C</td>
+                <td>17&nbsp;°C</td>
+                <td>20&nbsp;°C</td>
+                <td>22&nbsp;°C</td>
+                <td>23&nbsp;°C</td>
+                <td>26&nbsp;°C</td>
+                <td>17&nbsp;°C</td>
+                <td>14&nbsp;°C</td>
+                <td>10&nbsp;°C</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Step 1 -->
+        <section class="slide">
+            <h2>Au radar<span aria-hidden="true">&nbsp;&#128262;</span></h2>
+<pre class="language-markup">
+  <code class="language-markup">
+&lt;table style="--scale: 20; --step: 5; --items: 7; --1: 14; --2: 11; --3: 13; --4: 16; --5: 10; --6: 12; --7: 4; --8: var(--1);">
+  &lt;caption>Niveau d’intérêt par domaine, sur 20&lt;/caption>
+  &lt;thead>
+    &lt;tr>
+      &lt;th scope="col">Accessibilité&lt;/th>
+      &lt;th scope="col">Référencement&lt;/th>
+    &lt;/tr>
+  &lt;/thead>
+  &lt;tbody>
+    &lt;tr>
+      &lt;td>&lt;span>14&lt;/span>&lt;/td>
+      &lt;td>&lt;span>11&lt;/span>&lt;/td>
+    &lt;/tr>
+  &lt;/tbody>
+&lt;/table>
+  </code>
+</pre>
+        </section>
+        <section class="slide">
+          <table class="table-ffoodd table-charts" style="--scale: 20; --step: 5; --items: 7; --1: 14; --2: 11; --3: 13; --4: 16; --5: 10; --6: 12; --7: 4; --8: var(--1);">
+            <caption>Niveau d’intérêt par domaine, sur 20</caption>
+            <thead>
+              <tr>
+                <th scope="col">Accessibilité</th>
+                <th scope="col">Référencement</th>
+                <th scope="col">Performance</th>
+                <th scope="col">Compatibilité</th>
+                <th scope="col">Sécurité</th>
+                <th scope="col">Qualité de code</th>
+                <th scope="col">Test</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span>14</span></td>
+                <td><span>11</span></td>
+                <td><span>13</span></td>
+                <td><span>16</span></td>
+                <td><span>10</span></td>
+                <td><span>12</span></td>
+                <td><span>4</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Step 2 -->
+        <section class="slide">
+            <h3>Étalonnage<span aria-hidden="true">&nbsp;&#128907;</span></h3>
+<pre class="language-css">
+  <code class="language-css">
+table {
+    --radius: 10em;
+    --size: calc( var(--radius) / var(--scale) );
+    background-image:
+      repeating-radial-gradient(
+        circle at 50%, black, black 2px, white 0, white calc(var(--size) * var(--step))
+      ),
+      repeating-radial-gradient(
+        circle at 50%, grey, grey 2px, white 0, white var(--size)
+      );
+    border-radius: 50%;
+    height: calc( var(--radius) * 2 );
+    width: calc( var(--radius) * 2 );
+}
+  </code>
+</pre>
+        </section>
+        <section class="slide">
+          <table class="table-ffoodd table-charts radar" style="--scale: 20; --step: 5; --items: 7; --1: 14; --2: 11; --3: 13; --4: 16; --5: 10; --6: 12; --7: 4; --8: var(--1);">
+            <caption>Niveau d’intérêt par domaine, sur 20</caption>
+            <thead>
+              <tr>
+                <th scope="col">Accessibilité</th>
+                <th scope="col">Référencement</th>
+                <th scope="col">Performance</th>
+                <th scope="col">Compatibilité</th>
+                <th scope="col">Sécurité</th>
+                <th scope="col">Qualité de code</th>
+                <th scope="col">Test</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span>14</span></td>
+                <td><span>11</span></td>
+                <td><span>13</span></td>
+                <td><span>16</span></td>
+                <td><span>10</span></td>
+                <td><span>12</span></td>
+                <td><span>4</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Step 3 -->
+        <section class="slide">
+            <h3>Encerclement<span aria-hidden="true">&nbsp;&#128158;</span></h3>
+            <p class="small">
+                Basé sur <a hreflang="en" href="https://stackoverflow.com/questions/12813573/position-icons-into-circle">une explication d’<cite>Ana Tudor</cite></a>.
+            </p>
+<pre class="language-css">
+  <code class="language-css">
+table {
+    --part: calc( 360deg / var(--items) );
+}
+
+[scope="col"] {
+    --away: calc( (var(--radius) * -1) - 50% );
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform:
+        translate3d(-50%, -50%, 0)
+        rotate( calc(var(--part) * var(--index, 1)) )
+        translate( var(--away) )
+        rotate( calc(var(--part) * var(--index, 1) * -1) );
+}
+</code>
+</pre>
+        </section>
+        <section class="slide">
+          <table class="table-ffoodd table-charts radar step-1" style="--scale: 20; --step: 5; --items: 7; --1: 14; --2: 11; --3: 13; --4: 16; --5: 10; --6: 12; --7: 4; --8: var(--1);">
+            <caption>Niveau d’intérêt par domaine, sur 20</caption>
+            <thead>
+              <tr>
+                <th scope="col">Accessibilité</th>
+                <th scope="col">Référencement</th>
+                <th scope="col">Performance</th>
+                <th scope="col">Compatibilité</th>
+                <th scope="col">Sécurité</th>
+                <th scope="col">Qualité de code</th>
+                <th scope="col">Test</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span>14</span></td>
+                <td><span>11</span></td>
+                <td><span>13</span></td>
+                <td><span>16</span></td>
+                <td><span>10</span></td>
+                <td><span>12</span></td>
+                <td><span>4</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Step 4 -->
+        <section class="slide">
+            <h3>Placer les points<span aria-hidden="true">&nbsp;&#9862;</span></h3>
+<pre class="language-css">
+  <code class="language-css">
+td:nth-of-type(3) span {
+    --pos: calc( 100% - (var(--4) * 100% / (var(--scale) * var(--ratio) ) ) );
+    background: linear-gradient( to top left, rebeccapurple 10%, indigo 75% );
+    clip-path: polygon(
+        100% var(--pos),
+        calc( 100% - ( var(--3) * 100% / var(--scale) ) ) 100%,
+        100% 100%
+    );
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+  </code>
+</pre>
+        </section>
+        <section class="slide">
+          <table class="table-ffoodd table-charts radar step-1 step-2" style="--scale: 20; --step: 5; --items: 7; --1: 14; --2: 11; --3: 13; --4: 16; --5: 10; --6: 12; --7: 4; --8: var(--1);">
+            <caption>Niveau d’intérêt par domaine, sur 20</caption>
+            <thead>
+              <tr>
+                <th scope="col">Accessibilité</th>
+                <th scope="col">Référencement</th>
+                <th scope="col">Performance</th>
+                <th scope="col">Compatibilité</th>
+                <th scope="col">Sécurité</th>
+                <th scope="col">Qualité de code</th>
+                <th scope="col">Test</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span>14</span></td>
+                <td><span>11</span></td>
+                <td><span>13</span></td>
+                <td><span>16</span></td>
+                <td><span>10</span></td>
+                <td><span>12</span></td>
+                <td><span>4</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Step 5 -->
+        <section class="slide">
+            <h3>Distribution des parts<span aria-hidden="true">&nbsp;&#127829;</span></h3>
+            <p class="small">
+                Détournement d’<a hreflang="en" href="https://tympanus.net/codrops/2013/08/09/building-a-circular-navigation-with-css-transforms/">une technique publiée par <cite>Sara Soueidan</cite> sur Codrops</a>.
+            </p>
+<pre class="language-css">
+  <code class="language-css">
+td {
+    --skew: calc( 90deg - var(--part) );
+    border-bottom: 1px solid rebeccapurple;
+    transform:
+        rotate( calc(var(--part) * var(--index, 1)) )
+        skew( var(--skew) );
+    transform-origin: 100% 100%;
+}
+</code>
+</pre>
+        </section>
+        <section class="slide">
+          <table class="table-ffoodd table-charts radar step-1 step-2 step-3" style="--scale: 20; --step: 5; --items: 7; --1: 14; --2: 11; --3: 13; --4: 16; --5: 10; --6: 12; --7: 4; --8: var(--1);">
+            <caption>Niveau d’intérêt par domaine, sur 20</caption>
+            <thead>
+              <tr>
+                <th scope="col">Accessibilité</th>
+                <th scope="col">Référencement</th>
+                <th scope="col">Performance</th>
+                <th scope="col">Compatibilité</th>
+                <th scope="col">Sécurité</th>
+                <th scope="col">Qualité de code</th>
+                <th scope="col">Test</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span>14</span></td>
+                <td><span>11</span></td>
+                <td><span>13</span></td>
+                <td><span>16</span></td>
+                <td><span>10</span></td>
+                <td><span>12</span></td>
+                <td><span>4</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Step 6 -->
+        <section class="slide">
+          <h3 lang="en">Houston<span aria-hidden="true">&nbsp;&#128225;</span></h3>
+          <figure role="group" class="illustration">
+            <img src="img_slide/hypothénuse.png" alt="" width="333" height="243" />
+            <figcaption class="small">Illustration de la déformation du carré par la fonction <code>skew()</code></figcaption>
+          </figure>
+        </section>
+        <section class="slide">
+            <h3>Un peu de trigonométrie<span aria-hidden="true">&nbsp;&#8894;</span></h3>
+            <p class="small">
+                Figurez-vous que <a hreflang="en" href="https://gist.github.com/stereokai/7666bfe93929b14c2dced148c79e0e97"><cite>Stereokai</cite> a implémenté plusieurs fonctions de trigonométrie</a>
+                pour calculer les <strong>sinus</strong>, cosinus et tangente d’un angle.
+            </p>
+<pre class="language-css">
+  <code class="language-css">
+td span {
+      --opposite: calc( 180 - (90 + (90 - (360 / var(--items)))) );
+      /* Trouver l’angle opposé, en radians */
+      --angle: calc( var(--opposite) * 0.01745329251 );
+      /* calc()uler le sinus, sorcellerie ! */
+      --sin-term1: var(--angle);
+      --sin-term2: calc((var(--angle) * var(--angle) * var(--angle)) / 6);
+      --sin-term3: calc((var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle)) / 120);
+      --sin-term4: calc((var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle)) / 5040);
+      --sin-term5: calc((var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle)) / 362880);
+      --sin: calc(var(--sin-term1) - var(--sin-term2) + var(--sin-term3) - var(--sin-term4) + var(--sin-term5));
+      /* calc()uler l’hypothénuse : largeur initiale / sinus de l’angle opposé */
+      --hypo: calc( var(--unitless-radius) / var(--sin) );
+      /* trouver le ratio : largeur après déformation / largeur initiale */
+      --ratio: calc( var(--hypo) / var(--unitless-radius) );
+}
+</code>
+</pre>
+        </section>
+        <section class="slide">
+          <table class="table-ffoodd table-charts radar step-1 step-2 step-3 step-4" style="--scale: 20; --step: 5; --items: 7; --1: 14; --2: 11; --3: 13; --4: 16; --5: 10; --6: 12; --7: 4; --8: var(--1);">
+            <caption>Niveau d’intérêt par domaine, sur 20</caption>
+            <thead>
+              <tr>
+                <th scope="col">Accessibilité</th>
+                <th scope="col">Référencement</th>
+                <th scope="col">Performance</th>
+                <th scope="col">Compatibilité</th>
+                <th scope="col">Sécurité</th>
+                <th scope="col">Qualité de code</th>
+                <th scope="col">Test</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span>14</span></td>
+                <td><span>11</span></td>
+                <td><span>13</span></td>
+                <td><span>16</span></td>
+                <td><span>10</span></td>
+                <td><span>12</span></td>
+                <td><span>4</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Step 7 : multiples -->
+        <section class="slide">
+          <table class="table-ffoodd table-charts radar step-1 step-2 step-3 step-4 radar-multiple" style="--scale: 20; --step: 5; --items: 7; --areas: 2;">
+            <caption>Niveau d’intérêt par domaine, sur 20</caption>
+            <thead>
+              <tr>
+                <td></td>
+                <th scope="col">Accessibilité</th>
+                <th scope="col">Référencement</th>
+                <th scope="col">Performance</th>
+                <th scope="col">Compatibilité</th>
+                <th scope="col">Sécurité</th>
+                <th scope="col">Qualité de code</th>
+                <th scope="col">Test</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="--color: #734bf9; --1: 14; --2: 11; --3: 13; --4: 16; --5: 14; --6: 10; --7: 4; --8: var(--1);">
+                <th scope="row">Gaël</th>
+                <td><span>14</span></td>
+                <td><span>11</span></td>
+                <td><span>13</span></td>
+                <td><span>16</span></td>
+                <td><span>14</span></td>
+                <td><span>10</span></td>
+                <td><span>4</span></td>
+              </tr>
+              <tr style="--color: #e11a81; --1: 18; --2: 10; --3: 11; --4: 16; --5: 10; --6: 12; --7: 11; --8: var(--1);">
+                <th scope="row">Luc</th>
+                <td><span>18</span></td>
+                <td><span>10</span></td>
+                <td><span>11</span></td>
+                <td><span>16</span></td>
+                <td><span>10</span></td>
+                <td><span>12</span></td>
+                <td><span>11</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Step 1 -->
+        <section class="slide">
+            <h2>Un diagramme en tarte<span aria-hidden="true">&nbsp;&#129383;</span></h2>
+<pre class="language-markup">
+  <code class="language-markup">
+&lt;table>
+  &lt;caption>Répartition du poids des ressources pour ffoodd.fr&lt;/caption>
+  &lt;thead class="sr-only">
+    &lt;tr>
+      &lt;th scope="col">Ressource&lt;/th>
+      &lt;th scope="col">Proportion&lt;/th>
+    &lt;/tr>
+  &lt;/thead>
+  &lt;tbody>
+    &lt;tr style="--color: #734bf9; --term: 'HTML';">
+      &lt;th scope="row">HTML&lt;/th>
+      &lt;td style="--value: 2; --start: 0; ">2 %&lt;/td>
+    &lt;/tr>
+    &lt;tr>[…]&lt;/tr>
+  &lt;/tbody>
+&lt;/table></code>
+</pre>
+        </section>
+        <section class="slide">
+          <table class="table-ffoodd table-charts pie">
+            <caption>Répartition du poids des ressources pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
+            <thead class="sr-only">
+              <tr>
+                <th scope="col">Ressource</th>
+                <th scope="col">Proportion</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style="--color: #734BF9;--term: 'HTML';">
+                  <th scope="row">HTML</th>
+                  <td style="--value: 2; --start: 0;">2&nbsp;%</td>
+                </tr>
+                <tr style="--color: #E11A81;--term: 'CSS';">
+                  <th scope="row">CSS</th>
+                  <td style="--value: 2; --start: 2;">2&nbsp;%</td>
+                </tr>
+                <tr style="--color: #0172F0;--term: 'JS';">
+                  <th scope="row">JS</th>
+                  <td style="--value: 32; --start: 4; --lt-25: 0; --gt-25: 1; --lt-50: 1; --gt-50: 0;">32&nbsp;%</td>
+                </tr>
+                <tr style="--color: #FDC02F;--term: 'Json';">
+                  <th scope="row">Json</th>
+                  <td style="--value: 1; --start: 36;">1&nbsp;%</td>
+                </tr>
+                <tr style="--color: #39CA74;--term: 'Images';">
+                  <th scope="row">Images</th>
+                  <td style="--value: 44; --start: 37; --lt-25: 0; --gt-25: 1; --lt-50: 1; --gt-50: 0;">44&nbsp;%</td>
+                </tr>
+                <tr style="--color: #FF2D40;--term: 'Webfonts';">
+                  <th scope="row">Webfonts</th>
+                  <td style="--value: 17; --start: 81;">17&nbsp;%</td>
+                </tr>
+                <tr style="--color: #585462;--term: 'Autres';">
+                    <th scope="row">Autres</th>
+                    <td style="--value: 2; --start: 98;">2&nbsp;%</td>
+                </tr>
+              </tbody>
+            </table>
+        </section>
+
+        <!-- Step 2 -->
+        <section class="slide">
+            <h3>Devenir légende<span aria-hidden="true">&nbsp;&#129502;</span></h3>
+<pre class="language-css">
+  <code class="language-css">
+tbody {
+    display: table-row;
+}
+
+tbody tr {
+    display: table-cell;
+}
+
+tbody [scope="row"]::before {
+    background: var(--color, currentColor) var(--background);
+    content: "";
+    display: inline-block;
+    height: 1rem;
+    transform: translate3d(-.2rem, .1rem, 0);
+    width: 1rem;
+}
+  </code>
+</pre>
+        </section>
+        <section class="slide">
+          <table class="table-ffoodd table-charts pie step-1">
+            <caption>Répartition du poids des ressources pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
+            <thead class="sr-only">
+              <tr>
+                <th scope="col">Ressource</th>
+                <th scope="col">Proportion</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style="--color: #734BF9;--term: 'HTML';">
+                  <th scope="row">HTML</th>
+                  <td style="--value: 2; --start: 0;">2&nbsp;%</td>
+                </tr>
+                <tr style="--color: #E11A81;--term: 'CSS';">
+                  <th scope="row">CSS</th>
+                  <td style="--value: 2; --start: 2;">2&nbsp;%</td>
+                </tr>
+                <tr style="--color: #0172F0;--term: 'JS';">
+                  <th scope="row">JS</th>
+                  <td style="--value: 32; --start: 4; --lt-25: 0; --gt-25: 1; --lt-50: 1; --gt-50: 0;">32&nbsp;%</td>
+                </tr>
+                <tr style="--color: #FDC02F;--term: 'Json';">
+                  <th scope="row">Json</th>
+                  <td style="--value: 1; --start: 36;">1&nbsp;%</td>
+                </tr>
+                <tr style="--color: #39CA74;--term: 'Images';">
+                  <th scope="row">Images</th>
+                  <td style="--value: 44; --start: 37; --lt-25: 0; --gt-25: 1; --lt-50: 1; --gt-50: 0;">44&nbsp;%</td>
+                </tr>
+                <tr style="--color: #FF2D40;--term: 'Webfonts';">
+                  <th scope="row">Webfonts</th>
+                  <td style="--value: 17; --start: 81;">17&nbsp;%</td>
+                </tr>
+                <tr style="--color: #585462;--term: 'Autres';">
+                    <th scope="row">Autres</th>
+                    <td style="--value: 2; --start: 98;">2&nbsp;%</td>
+                </tr>
+              </tbody>
+            </table>
+        </section>
+
+        <!-- Step 3 -->
+        <section class="slide">
+            <h3>Devenir tarte<span aria-hidden="true">&nbsp;&#129383;</span></h3>
+            <div class="table">
+              <figure role="group" class="col-33 v-top">
+                <img src="img_slide/tarte-1.png" width="425" height="426" alt="" />
+                <figcaption>Valeur entre 25 et 50%</figcaption>
+              </figure>
+              <figure role="group" class="col-33 v-top">
+                <img src="img_slide/tarte-2.png" width="425" height="429" alt="" />
+                <figcaption>Valeur entre 50 et 75%</figcaption>
+              </figure>
+              <figure role="group" class="col-33 v-top">
+                <img src="img_slide/tarte-3.png" width="424" height="429" alt="" />
+                <figcaption>Valeur entre 75 et 100%</figcaption>
+              </figure>
+            </div>
+        </section>
+        <section class="slide">
+            <h3>Devenir tarte<span aria-hidden="true">&nbsp;&#129383;</span></h3>
+            <p class="small">
+              On réitère nos calculs de trigo précédents, et on ajoute une petite couche de complexité avec
+              <a hreflang="en" href="https://www.kizu.ru/conditions-for-css-variables/">
+              des variables pseudo-booléennes, sur une idée de
+              <cite>Roman Komarov</cite></a>.
+            </p>
+<pre class="language-css">
+  <code class="language-css">
+td::before {
+    clip-path: polygon(
+      50% 50%,
+      50% 0%,
+      100% 0%,
+      calc(50% + (var(--pos-B) * 1% * var(--lt-25, 1)) + (var(--gt-25, 0) * 50%)) calc(50% - (var(--pos-A) * 1% * var(--lt-25, 1))),
+      calc(50% + (var(--gt-25, 0) * 50% ))                                        calc(50% + (var(--gt-25, 0) * 50%)),
+      calc(50% + (var(--pos-A) * 1% * var(--lt-50, 1)) + (var(--gt-50, 0) * 50%)) calc(50% + (var(--pos-B) * 1% * var(--lt-50, 1)) + (var(--gt-50, 0) * 50%)),
+      calc(50% - (var(--gt-50, 0) * 50% ))                                        calc(50% + (var(--gt-50, 0) * 50%)),
+      calc(50% - (var(--pos-B) * 1% * var(--lt-75, 1)) - (var(--gt-75, 0) * 50%)) calc(50% + (var(--pos-A) * 1% * var(--lt-75, 1))),
+      calc(50% - (var(--gt-75, 0) * 50% ))                                        calc(50% - (var(--gt-75, 0) * 50%)),
+      calc(50% - (var(--pos-A) * 1% * var(--gt-75, 0)))                           calc(50% - (var(--pos-B) * 1% * var(--gt-75, 0))),
+      50% 50%
+    );
+}
+  </code>
+</pre>
+        </section>
+        <section class="slide">
+          <table class="table-ffoodd table-charts pie step-1 step-2">
+            <caption>Répartition du poids des ressources pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
+            <thead class="sr-only">
+              <tr>
+                <th scope="col">Ressource</th>
+                <th scope="col">Proportion</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style="--color: #734BF9;--term: 'HTML';">
+                  <th scope="row">HTML</th>
+                  <td style="--value: 2; --start: 0;">2&nbsp;%</td>
+                </tr>
+                <tr style="--color: #E11A81;--term: 'CSS';">
+                  <th scope="row">CSS</th>
+                  <td style="--value: 2; --start: 2;">2&nbsp;%</td>
+                </tr>
+                <tr style="--color: #0172F0;--term: 'JS';">
+                  <th scope="row">JS</th>
+                  <td style="--value: 32; --start: 4; --lt-25: 0; --gt-25: 1; --lt-50: 1; --gt-50: 0;">32&nbsp;%</td>
+                </tr>
+                <tr style="--color: #FDC02F;--term: 'Json';">
+                  <th scope="row">Json</th>
+                  <td style="--value: 1; --start: 36;">1&nbsp;%</td>
+                </tr>
+                <tr style="--color: #39CA74;--term: 'Images';">
+                  <th scope="row">Images</th>
+                  <td style="--value: 44; --start: 37; --lt-25: 0; --gt-25: 1; --lt-50: 1; --gt-50: 0;">44&nbsp;%</td>
+                </tr>
+                <tr style="--color: #FF2D40;--term: 'Webfonts';">
+                  <th scope="row">Webfonts</th>
+                  <td style="--value: 17; --start: 81;">17&nbsp;%</td>
+                </tr>
+                <tr style="--color: #585462;--term: 'Autres';">
+                    <th scope="row">Autres</th>
+                    <td style="--value: 2; --start: 98;">2&nbsp;%</td>
+                </tr>
+              </tbody>
+            </table>
+        </section>
+
+        <!-- Step 4 : dougnut -->
+        <section class="slide">
+            <h3>Devenir doughnut<span aria-hidden="true">&nbsp;&#127849;</span></h3>
+            <p class="small">
+                Inspiré par <a href="https://codepen.io/thebabydino/pens/tags/?selected_tag=mask" hreflang="en">les expérimentations d’<cite>Ana Tudor</cite> avec <code>mask-*</code> sur CodePen</a>.
+            </p>
+<pre class="language-css">
+  <code class="language-css">
+@supports (mask: var(--mask)) {
+   table {
+     mask-image: radial-gradient(
+       circle at 50% calc(50% - 2.5rem),
+       transparent 0%,
+       transparent var(--offset),
+       white calc(var(--offset) + 1px),
+       white 100%
+     );
+   }
+}
+  </code>
+</pre>
+        </section>
+        <section class="slide" style="background: #fff;">
+          <table class="table-ffoodd table-charts pie step-1 step-2 donut" style="--offset: 8rem;">
+            <caption>Répartition du poids des ressources pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
+            <thead class="sr-only">
+              <tr>
+                <th scope="col">Ressource</th>
+                <th scope="col">Proportion</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style="--color: #734BF9;--term: 'HTML';">
+                  <th scope="row">HTML</th>
+                  <td style="--value: 2; --start: 0;">2&nbsp;%</td>
+                </tr>
+                <tr style="--color: #E11A81;--term: 'CSS';">
+                  <th scope="row">CSS</th>
+                  <td style="--value: 2; --start: 2;">2&nbsp;%</td>
+                </tr>
+                <tr style="--color: #0172F0;--term: 'JS';">
+                  <th scope="row">JS</th>
+                  <td style="--value: 32; --start: 4; --lt-25: 0; --gt-25: 1; --lt-50: 1; --gt-50: 0;">32&nbsp;%</td>
+                </tr>
+                <tr style="--color: #FDC02F;--term: 'Json';">
+                  <th scope="row">Json</th>
+                  <td style="--value: 1; --start: 36;">1&nbsp;%</td>
+                </tr>
+                <tr style="--color: #39CA74;--term: 'Images';">
+                  <th scope="row">Images</th>
+                  <td style="--value: 44; --start: 37; --lt-25: 0; --gt-25: 1; --lt-50: 1; --gt-50: 0;">44&nbsp;%</td>
+                </tr>
+                <tr style="--color: #FF2D40;--term: 'Webfonts';">
+                  <th scope="row">Webfonts</th>
+                  <td style="--value: 17; --start: 81;">17&nbsp;%</td>
+                </tr>
+                <tr style="--color: #585462;--term: 'Autres';">
+                    <th scope="row">Autres</th>
+                    <td style="--value: 2; --start: 98;">2&nbsp;%</td>
+                </tr>
+              </tbody>
+            </table>
+        </section>
+
+        <!-- Step 5 : polar -->
+        <section class="slide">
+            <h3>Devenir polaire<span aria-hidden="true">&nbsp;&#9731;</span></h3>
+<pre class="language-css">
+  <code class="language-css">
+td::before {
+  --zoom: 50;
+  transform:
+    translate3d(-50%, -50%, 0)
+    rotate( var(--position) )
+    scale( calc((var(--zoom) + (var(--value) / (100 / var(--zoom)))) / 100) );
+}
+  </code>
+</pre>
+        </section>
+        <section class="slide" id="white-slide">
+          <table class="table-ffoodd table-charts pie step-1 step-2 polar" style="--offset: 8rem;">
+            <caption>Répartition du poids des ressources pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
+            <thead class="sr-only">
+              <tr>
+                <th scope="col">Ressource</th>
+                <th scope="col">Proportion</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style="--color: #734BF9;--term: 'HTML';">
+                  <th scope="row">HTML</th>
+                  <td style="--value: 2; --start: 0;">2&nbsp;%</td>
+                </tr>
+                <tr style="--color: #E11A81;--term: 'CSS';">
+                  <th scope="row">CSS</th>
+                  <td style="--value: 2; --start: 2;">2&nbsp;%</td>
+                </tr>
+                <tr style="--color: #0172F0;--term: 'JS';">
+                  <th scope="row">JS</th>
+                  <td style="--value: 32; --start: 4; --lt-25: 0; --gt-25: 1; --lt-50: 1; --gt-50: 0;">32&nbsp;%</td>
+                </tr>
+                <tr style="--color: #FDC02F;--term: 'Json';">
+                  <th scope="row">Json</th>
+                  <td style="--value: 1; --start: 36;">1&nbsp;%</td>
+                </tr>
+                <tr style="--color: #39CA74;--term: 'Images';">
+                  <th scope="row">Images</th>
+                  <td style="--value: 44; --start: 37; --lt-25: 0; --gt-25: 1; --lt-50: 1; --gt-50: 0;">44&nbsp;%</td>
+                </tr>
+                <tr style="--color: #FF2D40;--term: 'Webfonts';">
+                  <th scope="row">Webfonts</th>
+                  <td style="--value: 17; --start: 81;">17&nbsp;%</td>
+                </tr>
+                <tr style="--color: #585462;--term: 'Autres';">
+                    <th scope="row">Autres</th>
+                    <td style="--value: 2; --start: 98;">2&nbsp;%</td>
+                </tr>
+              </tbody>
+            </table>
+        </section>
+
+        <!-- a11y -->
+        <section class="slide">
+          <h2>Interrupteur de styles<span aria-hidden="true">&nbsp;&#9745;</span></h2>
+          <p>
+              <cite>Adrian Roselli</cite> a découvert que <a hreflang="en" href="http://adrianroselli.com/2018/02/tables-css-display-properties-and-aria.html">
+              tripatouiller le <code>display</code> des tableaux abîme sa sémantique exposée</a>
+             —&nbsp;c’est pourquoi j’implémente <a hreflang="en" href="https://inclusive-components.design/toggle-button/"> le composant inclusif du <em lang="en">toggle button</em></a> conçu par <cite>Heydon Pickering</cite> pour désactiver les styles à volonté.
+          </p>
+<pre class="language-javascript">
+  <code class="language-javascript">
+document.addEventListener( "DOMContentLoaded", function () {
+  var switches = document.querySelectorAll( '[role="switch"]' );
+
+  Array.prototype.forEach.call( switches, function( el, i ) {
+    el.addEventListener( 'click', function() {
+      var checked = this.getAttribute( 'aria-checked' ) === 'true' || false;
+      this.setAttribute( 'aria-checked', !checked );
+
+      var chart = this.parentNode.nextElementSibling;
+      chart.classList.toggle( 'table-charts' );
+    });
+  });
+});</code>
+</pre>
+        </section>
+
+        <section class="slide">
+           <div class="fieldset">
+             <p>
+               <strong id="label-1">Commutateur</strong><br>
+               <span id="description-1" class="small">Permet de désactiver les styles sur le tableau suivant.</span>
+             </p>
+             <button type="button" class="ml-auto fw-400 no-border p-relative disable-css"
+                     role="switch" aria-checked="true"
+                     aria-labelledby="label-1" aria-describedby="description-1">
+                     <span>Actifs</span>
+                     <span>Inactifs</span>
+             </button>
+           </div>
+           <table class="table-ffoodd table-charts bar step-1 step-2 step-3 step-4 waterfall" style="--scale: 3000; --1: 4; --2: 96; --3: 102; --4: 129; --5: 188; --6: 194; --7: 326; --8: 836; --9: 836; --10: 2561; --11: 2980;">
+             <caption>Temps de chargement pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
+             <thead class="sr-only">
+               <tr>
+                 <td></td>
+                 <th scope="col">Temps de chargement cumulé</th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr>
+                 <th scope="row">Temps&nbsp;: backend</th>
+                 <td style="--value: 4">
+                   <span>4&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                 </td>
+               </tr>
+               <tr>
+                 <th scope="row">Temps&nbsp;: Frontend</th>
+                 <td style="--value: 96">
+                   <span>96&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                 </td>
+               </tr>
+               <tr>
+                 <th scope="row">Délai&nbsp;: premier octet</th>
+                 <td style="--value: 102">
+                   <span>102&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                 </td>
+               </tr>
+               <tr>
+                 <th scope="row">Délai&nbsp;: dernier octet</th>
+                 <td style="--value: 129">
+                   <span>129&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                 </td>
+               </tr>
+               <tr>
+                 <th scope="row">Délai&nbsp;: première image</th>
+                 <td style="--value: 188">
+                   <span>188&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                 </td>
+               </tr>
+               <tr>
+                 <th scope="row">Délai&nbsp;: premier CSS</th>
+                 <td style="--value: 194">
+                   <span>194&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                 </td>
+               </tr>
+               <tr>
+                 <th scope="row">Délai&nbsp;: premier JS</th>
+                 <td style="--value: 326">
+                   <span>326&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                 </td>
+               </tr>
+               <tr>
+                 <th scope="row">DOM Interactif</th>
+                 <td style="--value: 836">
+                   <span>836&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                 </td>
+               </tr>
+               <tr>
+                 <th scope="row">Chargement du DOM</th>
+                 <td style="--value: 836">
+                   <span>836&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                 </td>
+               </tr>
+               <tr>
+                 <th scope="row">DOM complet</th>
+                 <td style="--value: 2561">
+                   <span>2561&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                 </td>
+               </tr>
+               <tr>
+                 <th scope="row">Trafic HTTP terminé</th>
+                 <td style="--value: 2980">
+                   <span>2980&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                 </td>
+               </tr>
+             </tbody>
+           </table>
+        </section>
+
+        <section class="slide">
+          <h2>Explorez<span aria-hidden="true">&nbsp;&#128640;</span></h2>
+          <p>Les pistes ne manquent pas&nbsp;:</p>
+          <ul>
+            <li class="Cmasque">
+                les propriétés <code>all</code> —&nbsp;avec les valeurs <code>initial</code>, <code>inherit</code> mais surtout <code>revert</code>&nbsp;—
+                et <code>contain</code>&nbsp;;
+              </li>
+            <li class="Cmasque">
+                <code>scroll-snap</code> pour des diagrammes «&nbsp;déroulables&nbsp;»&nbsp;;
+              </li>
+            <li class="Cmasque">
+              <code>attr()</code> et <code>counter()</code> avec un typage faible et la possibilité de s’en servir ailleurs que dans la propriété <code>content</code>&nbsp;;
+            </li>
+            <li class="Cmasque">
+              les <code>shapes</code>, <code>regions</code> et <code>exclusions</code> pour explorer
+              d’autres types de graphiques&nbsp;;
+            </li>
+            <li class="Cmasque">
+              <strong>Houdini</strong>, un ensemble de spécifications du futur —&nbsp;jetez donc un œil aux
+              <a hreflang="en" href="https://css-houdini.rocks/">essais de <cite>Vincent De Oliveira</cite></a>&nbsp;;
+            </li>
+            <li class="Cmasque">et probablement beaucoup d’autres idées et techniques à découvrir…</li>
+          </ul>
+        </section>
+
+        <section class="slide">
+          <h2>Conclusion</h2>
+          <p>Les avantages sont multiples —&nbsp;tout comme les inconvénients&nbsp;:</p>
+          <ul>
+            <li>pas de JavaScript <strong>pour l’aspect graphique</strong>&nbsp;;</li>
+            <li>mais JavaScript est <strong>requis</strong> pour l’accessibilité&nbsp;;</li>
+            <li>le <strong>balisage</strong> est libre et maîtrisable&nbsp;;</li>
+            <li>
+              <abbr lang="en" title="responsive WebDesign" aria-label="Responsive WebDesign">rwd</abbr>,
+              <abbr lang="en" title="Windows High Contrast Mode" aria-label="Windows High Contrast Mode">whcm</abbr> et autres préférences utilisateurs sont gérables <strong>grâce à CSS</strong>&nbsp;;
+            </li>
+            <li>HTML et CSS sont <strong>statiques</strong>&nbsp;;</li>
+            <li>mais il faut travailler en <strong>amélioration progressive</strong>.</li>
+          </ul>
+          <br>
+          <h3 lang="en">Learning is fun<span aria-hidden="true">&nbsp;&#128131;</span></h3>
+        </section>
+
+        <section  class="slide end noprint">
+          <h2 class="end-title">Merci</h2>
+          <h3>Et à bientôt<span aria-hidden="true">&nbsp;&#9786;</span></h3>
+          <h4>Crédits</h4>
+          <ul class="credit">
+            <li>Moteur de présentation&nbsp;: <a href="https://github.com/access42/accesSlide" hreflang="en">AccesSlide</a> —&nbsp;par <a href="https://access42.net/">Access42</a>&nbsp;;</li>
+            <li>Pictogrammes&nbsp;: <a href="https://thenounproject.com/marekpolakovic/collection/rounded-ui" hreflang="en">Rounded UI</a> —&nbsp;par <a href="https://www.marekpolakovic.sk/">Marek Polakovic</a>&nbsp;;</li>
+            <li>Typographie de titraille&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/bello-pro">Bello Pro</a> —&nbsp;créée par <a hreflang="en" href="https://www.underware.nl/">Underware</a>&nbsp;;</li>
+            <li>Typographie de labeur&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/museo-slab">Museo Slab</a> —&nbsp;créée par <a hreflang="en" href="https://www.exljbris.com/">Exljbris</a>.</li>
+          </ul>
+        </section>
+
+      </main>
+
+    </div>
+
+    <div id="setting" class="tool-block tool-block-settings " role="dialog" tabindex="-1" style="display:none"></div>
+
+  </div>
+
+  <div id="Caudio"></div>
+  <div id="Dcourante" aria-live="polite" aria-atomic="true" aria-hidden="true"></div>
+
+  <script src="../accesslide/js/slide.min.js"></script>
+  <script src="../accesslide/js/prism.min.js"></script>
+  <script>
+    document.addEventListener( "DOMContentLoaded", function () {
+      var switches = document.querySelectorAll( '[role="switch"]' );
+
+      Array.prototype.forEach.call( switches, function( el, i ) {
+        el.addEventListener( 'click', function() {
+          var checked = this.getAttribute( 'aria-checked' ) === 'true' || false;
+          this.setAttribute( 'aria-checked', !checked );
+
+          var chart = this.parentNode.nextElementSibling;
+          chart.classList.toggle( 'table-charts' );
+        });
+      });
+    });
+  </script>
+</body>
+</html>

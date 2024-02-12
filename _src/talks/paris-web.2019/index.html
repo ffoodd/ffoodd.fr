@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Un plan de salle modifiable avec les grilles et propriétés personnalisées CSS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Un plan de salle modifiable avec les grilles et propriétés personnalisées CSS — atelier mené lors de Paris Web 2019 par Gaël Poupard">
+  <meta name="author" content="Gaël Poupard">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/bello-pro.woff2"/>
+  <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/museo-slab-300.woff2"/>
+  <link rel="stylesheet" href="../accesslide/css/style.css" type="text/css" media="screen">
+  <link rel="stylesheet" id="currentCSS" href="../accesslide/css/ffoodd.css?5" type="text/css" media="screen">
+  <link rel="stylesheet" href="../accesslide/css/charts.css?34" type="text/css" media="screen">
+  <link rel="stylesheet" href="../accesslide/css/print.css" type="text/css" media="print">
+  <script src="../accesslide/js/AccesSlide.min.js"></script>
+  <script src="../accesslide/lang/lang_fr.js"></script>
+</head>
+<body>
+
+  <div id="screen" class="modeplan" data-effect="ffoodd">
+
+    <div id="volet"></div>
+
+    <header id="banner" role="banner" class="main-header clearfix">
+      <a href="https://www.ffoodd.fr">ffoodd</a>
+      <h1 class="main-title">
+        Un plan de salle modifiable avec les grilles et propriétés personnalisées
+        <abbr lang="en" title="Cascading StyleSheet">CSS</abbr>
+      </h1>
+    </header>
+
+    <div id="nav" class="tool-bar footer-nav clearfix">
+      <div id="wrappernav">
+        <ul class="related">
+          <li>
+            <a href="https://www.ffoodd.fr">
+              <img src="../accesslide/img/ffoodd.svg?2" role="img" alt="Blog de Gaël Poupard" height="32" width="32" />
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/ffoodd_fr">
+              <img src="../accesslide/img/twitter.svg?2" role="img" alt="@ffoodd_fr sur Twitter" height="32" width="32" />
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/ffoodd/" hreflang="en">
+              <img src="../accesslide/img/github.svg?2" role="img" alt="@ffoodd sur Github" height="32" width="32" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <nav role="navigation" id="sommaire" class="tool-block tool-block-summary" tabindex="-1"></nav>
+
+    <div id="wrapper">
+
+      <main role="main" id="main">
+
+        <section class="slide couv">
+          <h2>
+            Un plan de salle modifiable avec les grilles et propriétés personnalisées
+            <abbr lang="en" title="Cascading StyleSheet">CSS</abbr>
+          </h2>
+          <p>
+            Retrouvez les slides en ligne sur<br>
+            <span aria-hidden="true">→&nbsp;</span><a href="https://www.ffoodd.fr/paris-web.2019/">ffoodd.fr/paris-web.2019</a>.
+          </p>
+          <footer class="table">
+            <p class="col-50">Raconté par <a href="https://www.ffoodd.fr">Gaël Poupard</a></p>
+            <p class="col-50 col-t-right">
+              <a href="https://www.orange-business.com/fr">
+                <img src="../accesslide/img/OBS.jpg" width="175" height="64" alt="Orange Business Services" class="obs"/>
+              </a>
+            </p>
+          </footer>
+        </section>
+
+        <section class="slide">
+          <h2 lang="en">Once upon a time<span aria-hidden="true">&nbsp;&#129498;</span></h2>
+          <p>Bla bla bla&nbsp;!</p>
+        </section>
+
+        <section class="slide">
+          <h2>Le principe de moindre pouvoir<span aria-hidden="true">&nbsp;&#129412;</span></h2>
+          <p>
+            C’est <a hreflang="en" href="https://www.w3.org/DesignIssues/Principles.html">un des axiomes du web</a>,
+            proposés par <cite>Tim Berners-Lee</cite> en 1998
+            —&nbsp;à côté de <abbr lang="en" title="Keep It Simple, Stupid!">kiss</abbr>, du <i lang="en">design</i>
+            modulaire, de la <strong>tolérance</strong> ou de la <strong>décentralisation</strong>.
+          </p>
+          <p class="small">
+            Le mantra de l’<strong>amélioration progressive</strong>, en somme…
+          </p>
+        </section>
+
+        <section class="slide full">
+          <h2>Le code<span aria-hidden="true">&nbsp;&#129488;</span></h2>
+          <ul>
+            <li><a href="https://codepen.io/collection/ABwdNP/" hreflang="en">Les étapes sur CodePen</a></li>
+            <li><a href="https://gist.github.com/ffoodd" hreflang="en">Les étapes sur Github Gist</a></li>
+          </ul>
+          <p class="small">
+            Quelques Indice<span aria-hidden="true">&nbsp;&#129488;</span>
+            sont disséminés dans les <em lang="en">slides</em>&nbsp;!
+          </p>
+        </section>
+
+        <section class="slide full">
+          <h2>Les fondations<span aria-hidden="true">&nbsp;&#129521;</span></h2>
+          <h3>Document minimal, balisage et accessibilité</h3>
+          <ul>
+            <li><a href="https://codepen.io/ffoodd/pen/BaBgaaM/" hreflang="en">Étape №1 sur CodePen</a></li>
+            <li><a href="https://gist.github.com/ffoodd/b8a23f4a2c389dd76bc0b900737d7db5" hreflang="en">Étape №1 sur Github Gist</a></li>
+          </ul>
+          <h4 class="mt-auto">Indice<span aria-hidden="true">&nbsp;&#129488;</span></h4>
+          <p class="small"><code>header</code>, <code>main</code>, <code>aside</code>…</p>
+        </section>
+
+        <section class="slide full">
+          <h2>Les gens<span aria-hidden="true">&nbsp;&#128101;</span></h2>
+          <h3>On fait l’appel&nbsp;?</h3>
+          <ul>
+            <li><a href="https://codepen.io/ffoodd/pen/mdbZydb" hreflang="en">Étape №2 sur CodePen</a></li>
+            <li><a href="https://gist.github.com/ffoodd/5d2a521e0d21bbf8699ed52655410483" hreflang="en">Étape №2 sur Github Gist</a></li>
+          </ul>
+        </section>
+
+        <section class="slide full">
+          <h2>Le décor<span aria-hidden="true">&nbsp;&#128421;</span></h2>
+          <h3>Où l’on cache des choses…</h3>
+          <ul>
+            <li><a href="https://codepen.io/ffoodd/pen/jONjEqw" hreflang="en">Étape №3 sur CodePen</a></li>
+            <li><a href="https://gist.github.com/ffoodd/94db9644d3bd66bfef3167d8888e71cb" hreflang="en">Étape №3 sur Github Gist</a></li>
+          </ul>
+          <h4 class="mt-auto">Indice<span aria-hidden="true">&nbsp;&#129488;</span></h4>
+          <p class="small">Connaissez-vous le rôle <code>presentation</code>&nbsp;?</p>
+        </section>
+
+        <section class="slide full">
+          <h2>Le plan<span aria-hidden="true">&nbsp;&#128230;</span></h2>
+          <h3>Définir les espaces</h3>
+          <ul>
+            <li><a href="https://codepen.io/ffoodd/pen/mdbZQvo" hreflang="en">Étape №4 sur CodePen</a></li>
+            <li><a href="https://gist.github.com/ffoodd/1a6419fbf34ba0b2f4c306c3ceb20c7a" hreflang="en">Étape №4 sur Github Gist</a></li>
+          </ul>
+          <h4 class="mt-auto">Indice<span aria-hidden="true">&nbsp;&#129488;</span></h4>
+          <p class="small">
+            Saviez-vous qu’on peut utiliser des <em lang="en">custom properties</em>
+            dans la fonction <code>repeat()</code>&nbsp;?
+          </p>
+        </section>
+
+        <section class="slide full">
+          <h2>L’aménagement<span aria-hidden="true">&nbsp;&#128230;</span></h2>
+          <h3>On place les bureaux</h3>
+          <ul>
+            <li><a href="https://codepen.io/ffoodd/pen/MWgMLoL" hreflang="en">Étape №5 sur CodePen</a></li>
+            <li><a href="https://gist.github.com/ffoodd/153e0054eeee6ef049a61240802f346f" hreflang="en">Étape №5 sur Github Gist</a></li>
+          </ul>
+          <h4 class="mt-auto">Indice<span aria-hidden="true">&nbsp;&#129488;</span></h4>
+          <p class="small">Il y a deux solutions, dont une <strong>supportée uniquement par Firefox Nightly</strong>.</p>
+        </section>
+
+        <section class="slide full">
+          <h2>Portrait et paysage<span aria-hidden="true">&nbsp;&#129517;</span></h2>
+          <h3>Un parcours d’orientation</h3>
+          <ul>
+            <li><a href="https://codepen.io/ffoodd/pen/vYBqbPe" hreflang="en">Étape №6 sur CodePen</a></li>
+            <li><a href="https://gist.github.com/ffoodd/e56e8be5b4921ff20084a636e051c321" hreflang="en">Étape №6 sur Github Gist</a></li>
+          </ul>
+          <h4 class="mt-auto">Indice<span aria-hidden="true">&nbsp;&#129488;</span></h4>
+          <p class="small">Une seule propriété suffit&nbsp;— mais plusieurs valeurs à tester.</p>
+        </section>
+
+        <section class="slide full">
+          <h2>Placer les gens<span aria-hidden="true">&nbsp;&#128204;</span></h2>
+          <h3>Avec <code>style</code></h3>
+          <ul>
+            <li><a href="https://codepen.io/ffoodd/pen/PoYMOYe" hreflang="en">Étape №7 sur CodePen</a></li>
+            <li><a href="https://gist.github.com/ffoodd/5c7abaa7f8165e670d8288b640b2b7a4" hreflang="en">Étape №7 sur Github Gist</a></li>
+          </ul>
+          <h4 class="mt-auto">Indice<span aria-hidden="true">&nbsp;&#129488;</span></h4>
+          <p class="small">La propriété existe déjà, mais manque cruellement de variables…</p>
+        </section>
+
+        <section class="slide full">
+          <h2>On fait les cartons<span aria-hidden="true">&nbsp;&#129336;</span></h2>
+          <h3>Déménagement progressif</h3>
+          <ul>
+            <li><a href="https://codepen.io/ffoodd/pen/KKPOyqP" hreflang="en">Étape №8 sur CodePen</a></li>
+            <li><a href="https://gist.github.com/ffoodd/ee09c0aec8806df32ed3f3de03b77485" hreflang="en">Étape №8 sur Github Gist</a></li>
+          </ul>
+          <h4 class="mt-auto">Indice<span aria-hidden="true">&nbsp;&#129488;</span></h4>
+          <p class="small">Quelques <code>details</code> pour la <code>form</code>.</p>
+        </section>
+
+        <section class="slide full">
+          <h2>On se bouge<span aria-hidden="true">&nbsp;&#129336;</span></h2>
+          <h3>Un heureux événement</h3>
+          <ul>
+            <li><a href="https://codepen.io/ffoodd/pen/RwbXQmZ" hreflang="en">Étape №9 sur CodePen</a></li>
+            <li><a href="https://gist.github.com/ffoodd/0b1b6aa0b117c0593de820eeef1a754a" hreflang="en">Étape №9 sur Github Gist</a></li>
+          </ul>
+          <h4 class="mt-auto">Indice<span aria-hidden="true">&nbsp;&#129488;</span></h4>
+          <p class="small">Le style n’est que l’écoute des changements, pas vrai&nbsp;?</p>
+        </section>
+
+        <section class="slide full">
+          <h2>Sauvegarder ses positions<span aria-hidden="true">&nbsp;&#128190;</span></h2>
+          <h3>Mais où&nbsp;?</h3>
+          <ul>
+            <li><a href="https://codepen.io/ffoodd/pen/JjjPWjO" hreflang="en">Étape №10 sur CodePen</a></li>
+            <li><a href="https://gist.github.com/ffoodd/1c5d0a4834e0d5af083e24bbed1cc0c4" hreflang="en">Étape №10 sur Github Gist</a></li>
+          </ul>
+          <h4 class="mt-auto">Indice<span aria-hidden="true">&nbsp;&#129488;</span></h4>
+          <p class="small">On reste dans le navigateur — en <strong>local</strong>.</p>
+        </section>
+
+        <section class="slide full">
+          <h2>Une <em lang="en">sidebar</em> masquée<span aria-hidden="true">&nbsp;&#128584;</span></h2>
+          <h3>Ohé ohé<span aria-hidden="true">&nbsp;&#127925;</span></h3>
+          <ul>
+            <li><a href="https://codepen.io/ffoodd/pen/KKKKgxg" hreflang="en">Étape №11 sur CodePen</a></li>
+            <li><a href="https://gist.github.com/ffoodd/9a784dcd350e7d9952f64ad44a387d1b" hreflang="en">Étape №11 sur Github Gist</a></li>
+          </ul>
+          <h4 class="mt-auto">Indice<span aria-hidden="true">&nbsp;&#129488;</span></h4>
+          <p class="small">Masquée, vraiment&nbsp;?</p>
+        </section>
+
+        <section class="slide full">
+          <h2>Exporter, c’est donner<span aria-hidden="true">&nbsp;&#128389;</span></h2>
+          <h3>Et données, c’est <em lang="en">data</em></h3>
+          <ul>
+            <li><a href="https://codepen.io/ffoodd/pen/JjjjRxZ" hreflang="en">Étape №12 sur CodePen</a></li>
+            <li><a href="https://gist.github.com/ffoodd/4e69b982a46d37b726a7f11c36bd0aa2" hreflang="en">Étape №12 sur Github Gist</a></li>
+          </ul>
+          <h4 class="mt-auto">Indice<span aria-hidden="true">&nbsp;&#129488;</span></h4>
+          <p class="small">Il suffit de faire le lien vers les <code>data</code>.</p>
+        </section>
+
+        <section class="slide full">
+          <h2>Import<span aria-hidden="true">&nbsp;&#128055;</span></h2>
+          <h3>C’est pas bientôt fini&nbsp;?</h3>
+          <ul>
+            <li><a href="https://codepen.io/ffoodd/pen/RwwwGdm" hreflang="en">Étape №13 sur CodePen</a></li>
+            <li><a href="https://gist.github.com/ffoodd/30e77fe16d04b22677cb59b46fc0f9f6" hreflang="en">Étape №13 sur Github Gist</a></li>
+          </ul>
+          <h4 class="mt-auto">Indice<span aria-hidden="true">&nbsp;&#129488;</span></h4>
+          <p class="small">Un <code>type</code> sur un champs qui n’<code>accept</code>e pas n’importe quoi.</p>
+        </section>
+
+        <section class="slide full">
+          <h2>Le droit à l’oubli<span aria-hidden="true">&nbsp;&#128473;</span></h2>
+          <h3>Repartir de zéro</h3>
+          <ul>
+            <li><a href="https://codepen.io/ffoodd/pen/rNNNdwX" hreflang="en">Étape №14 sur CodePen</a></li>
+            <li><a href="https://gist.github.com/ffoodd/557cff43593cec792a12ec910f3bc9cc" hreflang="en">Étape №14 sur Github Gist</a></li>
+          </ul>
+          <h4 class="mt-auto">Indice<span aria-hidden="true">&nbsp;&#129488;</span></h4>
+          <p class="small">Il y a un <code>type</code> pour ça.</p>
+        </section>
+
+        <section class="slide full">
+          <h2>Flécher le parcours<span aria-hidden="true">&nbsp;&#8596;</span></h2>
+          <h3>Quatres boutons dans le vent</h3>
+          <ul>
+            <li><a href="https://codepen.io/ffoodd/pen/jOOOzGQ" hreflang="en">Étape №15 sur CodePen</a></li>
+            <li><a href="https://gist.github.com/ffoodd/1b99d9ee6f666883293b5312d7f55e63" hreflang="en">Étape №15 sur Github Gist</a></li>
+          </ul>
+          <h4 class="mt-auto">Indice<span aria-hidden="true">&nbsp;&#129488;</span></h4>
+          <p class="small">On arrête les <code>details</code>, ça donne des boutons.</p>
+        </section>
+
+        <section class="slide full">
+          <h2>Rester branchés<span aria-hidden="true">&nbsp;&#128268;</span></h2>
+          <h3>Faut revoir la transimission</h3>
+          <ul>
+            <li><a href="https://codepen.io/ffoodd/pen/bGGGvvj" hreflang="en">Étape №16 sur CodePen</a></li>
+            <li><a href="https://gist.github.com/ffoodd/4548479c287aef8e430164ac06365b6e" hreflang="en">Étape №16 sur Github Gist</a></li>
+          </ul>
+          <h4 class="mt-auto">Indice<span aria-hidden="true">&nbsp;&#129488;</span></h4>
+          <p class="small">Transmettre les ordres avec méthode.</p>
+        </section>
+
+        <section class="slide full">
+          <h2>Le chant du clavier<span aria-hidden="true">&nbsp;&#9000;</span></h2>
+          <h3>Ni Christian ni Jean-Michel Jarre, merci</h3>
+          <ul>
+            <li><a href="https://codepen.io/ffoodd/pen/JjjjLZK" hreflang="en">Étape №17 sur CodePen</a></li>
+            <li><a href="https://gist.github.com/ffoodd/b12fd4a78761f1b50457ab2e9d88636c" hreflang="en">Étape №17 sur Github Gist</a></li>
+          </ul>
+          <h4 class="mt-auto">Indice<span aria-hidden="true">&nbsp;&#129488;</span></h4>
+          <p class="small">Il manque seulement une oreille.</p>
+        </section>
+
+        <section class="slide">
+          <h2>Conclusion</h2>
+          <br>
+          <h3 lang="en">Learning is fun<span aria-hidden="true">&nbsp;&#128131;</span></h3>
+          <p>J’espère que vous aurez appris un ou deux trucs&nbsp;!</p>
+        </section>
+
+        <section  class="slide end noprint">
+          <h2 class="end-title">Merci</h2>
+          <h3>Et à bientôt<span aria-hidden="true">&nbsp;&#9786;</span></h3>
+          <h4>Crédits</h4>
+          <ul class="credit">
+            <li>Moteur de présentation&nbsp;: <a href="https://github.com/access42/accesSlide" hreflang="en">AccesSlide</a> —&nbsp;par <a href="https://access42.net/">Access42</a>&nbsp;;</li>
+            <li>Pictogrammes&nbsp;: <a href="https://thenounproject.com/marekpolakovic/collection/rounded-ui" hreflang="en">Rounded UI</a> —&nbsp;par <a href="https://www.marekpolakovic.sk/">Marek Polakovic</a>&nbsp;;</li>
+            <li>Typographie de titraille&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/bello-pro">Bello Pro</a> —&nbsp;créée par <a hreflang="en" href="https://www.underware.nl/">Underware</a>&nbsp;;</li>
+            <li>Typographie de labeur&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/museo-slab">Museo Slab</a> —&nbsp;créée par <a hreflang="en" href="https://www.exljbris.com/">Exljbris</a>.</li>
+          </ul>
+        </section>
+
+      </main>
+
+    </div>
+
+    <div id="setting" class="tool-block tool-block-settings " role="dialog" tabindex="-1" style="display:none"></div>
+
+  </div>
+
+  <div id="Caudio"></div>
+  <div id="Dcourante" aria-live="polite" aria-atomic="true" aria-hidden="true"></div>
+
+  <script src="../accesslide/js/slide.min.js"></script>
+  <script src="../accesslide/js/prism.min.js"></script>
+</body>
+</html>

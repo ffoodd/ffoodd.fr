@@ -85,6 +85,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("_src/humans.txt")
 	eleventyConfig.addPassthroughCopy("_src/images")
 	eleventyConfig.addPassthroughCopy("_src/assets")
+	eleventyConfig.addPassthroughCopy({"_src/talks" : "./"})
 
 	// Serveur
 	eleventyConfig.setServerOptions({

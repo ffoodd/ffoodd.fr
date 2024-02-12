@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Visite guidée du customizer de WordPress</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Visite guidée du customizer de WordPress — Meetup WordPress de Nantes le 28 septembre 2017 par Gaël Poupard">
+  <meta name="author" content="Gaël Poupard">
+  <link rel="stylesheet" href="../accesslide/css/style.css" type="text/css" media="screen">
+  <link rel="stylesheet" id="currentCSS" href="../accesslide/css/ffoodd.css?5" type="text/css" media="screen">
+  <link rel="stylesheet" href="../accesslide/css/print.css" type="text/css" media="print">
+  <script src="../accesslide/js/AccesSlide.min.js"></script>
+  <script src="../accesslide/lang/lang_fr.js"></script>
+  <script src="../accesslide/js/prism.min.js"></script>
+</head>
+<body>
+
+  <div id="screen" class="modeplan" data-effect="ffoodd">
+
+    <div id="volet"></div>
+
+    <header id="banner" role="banner" class="main-header clearfix">
+      <a href="http://www.ffoodd.fr">ffoodd</a>
+      <h1 class="main-title">Visite guidée du <i lang="en">customizer</i></h1>
+    </header>
+
+    <div id="nav" class="tool-bar footer-nav clearfix">
+      <div id="wrappernav">
+        <ul class="related">
+          <li>
+            <a href="http://www.ffoodd.fr">
+              <img src="../accesslide/img/ffoodd.svg?2" role="img" alt="Blog de Gaël Poupard" height="32" width="32" />
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/ffoodd_fr">
+              <img src="../accesslide/img/twitter.svg?2" role="img" alt="@ffoodd_fr sur Twitter" height="32" width="32" />
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/ffoodd/" hreflang="en">
+              <img src="../accesslide/img/github.svg?2" role="img" alt="@ffoodd sur Github" height="32" width="32" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <nav role="navigation" id="sommaire" class="tool-block tool-block-summary" tabindex="-1"></nav>
+
+    <div id="wrapper">
+
+      <main role="main" id="main">
+
+        <section class="slide couv">
+          <h2>Visite guidée du <i lang="en">customizer</i></h2>
+          <p>Pour faire simple et au cas vous n&apos;auriez vraiment rien vu à ce sujet, c&apos;est pour <strong>personnaliser son site</strong>.</p>
+          <p>Ça existe depuis <a href="https://codex.wordpress.org/Version_3.4" hreflang="en">WordPress 3.4</a> «&nbsp;Grant Green&nbsp;», en juin 2012. Rien que ça.</p>
+          <footer class="table">
+            <p class="col-50">Raconté par <a href="http://www.ffoodd.fr">Gaël Poupard</a></p>
+            <p class="col-50 col-t-right">
+              <a href="http://www.orange-business.com/fr">
+                <img src="../accesslide/img/OBS.jpg" width="175" height="64" alt="Orange Business Services" class="obs"/>
+              </a>
+            </p>
+          </footer>
+        </section>
+
+        <section class="slide">
+          <h2>Personnaliser quoi&nbsp;?</h2>
+          <div class="table">
+            <div class="col-50 v-top">
+              <p>
+                Si vous avez déjà jeté un œil au <i lang="en">customizer</i>,
+                vous aurez vu que certains <strong>objets personnalisables</strong> existent par défaut&nbsp;:
+              </p>
+              <ul>
+                <li>le titre du site et sa description&nbsp;;</li>
+                <li>les menus&nbsp;;</li>
+                <li>les widgets&nbsp;;</li>
+                <li>les options pour la page d&apos;accueil statique.</li>
+              </ul>
+            </div>
+            <div class="col-50 v-top Cmasque">
+              <p>
+                Et si vous avez regardé ce que propose <a href="https://fr.wordpress.org/themes/twentyseventeen/"><i lang="en">Twenty Seventeen</i></a>,
+                vous aurez aperçu d&apos;autres objets personnalisables&nbsp;:
+              </p>
+              <ul>
+                <li>les couleurs&nbsp;;</li>
+                <li>les options de mise en page&hellip;</li>
+              </ul>
+            </div>
+          </div>
+          <br>
+          <p class="Cmasque"><strong>Entrons un peu dans les détails</strong>.</p>
+        </section>
+
+        <section class="slide">
+          <h2>Deux poids, deux mesures<span aria-hidden="true">&nbsp;&#65847;</span></h2>
+          <p>
+            Il existe deux types d&apos;objets personnalisables grâce au <i lang="en">customizer</i>&nbsp;:
+            les <strong>options</strong>, et les <strong>modifications du thème</strong>.
+          </p>
+          <h3 class="Cmasque">Pourquoi&nbsp;?</h3>
+          <p class="Cmasque">
+            À cause du <strong>territoire des fonctionnalités</strong><span aria-hidden="true">&nbsp;&#128506;</span>, un concept qui doit vous parler
+            si vous utilisez &mdash;&nbsp;voire crééz&nbsp;&mdash; des thèmes ou extensions régulièrement.
+          </p>
+          <div class="Cmasque">
+            <p>Pour résumer&nbsp;:</p>
+            <ul>
+              <li>
+                <strong>une option</strong> est valable pour le site, <strong>indépendamment du thème actif</strong>&nbsp;:
+                c&apos;est le cas du titre du site, du slogan, etc.
+              </li>
+              <li><strong>une modification de thème…</strong> Je ne vous fais pas un dessin<span aria-hidden="true">&nbsp;&#128519;</span></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="slide">
+          <h2>Règle <abbr title="numéro">N<sup>o</sup></abbr><span aria-hidden="true">&nbsp;&#10122;</span></h2>
+          <div class="table">
+            <ol class="col-50 v-middle">
+              <li>Dans un thème, vous ne devriez jamais déclarer d&apos;option.</li>
+              <li>Dans une extension, vous ne devriez jamais déclarer une modification de thème.</li>
+            </ol>
+            <div class="col-50 v-middle">
+              <img src="img_slide/error.gif" height="426" width="426" alt="" />
+            </div>
+          </div>
+        </section>
+
+        <section class="slide">
+          <h2>Mode d&apos;emploi</h2>
+          <br>
+          <p>
+            Un objet personnalisable est composé de <strong>deux éléments</strong>, qu&apos;on définit grâce à
+            <a href="https://developer.wordpress.org/themes/customize-api/" hreflang="en">l&apos;<abbr title="Application Programming Interface" lang="en">api</abbr> du <i lang="en">customizer</i></a>.
+          </p>
+          <br>
+          <div class="table">
+            <div class="col-50 v-top Cmasque">
+              <h3>Un réglage<span aria-hidden="true">&nbsp;&#128208;</span></h3>
+              <p>Il gère le comportement.</p>
+<pre>
+<code class="language-php">
+$wp_customize->add_setting('boosted_variant',
+    array(
+        'type'       => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'default'    => '',
+        'transport' => 'refresh'
+    )
+);
+</code>
+</pre>
+              <p class="small">
+                <strong>Lecture</strong>&nbsp;:
+                <a href="https://developer.wordpress.org/themes/customize-api/customizer-objects/#settings" hreflang="en">les réglages dans le <i lang="en">handbook</i></a>
+              </p>
+            </div>
+            <div class="col-50 v-top Cmasque">
+              <h3>Un contrôle<span aria-hidden="true">&nbsp;&#128505;</span></h3>
+              <p>C&apos;est l&apos;interface dans le <i lang="en">customizer</i>.</p>
+<pre>
+<code class="language-php">
+$wp_customize->add_control('boosted_variant',
+    array(
+        'label'   => __("Use Boosted's black variant", "boosted"),
+        'type'    => 'checkbox',
+        'section' => 'title_tagline'
+    )
+);
+</code>
+</pre>
+              <p class="small">
+                <strong>Lecture</strong>&nbsp;:
+                <a href="https://developer.wordpress.org/themes/customize-api/customizer-objects/#controls" hreflang="en">les contrôles dans le <i lang="en">handbook</i></a>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide">
+          <h2>Ce dont on ne parlera pas<span aria-hidden="true">&nbsp;&#128372;</span></h2>
+          <br>
+          <p>Parce que flûte, c&apos;est long et j&apos;ai pas le temps&nbsp;!</p>
+          <br>
+          <div class="table">
+            <div class="col-50 v-top Cmasque">
+              <h3>Les panneaux<span aria-hidden="true">&nbsp;&#128679;</span></h3>
+              <p>
+                Nous pourrions évoquer les panneaux, qui permettent d&apos;ajouter un niveau supplémentaire
+                &mdash;&nbsp;comme c&apos;est le cas pour les menus&nbsp;&mdash; mais en fait, non.
+                <strong>Il est recommandé de ne pas s&apos;en servir dans un thème</strong>.
+              </p>
+              <p class="small">
+                <strong>Lecture</strong>&nbsp;:
+                <a href="https://developer.wordpress.org/themes/customize-api/customizer-objects/#panels" hreflang="en">les panneaux dans le <i lang="en">handbook</i></a>
+              </p>
+            </div>
+            <div class="col-50 v-top Cmasque">
+              <h3>Les types personnalisés<span aria-hidden="true">&nbsp;&#9843;</span></h3>
+              <p>
+                Il est également possibile de créer ses propres types de contrôles,
+                si les champs existants ne suffisent pas. Mais c&apos;est long, chiant, et documenté.
+              </p>
+              <p class="small">
+                <strong>Lecture</strong>&nbsp;:
+                <a href="https://developer.wordpress.org/themes/customize-api/customizer-objects/#custom-controls-sections-and-panels" hreflang="en">les types personnalisés dans le <i lang="en">handbook</i></a>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide">
+          <h2>Côté <abbr title="User eXperience" lang="en">ux</abbr><span aria-hidden="true">&nbsp;&#9879;</span></h2>
+          <br>
+          <p>
+            Vous aurez peut-être remarqué un gros problème&nbsp;:
+            <strong>l&apos;aperçu n&apos;est rien qu&apos;une grosse</strong> <code>iframe</code> (sans vouloir l&apos;offenser).
+          </p>
+          <p>Ainsi quand vous modifiez ou enregistrez un réglage, la fenêtre se recharge complètement.</p>
+          <p>De plus, vous pouvez naviguer dans l&apos;aperçu&nbsp;:</p>
+          <ul>
+            <li>changer de page,</li>
+            <li>actionner des choses,</li>
+            <li>ouvrir des menus,</li>
+            <li>etc.</li>
+          </ul>
+          <p>Autant de raison de se perdre dans cet entrelacs d&apos;options&nbsp;!</p>
+        </section>
+
+        <section class="slide">
+          <h2>Fonction d&apos;appel<span aria-hidden="true">&nbsp;&#9990;</span></h2>
+          <h3>Autrement connu sous le sobriquet de <code>active_callback</code></h3>
+          <br>
+          <p>
+            <code>active_callback</code> permet de définir <strong>une condition</strong>
+            pour l&apos;affichage d&apos;un réglage ou d&apos;une section.
+            Et chose logico-magique, il mange des fonctions de <i lang="en">template</i>.
+          </p>
+<pre class="Cmasque">
+<code class="language-php">
+$wp_customize->add_section('boosted_archives', array(
+    'title'           => __("Template for posts list", "boosted"),
+    'description'     => __("Define how to display content lists", "boosted"),
+    'priority'        => 105,
+    'capability'      => 'edit_theme_options',
+    'active_callback' => function() {
+      return (is_archive() || is_home());
+    },
+) );
+</code>
+</pre>
+          <h4 class="Cmasque"><a href="http://boosted.local/wp-admin/customize.php?return=%2Fwp-admin%2F">Démo</a>&nbsp;!</h4>
+        </section>
+
+        <section class="slide">
+          <h2>Rafraîchissement sélectif<span aria-hidden="true">&nbsp;&#127848;</span></h2>
+          <h3>Qu&apos;on nomme aussi <i lang="en">selective refresh</i></h3>
+          <br>
+          <p>
+            En définissant le transport du réglage sur <code>postMessage</code>,
+            on peut lui attribuer un <i lang="en">template</i> partiel,
+            qu&apos;on ciblera ensuite grâce à un sélecteur &mdash;&nbsp;jQuery&nbsp;&mdash;
+            et sera «&nbsp;rechargé&nbsp;» (via <abbr lang="en" title="Asynchronous JavaScript and XML">ajax</abbr>) grâce à une fonction passée à <code>render_callback</code>.
+          </p>
+<pre class="Cmasque">
+<code class="language-php">
+$wp_customize->get_setting('blogname')->transport = 'postMessage';
+$wp_customize->selective_refresh->add_partial('blogname',
+  array(
+    'selector'        => 'strong[itemprop="name"]',
+    'render_callback' => function () {
+      bloginfo('name');
+    },
+  )
+);
+</code>
+</pre>
+          <h4 class="Cmasque"><a href="http://boosted.local/wp-admin/customize.php?return=%2Fwp-admin%2F">Démo</a>&nbsp;!</h4>
+        </section>
+
+        <section class="slide">
+          <h2>Revenons à nos moutons<span aria-hidden="true">&nbsp;&#128017;</span></h2>
+          <br>
+          <p>Or donc, nous pouvons&nbsp;:</p>
+          <ul>
+            <li>naviguer sur le site dans le <i lang="en">customizer</i>,</li>
+            <li>afficher les options et modificateurs disponibles pour la page affichée,</li>
+            <li>et mettre à jour l&apos;aperçu sans recharger la page.</li>
+          </ul>
+          <p>
+            Aurais-je omis de préciser que tout ceci fonctionne également avec les <i lang="en">sidebars</i> et widgets&nbsp;?
+            <br>Lesquels, depuis <a href="https://wordpress.org/news/2017/06/evans/" hreflang="en">WordPress 4.8</a> «&nbsp;Evans&nbsp;»
+            peuvent contenir du <strong>texte riche, du son, de la vidéo</strong>, etc.
+          </p>
+          <p class="small">Vous me voyez venir là, ou pas&nbsp;?</p>
+        </section>
+
+        <section class="slide">
+          <h2>Hommage à Gutenberg<span aria-hidden="true">&nbsp;&#128438;</span></h2>
+          <h3>Laissez moi formuler ça</h3>
+          <p>
+            Pour un <i lang="en">template</i> donné, que nous affublerions de moults <i lang="en">sidebars</i>
+            &mdash;&nbsp;mises en forme comme il se doit&nbsp;&mdash; nous pourrions <strong>alimenter en contenus riches
+            n&apos;importe quelle zone de la page affichée</strong>.
+          </p>
+          <p class="Cmasque">
+            Et la méga classe&nbsp;: on peut
+            <a href="https://developer.wordpress.org/reference/functions/add_theme_support/#customize-selective-refresh-widgets" hreflang="en">
+              permettre à un thème de rafraîchir sélectivement n&apos;importe quel widget
+            </a>&nbsp;!
+          </p>
+<pre class="Cmasque">
+<code class="language-php">
+add_theme_support('customize-selective-refresh-widgets');
+</code>
+</pre>
+          <h4 class="Cmasque"><a href="http://boosted.local/wp-admin/customize.php?return=%2Fwp-admin%2F">Démo</a>&nbsp;!</h4>
+          <p class="small Cmasque">
+            Oui je sais, il faudrait affecter les <i lang="en">sidebars</i> à une page spécifique et pas
+            simplement à un <i lang="en">template</i>&hellip;
+          </p>
+        </section>
+
+        <section class="slide">
+          <h2>Conclusion<span aria-hidden="true">&nbsp;&#128165;</span></h2>
+          <br>
+          <p>On peut aller encore plus loins, avec notamment&nbsp;:</p>
+          <ol>
+            <li class="Cmasque">les <code>starter_content</code>&nbsp;: ils sont conçus spécialement pour ça&nbsp;;</li>
+            <li class="Cmasque">
+              le choix des couleurs et caractères de typographie <strong>proprement</strong>, en structurant son
+              <abbr lang="en" title="Cascading StyleSheet">css</abbr> intelligement à base de <code>inherit</code>,
+              <code>currentColor</code> et autres <code>--var()</code>&nbsp;;
+            </li>
+            <li class="Cmasque">
+              l&apos;<abbr title="Application Programming Interface" lang="en">api</abbr> JavaScript, qui sert par exemple&nbsp;:
+              <ul>
+                <li>dans JetPack, à recharger un <i lang="en">scroll</i> infini dans un widget affichant un flux asynchrone&nbsp;;</li>
+                <li>dans TwentyThirteen, à réinitialiser une mise en page Masonry.</li>
+              </ul>
+            </li>
+          </ol>
+          <p class="Cmasque"><strong>Alors, qu&apos;est-ce qu&apos;on attend&nbsp;?</strong></p>
+        </section>
+
+        <section  class="slide end noprint">
+          <h2 class="end-title">Merci</h2>
+          <h3>Et à bientôt&nbsp;☺</h3>
+          <h4>Crédits</h4>
+          <ul class="credit">
+            <li>Moteur de présentation&nbsp;: <a href="https://github.com/access42/accesSlide" hreflang="en">AccesSlide</a> —&nbsp;par <a href="http://access42.net/">Access42</a>&nbsp;;</li>
+            <li>Pictogrammes&nbsp;: <a href="https://thenounproject.com/marekpolakovic/collection/rounded-ui" hreflang="en">Rounded UI</a> —&nbsp;par <a href="http://www.marekpolakovic.sk/">Marek Polakovic</a>&nbsp;;</li>
+            <li>Typographie de titraille&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/bello-pro">Bello Pro</a> —&nbsp;créée par <a hreflang="en" href="http://www.underware.nl/">Underware</a>&nbsp;;</li>
+            <li>Typographie de labeur&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/museo-slab">Museo Slab</a> —&nbsp;créée par <a hreflang="en" href="http://www.exljbris.com/">Exljbris</a>.</li>
+          </ul>
+        </section>
+
+      </main>
+
+    </div>
+
+    <div id="setting" class="tool-block tool-block-settings " role="dialog" tabindex="-1" style="display:none"></div>
+
+  </div>
+
+  <div id="Caudio"></div>
+  <div id="Dcourante" aria-live="polite" aria-atomic="true" aria-hidden="true"></div>
+
+  <script src="../accesslide/js/slide.min.js"></script>
+</body>
+</html>

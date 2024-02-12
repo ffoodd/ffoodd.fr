@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Un plan de tests automatisés pour votre front-end</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Un plan de tests automatisés pour votre front-end — Conférence donnée lors du WP Tech 2018 par Gaël Poupard">
+  <meta name="author" content="Gaël Poupard">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../accesslide/css/style.css" type="text/css" media="screen">
+  <link rel="stylesheet" id="currentCSS" href="../accesslide/css/ffoodd.css?5" type="text/css" media="screen">
+  <link rel="stylesheet" href="../accesslide/css/print.css" type="text/css" media="print">
+  <script src="../accesslide/js/AccesSlide.min.js"></script>
+  <script src="../accesslide/lang/lang_fr.js"></script>
+  <script src="../accesslide/js/prism.min.js"></script>
+</head>
+<body>
+
+  <div id="screen" class="modeplan" data-effect="ffoodd">
+
+    <div id="volet"></div>
+
+    <header id="banner" role="banner" class="main-header clearfix">
+      <a href="https://www.ffoodd.fr">ffoodd</a>
+      <h1 class="main-title">Un plan de tests automatisés pour votre <i lang="en">front-end</i></h1>
+    </header>
+
+    <div id="nav" class="tool-bar footer-nav clearfix">
+      <div id="wrappernav">
+        <ul class="related">
+          <li>
+            <a href="https://www.ffoodd.fr">
+              <img src="../accesslide/img/ffoodd.svg?2" role="img" alt="Blog de Gaël Poupard" height="32" width="32" />
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/ffoodd_fr">
+              <img src="../accesslide/img/twitter.svg?2" role="img" alt="@ffoodd_fr sur Twitter" height="32" width="32" />
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/ffoodd/" hreflang="en">
+              <img src="../accesslide/img/github.svg?2" role="img" alt="@ffoodd sur Github" height="32" width="32" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <nav role="navigation" id="sommaire" class="tool-block tool-block-summary" tabindex="-1"></nav>
+
+    <div id="wrapper">
+
+      <main role="main" id="main">
+
+        <section class="slide couv">
+          <h2>Un plan de tests automatisés<br>pour votre <i lang="en">front-end</i></h2>
+          <div class="col-50">
+            <blockquote>
+              <p>Le <abbr lang="en" title="HyperText Markup Language">HTML</abbr>, c’est la vie.</p>
+            </blockquote>
+          </div>
+          <footer class="table">
+            <p class="col-50">Raconté par <a href="https://www.ffoodd.fr">Gaël Poupard</a></p>
+            <p class="col-50 col-t-right">
+              <a href="https://www.orange-business.com/fr">
+                <img src="../accesslide/img/OBS.jpg" width="175" height="64" alt="Orange Business Services" class="obs"/>
+              </a>
+            </p>
+          </footer>
+        </section>
+
+        <section class="slide">
+          <h2>Pourquoi tester&nbsp;?</h2>
+          <div class="Cmasque">
+            <h3>Améliorer la qualité</h3>
+            <p>Tester, c’est <strong>explorer</strong> de nouveaux domaines et acquérir de nouvelles <strong>compétences</strong>.</p>
+            <p>
+              Et tout ça pour le Graal de nos métiers&nbsp;: <strong>un utilisateur satisfait</strong>
+              —&nbsp;et par conséquent, un client heureux<span aria-hidden="true">&nbsp;&#127752;</span>.
+            </p>
+          </div>
+        </section>
+
+        <section class="slide">
+          <h2>Définitions</h2>
+          <dl>
+            <dt><span aria-hidden="true">&#129302;&nbsp;</span>Test automatisé</dt>
+            <dd>Test <strong>dirigé</strong> par un automate.</dd>
+            <dt><span aria-hidden="true">&#127919;&nbsp;</span><i lang="en">Front-end</i></dt>
+            <dd>
+              Un document <abbr lang="en" title="HyperText Markup Language">HTML</abbr>, <strong>disponible via un chemin</strong>,
+              éventuellement saupoudré de <abbr lang="en" title="Cascading StyleSheet">CSS</abbr> et <abbr lang="en" title="JavaScript">JS</abbr>.<br>
+            </dd>
+            <dd><a href="https://ngrok.com/" hreflang="en">ngrok</a> permet de créer des tunnels sécurisés vers <code>localhost</code>.</dd>
+            <dt><span aria-hidden="true">&#128506;&nbsp;</span>Plan de test</dt>
+            <dd>
+              <strong>Stratégie</strong> adoptée <strong>en fonction d’un objectif précis</strong>.
+            </dd>
+            <dt><span aria-hidden="true">&#128200;&nbsp;</span>Budget</dt>
+            <dd>
+              Le budget est primordial afin de préciser un <strong>périmètre à cibler</strong> —&nbsp;et un niveau d’exigence <strong>raisonnable</strong>.
+            </dd>
+          </dl>
+        </section>
+
+        <section class="slide">
+          <h2>Tabous<span aria-hidden="true">&nbsp;&#129296;</span></h2>
+          <h3>Ce dont on ne parlera pas.</h3>
+          <ul class="Cmasque">
+            <li>Tests unitaires.</li>
+            <li>Tests fonctionnels.</li>
+            <li><abbr lang="en" title="Test Driven Development">tdd</abbr>.</li>
+            <li><i lang="en">Linter</i>.</li>
+            <li>Rédaction de tests.</li>
+          </ul>
+          <p class="small Cmasque">Je n’ai que 40&nbsp;min.<span aria-hidden="true">&nbsp;&#8987;</span></p>
+        </section>
+
+        <section class="slide">
+          <h2>Les bons plans</h2>
+          <p>Deux axes pour un bon plan&nbsp;:</p>
+          <ol>
+            <li>Les résultats doivent être <strong>intelligibles</strong>&nbsp;;</li>
+            <li>un <strong>référent</strong> doit être identifiable.</li>
+          </ol>
+          <p>Sans ça, vous pissez dans un <span class="sr">violon</span><span aria-hidden="true">&nbsp;&#127931;</span>.</p>
+        </section>
+
+        <section class="slide">
+          <h2>Le cambouis<span aria-hidden="true">&nbsp;&#9881;</span></h2>
+          <h3>Par l’axe du <strong>quoi</strong></h3>
+          <p>Les autres axes&nbsp;:</p>
+          <ul>
+            <li class="Cmasque"><strong>Où</strong>&nbsp;: dans le navigateur (<em lang="en">headless</em>&nbsp;?), dans l’<abbr lang="en" title="Integrated Development Environment">IDE</abbr>, dans les tâches automatisées, dans une <abbr lang="en" title="Virtual Machine">VM</abbr>, etc.</li>
+            <li class="Cmasque"><strong>Quand</strong>&nbsp;: dès la modification du code, au <i lang="en">commit</i>, au <i lang="en">merge</i>, au déploiement, en continu sur la prod…</li>
+            <li class="Cmasque"><strong>Avec quoi</strong>&nbsp;: un outil par domaine, un <abbr lang="en" title="Software as a service">SaaS</abbr> tout-en-un…</li>
+            <li class="Cmasque"><strong>Comment gérer les résultats</strong>&nbsp;: flux <abbr lang="en" title="JavaScript Object Notation">JSON</abbr>, rapports <abbr lang="en" title="Portable Document Format">PDF</abbr> ou <i lang="en">markdown</i>, création de tickets à la volée, alerte Slack, etc.</li>
+          </ul>
+          <p class="Cmasque"><strong>Entrons dans le vif du sujet&nbsp;!</strong></p>
+        </section>
+
+        <section class="slide">
+          <h2>Qualité de code<span aria-hidden="true">&nbsp;&#129302;</span></h2>
+          <div class="table">
+            <div class="Cmasque col-50">
+              <h3>Validator</h3>
+              <p>Fourni par le <abbr lang="en" title="World Wide Web Consortium">w3c</abbr> &nbsp;:</p>
+              <ul>
+                <li><a href="https://validator.w3.org/nu/" hreflang="en">Validation <abbr lang="en" title="HyperText Markup Language">HTML</abbr></a>&nbsp;;</li>
+                <li><a href="https://jigsaw.w3.org/css-validator/" >Validation <abbr lang="en" title="Cascading StyleSheet">CSS</abbr></a>&nbsp;;</li>
+                <li><a href="https://validator.w3.org/feed/" hreflang="en">Validation <abbr lang="en" title="Really Simple Syndication">RSS</abbr></a>&nbsp;;</li>
+                <li><a href="https://validator.w3.org/checklink" hreflang="en">Validation des liens</a>&nbsp;;</li>
+                <li><a href="https://validator.w3.org/i18n-checker/" hreflang="en">Validation de l’<abbr title="Internationalisation">i18n</abbr></a>.</li>
+              </ul>
+              <p>
+                Il existe aussi des interfaces Node&nbsp;: <a href="https://github.com/zrrrzzt/html-validator" hreflang="en">pour HTML</a>
+                et <a href="https://www.npmjs.com/package/w3c-css" hreflang="en">pour CSS</a>.
+              </p>
+              <img src="img_slide/I_heart_validator_lg.png" width="101" height="46" alt=""/>
+            </div>
+            <div class="Cmasque col-50">
+              <h3>Statistiques</h3>
+              <p>
+                Des indicateurs secondaires pour évaluer la complexité du code <abbr lang="en" title="HyperText Markup Language">HTML</abbr>
+                et <abbr lang="en" title="Cascading StyleSheet">CSS</abbr>&nbsp;:
+              </p>
+              <ul>
+                <li><a href="https://github.com/johno/dom-stats" hreflang="en"><abbr lang="en" title="Document Object Model">DOM</abbr> Stats</a> par John Otander&nbsp;;</li>
+                <li><a href="https://github.com/t32k/stylestats" hreflang="en">StyleStats</a> par Koji Ishimoto.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide">
+          <h2>Accessibilité<span aria-hidden="true">&nbsp;&#128125;</span></h2>
+          <div class="table">
+            <div class="Cmasque col-50">
+              <h3><a href="https://www.deque.com/axe/" hreflang="en">
+                <img src="img_slide/aXe.png" width="150" height="140" alt="aXe" class="obs"/>
+              </a></h3>
+              <p>Disponible&nbsp;:</p>
+              <ul>
+                <li>en <abbr lang="en" title="Command Line Interface">cli</abbr>&nbsp;;</li>
+                <li>en extension navigateur&nbsp;;</li>
+                <li>branché à votre intégration continue&nbsp;;</li>
+                <li>dans Lighthouse, Protractor…</li>
+              </ul>
+            </div>
+            <div class="col-50 v-top">
+              <div class="Cmasque">
+                <h3><a href="https://tenon.io/" hreflang="en" lang="en">Tenon</a> et <a href="https://wordpress.org/plugins/access-monitor/" hreflang="en">Access Monitor</a></h3>
+                <p>
+                  Service payant, via <abbr lang="en" title="Application Programming Interface">api</abbr>.
+                  Access Monitor permet d’intégrer Tenon à WordPress&nbsp;:
+                </p>
+                <ul>
+                  <li>un <abbr lang="en" title="Custom Post Type">cpt</abbr> pour les rapports&nbsp;;</li>
+                  <li>planification&nbsp;;</li>
+                  <li>maintenu par Joe Dolson.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide">
+          <h2>Sécurité<span aria-hidden="true">&nbsp;&#128274;</span></h2>
+          <div class="table">
+            <div class="Cmasque col-50">
+              <h3>
+                <a href="https://www.owasp.org/index.php/ZAP" hreflang="en">
+                  <abbr lang="en" title="Zed Attack Proxy">ZAP</abbr>
+                </a>
+                <span aria-hidden="true">&nbsp;&#9889;</span>
+              </h3>
+              <p>
+                Logiciel développé par l’<abbr lang="en" title="Open Web Application Security Project">owasp</abbr>.
+                Il dispose d’une <abbr lang="en" title="Application Programming Interface">api</abbr> qu’on peut
+                consommer <a hreflang="en" href="https://www.npmjs.com/package/zaproxy">grâce à un client Node</a>.
+              </p>
+              <p><span aria-hidden="true">&#128680;&nbsp;</span><strong>Attention</strong>, ça pique&nbsp;!</p>
+            </div>
+            <div class="Cmasque col-50">
+              <h3><a href="https://observatory.mozilla.org/" hreflang="en">Observatory</a></h3>
+              <p>
+                Mozilla propose un scanner qui vérifier les certificats <abbr lang="en" title="Secure Sockets Layer">SSL</abbr>
+                et les entêtes <abbr lang="en" title="HyperText Transfert Protocol">HTTP</abbr>.
+              </p>
+              <p>Il existe <a href="https://github.com/mozilla/observatory-cli" hreflang="en">une interface de commande Node</a>.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide">
+          <h2>Performances<span aria-hidden="true">&nbsp;&#128640;</span></h2>
+          <div class="table">
+            <div class="col-50">
+              <h3><a href="https://github.com/macbre/phantomas" hreflang="en">Phantomas</a></h3>
+              <p>C’est un collecteur de métriques<span aria-hidden="true">&nbsp;&#128207;</span> en <abbr lang="en" title="Command Line Interface">cli</abbr>, qui utilise PhantomJS<span aria-hidden="true">&nbsp;&#128123;</span>.</p>
+              <p><a href="https://www.npmjs.com/package/gulp-louis" hreflang="en">Louis</a> est une tâche Gulp basée sur Phantomas qui compare une métrique à un <strong>budget</strong> défini.</p>
+              <p class="small"><a href="https://yellowlab.tools/" hreflang="en">Yellow Lab Tools</a> s’appuie sur Phantomas.</p>
+            </div>
+            <div class="col-50 Cmasque">
+              <h3>Alternative</h3>
+              <p>
+                <a href="https://github.com/addyosmani/psi" hreflang="en">PSI</a> est une version <abbr lang="en" title="Command Line Interface">cli</abbr>
+                du <em lang="en">PageSpeed Insights</em> de Google.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide">
+          <h2>Compatibilité<span aria-hidden="true">&nbsp;&#128675;</span></h2>
+          <div class="table">
+            <div class="col-50">
+              <h3>Navigation synchronisée</h3>
+              <p>
+                Je me sers de <a href="https://www.browsersync.io/" hreflang="en">BrowserSync</a>
+                pour la navigation synchronisée.
+              </p>
+            </div>
+            <div class="Cmasque col-50">
+              <h3><abbr lang="en" title="Platform as a service">PaaS</abbr></h3>
+              <p>Certaines plateformes mettent à disposition des <abbr lang="en" title="Virtual Machine">VM</abbr>&nbsp;:</p>
+              <ul>
+                <li><a href="https://saucelabs.com/">SauceLabs</a></li>
+                <li><a href="https://browserstack.com/">BrowserStack</a></li>
+                <li><a href="https://crossbrowsertesting.com/" hreflang="en">CrossBrowserTesting</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="Cmasque">
+            <h3>Tableaux de support</h3>
+            <p>
+              Les projets <a href="https://github.com/anandthakker/doiuse" hreflang="en" lang="en">Do I Use</a> et
+              <a href="https://github.com/SphinxKnight/compat-tester" hreflang="en">compat-tester</a> sont prometteurs.
+          </div>
+        </section>
+
+        <section class="slide">
+          <h2>Non-rég. visuelle<span aria-hidden="true">&nbsp;&#128526;</span></h2>
+          <dl>
+            <dt><em lang="en">Webdriver</em></dt>
+            <dd><a href="https://orange-opensource.github.io/Eagle/" hreflang="en">Eagle</a> par Orange</dd>
+            <dd><a href="https://bbc-news.github.io/wraith/" hreflang="en">Wraith</a> par la <abbr lang="en" title="British Broadcasting Corporation">BBC</abbr></dd>
+            <dd><a href="https://github.com/garris/BackstopJS" hreflang="en">BackstopJS</a></dd>
+            <dt>Navigateur <em lang="en">headless</em><span aria-hidden="true">&nbsp;&#129301;</span></dt>
+            <dd><a href="https://meowni.ca/posts/2017-puppeteer-tests/" hreflang="en">Un exemple avec Puppeteer et PixelMatch</a> par Monica Dinculescu</dd>
+            <dd>Avec <a href="https://developer.mozilla.org/fr/Firefox/Headless_mode">Firefox</a>&nbsp;: <code>firefox -screenshot 1024×768.png https://ffoodd.fr --window-size=1024,768</code>
+            <dt>Outils de comparaison</dt>
+            <dd>En JavaScript&nbsp;: PixelMatch et Ressemble.js</dd>
+            <dd><code>git status</code> pour indiquer un changement</dd>
+          </dl>
+        </section>
+
+        <section class="slide">
+          <h2>Référencement naturel<span aria-hidden="true">&nbsp;&#128202;</span></h2>
+          <p>
+            On vérifie la base&nbsp;: <code>title</code>, description, auteur, <code>h1</code>, liens brisés…
+            Le reste est —&nbsp;plus ou moins&nbsp;— couvert par les tests de performances et d’accessibilité.
+          </p>
+          <p>
+            Vous pouvez tester ça vous même, mais <a href="https://www.npmjs.com/package/seo-checker" hreflang="en">SEO checker</a>
+            fait ça très bien en <abbr lang="en" title="Command Line Interface">cli</abbr> Node.
+          </p>
+          <p class="small">Pour plus d’infos, trouvez Daniel, <abbr lang="en" title="Also know as">aka</abbr> <a href="https://www.seomix.fr/">SeoMix</a>.</p>
+        </section>
+
+        <section class="slide">
+          <h2>Les génériques<span aria-hidden="true">&nbsp;&#128137;</span></h2>
+          <p>C’est pas automatique.</p>
+          <div class="Cmasque">
+            <ul>
+              <li><a href="https://www.dareboost.com/fr/home">Dareboost</a>&nbsp;;</li>
+              <li><a href="https://sonarwhal.com/">Sonarwhal</a>, peut se lancer en <abbr lang="en" title="Command Line Interface">cli</abbr>&nbsp;;</li>
+              <li><a href="https://www.npmjs.com/package/lighthouse" hreflang="en">Lighthouse</a>, embarqué dans Chrome —&nbsp;peut aussi se lancer en <abbr lang="en" title="Command Line Interface">cli</abbr>.</li>
+            </ul>
+            <h3>
+              <img src="img_slide/opquast.png" widht="61" height="51" alt="" class="v-middle"/>
+              Opquast
+            </h3>
+            <p>
+              La <strong>qualité web</strong> au sens large. Leur outil de <em lang="en">reporting</em>
+              est très complet. Mais démarrez par <a href="https://checklists.opquast.com/fr/">les <em lang="en">checklists</em></a><span aria-hidden="true">&nbsp;&#9989;</span>&nbsp;!</p>
+          </div>
+        </section>
+
+        <section class="slide">
+          <h2 lang="en">Show time<span aria-hidden="true">&nbsp;&#127881;</span></h2>
+          <div class="table">
+            <div class="col-50">
+              <div class="Cmasque">
+                <h3>Tâches Gulp</h3>
+<pre>
+  <code class="language-javascript">
+gulp.task('test', [
+  'validator',
+  'louis',
+  'axe'
+]);
+  </code>
+</pre>
+              </div>
+              <div class="Cmasque">
+                <h3>Événements</h3>
+<pre>
+  <code class="language-javascript">
+"scripts": {
+  "test": "gulp test",
+  "prepublish": "gulp test"
+}
+  </code>
+</pre>
+              </div>
+            </div>
+            <div class="col-50 Cmasque">
+              <h3>Dans Travis</h3>
+<pre>
+  <code class="language-javascript">
+language: node_js
+node_js:
+  - "7"
+before_script:
+  - npm install -g gulp-cli
+script: gulp build && gulp travis
+  </code>
+</pre>
+              <p>
+                Par exemple, on peut
+                <a href="https://github.com/ffoodd/sseeeedd/pull/26" hreflang="en">bloquer une <abbr lang="en" title="Pull Request">PR</abbr></a>
+                en cas de HTML invalide.
+              </p>
+            <div class="Cmasque">
+              <h3>En prod</h3>
+  <pre>
+    <code class="language-javascript">
+  staats 2018.wptech.fr
+    </code>
+  </pre>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide">
+          <h2>Exploitation<span aria-hidden="true">&nbsp;&#128679;</span></h2>
+          <p>
+            À chaque déroulement des tests, prenez du temps pour corriger <strong>une</strong> erreur.
+            Pour ça, il vous faudra&nbsp;:
+          </p>
+          <ul>
+            <li><strong>lire</strong> le message,</li>
+            <li>parcourir la <strong>documentation</strong> correspondante,</li>
+            <li>l’interpréter et la <strong>comprendre</strong>,</li>
+            <li>mettre en place un <strong>correctif</strong>,</li>
+            <li>évidemment <strong>tester</strong> à nouveau<span aria-hidden="true">&nbsp;&#128258;</span>,</li>
+            <li>et ne ne plus commettre cette erreur.</p>
+          </ul>
+        </section>
+
+        <section class="slide">
+          <h2>Conclusion<span aria-hidden="true">&nbsp;&#128519;</span></h2>
+          <div class="Cmasque">
+            <h3>Démarrez</h3>
+            <p>
+              Le plus important est de commencer. Restez indulgent&nbsp;:
+              vos plans de test s’étofferont <strong>au fil du temps</strong>, et vos résultats s’amélioreront&nbsp;!
+            </p>
+            <p>
+              <abbr title="Post Scriptum">PS</abbr>&nbsp;:
+              Dans la plupart des domaines, les tests manuels demeurent indispensables.
+              Performances <strong>perçues</strong>, contenus <strong>pertinents</strong>…
+            </p>
+          </div>
+        </section>
+
+        <section  class="slide end noprint">
+          <h2 class="end-title">Merci</h2>
+          <h3>Et à bientôt<span aria-hidden="true">&nbsp;&#9786;</span></h3>
+          <h4>Crédits</h4>
+          <ul class="credit">
+            <li>Moteur de présentation&nbsp;: <a href="https://github.com/access42/accesSlide" hreflang="en">AccesSlide</a> —&nbsp;par <a href="https://access42.net/">Access42</a>&nbsp;;</li>
+            <li>Pictogrammes&nbsp;: <a href="https://thenounproject.com/marekpolakovic/collection/rounded-ui" hreflang="en">Rounded UI</a> —&nbsp;par <a href="https://www.marekpolakovic.sk/">Marek Polakovic</a>&nbsp;;</li>
+            <li>Typographie de titraille&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/bello-pro">Bello Pro</a> —&nbsp;créée par <a hreflang="en" href="https://www.underware.nl/">Underware</a>&nbsp;;</li>
+            <li>Typographie de labeur&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/museo-slab">Museo Slab</a> —&nbsp;créée par <a hreflang="en" href="https://www.exljbris.com/">Exljbris</a>.</li>
+          </ul>
+        </section>
+
+      </main>
+
+    </div>
+
+    <div id="setting" class="tool-block tool-block-settings " role="dialog" tabindex="-1" style="display:none"></div>
+
+  </div>
+
+  <div id="Caudio"></div>
+  <div id="Dcourante" aria-live="polite" aria-atomic="true" aria-hidden="true"></div>
+
+  <script src="../accesslide/js/slide.min.js"></script>
+</body>
+</html>

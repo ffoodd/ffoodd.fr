@@ -1,0 +1,84 @@
+/* ==================== */
+/* == Switch
+/* ==================== */
+
+button[role="switch"] {
+  background-color: rgba( palette( dominant, light ), .1 );
+  border-radius: rem( 22 ) !important;
+  box-sizing: content-box;
+  box-shadow: none !important;;
+  color: palette( dominant );
+  font-size: 1rem;
+  height: rem( 44 );
+  line-height: rem( 44 );
+  margin-left: $gutter * 2;
+  padding: 0 $gutter * 3;
+  position: relative;
+  transition: all .3s map-get( $timing-functions, 'enter' );
+  width: rem( 76 );
+  will-change: background-color;
+
+  &::before {
+    background: palette( default, contrast );
+    border-radius: rem( 22 );
+    content: "";
+    position: absolute;
+    height: rem( 38 );
+    left: rem( 4 );
+    top: rem( 4 );
+    transform: none;
+    transition: transform .3s map-get( $timing-functions, 'enter' ) 0s;
+    width: rem( 38 );
+    will-change: transform;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: rgba( palette( dominant, light ), .075 );
+    color: palette( dominant, dark );
+    outline-color: transparent;
+    top: 0;
+  }
+
+  &[aria-checked="true"] {
+    background-color: rgba( palette( success, light ), .3 );
+
+    &::before {
+      background: palette( success, dark );
+      transform: translateX(#{rem( 78 ) + $gutter * 3});
+    }
+  }
+
+  > *:first-child,
+  &[aria-checked="true"] > *:last-child {
+    display: none;
+  }
+
+  &[aria-checked="true"] > *:first-child {
+    display: block;
+  }
+}
+
+@media screen and (-ms-high-contrast: active) {
+  button[role="switch"] {
+    background-color: buttonFace;
+    border: 1px solid currentColor !important;
+    color: buttonText;
+
+    > span {
+      background-color: inherit;
+    }
+
+    &::before {
+      background: currentColor;
+    }
+
+    @supports (--css: var(--iables)) {
+      button[role="switch"][aria-checked="true"] {
+        background-color: highlight;
+        color: highlightText;
+      }
+    }
+  }
+}

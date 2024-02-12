@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Le jargon web, avant le web</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Le jargon web, avant le web — conférence donnée lors de Paris Web 2021 par Gaël Poupard">
+  <meta name="author" content="Gaël Poupard">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://upload.wikimedia.org"/>
+  <link rel="preconnect" href="https://media.giphy.com/"/>
+  <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/bello-pro.woff2"/>
+  <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/museo-slab-300.woff2"/>
+  <link rel="stylesheet" href="../accesslide/css/style.css" type="text/css" media="screen">
+  <link rel="stylesheet" id="currentCSS" href="../accesslide/css/ffoodd.css?5" type="text/css" media="screen">
+  <link rel="stylesheet" href="../accesslide/css/print.css" type="text/css" media="print">
+  <script src="../accesslide/js/AccesSlide.min.js"></script>
+  <script src="../accesslide/lang/lang_fr.js"></script>
+  <style>
+    figcaption { font-size: .6em; }
+    figure,
+    details {
+      background: #fff;
+      box-shadow: 0 .25rem .5rem rgba(0,0,0,.25);
+      max-width: 100%;
+      padding: .5em;
+      width: max-content;
+    }
+
+    details { width: 100%; }
+
+    summary {
+      display: revert;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    ol.table {
+      padding-left: 0;
+    }
+
+    time {
+      font-weight: bold;
+    }
+
+    .col-20 {
+      display: table-cell;
+      width: 20%;
+    }
+
+    .mt-3 {
+      margin-top: 3rem;
+    }
+
+    .mt-n3 {
+      margin-top: -3rem;
+    }
+
+    .mt-n6 {
+      margin-top: -6rem;
+    }
+
+    .mb-n6 {
+      margin-bottom: -6rem !important;
+    }
+
+    .pt-6 {
+      padding-top: 6rem;
+    }
+
+    .pr-4 {
+      padding-right: 4rem;
+    }
+
+    .ty-6 {
+      transform: translateY(6rem);
+    }
+
+    .ty-n6 {
+      transform: translateY(-6rem);
+    }
+
+    .d-ib {
+      display: inline-block;
+    }
+
+    .smaller {
+      font-size: 1rem;
+    }
+
+    .z-1 {
+      position: relative;
+      z-index: 1;
+    }
+
+    .rotate-left {
+      transform: rotate(-.005turn);
+    }
+
+    .rotate-right {
+      transform: rotate(.005turn);
+    }
+
+    .col-50 figure:first-child:not(:last-child) {
+      width: 50%;
+    }
+
+    .col-50 figure:last-child:not(:first-child) {
+      float: right;
+      width: 66%;
+    }
+
+    .spam { width: 3rem !important; }
+
+    .timeline {
+      border-bottom: .125rem solid rgba(3, 44, 54, .5);
+      padding-bottom: .5rem;
+    }
+
+    .timeline li {
+      position: relative;
+    }
+
+    .timeline li::before {
+      background-color: #c42419;
+      border-radius: .125rem;
+      bottom: -.675rem;
+      content: "";
+      height: .25rem;
+      left: -.25rem;
+      position: absolute;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .5s ease-in-out;
+      width: calc(100% + .5rem);
+    }
+
+    .timeline li:nth-child(even)::before {
+      bottom: calc(100% + .625rem);
+    }
+
+    .timeline li[style*="visible"]::before {
+      transform: scaleX(1);
+
+    }
+
+    .timeline li::after {
+      background-color: #efeee3;
+      border: .25rem solid #c42419;
+      border-radius: 50%;
+      bottom: -1.15rem;
+      content: "";
+      height: .75rem;
+      left: -.5rem;
+      position: absolute;
+      width: .75rem;
+    }
+
+    .timeline li:nth-child(even)::after {
+      bottom: calc(100% + .15rem);
+    }
+  </style>
+</head>
+<body>
+
+  <div id="screen" data-effect="ffoodd">
+
+    <div id="volet"></div>
+
+    <header id="banner" role="banner" class="main-header clearfix">
+      <a href="https://www.ffoodd.fr">ffoodd</a>
+      <h1 class="main-title">
+        Le jargon web, avant le web
+      </h1>
+    </header>
+
+    <div id="nav" class="tool-bar footer-nav clearfix">
+      <div id="wrappernav">
+        <ul class="related">
+          <li>
+            <a href="https://www.ffoodd.fr">
+              <img src="../accesslide/img/ffoodd.svg?2" role="img" alt="Blog de Gaël Poupard" height="32" width="32" />
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/ffoodd_fr">
+              <img src="../accesslide/img/twitter.svg?2" role="img" alt="@ffoodd_fr sur Twitter" height="32" width="32" />
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/ffoodd/" hreflang="en">
+              <img src="../accesslide/img/github.svg?2" role="img" alt="@ffoodd sur Github" height="32" width="32" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <nav role="navigation" id="sommaire" class="tool-block tool-block-summary" tabindex="-1"></nav>
+
+    <div id="wrapper">
+
+      <main role="main" id="main">
+
+        <section class="slide full couv">
+          <h2>
+            Le jargon web, avant le web
+          </h2>
+          <p>
+            Retrouvez les slides en ligne sur<br>
+            <span aria-hidden="true">→&nbsp;</span><a href="https://www.ffoodd.fr/paris-web.2021/">ffoodd.fr/paris-web.2021</a><br>
+             et en version «&nbsp;commentée&nbsp;»<br>
+            <span aria-hidden="true">→&nbsp;</span><a href="https://www.ffoodd.fr/paris-web.2021/verbose.html">ffoodd.fr/paris-web.2021/verbose</a>.
+          </p>
+          <footer class="table">
+            <p class="col-50 v-middle">Raconté par <a href="https://www.ffoodd.fr">Gaël Poupard</a></p>
+            <p class="col-50 col-t-right">
+              <a href="https://www.groupeonepoint.com">
+                <img src="../accesslide/img/onepoint.svg" width="332" height="161" style="height:161px" alt="onepoint" class="onepoint"/>
+              </a>
+            </p>
+          </footer>
+        </section>
+
+        <section class="slide full">
+          <h2>Le sens perdu<span aria-hidden="true">&nbsp;&#129430;</span></h2>
+          <p>
+            Notre vocable web est composé de néologismes en français, mais <strong>pas en anglais</strong>.
+            Il est une <strong>métaphore</strong> du monde physique, dont le sens est perdu en français.
+          </p>
+          <p class="small">Globalement on est nuls pour inventer.</p>
+        </section>
+
+        <section class="slide full">
+          <h2>Le vocable primordial <span aria-hidden="true">&nbsp;&#129716;</span></h2>
+          <p>
+            Ce vocabulaire et son histoire sont pourtant indispensables pour notre industrie&nbsp;:
+            parler le même langage et conserver son histoire contribue à
+            <strong>fonder une culture</strong>.
+          </p>
+          <blockquote class="Cmasque">
+            <p>Il faut cultiver notre <del>jardin</del> <ins>jargon web</ins>.</p>
+          </blockquote>
+        </section>
+
+        <section class="slide full">
+          <h2>Pensée <span aria-hidden="true">&#8596;</span> Langage</h2>
+          <div class="table">
+            <div class="col-50 v-middle">
+              <p>
+                C’est lié à ce que <cite>Vygotski</cite> appelait la
+                <strong>dialectique pensée-langage</strong>&nbsp;:
+                c’est un cercle vertueux<span aria-hidden="true">&nbsp;&#9851;</span>
+                alliant ces deux compétences.
+              </p>
+            </div>
+            <div class="col-50 col-t-right Cmasque">
+              <figure class="d-ib mt-n3">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/8f/Lev_Vygotsky_1896-1934.jpg" alt="">
+                <figcaption>
+                  <a href="https://commons.wikimedia.org/w/index.php?curid=26913713">Lev Semionovitch Vygotski</a><br>
+                  <small>par <a rel="nofollow" href="http://webpages.charter.net/schmolze1/vygotsky/">The Vygotski Project</a>, CC BY-SA 3.0</small>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide full">
+          <h2>Aux origines</h2>
+          <ol class="table pt-6 timeline">
+            <li class="col-20 Cmasque"><time>1725</time><br/>Bouchon</li>
+            <li class="col-20 ty-6 Cmasque"><time>1801</time><br/>Jacquard</li>
+            <li class="col-20 Cmasque"><time>1908</time><br/>Babbage</li>
+            <li class="col-20 ty-6 Cmasque"><time>1842</time><br/>Ada Lovelace</li>
+            <li class="col-20 Cmasque"><time>1946</time><br/>ENIAC</li>
+          </ol>
+          <p class="small pt-6 ty-6 Cmasque">Vous prendrez bien quelques anecdotes, pour la route&nbsp;?</p>
+        </section>
+
+        <section class="slide full">
+          <h2><i lang="en">World Wide Web</i> <span aria-hidden="true">&nbsp;&#127760;</span></h2>
+          <h3>La toile d’ampleur mondiale</h3>
+          <p>
+            Utiliser le terme anglais est certes un néologisme intéressant mais on perd
+            cette image de réseau savamment orchestré pour ne plus se représenter qu’une masse
+            informe et bordélique. On va «&nbsp;sur le web&nbsp;».
+          </p>
+          <p class="small">
+            Notez d’ailleurs qu’à l’origine,
+            <a href="https://www.w3.org/History/1989/proposal.html" hreflang="en">Sir Tim Berners-Lee
+              utilisait le terme «&nbsp;<i lang="en">Mesh</i>&nbsp;»</a>
+            qui signifie plus simplement «&nbsp;maille&nbsp;». Un terme qui aurait eu la cote&nbsp;!
+          </p>
+        </section>
+
+        <section class="slide full">
+          <h2><i lang="en">Radio buttons</i> <span aria-hidden="true">&nbsp;&#128280;</span></h2>
+          <h3>Les boutons radio</h3>
+          <div class="table">
+            <div class="col-50 v-middle pr-4">
+              <p>
+                Ce sont littéralement <a href="https://fr.wikipedia.org/wiki/Bouton_radio">les boutons des vieilles radios.</a>
+                Vous ne pouvez pas écouter plusieurs ondes en même temps, et paf les boutons radios.
+              </p>
+            </div>
+            <div class="col-50">
+              <figure class="rotate-right">
+                  <img src="https://christianheilmann.com/wp-content/uploads/2020/05/autoradio-retro-generations-past-nostalgia-vintage-antique-old.jpg"
+                       alt="" width="436" height="154" loading="lazy"/>
+                  <figcaption>
+                    Un vieil autoradio, avec nos fameux boutons.<br>
+                    <small>Image tirée du
+                      <a href="https://christianheilmann.com/2020/05/05/progressively-enhancing-radio-buttons-with-svg-whilst-staying-accessible/"
+                         hreflang="en">blog de Christian Heillman</a>.
+                    </small>
+                  </figcaption>
+                </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide full">
+          <h2><i lang="en">Scroll</i> <span aria-hidden="true">&nbsp;&#128220;</span></h2>
+          <h3>Rouleau, parchemin</h3>
+          <div class="table">
+            <div class="col-50 v-middle">
+              <p>
+                Avant le livre, les écrits étaient conservés sous forme de rouleaux interminables.<br>
+                La <i lang="en">scrollbar</i> était née&nbsp;!
+              </p>
+            </div>
+            <div class="col-50 col-t-right">
+              <figure class="d-ib mt-n6">
+                <video src="https://media.giphy.com/media/xT5LMMjQXvcTi1xh0Q/giphy.mp4"
+                       width="480" height="362" muted autoplay controls></video>
+                <figcaption lang="en">Let’s scroll!</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide full">
+          <h2><i lang="en">Bug</i> <span aria-hidden="true">&nbsp;&#128027;</span></h2>
+          <h3>Insecte</h3>
+          <div class="table">
+            <div class="col-50 v-middle">
+              <p>
+                <a href="https://fr.wikipedia.org/wiki/Bug_(informatique)#Terminologie">L’anecdote
+                  de Grace Hopper en 1947 est un mythe amplement déformé</a>,
+                le terme étant déjà utilisé dans ce contexte depuis longtemps.
+              </p>
+            </div>
+            <div class="col-50 col-t-right">
+              <figure class="d-ib mt-n6 rotate-right">
+                <a href="https://commons.wikimedia.org/w/index.php?curid=165211&uselang=fr">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/First_Computer_Bug%2C_1945.jpg"
+                       lang="en" alt="First Computer Bug. Courtesy of the Naval Surface Warfare Center, Dahlgren, VA., 1988."
+                       width="370" height="291" loading="lazy">
+                </a>
+                <figcaption>
+                  Le premier <i lang="en">bug</i> informatique répertorié.
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide full">
+          <h2><i lang="en">Mail</i> <span aria-hidden="true">&nbsp;&#128236;</span></h2>
+          <h3>Courrier (postal)</h3>
+          <div class="table">
+            <div class="col-50 v-middle">
+              <p>
+                D’où l’ajout du «&nbsp;e&nbsp;» devant le terme, pour dissocier le courrier électronique
+                du courrier papier. Notez que ce néologisme existe en français&nbsp;:
+                le <strong>courriel</strong>.
+              </p>
+              <p class="small">Une palanquée de termes filent la métaphore&nbsp;: adresse, route, etc.</p>
+            </div>
+            <div class="col-50 col-t-right">
+              <figure class="rotate-right d-ib mt-n6 mb-n6">
+                <img src="https://www.laposte.fr/medias/sys_master/images/h3e/haf/12118041067550.jpg"
+                     alt="" width="473" height="441" loading="lazy"/>
+                <figcaption>Où colle-t-on le timbre, sur un courriel&nbsp;?</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide full">
+          <h2><i lang="en">Spam</i>™</h2>
+          <h3>Du <span aria-label="porc">&#128022;</span> en conserve</h3>
+          <div class="table">
+            <div class="col-50 v-middle">
+              <p>
+                Ce terme est utilisé en référence à
+                <a href="https://fr.wikipedia.org/wiki/Spam_(sketch)">un sketch éponyme des Monty Python</a>
+                dans lequel un restaurant ne sert <strong>que</strong>
+                des conserves de la marque <a href="https://www.spam.com/" hreflang="en">Spam</a>,
+                incontournable de l’après 2<sup>nde</sup> Guerre Mondiale.
+              </p>
+              <p class="small">Je préfère le terme pourriel, pas vous&nbsp;?</p>
+            </div>
+            <div class="col-50 ty-n6 mb-n6">
+              <figure class="rotate-left d-ib mt-n6 z-1 Cmasque">
+                <img src="https://fontmeme.com/images/Spam-logo.jpg"
+                   alt="SPAM" width="48" height="48" loading="lazy" class="spam"/>
+                <figcaption class="smaller">Logo de la marque <i lang="en">Spam</i>™</figcaption>
+              </figure>
+              <figure class="rotate-right d-ib mt-n6 mb-n6 Cmasque">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Monty_Python_Live_02-07-14_13_04_42_%2814598710791%29.jpg/1200px-Monty_Python_Live_02-07-14_13_04_42_%2814598710791%29.jpg"
+                     alt="" width="300" height="400" loading="lazy">
+                <figcaption>
+                  Le menu des Monthy Python.<br>
+                  <small>
+                    Par <a href="https://commons.wikimedia.org/w/index.php?curid=73509516"
+                           hreflang="en">Eduardo Unda-Sanzana, CC BY 2.0</a>
+                  </small>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide full">
+          <h2><i lang="en">Slide to unlock</i> <span aria-hidden="true">&nbsp;&#128275;</span></h2>
+          <h3>Déverrouiller</h3>
+          <div class="table">
+            <div class="col-50 pr-4 Cmasque">
+              <figure class="rotate-right mt-3">
+                <img src="https://i2.wp.com/css-tricks.com/wp-content/uploads/2010/08/slidetounlock.png?w=570&ssl=1"
+                     alt="" width="285" height="80" loading="lazy"/>
+                <figcaption>
+                  Capture d’écran de l’interface «&nbsp;<i lang="en">Slide to unlock</i>&nbsp;» sur iPhone,<br>
+                  <small><a href="https://css-tricks.com/slide-to-unlock/" hreflang="en">reproduite en CSS par Chris Coyier</a></small>
+                </figcaption>
+              </figure>
+            </div>
+            <div class="col-50 Cmasque">
+              <figure class="rotate-left d-ib mt-n6">
+                <img src="https://www.ffoodd.fr/wp-content/uploads/2013/11/slide-to-unlock.jpg"
+                     alt="" width="240" height="150" loading="lazy"/>
+                <figcaption>
+                  Loquet de sécurité à glissière, portant le texte «&nbsp;<i lang="en">Slide</i>&nbsp;»
+                  —&nbsp;littéralement «&nbsp;glisser&nbsp;».
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide full">
+          <h2><i lang="en">Carousel</i> <span aria-hidden="true">&nbsp;&#127904;</span></h2>
+          <h3>Carrousel</h3>
+          <div class="table">
+            <div class="col-50 v-middle">
+              <p>
+                Un manège, quoi. <span class="Cmasque">Sauf que <strong>les vrais carrousels attendent</strong>
+                que les gens aient embarqué pour démarrer&nbsp;!</span>
+              </p>
+            </div>
+            <div class="col-50 col-t-right Cmasque">
+              <figure class="d-ib mt-n6 mb-n6">
+                <video src="https://media.giphy.com/media/IONcI446NLLTq/giphy.mp4"
+                       controls loop muted autoplay width="360" height="363"></video>
+                <figcaption>Expert accessibilité auditant un carrousel.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide full">
+          <h2><i lang="en">Library</i> <span aria-hidden="true">&nbsp;&#128218;</span></h2>
+          <h3>Bibliothèque</h3>
+          <div class="table">
+            <div class="col-50 v-middle">
+              <p>
+                À la librairie, on s’approprie tandis qu’à la bibliothèque, <strong>on emprunte</strong>.
+              </p>
+              <p class="small">
+                Le rapport entre l’<i lang="en">open-source</i>
+                et notre mauvais usage de ce terme est intéressant, vous ne trouvez pas&nbsp&nbsp;?
+              </p>
+            </div>
+            <div class="col-50 col-t-right">
+              <figure class="d-ib mt-n6">
+                <video src="https://media.giphy.com/media/YGlRW1Am9q7e0/giphy.mp4"
+                       controls muted autoplay loop width="240" height="360"></video>
+                <figcaption>
+                  <code>npm install</code>, allégorie.<br>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide full">
+          <h2><i lang="en">Framework</i> <span aria-hidden="true">&nbsp;&#128444;</span></h2>
+          <h3>Coffrage, charpente</h3>
+          <div class="table">
+            <div class="col-50 v-middle">
+              <p>
+                Dans le BTP, «&nbsp;<i lang="en">a wooden framework</i>&nbsp;» est un cadre en bois,
+                allant de la charpente au simple <strong>coffrage</strong>.
+              </p>
+              <p class="small">
+                Le terme français <strong>cadriciel</strong> (par opposition au logiciel) est un pur néologisme mais
+                a le mérite d’utiliser la racine pertinente&nbsp;: le cadre.
+              </p>
+            </div>
+            <div class="col-50 ty-n6 v-middle">
+              <figure class="mt-n6 z-1 rotate-left Cmasque">
+                <a hreflang="en" href="https://commons.wikimedia.org/wiki/File:IMG_2455_La_Hougue_Bie_Memorial_of_Russian_slaves_in_German_Bunker_Jersey_August_2006.jpg">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/IMG_2455_La_Hougue_Bie_Memorial_of_Russian_slaves_in_German_Bunker_Jersey_August_2006.jpg"
+                       alt="La Hougue Bie Memorial of Russian slaves in German Bunker, Jersey."
+                       width="400" height="300" loading="lazy"/>
+                </a>
+                <figcaption class="smaller">Mémorial de La Hougue Bie, Jersey.</figcaption>
+              </figure>
+              <figure class="mt-n3 mb-n6 rotate-right Cmasque">
+                <a hreflang="en" lang="en" href="https://commons.wikimedia.org/wiki/File:Speculum_Romanae_Magnificentiae-_Wooden_Framework_to_Support_Arches_in_a_Building_MET_DP870363.jpg">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Speculum_Romanae_Magnificentiae-_Wooden_Framework_to_Support_Arches_in_a_Building_MET_DP870363.jpg/512px-Speculum_Romanae_Magnificentiae-_Wooden_Framework_to_Support_Arches_in_a_Building_MET_DP870363.jpg"
+                       alt="Wooden Framework to Support Arches in a Building" width="256" height="178" loading="lazy"/>
+                </a>
+                <figcaption class="smaller">Support à la construction d’une arche.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide full">
+          <h2>Ça peut être long…</h2>
+          <div class="table">
+            <div class="col-66 v-middle">
+              <p>
+                Que l’on évoque HTML, CSS, JavaScript, PHP, les motifs de conception ou
+                les réseaux sociaux, <strong>notre jargon est constitué d’une pléthore de métaphores.</strong>
+              </p>
+              <p class="small">C’est le fondement de la sémantique.</p>
+            </div>
+            <figure class="col-33 rotate-right">
+              <img src="../accesslide/img/tatoo.jpg"
+                   alt="" width="360" height="270" loading="lazy"/>
+              <figcaption>Ah.</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="slide full">
+          <h2>Morale <span aria-hidden="true">&nbsp;&#128282;</span></h2>
+          <p>
+            Les objets et interactions que nous avons évoqués, ordinaires dans l’univers physique anglo-saxon, confèrent
+            à leurs ersatz numériques leur <strong>affordance</strong>&nbsp;: ce sont des interfaces éprouvées.
+          </p>
+          <div class="table">
+            <div class="col-50 v-middle Cmasque">
+              <p class="small">Mais la transposition en français atténue cette affordance naturelle.</p>
+            </div>
+            <div class="col-50 Cmasque">
+              <figure class="rotate-left">
+                <video src="https://media.giphy.com/media/reKoKNEqzn596/giphy.mp4"
+                       autoplay controls muted loop width="480" height="172"></video>
+                <figcaption>Un <i lang="en">daily</i> ordinaire</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide full">
+          <h2>En quête de sens <span aria-hidden="true">&nbsp;&#128270;</span></h2>
+          <details>
+            <summary>Comprendre les images mobilisées est crucial</summary>
+            <p>
+              Le motif de conception ARIA le plus répandu est le <i lang="en">disclosure</i>,
+              qui signifie <strong>divulgation</strong>. Autrement plus explicite que <i lang="en">collapse</i>,
+              qui veut dire «&nbsp;effondrement&nbsp;» ou «&nbsp;écroulement&nbsp;», ou encore que les termes « Plier / déplier »
+              et autre tentative de baptême du composant.
+            </p>
+            <p class="small">
+              Ici, autre exemple, <code>&lt;details></code> et <code>&lt;summary></code> sont sans
+              équivoque&nbsp;: un résumé et un détail.
+            </p>
+          </details>
+
+        </section>
+
+        <section class="slide full">
+          <h2>Conclusion</h2>
+          <h3 lang="en">Naming things is hard</h3>
+
+          <div class="table">
+            <div class="col-50 v-middle">
+              <p>
+                Heureusement dans nos métiers, il y a énormément de choses que nous n’avons pas besoin de nommer.
+                <strong>Apprenons notre vocabulaire&nbsp;!</strong>
+              </p>
+            </div>
+            <div class="col-50 col-t-right v-middle">
+              <figure class="d-ib rotate-right">
+                <a href="https://www.opquast.com/">
+                  <img src="https://website.oqs-cdn.com/wp-content/themes/opquast/images/opquast.svg"
+                       loading="lazy" width="" height="" alt=""/>
+                </a>
+                <figcaption class="small">
+                  Et utilisez <a href="https://www.opquast.com/rendre-le-web-meilleur/glossaire/">le glossaire Opquast</a>,
+                  au hasard.
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+        </section>
+
+        <section class="slide end noprint">
+          <h2 class="end-title">Merci</h2>
+          <h3>Et à bientôt<span aria-hidden="true">&nbsp;&#9786;</span></h3>
+          <h4>Crédits</h4>
+          <ul class="credit">
+            <li>Moteur de présentation&nbsp;: <a href="https://github.com/access42/accesSlide" hreflang="en">AccesSlide</a> —&nbsp;par <a href="https://access42.net/">Access42</a>&nbsp;;</li>
+            <li>Pictogrammes&nbsp;: <a href="https://thenounproject.com/marekpolakovic/collection/rounded-ui" hreflang="en">Rounded UI</a> —&nbsp;par <a href="https://www.marekpolakovic.sk/">Marek Polakovic</a>&nbsp;;</li>
+            <li>Typographie de titraille&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/bello-pro">Bello Pro</a> —&nbsp;créée par <a hreflang="en" href="https://www.underware.nl/">Underware</a>&nbsp;;</li>
+            <li>Typographie de labeur&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/museo-slab">Museo Slab</a> —&nbsp;créée par <a hreflang="en" href="https://www.exljbris.com/">Exljbris</a>.</li>
+          </ul>
+        </section>
+
+      </main>
+
+    </div>
+
+    <div id="setting" class="tool-block tool-block-settings " role="dialog" tabindex="-1" style="display:none"></div>
+
+  </div>
+
+  <div id="Caudio"></div>
+  <div id="Dcourante" aria-live="polite" aria-atomic="true" aria-hidden="true"></div>
+
+  <script src="../accesslide/js/slide.min.js"></script>
+  <script>
+    let verbose;
+    window.addEventListener('load', () => {
+      if (window.location.host === 'localhost:3000') {
+        setTimeout(() => {
+          verbose = window.open('https://localhost:3000/paris-web.2021/verbose.html', 'verboseSlides');
+
+          const current = document.getElementById('current').childNodes[0];
+          const observer = new MutationObserver((mutations) => {
+            verbose.postMessage(mutations[0].target.data, 'https://localhost:3000');
+          });
+
+          observer.observe(current, {characterData: true});
+        }, 500);
+      }
+    });
+  </script>
+</body>
+</html>
