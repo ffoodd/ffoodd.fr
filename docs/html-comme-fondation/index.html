@@ -141,56 +141,58 @@
 	</article>
 
 				<div id="comments" class="comments-area pl2 pt2 mt2 print-hidden"><div class="comment-respond">
-					<h3>Laisser un commentaire</h3>
-					<form action="https://github.com/ffoodd/ffoodd.fr/new/main/src/posts/html-comme-fondation/comments/new?value=&filename=8668.md" method="post" class="comment-form">
-						<p class="comment-notes">
-							Vous devez avoir un compte GitHub pour ajouter un commentaire.
-						</p>
-						<p>
-							<label for="pseudo">Pseudonyme GitHub <span class="required">(obligatoire)</span></label>
-							<input id="pseudo" name="pseudo" type="text"
-										 aria-required="true" required="required" autocomplete="nickname">
-						</p>
-						<p>
-							<label for="comment">Commentaire <span class="required">(obligatoire)</span></label>
-							<textarea id="comment" name="comment" cols="45" rows="8"
-												aria-required="true" required="required" aria-describedby="comment-note"></textarea>
-							<span id="comment-note" class="small">Markdown accepté.</span>
-						</p>
-						<p class="form-submit">
-							<input name="submit" type="submit" id="submit" class="submit" value="Laisser un commentaire">
-						</p>
-					</form>
-					<script>
-						const form = document.querySelector('.comment-form');
+	<h3>Laisser un commentaire</h3>
+	<form action="https://github.com/ffoodd/ffoodd.fr/new/main/src/posts/html-comme-fondation/comments/new?value=&filename=9618.md" method="post" class="comment-form">
+		<p class="comment-notes">
+			Vous devez avoir un compte GitHub pour ajouter un commentaire.
+		</p>
+		<p>
+			<label for="pseudo">Pseudonyme GitHub <span class="required">(obligatoire)</span></label>
+			<input id="pseudo" name="pseudo" type="text"
+						 aria-required="true" required="required" autocomplete="nickname">
+		</p>
+		<p>
+			<label for="comment">Commentaire <span class="required">(obligatoire)</span></label>
+			<textarea id="comment" name="comment" cols="45" rows="8"
+								aria-required="true" required="required" aria-describedby="comment-note"></textarea>
+			<span id="comment-note" class="small">Markdown accepté.</span>
+		</p>
+		<p class="form-submit">
+			<input name="submit" type="submit" id="submit" class="submit" value="Laisser un commentaire">
+		</p>
+	</form>
+	<script>
+		const form = document.querySelector('.comment-form');
 
-						form.addEventListener('submit', async (event) => {
-							event.preventDefault();
-							const pseudo = document.getElementById('pseudo').value;
-							const comment = document.getElementById('comment').value;
+		form.addEventListener('submit', async (event) => {
+			event.preventDefault();
+			const pseudo = document.getElementById('pseudo').value;
+			const comment = document.getElementById('comment').value;
 
-							const content = await fetch(`https://api.github.com/users/${pseudo}`)
-								.then(response => response.json())
-								.then(user => {
-									const content = encodeURIComponent(`---
+			const content = await fetch(`https://api.github.com/users/${pseudo}`)
+				.then(response => response.json())
+				.then(user => {
+					const content = encodeURIComponent(`---
 date: "${new Date().toISOString()}"
 author_name: "${user.name}"
 author_url: "${user.blog}"
 author_avatar: "${user.avatar_url}"
-id: "8668"
+id: "9618"
 tags: ["comments","html-comme-fondation"]
 ---
 ${comment}`);
 
-									window.open(`https://github.com/ffoodd/ffoodd.fr/new/main/_src/posts/html-comme-fondation/comments/?value=${content}&filename=8668.md`)
-								});
-						});
-					</script></div>
+					window.open(`https://github.com/ffoodd/ffoodd.fr/new/main/_src/posts/html-comme-fondation/comments/?value=${content}&filename=9618.md`)
+				});
+		});
+	</script>
+</div>
+
 				
 			</main>
 
 			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary" id="sommaire">
-		<div class="aside pl2 pt2">
+		<div class="aside pl2 pt2 pr3">
 			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
 			<div class="textwidget">
 				<ol><li><a href="#details-et-summary-comme-base-pour-le-motif-de-conception-disclosure">details et summary comme base pour le motif de conception disclosure</a></li><li><a href="#output-comme-une-live-region">output comme une live region</a></li><li><a href="#une-boite-de-dialog">Une boîte de dialog</a></li><li><a href="#conclusion">Conclusion</a></li></ol>
@@ -234,7 +236,7 @@ ${comment}`);
 
 			<p class="small">
 				&copy; 2024 La vie en #ffoodd &mdash; Design et intégration par <span itemprop="name">Gaël Poupard</span> &mdash; <a href="/mentions-legales/">Mentions légales</a>
-				<br />
+				<br>
 				Sauf mention contraire, l’ensemble du contenu est sous <a rel="license" href="creativecommons.org/licenses/by-nc-sa/4.0/fr/">Licence <abbr lang="en" title="Creative Commons">CC</abbr> <abbr lang="en" title="Attribution">BY</abbr>-<abbr lang="en" title="Non Commercial">NC</abbr>-<abbr lang="en" title="Share Alike">SA</abbr></a>.
 			</p>
 

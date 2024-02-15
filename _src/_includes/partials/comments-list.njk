@@ -1,0 +1,38 @@
+<h2 class="comments-title" itemprop="interactionCount" content="UserComments:{{ commentsNumber }}">
+	{{ commentsNumber }} commentaire{%- if commentsNumber > 1 -%}s{%- endif %} sur
+	<span class="tk-bello-pro h2-like" itemprop="discusses">«&nbsp;{{ title | safe }}&nbsp;»</span>
+	<a href="#sommaire" class="scroll small" title="Retour au sommaire">⤴</a>
+</h2>
+<ol class="commentlist ul-reset pl0" itemprop="comment">
+	{%- for comment in comments -%}
+		<li id="{{ comment.data.id }}" class="mb2" itemscope itemtype="https://schema.org/UserComments">
+			<article>
+				<header>
+					{%- if comment.data.author_avatar !== "" -%}
+						<img alt="" loading="lazy"
+								 src="{{ comment.data.author_avatar }}?s=44&d=mm&r=g"
+								 srcset="{{ comment.data.author_avatar }}?s=88&d=mm&r=g 2x"
+								 class="avatar avatar-44 photo"
+								 height="44" width="44">
+					{%- endif -%}
+					<em itemprop="creator" class="pl1">
+						{%- if comment.data.author_url !== "" -%}
+							<a href="{{ comment.data.author_url }}" class="url" rel="ugc external nofollow">{{ comment.data.author_name }}</a>
+						{%- elseif site.author.name === comment.data.author_name -%}
+							{{ comment.data.author_name }} <small>(Rédacteur)</small>
+						{%- else -%}
+							{{ comment.data.author_name }}
+						{%- endif -%}
+					</em>
+					{% set date = comment.data.date | datetime %}
+					<time datetime="{{ comment.data }}" itemprop="commentTime">{{ date | replace(':', ' h ')}} min</time>
+					<a href="#{{ comment.data.id }}">
+						<span class="screen-reader-text">Ancre vers ce commentaire</span>
+						<span aria-hidden="true">⚓</span>
+					</a>
+				</header>
+			</article>
+			<div itemprop="CommentText">{{ comment.content | safe }}</div>
+		</li>
+	{%- endfor -%}
+</ol>

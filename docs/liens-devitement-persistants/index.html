@@ -124,74 +124,75 @@ window<span class="token punctuation">.</span><span class="token function">addEv
 	</article>
 
 				<div id="comments" class="comments-area pl2 pt2 mt2 print-hidden"><h2 class="comments-title" itemprop="interactionCount" content="UserComments:3">
-					3 commentaires sur
-					<span class="tk-bello-pro h2-like" itemprop="discusses">«&nbsp;Liens d’évitement persistants&nbsp;»</span>
-					<a href="#sommaire" class="scroll small" title="Retour au sommaire">⤴</a>
-				</h2>
-				<ol class="commentlist ul-reset pl0" itemprop="comment"><li id="89" class="mb2" itemscope itemtype="https://schema.org/UserComments">
-							<article>
-								<header><img alt="" loading="lazy"
-												 src="https://secure.gravatar.com/avatar/5b9d4221ef904c2302df45b07f506b96?s=44&d=mm&r=g"
-												 srcset="https://secure.gravatar.com/avatar/5b9d4221ef904c2302df45b07f506b96?s=88&d=mm&r=g 2x"
-												 class="avatar avatar-44 photo"
-												 height="44" width="44"><em itemprop="creator" class="pl1"><a href="http://www.gaetanbt.com" class="url" rel="ugc external nofollow">Gaëtan</a></em>
-									
-									<time datetime="[object Object]" itemprop="commentTime">17 octobre 2013 à 10 h 41 min</time>
-									<a href="#89">
-										<span class="screen-reader-text">Ancre vers ce commentaire</span>
-										<span aria-hidden="true">⚓</span>
-									</a>
-								</header>
-							</article>
-							<div itemprop="CommentText"><p>Très bon article !<br>
+	3 commentaires sur
+	<span class="tk-bello-pro h2-like" itemprop="discusses">«&nbsp;Liens d’évitement persistants&nbsp;»</span>
+	<a href="#sommaire" class="scroll small" title="Retour au sommaire">⤴</a>
+</h2>
+<ol class="commentlist ul-reset pl0" itemprop="comment"><li id="89" class="mb2" itemscope itemtype="https://schema.org/UserComments">
+			<article>
+				<header><img alt="" loading="lazy"
+								 src="https://secure.gravatar.com/avatar/5b9d4221ef904c2302df45b07f506b96?s=44&d=mm&r=g"
+								 srcset="https://secure.gravatar.com/avatar/5b9d4221ef904c2302df45b07f506b96?s=88&d=mm&r=g 2x"
+								 class="avatar avatar-44 photo"
+								 height="44" width="44"><em itemprop="creator" class="pl1"><a href="http://www.gaetanbt.com" class="url" rel="ugc external nofollow">Gaëtan</a></em>
+					
+					<time datetime="[object Object]" itemprop="commentTime">17 octobre 2013 à 10 h 41 min</time>
+					<a href="#89">
+						<span class="screen-reader-text">Ancre vers ce commentaire</span>
+						<span aria-hidden="true">⚓</span>
+					</a>
+				</header>
+			</article>
+			<div itemprop="CommentText"><p>Très bon article !<br>
 Petite question : dans le cas d’une image présente dans un lien en html. Le aria-hidden est à appliquer sur le lien, sur l’image ou sur les deux ?</p>
 </div>
-						</li><li id="90" class="mb2" itemscope itemtype="https://schema.org/UserComments">
-							<article>
-								<header><img alt="" loading="lazy"
-												 src="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=44&d=mm&r=g"
-												 srcset="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=88&d=mm&r=g 2x"
-												 class="avatar avatar-44 photo"
-												 height="44" width="44"><em itemprop="creator" class="pl1">Gaël Poupard <small>(Rédacteur)</small></em>
-									
-									<time datetime="[object Object]" itemprop="commentTime">17 octobre 2013 à 11 h 04 min</time>
-									<a href="#90">
-										<span class="screen-reader-text">Ancre vers ce commentaire</span>
-										<span aria-hidden="true">⚓</span>
-									</a>
-								</header>
-							</article>
-							<div itemprop="CommentText"><p>Tu vas rire, mais « ça dépend » : en supposant qu’on parle du contexte dans lequel la destination de ce lien est similaire à celle d’un autre lien à proximité, c’est sur le lien que tu vas devoir mettre aria-hidden (et par héritage il s’appliquera aux contenus du lien). L’idée est que ce sont uniquement les liens similaires que l’on dérobe aux technologies d’assistance, afin de faciliter la navigation.</p>
+		</li><li id="90" class="mb2" itemscope itemtype="https://schema.org/UserComments">
+			<article>
+				<header><img alt="" loading="lazy"
+								 src="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=44&d=mm&r=g"
+								 srcset="https://secure.gravatar.com/avatar/76dde5fd394081aa4261802372fe2e33?s=88&d=mm&r=g 2x"
+								 class="avatar avatar-44 photo"
+								 height="44" width="44"><em itemprop="creator" class="pl1">Gaël Poupard <small>(Rédacteur)</small></em>
+					
+					<time datetime="[object Object]" itemprop="commentTime">17 octobre 2013 à 11 h 04 min</time>
+					<a href="#90">
+						<span class="screen-reader-text">Ancre vers ce commentaire</span>
+						<span aria-hidden="true">⚓</span>
+					</a>
+				</header>
+			</article>
+			<div itemprop="CommentText"><p>Tu vas rire, mais « ça dépend » : en supposant qu’on parle du contexte dans lequel la destination de ce lien est similaire à celle d’un autre lien à proximité, c’est sur le lien que tu vas devoir mettre aria-hidden (et par héritage il s’appliquera aux contenus du lien). L’idée est que ce sont uniquement les liens similaires que l’on dérobe aux technologies d’assistance, afin de faciliter la navigation.</p>
 <p>Attention toutefois, cette logique s’applique différemment dans d’autres contextes : s’il ne s’agit pas d’un lien similaire, une image dans un lien devrait avoir du sens ou disposer d’une alternative textuelle. Si l’image est dispensable, elle peut être ajoutée en CSS (via background) ou encore disposer du rôle « presentation » afin de préciser qu’elle n’a pas d’importance sémantique (et par conséquent, elle a une alternative viable et pertinenente au sein du lien !)…</p>
 <p>Je t’invite à lire le livre d’Armony Altinier dont j’ai fait un compte-rendu récemment, car la thématique des images y est très claire. Tu disposes de deux types d’images : celles qui sont porteuses de sens, et doivent donc être rendues à tous les utilisateurs d’une manière ou d’une autre (l’alternative textuelle sera vocalisée par un lecteur d’écran par exemple); et celles qui sont décoratives, et ne doivent donc pas porter de sens (alternative vide ou rendue visuellement en CSS).</p>
 <p>Est-ce que ça répond à ta question 😀 ?</p>
 </div>
-						</li><li id="93" class="mb2" itemscope itemtype="https://schema.org/UserComments">
-							<article>
-								<header><img alt="" loading="lazy"
-												 src="https://secure.gravatar.com/avatar/5b9d4221ef904c2302df45b07f506b96?s=44&d=mm&r=g"
-												 srcset="https://secure.gravatar.com/avatar/5b9d4221ef904c2302df45b07f506b96?s=88&d=mm&r=g 2x"
-												 class="avatar avatar-44 photo"
-												 height="44" width="44"><em itemprop="creator" class="pl1"><a href="http://www.gaetanbt.com" class="url" rel="ugc external nofollow">Gaëtan</a></em>
-									
-									<time datetime="[object Object]" itemprop="commentTime">17 octobre 2013 à 12 h 31 min</time>
-									<a href="#93">
-										<span class="screen-reader-text">Ancre vers ce commentaire</span>
-										<span aria-hidden="true">⚓</span>
-									</a>
-								</header>
-							</article>
-							<div itemprop="CommentText"><p>Effectivement ça répond à ma question !</p>
+		</li><li id="93" class="mb2" itemscope itemtype="https://schema.org/UserComments">
+			<article>
+				<header><img alt="" loading="lazy"
+								 src="https://secure.gravatar.com/avatar/5b9d4221ef904c2302df45b07f506b96?s=44&d=mm&r=g"
+								 srcset="https://secure.gravatar.com/avatar/5b9d4221ef904c2302df45b07f506b96?s=88&d=mm&r=g 2x"
+								 class="avatar avatar-44 photo"
+								 height="44" width="44"><em itemprop="creator" class="pl1"><a href="http://www.gaetanbt.com" class="url" rel="ugc external nofollow">Gaëtan</a></em>
+					
+					<time datetime="[object Object]" itemprop="commentTime">17 octobre 2013 à 12 h 31 min</time>
+					<a href="#93">
+						<span class="screen-reader-text">Ancre vers ce commentaire</span>
+						<span aria-hidden="true">⚓</span>
+					</a>
+				</header>
+			</article>
+			<div itemprop="CommentText"><p>Effectivement ça répond à ma question !</p>
 <p>Mon cas de figure est un logo permettant un retour à l’accueil. C’est donc un lien similaire au premier lien de mon menu. C’est vrai qu’à l’époque je ne me suis pas posé la question de savoir s’il est indispensable ou non à la compréhension générale.</p>
 <p>J’ai reçu ce livre le week-end dernier et je compte m’y attaquer dès que possible 😉</p>
 <p>Merci de ta réponse 🙂</p>
 </div>
-						</li></ol></div>
+		</li></ol>
+
 				
 			</main>
 
 			<aside class="col pt8 pl0 pr0 print-hidden" role="complementary" id="sommaire">
-		<div class="aside pl2 pt2">
+		<div class="aside pl2 pt2 pr3">
 			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
 			<div class="textwidget">
 				<ol><li><a href="#les-liens-similaires">Les liens similaires</a></li><li><a href="#les-liens-devitement">Les liens d’évitement</a></li><li><a href="#la-persistance-des-liens-devitement">La persistance des liens d’évitement</a></li><li><a href="#la-qualite-de-lexperience">La qualité de l’expérience</a></li><li><a href="#comments">Commentaires</a></li></ol>
@@ -235,7 +236,7 @@ Petite question : dans le cas d’une image présente dans un lien en html. Le a
 
 			<p class="small">
 				&copy; 2024 La vie en #ffoodd &mdash; Design et intégration par <span itemprop="name">Gaël Poupard</span> &mdash; <a href="/mentions-legales/">Mentions légales</a>
-				<br />
+				<br>
 				Sauf mention contraire, l’ensemble du contenu est sous <a rel="license" href="creativecommons.org/licenses/by-nc-sa/4.0/fr/">Licence <abbr lang="en" title="Creative Commons">CC</abbr> <abbr lang="en" title="Attribution">BY</abbr>-<abbr lang="en" title="Non Commercial">NC</abbr>-<abbr lang="en" title="Share Alike">SA</abbr></a>.
 			</p>
 

@@ -1,0 +1,138 @@
+[
+	{
+		"title": "Dessine-moi un graphique (en CSS)",
+		"event": "Touraine Tech 2024",
+		"date": "2024-02-09",
+		"link": "https://touraine.tech/talk/ioc2x2nW4KV5zrt69ZQm",
+		"slides": "https://www.ffoodd.fr/tnt"
+	},
+	{
+		"title": "Dessine-moi un graphique (en CSS)",
+		"event": "DevFest Nantes 2023",
+		"date": "2023-10-19",
+		"link": "https://devfest2023.gdgnantes.com/sessions/dessine_moi_un_graphique__en_css_/",
+		"slides": "https://www.ffoodd.fr/devfest.2023",
+		"replay": "https://www.youtube.com/watch?v=VjS7SLFYxYk&list=PLuZ_sYdawLiUHU4E1i5RrFsRN_lQcgPwT"
+	},
+	{
+		"title": "HTML à la rescousse de l’UX des formulaires",
+		"event": "Human Talks Nantes 2023",
+		"date": "2023-01-10",
+		"link": "https://humantalks.com/talks/1839-html-a-la-rescousse-de-l-ux-des-formulaires",
+		"slides": "https://www.ffoodd.fr/human-talks/"
+	},
+	{
+		"title": "Découvrez «&nbsp;le bon HTML&nbsp;» et économisez du JS et du CSS",
+		"event": "DevFest Nantes 2022",
+		"date": "2022-10-21",
+		"link": "https://devfest2022.gdgnantes.com/sessions/decouvrez_le_bon_html_et_economisez_du_js_et_du_css",
+		"slides": "https://www.ffoodd.fr/devfest/",
+		"replay": "https://www.youtube.com/watch?v=VhMqwbsyXPo&list=PLuZ_sYdawLiWIRK-QW6zpEJMSeCtspXP8"
+	},
+	{
+		"title": "Découvrez «&nbsp;le bon HTML&nbsp;» et économisez du JS et du CSS",
+		"event": "Paris Web 2022",
+		"date": "2022-10-06",
+		"link": "https://www.paris-web.fr/2022/conferences/decouvrez-le-bon-html-et-economisez-du-js-et-du-css.php",
+		"slides": "https://www.ffoodd.fr/paris-web.2022/",
+		"replay": "https://vimeo.com/783578825"
+	},
+	{
+		"title": "Le jargon web, avant le web",
+		"event": "Paris Web 2021",
+		"date": "2021-10-08",
+		"link": "https://www.paris-web.fr/2021/conferences/le-jargon-web-avant-le-web.php",
+		"slides": "https://www.ffoodd.fr/paris-web.2021/",
+		"replay": "https://vimeo.com/640408851"
+	},
+	{
+		"title": "Comprendre et prendre en compte les situations de handicap sur le web",
+		"event": "Nantes Numérique Responsable",
+		"date": "2020-10-22",
+		"link": "https://www.meetup.com/fr-FR/nantesnr/events/273921309/",
+		"slides": "https://www.ffoodd.fr/nnr/"
+	},
+	{
+		"title": "Des propriétés personnalisées très, très personnalisées",
+		"event": "Paris Web 2020",
+		"date": "2020-10-01",
+		"link": "https://www.paris-web.fr/2020/conferences/des-proprietes-personnalisees-tres-tres-personnalisees.php",
+		"slides": "https://www.ffoodd.fr/paris-web.2020/",
+		"replay": "https://vimeo.com/462093074"
+	},
+	{
+		"title": "Un plan de salle modifiable avec les grilles et propriétés personnalisées CSS",
+		"event": "Paris Web 2019",
+		"date": "2019-10-01",
+		"link": "https://www.paris-web.fr/2019/ateliers/un-plan-de-salle-modifiable-avec-les-grilles-et-proprietes-personnalisees-css.php",
+		"slides": "https://www.ffoodd.fr/paris-web.2019/"
+	},
+	{
+		"title": "Les graphiques de données avec HTML et CSS",
+		"event": "Web2Day 2019",
+		"date": "2019-06-05",
+		"link": "https://2019.web2day.co/event/les-graphiques-de-donnees-avec-html-et-css/",
+		"slides": "https://www.ffoodd.fr/web2day/",
+		"replay": "https://www.youtube.com/watch?v=1AHBcoKe56E&list=PLAgO0SKz6lC8lUo46-smKn_bpfv32iPYL&index=37&t=0s"
+	},
+	{
+		"title": "La donnée graphique avec HTML et CSS",
+		"event": "Paris Web 2018",
+		"date": "2018-10-04",
+		"link": "https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php",
+		"slides": "https://www.ffoodd.fr/paris-web.2018/",
+		"replay": "https://vimeo.com/296245804"
+	},
+	{
+		"title": "Un plan de tests automatisés pour votre <i lang='en'>front-end</i>",
+		"event": "WP-Tech 2018",
+		"date": "2018-04-28",
+		"link": "https://2018.wptech.fr/programme/tests-automatises-front-end/",
+		"slides": "https://www.ffoodd.fr/wp-tech.2018/",
+		"replay": "https://www.youtube.com/watch?v=JD1nrs2yH88"
+	},
+	{
+		"title": "Visite guidée du <i lang='en'>customizer</i>",
+		"event": "Meetup WordPress Nantes",
+		"date": "2017-09-28",
+		"link": "https://www.meetup.com/fr-FR/Nantes-WordPress-Meetup/events/243486324/",
+		"slides": "https://www.ffoodd.fr/customizer/",
+		"replay": "https://www.youtube.com/watch?v=5umS5IDY-SU"
+	},
+	{
+		"title": "Il n’y a pas que <code>class</code> et <code>id</code> dans la vie",
+		"event": "Paris Web 2016",
+		"date": "2016-09-29",
+		"link": "https://www.paris-web.fr/2016/conferences/il-ny-a-pas-que-class-et-id-dans-la-vie.php",
+		"slides": "https://www.ffoodd.fr/paris-web/",
+		"replay": "https://vimeo.com/197170990"
+	},
+	{
+		"title": "<i lang='en'>Workflow</i> moderne cherche graphiste à l’ancienne",
+		"event": "KiwiParty 2016",
+		"date": "2016-06-03",
+		"link": "http://2016.kiwiparty.fr/",
+		"slides": "https://www.ffoodd.fr/kiwiparty/",
+		"replay": "https://vimeo.com/181158986"
+	},
+	{
+		"title": "L’accessibilité via les thèmes enfants",
+		"event": "21e séminaire AccessiWeb",
+		"date": "2015-06-25",
+		"slides": "https://www.ffoodd.fr/gta21/"
+	},
+	{
+		"title": "Accessibilité et efficience",
+		"event": "WPMX 2015",
+		"date": "2015-06-06",
+		"slides": "https://www.ffoodd.fr/wpmx/",
+		"replay": "https://wpmx.org/conferences-wpmx-day-2015-video/"
+	},
+	{
+		"title": "Les thèmes enfants, au-delà de la bonne pratique",
+		"event": "WP-Tech 2014",
+		"date": "2014-11-29",
+		"slides": "https://www.ffoodd.fr/wp-tech/",
+		"replay": "https://www.youtube.com/watch?v=WqBVKpq4dGA"
+	}
+]

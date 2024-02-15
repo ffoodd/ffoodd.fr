@@ -4,8 +4,6 @@
 
 - [ ] Chasser les liens morts (avec `npm run docs:lint:external`)
 - [ ] Refondre graphiquement le site : passer à Sass (via LightningCSS ?)
-- [ ] Transformer les conférences en collection.
-  - Dynamiser la _sidebar_ avec les dernières conférences.
 - [ ] Intégrer les slides des conférences (en dur d’abord, puis en tant que collection)
   - Base AccesSlide
   - Base sliide

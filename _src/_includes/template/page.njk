@@ -1,1 +1,17 @@
 {% extends "../base.njk" %}
+
+{% block content %}
+	<article role="article" itemscope itemtype="https://schema.org/Article">
+		<div itemprop="articleBody">
+			{% if title === 'Parcours' %}
+				<h2 id="conferences" tabindex="-1">Conférences</h2>
+				<ol reversed class="conferences">
+					{% for talk in talks %}
+						<li>{% include '../partials/talk.njk' %}</li>
+					{% endfor %}
+				</ol>
+			{% endif %}
+			{{ content | safe }}
+		</div>
+	</article>
+{% endblock %}

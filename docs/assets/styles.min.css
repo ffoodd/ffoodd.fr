@@ -678,6 +678,7 @@ figcaption,
  * @author Vincent De Oliveira
  * @see https://iamvdo.me/blog/n-oubliez-pas-la-propriete-css-quotes
  */
+.conferences dt::before,
 [role="article"] ul li::before {
 	content: "—";
 	color: #c42419;
@@ -1077,6 +1078,37 @@ h2[itemprop="author"] i {
 .footnote-item p {
 	margin: 0;
 	padding: 0 !important;
+}
+
+.conferences {
+	padding: 0 !important;
+}
+
+.conferences dl {
+	padding-left: 2em;
+}
+
+.conferences h3:first-child {
+	margin-top: 2.18182em;
+}
+
+.conferences dt {
+	display: inline;
+	font-weight: 500;
+}
+
+.conferences dt::after {
+	content: "\A0: ";
+}
+
+.conferences dd {
+	display: inline;
+	margin: 0;
+}
+
+.conferences dd::after {
+	content: "\A";
+	white-space: pre;
 }
 
 /* -- @subsection Commentaires -------------------- */

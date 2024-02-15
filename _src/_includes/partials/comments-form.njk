@@ -1,0 +1,52 @@
+{%- set commentID_1 = [1,2,3,4,5,6,7,8,9] | random -%}
+				{%- set commentID_2 = [1,2,3,4,5,6,7,8,9] | random -%}
+				{%- set commentID_3 = [1,2,3,4,5,6,7,8,9] | random -%}
+				{%- set commentID_4 = [1,2,3,4,5,6,7,8,9] | random -%}
+				{%- set commentID = [commentID_1,commentID_2,commentID_3,commentID_4] | join -%}
+<div class="comment-respond">
+	<h3>Laisser un commentaire</h3>
+	<form action="https://github.com/ffoodd/ffoodd.fr/new/main/src/posts/{{ slug }}/comments/new?value=&filename={{ commentID }}.md" method="post" class="comment-form">
+		<p class="comment-notes">
+			Vous devez avoir un compte GitHub pour ajouter un commentaire.
+		</p>
+		<p>
+			<label for="pseudo">Pseudonyme GitHub <span class="required">(obligatoire)</span></label>
+			<input id="pseudo" name="pseudo" type="text"
+						 aria-required="true" required="required" autocomplete="nickname">
+		</p>
+		<p>
+			<label for="comment">Commentaire <span class="required">(obligatoire)</span></label>
+			<textarea id="comment" name="comment" cols="45" rows="8"
+								aria-required="true" required="required" aria-describedby="comment-note"></textarea>
+			<span id="comment-note" class="small">Markdown accepté.</span>
+		</p>
+		<p class="form-submit">
+			<input name="submit" type="submit" id="submit" class="submit" value="Laisser un commentaire">
+		</p>
+	</form>
+	<script>
+		const form = document.querySelector('.comment-form');
+
+		form.addEventListener('submit', async (event) => {
+			event.preventDefault();
+			const pseudo = document.getElementById('pseudo').value;
+			const comment = document.getElementById('comment').value;
+
+			const content = await fetch(`https://api.github.com/users/${pseudo}`)
+				.then(response => response.json())
+				.then(user => {
+					const content = encodeURIComponent(`---
+date: "${new Date().toISOString()}"
+author_name: "${user.name}"
+author_url: "${user.blog}"
+author_avatar: "${user.avatar_url}"
+id: "{{ commentID }}"
+tags: ["comments","{{ slug }}"]
+---
+${comment}`);
+
+					window.open(`https://github.com/ffoodd/ffoodd.fr/new/main/_src/posts/{{ slug }}/comments/?value=${content}&filename={{ commentID }}.md`)
+				});
+		});
+	</script>
+</div>

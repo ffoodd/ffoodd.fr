@@ -1,0 +1,16 @@
+<h3>{{ talk.title | safe }}</h3>
+
+<p>{{ talk.event }} — <time datetime="{{ talk.date }}">{{ talk.date | date }}</time></p>
+
+<dl>
+	<dt>Page de l’événement</dt>
+	<dd><a href="{{ talk.link }}">{{ talk.event }}</a></dd>
+	{% if talk.slides %}
+		<dt>Support</dt>
+		<dd><a href="{{ talk.slides }}">Lire les <i lang="en">slides</i> de «&nbsp;{{ talk.title | safe }}&nbsp;»</a></dd>
+	{% endif %}
+	{% if talk.replay %}
+		<dt>Vidéo</dt>
+		<dd><a href="{{ talk.replay }}">Regarder la vidéo de «&nbsp;{{ talk.title | safe }}&nbsp;»{% if "youtube.com" in talk.replay %} (sur YouTube){% elseif "vimeo.com" in talk.replay %} (sur Viméo){% endif %}</a></dd>
+	{% endif %}
+</dl>

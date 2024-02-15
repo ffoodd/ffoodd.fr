@@ -1,0 +1,4 @@
+<blockquote class="description pb1 pt2" itemprop="description"{% if lang !== "" %} lang="{{ lang }}"{% endif %}>
+	<p class="m-reset">{{ excerpt | markdown | safe }}</p>
+	<footer class="small ml2">{{ title | safe }}</footer>
+</blockquote>
