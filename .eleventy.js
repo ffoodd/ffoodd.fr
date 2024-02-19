@@ -82,6 +82,7 @@ module.exports = function (eleventyConfig) {
 
 	// Passe-plat
 	eleventyConfig.addPassthroughCopy("_src/favicon.svg")
+	eleventyConfig.addPassthroughCopy("_src/favicon.ico")
 	eleventyConfig.addPassthroughCopy("_src/humans.txt")
 	eleventyConfig.addPassthroughCopy("_src/images")
 	eleventyConfig.addPassthroughCopy("_src/assets")
