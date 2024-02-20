@@ -65,7 +65,7 @@ Reste une question à se poser&thinsp;:&nbsp;comment ai-je choisi les tests à e
 
 Pour faire simple, j’ai lu. Beaucoup. Les premières ressources ont été les projets similaires déjà cités, bien sûr. Puis je me suis inspiré des indications récurrentes obtenues sur Tanaguru ou OpQuast Reporting. La page du W3C listant les éléments obsolètes s’est imposée d’elle-même en tant que ressource complète pour un degré bien précis de vérification.
 
-Et finalement, [le forum de discussion du référentiel AccessiWeb pour sa version 2.2](https://www.accessiweb.org/forumhtml5/index.php "(nouvelle fenêtre)") (&thinsp;sous-titré _«&thinsp;Mesure de la conformité WCAG 2.0 via le référentiel AccessiWeb 2.2 avec HTML5/ARIA&thinsp;»_&thinsp;) que m’avait précédemment indiqué [Johan Ramon](https://twitter.com/johan_ramon "Johan Ramon sur Twitter (nouvelle fenêtre)") m’a appris énormément.
+Et finalement, le forum de discussion du référentiel AccessiWeb pour sa version 2.2 (&thinsp;sous-titré _«&thinsp;Mesure de la conformité WCAG 2.0 via le référentiel AccessiWeb 2.2 avec HTML5/ARIA&thinsp;»_&thinsp;) que m’avait précédemment indiqué [Johan Ramon](https://twitter.com/johan_ramon "Johan Ramon sur Twitter (nouvelle fenêtre)") m’a appris énormément.
 
 Car oui&thinsp;:&nbsp;j’ai tout lu, tout détaillé. Pour chaque critère j’ai essayé d’en saisir le sens, les implications techniques et fonctionnelles, mais aussi ma capacité à les vérifier en CSS. C’est pourquoi les fichiers `.scss` sont plutôt bien documentés&thinsp;:&nbsp;chaque test indique, via un commentaire, le critère Accessiweb et/ou la bonne pratique OpQuast concerné(es).
 

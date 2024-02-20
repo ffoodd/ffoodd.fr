@@ -13,7 +13,7 @@ Pour commencer, il faut comprendre une problématique de base en terme d’acces
 
 ## Les limites de WordPress
 
-Tout le monde n’est pas sensible à ces questions, même s’il le faudrait&thinsp;:&nbsp;WordPress ne fait pas exception. Il donne cependant la possibilité à ses utilisateurs de servir des images de façon tout à fait correcte, en proposant de base pour tous les fichiers la capacité d’adjoindre un texte alternatif — ce qui remplit le critère principal des [bonnes pratiques d’OpQuast](https://checklists.opquast.com/fr/ "Les checklists OpQuast (nouvelle fenêtre)") et permet de satisfaire [la plupart des critères de niveau Bronze d’Accessiweb](https://www.accessiweb.org/index.php/accessiweb_2.2_liste_generale.html#images "La thématique image sur Accessiweb (nouvelle fenêtre)").
+Tout le monde n’est pas sensible à ces questions, même s’il le faudrait&thinsp;:&nbsp;WordPress ne fait pas exception. Il donne cependant la possibilité à ses utilisateurs de servir des images de façon tout à fait correcte, en proposant de base pour tous les fichiers la capacité d’adjoindre un texte alternatif — ce qui remplit le critère principal des [bonnes pratiques d’OpQuast](https://checklists.opquast.com/fr/ "Les checklists Opquast (nouvelle fenêtre)") et permet de satisfaire la plupart des critères de niveau Bronze d’Accessiweb.
 
 Pour autant WordPress ne va pas plus loin&thinsp;:
 
@@ -88,7 +88,7 @@ Ce code n’est probablement pas parfait, car je ne l’ai pas testé avec un le
 
 Suite à un bref échange avec [Johan Ramon](https://twitter.com/johan_ramon "Johan Ramon sur Twitter (nouvelle fenêtre)"), je dois préciser un point important&thinsp;:&nbsp;l’alternative textuelle de l’image doit également mentionner la légende attenante, pour les technologies d’assistance qui ne prendraient pas en compte l’attribut `aria-describedby`. Voici les ressources utiles&thinsp;
 
-* [Discussion sur le critère 1.10 d’AccessiWeb 2.2](https://www.accessiweb.org/forumhtml5/viewtopic.php?id=39#p810 "Discussion sur le forum d’AccessiWeb (nouvelle fenêtre)")
+* Discussion sur le critère 1.10 d’AccessiWeb 2.2
 * [Support des attributs ARIA par les lecteurs d’écran](https://blog.atalan.fr/support-des-attributs-aria-par-les-lecteurs-decran/ "Article sur le blog de la société Atalan (nouvelle fenêtre)")
 
 Comme souvent, cette dernière contrainte repose entièrement sur le contributeur qui doit être **informé** et **éduqué** à cette responsabilité.

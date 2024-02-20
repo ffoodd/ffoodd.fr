@@ -12,7 +12,7 @@
 
 ## Migration depuis WordPress
 
-On récupère les contenus depuis l’API Rest de WordPress, légèrement étendue pour contenir les champs ACF et les métadonnées personnalisées — puis le JSON obtenu est nettoyé avec [jq](https://jqlang.github.io/jq/) pour générer un fichier json sur-mesure contenant uniquement les clés qui nous intéressent.
+On récupère les contenus depuis l’API Rest de WordPress, légèrement étendue pour contenir les champs ACF et les métadonnées personnalisées — puis le JSON obtenu est passé dans des scripts Node dédiés, qui convertissent en Markdown en prenant soin de la syntaxe et du _frontmatter_.
 
 ### Articles
 

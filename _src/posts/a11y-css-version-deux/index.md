@@ -35,7 +35,7 @@ Les fonctions CSS de compteurs font partie des outils qui trouvent rarement un c
 
 ## Personnalisation
 
-Après la fastidieuse relecture [de mes différentes sources](https://github.com/ffoodd/a11y.css/blob/master/README-fr.md#r%C3%A9f%C3%A9rences-et-inspirations), ce qui n’était qu’un simple fichier CSS de diagnostic est devenu un **système complexe basé sur Sass** —&nbsp;dont le fichier de sortie final compressé pèse 80kb&nbsp;!
+Après la fastidieuse relecture [de mes différentes sources](https://github.com/ffoodd/a11y.css/blob/main/README-fr.md), ce qui n’était qu’un simple fichier CSS de diagnostic est devenu un **système complexe basé sur Sass** —&nbsp;dont le fichier de sortie final compressé pèse 80kb&nbsp;!
 
 Il devenait indispensable de permettre aux utilisateurs le désirant de charger seulement les portions qui leur sont utiles. Avec l’aide de [Kitty Giraudel](https://kittygiraudel.com/), deux mécanismes ont été mis en place.
 
@@ -47,7 +47,7 @@ Le _bookmarklet_ existait depuis quelques temps déjà, mais désormais un petit
 
 ### Désactivation de tests
 
-Pour que les utilisateurs de Sass aient toujours un intérêt à disposer du projet sur leur poste, mais aussi afin que les utilisateurs les plus avertis puissent personnaliser cet outil, Kitty a également [conçu une fonction](https://github.com/ffoodd/a11y.css/blob/master/README-fr.md#d%C3%A9sactiver-des-tests) pour désactiver les tests au cas par cas. Par exemple, si vous voulez désactiver les erreurs à propos des mauvais `tabindex` et du `href` manquant, voici comment faire&nbsp;:
+Pour que les utilisateurs de Sass aient toujours un intérêt à disposer du projet sur leur poste, mais aussi afin que les utilisateurs les plus avertis puissent personnaliser cet outil, Kitty a également [conçu une fonction](https://github.com/ffoodd/a11y.css/blob/main/README-fr.md) pour désactiver les tests au cas par cas. Par exemple, si vous voulez désactiver les erreurs à propos des mauvais `tabindex` et du `href` manquant, voici comment faire&nbsp;:
 
 ```css
 

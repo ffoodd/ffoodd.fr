@@ -4,7 +4,7 @@ title: "Les éléments remplacés"
 date: "2015-11-16T19:16:54"
 modified: "2015-11-30T10:34:36"
 permalink: "les-elements-remplaces/index.html"
-excerpt: "En travaillant sur [a11y.css](https://ffoodd.github.io/a11y.css/ 'a11y.css sur Github (en anglais)'), les balises auto-fermantes et éléments remplacés [mʼont causé quelques tracas](https://github.com/ffoodd/a11y.css/blob/master/README-fr.md#cas-particuliers-et-probl%C3%A8mes-connus). Jʼen remets une couche aujourdʼhui avec un cas particulier au sein de ces cas particuliers&nbsp;: les **boutons**."
+excerpt: "En travaillant sur [a11y.css](https://ffoodd.github.io/a11y.css/ 'a11y.css sur Github (en anglais)'), les balises auto-fermantes et éléments remplacés [mʼont causé quelques tracas](https://github.com/ffoodd/a11y.css/blob/main/README-fr.md). Jʼen remets une couche aujourdʼhui avec un cas particulier au sein de ces cas particuliers&nbsp;: les **boutons**."
 format: "standard"
 tags: "posts"
 description: "Les ressources sont rares sur le sujet, et le sujet des éléments remplacés se mélange parfois avec celui des balises auto-fermantes."
@@ -37,7 +37,7 @@ En fait ils ne se contentent pas de pouvoir.
 
 Soyons honnête, elle est vraiment galère à trouver. Le W3C précise [dans CSS2.1 (en anglais)](https://www.w3.org/TR/CSS21/conform.html#replaced-element) quʼun élément remplacé «&nbsp;est un élément dont le contenu est hors de la portée du modèle de mise en forme CSS&nbsp;». Si vous en avez le courage, [la spécification HTML5](https://www.w3.org/TR/html51/rendering.html#replaced-elements) est plus absconse mais rejoint globalement ce qui est dit précédemment.
 
-**Simple, non&nbsp;?** Ça inclut effectivement les éléments qui ont des dimensions intrinsèques, même lorsquʼelles peuvent être surchargées _via_ CSS. [La liste dont je dispose est documentée sur a11y.css](https://github.com/ffoodd/a11y.css/blob/master/README-fr.md#cas-particuliers-et-problèmes-connus). Elle contient lʼensemble des balises auto-fermantes, ainsi que les éléments de formulaires et les objets multimédias.
+**Simple, non&nbsp;?** Ça inclut effectivement les éléments qui ont des dimensions intrinsèques, même lorsquʼelles peuvent être surchargées _via_ CSS. [La liste dont je dispose est documentée sur a11y.css](https://github.com/ffoodd/a11y.css/blob/main/README-fr.md). Elle contient lʼensemble des balises auto-fermantes, ainsi que les éléments de formulaires et les objets multimédias.
 
 ## Le cas des boutons
 

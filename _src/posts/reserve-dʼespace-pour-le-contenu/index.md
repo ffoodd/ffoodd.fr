@@ -95,7 +95,7 @@ En revanche **impossible dʼanimer _via_ CSS le remplissage dʼun SVG**. Le SVG 
 * une dimension dʼarrière-plan pour ajuster la mise en scène du dégradé&nbsp;;
 * et finalement, une animation dont la seule préoccupation est de déplacer lʼarrière-plan.
 
-Cʼest donc un poil plus complexe que de simplement remplir le SVG avec un dégradé qui sʼanime tout seul, mais bon&nbsp;! En revanche il ne vous aura probablement pas échappé quʼil nous faut cette animation **devant** le SVG. Et pour cela un pseudo-élément serait fort agréable. Malheureusement [SVG est un élément remplacé](https://github.com/ffoodd/a11y.css/blob/master/README-fr.md#cas-particuliers-et-problèmes-connus), ce qui empêche de lui appliquer un pseudo-élément. Pour pouvoir implémenter lʼanimation, il nous faut donc un élément conteneur qui portera le pseudo-élément (ce même conteneur qui pourrait fort bien vous servir dans un contexte adaptatif ou simplement pour la mise en page).
+Cʼest donc un poil plus complexe que de simplement remplir le SVG avec un dégradé qui sʼanime tout seul, mais bon&nbsp;! En revanche il ne vous aura probablement pas échappé quʼil nous faut cette animation **devant** le SVG. Et pour cela un pseudo-élément serait fort agréable. Malheureusement [SVG est un élément remplacé](https://github.com/ffoodd/a11y.css/blob/main/README-fr.md), ce qui empêche de lui appliquer un pseudo-élément. Pour pouvoir implémenter lʼanimation, il nous faut donc un élément conteneur qui portera le pseudo-élément (ce même conteneur qui pourrait fort bien vous servir dans un contexte adaptatif ou simplement pour la mise en page).
 
 ## La démonstration
 

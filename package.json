@@ -13,7 +13,7 @@
 		"wp:migrate:pages": "node scripts/pages.js",
 		"wp:migrate:comments": "node scripts/comments.js",
 		"docs:lint": "link-checker ./docs/ --disable-external",
-		"docs:lint:external": "link-checker ./docs/ --external-only --http-timeout 30000"
+		"docs:lint:external": "link-checker ./docs/ --external-only --http-timeout 30000 --http-status-ignore 301,302"
 	},
 	"keywords": [],
 	"author": {
