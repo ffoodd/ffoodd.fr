@@ -54,6 +54,8 @@ Object.keys(posts).forEach((p, i) => {
 
 	let newSlug = post.slug.replace('%ca%bc', 'ʼ');
 
+	let newPermalink = post.format === 'link' ? false : `${newSlug}/index.html`;
+
 	let frontMatter = [
 		{ layout: 'template/post.njk' },
 		{ title: turndownService.turndown(post.title.rendered)
@@ -62,7 +64,7 @@ Object.keys(posts).forEach((p, i) => {
 		},
 		{ date: post.date },
 		{ modified: post.modified },
-		{ permalink: `${newSlug}/index.html` },
+		{ permalink: newPermalink },
 		{ excerpt: newExcerpt },
 		{ format: post.format },
 		{ tags: 'posts' },

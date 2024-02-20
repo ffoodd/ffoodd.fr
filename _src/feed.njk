@@ -3,6 +3,7 @@ permalink: "feed/index.xml"
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="/feed.xsl" type="text/xsl"?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="{{ site.url }}" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>{{ site.name }}</title>
@@ -11,15 +12,18 @@ eleventyExcludeFromCollections: true
 		<description>{{ site.subtitle }}</description>
 		<language>{{ site.language }}</language>
 		{%- for post in collections.posts | reverse %}
-			{%- set absolutePostUrl = post.url | absoluteUrl(site.url) %}
-			<item>
-				<title>{{ post.data.title }}</title>
-				<link>{{ absolutePostUrl }}</link>
-				<description>{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</description>
-				<pubDate>{{ post.date | dateToRfc822 }}</pubDate>
-				<dc:creator>{{ site.author.name }}</dc:creator>
-				<guid>{{ absolutePostUrl }}</guid>
-			</item>
+			{%- if post.url !== false %}
+				{%- set absolutePostUrl = post.url | absoluteUrl(site.url) %}
+				<item>
+					<title>{{ post.data.title | replace('&nbsp;', ' ') }}</title>
+					<link>{{ absolutePostUrl }}</link>
+					<description>{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</description>
+					<pubDate>{{ post.date | dateToRfc822 }}</pubDate>
+					<dc:creator>{{ site.author.name }}</dc:creator>
+					<guid>{{ absolutePostUrl }}</guid>
+					<frDate>{{ post.data.date | date }}</frDate>
+				</item>
+			{%- endif %}
 		{%- endfor %}
 	</channel>
 </rss>

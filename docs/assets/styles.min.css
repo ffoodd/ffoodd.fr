@@ -1313,7 +1313,7 @@ pre[class*="language-"][tabindex] {
 .ffeeeedd--sprite {
 	background-image: url("./img/ffeeeedd--sprite.svg");
 	background-repeat: no-repeat;
-	background-size: 11.25em 2.25em;
+	background-size: 13.5em 2.25em;
 	border-radius: 50%;
 	height: 2.25em;
 	width: 2.25em;
@@ -1353,6 +1353,10 @@ pre[class*="language-"][tabindex] {
 
 .ffeeeedd--sprite__mastodon {
 	background-position: -9em 0;
+}
+
+.ffeeeedd--sprite__codepen {
+	background-position: -11.25em 0;
 }
 
 /**

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="/feed.xsl" type="text/xsl"?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="https://www.ffoodd.fr" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>La vie en #ffoodd</title>
@@ -6,10 +7,10 @@
 		<atom:link href="https://www.ffoodd.fr/feed/index.xml" rel="self" type="application/rss+xml" />
 		<description>Intégrateur web à Nantes.</description>
 		<language>fr-FR</language>
-			<item>
-				<title>HTML comme fondation</title>
-				<link>https://www.ffoodd.fr/html-comme-fondation/</link>
-				<description>&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; : cet article est la traduction de &lt;a href=&quot;https://www.htmhell.dev/adventcalendar/2022/17/&quot;&gt;ma contribution au calendrier de l’avent de HTMHell, Modern HTML as a foundation for progressive enhancement&lt;/a&gt; !&lt;/p&gt;
+				<item>
+					<title>HTML comme fondation</title>
+					<link>https://www.ffoodd.fr/html-comme-fondation/</link>
+					<description>&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; : cet article est la traduction de &lt;a href=&quot;https://www.htmhell.dev/adventcalendar/2022/17/&quot;&gt;ma contribution au calendrier de l’avent de HTMHell, Modern HTML as a foundation for progressive enhancement&lt;/a&gt; !&lt;/p&gt;
 &lt;p&gt;Vous êtes peut-être familier avec le concept d’amélioration progressive. En résumé, c’est une méthode permettant de s’assurer que l’utilisateur dispose d’&lt;strong&gt;une version viable&lt;/strong&gt; de votre page quelque soit son contexte — connexion limitée, navigateur désuet, etc. — mais aussi de rendre ladite page plus &lt;strong&gt;résiliente&lt;/strong&gt; (par exemple aux erreurs JavaScript).&lt;/p&gt;
 &lt;p&gt;L’amélioration progressive débute par la base :&lt;/p&gt;
 &lt;ol&gt;
@@ -80,32 +81,15 @@
 &lt;p&gt;Je crois que c’est le genre de choses qu’HTML permet : &lt;code&gt;&amp;lt;details&amp;gt;&lt;/code&gt; et &lt;code&gt;&amp;lt;summary&amp;gt;&lt;/code&gt; finiront par être implémentés et restitués de façon cohérente aux technologies d’assistance, rendant les enrichissements avec ARIA caduques. Le travail de Scott, du test très avancé aux articles de blogs et à l’ouverture de tickets de bug, est la voie à suivre. Les implémentations complètes dans les bibliothèques comme &lt;a href=&quot;https://a11y-dialog.netlify.app/&quot;&gt;a11y-dialog de Kitty Giraudel&lt;/a&gt; permettent de gagner en maturité et de clarifier les attentes pour ces composants. Et avec l’augmentation des usages, les navigateurs et technologies d’assistance vont certainement reconsidérer leurs priorisations, dans des opérations comme Interop ou &lt;a href=&quot;https://aria-at.w3.org/&quot;&gt;ARIA-AT&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Alors utilisons, testons, et aidons les navigateurs et technologies d’assistance à supporter ces nouveaux éléments HTML !&lt;/p&gt;
 </description>
-				<pubDate>Thu, 22 Dec 2022 17:53:57 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/html-comme-fondation/</guid>
-			</item>
-			<item>
-				<title>https://www.htmhell.dev/adventcalendar/2022/17/</title>
-				<link>https://www.ffoodd.fr/https-www-htmhell-dev-adventcalendar-2022-17/</link>
-				<description>&lt;p&gt;Ma contribution au calendrier de l’avent de HTMHell.&lt;/p&gt;
-</description>
-				<pubDate>Thu, 22 Dec 2022 17:24:15 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/https-www-htmhell-dev-adventcalendar-2022-17/</guid>
-			</item>
-			<item>
-				<title>https://design-system.service.gov.uk/</title>
-				<link>https://www.ffoodd.fr/https-design-system-service-gov-uk/</link>
-				<description>&lt;p&gt;Le &lt;em&gt;design system&lt;/em&gt; du gouvernement britannique : beau, accessible, documenté… Admirable !&lt;/p&gt;
-</description>
-				<pubDate>Thu, 07 Mar 2019 14:04:08 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/https-design-system-service-gov-uk/</guid>
-			</item>
-			<item>
-				<title>L’état des champs</title>
-				<link>https://www.ffoodd.fr/l-etat-des-champs/</link>
-				<description>&lt;p&gt;Mais en arrivant sur la page, ledit champ est vide — et par conséquent, invalide.&lt;/p&gt;
+					<pubDate>Thu, 22 Dec 2022 17:53:57 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/html-comme-fondation/</guid>
+					<frDate>22 décembre 2022</frDate>
+				</item>
+				<item>
+					<title>L’état des champs</title>
+					<link>https://www.ffoodd.fr/l-etat-des-champs/</link>
+					<description>&lt;p&gt;Mais en arrivant sur la page, ledit champ est vide — et par conséquent, invalide.&lt;/p&gt;
 &lt;h2 id=&quot;le-souci&quot; tabindex=&quot;-1&quot;&gt;Le souci&lt;/h2&gt;
 &lt;p&gt;Lorsque vous appliquez des styles à un champ invalide (en utilisant la pseudo-classe &lt;code&gt;:invalid&lt;/code&gt;), ils seront donc appliqués dès le chargement de la page si ce champ est également affublé de l’attribut &lt;code&gt;required&lt;/code&gt;. Dommage !&lt;/p&gt;
 &lt;p&gt;C’est ce qui a conduit &lt;a href=&quot;https://nota-bene.org/&quot;&gt;Stéphane Deschamps&lt;/a&gt; à ouvrir &lt;a href=&quot;https://github.com/w3c/html/issues/1073&quot;&gt;une issue sur le Github du W3C&lt;/a&gt;.&lt;/p&gt;
@@ -154,14 +138,15 @@ Et bonne nouvelle, &lt;a href=&quot;https://caniuse.com/#feat=css-placeholder-sh
 &lt;/li&gt;
 
 &lt;/ol&gt;</description>
-				<pubDate>Thu, 21 Dec 2017 15:09:15 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/l-etat-des-champs/</guid>
-			</item>
-			<item>
-				<title>Calculez</title>
-				<link>https://www.ffoodd.fr/calculez/</link>
-				<description>&lt;p&gt;Traditionnellement, quand on veut partager une largeur en trois portions égales, on écrit &lt;code&gt;width: 33.3333%;&lt;/code&gt;. Alors oui, d’accord, à l’époque pré-industrielle nous n’avions pas vraiment le choix. Mais aujourd’hui ?&lt;/p&gt;
+					<pubDate>Thu, 21 Dec 2017 15:09:15 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/l-etat-des-champs/</guid>
+					<frDate>21 décembre 2017</frDate>
+				</item>
+				<item>
+					<title>Calculez</title>
+					<link>https://www.ffoodd.fr/calculez/</link>
+					<description>&lt;p&gt;Traditionnellement, quand on veut partager une largeur en trois portions égales, on écrit &lt;code&gt;width: 33.3333%;&lt;/code&gt;. Alors oui, d’accord, à l’époque pré-industrielle nous n’avions pas vraiment le choix. Mais aujourd’hui ?&lt;/p&gt;
 &lt;h2 id=&quot;les-decimales-arbitraires&quot; tabindex=&quot;-1&quot;&gt;Les décimales arbitraires&lt;/h2&gt;
 &lt;p&gt;Savez-vous ce qui pêche avec les décimales ? Plusieurs choses, en fait — à commencer par le fait que vous définissez &lt;strong&gt;arbitrairement&lt;/strong&gt; à quelle décimale vous vous arrêtez…&lt;/p&gt;
 &lt;h3 id=&quot;la-precision&quot; tabindex=&quot;-1&quot;&gt;La précision&lt;/h3&gt;
@@ -191,14 +176,15 @@ OSEF !&lt;/p&gt;
 &lt;/li&gt;
 
 &lt;/ol&gt;</description>
-				<pubDate>Mon, 03 Apr 2017 15:35:56 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/calculez/</guid>
-			</item>
-			<item>
-				<title>Avec ou sans JS&amp;nbsp;?</title>
-				<link>https://www.ffoodd.fr/avec-ou-sans-js/</link>
-				<description>&lt;p&gt;Vous avez déjà vécu ça, pas vrai ?&lt;/p&gt;
+					<pubDate>Mon, 03 Apr 2017 15:35:56 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/calculez/</guid>
+					<frDate>3 avril 2017</frDate>
+				</item>
+				<item>
+					<title>Avec ou sans JS ?</title>
+					<link>https://www.ffoodd.fr/avec-ou-sans-js/</link>
+					<description>&lt;p&gt;Vous avez déjà vécu ça, pas vrai ?&lt;/p&gt;
 &lt;h2 id=&quot;lamelioration-progressive&quot; tabindex=&quot;-1&quot;&gt;L’amélioration progressive&lt;/h2&gt;
 &lt;p&gt;Quand on cherche à bien faire ces interactions qui affichent et masquent un élément à l’aide de JavaScript, une des fondations est de &lt;strong&gt;s’assurer que le contenu soit accessible sans JavaScript&lt;/strong&gt;. Ça fait partie intégrante de l’amélioration progressive, que je synthétise comme suit :&lt;/p&gt;
 &lt;ol&gt;
@@ -275,14 +261,15 @@ document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;documentEl
 &lt;/li&gt;
 
 &lt;/ol&gt;</description>
-				<pubDate>Fri, 03 Feb 2017 18:02:05 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/avec-ou-sans-js/</guid>
-			</item>
-			<item>
-				<title>Les nouveautés dʼIE4</title>
-				<link>https://www.ffoodd.fr/les-nouveautes-d%CA%BCie4/</link>
-				<description>&lt;p&gt;Elle apporte son lot de nouveautés à travers les filtres Microsoft, dont le plus connu concerne l’opacité. Pour rappel, la spécification finale de CSS1 ne voit le jour que le 17 décembre 1996.&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://www.ffoodd.fr/les-nouveautes-d%CA%BCie4/#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+					<pubDate>Fri, 03 Feb 2017 18:02:05 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/avec-ou-sans-js/</guid>
+					<frDate>3 février 2017</frDate>
+				</item>
+				<item>
+					<title>Les nouveautés dʼIE4</title>
+					<link>https://www.ffoodd.fr/les-nouveautes-d%CA%BCie4/</link>
+					<description>&lt;p&gt;Elle apporte son lot de nouveautés à travers les filtres Microsoft, dont le plus connu concerne l’opacité. Pour rappel, la spécification finale de CSS1 ne voit le jour que le 17 décembre 1996.&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://www.ffoodd.fr/les-nouveautes-d%CA%BCie4/#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;h2 id=&quot;les-nouveautes-graphiques&quot; tabindex=&quot;-1&quot;&gt;Les nouveautés graphiques&lt;/h2&gt;
 &lt;p&gt;Parmi les nouveaux filtres Microsoft débarqués en 4.0, il est stupéfiant de voir à quel point ils ressemblent aux toutes dernières fonctionnalités spécifiées dans CSS et HTML :&lt;/p&gt;
 &lt;ul&gt;
@@ -355,14 +342,15 @@ document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;documentEl
 &lt;/li&gt;
 
 &lt;/ol&gt;</description>
-				<pubDate>Thu, 08 Dec 2016 17:28:58 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/les-nouveautes-d%CA%BCie4/</guid>
-			</item>
-			<item>
-				<title>Cache-cache CSS</title>
-				<link>https://www.ffoodd.fr/cache-cache-css/</link>
-				<description>&lt;p&gt;Et j’ai beau trouver ça idiot — masquer du texte pour certains utilisateurs et pas pour d’autres, ça me paraît incohérent avec l’accessibilité — c’est un besoin récurrent.&lt;/p&gt;
+					<pubDate>Thu, 08 Dec 2016 17:28:58 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/les-nouveautes-d%CA%BCie4/</guid>
+					<frDate>8 décembre 2016</frDate>
+				</item>
+				<item>
+					<title>Cache-cache CSS</title>
+					<link>https://www.ffoodd.fr/cache-cache-css/</link>
+					<description>&lt;p&gt;Et j’ai beau trouver ça idiot — masquer du texte pour certains utilisateurs et pas pour d’autres, ça me paraît incohérent avec l’accessibilité — c’est un besoin récurrent.&lt;/p&gt;
 &lt;p&gt;Il existe de nombreuses façons de faire, que je ne détaillerai pas ici. Depuis quelques années, lorsque je le peux, j’utilise celle de &lt;a href=&quot;https://twitter.com/thierrykoblentz&quot;&gt;Thierry Koblentz&lt;/a&gt; pour Yahoo! qui est décrite &lt;a href=&quot;https://developer.yahoo.com/blogs/ydn/clip-hidden-content-better-accessibility-53456.html&quot;&gt;sur le blog technique de Yahoo!&lt;/a&gt; &lt;a href=&quot;https://cssmojo.com/hide-content-from-sighted-users/&quot;&gt;sur le blog de Thierry&lt;/a&gt;. C’est de loin la plus complète, et la seule à ma connaissance à supporter la direction de texte de droite à gauche.&lt;/p&gt;
 &lt;p&gt;Mais elle n’est pas exempte de problème, désormais.&lt;/p&gt;
 &lt;h2 id=&quot;propriete-depreciee&quot; tabindex=&quot;-1&quot;&gt;Propriété dépréciée&lt;/h2&gt;
@@ -440,14 +428,15 @@ document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;documentEl
 &lt;p&gt;18 janvier 2019&lt;/p&gt;
 &lt;p&gt;De multiples problèmes de débordements ont été observés, notamment sur Chrome, lorsque les éléments masqués sont contenus dans un élément avec &lt;code&gt;overflow: auto;&lt;/code&gt;. &lt;a href=&quot;https://github.com/Orange-OpenSource/Orange-Boosted-Bootstrap/issues/84&quot;&gt;Le problème est résolu dans Boosted&lt;/a&gt; en ajoutant &lt;code&gt;margin: -1px;&lt;/code&gt;.&lt;/p&gt;
 </description>
-				<pubDate>Thu, 13 Oct 2016 15:11:13 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/cache-cache-css/</guid>
-			</item>
-			<item>
-				<title>Le sens de la sémantique</title>
-				<link>https://www.ffoodd.fr/le-sens-de-la-semantique/</link>
-				<description>&lt;p&gt;Mais probablement pas pour les raisons auxquelles vous pourriez penser de prime abord, je pense. Attention, ceci nʼest quʼune réflexion et sera peut-être truffée dʼerreurs, pleine de non sens et de raccourcis.&lt;/p&gt;
+					<pubDate>Thu, 13 Oct 2016 15:11:13 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/cache-cache-css/</guid>
+					<frDate>13 octobre 2016</frDate>
+				</item>
+				<item>
+					<title>Le sens de la sémantique</title>
+					<link>https://www.ffoodd.fr/le-sens-de-la-semantique/</link>
+					<description>&lt;p&gt;Mais probablement pas pour les raisons auxquelles vous pourriez penser de prime abord, je pense. Attention, ceci nʼest quʼune réflexion et sera peut-être truffée dʼerreurs, pleine de non sens et de raccourcis.&lt;/p&gt;
 &lt;h2 id=&quot;la-separation-du-fond-et-de-la-forme&quot; tabindex=&quot;-1&quot;&gt;La séparation du fond et de la forme&lt;/h2&gt;
 &lt;p&gt;Ce principe est assez clair. Parfois on lʼassocie également à un autre principe, celui de la répartition des responsabilités — en anglais, &lt;em&gt;separation of concern&lt;/em&gt; — et on aboutit généralement à celui de la responsabilité unique — &lt;em&gt;single responsibility&lt;/em&gt;, toujours chez nos amis anglophones.&lt;/p&gt;
 &lt;p&gt;Dans mes langages dʼaffection que sont le HTML et le CSS, ça se traduit actuellement par les CSS atomiques — dont jʼai déjà parlé, et sur lesquels je vous invite à vous renseigner.&lt;/p&gt;
@@ -500,23 +489,25 @@ Utiliser des propriétés de style dans le HTML revient à corrompre la sémanti
 &lt;/li&gt;
 
 &lt;/ol&gt;</description>
-				<pubDate>Fri, 24 Jun 2016 18:06:10 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/le-sens-de-la-semantique/</guid>
-			</item>
-			<item>
-				<title>Sarah Bourne</title>
-				<link>https://www.ffoodd.fr/nothing-is-obvious-to-the-uninformed/</link>
-				<description>&lt;p&gt;Nothing is obvious to the uninformed!&lt;/p&gt;
+					<pubDate>Fri, 24 Jun 2016 18:06:10 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/le-sens-de-la-semantique/</guid>
+					<frDate>24 juin 2016</frDate>
+				</item>
+				<item>
+					<title>Sarah Bourne</title>
+					<link>https://www.ffoodd.fr/nothing-is-obvious-to-the-uninformed/</link>
+					<description>&lt;p&gt;Nothing is obvious to the uninformed!&lt;/p&gt;
 </description>
-				<pubDate>Wed, 25 May 2016 16:28:56 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/nothing-is-obvious-to-the-uninformed/</guid>
-			</item>
-			<item>
-				<title>Les champs images cassés</title>
-				<link>https://www.ffoodd.fr/les-champs-images-casses/</link>
-				<description>&lt;p&gt;&lt;a href=&quot;https://bitsofco.de/&quot;&gt;Ire Aderinokun&lt;/a&gt; a brisé un mythe il y a quelques jours à propos des pseudos-éléments sur la balise &lt;code&gt;img&lt;/code&gt;.&lt;/p&gt;
+					<pubDate>Wed, 25 May 2016 16:28:56 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/nothing-is-obvious-to-the-uninformed/</guid>
+					<frDate>25 mai 2016</frDate>
+				</item>
+				<item>
+					<title>Les champs images cassés</title>
+					<link>https://www.ffoodd.fr/les-champs-images-casses/</link>
+					<description>&lt;p&gt;&lt;a href=&quot;https://bitsofco.de/&quot;&gt;Ire Aderinokun&lt;/a&gt; a brisé un mythe il y a quelques jours à propos des pseudos-éléments sur la balise &lt;code&gt;img&lt;/code&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;on-recapitule-pour-ceux-du-fond&quot; tabindex=&quot;-1&quot;&gt;On récapitule, pour ceux du fond&lt;/h2&gt;
 &lt;p&gt;Lʼélément &lt;code&gt;img&lt;/code&gt; est ce quʼon appelle &lt;strong&gt;un élément remplacé&lt;/strong&gt;. Je vous conseille à ce propos la lecture de « &lt;a href=&quot;https://la-cascade.ghost.io/quest-ce-quun-element-remplace/&quot;&gt;Qu’est-ce qu’un élément remplacé ?&lt;/a&gt; », traduction en français sur La Cascade de « &lt;a href=&quot;https://demosthenes.info/blog/461/What-The-Heck-Is-A-Replaced-Element#&quot;&gt;What The Heck Is A Replaced Element?&lt;/a&gt; » écrit par &lt;a href=&quot;https://twitter.com/dudleystorey&quot;&gt;Dudley Storey&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Cela signifie que la balise nʼest fonctionnelle que si le contenu qui est censé le remplacer est présent. Pour la plupart des éléments remplacés, ça a peu dʼincidence puisque cʼest le système qui sʼen charge — cʼest notamment le cas des éléments de formulaire tels que &lt;code&gt;input&lt;/code&gt;, &lt;code&gt;textarea&lt;/code&gt; ou &lt;code&gt;select&lt;/code&gt;.&lt;/p&gt;
@@ -531,14 +522,15 @@ Utiliser des propriétés de style dans le HTML revient à corrompre la sémanti
 &lt;/li&gt;
 
 &lt;/ol&gt;</description>
-				<pubDate>Thu, 31 Mar 2016 12:27:00 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/les-champs-images-casses/</guid>
-			</item>
-			<item>
-				<title>À qui parlent vos CSS&amp;nbsp;?</title>
-				<link>https://www.ffoodd.fr/a-qui-parlent-vos-css/</link>
-				<description>&lt;p&gt;Le dernier article rédigé par &lt;a href=&quot;https://mrmrs.cc/&quot;&gt;Adam Morse&lt;/a&gt; est amplement diffusé ces derniers jours, vous lʼaurez certainement déjà lu : « &lt;a href=&quot;https://mrmrs.io/writing/2016/03/24/scalable-css/&quot;&gt;&lt;em&gt;CSS and Scalability&lt;/em&gt;&lt;/a&gt; » — vous pouvez en lire &lt;a href=&quot;https://blog.perrien.fr/css-et-evolutivite/&quot;&gt;une traduction en Français&lt;/a&gt; sur le blog de Marc Perrien. Il y prône une méthode de rédaction des CSS dite « atomiques », issue du formidable travail de &lt;a href=&quot;https://cssmojo.com/&quot;&gt;Thierry Koblentz&lt;/a&gt; de Yahoo sur le projet &lt;a href=&quot;https://acss.io/&quot;&gt;Atomic CSS&lt;/a&gt;.&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://www.ffoodd.fr/a-qui-parlent-vos-css/#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+					<pubDate>Thu, 31 Mar 2016 12:27:00 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/les-champs-images-casses/</guid>
+					<frDate>31 mars 2016</frDate>
+				</item>
+				<item>
+					<title>À qui parlent vos CSS ?</title>
+					<link>https://www.ffoodd.fr/a-qui-parlent-vos-css/</link>
+					<description>&lt;p&gt;Le dernier article rédigé par &lt;a href=&quot;https://mrmrs.cc/&quot;&gt;Adam Morse&lt;/a&gt; est amplement diffusé ces derniers jours, vous lʼaurez certainement déjà lu : « &lt;a href=&quot;https://mrmrs.io/writing/2016/03/24/scalable-css/&quot;&gt;&lt;em&gt;CSS and Scalability&lt;/em&gt;&lt;/a&gt; » — vous pouvez en lire &lt;a href=&quot;https://blog.perrien.fr/css-et-evolutivite/&quot;&gt;une traduction en Français&lt;/a&gt; sur le blog de Marc Perrien. Il y prône une méthode de rédaction des CSS dite « atomiques », issue du formidable travail de &lt;a href=&quot;https://cssmojo.com/&quot;&gt;Thierry Koblentz&lt;/a&gt; de Yahoo sur le projet &lt;a href=&quot;https://acss.io/&quot;&gt;Atomic CSS&lt;/a&gt;.&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://www.ffoodd.fr/a-qui-parlent-vos-css/#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;h2 id=&quot;les-css-atomiques&quot; tabindex=&quot;-1&quot;&gt;Les CSS atomiques ⚛&lt;/h2&gt;
 &lt;p&gt;La métaphore est la même que celle utilisée par &lt;a href=&quot;https://bradfrost.com/&quot;&gt;Brad Frost&lt;/a&gt; dans &lt;a href=&quot;https://atomicdesign.bradfrost.com/&quot;&gt;son livre (en cours de rédaction) sur le design atomique&lt;/a&gt;. Cependant là où Brad Frost file la métaphore jusquʼà la matière, les CSS atomiques se contentent des atomes et vous laissent vous débrouiller avec le reste.&lt;/p&gt;
 &lt;p&gt;Pour résumer, &lt;strong&gt;une classe atomique ne dispose que dʼune seule propriété, avec une seule valeur&lt;/strong&gt;. Voici un exemple — tiré directement de &lt;a href=&quot;https://acss.io/frequently-asked-questions.html#how-is-atomic-css-different-than-using-inline-styles-&quot;&gt;la foire aux questions dʼAtomic CSS&lt;/a&gt; — qui devrait être plus clair :&lt;/p&gt;
@@ -594,14 +586,15 @@ Utiliser des propriétés de style dans le HTML revient à corrompre la sémanti
 &lt;/li&gt;
 
 &lt;/ol&gt;</description>
-				<pubDate>Wed, 30 Mar 2016 12:07:39 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/a-qui-parlent-vos-css/</guid>
-			</item>
-			<item>
-				<title>La dette technique</title>
-				<link>https://www.ffoodd.fr/la-dette-technique/</link>
-				<description>&lt;p&gt;Et ça, cʼest vraiment chouette car leurs livres sont simples, efficaces, et très justes pour un prix vraiment très abordable — pour moi, en tout cas. Ils nous avaient déjà proposés lʼexcellent « &lt;a href=&quot;https://boutique.letrainde13h37.fr/products/petit-precis-de-creativite-virginie-caplet&quot;&gt;Petit Précis de Créativité&lt;/a&gt; » de Virginie Caplet, que je vous recommande chaudement !&lt;/p&gt;
+					<pubDate>Wed, 30 Mar 2016 12:07:39 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/a-qui-parlent-vos-css/</guid>
+					<frDate>30 mars 2016</frDate>
+				</item>
+				<item>
+					<title>La dette technique</title>
+					<link>https://www.ffoodd.fr/la-dette-technique/</link>
+					<description>&lt;p&gt;Et ça, cʼest vraiment chouette car leurs livres sont simples, efficaces, et très justes pour un prix vraiment très abordable — pour moi, en tout cas. Ils nous avaient déjà proposés lʼexcellent « &lt;a href=&quot;https://boutique.letrainde13h37.fr/products/petit-precis-de-creativite-virginie-caplet&quot;&gt;Petit Précis de Créativité&lt;/a&gt; » de Virginie Caplet, que je vous recommande chaudement !&lt;/p&gt;
 &lt;h2 id=&quot;ca-fait-peur&quot; tabindex=&quot;-1&quot;&gt;Ça fait peur&lt;/h2&gt;
 &lt;p&gt;Celui-ci ne démérite pas. Il est effectivement très simple à lire, ne fait pas de détours et ne tombe jamais dans les discours abscons dont sont friands les experts en tous genres. Fort dʼune expérience très riche en remboursement de dette technique — quʼil nʼhésite pas à partager à coups dʼanecdotes ou de démonstration — Bastien Jaillot nous fait cheminer à travers les différents aspects de son sujet.&lt;/p&gt;
 &lt;p&gt;Généralement méconnu, souvent mal compris, ce sujet est vraiment délicat et peut se montrer intimidant voire effrayant de prime abord. Cʼest pourtant un phénomène naturel et inévitable, et ce livre a le mérite de démystifier la dette technique en expliquant clairement ses origines, ses causes, ses effets — mais aussi les problèmes quʼelle peut engendrer, les réactions qui peuvent apparaître et les diverses manières de gérer sa dette.&lt;/p&gt;
@@ -613,14 +606,15 @@ Utiliser des propriétés de style dans le HTML revient à corrompre la sémanti
 &lt;/ol&gt;
 &lt;p&gt;Je force le trait évidemment, mais je ne souhaite que vous inciter à filer le lire ! Ce livre est important, il devrait vous plaire et surtout vous servir.&lt;/p&gt;
 </description>
-				<pubDate>Fri, 19 Feb 2016 14:03:53 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/la-dette-technique/</guid>
-			</item>
-			<item>
-				<title>Un fichier vide</title>
-				<link>https://www.ffoodd.fr/un-fichier-vide/</link>
-				<description>&lt;p&gt;Et c’est bien normal. C’est ainsi que nous découvrons nos outils, les personnalisons et atteignons leurs limites (ainsi que les nôtres).&lt;/p&gt;
+					<pubDate>Fri, 19 Feb 2016 14:03:53 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/la-dette-technique/</guid>
+					<frDate>19 février 2016</frDate>
+				</item>
+				<item>
+					<title>Un fichier vide</title>
+					<link>https://www.ffoodd.fr/un-fichier-vide/</link>
+					<description>&lt;p&gt;Et c’est bien normal. C’est ainsi que nous découvrons nos outils, les personnalisons et atteignons leurs limites (ainsi que les nôtres).&lt;/p&gt;
 &lt;h2 id=&quot;eternels-insatisfaits&quot; tabindex=&quot;-1&quot;&gt;Éternels insatisfaits&lt;/h2&gt;
 &lt;p&gt;Cependant aucun outil magique n’existe. Parmi les outils auxquels je pense, &lt;a href=&quot;https://getbootstrap.com/&quot;&gt;Bootstrap&lt;/a&gt; et &lt;a href=&quot;https://foundation.zurb.com/&quot;&gt;Foundation&lt;/a&gt; se tirent la bourre depuis quelques années pour le titre de « Meilleur &lt;em&gt;framework&lt;/em&gt; de l’année ». Cependant tout le monde leur trouve &lt;strong&gt;des défauts&lt;/strong&gt; :&lt;/p&gt;
 &lt;ul&gt;
@@ -647,23 +641,25 @@ Utiliser des propriétés de style dans le HTML revient à corrompre la sémanti
 &lt;/li&gt;
 
 &lt;/ol&gt;</description>
-				<pubDate>Fri, 12 Feb 2016 20:29:10 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/un-fichier-vide/</guid>
-			</item>
-			<item>
-				<title>Marie Guillaumet</title>
-				<link>https://www.ffoodd.fr/marie-guillaumet/</link>
-				<description>&lt;p&gt;Bien faire et laisser braire&lt;/p&gt;
+					<pubDate>Fri, 12 Feb 2016 20:29:10 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/un-fichier-vide/</guid>
+					<frDate>12 février 2016</frDate>
+				</item>
+				<item>
+					<title>Marie Guillaumet</title>
+					<link>https://www.ffoodd.fr/marie-guillaumet/</link>
+					<description>&lt;p&gt;Bien faire et laisser braire&lt;/p&gt;
 </description>
-				<pubDate>Fri, 12 Feb 2016 20:28:52 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/marie-guillaumet/</guid>
-			</item>
-			<item>
-				<title>NantesCSS</title>
-				<link>https://www.ffoodd.fr/nantescss/</link>
-				<description>&lt;p&gt;tl;dr : si vous êtes intéressés mais que ma prose vous importune, filez directement sur le &lt;a href=&quot;https://doodle.com/poll/7rv8ixe9tqc6kwdc&quot;&gt;Doodle&lt;/a&gt; proposant quelques dates, aux horaires du déjeuner.&lt;/p&gt;
+					<pubDate>Fri, 12 Feb 2016 20:28:52 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/marie-guillaumet/</guid>
+					<frDate>12 février 2016</frDate>
+				</item>
+				<item>
+					<title>NantesCSS</title>
+					<link>https://www.ffoodd.fr/nantescss/</link>
+					<description>&lt;p&gt;tl;dr : si vous êtes intéressés mais que ma prose vous importune, filez directement sur le &lt;a href=&quot;https://doodle.com/poll/7rv8ixe9tqc6kwdc&quot;&gt;Doodle&lt;/a&gt; proposant quelques dates, aux horaires du déjeuner.&lt;/p&gt;
 &lt;h2 id=&quot;une-communaute-de-praticiens&quot; tabindex=&quot;-1&quot;&gt;Une communauté de praticiens&lt;/h2&gt;
 &lt;p&gt;En arrivant chez &lt;a href=&quot;https://www.kosmos.fr/&quot;&gt;Kosmos&lt;/a&gt; mi 2014, jʼétais le troisième intégrateur en poste — après une décennie passée avec un seul intégrateur. Parmi les sujets de conversation émergeants, celui dʼune &lt;a href=&quot;https://fr.wikipedia.org/wiki/Communaut%C3%A9_de_pratique&quot;&gt;communauté de pratique&lt;/a&gt; mʼa particulièrement intéressé. Jʼai donc creusé le sujet et, sans parvenir à une application concrète au sein de Kosmos, en ai conservé lʼineffable envie de regrouper des intégrateurs pour causer de HTML et CSS — &lt;strong&gt;et plus si affinités&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;De plus, déjeuner régulièrement avec quelques camarades éclairés comme &lt;a href=&quot;https://emmanuel.clement.free.fr/&quot;&gt;Emmanuel Clément&lt;/a&gt;, &lt;a href=&quot;https://vincent-valentin.name/&quot;&gt;Vincent Valentin&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/shinze&quot;&gt;Gaëtan Ark&lt;/a&gt;, &lt;a href=&quot;https://jcbrebion.com/&quot;&gt;Jean-Christophe Brebion&lt;/a&gt; ou &lt;a href=&quot;https://marieguillaumet.com/&quot;&gt;Marie Guillaumet&lt;/a&gt; mʼa beaucoup motivé et appris. &lt;strong&gt;Jʼai envie de partager ça&lt;/strong&gt; !&lt;/p&gt;
@@ -713,14 +709,15 @@ Utiliser des propriétés de style dans le HTML revient à corrompre la sémanti
 &lt;p&gt;Alors voilà, il ne reste quʼà faire le premier pas. Et comme je suis un peu foufou, &lt;a href=&quot;https://doodle.com/poll/7rv8ixe9tqc6kwdc&quot;&gt;je vous propose des dates la semaine prochaine&lt;/a&gt;, aux horaires dʼune pause déjeuner classique. Vous pouvez évidemment mʼindiquer ici-même où sur Twitter si vous avez dʼautres plages horaires de prédilection, ou si la semaine prochaine est un peu tôt pour vous.&lt;/p&gt;
 &lt;p&gt;PS : pour le nom, jʼavais pensé à &lt;strong&gt;la Communauté des Spécialistes des Styles&lt;/strong&gt;. Je sais, je ne suis pas réputé pour mon humour 😶&lt;/p&gt;
 </description>
-				<pubDate>Wed, 20 Jan 2016 14:59:51 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/nantescss/</guid>
-			</item>
-			<item>
-				<title>Réserve d’espace pour le contenu</title>
-				<link>https://www.ffoodd.fr/reserve-d%CA%BCespace-pour-le-contenu/</link>
-				<description>&lt;p&gt;C’est ce quʼutilisent notamment Facebook et Medium, dont le contenu respecte un gabarit constant. En terme dʼinterface, ça me semble &lt;strong&gt;vraiment plus agréable&lt;/strong&gt; que le classique &lt;em&gt;ouroboros&lt;/em&gt;.&lt;/p&gt;
+					<pubDate>Wed, 20 Jan 2016 14:59:51 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/nantescss/</guid>
+					<frDate>20 janvier 2016</frDate>
+				</item>
+				<item>
+					<title>Réserve d’espace pour le contenu</title>
+					<link>https://www.ffoodd.fr/reserve-d%CA%BCespace-pour-le-contenu/</link>
+					<description>&lt;p&gt;C’est ce quʼutilisent notamment Facebook et Medium, dont le contenu respecte un gabarit constant. En terme dʼinterface, ça me semble &lt;strong&gt;vraiment plus agréable&lt;/strong&gt; que le classique &lt;em&gt;ouroboros&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Et figurez-vous que pour le moment, tous &lt;strong&gt;les retours sont extrêmement positifs&lt;/strong&gt;. En session de test utilisateurs, la plupart des testeurs lʼont remarqué et ont tenu à le signaler comme un élément « très agréable ». Moi qui pensait mʼamuser à suivre un effet de mode à la mords-moi-le-nœud et être passé du côté obscur de la Force, me voilà confondu. Cet effet semble conférer une réelle valeur ajoutée à &lt;strong&gt;lʼexpérience utilisateur&lt;/strong&gt;, alors jʼaie envie de vous montrer ce quʼil y a sous le capot afin de partager et dʼaméliorer encore tout ça.&lt;/p&gt;
 &lt;h2 id=&quot;quelques-recherches-pour-demarrer&quot; tabindex=&quot;-1&quot;&gt;Quelques recherches pour démarrer&lt;/h2&gt;
 &lt;p&gt;Bon, bizarrement, je nʼai pas trouvé beaucoup de ressources pour faire ce truc. La plus visible est &lt;a href=&quot;https://codepen.io/Mestika/pen/ByNYBa&quot;&gt;une expérimentation sur codePen&lt;/a&gt; qui est franchement sale. Une soupe de &lt;code&gt;div&lt;/code&gt;, chacune positionnée en absolu et calée au pixel près. En revanche lʼarticle de lʼapprenti magicien est &lt;strong&gt;relativement&lt;/strong&gt; intéressant : « &lt;a href=&quot;https://cloudcannon.com/deconstructions/2014/11/15/facebook-content-placeholder-deconstruction.html&quot;&gt;&lt;em&gt;Facebook content placeholder deconstruction&lt;/em&gt;&lt;/a&gt; ». Très relativement, hein. Ça manque cruellement de référence donc si vous avez, elles mʼintéressent !&lt;/p&gt;
@@ -810,14 +807,15 @@ Utiliser des propriétés de style dans le HTML revient à corrompre la sémanti
 &lt;/li&gt;
 
 &lt;/ol&gt;</description>
-				<pubDate>Thu, 03 Dec 2015 13:30:49 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/reserve-d%CA%BCespace-pour-le-contenu/</guid>
-			</item>
-			<item>
-				<title>Un test Modernizr pour les contrastes élevés</title>
-				<link>https://www.ffoodd.fr/un-test-modernizr-pour-les-contrastes-eleves/</link>
-				<description>&lt;p&gt;Malheureusement, il ne répond pas correctement lorsque lʼutilisateur a personnalisé les couleurs des liens ou utilise un thème navigateur aux contrastes élevés — ce que jʼai testé avec Firefox. En sus, et bien quʼil soit conçu de façon à renvoyer un booléen, il se couple difficilement avec un outil spécialisé tel que &lt;a href=&quot;https://modernizr.com/&quot;&gt;Modernizr&lt;/a&gt;.&lt;/p&gt;
+					<pubDate>Thu, 03 Dec 2015 13:30:49 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/reserve-d%CA%BCespace-pour-le-contenu/</guid>
+					<frDate>3 décembre 2015</frDate>
+				</item>
+				<item>
+					<title>Un test Modernizr pour les contrastes élevés</title>
+					<link>https://www.ffoodd.fr/un-test-modernizr-pour-les-contrastes-eleves/</link>
+					<description>&lt;p&gt;Malheureusement, il ne répond pas correctement lorsque lʼutilisateur a personnalisé les couleurs des liens ou utilise un thème navigateur aux contrastes élevés — ce que jʼai testé avec Firefox. En sus, et bien quʼil soit conçu de façon à renvoyer un booléen, il se couple difficilement avec un outil spécialisé tel que &lt;a href=&quot;https://modernizr.com/&quot;&gt;Modernizr&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;les-changements&quot; tabindex=&quot;-1&quot;&gt;Les changements&lt;/h2&gt;
 &lt;p&gt;On va faire simple, puisque vous avez lʼexemple de Karl Groves en amont ! Les seules modifications apportées sont :&lt;/p&gt;
 &lt;ul&gt;
@@ -862,14 +860,15 @@ Modernizr&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span 
 &lt;/li&gt;
 
 &lt;/ol&gt;</description>
-				<pubDate>Wed, 25 Nov 2015 16:06:44 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/un-test-modernizr-pour-les-contrastes-eleves/</guid>
-			</item>
-			<item>
-				<title>Le soulignement factice</title>
-				<link>https://www.ffoodd.fr/le-soulignement-factice/</link>
-				<description>&lt;p&gt;Je vous enjoins à lire la « &lt;a href=&quot;https://letrainde13h37.fr/43/signaletique-hyperliens/&quot;&gt;Signalétique des hyperliens&lt;/a&gt; » sur le train de 13 h 37, par &lt;a href=&quot;https://twitter.com/tetue&quot;&gt;Romy Duhem-Verdière&lt;/a&gt;. On y apprend notamment que — typographiquement parlant — le souligné nʼest dʼaucune utilité, sauf éventuellement à palier lʼabsence dʼitalique (ce qui est somme toute assez rare). En revanche sur le web, cʼest &lt;strong&gt;le meilleur moyen de signaler un lien&lt;/strong&gt;.&lt;/p&gt;
+					<pubDate>Wed, 25 Nov 2015 16:06:44 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/un-test-modernizr-pour-les-contrastes-eleves/</guid>
+					<frDate>25 novembre 2015</frDate>
+				</item>
+				<item>
+					<title>Le soulignement factice</title>
+					<link>https://www.ffoodd.fr/le-soulignement-factice/</link>
+					<description>&lt;p&gt;Je vous enjoins à lire la « &lt;a href=&quot;https://letrainde13h37.fr/43/signaletique-hyperliens/&quot;&gt;Signalétique des hyperliens&lt;/a&gt; » sur le train de 13 h 37, par &lt;a href=&quot;https://twitter.com/tetue&quot;&gt;Romy Duhem-Verdière&lt;/a&gt;. On y apprend notamment que — typographiquement parlant — le souligné nʼest dʼaucune utilité, sauf éventuellement à palier lʼabsence dʼitalique (ce qui est somme toute assez rare). En revanche sur le web, cʼest &lt;strong&gt;le meilleur moyen de signaler un lien&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;graphiquement-grossier&quot; tabindex=&quot;-1&quot;&gt;Graphiquement grossier&lt;/h2&gt;
 &lt;p&gt;Le souligné ordinaire est effectivement grossier : cʼest un reliquat des toutes premières typographies affichées sur un écran — que je nʼai pas eu la chance de croiser. Vous pouvez le constater avec cet exemple de souligné ordinaire.&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://www.ffoodd.fr/le-soulignement-factice/#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;Sur le plan visuel, le souligné croise les jambages inférieures, ce qui crée un attroupement inopportun de pixels quʼon pourrait qualifier de « petits pâtés ».&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://www.ffoodd.fr/le-soulignement-factice/#fn2&quot; id=&quot;fnref2&quot;&gt;[2]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
@@ -1004,14 +1003,15 @@ Modernizr&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span 
 &lt;/li&gt;
 
 &lt;/ol&gt;</description>
-				<pubDate>Fri, 20 Nov 2015 16:16:37 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/le-soulignement-factice/</guid>
-			</item>
-			<item>
-				<title>Les éléments remplacés</title>
-				<link>https://www.ffoodd.fr/les-elements-remplaces/</link>
-				<description>&lt;p&gt;Pourtant — et malgré le fait que &lt;strong&gt;la plupart&lt;/strong&gt; des éléments remplacés soient des balises auto-fermantes — ça nʼest pas la même chose !&lt;/p&gt;
+					<pubDate>Fri, 20 Nov 2015 16:16:37 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/le-soulignement-factice/</guid>
+					<frDate>20 novembre 2015</frDate>
+				</item>
+				<item>
+					<title>Les éléments remplacés</title>
+					<link>https://www.ffoodd.fr/les-elements-remplaces/</link>
+					<description>&lt;p&gt;Pourtant — et malgré le fait que &lt;strong&gt;la plupart&lt;/strong&gt; des éléments remplacés soient des balises auto-fermantes — ça nʼest pas la même chose !&lt;/p&gt;
 &lt;h2 id=&quot;les-mauvaises-definitions&quot; tabindex=&quot;-1&quot;&gt;Les mauvaises définitions&lt;/h2&gt;
 &lt;h3 id=&quot;la-definition-de-dudley-storey&quot; tabindex=&quot;-1&quot;&gt;La définition de Dudley Storey&lt;/h3&gt;
 &lt;p&gt;La plus connue est celle proposée par Dudley Storey dans son article « &lt;a href=&quot;https://thenewcode.com/461/What-The-Heck-Is-A-Replaced-Element&quot;&gt;What’s A Replaced Element?&lt;/a&gt; » (traduit en Français sur &lt;a href=&quot;https://la-cascade.io/quest-ce-quun-element-remplace/&quot;&gt;La Cascade&lt;/a&gt;) que voici :&lt;/p&gt;
@@ -1048,14 +1048,15 @@ Modernizr&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span 
 **&lt;br /&gt;
 Mais bon sang, quelle aventure pour un bête bouton qui ne veut pas se mettre en ligne !**&lt;/p&gt;
 </description>
-				<pubDate>Mon, 16 Nov 2015 20:16:54 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/les-elements-remplaces/</guid>
-			</item>
-			<item>
-				<title>Le web en kit</title>
-				<link>https://www.ffoodd.fr/le-web-en-kit/</link>
-				<description>&lt;p&gt;Beaucoup de gens qui fabriquent le web se sont plaints de lʼhégémonie dʼIE6.&lt;/p&gt;
+					<pubDate>Mon, 16 Nov 2015 20:16:54 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/les-elements-remplaces/</guid>
+					<frDate>16 novembre 2015</frDate>
+				</item>
+				<item>
+					<title>Le web en kit</title>
+					<link>https://www.ffoodd.fr/le-web-en-kit/</link>
+					<description>&lt;p&gt;Beaucoup de gens qui fabriquent le web se sont plaints de lʼhégémonie dʼIE6.&lt;/p&gt;
 &lt;p&gt;Pour protester, ils se sont rués sur les nouveaux arrivants : Firefox et Chrome. Puis les produits Apple ont débarqué, apportant avec eux Safari. Cʼétait encore une révolution — et de fait, le nouvel endroit ou aller. Or Safari fonctionne sur la même base que Chrome, à savoir le moteur de rendu Webkit. Et petit à petit, nous nous sommes retrouvés &lt;strong&gt;avec un nouveau monopole&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Malheureusement, on ne casse pas un monopole avec un monopole. Car tous ces gens qui se sont rués sur les navigateurs WebKit ont produit des morceaux de web qui ne sont pas inter-opérables : on ne pouvait sʼen servir (voire simplement y accéder) autrement &lt;strong&gt;quʼavec un sésame estampillé WebKit&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;microsoft-et-edge&quot; tabindex=&quot;-1&quot;&gt;Microsoft et Edge&lt;/h2&gt;
@@ -1106,14 +1107,15 @@ Mais bon sang, quelle aventure pour un bête bouton qui ne veut pas se mettre en
 &lt;/li&gt;
 
 &lt;/ol&gt;</description>
-				<pubDate>Fri, 30 Oct 2015 11:11:52 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/le-web-en-kit/</guid>
-			</item>
-			<item>
-				<title>Paris Web et la vie</title>
-				<link>https://www.ffoodd.fr/paris-web-et-la-vie/</link>
-				<description>&lt;p&gt;Il sʼen est passé, des choses, cet été ☺.&lt;/p&gt;
+					<pubDate>Fri, 30 Oct 2015 11:11:52 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/le-web-en-kit/</guid>
+					<frDate>30 octobre 2015</frDate>
+				</item>
+				<item>
+					<title>Paris Web et la vie</title>
+					<link>https://www.ffoodd.fr/paris-web-et-la-vie/</link>
+					<description>&lt;p&gt;Il sʼen est passé, des choses, cet été ☺.&lt;/p&gt;
 &lt;h2 id=&quot;livres&quot; tabindex=&quot;-1&quot;&gt;Livres&lt;/h2&gt;
 &lt;h3 id=&quot;guide-pratique-de-choix-typographique&quot; tabindex=&quot;-1&quot;&gt;Guide pratique de choix typographique&lt;/h3&gt;
 &lt;p&gt;Je lʼavais peut-être déjà mentionné, mais tant pis — jʼen suis fier : David Rault mʼa fait lʼhonneur de citer mon &lt;a href=&quot;https://www.ffoodd.fr/guide-pratique-de-choix-typographique/&quot;&gt;compte-rendu de lecture de son « Guide pratique de choix typographique »&lt;/a&gt; sur la 4e de couverture de sa réédition. Cʼest un excellent livre, je vous le conseille vraiment ! Vous le trouverez sur &lt;a href=&quot;https://www.adverbum.fr/guide-pratique-de-choix-typographique-rault-david-atelier-perrousseaux_ouvrage-perrousseaux_4yrc07ab75lc.html&quot;&gt;le site des Ateliers Perrousseaux&lt;/a&gt;.&lt;/p&gt;
@@ -1142,14 +1144,15 @@ Mais bon sang, quelle aventure pour un bête bouton qui ne veut pas se mettre en
 &lt;p&gt;Jʼai toujours une multitude de projets en tête, mais la plupart relèvent de la sphère privée. Pour lʼaspect métier, je poursuis mes travaux sur &lt;a href=&quot;https://github.com/ffoodd/a11y.css&quot;&gt;a11y.css&lt;/a&gt; — même si ça sʼavère de plus en plus lent. Jʼai planifié deux nouvelles bornes, lʼune technique et lʼautre « identitaire » (graphisme, ligne éditoriale, réseaux sociaux…).&lt;/p&gt;
 &lt;p&gt;Et jʼai toujours de nombreux articles en attente. Vous repassez bientôt ?&lt;/p&gt;
 </description>
-				<pubDate>Fri, 16 Oct 2015 11:22:50 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/paris-web-et-la-vie/</guid>
-			</item>
-			<item>
-				<title>21e séminaire AccessiWeb</title>
-				<link>https://www.ffoodd.fr/21e-seminaire-accessiweb/</link>
-				<description>&lt;p&gt;C’est donc une grande première, et moi qui lisait les comptes-rendus des précédents séminaires sur internet ait enfin pu y assister !&lt;/p&gt;
+					<pubDate>Fri, 16 Oct 2015 11:22:50 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/paris-web-et-la-vie/</guid>
+					<frDate>16 octobre 2015</frDate>
+				</item>
+				<item>
+					<title>21e séminaire AccessiWeb</title>
+					<link>https://www.ffoodd.fr/21e-seminaire-accessiweb/</link>
+					<description>&lt;p&gt;C’est donc une grande première, et moi qui lisait les comptes-rendus des précédents séminaires sur internet ait enfin pu y assister !&lt;/p&gt;
 &lt;h2 id=&quot;en-tant-quorateur&quot; tabindex=&quot;-1&quot;&gt;En tant qu’orateur&lt;/h2&gt;
 &lt;p&gt;Le thème du séminaire était « &lt;a href=&quot;https://inova.snv.jussieu.fr/evenements/colloques/colloques/index.php?c=87&quot;&gt;Choisir et utiliser un CMS pour créer des contenus accessibles&lt;/a&gt; », organisé par &lt;a href=&quot;https://accessiblog.fr/&quot;&gt;Olivier Nourry&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Non seulement j’ai pu y assister, mais j’ai même été invité par Olivier à y faire une intervention autour de la même thématique que celle abordée lors du &lt;a href=&quot;https://2014.wptech.fr/&quot;&gt;WP Tech&lt;/a&gt; au sujet des &lt;strong&gt;thèmes enfants dans WordPress&lt;/strong&gt; (et leur utilisation dans une méthodologie de travail basée sur l’amélioration perpétuelle).&lt;/p&gt;
@@ -1178,14 +1181,15 @@ Mais bon sang, quelle aventure pour un bête bouton qui ne veut pas se mettre en
 &lt;p&gt;&lt;strong&gt;Une invitation est également lancée aux professionnels du web – qui utiliseraient couramment un CMS oublié de ce séminaire – de se plier à l’exercice d’évaluer l’accessibilité de leur outil préféré afin d’enrichir le comparatif.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Pour conclure, je suis réellement ravi d’avoir pu &lt;strong&gt;rencontrer, échanger, apprendre&lt;/strong&gt; autant et je tiens à remercier chaleureusement &lt;strong&gt;l’association BrailleNet&lt;/strong&gt; pour avoir permis que cet événement ait lieu, et Olivier Nourry de m’y avoir invité en tant qu’intervenant : j’en suis très honoré.&lt;/p&gt;
 </description>
-				<pubDate>Wed, 15 Jul 2015 17:06:31 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/21e-seminaire-accessiweb/</guid>
-			</item>
-			<item>
-				<title>WPMX Day</title>
-				<link>https://www.ffoodd.fr/wpmx-day/</link>
-				<description>&lt;p&gt;Souhaitant toucher un maximum de personnes dans le public — tous profils confondus, j’ai donc proposé aux organisateurs de parler des points d’accessibilité que chacun traite sans le savoir. Mon objectif était bien entendu d’évoquer d’autres pratiques abordables et bénéfiques pour les utilisateurs.&lt;/p&gt;
+					<pubDate>Wed, 15 Jul 2015 17:06:31 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/21e-seminaire-accessiweb/</guid>
+					<frDate>15 juillet 2015</frDate>
+				</item>
+				<item>
+					<title>WPMX Day</title>
+					<link>https://www.ffoodd.fr/wpmx-day/</link>
+					<description>&lt;p&gt;Souhaitant toucher un maximum de personnes dans le public — tous profils confondus, j’ai donc proposé aux organisateurs de parler des points d’accessibilité que chacun traite sans le savoir. Mon objectif était bien entendu d’évoquer d’autres pratiques abordables et bénéfiques pour les utilisateurs.&lt;/p&gt;
 &lt;h2 id=&quot;accessibilite-et-efficience&quot; tabindex=&quot;-1&quot;&gt;Accessibilité et efficience&lt;/h2&gt;
 &lt;p&gt;Voici &lt;a href=&quot;https://www.ffoodd.fr/wpmx/&quot;&gt;mon support de présentation&lt;/a&gt;. Je ne vais pas forcément m’étendre étant donné qu’une vidéo devrait arriver bientôt, mais je suis relativement satisfait de cette présentation. Le temps de préparation a été énorme, incluant :&lt;/p&gt;
 &lt;ul&gt;
@@ -1206,23 +1210,15 @@ Mais bon sang, quelle aventure pour un bête bouton qui ne veut pas se mettre en
 &lt;h2 id=&quot;a-la-prochaine&quot; tabindex=&quot;-1&quot;&gt;À la prochaine !&lt;/h2&gt;
 &lt;p&gt;Et bien oui, car il y en aura une je l’espère. Vraiment la journée à Biarritz, dans un super hôtel, avec tout ces gens accentués (si, si, ils ont un accent) était vraiment chouette. Et je ne vous parle pas du samedi soir : dîner sur la plage avec Stéphanie, Jean-Pierre ainsi que &lt;a href=&quot;https://www.graphikophil.com/&quot;&gt;Philippe Gélas&lt;/a&gt; et les organisateurs. C’était vraiment top, merci !&lt;/p&gt;
 </description>
-				<pubDate>Thu, 02 Jul 2015 18:42:39 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/wpmx-day/</guid>
-			</item>
-			<item>
-				<title>https://checklists.opquast.com/oqs-v3/workshops/</title>
-				<link>https://www.ffoodd.fr/httpschecklists-opquast-comoqs-v3workshops/</link>
-				<description>&lt;p&gt;La troisième version du référentiel Opquast est en cours d’élaboration !&lt;/p&gt;
-</description>
-				<pubDate>Wed, 01 Jul 2015 12:56:49 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/httpschecklists-opquast-comoqs-v3workshops/</guid>
-			</item>
-			<item>
-				<title>AccesSlide&amp;nbsp;: la prise en main</title>
-				<link>https://www.ffoodd.fr/accesslide-la-prise-en-main/</link>
-				<description>&lt;p&gt;Access42 est la société créée conjointement par Armony Altinier (rédactrice du livre « Accessibilité web » dont j’ai écrit &lt;a href=&quot;https://www.ffoodd.fr/lecture-accessibilite-web/&quot;&gt;un compte-rendu de lecture&lt;/a&gt;) et Jean-Pierre Villain après qu’ils aient remporté le marché de refonte du RGAA3. Ils ont été rapidement rejoint par Sylvie Duchateau et Audrey Maniez.&lt;/p&gt;
+					<pubDate>Thu, 02 Jul 2015 18:42:39 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/wpmx-day/</guid>
+					<frDate>2 juillet 2015</frDate>
+				</item>
+				<item>
+					<title>AccesSlide : la prise en main</title>
+					<link>https://www.ffoodd.fr/accesslide-la-prise-en-main/</link>
+					<description>&lt;p&gt;Access42 est la société créée conjointement par Armony Altinier (rédactrice du livre « Accessibilité web » dont j’ai écrit &lt;a href=&quot;https://www.ffoodd.fr/lecture-accessibilite-web/&quot;&gt;un compte-rendu de lecture&lt;/a&gt;) et Jean-Pierre Villain après qu’ils aient remporté le marché de refonte du RGAA3. Ils ont été rapidement rejoint par Sylvie Duchateau et Audrey Maniez.&lt;/p&gt;
 &lt;p&gt;Si vous ne connaissez pas ces noms, sachez qu’ils sont &lt;strong&gt;incontournables dans le domaine de l’accessibilité numérique en France&lt;/strong&gt;. Et c’est peu dire !&lt;/p&gt;
 &lt;h2 id=&quot;premier-contact&quot; tabindex=&quot;-1&quot;&gt;Premier contact&lt;/h2&gt;
 &lt;p&gt;Pour commencer, je tiens à signaler la manière tout à fait &lt;strong&gt;attractive&lt;/strong&gt; qu’a trouvé d’Access42 pour communiquer sur ce nouvel outil : c’est suite à ma participation à leur &lt;a href=&quot;https://access42.net/MAJ-Jeu-concours-le-secret-de-la-licorne.html&quot;&gt;jeu-concours : le secret de la licorne&lt;/a&gt; que j’ai reçu un mail signalant dans un premier temps &lt;a href=&quot;https://github.com/access42/AccesSlide&quot;&gt;le dépôt Github d’AccesSlide&lt;/a&gt;.&lt;/p&gt;
@@ -1311,14 +1307,15 @@ Mais bon sang, quelle aventure pour un bête bouton qui ne veut pas se mettre en
 &lt;h2 id=&quot;epilogue&quot; tabindex=&quot;-1&quot;&gt;Épilogue&lt;/h2&gt;
 &lt;p&gt;Il me reste un point important remonté par &lt;a href=&quot;https://anysurfer.be/fr&quot;&gt;Sophie Schuermans&lt;/a&gt; concernant l’aspect responsive que j’ai un peu endommagé. Et je tiens également à remercier &lt;a href=&quot;https://www.nicolas-hoffmann.net/source/&quot;&gt;Nicolas Hoffmann&lt;/a&gt; pour sa relecture attentive et ses conseils, ainsi qu’&lt;a href=&quot;https://accessiblog.fr/&quot;&gt;Olivier Nourry&lt;/a&gt; pour son intérêt !&lt;/p&gt;
 </description>
-				<pubDate>Sun, 24 May 2015 13:06:51 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/accesslide-la-prise-en-main/</guid>
-			</item>
-			<item>
-				<title>Choisir ses couleurs pour le Web</title>
-				<link>https://www.ffoodd.fr/choisir-ses-couleurs-pour-le-web/</link>
-				<description>&lt;p&gt;Ce livre nous donne quelques clés pour en apprendre les tenants et les aboutissants.&lt;/p&gt;
+					<pubDate>Sun, 24 May 2015 13:06:51 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/accesslide-la-prise-en-main/</guid>
+					<frDate>24 mai 2015</frDate>
+				</item>
+				<item>
+					<title>Choisir ses couleurs pour le Web</title>
+					<link>https://www.ffoodd.fr/choisir-ses-couleurs-pour-le-web/</link>
+					<description>&lt;p&gt;Ce livre nous donne quelques clés pour en apprendre les tenants et les aboutissants.&lt;/p&gt;
 &lt;h2 id=&quot;les-fondations&quot; tabindex=&quot;-1&quot;&gt;Les fondations&lt;/h2&gt;
 &lt;p&gt;Le livre est plutôt bien conçu, démarrant à la base de la théorie pour terminer par des exemples de mise en pratique. Le sommaire est d’ailleurs révélateur de la logique du livre :&lt;/p&gt;
 &lt;ol&gt;
@@ -1352,14 +1349,15 @@ Mais bon sang, quelle aventure pour un bête bouton qui ne veut pas se mettre en
 &lt;h2 id=&quot;un-avis&quot; tabindex=&quot;-1&quot;&gt;Un avis&lt;/h2&gt;
 &lt;p&gt;Pour terminer, c’est une lecture intéressante pour quiconque est pris de curiosité pour ce domaine. &lt;strong&gt;Si les couleurs vous parlent, n’hésitez pas à vous procurer ce livre.&lt;/strong&gt;&lt;/p&gt;
 </description>
-				<pubDate>Tue, 07 Apr 2015 11:00:38 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/choisir-ses-couleurs-pour-le-web/</guid>
-			</item>
-			<item>
-				<title>Découvrez le calcul magique</title>
-				<link>https://www.ffoodd.fr/decouvrez-le-calcul-magique/</link>
-				<description>&lt;p&gt;Et ça, c’était pas terrible. Non, vraiment pas. On cherchait frénétiquement à obtenir le même rendu sur tous les navigateurs et tous les écrans. Aujourd’hui, c’est drôle — à l’époque, c’était le nerf de la guerre.&lt;/p&gt;
+					<pubDate>Tue, 07 Apr 2015 11:00:38 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/choisir-ses-couleurs-pour-le-web/</guid>
+					<frDate>7 avril 2015</frDate>
+				</item>
+				<item>
+					<title>Découvrez le calcul magique</title>
+					<link>https://www.ffoodd.fr/decouvrez-le-calcul-magique/</link>
+					<description>&lt;p&gt;Et ça, c’était pas terrible. Non, vraiment pas. On cherchait frénétiquement à obtenir le même rendu sur tous les navigateurs et tous les écrans. Aujourd’hui, c’est drôle — à l’époque, c’était le nerf de la guerre.&lt;/p&gt;
 &lt;h2 id=&quot;les-valeurs-uniques&quot; tabindex=&quot;-1&quot;&gt;Les valeurs uniques&lt;/h2&gt;
 &lt;p&gt;Cette recherche de perfection était régulièrement entravée par plusieurs limitations techniques :&lt;/p&gt;
 &lt;ul&gt;
@@ -1395,14 +1393,15 @@ Mais bon sang, quelle aventure pour un bête bouton qui ne veut pas se mettre en
 &lt;h2 id=&quot;les-supplements&quot; tabindex=&quot;-1&quot;&gt;Les suppléments&lt;/h2&gt;
 &lt;p&gt;Depuis ce POC, j’ai découvert le travail de &lt;a href=&quot;https://gasteroprod.com/&quot;&gt;Nicolas Hoizey&lt;/a&gt; sur &lt;a href=&quot;https://github.com/nhoizey/esviji&quot;&gt;esviji V2&lt;/a&gt;, qui utilise &lt;a href=&quot;https://github.com/nhoizey/esviji/blob/master/src/sass/_screen.scss&quot;&gt;les ratios, les calculs et les unités de viewport&lt;/a&gt; pour atteindre un degré d’adaptation aux écrans extraordinaire. Je vous conseille de garder un œil sur son projet, et surtout de parcourir &lt;a href=&quot;https://gist.github.com/nhoizey/f31cf92114a376a23155&quot;&gt;la feuille de styles générée&lt;/a&gt; qui est remarquablement écrite !&lt;/p&gt;
 </description>
-				<pubDate>Mon, 30 Mar 2015 16:30:04 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/decouvrez-le-calcul-magique/</guid>
-			</item>
-			<item>
-				<title>Sass pour les webdesigners</title>
-				<link>https://www.ffoodd.fr/sass-pour-les-webdesigners/</link>
-				<description>&lt;p&gt;En revanche, cette collection est dédiée à la découverte des sujets. Leur accroche le sous-entend :&lt;/p&gt;
+					<pubDate>Mon, 30 Mar 2015 16:30:04 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/decouvrez-le-calcul-magique/</guid>
+					<frDate>30 mars 2015</frDate>
+				</item>
+				<item>
+					<title>Sass pour les webdesigners</title>
+					<link>https://www.ffoodd.fr/sass-pour-les-webdesigners/</link>
+					<description>&lt;p&gt;En revanche, cette collection est dédiée à la découverte des sujets. Leur accroche le sous-entend :&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Brief books for people who make websites&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1418,14 +1417,15 @@ Mais bon sang, quelle aventure pour un bête bouton qui ne veut pas se mettre en
 &lt;p&gt;Toutefois je place un léger bémol sur le fait que ce livre en VO a déjà deux ans, et que certaines recommandations de l’époque sont devenues désuètes. Je pense notamment à l’imbrication des sélecteurs pour refléter le DOM, qui est désormais considéré comme une mauvaise pratique à bien des égards.&lt;/p&gt;
 &lt;p&gt;Étant donné le rapport qualité prix de cet ouvrage, &lt;strong&gt;je le recommande à tous les débutants en Sass, qu’ils soient étudiants ou professionnels aguerris&lt;/strong&gt; !&lt;/p&gt;
 </description>
-				<pubDate>Mon, 23 Mar 2015 10:00:27 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/sass-pour-les-webdesigners/</guid>
-			</item>
-			<item>
-				<title>JavaScript and Jquery</title>
-				<link>https://www.ffoodd.fr/javascript-and-jquery/</link>
-				<description>&lt;p&gt;Ce livre vise à faire le premier pas vers une utilisation correcte du JS. Il explique en détail les concepts clés du langage.&lt;/p&gt;
+					<pubDate>Mon, 23 Mar 2015 10:00:27 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/sass-pour-les-webdesigners/</guid>
+					<frDate>23 mars 2015</frDate>
+				</item>
+				<item>
+					<title>JavaScript and Jquery</title>
+					<link>https://www.ffoodd.fr/javascript-and-jquery/</link>
+					<description>&lt;p&gt;Ce livre vise à faire le premier pas vers une utilisation correcte du JS. Il explique en détail les concepts clés du langage.&lt;/p&gt;
 &lt;h2 id=&quot;la-metaphore-des-objets&quot; tabindex=&quot;-1&quot;&gt;La métaphore des objets&lt;/h2&gt;
 &lt;p&gt;Très appréciable pour le débutant que je suis, la première partie sur les bases de la programmation et la présentation des fonctions, méthodes et objets est abordée efficacement : imaginez une voiture. La suite est simple, il s’agit de votre objet et elle dispose de propriétés, de méthodes et de fonctions pour gérer le tout.&lt;/p&gt;
 &lt;p&gt;Je ne vais pas vous présenter le contenu (vous irez le lire !) mais simplement évoquer l’approche choisie, qui m’a semblée extrêmement pertinente. C’est le reproche que je fais très souvent aux livres qui souhaite vous faire démarrer avec le JS : ils sont rédigés par des techniciens, avec un vocabulaire de techniciens.&lt;/p&gt;
@@ -1445,14 +1445,15 @@ Mais bon sang, quelle aventure pour un bête bouton qui ne veut pas se mettre en
 &lt;/li&gt;
 
 &lt;/ol&gt;</description>
-				<pubDate>Mon, 09 Mar 2015 09:00:48 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/javascript-and-jquery/</guid>
-			</item>
-			<item>
-				<title>a11y.css, version deux</title>
-				<link>https://www.ffoodd.fr/a11y-css-version-deux/</link>
-				<description>&lt;p&gt;Ainsi depuis la toute première mouture (en CSS) de cette feuille de style de diagnostic, beaucoup de choses ont changé. Voyons ça en détail 🙂&lt;/p&gt;
+					<pubDate>Mon, 09 Mar 2015 09:00:48 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/javascript-and-jquery/</guid>
+					<frDate>9 mars 2015</frDate>
+				</item>
+				<item>
+					<title>a11y.css, version deux</title>
+					<link>https://www.ffoodd.fr/a11y-css-version-deux/</link>
+					<description>&lt;p&gt;Ainsi depuis la toute première mouture (en CSS) de cette feuille de style de diagnostic, beaucoup de choses ont changé. Voyons ça en détail 🙂&lt;/p&gt;
 &lt;h2 id=&quot;corrections-multiples&quot; tabindex=&quot;-1&quot;&gt;Corrections multiples&lt;/h2&gt;
 &lt;p&gt;Comme vous pourrez le voir &lt;a href=&quot;https://github.com/ffoodd/a11y.css/issues?q=is%3Aissue+is%3Aclosed&quot;&gt;sur Github&lt;/a&gt;, pas moins de 97 issues ont été résolues. Cela a été possible grâce aux retours de quelques personnes, que je tiens à citer et remercier à nouveau :&lt;/p&gt;
 &lt;ul&gt;
@@ -1553,14 +1554,15 @@ hologram&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 
 &lt;/ol&gt;</description>
-				<pubDate>Mon, 02 Mar 2015 20:45:32 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/a11y-css-version-deux/</guid>
-			</item>
-			<item>
-				<title>WP Tech 2014</title>
-				<link>https://www.ffoodd.fr/wp-tech-2014/</link>
-				<description>&lt;p&gt;Car non, je ne vais pas vous en faire un compte-rendu : j’étais orateur, et ça me fait beaucoup de choses à raconter !&lt;/p&gt;
+					<pubDate>Mon, 02 Mar 2015 20:45:32 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/a11y-css-version-deux/</guid>
+					<frDate>2 mars 2015</frDate>
+				</item>
+				<item>
+					<title>WP Tech 2014</title>
+					<link>https://www.ffoodd.fr/wp-tech-2014/</link>
+					<description>&lt;p&gt;Car non, je ne vais pas vous en faire un compte-rendu : j’étais orateur, et ça me fait beaucoup de choses à raconter !&lt;/p&gt;
 &lt;h2 id=&quot;la-selection-des-sujets&quot; tabindex=&quot;-1&quot;&gt;La sélection des sujets&lt;/h2&gt;
 &lt;h3 id=&quot;lorganisation-en-amont&quot; tabindex=&quot;-1&quot;&gt;L’organisation en amont&lt;/h3&gt;
 &lt;p&gt;À l’instar de nombreux événements de ce type, les organisateurs ont lancé un appel à orateurs. La seule demande était une orientation technique du sujet, et Willy et Daniel avaient même offert des suggestions de sujets. Leur grande idée a été de sonder l’intérêt de leur public avant de se lancer dans l’organisation, et ils en ont profité pour demander si des sujets particuliers les intéressaient.&lt;/p&gt;
@@ -1593,23 +1595,25 @@ hologram&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Puis j’ai eu la surprise de recevoir quelques retours agréables sur cet atelier, dès la fin de la journée puisque quelques personnes m’ont interrogé sur certaines pratiques concernant les thèmes enfants et la gestion de la qualité.&lt;/p&gt;
 &lt;p&gt;C’était une chouette expérience, et j’en retiendrais vraiment la simplicité des échanges et les (pas suffisamment nombreuses) rencontres de la journée. &lt;strong&gt;Les prestations étaient toutes d’une très grande qualité, alors empressez-vous de regarder les vidéos dès leur mise en ligne !&lt;/strong&gt;&lt;/p&gt;
 </description>
-				<pubDate>Thu, 04 Dec 2014 22:08:44 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/wp-tech-2014/</guid>
-			</item>
-			<item>
-				<title>Robert J. Hanlon</title>
-				<link>https://www.ffoodd.fr/napoleon-bonaparte/</link>
-				<description>&lt;p&gt;N’attribuez jamais à la malveillance ce qui s’explique très bien par l’incompétence.&lt;/p&gt;
+					<pubDate>Thu, 04 Dec 2014 22:08:44 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/wp-tech-2014/</guid>
+					<frDate>4 décembre 2014</frDate>
+				</item>
+				<item>
+					<title>Robert J. Hanlon</title>
+					<link>https://www.ffoodd.fr/napoleon-bonaparte/</link>
+					<description>&lt;p&gt;N’attribuez jamais à la malveillance ce qui s’explique très bien par l’incompétence.&lt;/p&gt;
 </description>
-				<pubDate>Fri, 14 Nov 2014 22:55:32 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/napoleon-bonaparte/</guid>
-			</item>
-			<item>
-				<title>Retour de Paris Web</title>
-				<link>https://www.ffoodd.fr/retour-de-paris-web/</link>
-				<description>&lt;p&gt;Comme en 2013, c’est en compagnie de &lt;a href=&quot;https://www.kloh.ch/&quot;&gt;mon frère Luc&lt;/a&gt; que j’ai pu arpenter le métro parisien. Mais cette année était particulière pour Luc, puisqu’il était orateur !&lt;/p&gt;
+					<pubDate>Fri, 14 Nov 2014 22:55:32 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/napoleon-bonaparte/</guid>
+					<frDate>14 novembre 2014</frDate>
+				</item>
+				<item>
+					<title>Retour de Paris Web</title>
+					<link>https://www.ffoodd.fr/retour-de-paris-web/</link>
+					<description>&lt;p&gt;Comme en 2013, c’est en compagnie de &lt;a href=&quot;https://www.kloh.ch/&quot;&gt;mon frère Luc&lt;/a&gt; que j’ai pu arpenter le métro parisien. Mais cette année était particulière pour Luc, puisqu’il était orateur !&lt;/p&gt;
 &lt;h2 id=&quot;internet-et-les-tic&quot; tabindex=&quot;-1&quot;&gt;Internet et les TIC&lt;/h2&gt;
 &lt;h3 id=&quot;pas-tres-ecologiques&quot; tabindex=&quot;-1&quot;&gt;Pas très écologiques ?&lt;/h3&gt;
 &lt;p&gt;C’est l’intitulé de sa conférence, que je vous invite à consulter en vidéo &lt;a href=&quot;https://www.paris-web.fr/2014/conferences/internet-et-les-tic-pas-tres-ecologique.php&quot;&gt;sur le site de Paris Web&lt;/a&gt;. Sur un sujet quelque peu parallèle, Luc a pris le parti de sensibiliser son auditoire à l’impact environnemental des nouvelles technologies à l’aide de données choc. Bien qu’ayant lu une partie de ses sources avant sa conférence, j’ai été agréablement surpris par le déroulement de sa prestation qui s’est avérée fluide, rythmée et réellement intéressante. Et je crois qu’elle a produit son effet !&lt;/p&gt;
@@ -1651,23 +1655,25 @@ hologram&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;J’en profite pour féliciter le staff qui a encore fait des merveilles, et qui se défonce tellement pour apporter à nous autres passionnés du web un événement humain et de grande qualité.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Parmi les autres choses que je partagerai, les notes que j’ai prises lors des différentes conférences seront bientôt scannées et retranscrites sur le blog ! Un joli chantier en perspective mais ça me tient à cœur de montrer ce que j’ai pu saisir au vol 🙂&lt;/p&gt;
 </description>
-				<pubDate>Thu, 30 Oct 2014 00:41:28 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/retour-de-paris-web/</guid>
-			</item>
-			<item>
-				<title>Fabrice Flipo, Michelle Dobrée et Marion Michot</title>
-				<link>https://www.ffoodd.fr/fabrice-flipo-michelle-dobree-et-marion-michot-la-face-cachee-du-numerique/</link>
-				<description>&lt;p&gt;On ne peut attendre d’un outil qu’il modifie les comportements.&lt;/p&gt;
+					<pubDate>Thu, 30 Oct 2014 00:41:28 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/retour-de-paris-web/</guid>
+					<frDate>29 octobre 2014</frDate>
+				</item>
+				<item>
+					<title>Fabrice Flipo, Michelle Dobrée et Marion Michot</title>
+					<link>https://www.ffoodd.fr/fabrice-flipo-michelle-dobree-et-marion-michot-la-face-cachee-du-numerique/</link>
+					<description>&lt;p&gt;On ne peut attendre d’un outil qu’il modifie les comportements.&lt;/p&gt;
 </description>
-				<pubDate>Fri, 23 May 2014 21:34:21 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/fabrice-flipo-michelle-dobree-et-marion-michot-la-face-cachee-du-numerique/</guid>
-			</item>
-			<item>
-				<title>Mutisme relatif</title>
-				<link>https://www.ffoodd.fr/mutisme-relatif/</link>
-				<description>&lt;p&gt;Voici un résumé de mes activités des derniers mois, ainsi que de mes projets pour cette année. Je souhaite seulement signaler que cette baisse de régime dans mes publications n’est que temporaire.&lt;/p&gt;
+					<pubDate>Fri, 23 May 2014 21:34:21 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/fabrice-flipo-michelle-dobree-et-marion-michot-la-face-cachee-du-numerique/</guid>
+					<frDate>23 mai 2014</frDate>
+				</item>
+				<item>
+					<title>Mutisme relatif</title>
+					<link>https://www.ffoodd.fr/mutisme-relatif/</link>
+					<description>&lt;p&gt;Voici un résumé de mes activités des derniers mois, ainsi que de mes projets pour cette année. Je souhaite seulement signaler que cette baisse de régime dans mes publications n’est que temporaire.&lt;/p&gt;
 &lt;h2 id=&quot;les-actualites&quot; tabindex=&quot;-1&quot;&gt;Les actualités&lt;/h2&gt;
 &lt;h3 id=&quot;le-plan-professionnel&quot; tabindex=&quot;-1&quot;&gt;Le plan professionnel&lt;/h3&gt;
 &lt;p&gt;Le principal événement qui s’est produit est mon changement d’employeur : je travaille désormais chez Kosmos, toujours à Nantes. C’est un travail d’un tout autre genre que celui que j’effectuais pour l’&lt;a href=&quot;https://www.1-ter-net.com/&quot; title=&quot;(nouvelle fenêtre)&quot;&gt;agence 1-ter-net&lt;/a&gt; puisque Kosmos est un éditeur de progiciel. Pour être plus précis je vais travailler sur le &lt;em&gt;front-end&lt;/em&gt; de la solution K-d’école, afin d’en améliorer la qualité globale, l’accessibilité — et d’en faciliter la prise en main, la personnalisation et les évolutions futures.&lt;/p&gt;
@@ -1705,14 +1711,15 @@ hologram&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Mais parmi les choses dont je suis sûr, c’est que je vais aller à Paris Web cette année encore mais aussi assister au tout frais &lt;a href=&quot;https://twitter.com/WPTechNantes&quot;&gt;WPTech&lt;/a&gt; qui va naître à Nantes fin 2014 — grâce à l’initiative de &lt;a href=&quot;https://www.wabeo.fr/&quot;&gt;Willy Bahuaud&lt;/a&gt; et &lt;a href=&quot;https://www.seomix.fr/&quot;&gt;Daniel Roch&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Alors, on se voit quand pour discuter de tout ça ?&lt;/p&gt;
 </description>
-				<pubDate>Sat, 17 May 2014 13:59:35 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/mutisme-relatif/</guid>
-			</item>
-			<item>
-				<title>Clip-path, pourquoi pas ?</title>
-				<link>https://www.ffoodd.fr/clip-path-pourquoi-pas/</link>
-				<description>&lt;p&gt;Mais lorsque &lt;a href=&quot;https://twitter.com/KittyGiraudel&quot; title=&quot;Sur Twitter&quot;&gt;Kitty Giraudel&lt;/a&gt; a lancé son &lt;a href=&quot;https://kittygiraudel.com/2014/02/19/the-magic-circle-a-css-brain-teaser/&quot;&gt;CSS brain teaser&lt;/a&gt;.&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://www.ffoodd.fr/clip-path-pourquoi-pas/#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+					<pubDate>Sat, 17 May 2014 13:59:35 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/mutisme-relatif/</guid>
+					<frDate>17 mai 2014</frDate>
+				</item>
+				<item>
+					<title>Clip-path, pourquoi pas ?</title>
+					<link>https://www.ffoodd.fr/clip-path-pourquoi-pas/</link>
+					<description>&lt;p&gt;Mais lorsque &lt;a href=&quot;https://twitter.com/KittyGiraudel&quot; title=&quot;Sur Twitter&quot;&gt;Kitty Giraudel&lt;/a&gt; a lancé son &lt;a href=&quot;https://kittygiraudel.com/2014/02/19/the-magic-circle-a-css-brain-teaser/&quot;&gt;CSS brain teaser&lt;/a&gt;.&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://www.ffoodd.fr/clip-path-pourquoi-pas/#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;h2 id=&quot;les-specifications-actuelles&quot; tabindex=&quot;-1&quot;&gt;Les spécifications actuelles&lt;/h2&gt;
 &lt;p&gt;Ne connaissant que de très loin cette propriété, il a fallu me mettre à jour. &lt;code&gt;clip-path&lt;/code&gt;, à l’instar de &lt;code&gt;clip&lt;/code&gt;, sert à délimiter la zone d’affichage d’un contenu. Je m’oriente vers les spécifications pour compléter cet embryon de culture — et là, c’est le drame :&lt;/p&gt;
 &lt;ul&gt;
@@ -1813,23 +1820,25 @@ hologram&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 
 &lt;/ol&gt;</description>
-				<pubDate>Tue, 11 Mar 2014 16:44:26 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/clip-path-pourquoi-pas/</guid>
-			</item>
-			<item>
-				<title>Réflexion sur Sass</title>
-				<link>https://www.ffoodd.fr/reflexion-sur-sass/</link>
-				<description>&lt;p&gt;Un outil est fait pour faciliter le travail — pas pour en améliorer la qualité.&lt;/p&gt;
+					<pubDate>Tue, 11 Mar 2014 16:44:26 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/clip-path-pourquoi-pas/</guid>
+					<frDate>11 mars 2014</frDate>
+				</item>
+				<item>
+					<title>Réflexion sur Sass</title>
+					<link>https://www.ffoodd.fr/reflexion-sur-sass/</link>
+					<description>&lt;p&gt;Un outil est fait pour faciliter le travail — pas pour en améliorer la qualité.&lt;/p&gt;
 </description>
-				<pubDate>Mon, 10 Mar 2014 13:00:58 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/reflexion-sur-sass/</guid>
-			</item>
-			<item>
-				<title>La qualité web en solitaire</title>
-				<link>https://www.ffoodd.fr/traversee-en-solitaire-de-la-qualite-web/</link>
-				<description>&lt;p&gt;Très souvent sur le web — et au travail, je croise ce type de propos tenus par des professionnels du web :&lt;/p&gt;
+					<pubDate>Mon, 10 Mar 2014 13:00:58 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/reflexion-sur-sass/</guid>
+					<frDate>10 mars 2014</frDate>
+				</item>
+				<item>
+					<title>La qualité web en solitaire</title>
+					<link>https://www.ffoodd.fr/traversee-en-solitaire-de-la-qualite-web/</link>
+					<description>&lt;p&gt;Très souvent sur le web — et au travail, je croise ce type de propos tenus par des professionnels du web :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://forum.kob-one.com/post361394.html#p361394&quot;&gt;Valider le code n’est pas important&lt;/a&gt;, du moment que « ça » fonctionne;&lt;/li&gt;
 &lt;li&gt;L’accessibilité, c’est du travail supplémentaire;&lt;/li&gt;
@@ -1905,14 +1914,15 @@ hologram&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 
 &lt;/ol&gt;</description>
-				<pubDate>Thu, 27 Feb 2014 16:56:32 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/traversee-en-solitaire-de-la-qualite-web/</guid>
-			</item>
-			<item>
-				<title>a11y.css :&amp;nbsp;un crédo</title>
-				<link>https://www.ffoodd.fr/a11y-cssun-credo/</link>
-				<description>&lt;p&gt;&lt;code&gt;a11y.css&lt;/code&gt; .&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://www.ffoodd.fr/a11y-cssun-credo/#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+					<pubDate>Thu, 27 Feb 2014 16:56:32 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/traversee-en-solitaire-de-la-qualite-web/</guid>
+					<frDate>27 février 2014</frDate>
+				</item>
+				<item>
+					<title>a11y.css : un crédo</title>
+					<link>https://www.ffoodd.fr/a11y-cssun-credo/</link>
+					<description>&lt;p&gt;&lt;code&gt;a11y.css&lt;/code&gt; .&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://www.ffoodd.fr/a11y-cssun-credo/#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;h2 id=&quot;les-references&quot; tabindex=&quot;-1&quot;&gt;Les références&lt;/h2&gt;
 &lt;h3 id=&quot;les-projets-reposant-sur-css&quot; tabindex=&quot;-1&quot;&gt;Les projets reposant sur CSS&lt;/h3&gt;
 &lt;p&gt;Le premier projet de ce type que j’ai rencontré est &lt;a href=&quot;https://red-root.com/sandbox/holmes/&quot; title=&quot;Présentation de Holmes.css, en anglais (nouvelle fenêtre)&quot;&gt;Holmes.css&lt;/a&gt;. L’idée m’a rapidement séduit. Des projets similaires ont fleuri, dont : &lt;/p&gt;
@@ -1960,14 +1970,15 @@ hologram&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 
 &lt;/ol&gt;</description>
-				<pubDate>Wed, 04 Dec 2013 17:43:09 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/a11y-cssun-credo/</guid>
-			</item>
-			<item>
-				<title>Sass : commencez par les deux « S »</title>
-				<link>https://www.ffoodd.fr/sass-commencez-par-les-deux-s/</link>
-				<description>&lt;p&gt;Malheureusement, vous aurez peut-être déjà fait ce constat : ce réflexe n’est que trop rarement encouragé. J’ai beau parcourir des dizaines d’articles, de tutoriaux, de &lt;em&gt;frameworks&lt;/em&gt; CSS ou de Gist, trop peu font ce rappel : testez, relisez, améliorez, testez à nouveau et finalement améliorez encore. &lt;strong&gt;Ça devrait se passer comme ça.&lt;/strong&gt; On peut argumenter qu’un bon intégrateur le ferait — mais c’est trop facile, non ?&lt;/p&gt;
+					<pubDate>Wed, 04 Dec 2013 17:43:09 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/a11y-cssun-credo/</guid>
+					<frDate>4 décembre 2013</frDate>
+				</item>
+				<item>
+					<title>Sass : commencez par les deux « S »</title>
+					<link>https://www.ffoodd.fr/sass-commencez-par-les-deux-s/</link>
+					<description>&lt;p&gt;Malheureusement, vous aurez peut-être déjà fait ce constat : ce réflexe n’est que trop rarement encouragé. J’ai beau parcourir des dizaines d’articles, de tutoriaux, de &lt;em&gt;frameworks&lt;/em&gt; CSS ou de Gist, trop peu font ce rappel : testez, relisez, améliorez, testez à nouveau et finalement améliorez encore. &lt;strong&gt;Ça devrait se passer comme ça.&lt;/strong&gt; On peut argumenter qu’un bon intégrateur le ferait — mais c’est trop facile, non ?&lt;/p&gt;
 &lt;h2 id=&quot;premier-contact-avec-sass&quot; tabindex=&quot;-1&quot;&gt;Premier contact avec Sass&lt;/h2&gt;
 &lt;p&gt;Après avoir lu énormément de ressources sur &lt;a href=&quot;https://lesscss.org/&quot; title=&quot;Site du pré-processeur Less (nouvelle fenêtre)&quot;&gt;Less&lt;/a&gt; puis Sass pendant longtemps, je ne m’étais toujours pas décidé à franchir le pas pour plusieurs raisons :&lt;/p&gt;
 &lt;ul&gt;
@@ -2008,14 +2019,15 @@ hologram&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 
 &lt;/ol&gt;</description>
-				<pubDate>Thu, 28 Nov 2013 15:26:04 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/sass-commencez-par-les-deux-s/</guid>
-			</item>
-			<item>
-				<title>Sass &amp; Compass avancé</title>
-				<link>https://www.ffoodd.fr/sass-compass-avance/</link>
-				<description>&lt;p&gt;En tant qu’intégrateur avec un peu d’expérience — mais débutant avec Sass et Compass — les explications et retours d’expérience de Mehdi Kabab ( a.k.a &lt;a href=&quot;https://twitter.com/piouPiouM&quot; title=&quot;Profil Twitter de Mehdi Kabab (nouvelle fenêtre)&quot;&gt;@piouPiouM&lt;/a&gt; ) sont forcément intéressants. Au-delà de la présentation de l’outil, de nombreuses informations et bonnes pratiques viennent enrichir un livre déjà complet.&lt;/p&gt;
+					<pubDate>Thu, 28 Nov 2013 15:26:04 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/sass-commencez-par-les-deux-s/</guid>
+					<frDate>28 novembre 2013</frDate>
+				</item>
+				<item>
+					<title>Sass &amp; Compass avancé</title>
+					<link>https://www.ffoodd.fr/sass-compass-avance/</link>
+					<description>&lt;p&gt;En tant qu’intégrateur avec un peu d’expérience — mais débutant avec Sass et Compass — les explications et retours d’expérience de Mehdi Kabab ( a.k.a &lt;a href=&quot;https://twitter.com/piouPiouM&quot; title=&quot;Profil Twitter de Mehdi Kabab (nouvelle fenêtre)&quot;&gt;@piouPiouM&lt;/a&gt; ) sont forcément intéressants. Au-delà de la présentation de l’outil, de nombreuses informations et bonnes pratiques viennent enrichir un livre déjà complet.&lt;/p&gt;
 &lt;h2 id=&quot;le-tour-du-proprietaire&quot; tabindex=&quot;-1&quot;&gt;Le tour du propriétaire&lt;/h2&gt;
 &lt;p&gt;Évidemment, l’étape inéluctable est l’introduction à Sass : ces principes généraux, son installation, son fonctionnement, et le détail de sa syntaxe. Une présentation complète, sans détour et extrêmement claire qui m’a permis de compléter ce que j’avais observé et appris lors de mon premier contact avec Sass. Cette partie est vraiment intéressante puisque &lt;strong&gt;l’auteur ne se limite pas à expliciter la documentation officielle mais en profite pour évoquer les pièges à éviter, les dérives les plus courantes et — pour résumer — tout ce qui fait de Sass une arme à double-tranchants&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Le chapitre suivant aborde l’angle du développement dans Sass .&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://www.ffoodd.fr/sass-compass-avance/#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
@@ -2055,14 +2067,15 @@ hologram&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 
 &lt;/ol&gt;</description>
-				<pubDate>Wed, 20 Nov 2013 18:17:48 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/sass-compass-avance/</guid>
-			</item>
-			<item>
-				<title>[caption] avec html5 et aria</title>
-				<link>https://www.ffoodd.fr/ameliorer-les-images-dans-wordpress-avec-html5-et-aria/</link>
-				<description>&lt;p&gt;Pour commencer, il faut comprendre une problématique de base en terme d’accessibilité : la distinction entre &lt;strong&gt;les images décoratives&lt;/strong&gt; et &lt;strong&gt;les images porteuses de sens&lt;/strong&gt;. Pour comprendre cette distinction et son importance, je vous recommande vivement la lecture d’&lt;a href=&quot;https://www.ffoodd.fr/lecture-accessibilite-web/&quot; title=&quot;Accessibilité web&quot;&gt;&lt;em&gt;«Accessibilité web»&lt;/em&gt;&lt;/a&gt; par &lt;a href=&quot;https://www.armonyaltinier.fr/&quot; title=&quot;Le site d’Armony Altinier (nouvelle fenêtre)&quot;&gt;Armony Altinier&lt;/a&gt;. Comme souvent lorsque nous parlons d’&lt;strong&gt;accessibilité web&lt;/strong&gt;, il s’agit de bon sens : une image porteuse de sens doit être restituée à tous les utilisateurs, tandis qu’une image décorative ne doit être montrée qu’aux utilisateurs disposant d’un affichage graphique complet.&lt;/p&gt;
+					<pubDate>Wed, 20 Nov 2013 18:17:48 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/sass-compass-avance/</guid>
+					<frDate>20 novembre 2013</frDate>
+				</item>
+				<item>
+					<title>[caption] avec html5 et aria</title>
+					<link>https://www.ffoodd.fr/ameliorer-les-images-dans-wordpress-avec-html5-et-aria/</link>
+					<description>&lt;p&gt;Pour commencer, il faut comprendre une problématique de base en terme d’accessibilité : la distinction entre &lt;strong&gt;les images décoratives&lt;/strong&gt; et &lt;strong&gt;les images porteuses de sens&lt;/strong&gt;. Pour comprendre cette distinction et son importance, je vous recommande vivement la lecture d’&lt;a href=&quot;https://www.ffoodd.fr/lecture-accessibilite-web/&quot; title=&quot;Accessibilité web&quot;&gt;&lt;em&gt;«Accessibilité web»&lt;/em&gt;&lt;/a&gt; par &lt;a href=&quot;https://www.armonyaltinier.fr/&quot; title=&quot;Le site d’Armony Altinier (nouvelle fenêtre)&quot;&gt;Armony Altinier&lt;/a&gt;. Comme souvent lorsque nous parlons d’&lt;strong&gt;accessibilité web&lt;/strong&gt;, il s’agit de bon sens : une image porteuse de sens doit être restituée à tous les utilisateurs, tandis qu’une image décorative ne doit être montrée qu’aux utilisateurs disposant d’un affichage graphique complet.&lt;/p&gt;
 &lt;h2 id=&quot;les-limites-de-wordpress&quot; tabindex=&quot;-1&quot;&gt;Les limites de WordPress&lt;/h2&gt;
 &lt;p&gt;Tout le monde n’est pas sensible à ces questions, même s’il le faudrait : WordPress ne fait pas exception. Il donne cependant la possibilité à ses utilisateurs de servir des images de façon tout à fait correcte, en proposant de base pour tous les fichiers la capacité d’adjoindre un texte alternatif — ce qui remplit le critère principal des &lt;a href=&quot;https://checklists.opquast.com/fr/&quot; title=&quot;Les checklists OpQuast (nouvelle fenêtre)&quot;&gt;bonnes pratiques d’OpQuast&lt;/a&gt; et permet de satisfaire &lt;a href=&quot;https://www.accessiweb.org/index.php/accessiweb_2.2_liste_generale.html#images&quot; title=&quot;La thématique image sur Accessiweb (nouvelle fenêtre)&quot;&gt;la plupart des critères de niveau Bronze d’Accessiweb&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Pour autant WordPress ne va pas plus loin :&lt;/p&gt;
@@ -2133,23 +2146,25 @@ hologram&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 
 &lt;/ol&gt;</description>
-				<pubDate>Tue, 12 Nov 2013 17:32:51 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/ameliorer-les-images-dans-wordpress-avec-html5-et-aria/</guid>
-			</item>
-			<item>
-				<title>Karl Groves</title>
-				<link>https://www.ffoodd.fr/karl-groves/</link>
-				<description>&lt;p&gt;If it &lt;strong&gt;looks&lt;/strong&gt; the same, it should &lt;strong&gt;act&lt;/strong&gt; the same.&lt;/p&gt;
+					<pubDate>Tue, 12 Nov 2013 17:32:51 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/ameliorer-les-images-dans-wordpress-avec-html5-et-aria/</guid>
+					<frDate>12 novembre 2013</frDate>
+				</item>
+				<item>
+					<title>Karl Groves</title>
+					<link>https://www.ffoodd.fr/karl-groves/</link>
+					<description>&lt;p&gt;If it &lt;strong&gt;looks&lt;/strong&gt; the same, it should &lt;strong&gt;act&lt;/strong&gt; the same.&lt;/p&gt;
 </description>
-				<pubDate>Sun, 10 Nov 2013 20:22:24 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/karl-groves/</guid>
-			</item>
-			<item>
-				<title>Guide pratique de choix typographique</title>
-				<link>https://www.ffoodd.fr/guide-pratique-de-choix-typographique/</link>
-				<description>&lt;p&gt;L’origine du livre est un constat simple de &lt;a href=&quot;https://www.davidrault.com/&quot; title=&quot;Site de David Rault (nouvelle fenêtre)&quot;&gt;David Rault&lt;/a&gt; : ce livre manquait. Et après l’avoir lu, je dois avouer qu’aucun ouvrage que j’ai parcouru n’y ressemble.&lt;/p&gt;
+					<pubDate>Sun, 10 Nov 2013 20:22:24 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/karl-groves/</guid>
+					<frDate>10 novembre 2013</frDate>
+				</item>
+				<item>
+					<title>Guide pratique de choix typographique</title>
+					<link>https://www.ffoodd.fr/guide-pratique-de-choix-typographique/</link>
+					<description>&lt;p&gt;L’origine du livre est un constat simple de &lt;a href=&quot;https://www.davidrault.com/&quot; title=&quot;Site de David Rault (nouvelle fenêtre)&quot;&gt;David Rault&lt;/a&gt; : ce livre manquait. Et après l’avoir lu, je dois avouer qu’aucun ouvrage que j’ai parcouru n’y ressemble.&lt;/p&gt;
 &lt;h2 id=&quot;une-histoire-de-familles&quot; tabindex=&quot;-1&quot;&gt;Une histoire de familles&lt;/h2&gt;
 &lt;p&gt;Ne s’adressant pas uniquement à des techniciens ou à des professionnels — mais plutôt à des étudiants en arts graphiques — ce livre commence par les fondations : la classification des caractères, et plus précisément la classification &lt;strong&gt;Vox-Atypi&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Une introduction riche nous dépeint les origines de cette classification, les différentes familles et leurs connotations génériques ainsi qu’un lexique plutôt complet. Bien qu’ayant lu un certain nombre de livres traitant du sujet (notamment &lt;em&gt;«&lt;a href=&quot;https://pyramyd-editions.com/le-livre-en-lettres&quot; title=&quot;Le livre en Lettres sur Pyramid (nouvelle fenêtre)&quot;&gt;Le Livre en Lettres&lt;/a&gt;»&lt;/em&gt; de &lt;strong&gt;Stéphane Darricau&lt;/strong&gt; ou encore &lt;em&gt;«&lt;a href=&quot;https://pyramyd-editions.com/comprendre-la-typographie&quot; title=&quot;Comprendre la Typographie sur Pyramid (nouvelle fenêtre)&quot;&gt;Comprendre la typographie&lt;/a&gt;»&lt;/em&gt; d’&lt;strong&gt;Ellen Lupton&lt;/strong&gt;), la concision et la clarté de celui-ci m’ont beaucoup plu.&lt;/p&gt;
@@ -2164,14 +2179,15 @@ hologram&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Vous l’aurez compris, la lecture de ce livre m’a beaucoup plue : moins pointu que les best-sellers du genre, il est &lt;strong&gt;agréable et convivial&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Je le recommande chaudement !&lt;/p&gt;
 </description>
-				<pubDate>Sat, 09 Nov 2013 17:50:57 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/guide-pratique-de-choix-typographique/</guid>
-			</item>
-			<item>
-				<title>Étymologie du web</title>
-				<link>https://www.ffoodd.fr/ethymologie-du-web/</link>
-				<description>&lt;p&gt;Je m’étais déjà fait cette réflexion en lisant &lt;a href=&quot;https://www.ffoodd.fr/lecture-webgrids/&quot; title=&quot;Compte-rendu de lecture : Webgrids (nouvelle fenêtre)&quot;&gt;Webgrids&lt;/a&gt;, dans lequel &lt;a href=&quot;https://twitter.com/Mitternacht&quot; title=&quot;Anne-Sophie Fradier sur Twitter (nouvelle fenêtre)&quot;&gt;Anne-Sophie Fradier&lt;/a&gt; m’apprenait l’origine du mot &lt;em&gt;scroll&lt;/em&gt;, qui signifiait simplement l’action de dérouler un parchemin. Mais mes vacances à Jersey m’ont appris bien plus encore.&lt;/p&gt;
+					<pubDate>Sat, 09 Nov 2013 17:50:57 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/guide-pratique-de-choix-typographique/</guid>
+					<frDate>9 novembre 2013</frDate>
+				</item>
+				<item>
+					<title>Étymologie du web</title>
+					<link>https://www.ffoodd.fr/ethymologie-du-web/</link>
+					<description>&lt;p&gt;Je m’étais déjà fait cette réflexion en lisant &lt;a href=&quot;https://www.ffoodd.fr/lecture-webgrids/&quot; title=&quot;Compte-rendu de lecture : Webgrids (nouvelle fenêtre)&quot;&gt;Webgrids&lt;/a&gt;, dans lequel &lt;a href=&quot;https://twitter.com/Mitternacht&quot; title=&quot;Anne-Sophie Fradier sur Twitter (nouvelle fenêtre)&quot;&gt;Anne-Sophie Fradier&lt;/a&gt; m’apprenait l’origine du mot &lt;em&gt;scroll&lt;/em&gt;, qui signifiait simplement l’action de dérouler un parchemin. Mais mes vacances à Jersey m’ont appris bien plus encore.&lt;/p&gt;
 &lt;h2 id=&quot;le-vocabulaire-web&quot; tabindex=&quot;-1&quot;&gt;Le vocabulaire web&lt;/h2&gt;
 &lt;p&gt;À l’instar de &lt;em&gt;scroll&lt;/em&gt;, de nombreux termes proviennent du langage courant en anglais :&lt;/p&gt;
 &lt;ul&gt;
@@ -2206,14 +2222,15 @@ hologram&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 
 &lt;/ol&gt;</description>
-				<pubDate>Mon, 04 Nov 2013 18:32:27 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/ethymologie-du-web/</guid>
-			</item>
-			<item>
-				<title>La stratégie de contenu en pratique</title>
-				<link>https://www.ffoodd.fr/la-strategie-de-contenu-en-pratique/</link>
-				<description>&lt;h2 id=&quot;un-ouvrage-exhaustif&quot; tabindex=&quot;-1&quot;&gt;Un ouvrage exhaustif&lt;/h2&gt;
+					<pubDate>Mon, 04 Nov 2013 18:32:27 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/ethymologie-du-web/</guid>
+					<frDate>4 novembre 2013</frDate>
+				</item>
+				<item>
+					<title>La stratégie de contenu en pratique</title>
+					<link>https://www.ffoodd.fr/la-strategie-de-contenu-en-pratique/</link>
+					<description>&lt;h2 id=&quot;un-ouvrage-exhaustif&quot; tabindex=&quot;-1&quot;&gt;Un ouvrage exhaustif&lt;/h2&gt;
 &lt;p&gt;Ce livre ne s’adresse pas seulement aux professionnels de la publication en ligne mais plutôt à &lt;strong&gt;tous les profils&lt;/strong&gt; susceptibles d’intervenir sur le contenu — d’une manière ou d’une autre. Ça comprend les commerciaux, chefs de projets, concepteurs, ergonomes, graphistes, intégrateurs, et même les développeurs. Nous sommes tous garants d’un niveau de qualité ; et bien que nous ne puissions pas tous travailler la stratégie à proprement parler, gérer la façon de contribuer et l’affichage a un impact fort sur la gestion de contenu — et fait partie intégrante de la stratégie de contenu.&lt;/p&gt;
 &lt;p&gt;L’ouvrage traite alors exhaustivement tous les outils intéressants pour la stratégie de contenu, sans préciser le profil type d’utilisateur. Chacun se reconnaîtra : le &lt;strong&gt;référencement&lt;/strong&gt; ou l’&lt;strong&gt;audit d’accessibilité&lt;/strong&gt; par exemple sont rarement dévolus au commercial 🙂 .&lt;/p&gt;
 &lt;h2 id=&quot;des-outils-analyses&quot; tabindex=&quot;-1&quot;&gt;Des outils analysés&lt;/h2&gt;
@@ -2222,14 +2239,15 @@ hologram&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&quot;un-veritable-guide&quot; tabindex=&quot;-1&quot;&gt;Un véritable guide&lt;/h2&gt;
 &lt;p&gt;Vous l’aurez compris, cet ouvrage est complet et concis. Son système de fiche permet de naviguer dans le livre selon ses centres d’intérêts, et l’érige également en guide pratique : une nouvelle demande concernant les contenus vous rend perplexe ? &lt;strong&gt;Jetez un œil à ce livre.&lt;/strong&gt;&lt;/p&gt;
 </description>
-				<pubDate>Tue, 22 Oct 2013 14:30:49 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/la-strategie-de-contenu-en-pratique/</guid>
-			</item>
-			<item>
-				<title>Liens d’évitement persistants</title>
-				<link>https://www.ffoodd.fr/liens-devitement-persistants/</link>
-				<description>&lt;p&gt;Parmi ces techniques, certaines m’étaient inconnues : une ignorance qui ne nuisait pas directement à l’accessibilité mais bel et bien au confort d’utilisation du site pour les personnes concernées. Voici donc deux techniques que j’ai mises en place suite à cette lecture passionnante.&lt;/p&gt;
+					<pubDate>Tue, 22 Oct 2013 14:30:49 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/la-strategie-de-contenu-en-pratique/</guid>
+					<frDate>22 octobre 2013</frDate>
+				</item>
+				<item>
+					<title>Liens d’évitement persistants</title>
+					<link>https://www.ffoodd.fr/liens-devitement-persistants/</link>
+					<description>&lt;p&gt;Parmi ces techniques, certaines m’étaient inconnues : une ignorance qui ne nuisait pas directement à l’accessibilité mais bel et bien au confort d’utilisation du site pour les personnes concernées. Voici donc deux techniques que j’ai mises en place suite à cette lecture passionnante.&lt;/p&gt;
 &lt;h2 id=&quot;les-liens-similaires&quot; tabindex=&quot;-1&quot;&gt;Les liens similaires&lt;/h2&gt;
 &lt;p&gt;Il devient rapidement ennuyeux de parcourir une liste de liens (avec un lecteur d’écrans &lt;strong&gt;et/ou&lt;/strong&gt; en tabulant) lorsque plusieurs liens consécutifs ont la même destination. Malheureusement, c’est le cas très souvent sur WordPress dans les boucles d’articles.&lt;/p&gt;
 &lt;p&gt;Et bien voici une bonne nouvelle : il est très simple de corriger ça, de façon totalement transparente pour tout le monde :&lt;/p&gt;
@@ -2281,14 +2299,15 @@ window&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cla
 &lt;/li&gt;
 
 &lt;/ol&gt;</description>
-				<pubDate>Wed, 16 Oct 2013 17:56:40 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/liens-devitement-persistants/</guid>
-			</item>
-			<item>
-				<title>Navigation, Aria et WordPress</title>
-				<link>https://www.ffoodd.fr/navigation-aria-et-wordpress/</link>
-				<description>&lt;p&gt;Dans sa version basique, la navigation de WordPress n’a rien de particulier (si ce n’est la multitude de classes générées sur chaque élément 🙁 ). Or ARIA permet d’ajouter une couche sémantique non négligeable et relativement simple à mettre en place, améliorant ainsi l’accessibilité de la navigation.&lt;/p&gt;
+					<pubDate>Wed, 16 Oct 2013 17:56:40 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/liens-devitement-persistants/</guid>
+					<frDate>16 octobre 2013</frDate>
+				</item>
+				<item>
+					<title>Navigation, Aria et WordPress</title>
+					<link>https://www.ffoodd.fr/navigation-aria-et-wordpress/</link>
+					<description>&lt;p&gt;Dans sa version basique, la navigation de WordPress n’a rien de particulier (si ce n’est la multitude de classes générées sur chaque élément 🙁 ). Or ARIA permet d’ajouter une couche sémantique non négligeable et relativement simple à mettre en place, améliorant ainsi l’accessibilité de la navigation.&lt;/p&gt;
 &lt;h2 id=&quot;notre-objectif&quot; tabindex=&quot;-1&quot;&gt;Notre objectif&lt;/h2&gt;
 &lt;p&gt;L’implémentation d’ARIA sur une navigation est simple ‐ bien qu’il soit assez compliqué d’en trouver une documentation ou un exemple concret. Voici le résultat attendu sur ffoodd (je vous épargne les classes et identifiants, pour cette fois 😉 ) :&lt;/p&gt;
 &lt;pre class=&quot;language-markup&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-markup&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;nav&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;nav&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;role&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;navigation&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
@@ -2366,14 +2385,15 @@ window&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cla
 &lt;p&gt;Bien qu’ayant déjà appliqué ce comportement sur des boîtes à onglets notamment, j’aimerais parvenir à le faire sur ma navigation sans passer par du javascript. J’ai cherché des pistes pour utiliser le walker (qui à priori devrait être capable de repérer l’item actif) mais sans résultat pour le moment, donc &lt;strong&gt;n’hésitez pas à commenter l’article ou à me contacter par mail si vous avez la moindre piste à me suggérer&lt;/strong&gt; (voire même la solution, hein :D).&lt;/p&gt;
 &lt;p&gt;De plus, un comportement (en javascript à priori) est également à prévoir pour les sous-menu, qui pourront s’avérer plus complexes à gérer ‐ bien qu’ARIA soit très complète sur ce sujet.&lt;/p&gt;
 </description>
-				<pubDate>Wed, 09 Oct 2013 15:31:19 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/navigation-aria-et-wordpress/</guid>
-			</item>
-			<item>
-				<title>Expérience de Typecast</title>
-				<link>https://www.ffoodd.fr/experience-de-typecast/</link>
-				<description>&lt;h2 id=&quot;presentation&quot; tabindex=&quot;-1&quot;&gt;Présentation&lt;/h2&gt;
+					<pubDate>Wed, 09 Oct 2013 15:31:19 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/navigation-aria-et-wordpress/</guid>
+					<frDate>9 octobre 2013</frDate>
+				</item>
+				<item>
+					<title>Expérience de Typecast</title>
+					<link>https://www.ffoodd.fr/experience-de-typecast/</link>
+					<description>&lt;h2 id=&quot;presentation&quot; tabindex=&quot;-1&quot;&gt;Présentation&lt;/h2&gt;
 &lt;p&gt;Typecast est ‐ comme son nom l’indique ‐ un outil (une application web, plus précisément) conçu pour caster les typographies. Je traduis sa présentation officielle :&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Utilisez Typecast pour créer des designs visuels et sémantiques.&lt;br /&gt;
@@ -2417,23 +2437,25 @@ Vérifiez la lisibilité, le rendu et la beauté puis partagez un prototype fonc
 &lt;/li&gt;
 
 &lt;/ol&gt;</description>
-				<pubDate>Mon, 07 Oct 2013 18:18:18 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/experience-de-typecast/</guid>
-			</item>
-			<item>
-				<title>Armony Altinier</title>
-				<link>https://www.ffoodd.fr/armony-altinier/</link>
-				<description>&lt;p&gt;Est-ce que ça peut pénaliser quelqu’un ?&lt;/p&gt;
+					<pubDate>Mon, 07 Oct 2013 18:18:18 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/experience-de-typecast/</guid>
+					<frDate>7 octobre 2013</frDate>
+				</item>
+				<item>
+					<title>Armony Altinier</title>
+					<link>https://www.ffoodd.fr/armony-altinier/</link>
+					<description>&lt;p&gt;Est-ce que ça peut pénaliser quelqu’un ?&lt;/p&gt;
 </description>
-				<pubDate>Fri, 04 Oct 2013 15:12:34 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/armony-altinier/</guid>
-			</item>
-			<item>
-				<title>Accessibilité web</title>
-				<link>https://www.ffoodd.fr/lecture-accessibilite-web/</link>
-				<description>&lt;p&gt;Une fois passée l’appréhension due au format du livre et au thème ‐ qui a la réputation d’être lourd, cognitivement parlant ‐ on est pris dans l’engrenage : de la première à la dernière page, impossible de décrocher.&lt;/p&gt;
+					<pubDate>Fri, 04 Oct 2013 15:12:34 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/armony-altinier/</guid>
+					<frDate>4 octobre 2013</frDate>
+				</item>
+				<item>
+					<title>Accessibilité web</title>
+					<link>https://www.ffoodd.fr/lecture-accessibilite-web/</link>
+					<description>&lt;p&gt;Une fois passée l’appréhension due au format du livre et au thème ‐ qui a la réputation d’être lourd, cognitivement parlant ‐ on est pris dans l’engrenage : de la première à la dernière page, impossible de décrocher.&lt;/p&gt;
 &lt;h2 id=&quot;instauration-du-contexte&quot; tabindex=&quot;-1&quot;&gt;Instauration du contexte&lt;/h2&gt;
 &lt;p&gt;Parmi les professionnels du web en France, le sujet semble avoir mauvaise haleine : hormis les entreprises spécialisées, les experts qualifiés et quelques pointures de la qualité web, le sujet semble tabou. L’image d’un domaine compliqué, difficile à mettre en place comme à apprendre et coûteux pour le client comme pour le prestataire lui colle aux basques.&lt;/p&gt;
 &lt;p&gt;Ce livre d’&lt;a href=&quot;https://www.armonyaltinier.fr/&quot; title=&quot;Le site d’Armony Altinier (nouvelle fenêtre)&quot;&gt;Armony Altinier&lt;/a&gt; et Dominique Burger commence donc sereinement par replacer l’accessibilité web dans un contexte historique, technologique et juridique : j’ai énormément appris ! Cette seule première partie vaut le détour, car ces informations rendent la question de l’accessibilité web naturelle, voire évidente. Mais attention : le livre n’est pas indigeste pour autant. Les auteurs tentent judicieusement d’impliquer la compréhension des lecteurs, en mettant en scène des événements qui peuvent arriver à tout le monde : un bras cassé ou une panne de souris, par exemple.&lt;/p&gt;
@@ -2460,23 +2482,25 @@ Vérifiez la lisibilité, le rendu et la beauté puis partagez un prototype fonc
 &lt;/li&gt;
 
 &lt;/ol&gt;</description>
-				<pubDate>Fri, 04 Oct 2013 14:42:39 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/lecture-accessibilite-web/</guid>
-			</item>
-			<item>
-				<title>P. Mendelson</title>
-				<link>https://www.ffoodd.fr/p-mendelson/</link>
-				<description>&lt;p&gt;Il vaut mieux savoir tout chercher que chercher à tout savoir.&lt;/p&gt;
+					<pubDate>Fri, 04 Oct 2013 14:42:39 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/lecture-accessibilite-web/</guid>
+					<frDate>4 octobre 2013</frDate>
+				</item>
+				<item>
+					<title>P. Mendelson</title>
+					<link>https://www.ffoodd.fr/p-mendelson/</link>
+					<description>&lt;p&gt;Il vaut mieux savoir tout chercher que chercher à tout savoir.&lt;/p&gt;
 </description>
-				<pubDate>Thu, 03 Oct 2013 12:50:26 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/p-mendelson/</guid>
-			</item>
-			<item>
-				<title>Atterrissage réussi</title>
-				<link>https://www.ffoodd.fr/atterrissage-reussi/</link>
-				<description>&lt;h2 id=&quot;la-refonte-un-travail-de-longue-haleine&quot; tabindex=&quot;-1&quot;&gt;La refonte : un travail de longue haleine&lt;/h2&gt;
+					<pubDate>Thu, 03 Oct 2013 12:50:26 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/p-mendelson/</guid>
+					<frDate>3 octobre 2013</frDate>
+				</item>
+				<item>
+					<title>Atterrissage réussi</title>
+					<link>https://www.ffoodd.fr/atterrissage-reussi/</link>
+					<description>&lt;h2 id=&quot;la-refonte-un-travail-de-longue-haleine&quot; tabindex=&quot;-1&quot;&gt;La refonte : un travail de longue haleine&lt;/h2&gt;
 &lt;p&gt;Je ne saurais vous dire depuis combien de mois je travaille sur cette refonte. Je crois d’ailleurs que ça a commencé par mon &lt;a href=&quot;https://github.com/ffoodd/ffeeeedd&quot;&gt;thème ffeeeedd&lt;/a&gt; et l’amélioration de mon processus de travail : beaucoup de découvertes, énormément de recherches, et au final une progression certaine.&lt;/p&gt;
 &lt;p&gt;Un seul constat : mon site était devenu obsolète : en deux ans, j’ai progressé tant en graphisme qu’en intégration – mais surtout en développement WordPress ainsi qu’en javascript. J’ai également appris beaucoup de choses concernant l’accessibilité, le html5, ARIA, les performances web, le responsive web design, la compatibilité navigateur.&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://www.ffoodd.fr/atterrissage-reussi/#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;h2 id=&quot;la-roue-existe-deja&quot; tabindex=&quot;-1&quot;&gt;La roue existe déjà&lt;/h2&gt;
@@ -2496,23 +2520,15 @@ Vérifiez la lisibilité, le rendu et la beauté puis partagez un prototype fonc
 &lt;/li&gt;
 
 &lt;/ol&gt;</description>
-				<pubDate>Wed, 02 Oct 2013 14:33:43 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/atterrissage-reussi/</guid>
-			</item>
-			<item>
-				<title>http://lanizanerie.com/</title>
-				<link>https://www.ffoodd.fr/httplanizanerie-com/</link>
-				<description>&lt;p&gt;Apprivoisez la rue Paul Nizan, à Nantes ! Par le collectif Fil.&lt;/p&gt;
-</description>
-				<pubDate>Wed, 02 Oct 2013 14:07:51 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/httplanizanerie-com/</guid>
-			</item>
-			<item>
-				<title>Stratégie de contenu mobile</title>
-				<link>https://www.ffoodd.fr/lecture-strategie-contenu-mobile/</link>
-				<description>&lt;h2 id=&quot;les-details-negatifs&quot; tabindex=&quot;-1&quot;&gt;Les détails négatifs&lt;/h2&gt;
+					<pubDate>Wed, 02 Oct 2013 14:33:43 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/atterrissage-reussi/</guid>
+					<frDate>2 octobre 2013</frDate>
+				</item>
+				<item>
+					<title>Stratégie de contenu mobile</title>
+					<link>https://www.ffoodd.fr/lecture-strategie-contenu-mobile/</link>
+					<description>&lt;h2 id=&quot;les-details-negatifs&quot; tabindex=&quot;-1&quot;&gt;Les détails négatifs&lt;/h2&gt;
 &lt;p&gt;Car il ne faut pas plus de quelques détails pour donner une impression négative :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Les explications se répètent de nombreuses fois&lt;/strong&gt;, et parfois s’enchaînent simplement – donnant l’impression d’être légèrement attardé et d’avoir besoin de cette frustrante répétition;&lt;/li&gt;
@@ -2545,14 +2561,15 @@ Vérifiez la lisibilité, le rendu et la beauté puis partagez un prototype fonc
 &lt;p&gt;Cependant, force m’est de constater que si j’avais été confronté à ces problématiques, je serais probablement arrivé à ces mêmes résultats. Les autres livres que je lis ne me font pas cet effet et me donnent véritablement l’impression d’apprendre.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Dommage.&lt;/strong&gt;&lt;/p&gt;
 </description>
-				<pubDate>Fri, 23 Aug 2013 15:01:21 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/lecture-strategie-contenu-mobile/</guid>
-			</item>
-			<item>
-				<title>IE9 sur WP7 et @font-face : je t’aime, moi non plus.</title>
-				<link>https://www.ffoodd.fr/ie9-sur-wp7-et-font-face-je-taime-moi-non-plus/</link>
-				<description>&lt;p&gt;&lt;strong&gt;Cependant, je dois également avouer que certaines choses me surprendront toujours : c’est le cas du support de &lt;code&gt;@font-face&lt;/code&gt; sur Windows Phone 7.&lt;/strong&gt; &lt;/p&gt;
+					<pubDate>Fri, 23 Aug 2013 15:01:21 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/lecture-strategie-contenu-mobile/</guid>
+					<frDate>23 août 2013</frDate>
+				</item>
+				<item>
+					<title>IE9 sur WP7 et @font-face : je t’aime, moi non plus.</title>
+					<link>https://www.ffoodd.fr/ie9-sur-wp7-et-font-face-je-taime-moi-non-plus/</link>
+					<description>&lt;p&gt;&lt;strong&gt;Cependant, je dois également avouer que certaines choses me surprendront toujours : c’est le cas du support de &lt;code&gt;@font-face&lt;/code&gt; sur Windows Phone 7.&lt;/strong&gt; &lt;/p&gt;
 &lt;h2 id=&quot;un-jour-jai-fait-un-test&quot; tabindex=&quot;-1&quot;&gt;Un jour, j’ai fait un test&lt;/h2&gt;
 &lt;p&gt;Raphaël Goetter a annoncé aujourd’hui la refonte de son site principal, &lt;a href=&quot;https://goetter.fr/&quot; title=&quot;Le site de Raphaël Goetter (nouvelle fenêtre)&quot;&gt;goetter.fr&lt;/a&gt;, sur &lt;a href=&quot;https://blog.goetter.fr/post/56263951583/faites-un-site-web-perso&quot; title=&quot;Article sur la refonte de goetter.fr (nouvelle fenêtre)&quot;&gt;son blog&lt;/a&gt;. Étant donné que nous avions discuté quelques jours auparavant de ligatures &lt;a href=&quot;https://twitter.com/ffoodd_fr/status/357798486227435520&quot; title=&quot;Discussion au sujet des ligatures sur Twitter (nouvelle fenêtre)&quot;&gt;sur Twitter&lt;/a&gt;, j’ai lâché un commentaire au sujet de cette nouveauté sur le site de M. Goetter. Cependant sa réponse m’a légèrement surpris, puisque je ne m’attendais pas à ce qu’il doive se séparer de cet ornement sur mobile – pour d’excellentes raisons au demeurant.&lt;/p&gt;
 &lt;p&gt;Pris de curiosité, j’ai alors décidé d’y jeter un œil sur mon smartphone : un Lumia 800 tournant sur Windows Phone 7.10, et Internet Explorer 9. Outre l’absence de la typographie &lt;em&gt;«Calendas Plus»&lt;/em&gt;, j’ai constaté que la typographie générée sur &lt;a href=&quot;https://icomoon.io/&quot; title=&quot;Icomoon (nouvelle fenêtre)&quot;&gt;Icomoon&lt;/a&gt; pour gérer les icônes était également absente.&lt;/p&gt;
@@ -2572,14 +2589,15 @@ Vérifiez la lisibilité, le rendu et la beauté puis partagez un prototype fonc
 &lt;p&gt;Si quelqu’un connait un moyen de cibler uniquement IE9 sur Windows Phone 7, je suis preneur ! De plus, je n’ai aucun moyen de tester IE sur Windows Phone 8 pour le moment, je ne saurais donc préciser si ce problème existe toujours dans les versions les plus récentes.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edit :&lt;/strong&gt; La nuit portant conseil, l’astuce dans le cas d’une icon-font semble finalement «simple». Il s’agira de les baser sur des caractères unicodes ayant un intérêt ( par exemple, ☎ ). Cependant, cette astuce n’est possible que lorsqu’on a le choix des glyphes utilisés comme support – ce qui, je crois, est le cas dans IcoMoon – et de disposer d’un caractère unicode signifiant.&lt;/p&gt;
 </description>
-				<pubDate>Wed, 24 Jul 2013 19:16:35 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/ie9-sur-wp7-et-font-face-je-taime-moi-non-plus/</guid>
-			</item>
-			<item>
-				<title>Pourquoi l’intégration web est le cœur d’un projet</title>
-				<link>https://www.ffoodd.fr/pourquoi-lintegration-web-est-le-coeur-dun-projet/</link>
-				<description>&lt;p&gt;Je ne secouerais pas le marronnier des nouveautés en question, je suppose que tout le monde a déjà parcouru le champ de &lt;a href=&quot;https://www.linternaute.com/dictionnaire/fr/definition/bogue/&quot; title=&quot;Définition de bogue (nouvelle fenêtre)&quot;&gt;bogues&lt;/a&gt;.&lt;/p&gt;
+					<pubDate>Wed, 24 Jul 2013 19:16:35 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/ie9-sur-wp7-et-font-face-je-taime-moi-non-plus/</guid>
+					<frDate>24 juillet 2013</frDate>
+				</item>
+				<item>
+					<title>Pourquoi l’intégration web est le cœur d’un projet</title>
+					<link>https://www.ffoodd.fr/pourquoi-lintegration-web-est-le-coeur-dun-projet/</link>
+					<description>&lt;p&gt;Je ne secouerais pas le marronnier des nouveautés en question, je suppose que tout le monde a déjà parcouru le champ de &lt;a href=&quot;https://www.linternaute.com/dictionnaire/fr/definition/bogue/&quot; title=&quot;Définition de bogue (nouvelle fenêtre)&quot;&gt;bogues&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Un certain nombre d’articles ont déjà été publiés sur le sujet, par d’excellents intégrateurs :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.hteumeuleu.fr/l-importance-d-un-integrateur/&quot; title=&quot;L’importance d’un intégrateur (nouvelle fenêtre)&quot;&gt;L’importance d’un intégrateur&lt;/a&gt; par @HTeumeuleu&lt;/li&gt;
@@ -2594,14 +2612,15 @@ Vérifiez la lisibilité, le rendu et la beauté puis partagez un prototype fonc
 &lt;p&gt;Le même constat m’amène à penser qu’&lt;strong&gt;à l’avenir, les chefs de projets&lt;/strong&gt; dans les structures comme l’&lt;a href=&quot;https://www.1-ter-net.com/&quot; title=&quot;Création de site internet à Nantes (nouvelle fenêtre)&quot;&gt;agence 1-ter-net&lt;/a&gt; – dans laquelle je travaille – &lt;strong&gt;seront issus de l’intégration&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;À condition de retenir [cette leçon d’humilité](https://www.lesintegristes.net/2013/03/19/integration-web-humilite/ « « L’intégration web, cette leçon d’humilité » par Marie Guillaumet sur Les Intégristes (nouvelle fenêtre) »), et de faire du bon travail.&lt;/p&gt;
 </description>
-				<pubDate>Thu, 04 Jul 2013 12:33:38 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/pourquoi-lintegration-web-est-le-coeur-dun-projet/</guid>
-			</item>
-			<item>
-				<title>WordPress 3.5 est médiaphobe</title>
-				<link>https://www.ffoodd.fr/wordpress-3-5-est-mediaphobe/</link>
-				<description>&lt;h2 id=&quot;sauf-que&quot; tabindex=&quot;-1&quot;&gt;Sauf que&lt;/h2&gt;
+					<pubDate>Thu, 04 Jul 2013 12:33:38 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/pourquoi-lintegration-web-est-le-coeur-dun-projet/</guid>
+					<frDate>4 juillet 2013</frDate>
+				</item>
+				<item>
+					<title>WordPress 3.5 est médiaphobe</title>
+					<link>https://www.ffoodd.fr/wordpress-3-5-est-mediaphobe/</link>
+					<description>&lt;h2 id=&quot;sauf-que&quot; tabindex=&quot;-1&quot;&gt;Sauf que&lt;/h2&gt;
 &lt;p&gt;Dès ma première utilisation de cette nouvelle mouture je suis tombé sur un problème assez gênant : dans la fenêtre modale servant à insérer des médias depuis l’éditeur, l’ajout d’un fichier me retourne une erreur en indiquant&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;« Une erreur est survenue lors du téléchargement.&lt;br /&gt;
@@ -2635,14 +2654,15 @@ Veuillez réessayer plus tard. »&lt;/p&gt;
 &lt;p&gt;Je suppose qu’il s’agit d’un entête http ou d’un type MIME incorrect qui nuit à la bonne compréhension du fichier par le serveur, sans toutefois en être sûr. Étant donné que j’avais jusqu’à présent l’habitude d’ajouter le .htaccess à la fin du développement, je me contenterais désormais de l’ajouter &lt;strong&gt;dès le début du projet&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;De plus, il s’agit d’une bonne pratique nécessaire à la &lt;a href=&quot;https://www.ffoodd.fr/tag/qualite-web/&quot; title=&quot;Qualité web&quot;&gt;qualité d’un site web&lt;/a&gt; : il est donc indispensable de disposer d’un fichier .htaccess efficace.&lt;/strong&gt;&lt;/p&gt;
 </description>
-				<pubDate>Wed, 16 Jan 2013 12:23:48 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/wordpress-3-5-est-mediaphobe/</guid>
-			</item>
-			<item>
-				<title>À venir : ffeeeedd</title>
-				<link>https://www.ffoodd.fr/a-venir-ffeeeedd/</link>
-				<description>&lt;p&gt;On a ainsi vu germer ces dernières années une multitude d’outils, proposés par des professionnels aguerris et basés sur leur expérience et leur envie de partager leurs connaissances. Certains sont l’œuvre d’un seul, d’autres le fruit d’une communauté de passionnés. On peut en citer quelques-uns :&lt;/p&gt;
+					<pubDate>Wed, 16 Jan 2013 12:23:48 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/wordpress-3-5-est-mediaphobe/</guid>
+					<frDate>16 janvier 2013</frDate>
+				</item>
+				<item>
+					<title>À venir : ffeeeedd</title>
+					<link>https://www.ffoodd.fr/a-venir-ffeeeedd/</link>
+					<description>&lt;p&gt;On a ainsi vu germer ces dernières années une multitude d’outils, proposés par des professionnels aguerris et basés sur leur expérience et leur envie de partager leurs connaissances. Certains sont l’œuvre d’un seul, d’autres le fruit d’une communauté de passionnés. On peut en citer quelques-uns :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://html5boilerplate.com/&quot;&gt;HTML5 Boilerplate&lt;/a&gt; par Nicolas Gallagher, Hans Christian Reinl, Cãtãlin Mariş, Mathias Bynens, Paul Irish, &amp;amp; Divya Manian ( et une communauté gigantesque ).&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://knacss.com/&quot; title=&quot;Knacss&quot;&gt;Knacss&lt;/a&gt; par Raphaël Goetter&lt;/li&gt;
@@ -2665,14 +2685,15 @@ Veuillez réessayer plus tard. »&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Un jour viendra ou j’ouvrirais ce travail aux critiques, afin d’améliorer autant que possible le produit final.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Mais pour le moment, c’est uniquement mon excuse pour n’avoir pas écrit plus en 2012 et &lt;strong&gt;une bonne résolution pour 2013&lt;/strong&gt; !&lt;/p&gt;
 </description>
-				<pubDate>Tue, 08 Jan 2013 15:15:11 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/a-venir-ffeeeedd/</guid>
-			</item>
-			<item>
-				<title>Le bien &amp; le mal pour l’intégrateur web</title>
-				<link>https://www.ffoodd.fr/le-bien-le-mal-pour-lintegrateur-web/</link>
-				<description>&lt;h2 id=&quot;il-y-a-de-bonnes-de-mauvaises-solutions&quot; tabindex=&quot;-1&quot;&gt;Il y a de bonnes &amp;amp; de mauvaises solutions&lt;/h2&gt;
+					<pubDate>Tue, 08 Jan 2013 15:15:11 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/a-venir-ffeeeedd/</guid>
+					<frDate>8 janvier 2013</frDate>
+				</item>
+				<item>
+					<title>Le bien &amp; le mal pour l’intégrateur web</title>
+					<link>https://www.ffoodd.fr/le-bien-le-mal-pour-lintegrateur-web/</link>
+					<description>&lt;h2 id=&quot;il-y-a-de-bonnes-de-mauvaises-solutions&quot; tabindex=&quot;-1&quot;&gt;Il y a de bonnes &amp;amp; de mauvaises solutions&lt;/h2&gt;
 &lt;p&gt;Une bonne idée le &lt;em&gt;jour J&lt;/em&gt; peut être une mauvaise idée le &lt;em&gt;D day&lt;/em&gt;. Au commencement de ffoodd, je voulais un fond simple mais avec un peu d’impact : j’ai donc choisi le motif très simple mais contrasté que vous avez sous les yeux. À l’époque, je rêvais de tester les dégradés radiaux en css – et j’étais persuadé de pouvoir réaliser mon motif à l’aide de cette technique. Ni une, ni deux : je le fais. Je tartine les préfixes navigateurs et la syntaxe non préfixée, et nous voilà partis. &lt;strong&gt;À bien y réfléchir, c’était ma première erreur.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Comme je suis méticuleux, je vérifie tout ça sur nos navigateurs adorés – et ô joie ! – Firefox freeze en voyant ça. Je me contente alors de retirer la ligne préfixée concernée, et tant pis pour lui : il aura un aplat. &lt;strong&gt;À bien y réfléchir, c’était le premier avertissement.&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&quot;pardonnez-moi-mon-pere-car-jai-peche&quot; tabindex=&quot;-1&quot;&gt;Pardonnez-moi mon père car j’ai péché&lt;/h2&gt;
@@ -2694,14 +2715,15 @@ Veuillez réessayer plus tard. »&lt;/p&gt;
 &lt;p&gt;Ça n’est certes pas grand chose, mais cette erreur de parcours témoigne de mon évolution dans ce métier. C’était une mauvaise idée d’appliquer ce motif en css pur, mais 18 mois plus tard, quand j’ai vu ce bout de code, j’ai su trouver &lt;strong&gt;la meilleure solution&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Je continue &lt;a href=&quot;https://www.ffoodd.fr/css-experienceinherit/&quot; title=&quot;css {    expérience:inherit; }&quot;&gt;mon amélioration perpétuelle&lt;/a&gt;.&lt;/p&gt;
 </description>
-				<pubDate>Tue, 13 Nov 2012 15:40:08 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/le-bien-le-mal-pour-lintegrateur-web/</guid>
-			</item>
-			<item>
-				<title>Webgrids</title>
-				<link>https://www.ffoodd.fr/lecture-webgrids/</link>
-				<description>&lt;h2 id=&quot;ladret&quot; tabindex=&quot;-1&quot;&gt;L’adret&lt;/h2&gt;
+					<pubDate>Tue, 13 Nov 2012 15:40:08 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/le-bien-le-mal-pour-lintegrateur-web/</guid>
+					<frDate>13 novembre 2012</frDate>
+				</item>
+				<item>
+					<title>Webgrids</title>
+					<link>https://www.ffoodd.fr/lecture-webgrids/</link>
+					<description>&lt;h2 id=&quot;ladret&quot; tabindex=&quot;-1&quot;&gt;L’adret&lt;/h2&gt;
 &lt;p&gt;Ma formation en communication visuelle m’a enseigné les règles typographiques, de mise en page, l’histoire de l’imprimerie et les différents mouvements qui ont heurté l’histoire du graphisme et de l’impression.&lt;/p&gt;
 &lt;h2 id=&quot;lubac&quot; tabindex=&quot;-1&quot;&gt;L’ubac&lt;/h2&gt;
 &lt;p&gt;Mon expérience professionnelle dans le web m’a éduqué aux contraintes spécifiques du support : affichage sur écran divers et variés, dans des navigateurs qui sont également pléthore.&lt;/p&gt;
@@ -2714,14 +2736,15 @@ Veuillez réessayer plus tard. »&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Ce livre permet d’atteindre le sommet, ce point si compliqué à atteindre mais bel et bien le seul ou se rejoignent l’ubac et l’adret. Réconciliez le web et la mise en page avancée, lisez ce livre !&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;À noter : un autre excellent ouvrage est disponible dans la même collection aux Ateliers Perrousseaux : &lt;a href=&quot;https://www.google.fr/url?sa=t&amp;amp;rct=j&amp;amp;q=&amp;amp;esrc=s&amp;amp;source=web&amp;amp;cd=1&amp;amp;ved=0CCgQFjAA&amp;amp;url=http%3A%2F%2Fwww.adverbum.fr%2Ftypo--web-foutoyet-aurelien-atelier-perrousseaux_ouvrage-perrousseaux_4kd262gul963.html&amp;amp;ei=a2qaUPyeA8zJ0AWTuIBo&amp;amp;usg=AFQjCNHTBxoRhkz_blvdiieipO2aKwgNmQ&amp;amp;sig2=2EEx_g_E2KITmKdRn-4bmA&quot;&gt;&lt;strong&gt;Typo &amp;amp; web&lt;/strong&gt;&lt;/a&gt;. Je vous le recommande chaudement – et il fera peut-être l’objet d’un article similaire dans le futur.&lt;/p&gt;
 </description>
-				<pubDate>Wed, 07 Nov 2012 19:00:55 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/lecture-webgrids/</guid>
-			</item>
-			<item>
-				<title>expérience: inherit;</title>
-				<link>https://www.ffoodd.fr/css-experienceinherit/</link>
-				<description>&lt;p&gt;Ceci n’est pas un article faisant l’éloge d’IE — ni un énième pamphlet dénonçant la huitième plaie d’Égypte — mais il illustre ce proverbe : &lt;strong&gt;« Il n’y a pas de mauvais outils ; que des mauvais ouvriers. »&lt;/strong&gt;&lt;/p&gt;
+					<pubDate>Wed, 07 Nov 2012 19:00:55 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/lecture-webgrids/</guid>
+					<frDate>7 novembre 2012</frDate>
+				</item>
+				<item>
+					<title>expérience: inherit;</title>
+					<link>https://www.ffoodd.fr/css-experienceinherit/</link>
+					<description>&lt;p&gt;Ceci n’est pas un article faisant l’éloge d’IE — ni un énième pamphlet dénonçant la huitième plaie d’Égypte — mais il illustre ce proverbe : &lt;strong&gt;« Il n’y a pas de mauvais outils ; que des mauvais ouvriers. »&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&quot;la-petite-histoire&quot; tabindex=&quot;-1&quot;&gt;La petite histoire&lt;/h2&gt;
 &lt;p&gt;Mon cher stagiaire — comme tout le monde — pensait être un expert en recherche sur Google. Sa page ne s’affiche pas correctement sur IE uniquement, donc il cherche sur Google « Problème affichage Internet Explorer ». Logique ! C’est ainsi qu’un monde nouveau s’ouvre à lui : les hacks css. Adepte du Nutella, il m’en tartine donc une couche conséquente pour obtenir un affichage décent. Et Dieu sait que ça prend du temps…&lt;/p&gt;
 &lt;p&gt;L’affichage sur Chrome et Firefox était correct, aussi à aucun moment il n’a douté de ces deux-là. Or un bref coup d’œil sur son code source valait toutes les lectures foireuses sur comment hacker Internet Explorer : une balise &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; ouverte &lt;strong&gt;avant&lt;/strong&gt; le &lt;code&gt;doctype&lt;/code&gt;.&lt;/p&gt;
@@ -2745,14 +2768,15 @@ Veuillez réessayer plus tard. »&lt;/p&gt;
 &lt;p&gt;La même erreur semble se répéter, simplement parce que les nouveaux arrivants — dont je fais partie — n’ont pas appris leur leçon d’histoire. Nous devons continuer à apprendre et enseigner : les bonnes pratiques ne vont pas de soi, elles s’apprennent et se découvrent au détour d’un blog. Rédiger un code source valide et réaliser une intégration de qualité en font partie et ne sont que les premières étapes.&lt;/p&gt;
 &lt;p&gt;Je pratique l’&lt;strong&gt;amélioration perpétuelle&lt;/strong&gt; —pas progressive, perpétuelle.&lt;/p&gt;
 </description>
-				<pubDate>Wed, 18 Jul 2012 17:32:46 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/css-experienceinherit/</guid>
-			</item>
-			<item>
-				<title>Les sprites en réserve</title>
-				<link>https://www.ffoodd.fr/les-sprites-negatifs/</link>
-				<description>&lt;p&gt;L’utilisation des sprites est connue de – presque – tous. Et dans le cas ou vous feriez partie du presque, voici un &lt;a href=&quot;https://www.alsacreations.com/tuto/lire/1068-sprites-css-background-position.html&quot;&gt;très bon article&lt;/a&gt; en français sur le sujet. Ma réflexion aujourd’hui ne portera donc pas sur l’intérêt des sprites, mais sur une façon de pousser plus loin &lt;strong&gt;la quête du moindre octet&lt;/strong&gt;.&lt;/p&gt;
+					<pubDate>Wed, 18 Jul 2012 17:32:46 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/css-experienceinherit/</guid>
+					<frDate>18 juillet 2012</frDate>
+				</item>
+				<item>
+					<title>Les sprites en réserve</title>
+					<link>https://www.ffoodd.fr/les-sprites-negatifs/</link>
+					<description>&lt;p&gt;L’utilisation des sprites est connue de – presque – tous. Et dans le cas ou vous feriez partie du presque, voici un &lt;a href=&quot;https://www.alsacreations.com/tuto/lire/1068-sprites-css-background-position.html&quot;&gt;très bon article&lt;/a&gt; en français sur le sujet. Ma réflexion aujourd’hui ne portera donc pas sur l’intérêt des sprites, mais sur une façon de pousser plus loin &lt;strong&gt;la quête du moindre octet&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;la-genese&quot; tabindex=&quot;-1&quot;&gt;La Genèse&lt;/h2&gt;
 &lt;p&gt;Ce jour-là, je me suis heurté au problème suivant : une vaste iconographie en aplat coloré, dont chaque élément disposait de trois variations colorées. Pour des questions de &lt;strong&gt;performances&lt;/strong&gt;, il était nécessaire d’utiliser un sprite ; et la ou ça se complique, c’est qu’il était également question d’&lt;strong&gt;accessibilité&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Mon premier écueil : la &lt;strong&gt;performance&lt;/strong&gt;. Afin d’intégrer les variations colorées, mon premier sprite contenait trois fois chaque icône. Pas très efficace…&lt;/p&gt;
@@ -2796,14 +2820,15 @@ Accessibilité :&lt;/p&gt;
 &lt;/ol&gt;
 &lt;p&gt;À titre personnel, je n’ai utilisé cette technique que sur un projet, particulièrement contraignant en terme de performances et d’accessibilité – mais je compte l’étendre à d’autres projets. Correctement utilisée, elle peut permettre une &lt;strong&gt;optimisation massive d’une iconographie riche&lt;/strong&gt; – mais simple.&lt;/p&gt;
 </description>
-				<pubDate>Thu, 21 Jun 2012 12:48:38 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/les-sprites-negatifs/</guid>
-			</item>
-			<item>
-				<title>Vitesse &amp; Précipitation</title>
-				<link>https://www.ffoodd.fr/vitesse-precipitation/</link>
-				<description>&lt;p&gt;Les transitions représentent une formidable avancée en matière de CSS, dans le but de s’affranchir du javascript pour les interactions simples. Je ne vais pas vous faire l’offense de vous présenter les transitions CSS, mais avant d’évoquer le sujet principal, j’aimerais faire une piqûre de rappel sur les origines des transitions.&lt;/p&gt;
+					<pubDate>Thu, 21 Jun 2012 12:48:38 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/les-sprites-negatifs/</guid>
+					<frDate>21 juin 2012</frDate>
+				</item>
+				<item>
+					<title>Vitesse &amp; Précipitation</title>
+					<link>https://www.ffoodd.fr/vitesse-precipitation/</link>
+					<description>&lt;p&gt;Les transitions représentent une formidable avancée en matière de CSS, dans le but de s’affranchir du javascript pour les interactions simples. Je ne vais pas vous faire l’offense de vous présenter les transitions CSS, mais avant d’évoquer le sujet principal, j’aimerais faire une piqûre de rappel sur les origines des transitions.&lt;/p&gt;
 &lt;h2 id=&quot;au-commencement&quot; tabindex=&quot;-1&quot;&gt;Au commencement&lt;/h2&gt;
 &lt;p&gt;Dans une époque ( pas si ) reculée, javascript était indispensable dès lors qu’on envisageait une interaction. Dan Cederholm s’en souvient dans son livre « &lt;a href=&quot;https://www.abookapart.com/products/css3-for-web-designers&quot;&gt;CSS3 FOR WEBDESIGNERS&lt;/a&gt; » disponible en Français &lt;a href=&quot;https://www.eyrolles.com/Informatique/Livre/css3-pour-les-web-designers-9782212129878&quot;&gt;aux éditions Eyrolles&lt;/a&gt;.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -2830,14 +2855,15 @@ window.onload = init;
 &lt;h2 id=&quot;contrepartie&quot; tabindex=&quot;-1&quot;&gt;Contrepartie&lt;/h2&gt;
 &lt;p&gt;J’ai remarqué un &lt;strong&gt;problème de compatibilité avec IE8 et Safari&lt;/strong&gt;, tandis que les autres navigateurs appliquent parfaitement ce code. Ce n’est qu’un demi-problème puisque de toute façon, IE8 ne comprend pas les transitions. C’est un peu plus gênant pour Safari, mais je n’ai pas encore trouvé l’astuce : si quelqu’un en connaît une ou en trouve une, je suis preneur !!&lt;/p&gt;
 </description>
-				<pubDate>Fri, 18 May 2012 17:02:06 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/vitesse-precipitation/</guid>
-			</item>
-			<item>
-				<title>La schizophrénie sémantique</title>
-				<link>https://www.ffoodd.fr/la-schizophrenie-semantique-dun-logo/</link>
-				<description>&lt;p&gt;Comme beaucoup d’intégrateurs, je me suis heurté à la &lt;strong&gt;schizophrénie sémantique&lt;/strong&gt; du logo. Vous rêvez de l’inclure dans un h1 plein de bon texte pour le SEO, mais m**d* ! Votre logo est une image.&lt;/p&gt;
+					<pubDate>Fri, 18 May 2012 17:02:06 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/vitesse-precipitation/</guid>
+					<frDate>18 mai 2012</frDate>
+				</item>
+				<item>
+					<title>La schizophrénie sémantique</title>
+					<link>https://www.ffoodd.fr/la-schizophrenie-semantique-dun-logo/</link>
+					<description>&lt;p&gt;Comme beaucoup d’intégrateurs, je me suis heurté à la &lt;strong&gt;schizophrénie sémantique&lt;/strong&gt; du logo. Vous rêvez de l’inclure dans un h1 plein de bon texte pour le SEO, mais m**d* ! Votre logo est une image.&lt;/p&gt;
 &lt;h2 id=&quot;que-dois-je-faire-docteur&quot; tabindex=&quot;-1&quot;&gt;Que dois-je faire, Docteur ?&lt;/h2&gt;
 &lt;p&gt;De nombreux remèdes ont vu le jour pour combattre ce symptôme, à tel point que l’excellent Chris Coyier en a érigé un &lt;a href=&quot;https://css-tricks.com/examples/ImageReplacement/&quot;&gt;mémorial&lt;/a&gt;.&lt;br /&gt;
 De mon côté, j’ai beaucoup apprécié l’élégance et la légèreté de la &lt;a href=&quot;https://nicolasgallagher.com/another-css-image-replacement-technique/&quot;&gt;proposition&lt;/a&gt; de Nicolas Gallagher, notamment utilisée dans le fameux &lt;a href=&quot;https://html5boilerplate.com/&quot;&gt;HTML5 Boilerplate&lt;/a&gt;. Et c’est cette option que j’utilise et recommande.&lt;/p&gt;
@@ -2891,27 +2917,29 @@ De mon côté, j’ai beaucoup apprécié l’élégance et la légèreté de la
 &lt;/ol&gt;
 &lt;p&gt;Le principal inconvénient est le &lt;strong&gt;support d’IE8&lt;/strong&gt; : il ne reconnaît que les fichiers .eot dans @font-face, ce qui nous force à ajouter un fichier .eot difficile à convertir en Base64. Mais si vous pouvez m’y aider, je suis tout ouï !&lt;/p&gt;
 </description>
-				<pubDate>Fri, 11 May 2012 19:19:25 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/la-schizophrenie-semantique-dun-logo/</guid>
-			</item>
-			<item>
-				<title>Que se passerait-il ?</title>
-				<link>https://www.ffoodd.fr/que-se-passerait-il/</link>
-				<description>&lt;p&gt;&lt;strong&gt;Qu’adviendrait-il du web si chaque personne impliquée dans la création de sites internet demandait à tous ses contacts de mettre à jour son navigateur ?&lt;/strong&gt;&lt;/p&gt;
+					<pubDate>Fri, 11 May 2012 19:19:25 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/la-schizophrenie-semantique-dun-logo/</guid>
+					<frDate>11 mai 2012</frDate>
+				</item>
+				<item>
+					<title>Que se passerait-il ?</title>
+					<link>https://www.ffoodd.fr/que-se-passerait-il/</link>
+					<description>&lt;p&gt;&lt;strong&gt;Qu’adviendrait-il du web si chaque personne impliquée dans la création de sites internet demandait à tous ses contacts de mettre à jour son navigateur ?&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://twitter.com/#!/LeaVerou&quot; title=&quot;Léa Verou sur Twitter&quot;&gt;Léa Verou&lt;/a&gt; a publié un message intéréssant &lt;a href=&quot;https://tweeplus.com/?#Yesterday%2C+I+saw+that+a+non-techie+friend+had+IE8%2E+I+explained+to+her+how+we+developers+struggle+with+IE%2C+especially+%3C+9%2E+I+showed+her+examples+of+CSS3+websites+and+how+they+display+on+Chrome%2C+Firefox+and+IE8%2E+She+was+very+surprised+and+said+she+thought+they+were+all+the+same+and+will+always+update+ASAP+from+now+on%2E+The+moral+is%3A+Developers%2C+don%E2%80%99t+think+that+people+don%E2%80%99t+care%2E+People+naturally+don%27t+want+to+cause+trouble+to+others%2E+Explain+to+them+what+we+go+through%2E+One+person+at+a+time%2E+We+can+do+it&quot;&gt;ici&lt;/a&gt;, il y a déjà quelques mois. Il reflète bien le dédain frappant les « techies » à l’approche d’un client qui navigue sur IE8 : j’ai moi-même souvent pesté contre ces idiots incapables de mettre leur navigateur à jour gens. Le message de Léa Verou m’a appris qu’ils ne pêchent que par innocence : la plupart des gens sont certainement prêts à faire leur MAJ si on leur apprend qu’ils le peuvent.&lt;/p&gt;
 &lt;p&gt;Imaginez la conquête inouïe lorsque chaque personne – graphiste, intégrateur, développeur, référenceur, chef de projet, stagiaire, administrateur réseaux, consultant, patron… –  aura demandé à travers l’ensemble de ses réseaux sociaux – mails, facebook, twitter, viadéo… – à toutes ses connaissances de mettre son navigateur favori à jour ?&lt;/p&gt;
 &lt;p&gt;Personnellement, j’ai fait le calcul : je peux faire cette demande à &lt;strong&gt;493&lt;/strong&gt; personnes distinctes. Si chacune des neuf personnes de mon agence atteint ce même chiffre; nous serons déjà à 4437 personnes.&lt;/p&gt;
 &lt;p&gt;Ne pensez-vous pas que ça puisse suffire à changer les statistiques ?&lt;/p&gt;
 </description>
-				<pubDate>Thu, 01 Sep 2011 18:21:45 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/que-se-passerait-il/</guid>
-			</item>
-			<item>
-				<title>Sémantique de l’interaction</title>
-				<link>https://www.ffoodd.fr/semantique-de-l-interaction/</link>
-				<description>&lt;p&gt;Saviez-vous que le langage entre êtres humains dépend à 80% des expressions physiques – même infimes ? &lt;strong&gt;Il en va de même pour les sites internet.&lt;/strong&gt; Un internaute ressent – et comprend – un site grâce à son comportement : mouvements, animations, changements de couleurs, etc…&lt;/p&gt;
+					<pubDate>Thu, 01 Sep 2011 18:21:45 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/que-se-passerait-il/</guid>
+					<frDate>1 septembre 2011</frDate>
+				</item>
+				<item>
+					<title>Sémantique de l’interaction</title>
+					<link>https://www.ffoodd.fr/semantique-de-l-interaction/</link>
+					<description>&lt;p&gt;Saviez-vous que le langage entre êtres humains dépend à 80% des expressions physiques – même infimes ? &lt;strong&gt;Il en va de même pour les sites internet.&lt;/strong&gt; Un internaute ressent – et comprend – un site grâce à son comportement : mouvements, animations, changements de couleurs, etc…&lt;/p&gt;
 &lt;h2 id=&quot;les-sites-ont-des-sentiments-eux-aussi&quot; tabindex=&quot;-1&quot;&gt;Les sites ont des sentiments, eux aussi&lt;/h2&gt;
 &lt;p&gt;Et ils s’expriment afin de vous les transmettre : un décalage léger au survol, un changement subtil de couleur et une sensation de souffle vous parvient. Le site respire, s’agite, réagit. Il peut être d’une douceur surprenante comme d’une agressivité détonante, et rien ne l’empêche d’être incohérent – voire complétement fou. Ces caractéristiques, qu’elles soient maîtrisées ou non, ont un impact sur l’utilisation du site : les sensations varient, et par conséquent le confort de navigation, l’impression donnée, l’affection éprouvée par l’internaute varient eux aussi.&lt;/p&gt;
 &lt;p&gt;Mais soyez prudents : cela peut rendre votre site extrêmement attractif ou définitivement désagréable. Là encore, le même mécanisme opère – que l’on parle d’êtres humains ou de site : &lt;strong&gt;la première impression est déterminante&lt;/strong&gt;.&lt;/p&gt;
@@ -2941,14 +2969,15 @@ De mon côté, j’ai beaucoup apprécié l’élégance et la légèreté de la
 &lt;li&gt;&lt;a href=&quot;https://www.abookapart.com/products/designing-for-emotion&quot;&gt;&lt;strong&gt;Designing for emotion&lt;/strong&gt; par Aaron Walter&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-				<pubDate>Sat, 05 Mar 2011 12:52:36 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/semantique-de-l-interaction/</guid>
-			</item>
-			<item>
-				<title>Dessine-moi un bouton</title>
-				<link>https://www.ffoodd.fr/swirl-in-style/</link>
-				<description>&lt;p&gt;Les boutons sont des éléments capitaux du graphisme web : ils appellent, suggèrent et provoquent &lt;strong&gt;l’action&lt;/strong&gt;. Autrefois, les liens hypertextes étaient l’emblème des interactions : aujourd’hui, ce sont les boutons.&lt;/p&gt;
+					<pubDate>Sat, 05 Mar 2011 12:52:36 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/semantique-de-l-interaction/</guid>
+					<frDate>5 mars 2011</frDate>
+				</item>
+				<item>
+					<title>Dessine-moi un bouton</title>
+					<link>https://www.ffoodd.fr/swirl-in-style/</link>
+					<description>&lt;p&gt;Les boutons sont des éléments capitaux du graphisme web : ils appellent, suggèrent et provoquent &lt;strong&gt;l’action&lt;/strong&gt;. Autrefois, les liens hypertextes étaient l’emblème des interactions : aujourd’hui, ce sont les boutons.&lt;/p&gt;
 &lt;h2 id=&quot;une-espece-animale&quot; tabindex=&quot;-1&quot;&gt;Une espèce animale&lt;/h2&gt;
 &lt;p&gt;Il en existe de toute sorte : des grands, des petits, des noirs, des jaunes, des visuels et des textuels… Chaque bouton que vous pouvez imaginer existe certainement déjà quelque part.&lt;/p&gt;
 &lt;p&gt;Pour caractériser un bouton, on dispose de multiples critères : sa palette de couleur, sa forme, son volume, sa réaction au survol, son contenu, sa cible… Et comme nous, il a des mensurations : sa taille et son poids. On pourrait s’amuser à rédiger un &lt;strong&gt;bestiaire des boutons&lt;/strong&gt;, les classer par espèces et déterminer si certaines sont en voie d’extinction ou d’expansion – mais ce sera pour un autre jour.&lt;/p&gt;
@@ -2961,14 +2990,15 @@ De mon côté, j’ai beaucoup apprécié l’élégance et la légèreté de la
 &lt;p&gt;Un bouton doit être une solution, pas un problème : s’il n’est pas utilisé avec modération il perd sa valeur d’appel à action. Car s’il y a de l’action partout, vous faites un feu d’artifice, pas un site web.&lt;/p&gt;
 &lt;p&gt;Un site internet est un véritable microcosme, et la plupart des lois de la nature y sont applicables. &lt;strong&gt;Y compris l’évolution.&lt;/strong&gt;&lt;/p&gt;
 </description>
-				<pubDate>Sun, 31 Oct 2010 19:54:49 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/swirl-in-style/</guid>
-			</item>
-			<item>
-				<title>Dessine-moi un bouton</title>
-				<link>https://www.ffoodd.fr/dessine-moi-un-bouton/</link>
-				<description>&lt;p&gt;Les boutons sont des éléments capitaux du graphisme web : ils appellent, suggèrent et provoquent &lt;strong&gt;l’action&lt;/strong&gt;. Autrefois, les liens hypertextes étaient l’emblème des interactions : aujourd’hui, ce sont les boutons.&lt;/p&gt;
+					<pubDate>Sun, 31 Oct 2010 19:54:49 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/swirl-in-style/</guid>
+					<frDate>31 octobre 2010</frDate>
+				</item>
+				<item>
+					<title>Dessine-moi un bouton</title>
+					<link>https://www.ffoodd.fr/dessine-moi-un-bouton/</link>
+					<description>&lt;p&gt;Les boutons sont des éléments capitaux du graphisme web : ils appellent, suggèrent et provoquent &lt;strong&gt;l’action&lt;/strong&gt;. Autrefois, les liens hypertextes étaient l’emblème des interactions : aujourd’hui, ce sont les boutons.&lt;/p&gt;
 &lt;h2 id=&quot;une-espece-animale&quot; tabindex=&quot;-1&quot;&gt;Une espèce animale&lt;/h2&gt;
 &lt;p&gt;Il en existe de toute sorte : des grands, des petits, des noirs, des jaunes, des visuels et des textuels… Chaque bouton que vous pouvez imaginer existe certainement déjà quelque part.&lt;/p&gt;
 &lt;p&gt;Pour caractériser un bouton, on dispose de multiples critères : sa palette de couleur, sa forme, son volume, sa réaction au survol, son contenu, sa cible… Et comme nous, il a des mensurations : sa taille et son poids. On pourrait s’amuser à rédiger un &lt;strong&gt;bestiaire des boutons&lt;/strong&gt;, les classer par espèces et déterminer si certaines sont en voie d’extinction ou d’expansion – mais ce sera pour un autre jour.&lt;/p&gt;
@@ -2981,9 +3011,10 @@ De mon côté, j’ai beaucoup apprécié l’élégance et la légèreté de la
 &lt;p&gt;Un bouton doit être une solution, pas un problème : s’il n’est pas utilisé avec modération il perd sa valeur d’appel à action. Car s’il y a de l’action partout, vous faites un feu d’artifice, pas un site web.&lt;/p&gt;
 &lt;p&gt;Un site internet est un véritable microcosme, et la plupart des lois de la nature y sont applicables. &lt;strong&gt;Y compris l’évolution.&lt;/strong&gt;&lt;/p&gt;
 </description>
-				<pubDate>Sun, 31 Oct 2010 19:54:49 +0000</pubDate>
-				<dc:creator>Gaël Poupard</dc:creator>
-				<guid>https://www.ffoodd.fr/dessine-moi-un-bouton/</guid>
-			</item>
+					<pubDate>Sun, 31 Oct 2010 19:54:49 +0000</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/dessine-moi-un-bouton/</guid>
+					<frDate>31 octobre 2010</frDate>
+				</item>
 	</channel>
 </rss>
