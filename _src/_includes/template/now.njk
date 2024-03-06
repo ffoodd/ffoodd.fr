@@ -1,0 +1,19 @@
+{% extends "../base.njk" %}
+
+{% block content %}
+	<article role="article" itemscope itemtype="https://schema.org/Article">
+		<footer class="small mt2 mb2">
+			<p class="b-reset pl2">
+				Modifié le <time class="updated" datetime="{{ modified }}" itemprop="dateModified">{{ modified | date }}</time>.
+			</p>
+		</footer>
+		<div itemprop="articleBody">
+			{{ content | safe }}
+		</div>
+		<now-webring><a href="https://encemoment.site">Découvrez le <i lang="en">Webring</i> «&nbsp;En ce moment&nbsp;»</a></now-webring>
+	</article>
+{% endblock %}
+
+{%- block script -%}
+	<script type="text/javascript" src="https://encemoment.site/script.js"></script>
+{%- endblock -%}

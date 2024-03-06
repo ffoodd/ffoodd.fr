@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Erreur 404 — La vie en #ffoodd</title>
-		<meta name="description" content="Page non trouvée">
+		<title>En ce moment chez Gaël — La vie en #ffoodd</title>
+		<meta name="description" content="Et maintenant, je fais quoi ?">
 		<meta name="generator" content="Eleventy v2.0.1">
 		<link rel="icon" href="/favicon.ico" sizes="32x32">
 		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -28,8 +28,8 @@
 					<li class="h3-like m-reset">
 						<a href="/travaux/">Parcours</a>
 					</li>
-					<li class="h3-like m-reset">
-						<a href="/now/">En ce moment</a>
+					<li class="h3-like m-reset current-menu-item current_page_item">
+						<a href="/now/" aria-current="page">En ce moment</a>
 					</li>
 				</ul>
 			</nav>
@@ -39,19 +39,57 @@
 					<img src="/assets/img/embossed-ffoodd.png" alt="" id="logo" width="144" height="144">
 				</div>
 				<header class="center pt1 mb1" role="banner">
-					<h1 class="mb0 mt0 tk-bello-pro" itemprop="name">Erreur 404</h1>
+					<h1 class="mb0 mt0 tk-bello-pro" itemprop="name">En ce moment</h1>
+					
+						<nav role="navigation" aria-labelledby="here" class="print-hidden small mt2 mb1">
+	<span id="here">Vous êtes ici&nbsp;: </span>
+	<div class="inbl" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+		<a href="/" itemprop="url"><span itemprop="title">La vie en #ffoodd</span></a>
+		<span> ›&nbsp;</span>
+	</div>
+	<div class="inbl" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+		<span itemprop="title">En ce moment</span>
+	</div>
+</nav>
+
 					
 					
-						<h2 class="h3-like description" itemprop="description">Page non trouvée</h2>
+						<h2 class="h3-like description" itemprop="description">Et maintenant, je fais quoi ?</h2>
 					
 				</header>
 				
-	<div itemprop="articleBody" class="erreur-404">
-		<p>Pas de panique, nous allons vous aider.</p>
-<p class="h3-like tk-bello-pro">Vous êtes ici <span>&#10799;</span></p>
-<p>Les issues de secours sont sur votre gauche.</p>
+	<article role="article" itemscope itemtype="https://schema.org/Article">
+		<footer class="small mt2 mb2">
+			<p class="b-reset pl2">
+				Modifié le <time class="updated" datetime="2024-03-06" itemprop="dateModified">6 mars 2024</time>.
+			</p>
+		</footer>
+		<div itemprop="articleBody">
+			<h2 id="a-la-maison" tabindex="-1">À la maison</h2>
+<p><strong>Il s’en passe, des choses, dans une vie</strong> : nos trois enfants nous occupent, ma moitié et moi, et je savoure le temps passé ensemble.</p>
+<p><strong>Côté jardin</strong>, les poules sont en liberté et nous agrandissons le potager. C’est aussi l’occasion d’installer des récupérateurs d’eau de pluie supplémentaires.</p>
+<p><strong>Je lis beaucoup, de tout</strong>. En ce moment, c’est <cite>La huitième couleur</cite> de Terry Pratchett et je viens de terminer <cite lang="en">The Midnight Order</cite> de Mathieu Bablet et ses camarades.</p>
+<p>Ma <abbr title="Pile à lire" aria-label="Pile à lire">PàL</abbr> contient des œuvres de Lovecraft, Becky Chambers, Ursula K. Le Guin, Fabrice Caro, Caryl Férey, Tolkien, encore du Terry Pratchett, Pierre Lemaitre, Stephen King… mais aussi <cite>La volonté de changer</cite> ou <cite>Voyage en misarchie</cite>, qu’il faudra bien que je me décide à lire un jour !</p>
+<p>J’écoute peu de musique. Ce qui revient beaucoup depuis un moment, c’est Meute, je ne m’en lasse pas. Ça rejoint Woodkid, C2C, Roudoudou ou Caravan Palace dans les artistes que je peux écouter en boucle.</p>
+<p>Et je regarde… Des films quand je peux, quelques séries (Solar Opposites et Shogun, en ce moment), et souvent du rugby pour travailler en parallèle le soir sur mes projets…</p>
+<h2 id="les-projets" tabindex="-1">Les projets</h2>
+<p><strong>Toujours plein d’idées et pas plus de temps que les autres</strong>, mes projets personnels finissent souvent par dépérir ou vaguement vivoter.</p>
+<p>J’ai mis un coup de jeune à <a href="https://ffoodd.github.io/chaarts/">chaarts</a> en 2023 grâce à l’élan pris pour une nouvelle conférence sur les graphiques de données. Il a donc fallu que je peaufine <a href="https://github.com/ffoodd/sliide/">sliide</a> pour l’occasion, histoire de développer une vue présentateur <i lang="en">low-tech</i>.</p>
+<p>Tout ce petit monde utilise <a href="https://ffoodd.github.io/sseeeedd/">sseeeedd</a>, mais je n’ai guère fait avancer ce schmilblick ces derniers temps.</p>
+<p>Je laisse <a href="https://ffoodd.github.io/chaarts/">a11y.css</a> en suspens, j’attends toujours de trouver une fenêtre de tir conséquente pour m’y replonger.</p>
+<p>Mais le projet plus-que-perso qui m’anime le plus depuis l’an dernier est ma contribution à l’organisation de <a href="https://www.paris-web.fr">Paris Web</a>, plus spécifiquement aux pôles design et site. L’an dernier, j’ai créé <a href="https://github.com/ffoodd/iimmgg/">iimmgg</a> et j’ai appris plein de choses !</p>
+<h2 id="au-travail" tabindex="-1">Au travail</h2>
+<p>Je fais plein de choses différentes. Sur une semaine de cinq jours, je travaille sur trois projets <strong>très</strong> différents :</p>
+<ul>
+<li>une extension navigateur <i lang="en">open-source</i>, <a href="https://github.com/Orange-OpenSource/Orange-Confort-plus/">Confort+ d’Orange</a> ;</li>
+<li>le site institutionnel de mon entreprise, utilisant WordPress ;</li>
+<li>un <i lang="en">design system</i>, la partie technique — Bootstrap pour la grille et les utilitaires, Material pour certains composants riches, Angular et du bon vieux HTML / CSS maison pour le reste — ainsi que <strong>la documentation</strong> et <strong>la diffusion</strong>.</li>
+</ul>
+<p>Le reste du temps, je réponds aux questions HTML, CSS, SVG et accessibilité. Je participe à des retours d’expériences, à des appels d’offres, je donne et conçois des formations à l’accessibilité, enfin ce genre de choses.</p>
 
-	</div>
+		</div>
+		<now-webring><a href="https://encemoment.site">Découvrez le <i lang="en">Webring</i> «&nbsp;En ce moment&nbsp;»</a></now-webring>
+	</article>
 
 				
 				
@@ -183,5 +221,5 @@
 
 			<meta itemprop="jobTitle" content="Webdesigner et intégrateur web">
 			<meta itemprop="worksFor" content="onepoint">
-		</footer></body>
+		</footer><script type="text/javascript" src="https://encemoment.site/script.js"></script></body>
 </html>

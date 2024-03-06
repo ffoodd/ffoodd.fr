@@ -6,9 +6,7 @@ tags: "pages"
 ---
 ## Hébergement
 
-Ce site est hébergé par la société **Gandi**&nbsp;:  
-63-65 boulevard Massena à Paris (75013) FRANCE  
-[www.gandi.net](https://www.gandi.net/)
+Ce site est hébergé sur GitHub Pages.
 
 ## Propriété intellectuelle
 
@@ -29,13 +27,11 @@ Ces typographies ont été choisies grâce à [Typecast](https://typecast.com/ "
 
 La coloration syntaxique dans les articles se sert de [prismjs](https://prismjs.com/ "En anglais") créé notamment par [Lea Verou](https://lea.verou.me/ "En anglais").
 
-Ce site est fièrement propulsé par [WordPress](https://fr.wordpress.org/), enjolivé avec le thème [ffeeeedd](https://github.com/ffoodd/ffeeeedd)&nbsp;—&nbsp;ma propre création, sous licence [CC BY 3.0 FR.](https://creativecommons.org/licenses/by/3.0/fr/ "En anglais")&nbsp;—&nbsp;librement adapté.
+Ce site est fièrement propulsé par [11ty](https://www.11ty.dev/).
 
-Le thème lui-même est basé sur une adaptation libre des micro-frameworks CSS suivants&nbsp;:
+Les styles sont basés sur une adaptation libre des micro-frameworks CSS suivants&nbsp;:
 
 * [KNACSS](https://knacss.com/ "En anglais")&nbsp;—&nbsp;créé par [Raphaël Goetter](https://goetter.fr/);
 * [RÖCSSTI](https://rocssti.nicolas-hoffmann.net/)&nbsp;—&nbsp;créé par [Nicolas Hoffmann](https://www.nicolas-hoffmann.net/source/).
 
 Ces deux solutions sont sous licence [CC-BY](https://creativecommons.org/licenses/by/3.0/fr/ "En anglais").
-
-Des crédits plus détaillés sont mentionnés dans la documentation et les fichiers du thème sur GitHub.

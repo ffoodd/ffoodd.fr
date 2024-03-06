@@ -34,14 +34,14 @@
 					<li class="tk-bello-pro h1-like m-reset{% if title === 'Accueil' %} current-menu-item current_page_item{% endif %}">
 						<a href="/"{% if title === 'Accueil' %} aria-current="page"{% endif %}>ffoodd</a>
 					</li>
-					<li class="h3-like m-reset{% if title === 'À propos' %} current-menu-item current_page_item{% endif %}">
-						<a href="/plus/"{% if title === 'À propos' %} aria-current="page"{% endif %}>À propos</a>
-					</li>
 					<li class="h3-like m-reset{% if title === 'Journal' %} current-menu-item current_page_item{% endif %}">
 						<a href="/journal/"{% if title === 'Journal' %} aria-current="page"{% endif %}>Journal</a>
 					</li>
 					<li class="h3-like m-reset{% if title === 'Parcours' %} current-menu-item current_page_item{% endif %}">
 						<a href="/travaux/"{% if title === 'Parcours' %} aria-current="page"{% endif %}>Parcours</a>
+					</li>
+					<li class="h3-like m-reset{% if title === 'En ce moment' %} current-menu-item current_page_item{% endif %}">
+						<a href="/now/"{% if title === 'En ce moment' %} aria-current="page"{% endif %}>En ce moment</a>
 					</li>
 				</ul>
 			</nav>
@@ -119,5 +119,6 @@
 			<meta itemprop="jobTitle" content="Webdesigner et intégrateur web">
 			<meta itemprop="worksFor" content="onepoint">
 		</footer>
+		{%- block script -%}{%- endblock -%}
 	</body>
 </html>
