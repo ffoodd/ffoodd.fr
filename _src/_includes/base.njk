@@ -4,6 +4,9 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>{{ metatitle or title }} — {{ site.name }}</title>
+		{%- if comments > 0 -%}
+			<link rel="preconnect" href="https://secure.gravatar.com/">
+		{%- endif -%}
 		<link rel="stylesheet" href="/assets/styles.min.css" media="all">
 		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
 		<meta name="description" content="{{ metadescription or description }}">
@@ -14,9 +17,6 @@
 		<link rel="alternate" type="application/rss+xml" title="{{ site.name }} | Flux RSS" href="/feed/index.xml">
 		{%- set slug = post.data.permalink | replace("/index.html", "") -%}
 		{%- set comments = collections.comments | comments(slug) | length -%}
-		{%- if comments > 0 -%}
-			<link rel="preconnect" href="https://secure.gravatar.com/">
-		{%- endif -%}
 		{%- if pagination.href.previous -%}
 			<link rel="prev" href="{{ pagination.href.prev }}">
 		{%- endif -%}
