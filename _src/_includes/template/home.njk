@@ -1,13 +1,13 @@
 {% extends "../base.njk" %}
 
-{% block breadcrumb %}
+{%- block breadcrumb %}
 	<h2 class="small" itemprop="author"><i class="pl2">par</i> {{ site.author.name }}</h2>
-{% endblock %}
+{%- endblock %}
 
-{% block latest %}
-	{% for post in collections.posts.slice(-1) %}
+{%- block latest %}
+	{%- for post in collections.posts.slice(-1) %}
 		<div>
 			{% include '../partials/format-' + post.data.format + '.njk' %}
 		</div>
-	{% endfor %}
-{% endblock %}
+	{%- endfor %}
+{%- endblock %}

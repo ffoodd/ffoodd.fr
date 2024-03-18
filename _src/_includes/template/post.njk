@@ -1,22 +1,22 @@
 {% extends "../base.njk" %}
 
-{% block skiplinks %}
+{%- block skiplinks %}
 	<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
 	<a class="skip scroll pa1 inbl smaller print-hidden" href="#sommaire">Aller au sommaire</a>
-{% endblock %}
+{%- endblock %}
 
-{% block content %}
+{%- block content %}
 	<article role="article" itemscope itemtype="https://schema.org/{% if format === 'status' %}Book{% else %}Article{% endif %}">
 		<time class="screen-reader-text" datetime="{{ date }}" itemprop="datePublished">{{ date | date }}</time>
-		{% if format === 'status' %}
+		{%- if format === 'status' %}
 			{% include '../partials/content-status.njk' %}
-		{% elseif format === 'quote' %}
+		{%- elseif format === 'quote' %}
 			{% include '../partials/content-quote.njk' %}
-		{% else %}
+		{%- else %}
 			<div itemprop="articleBody">
 				{{ content | safe }}
 			</div>
-		{% endif %}
+		{%- endif %}
 		<footer class="small mt2">
 			<p class="pl2 mt0 pt1">
 				Article rédigé par <strong itemprop="author"><span class="fn">{{ site.author.name }}</span></strong>.
@@ -40,9 +40,9 @@
 				{% include '../partials/comments-form.njk' %}
 			{%- endif -%}
 		{%- endif -%}
-{% endblock %}
+{%- endblock %}
 
-{% block aside %}
+{%- block aside %}
 	{%- set slug = permalink | replace("/index.html", "") -%}
 	{%- set comments = collections.comments | comments(slug) -%}
 	{%- set commentsNumber = comments | length -%}
@@ -58,4 +58,4 @@
 			</div>
 		</div>
 	</aside>
-{% endblock %}
+{%- endblock %}

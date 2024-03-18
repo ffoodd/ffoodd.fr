@@ -25,9 +25,9 @@
 		{%- endif -%}
 	</head>
 	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
-		{% block skiplinks %}
+		{%- block skiplinks %}
 			<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
-		{% endblock %}
+		{%- endblock %}
 		<div class="row">
 			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation" aria-label="Menu principal">
 				<ul class="menu aside p-reset m-reset ul-reset">
@@ -52,57 +52,57 @@
 				</div>
 				<header class="center pt1 mb1" role="banner">
 					<h1 class="mb0 mt0 tk-bello-pro" itemprop="name">{{ title | safe }}</h1>
-					{% block breadcrumb %}
+					{%- block breadcrumb %}
 						{% include 'partials/breadcrumb.njk' %}
-					{% endblock %}
-					{% if description %}
+					{%- endblock %}
+					{%- if description %}
 						<h2 class="h3-like {% if layout === 'template/archive.njk' %}m-reset pb1{% else %}description{% endif %}" itemprop="description">{{ description | safe }}</h2>
-					{% endif %}
+					{%- endif %}
 				</header>
-				{% block content %}
+				{%- block content %}
 					<article role="article" itemscope itemtype="https://schema.org/Article">
 						<div itemprop="articleBody">
 							{{ content | safe }}
 						</div>
 					</article>
-				{% endblock %}
-				{% block comments %}{% endblock %}
-				{% block latest %}{% endblock %}
+				{%- endblock -%}
+				{%- block comments %}{% endblock -%}
+				{%- block latest %}{% endblock -%}
 			</main>
 
-			{% block aside %}
+			{%- block aside -%}
 				<aside class="col pt8 pl0 pr0 print-hidden" role="complementary">
 					<div class="aside pl2 pt2 pr3">
 						<h3 class="tk-bello-pro h2-like m-reset">À regarder ailleurs</h3>
 						<div class="textwidget">
 							<ul>
-								{% for talk in talks | selectattr('replay') %}
-									{% if (loop.index0 === 0 and not prevTitle) or (loop.index <= 4 and prevTitle != talk.title) %}
+								{%- for talk in talks | selectattr('replay') %}
+									{%- if (loop.index0 === 0 and not prevTitle) or (loop.index <= 4 and prevTitle != talk.title) %}
 										<li>
-											{% if talk.replay %}
+											{%- if talk.replay -%}
 												<a href="{{ talk.replay }}">
 													{{ talk.title | safe }}
-													{% if "youtube.com" in talk.replay %} (sur YouTube){% elseif "vimeo.com" in talk.replay %} (sur Viméo){% endif %}
+													{%- if "youtube.com" in talk.replay %} (sur YouTube){% elseif "vimeo.com" in talk.replay %} (sur Viméo){% endif -%}
 												</a>
-											{% else %}
+											{%- else -%}
 												<a href="{{ talk.link }}">{{ talk.title | safe }}</a>
-											{% endif %}
+											{%- endif -%}
 										</li>
-									{% endif %}
-									{% set prevTitle = talk.title %}
-								{% endfor %}
+									{%- endif -%}
+									{%- set prevTitle = talk.title -%}
+								{%- endfor %}
 							</ul>
 						</div>
 					</div>
 				</aside>
-			{% endblock %}
+			{%- endblock %}
 		</div>
 		<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
 			<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden">
 				{%- for contactPoint in contactPoints -%}
 					<li class="inbl pa1" itemscope itemprop="contactPoint">
 						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__{{ contactPoint.name | lower }}" href="{{ contactPoint.url }}" itemprop="url"
-							 {% if contactPoint.name === 'Mastodon' %} rel="me"{% endif %}
+							 {%- if contactPoint.name === 'Mastodon' %} rel="me"{% endif -%}
 							 title="{% if contactPoint.name === "RSS" %}La vie en #ffoodd | Flux RSS{% else %}Gaël Poupard sur {{ contactPoint.name }}{% endif %}">
 							<span itemprop="name">{{ contactPoint.name }}</span>
 						</a>
