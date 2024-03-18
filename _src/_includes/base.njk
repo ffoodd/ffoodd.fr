@@ -4,13 +4,13 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>{{ metatitle or title }} — {{ site.name }}</title>
+		<link rel="stylesheet" href="/assets/styles.min.css" media="all">
+		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
 		<meta name="description" content="{{ metadescription or description }}">
 		<meta name="generator" content="{{ eleventy.generator }}">
 		<link rel="icon" href="/favicon.ico" sizes="32x32">
 		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 		<link rel="author" href="/humans.txt" type="text/plain">
-		<link rel="stylesheet" href="/assets/styles.min.css" media="all">
-		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
 		<link rel="alternate" type="application/rss+xml" title="{{ site.name }} | Flux RSS" href="/feed/index.xml">
 		{%- set slug = post.data.permalink | replace("/index.html", "") -%}
 		{%- set comments = collections.comments | comments(slug) | length -%}
