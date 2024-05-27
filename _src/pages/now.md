@@ -5,7 +5,7 @@ permalink: "now/index.html"
 tags: "pages"
 description: "Et maintenant, je fais quoi ?"
 metatitle: "En ce moment chez Gaël"
-modified: "2024-03-06"
+modified: "2024-05-27"
 ---
 
 
