@@ -13,15 +13,15 @@ modified: "2024-03-06"
 
 **Il s’en passe, des choses, dans une vie**&nbsp;: nos trois enfants nous occupent, ma moitié et moi, et je savoure le temps passé ensemble.
 
-**Côté jardin**, les poules sont en liberté et nous agrandissons le potager. C’est aussi l’occasion d’installer des récupérateurs d’eau de pluie supplémentaires.
+**Côté jardin**, les poules sont en liberté et nous agrandissons le potager. Les plants et semis sont faits, nous n’avons jamais eu un potager aussi complet et prometteur&nbsp;!
 
-**Je lis beaucoup, de tout**. En ce moment, c’est <cite>La huitième couleur</cite> de Terry Pratchett et je viens de terminer <cite lang="en">The Midnight Order</cite> de Mathieu Bablet et ses camarades.
+**Je lis beaucoup, de tout**. En ce moment, c’est <cite>Cataclysme</cite> de Lydia Kang —&nbsp;dans la franchise Star Wars, des romans de S-F pop-corn&nbsp;— et je viens de terminer <cite lang="en">LA huitième couleur</cite> de Terry Pratchet.
 
 Ma <abbr title="Pile à lire" aria-label="Pile à lire">PàL</abbr> contient des œuvres de Lovecraft, Becky Chambers, Ursula K. Le Guin, Fabrice Caro, Caryl Férey, Tolkien, encore du Terry Pratchett, Pierre Lemaitre, Stephen King… mais aussi <cite>La volonté de changer</cite> ou <cite>Voyage en misarchie</cite>, qu’il faudra bien que je me décide à lire un jour&nbsp;!
 
-J’écoute peu de musique. Ce qui revient beaucoup depuis un moment, c’est Meute, je ne m’en lasse pas. Ça rejoint Woodkid, C2C, Roudoudou ou Caravan Palace dans les artistes que je peux écouter en boucle.
+J’écoute peu de musique. J’ai redécouvert Sporto Kantès et je retrouve mon plaisir de circa 2005. Ça rejoint Meute, Woodkid, C2C, Roudoudou ou Caravan Palace dans les artistes que je peux écouter en boucle.
 
-Et je regarde… Des films quand je peux, quelques séries (Solar Opposites et Shogun, en ce moment), et souvent du rugby pour travailler en parallèle le soir sur mes projets…
+Et je regarde… Des films quand je peux, quelques séries, et souvent du rugby pour travailler en parallèle le soir sur mes projets…
 
 
 ## Les projets
