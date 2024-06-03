@@ -134,7 +134,7 @@
 	</article>
 <div id="comments" class="comments-area pl2 pt2 mt2 print-hidden"><div class="comment-respond">
 	<h3>Laisser un commentaire</h3>
-	<form action="https://github.com/ffoodd/ffoodd.fr/new/main/src/posts/html-comme-fondation/comments/new?value=&filename=1644.md" method="post" class="comment-form">
+	<form action="https://github.com/ffoodd/ffoodd.fr/new/main/src/posts/html-comme-fondation/comments/new?value=&filename=8192.md" method="post" class="comment-form">
 		<p class="comment-notes">
 			Vous devez avoir un compte GitHub pour ajouter un commentaire.
 		</p>
@@ -155,6 +155,7 @@
 	</form>
 	<script>
 		const form = document.querySelector('.comment-form');
+		const dynamicCommentID = Math.random().toString(36).substr(0, 4);
 
 		form.addEventListener('submit', async (event) => {
 			event.preventDefault();
@@ -169,12 +170,12 @@ date: "${new Date().toISOString()}"
 author_name: "${user.name}"
 author_url: "${user.blog}"
 author_avatar: "${user.avatar_url}"
-id: "1644"
+id: "${dynamicCommentID}"
 tags: ["comments","html-comme-fondation"]
 ---
 ${comment}`);
 
-					window.open(`https://github.com/ffoodd/ffoodd.fr/new/main/_src/posts/html-comme-fondation/comments/?value=${content}&filename=1644.md`)
+					window.open(`https://github.com/ffoodd/ffoodd.fr/new/main/_src/posts/html-comme-fondation/comments/?value=${content}&filename=${dynamicCommentID}.md`)
 				});
 		});
 	</script>

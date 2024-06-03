@@ -1,11 +1,11 @@
 {%- set commentID_1 = [1,2,3,4,5,6,7,8,9] | random -%}
-				{%- set commentID_2 = [1,2,3,4,5,6,7,8,9] | random -%}
-				{%- set commentID_3 = [1,2,3,4,5,6,7,8,9] | random -%}
-				{%- set commentID_4 = [1,2,3,4,5,6,7,8,9] | random -%}
-				{%- set commentID = [commentID_1,commentID_2,commentID_3,commentID_4] | join -%}
+{%- set commentID_2 = [1,2,3,4,5,6,7,8,9] | random -%}
+{%- set commentID_3 = [1,2,3,4,5,6,7,8,9] | random -%}
+{%- set commentID_4 = [1,2,3,4,5,6,7,8,9] | random -%}
+{%- set staticCommentID = [commentID_1,commentID_2,commentID_3,commentID_4] | join -%}
 <div class="comment-respond">
 	<h3>Laisser un commentaire</h3>
-	<form action="https://github.com/ffoodd/ffoodd.fr/new/main/src/posts/{{ slug }}/comments/new?value=&filename={{ commentID }}.md" method="post" class="comment-form">
+	<form action="https://github.com/ffoodd/ffoodd.fr/new/main/src/posts/{{ slug }}/comments/new?value=&filename={{ staticCommentID }}.md" method="post" class="comment-form">
 		<p class="comment-notes">
 			Vous devez avoir un compte GitHub pour ajouter un commentaire.
 		</p>
@@ -26,6 +26,7 @@
 	</form>
 	<script>
 		const form = document.querySelector('.comment-form');
+		const dynamicCommentID = Math.random().toString(36).substr(0, 4);
 
 		form.addEventListener('submit', async (event) => {
 			event.preventDefault();
@@ -40,12 +41,12 @@ date: "${new Date().toISOString()}"
 author_name: "${user.name}"
 author_url: "${user.blog}"
 author_avatar: "${user.avatar_url}"
-id: "{{ commentID }}"
+id: "${dynamicCommentID}"
 tags: ["comments","{{ slug }}"]
 ---
 ${comment}`);
 
-					window.open(`https://github.com/ffoodd/ffoodd.fr/new/main/_src/posts/{{ slug }}/comments/?value=${content}&filename={{ commentID }}.md`)
+					window.open(`https://github.com/ffoodd/ffoodd.fr/new/main/_src/posts/{{ slug }}/comments/?value=${content}&filename=${dynamicCommentID}.md`)
 				});
 		});
 	</script>
