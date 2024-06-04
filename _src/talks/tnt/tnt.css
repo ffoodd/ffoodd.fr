@@ -235,6 +235,8 @@
 		.align-center { align-items: center; }
 		.no-margin { margin: 0; }
 		.mb-0 { margin-block-end: 0; }
+		.mt-0 { margin-block-start: 0; }
+		.pl-1 { padding-inline-start: 1rem;	}
 		.text-center { text-align: center; }
 		.float-right { float: right; }
 		.mt-n3 { margin-top: -3rem; }

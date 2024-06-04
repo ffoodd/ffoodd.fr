@@ -638,7 +638,7 @@ regions.forEach(region => {
 }
 
 @media (min-width: 30em) {
-	.demo-hue {}
+	.demo-hue { --hue: 270; }
 }</style>
 				</div>
 				<div class="playground d-grid grid-6 demo-hue">
@@ -982,61 +982,64 @@ regions.forEach(region => {
 				</div>
 			</section>
 
-			<section id="slide-23" class="demo" data-note="Vous avez dit sinus ? → sin() !">
+			<section id="slide-23"data-note="Vous avez dit sinus ? → sin() !">
 				<h2>Cherchez l’angle<span aria-hidden="true">&nbsp;&#8894;</span></h2>
-				<div class="lead">
+				<div class="demo">
 					<p class="lead">Pour trouver le point sur le cercle&nbsp;:</p>
-					<ol>
-						<li>on identifie le <strong>triangle rectangle</strong> formé par le rayon du cercle, son centre, et notre point cible&nbsp;;</li>
-						<li>on connait son <strong>hypoténuse</strong> —&nbsp;le rayon&nbsp;;</li>
-						<li>mais également <strong>l’angle opposé</strong> —&nbsp;qu’on convertit en radians en le multipliant par <code>0.01745329251</code>, donc…</li>
-						<li>on peut appliquer <a href="https://fr.wikipedia.org/wiki/Loi_des_sinus">la loi des sinus</a> pour trouver la longueur des deux autres côtés&nbsp;! &#128519;</li>
-					</ol>
-				</div>
-				<div class="playground">
-					<div class="scrollable-container chaarts-container has-colors">
-						<table class="chaarts chaarts-one chaarts-two chaarts-three chaarts-four chaarts-five chaarts-six chaarts-seven">
-							<caption>
-								Distribution du poids des ressources pour
-								<a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a>
-							</caption>
-							<thead class="sr-only">
-							<tr>
-								<th scope="col">Ressource</th>
-								<th scope="col">Proportion</th>
-							</tr>
-							</thead>
-							<tbody>
-							<tr style="--color: var(--chaarts-purple);">
-								<th scope="row">HTML</th>
-								<td>2&nbsp;%</td>
-							</tr>
-							<tr style="--color: var(--chaarts-pink);">
-								<th scope="row">CSS</th>
-								<td>2&nbsp;%</td>
-							</tr>
-							<tr style="--color: var(--chaarts-blue);">
-								<th scope="row">JS</th>
-								<td>32&nbsp;%</td>
-							</tr>
-							<tr style="--color: var(--chaarts-yellow);">
-								<th scope="row">JSON</th>
-								<td>1&nbsp;%</td>
-							</tr>
-							<tr style="--color: var(--chaarts-green);">
-								<th scope="row">Images</th>
-								<td>44&nbsp;%</td>
-							</tr>
-							<tr style="--color: var(--chaarts-red);">
-								<th scope="row">Fontes</th>
-								<td>17&nbsp;%</td>
-							</tr>
-							<tr style="--color: var(--chaarts-gray);">
-								<th scope="row">Autre</th>
-								<td>2&nbsp;%</td>
-							</tr>
-							</tbody>
-						</table>
+
+					<div class="lead">
+						<ol>
+							<li>on identifie le <strong>triangle rectangle</strong> formé par le rayon du cercle, son centre, et notre point cible&nbsp;;</li>
+							<li>on connait son <strong>hypoténuse</strong> —&nbsp;le rayon&nbsp;;</li>
+							<li>mais également <strong>l’angle opposé</strong> —&nbsp;qu’on convertit en radians en le multipliant par <code>0.01745329251</code>, donc…</li>
+							<li>on peut appliquer <a href="https://fr.wikipedia.org/wiki/Loi_des_sinus">la loi des sinus</a> pour trouver la longueur des deux autres côtés&nbsp;! &#128519;</li>
+						</ol>
+					</div>
+					<div class="playground">
+						<div class="scrollable-container chaarts-container has-colors">
+							<table class="chaarts chaarts-one chaarts-two chaarts-three chaarts-four chaarts-five chaarts-six chaarts-seven">
+								<caption>
+									Distribution du poids des ressources pour
+									<a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a>
+								</caption>
+								<thead class="sr-only">
+								<tr>
+									<th scope="col">Ressource</th>
+									<th scope="col">Proportion</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr style="--color: var(--chaarts-purple);">
+									<th scope="row">HTML</th>
+									<td>2&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-pink);">
+									<th scope="row">CSS</th>
+									<td>2&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-blue);">
+									<th scope="row">JS</th>
+									<td>32&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-yellow);">
+									<th scope="row">JSON</th>
+									<td>1&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-green);">
+									<th scope="row">Images</th>
+									<td>44&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-red);">
+									<th scope="row">Fontes</th>
+									<td>17&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-gray);">
+									<th scope="row">Autre</th>
+									<td>2&nbsp;%</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -1165,81 +1168,83 @@ regions.forEach(region => {
 				<p class="small">Il nous faudra dix points, au total.</p>
 			</section>
 
-			<section id="slide-27" class="demo" data-note="Mais les items sont superposés…">
+			<section id="slide-27" data-note="Mais les items sont superposés…">
 				<h2>Un booléen en CSS<span aria-hidden="true">&nbsp;&#129522;</span></h2>
-				<div>
-					<h3 class="mb-0">Des drapeaux<span aria-hidden="true">&nbsp;&#128681;</span></h3>
+				<div class="demo">
 					<p class="no-margin">
 						Basé sur <a hreflang="en" href="https://www.kizu.ru/conditions-for-css-variables/">une idée de <strong>Roma Komarov</strong></a>.
 					</p>
-					<div class="markup">
-							<pre class="scrollable-container language-css"><code class="language-css">.chaarts td {
+					<div>
+						<h3 class="mb-0">Des drapeaux<span aria-hidden="true">&nbsp;&#128681;</span></h3>
+						<div class="markup">
+							<pre class="scrollable-container language-css mt-0"><code class="language-css">.chaarts td {
 	--lt-25: clamp(0, 25 - var(--value), 1);
 	--gt-25: calc(1 - var(--lt-25));
 }</code></pre>
-					</div>
-					<h3>Des conditions<span aria-hidden="true">&nbsp;&#10067;</span></h3>
-					<div class="markup">
-						<pre class="scrollable-container language-css" data-line="3"><code class="language-css" data-line="3">.chaarts td::before {
+						</div>
+						<h3 class="mb-0">Des conditions<span aria-hidden="true">&nbsp;&#10067;</span></h3>
+						<div class="markup">
+							<pre class="scrollable-container language-css mt-0" data-line="3"><code class="language-css" data-line="3">.chaarts td::before {
 	clip-path: polygon(…
 		calc(var(--gt-25, 0) * 100%)
 	…);
 }</code></pre>
-					</div>
-					<h3>Des comparaisons<span aria-hidden="true">&nbsp;&#9878;</span></h3>
-					<div class="markup">
-							<pre class="scrollable-container language-css" data-line="3,4"><code class="language-css" data-line="3,4">.chaarts td::before {
+						</div>
+						<h3 class="mb-0">Des comparaisons<span aria-hidden="true">&nbsp;&#9878;</span></h3>
+						<div class="markup">
+							<pre class="scrollable-container language-css mt-0" data-line="3,4"><code class="language-css" data-line="3,4">.chaarts td::before {
 	clip-path: polygon(…
 		max(50%, var(--gt-25, 0) * 100%)
 		max(50%, var(--gt-25, 0) * 100%)
 	…);
 }</code></pre>
+						</div>
 					</div>
-				</div>
-				<div class="playground">
-					<div class="scrollable-container chaarts-container has-colors">
-						<table class="chaarts chaarts-one chaarts-two chaarts-three chaarts-four chaarts-five chaarts-six chaarts-nine">
-							<caption>
-								Distribution du poids des ressources pour
-								<a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a>
-							</caption>
-							<thead class="sr-only">
-							<tr>
-								<th scope="col">Ressource</th>
-								<th scope="col">Proportion</th>
-							</tr>
-							</thead>
-							<tbody>
-							<tr style="--color: var(--chaarts-purple); --value: 2;">
-								<th scope="row">HTML</th>
-								<td>2&nbsp;%</td>
-							</tr>
-							<tr style="--color: var(--chaarts-pink); --value: 2;">
-								<th scope="row">CSS</th>
-								<td>2&nbsp;%</td>
-							</tr>
-							<tr style="--color: var(--chaarts-blue); --value: 32;">
-								<th scope="row">JS</th>
-								<td>32&nbsp;%</td>
-							</tr>
-							<tr style="--color: var(--chaarts-yellow); --value: 1;">
-								<th scope="row">JSON</th>
-								<td>1&nbsp;%</td>
-							</tr>
-							<tr style="--color: var(--chaarts-green); --value: 44;">
-								<th scope="row">Images</th>
-								<td>44&nbsp;%</td>
-							</tr>
-							<tr style="--color: var(--chaarts-red); --value: 17;">
-								<th scope="row">Fontes</th>
-								<td>17&nbsp;%</td>
-							</tr>
-							<tr style="--color: var(--chaarts-gray); --value: 2;">
-								<th scope="row">Autre</th>
-								<td>2&nbsp;%</td>
-							</tr>
-							</tbody>
-						</table>
+					<div class="playground">
+						<div class="scrollable-container chaarts-container has-colors">
+							<table class="chaarts chaarts-one chaarts-two chaarts-three chaarts-four chaarts-five chaarts-six chaarts-nine">
+								<caption>
+									Distribution du poids des ressources pour
+									<a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a>
+								</caption>
+								<thead class="sr-only">
+								<tr>
+									<th scope="col">Ressource</th>
+									<th scope="col">Proportion</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr style="--color: var(--chaarts-purple); --value: 2;">
+									<th scope="row">HTML</th>
+									<td>2&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-pink); --value: 2;">
+									<th scope="row">CSS</th>
+									<td>2&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-blue); --value: 32;">
+									<th scope="row">JS</th>
+									<td>32&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-yellow); --value: 1;">
+									<th scope="row">JSON</th>
+									<td>1&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-green); --value: 44;">
+									<th scope="row">Images</th>
+									<td>44&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-red); --value: 17;">
+									<th scope="row">Fontes</th>
+									<td>17&nbsp;%</td>
+								</tr>
+								<tr style="--color: var(--chaarts-gray); --value: 2;">
+									<th scope="row">Autre</th>
+									<td>2&nbsp;%</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -1247,7 +1252,7 @@ regions.forEach(region => {
 			<section id="slide-28" class="demo" data-note="Top ! On enrichit… au survol ?">
 				<h2>Distribution des parts<span aria-hidden="true">&nbsp;&#127829;</span></h2>
 				<div>
-					<h3>Côté HTML</h3>
+					<h3 class="pl-1">Côté HTML</h3>
 					<div class="markup">
 						<pre class="scrollable-container language-markup"><code class="language-markup">&lt;table style="--1: 2; --2: 2; --3: 32; --4: 1; --5: 44; --6: 17; --7: 2;"&gt;
 	&lt;tbody&gt;
@@ -1255,7 +1260,7 @@ regions.forEach(region => {
 			&lt;td style="--value: 17;"&gt;
 						</code></pre>
 					</div>
-					<h3>Côté CSS</h3>
+					<h3 class="pl-1">Côté CSS</h3>
 					<div class="markup">
 		<pre class="scrollable-container language-css"><code class="language-css">.chaarts.pie tr:first-child {
   --value: var(--1);
@@ -1621,7 +1626,7 @@ regions.forEach(region => {
 
 			<section id="slide-33" class="demo" data-note="On y est presque…">
 				<h2>Le <abbr lang="en" title="Right To Left" aria-label="Right To Left">RTL</abbr> grâce aux propriétés logiques<span aria-hidden="true">&nbsp;&#129694;</span></h2>
-				<figure role="group">
+				<figure role="group" class="pl-1">
 					<img src="img/logical-properties.avif" alt=""
 							 loading="lazy" width="800" height="559">
 					<figcaption>
