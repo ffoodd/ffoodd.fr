@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<title>Orange Confort+</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Orange Confort+ — Atelier animé par Gaël Poupard lors de a11y Paris 2024.">
+	<meta name="author" content="Gaël Poupard">
+	<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+	<link rel="preconnect" href="https://twemoji.maxcdn.com">
+	<link rel="preconnect" href="https://cdn.jsdelivr.net">
+	<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../accesslide/fonts/bello-pro.woff2">
+	<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../accesslide/fonts/museo-slab-300.woff2">
+	<link rel="stylesheet" href="../sliide/sliide.css?4" type="text/css" media="screen">
+	<link rel="stylesheet" href="../sliide/prism.min.css" type="text/css" media="screen">
+</head>
+<body>
+<main role="main" tabindex="0">
+	<section id="slide-1" class="d-flex flex-column justify-between">
+		<p>
+			<span class="h2">Orange Confort+</span>
+		</p>
+		<dl>
+			<dt>Slides en ligne</dt>
+			<dd><a href="https://www.ffoodd.fr/devquest/">ffoodd.fr/a11y-paris/</a></dd>
+			<dt>Site d’Orange Confort+</dt>
+			<dd><a href="https://confort-plus.orange.com">confort-plus.orange.com</a></dd>
+		</dl>
+		<footer>
+			<div class="d-flex">
+				<p class="my-0">Raconté par <a href="https://www.ffoodd.fr">Gaël Poupard</a></p>
+				<ul role="list">
+					<li><a href="https://www.ffoodd.fr">
+						<img src="../accesslide/img/ffoodd.svg" alt="Blog de Gaël Poupard" height="32" width="32">
+					</a></li>
+					<li><a href="https://mamot.fr/@ffoodd">
+						<img src="../accesslide/img/mastodon.svg" alt="@ffoodd sur Mastodon" height="32" width="32">
+					</a></li>
+					<li><a href="https://github.com/ffoodd/">
+						<img src="../accesslide/img/github.svg" alt="@ffoodd sur Github" height="32" width="32">
+					</a></li>
+					<li><a href="https://www.linkedin.com/in/ga%C3%ABl-poupard-40117b30/">
+						<img src="../accesslide/img/linkedin.svg" alt="Gaël Poupard sur Linkedin" height="32" width="32">
+					</a></li>
+					<li><a href="https://www.paris-web.fr/">
+						<img src="../accesslide/img/pw.svg" alt="Paris Web" height="32" width="32">
+					</a></li>
+				</ul>
+			</div>
+			<p class="d-flex align-center">
+				<a href="https://www.groupeonepoint.com">
+					<img src="../accesslide/img/onepoint.svg" width="166" height="80" alt="onepoint">
+				</a>
+				<i class="h3" aria-hidden="true">&nbsp;×&nbsp;</i>
+				<a href="https://www.orange.com">
+					<img src="../accesslide/img/orange.svg" width="40" height="40" alt="Orange">
+				</a>
+			</p>
+		</footer>
+	</section>
+
+	<section id="slide-39">
+		<h2>Merci</h2>
+		<h3>Et à bientôt <span aria-hidden="true">&nbsp;&#128522;</span></h3>
+		<div>
+			<h4>Crédits</h4>
+			<ul>
+				<li>Emojis&nbsp;: <a hreflang="en" href="https://github.com/twitter/twemoji">Twemoji</a> —&nbsp;par Twitter&nbsp;;</li>
+				<li>Typographie de titraille&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/bello-pro">Bello Pro</a> —&nbsp;créée par <a hreflang="en" href="https://www.underware.nl/">Underware</a>&nbsp;;</li>
+				<li>Typographie de labeur&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/museo-slab">Museo Slab</a> —&nbsp;créée par <a hreflang="en" href="https://www.exljbris.com/">Exljbris</a>&nbsp;;</li>
+				<li>Moteur de présentation inspiré de <a hreflang="en" href="https://css-tricks.com/css-scroll-snap-slide-deck/">"<cite lang="en">CSS scroll-snap slide deck that supports live coding</cite>" de Stephanie Eckles sur Smashing Magazine</a>.</li>
+			</ul>
+		</div>
+	</section>
+</main>
+
+<script src="../sliide/js/prism.min.js"></script>
+<script src="../accesslide/js/twemoji.min.js"></script>
+<script>
+	twemoji.parse(document.body, {folder: 'svg', ext: '.svg'});
+
+	let view;
+	switchSlide = (id) => {
+		// Historique
+		history.pushState({}, "", `#slide-${id}`);
+		// Vue présentateur
+		//// Aperçu du slide suivant
+		document.body.style.setProperty('--next', String(`-moz-element(#slide-${Number(id) + 1})`));
+		//// Synchro de la vue présentateur
+		if (view) {
+			view.postMessage(`slide-${id}`, 'https://localhost:8080/devquest/index.html');
+		}
+		//// Notes dans la vue présentateur
+		if('note' in document.getElementById(`slide-${id}`).dataset) {
+			document.body.dataset.note = document.getElementById(`slide-${id}`).dataset.note;
+		} else {
+			delete document.body.dataset.note;
+		}
+	}
+
+	document.addEventListener('DOMContentLoaded', () => {
+		const slides = document.querySelectorAll('section[id^="slide-"]');
+
+		// Nombre total de slides, pour la pagination
+		document.body.style.setProperty('--slides', String(slides.length));
+		document.body.style.setProperty('--next', String(`-moz-element(#slide-2)`));
+
+		// Gestion de l’historique
+		let io = new IntersectionObserver(entries => {
+			if (entries[0].isIntersecting === true) {
+				switchSlide(entries[0].target.id.split('-')[1]);
+			}
+		}, {
+			root: document.querySelector('main'),
+			threshold: [1]
+		});
+		slides.forEach(slide =>	io.observe(slide));
+
+		document.addEventListener('keydown', event => {
+			const index = Number(window.location.hash.split('-')[1]);
+			let id = null;
+			switch (event.key) {
+				// Activer la vue présentateur
+				case 's':
+					if (event.altKey) {
+						view = window.open('https://localhost:8080/devquest/index.html', 'speakerView');
+						view.addEventListener('load', () => {
+							view.document.body.classList.add('speaker');
+						})
+					}
+					break;
+				// Télécommande ++
+				case 'PageDown':
+					id = index + 1;
+					break;
+				// Télécommande --
+				case 'PageUp':
+					id = index - 1;
+					break;
+				default:
+					break;
+			}
+
+			if (id !== null && id >= 1) {
+				document.getElementById(`slide-${id}`).scrollIntoView({ behavior: 'smooth' });
+				switchSlide(id);
+			}
+		});
+	});
+
+	window.addEventListener('message', (e) => {
+		if (e.origin === 'https://localhost:8080') {
+			document.getElementById(e.data).scrollIntoView({ behavior: 'smooth' });
+			switchSlide(e.data.split('-')[1]);
+		}
+	}, false);
+</script>
+</body>
+</html>
