@@ -1,10 +1,16 @@
 [
 	{
 		"title": "Dessine-moi un graphique (en CSS)",
+		"event": "devQuest Niort 2024",
+		"date": "2024-06-14",
+		"link": "https://www.devquest.fr/sessions/dessine-moi-un-graphique-en-CSS",
+		"slides": "https://www.ffoodd.fr/devquest"
+	},{
+		"title": "Dessine-moi un graphique (en CSS)",
 		"event": "Touraine Tech 2024",
 		"date": "2024-02-09",
 		"link": "https://touraine.tech/talk/ioc2x2nW4KV5zrt69ZQm",
-		"slides": "https://www.ffoodd.fr/tnt",
+		"slides": "https://www.ffoodd.fr/devquest",
 		"replay": "https://www.youtube.com/watch?v=aS-qijfAm4Q&list=PLl0xIhYGSdm9o2-7p5YDrAKibqoSUSHP1&index=17"
 	},
 	{
@@ -12,7 +18,7 @@
 		"event": "DevFest Nantes 2023",
 		"date": "2023-10-19",
 		"link": "https://devfest2023.gdgnantes.com/sessions/dessine_moi_un_graphique__en_css_/",
-		"slides": "https://www.ffoodd.fr/devfest.2023",
+		"slides": "https://www.ffoodd.fr/devquest",
 		"replay": "https://www.youtube.com/watch?v=VjS7SLFYxYk&list=PLuZ_sYdawLiUHU4E1i5RrFsRN_lQcgPwT"
 	},
 	{
