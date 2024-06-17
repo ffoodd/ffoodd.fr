@@ -2059,6 +2059,7 @@ switches.forEach(el => {
 				document.addEventListener('keydown', event => {
 					const index = Number(window.location.hash.split('-')[1]);
 					let id = null;
+					console.table(event);
 					switch (event.key) {
 						// Activer la vue présentateur
 						case 's':
