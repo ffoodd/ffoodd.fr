@@ -2028,7 +2028,7 @@ switches.forEach(el => {
 				document.body.style.setProperty('--next', String(`-moz-element(#slide-${Number(id) + 1})`));
 				//// Synchro de la vue présentateur
 				if (view) {
-					view.postMessage(`slide-${id}`, 'https://localhost:8080/devquest/index.html');
+					view.postMessage(`slide-${id}`, 'http://localhost:8080/devquest/index.html');
 				}
 				//// Notes dans la vue présentateur
 				if('note' in document.getElementById(`slide-${id}`).dataset) {
@@ -2063,7 +2063,7 @@ switches.forEach(el => {
 						// Activer la vue présentateur
 						case 's':
 							if (event.altKey) {
-								view = window.open('https://localhost:8080/devquest/index.html', 'speakerView');
+								view = window.open('http://localhost:8080/devquest/index.html', 'speakerView');
 								view.addEventListener('load', () => {
 									view.document.body.classList.add('speaker');
 								})
@@ -2089,7 +2089,7 @@ switches.forEach(el => {
 			});
 
 			window.addEventListener('message', (e) => {
-				if (e.origin === 'https://localhost:8080') {
+				if (e.origin === 'http://localhost:8080') {
 					document.getElementById(e.data).scrollIntoView({ behavior: 'smooth' });
 					switchSlide(e.data.split('-')[1]);
 				}
