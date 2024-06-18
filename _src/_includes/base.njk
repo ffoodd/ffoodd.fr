@@ -15,14 +15,20 @@
 		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 		<link rel="author" href="/humans.txt" type="text/plain">
 		<link rel="alternate" type="application/rss+xml" title="{{ site.name }} | Flux RSS" href="/feed/index.xml">
+		{%- if alternate %}
+		<link rel="alternate" hreflang="en" href="{{ alternate }}">
+		{%- endif %}
+		{%- if canonical %}
+		<link rel="canonical" href="{{ canonical }}">
+		{%- endif %}
 		{%- set slug = post.data.permalink | replace("/index.html", "") -%}
 		{%- set comments = collections.comments | comments(slug) | length -%}
-		{%- if pagination.href.previous -%}
-			<link rel="prev" href="{{ pagination.href.prev }}">
-		{%- endif -%}
-		{%- if pagination.href.next -%}
-			<link rel="next" href="{{ pagination.href.next }}">
-		{%- endif -%}
+		{%- if pagination.href.previous %}
+		<link rel="prev" href="{{ pagination.href.prev }}">
+		{%- endif %}
+		{%- if pagination.href.next %}
+		<link rel="next" href="{{ pagination.href.next }}">
+		{%- endif %}
 	</head>
 	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
 		{%- block skiplinks %}

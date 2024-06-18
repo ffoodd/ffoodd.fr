@@ -8,7 +8,7 @@ excerpt: "La première édition du devQuest avait lieu à Niort le 14 juin derni
 format: "standard"
 tags: "posts"
 description: "La première édition du devQuest avait lieu à Niort le 14 juin dernier. Et pour une première édition, c’était incroyablement réussi&nbsp;!"
-alternate: "https://dev.to/ffoodd/mon-epopee-au-devquest/"
+canonical: "https://dev.to/ffoodd/mon-epopee-au-devquest/"
 commentsOpen: "true"
 ---
 
