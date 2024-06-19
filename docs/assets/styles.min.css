@@ -248,6 +248,11 @@ html {
 	box-sizing: inherit;
 }
 
+hr {
+	margin-top: 3em;
+	opacity: .1;
+}
+
 /* == @section Structure flottante ==================== */
 /* Bloc capable de contenir plusieurs .mod, peut contenir des flottants */
 .mod {
