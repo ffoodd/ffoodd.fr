@@ -43,6 +43,10 @@ J’ai également beaucoup apprécié l’ouverture de la journée, lancée par 
 
 Deux _tracks_ de conférences et une d’ateliers&nbsp;: la journée était bien chargée et le choix parfois difficile&nbsp;!
 
+J’ai moi-même conté une histoire, [« Dessine-moi un graphique (en CSS) » que vous retrouverez chez moi](https://www.ffoodd.fr/devquest/). J’ai beaucoup apprécié l’aventure, et les retours sont plutôt positifs.
+
+![Détail des votes : Fun, 4 votes ; J’ai beaucoup appris : 21 votes ; Très intéressant : 28 votes ; Bon orateur : 19 votes ; Trop complexe : 2 votes.](/images/2024/06/feedback.png "Retours glânés sur OpenFeedback")
+
 ---
 
 ### _Level up_ ta conf
