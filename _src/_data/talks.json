@@ -1,12 +1,20 @@
 [
 	{
+		"title": "Orange Confort+",
+		"event": "a11y Paris 2024",
+		"date": "2024-06-26",
+		"link": "https://www.a11yparis.org/",
+		"slides": "https://www.ffoodd.fr/a11y-paris"
+	},
+	{
 		"title": "Dessine-moi un graphique (en CSS)",
 		"event": "devQuest Niort 2024",
 		"date": "2024-06-14",
 		"link": "https://www.devquest.fr/sessions/dessine-moi-un-graphique-en-CSS",
 		"slides": "https://www.ffoodd.fr/devquest",
 		"replay": "https://www.youtube.com/watch?v=ph-T_ypfNgM"
-	},{
+	},
+	{
 		"title": "Dessine-moi un graphique (en CSS)",
 		"event": "Touraine Tech 2024",
 		"date": "2024-02-09",
