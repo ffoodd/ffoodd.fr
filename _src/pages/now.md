@@ -5,7 +5,7 @@ permalink: "now/index.html"
 tags: "pages"
 description: "Et maintenant, je fais quoi ?"
 metatitle: "En ce moment chez Gaël"
-modified: "2024-05-27"
+modified: "2024-07-18"
 ---
 
 
@@ -13,20 +13,22 @@ modified: "2024-05-27"
 
 **Il s’en passe, des choses, dans une vie**&nbsp;: nos trois enfants nous occupent, ma moitié et moi, et je savoure le temps passé ensemble.
 
-**Côté jardin**, les poules sont en liberté et nous agrandissons le potager. Les plants et semis sont faits, nous n’avons jamais eu un potager aussi complet et prometteur&nbsp;!
+**Côté jardin**, les poules font leur vie et nous agrandissons le potager. Les plants et semis sont faits, nous n’avons jamais eu un potager aussi complet et prometteur&nbsp;! Les radis, tomates cerises, pommes de terre et betteraves commencent à atterrir dans nos assiettes.
 
-**Je lis beaucoup, de tout**. En ce moment, c’est <cite>Cataclysme</cite> de Lydia Kang —&nbsp;dans la franchise Star Wars, des romans de S-F pop-corn&nbsp;— et je viens de terminer <cite lang="en">LA huitième couleur</cite> de Terry Pratchet.
+**Je lis beaucoup, de tout**. En ce moment, c’est <cite>Une prière pour les cimes timides</cite> de Becky Chambers —&nbsp;le second tome de la série «&nbsp;Histoires de moines et de robots&nbsp;», après <cite>Un psaume pour les recyclés sauvages&nbsp;»&nbsp;— et je viens de terminer <cite>Cataclysme</cite> de Lydia Kang.
 
-Ma <abbr title="Pile à lire" aria-label="Pile à lire">PàL</abbr> contient des œuvres de Lovecraft, Becky Chambers, Ursula K. Le Guin, Fabrice Caro, Caryl Férey, Tolkien, encore du Terry Pratchett, Pierre Lemaitre, Stephen King… mais aussi <cite>La volonté de changer</cite> ou <cite>Voyage en misarchie</cite>, qu’il faudra bien que je me décide à lire un jour&nbsp;!
+Ma <abbr title="Pile à lire" aria-label="Pile à lire">PàL</abbr> contient des œuvres de Lovecraft, Ursula K. Le Guin, Fabrice Caro, Caryl Férey, Tolkien, encore du Terry Pratchett, Pierre Lemaitre, Stephen King… mais aussi <cite>La volonté de changer</cite> ou <cite>Voyage en misarchie</cite>, qu’il faudra bien que je me décide à lire un jour&nbsp;!
 
 J’écoute peu de musique. J’ai redécouvert Sporto Kantès et je retrouve mon plaisir de circa 2005. Ça rejoint Meute, Woodkid, C2C, Roudoudou ou Caravan Palace dans les artistes que je peux écouter en boucle.
 
-Et je regarde… Des films quand je peux, quelques séries, et souvent du rugby pour travailler en parallèle le soir sur mes projets…
+Et je regarde… Des films quand je peux (le second volet de <cite>Dune</cite> récemment), quelques séries, et souvent du rugby pour travailler en parallèle le soir sur mes projets…
 
 
 ## Les projets
 
 **Toujours plein d’idées et pas plus de temps que les autres**, mes projets personnels finissent souvent par dépérir ou vaguement vivoter.
+
+Je me suis lancé dans la conception d’un atelier sur les `mutationObserver` —&nbsp;accepté au devFest Nantes 2024&nbsp;— donc je dois assurer, maintenant&nbsp;!
 
 J’ai mis un coup de jeune à [chaarts](https://ffoodd.github.io/chaarts/) en 2023 grâce à l’élan pris pour une nouvelle conférence sur les graphiques de données. Il a donc fallu que je peaufine [sliide](https://github.com/ffoodd/sliide/) pour l’occasion, histoire de développer une vue présentateur <i lang="en">low-tech</i>.
 
