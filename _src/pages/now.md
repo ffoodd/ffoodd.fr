@@ -15,7 +15,7 @@ modified: "2024-07-18"
 
 **Côté jardin**, les poules font leur vie et nous agrandissons le potager. Les plants et semis sont faits, nous n’avons jamais eu un potager aussi complet et prometteur&nbsp;! Les radis, tomates cerises, pommes de terre et betteraves commencent à atterrir dans nos assiettes.
 
-**Je lis beaucoup, de tout**. En ce moment, c’est <cite>Une prière pour les cimes timides</cite> de Becky Chambers —&nbsp;le second tome de la série «&nbsp;Histoires de moines et de robots&nbsp;», après <cite>Un psaume pour les recyclés sauvages&nbsp;»&nbsp;— et je viens de terminer <cite>Cataclysme</cite> de Lydia Kang.
+**Je lis beaucoup, de tout**. En ce moment, c’est <cite>Une prière pour les cimes timides</cite> de Becky Chambers —&nbsp;le second tome de la série «&nbsp;Histoires de moines et de robots&nbsp;», après <cite>Un psaume pour les recyclés sauvages</cite>&nbsp;— et je viens de terminer <cite>Cataclysme</cite> de Lydia Kang.
 
 Ma <abbr title="Pile à lire" aria-label="Pile à lire">PàL</abbr> contient des œuvres de Lovecraft, Ursula K. Le Guin, Fabrice Caro, Caryl Férey, Tolkien, encore du Terry Pratchett, Pierre Lemaitre, Stephen King… mais aussi <cite>La volonté de changer</cite> ou <cite>Voyage en misarchie</cite>, qu’il faudra bien que je me décide à lire un jour&nbsp;!
 
