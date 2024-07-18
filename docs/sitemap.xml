@@ -829,10 +829,6 @@
 			<lastmod>2024-01-22T21:12:02.867Z</lastmod>
 		</url>
 		<url>
-			<loc>https://www.ffoodd.fr/now/</loc>
-			<lastmod>2024-03-05T19:22:29.772Z</lastmod>
-		</url>
-		<url>
 			<loc>https://www.ffoodd.fr/plus/</loc>
 			<lastmod>2024-03-06T08:38:13.054Z</lastmod>
 		</url>
@@ -851,4 +847,8 @@
 		<url>
 			<loc>https://www.ffoodd.fr/talks/a11y-paris/</loc>
 			<lastmod>2024-06-26T06:01:19.036Z</lastmod>
+		</url>
+		<url>
+			<loc>https://www.ffoodd.fr/now/</loc>
+			<lastmod>2024-07-18T07:41:33.595Z</lastmod>
 		</url></urlset>
