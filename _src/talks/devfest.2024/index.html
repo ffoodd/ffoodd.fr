@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<title>L’invasion du HTML mutant</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="L’invasion du HTML mutant — Atelier animé par Gaël Poupard lors du devFest Nantes 2024.">
+	<meta name="author" content="Gaël Poupard">
+	<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+	<link rel="preconnect" href="https://twemoji.maxcdn.com">
+	<link rel="preconnect" href="https://cdn.jsdelivr.net">
+	<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../accesslide/fonts/bello-pro.woff2">
+	<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../accesslide/fonts/museo-slab-300.woff2">
+	<link rel="stylesheet" href="../sliide/sliide.css?4" type="text/css" media="screen">
+	<link rel="stylesheet" href="../sliide/prism.min.css" type="text/css" media="screen">
+</head>
+<body>
+<main role="main" tabindex="0">
+	<section id="slide-1" data-note="2m" class="d-flex flex-column justify-between">
+		<h1>L’invasion du HTML mutant</h1>
+		<dl>
+			<dt>Slides en ligne</dt>
+			<dd><a href="https://www.ffoodd.fr/devfest.2024/">ffoodd.fr/devfest.2024/</a></dd>
+			<dt>Le jeu</dt>
+			<dd><a href="https://www.ffoodd.fr/devfest.2024/jeu/">ffoodd.fr/devfest.2024/jeu/</a></dd>
+		</dl>
+		<footer>
+			<div class="d-flex">
+				<p class="my-0">Raconté par <a href="https://www.ffoodd.fr">Gaël Poupard</a></p>
+				<ul role="list">
+					<li><a href="https://www.ffoodd.fr">
+						<img src="../accesslide/img/ffoodd.svg" alt="Blog de Gaël Poupard" height="32" width="32">
+					</a></li>
+					<li><a href="https://mamot.fr/@ffoodd">
+						<img src="../accesslide/img/mastodon.svg" alt="@ffoodd sur Mastodon" height="32" width="32">
+					</a></li>
+					<li><a href="https://github.com/ffoodd/">
+						<img src="../accesslide/img/github.svg" alt="@ffoodd sur Github" height="32" width="32">
+					</a></li>
+					<li><a href="https://www.linkedin.com/in/ga%C3%ABl-poupard-40117b30/">
+						<img src="../accesslide/img/linkedin.svg" alt="Gaël Poupard sur Linkedin" height="32" width="32">
+					</a></li>
+					<li><a href="https://www.paris-web.fr/">
+						<img src="../accesslide/img/pw.svg" alt="Paris Web" height="32" width="32">
+					</a></li>
+				</ul>
+			</div>
+			<p>
+				<a href="https://www.groupeonepoint.com">
+					<img src="../accesslide/img/onepoint.svg" width="166" height="80" alt="onepoint">
+				</a>
+			</p>
+		</footer>
+	</section>
+
+	<section id="slide-2" data-note="5m">
+		<h2>Confort+ <span aria-hidden="true">&nbsp;&#128999;</span></h2>
+		<p class="lead">
+			Une solution open-source pour améliorer le confort de tous et mettre en valeur les sites web accessibles&nbsp;!
+		</p>
+		<ul>
+			<li>Plus de 20 réglages disponibles.</li>
+			<li>Organisés en 9 modes d’usage.</li>
+			<li>Disponible sur Firefox, Edge et Chrome.</li>
+		</ul>
+	</section>
+
+	<section id="slide-10">
+		<h2>Merci</h2>
+		<h3>Et à bientôt <span aria-hidden="true">&nbsp;&#128522;</span></h3>
+		<div>
+			<h4>Crédits</h4>
+			<ul>
+				<li>Emojis&nbsp;: <a hreflang="en" href="https://github.com/twitter/twemoji">Twemoji</a> —&nbsp;par Twitter&nbsp;;</li>
+				<li>Typographie de titraille&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/bello-pro">Bello Pro</a> —&nbsp;créée par <a hreflang="en" href="https://www.underware.nl/">Underware</a>&nbsp;;</li>
+				<li>Typographie de labeur&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/museo-slab">Museo Slab</a> —&nbsp;créée par <a hreflang="en" href="https://www.exljbris.com/">Exljbris</a>&nbsp;;</li>
+				<li>Moteur de présentation inspiré de <a hreflang="en" href="https://css-tricks.com/css-scroll-snap-slide-deck/">"<cite lang="en">CSS scroll-snap slide deck that supports live coding</cite>" de Stephanie Eckles sur Smashing Magazine</a>.</li>
+			</ul>
+		</div>
+	</section>
+</main>
+
+<div class="timer">
+	<span style="--time: 3600s"></span>h&nbsp;
+	<span style="--time: 60s"></span>m&nbsp;
+	<span style="--time: 1s"></span>s
+</div>
+
+<script src="../sliide/js/prism.min.js"></script>
+<script src="../accesslide/js/twemoji.min.js"></script>
+<script>
+	twemoji.parse(document.body, {folder: 'svg', ext: '.svg'});
+
+	let view;
+	switchSlide = (id) => {
+		// Historique
+		history.pushState({}, "", `#slide-${id}`);
+		// Vue présentateur
+		//// Aperçu du slide suivant
+		document.body.style.setProperty('--next', String(`-moz-element(#slide-${Number(id) + 1})`));
+		//// Synchro de la vue présentateur
+		if (view) {
+			view.postMessage(`slide-${id}`, `http://localhost:8080${document.location.pathname}index.html`);
+		}
+		//// Notes dans la vue présentateur
+		if('note' in document.getElementById(`slide-${id}`).dataset) {
+			document.body.dataset.note = document.getElementById(`slide-${id}`).dataset.note;
+		} else {
+			delete document.body.dataset.note;
+		}
+	}
+
+	document.addEventListener('DOMContentLoaded', () => {
+		const slides = document.querySelectorAll('section[id^="slide-"]');
+
+		// Nombre total de slides, pour la pagination
+		document.body.style.setProperty('--slides', String(slides.length));
+		document.body.style.setProperty('--next', String(`-moz-element(#slide-2)`));
+
+		// Gestion de l’historique
+		let io = new IntersectionObserver(entries => {
+			if (entries[0].isIntersecting === true) {
+				switchSlide(entries[0].target.id.split('-')[1]);
+			}
+		}, {
+			root: document.querySelector('main'),
+			threshold: [1]
+		});
+		slides.forEach(slide =>	io.observe(slide));
+
+		document.addEventListener('keydown', event => {
+			const index = Number(window.location.hash.split('-')[1]);
+			let id = null;
+			switch (event.key) {
+				// Activer la vue présentateur
+				case 's':
+					if (event.altKey) {
+						view = window.open(`http://localhost:8080${document.location.pathname}index.html`, 'speakerView');
+						view.addEventListener('load', () => {
+							view.document.body.classList.add('speaker');
+						})
+					}
+					break;
+				// Télécommande ++
+				case 'PageDown':
+					id = index + 1;
+					break;
+				// Télécommande --
+				case 'PageUp':
+					id = index - 1;
+					break;
+				default:
+					break;
+			}
+
+			if (id !== null && id >= 1) {
+				document.getElementById(`slide-${id}`).scrollIntoView({ behavior: 'smooth' });
+				switchSlide(id);
+			}
+		});
+	});
+
+	window.addEventListener('message', (e) => {
+		if (e.origin === 'http://localhost:8080/') {
+			document.getElementById(e.data).scrollIntoView({ behavior: 'smooth' });
+			switchSlide(e.data.split('-')[1]);
+		}
+	}, false);
+</script>
+</body>
+</html>
