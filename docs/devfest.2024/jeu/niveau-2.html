@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>L’invasion du HTML mutant</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="L’invasion du HTML mutant — Atelier animé par Gaël Poupard lors du devFest Nantes 2024.">
+		<meta name="author" content="Gaël Poupard">
+		<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+	</head>
+	<body>
+		<header role="banner">
+			<h1>L’invasion du HTML mutant</h1>
+		</header>
+
+		<main role="main">
+			<h1>
+				Le troll
+				<span>Niveau 2/8</span>
+			</h1>
+
+			<p class="portrait">🧌</p>
+			<p>Le troll.</p>
+
+			<code-runner type="json">
+				<form>
+					<label for="options">Configure your observer</label>
+					<pre><code>observer.observe(document.querySelector("mu-tant"), {</code></pre>
+					<textarea id="options"
+										autocomplete="off"
+										autocorrect="off"
+										autocapitalize="off"
+										spellcheck="false"
+										enterkeyhint="send"
+										required></textarea>
+					<pre><code>});</code></pre>
+					<button>Feu&nbsp;!</button>
+				</form>
+			</code-runner>
+		</main>
+
+		<play-ground type="troll"></play-ground>
+
+		<script src="./code-runner.js"></script>
+		<script src="./mu-tant.js"></script>
+		<script src="./play-ground.js"></script>
+	</body>
+</html>
