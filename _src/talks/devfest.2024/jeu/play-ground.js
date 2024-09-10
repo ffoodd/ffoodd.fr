@@ -15,8 +15,11 @@ class PlayGround extends HTMLElement {
 		this.spyer = new MutationObserver(mutations => {
 			for (const mutation of mutations) {
 				if (mutation.removedNodes.length) {
+					// @fixme Vérifier le **dernier** élément à être supprimé
 					if (this._isMutant(mutation.removedNodes[0])) {
 						// @todo Lien vers le niveau suivant ? Événement ?
+						// @note Fiche « IRL » avec cas d’usage réél (?)
+						// @note Pour que tout le monde franchisse les paliers en même temps…
 						console.log('Success!');
 						this.spyer.disconnect();
 						clearTimeout(this.invader);
@@ -30,7 +33,8 @@ class PlayGround extends HTMLElement {
 	handleEvent(event) {
 		if (event.type === 'voightkampff') {
 			this._stopInvasion(
-				event.detail.data,
+				event.detail.data.questions,
+				event.detail.data.condition,
 				event.detail.type
 			);
 		}
@@ -38,6 +42,10 @@ class PlayGround extends HTMLElement {
 
 	_isMutant(element) {
 		return element.nodeName.toLowerCase() === 'mu-tant';
+	}
+
+	_isCharacterData(options) {
+		return options.includes('characterData') || options.includes('characterDataOldValue');
 	}
 
 	_invade() {
@@ -51,17 +59,21 @@ class PlayGround extends HTMLElement {
 		// @todo Random timer ↑
 	}
 
-	_stopInvasion(options = '"characterData": true, "childList": true', type = 'json') {
+	_stopInvasion(options = '"characterData": true, "childList": true', condition = '', type = 'json') {
+		const wachTextNode = this._isCharacterData(options);
+
 		// @todo Si type = callback, on fait quoi ?
 		this.querySelectorAll('mu-tant').forEach(
-			leon => this._killMutant(leon, options)
+			leon => {
+				this._killMutant(leon, options, condition, wachTextNode);
+			}
 		);
 
 		this.observer = new MutationObserver(mutations => {
 			for (const mutation of mutations) {
 				for (const leon of mutation.addedNodes) {
 					if (this._isMutant(leon)) {
-						this._killMutant(leon, options);
+						this._killMutant(leon, options, condition, wachTextNode);
 					}
 				}
 			}
@@ -69,15 +81,22 @@ class PlayGround extends HTMLElement {
 		this.observer.observe(this, { "childList": true });
 	}
 
-	_killMutant(mutant, options) {
+	_killMutant(mutant, options, condition, wachTextNode) {
 		const hunter = new MutationObserver(mutations => {
 			for (const mutation of mutations) {
-				// @fixme Pas assez méchant : il faut spécifier le test en fonction des conditions !
-				mutation.target.remove();
-				hunter.disconnect();
+				const target = wachTextNode ? mutation.target.parentNode : mutation.target;
+				if (condition !== '') {
+					eval(`if (${condition}) {
+						target.remove();
+						hunter.disconnect();
+					}`);
+				} else {
+					target.remove();
+					hunter.disconnect();
+				}
 			}
 		});
-		hunter.observe(mutant, JSON.parse(`{${options}}`));
+		hunter.observe(wachTextNode ? mutant.childNodes[0] : mutant, JSON.parse(`{${options}}`));
 	}
 }
 

@@ -15,7 +15,9 @@ class CodeRunner extends HTMLElement {
 	handleEvent(event) {
 		if (event.type === 'submit') {
 			event.preventDefault();
-			let questions = this.form.elements[0].value;
+			let questions = this.form?.options.value;
+			let condition = this.form?.condition.value;
+
 			if (this.type === 'json') {
 				questions = this._normalizeJson(questions);
 			}
@@ -23,7 +25,10 @@ class CodeRunner extends HTMLElement {
 			let voightkampff = new CustomEvent('voightkampff', {
 				bubbles: true,
 				detail: {
-					data: questions,
+					data: {
+						questions: questions,
+						condition: condition
+					},
 					type: this.type
 				}
 			});
@@ -33,7 +38,8 @@ class CodeRunner extends HTMLElement {
 
 	_normalizeJson(questions) {
 		try {
-			return questions.replaceAll(/([a-zA-Z0-9_]+?):(?![a-zA-Z0-9_]+?)/g, '"$1":');
+			let reworded = questions.replaceAll(/([a-zA-Z0-9_]+?):(?![a-zA-Z0-9_]+?)/g, '"$1":');
+			return reworded.replaceAll("'", '"');
 		} catch (erreur) {
 			console.error(`Ces questions ne peuvent pas faire partie d’un test de Voight-Kampff. ${erreur}.`);
 		}
