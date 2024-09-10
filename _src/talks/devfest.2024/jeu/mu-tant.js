@@ -36,35 +36,39 @@ class Mutant extends HTMLElement {
 				this.innerText = '🧟';
 				this.interval = setInterval(() => this._mutateAttribute(), 1000);
 				break;
-			case 'troll':
-				// @note attributeValue
-				this.innerText = '🧌';
-				this.interval = setInterval(() => this._mutateAttributeValue(), 1000);
+			case 'invaders':
+				// @note childList: true
+				this.interval = setInterval(() => this.innerText += '👾', 1000);
 				break;
-			case 'vampire':
-				// @note oldAttributeValue
-				this.innerText = '🧛';
-				this.interval = setInterval(() => this._mutateOldAttributeValue(), 1000);
+			case 'villain':
+				// @note characterData: true
+				this.innerText = '🦹🏼';
+				this.interval = setInterval(() => this._mutateText(), 1000);
 				break;
 			case 'ghost':
-				// @note attributeFilter
+				// @note attributeFilter: ['id']
 				this.innerText = '👻';
 				this.interval = setInterval(() => this._mutateAttributes(), 1000);
 				break;
-			case 'villain':
-				// @note text
-				this.interval = setInterval(() => this._mutateText(), 1000);
+			case 'vampire':
+				// @note attributeOldValue: true
+				// @note mutation.oldValue === 'mutant'
+				// Et éventuellement :
+				// @note mutation.type === 'attributes' && mutation.attributeName === 'class'
+				this.innerText = '🧛';
+				this.interval = setInterval(() => this._mutateAttributeValue(), 1000);
 				break;
 			case 'skull':
-				// @note oldText
-				this.current = -1;
+				// @note characterDataOldValue: true
+				// @note mutation.oldValue === '💀'
+				// Et éventuellement :
+				// @note mutation.type === 'characterData'
+				this.innerText = '👶';
+				this.current = 0;
 				this.interval = setInterval(() => this._mutateOldText(), 1000);
 				break;
-			case 'invaders':
-				// @note subtree
-				// @note Suffisant pour déclencher le 'subtree' ?
-				this.interval = setInterval(() => this.innerText += '👾', 1000);
-				break;
+				// @fixme Pas d’exemple avec subtree (?)
+				// @note Zombie avec enfants en emoji (?)
 			default:
 				this.innerText = '🧑';
 				console.warn(`${type} n’est pas un type de mutation connu…`);
@@ -79,36 +83,28 @@ class Mutant extends HTMLElement {
 		this.dataset[this.generateRandomString()] = true;
 	}
 
-	_mutateAttributeValue() {
-		this.setAttribute('id', this.generateRandomString());
-	}
-
 	_mutateAttributes() {
-		// @note Objectif : filtrer l’attribut « id »
 		const attributes = ['class', 'id', 'title', 'data-yoyo', 'data-boo'];
 		this.setAttribute(this.getRandomArrayItem(attributes), this.generateRandomString());
 	}
 
-	_mutateOldAttributeValue() {
-		// @note Objectif : cibler la valeur « mutant »
+	_mutateAttributeValue() {
 		const attributes = ['standard', 'normal', 'ordinaire', 'quelconque', 'mutant'];
 		this.classList.toggle(this.getRandomArrayItem(attributes));
 	}
 
 	_mutateText() {
-		// @note Objectif : cibler le « 🦹🏼 »
 		const content = ['🦹', '🦹🏻', '🦹🏼', '🦹🏽', '🦹🏾', '🦹🏿'];
-		this.innerText = this.getRandomArrayItem(content);
+		this.childNodes[0].nodeValue = this.getRandomArrayItem(content);
 	}
 
 	_mutateOldText() {
-		// @note Objectif : cibler le « ☠️ »
-		const content = ['👶', '🧒', '🧑', '🧔', '🧑‍🦳', '🧓', '☠️'];
+		const content = ['👶', '🧒', '🧑', '🧔', '🧑‍🦳', '🧓', '💀', '☠️'];
 		++this.current;
-		if (this.current === (content.length - 1)) {
-			clearInterval(this.interval);
+		this.childNodes[0].nodeValue = content[this.current];
+		if (this.current === (content.length -1)) {
+			this.current = -1;
 		}
-		this.innerText = content[this.current];
 	}
 }
 

@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="L’invasion du HTML mutant — Atelier animé par Gaël Poupard lors du devFest Nantes 2024.">
 		<meta name="author" content="Gaël Poupard">
-		<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+		<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 	</head>
 	<body>
 		<header role="banner">
@@ -24,15 +24,15 @@
 
 			<code-runner type="json">
 				<form>
-					<label for="options">Configure your observer</label>
+					<label for="options">Options</label>
 					<pre><code>observer.observe(document.querySelector("mu-tant"), {</code></pre>
-					<textarea id="options"
-										autocomplete="off"
-										autocorrect="off"
-										autocapitalize="off"
-										spellcheck="false"
-										enterkeyhint="send"
-										required></textarea>
+					<input type="text" id="options"
+								 autocomplete="off"
+								 autocorrect="off"
+								 autocapitalize="off"
+								 spellcheck="false"
+								 enterkeyhint="send"
+								 required>
 					<pre><code>});</code></pre>
 					<button>Feu&nbsp;!</button>
 				</form>
@@ -41,8 +41,8 @@
 
 		<play-ground type="invaders"></play-ground>
 
-		<script src="./code-runner.js"></script>
-		<script src="./mu-tant.js"></script>
-		<script src="./play-ground.js"></script>
+		<script src="../code-runner.js"></script>
+		<script src="../mu-tant.js"></script>
+		<script src="../play-ground.js"></script>
 	</body>
 </html>
