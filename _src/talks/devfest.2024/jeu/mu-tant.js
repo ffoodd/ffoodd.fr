@@ -24,6 +24,10 @@ class Mutant extends HTMLElement {
 		return Math.floor(Math.random() * Date.now()).toString(36);
 	}
 
+	generateRandomDelay(min = 300, max = 3000) {
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+
 	getRandomArrayItem(array) {
 		return array[Math.floor((Math.random() * array.length))];
 	}
@@ -34,21 +38,21 @@ class Mutant extends HTMLElement {
 			case 'zombie':
 				// @note attributes: true
 				this.innerText = '🧟';
-				this.interval = setInterval(() => this._mutateAttribute(), 1000);
+				this.interval = setInterval(() => this._mutateAttribute(), this.generateRandomDelay());
 				break;
 			case 'invaders':
 				// @note childList: true
-				this.interval = setInterval(() => this.innerText += '👾', 1000);
+				this.interval = setInterval(() => this.innerText += '👾', this.generateRandomDelay());
 				break;
 			case 'villain':
 				// @note characterData: true
 				this.innerText = '🦹🏼';
-				this.interval = setInterval(() => this._mutateText(), 1000);
+				this.interval = setInterval(() => this._mutateText(), this.generateRandomDelay());
 				break;
 			case 'ghost':
 				// @note attributeFilter: ['id']
 				this.innerText = '👻';
-				this.interval = setInterval(() => this._mutateAttributes(), 1000);
+				this.interval = setInterval(() => this._mutateAttributes(), this.generateRandomDelay());
 				break;
 			case 'vampire':
 				// @note attributeOldValue: true
@@ -56,7 +60,7 @@ class Mutant extends HTMLElement {
 				// Et éventuellement :
 				// @note mutation.type === 'attributes' && mutation.attributeName === 'class'
 				this.innerText = '🧛';
-				this.interval = setInterval(() => this._mutateAttributeValue(), 1000);
+				this.interval = setInterval(() => this._mutateAttributeValue(), this.generateRandomDelay());
 				break;
 			case 'skull':
 				// @note characterDataOldValue: true
@@ -65,7 +69,7 @@ class Mutant extends HTMLElement {
 				// @note mutation.type === 'characterData'
 				this.innerText = '👶';
 				this.current = 0;
-				this.interval = setInterval(() => this._mutateOldText(), 1000);
+				this.interval = setInterval(() => this._mutateOldText(), this.generateRandomDelay());
 				break;
 				// @fixme Pas d’exemple avec subtree (?)
 				// @note Zombie avec enfants en emoji (?)

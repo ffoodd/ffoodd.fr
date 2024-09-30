@@ -1,3 +1,4 @@
+const path = require("node:path");
 // Globals: dates, strings
 const { DateTime } = require('luxon')
 const string = require('string')
@@ -12,9 +13,10 @@ const { imgSize } = require("@mdit/plugin-img-size")
 const tocPlugin = require("eleventy-plugin-toc")
 const rssPlugin = require("@11ty/eleventy-plugin-rss")
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight")
+// Assets
+const sass = require("sass");
 
 module.exports = function (eleventyConfig) {
-
 	// Shortcodes
 	eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`)
 

@@ -1,0 +1,75 @@
+@use "sass:math";
+@use "sass:meta";
+
+@layer settings, base, elements, layout, components, utilities, preferences;
+
+// Settings
+@layer settings {
+	@include meta.load-css("sseeeedd/src/settings/variables", $with: (
+		"full-width": true,
+		"content-width": math.div(980rem, 16),
+	));
+	@include meta.load-css("sseeeedd/src/settings/placeholders");
+}
+
+// Base
+@layer base {
+	@include meta.load-css("sseeeedd/src/base/base");
+	@include meta.load-css("sseeeedd/src/base/typography");
+}
+
+// Elements
+@layer elements {
+	@include meta.load-css("sseeeedd/src/elements/contents");
+	// @include meta.load-css("sseeeedd/src/elements/images");
+	// @include meta.load-css("sseeeedd/src/elements/tables");
+	// @include meta.load-css("sseeeedd/src/elements/details");
+	@include meta.load-css("sseeeedd/src/elements/forms");
+	@include meta.load-css("sseeeedd/src/elements/buttons");
+	// @include meta.load-css("sseeeedd/src/elements/dialog");
+}
+
+// Layout
+@layer layout {
+	// @include meta.load-css("sseeeedd/src/layout/base");
+	@include meta.load-css("sseeeedd/src/layout/grid");
+	// @include meta.load-css("sseeeedd/src/layout/header");
+	// @include meta.load-css("sseeeedd/src/layout/footer");
+	// @include meta.load-css("sseeeedd/src/layout/navigation");
+	// @include meta.load-css("sseeeedd/src/layout/prism");
+}
+
+// Components
+@layer components {
+	// @include meta.load-css("sseeeedd/src/components/breadcrumb");
+	// @include meta.load-css("sseeeedd/src/components/pagination");
+	// @include meta.load-css("sseeeedd/src/components/notes");
+	// @include meta.load-css("sseeeedd/src/components/footnotes");
+	// @include meta.load-css("sseeeedd/src/components/tooltips");
+	// @include meta.load-css("sseeeedd/src/components/alerts");
+	// @include meta.load-css("sseeeedd/src/components/cards");
+	// @include meta.load-css("sseeeedd/src/components/fly-out");
+	// @include meta.load-css("sseeeedd/src/components/switch");
+	// @include meta.load-css("sseeeedd/src/components/deck");
+	// @include meta.load-css("sseeeedd/src/components/palette");
+	// @include meta.load-css("sseeeedd/src/components/toggle");
+	// @include meta.load-css("sseeeedd/src/components/skip-links");
+}
+
+// Utilities
+@layer utilities {
+	@include meta.load-css("sseeeedd/src/utilities/utilities");
+	@include meta.load-css("sseeeedd/src/utilities/backgrounds");
+	@include meta.load-css("sseeeedd/src/utilities/colors");
+	@include meta.load-css("sseeeedd/src/utilities/sizing");
+	@include meta.load-css("sseeeedd/src/utilities/spacings");
+	@include meta.load-css("sseeeedd/src/utilities/visually-hidden");
+}
+
+// User preferences
+@layer preferences {
+	@include meta.load-css("sseeeedd/src/preferences/reduced-motion");
+	@include meta.load-css("sseeeedd/src/preferences/inverted-colors");
+	@include meta.load-css("sseeeedd/src/preferences/dark-mode");
+	@include meta.load-css("sseeeedd/src/preferences/high-contrast");
+}

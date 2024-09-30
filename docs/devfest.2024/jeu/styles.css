@@ -1,0 +1,1563 @@
+@charset "UTF-8";
+@layer settings, base, elements, layout, components, utilities, preferences;
+@layer settings {
+  /* ----------------------------- */
+  /* Table of contents */
+  /* ----------------------------- */
+  /*
+    == Paths
+    == Colors
+    == Timing functions
+    == Spacings
+    == Patterns
+    == Formage
+  */
+  /* ==================== */
+  /* == Paths
+  /* ==================== */
+  /* ==================== */
+  /* == Spacings
+  /* ==================== */
+  /* ==================== */
+  /* == Formage
+  /* ==================== */
+  .hn {
+    color: var(--contrast-inverse);
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 3rem 0 1.5rem;
+    text-rendering: optimizelegibility;
+    text-wrap: balance;
+  }
+  .hn:first-child {
+    margin-block-start: 0;
+  }
+}
+@layer base {
+  /* ----------------------------- */
+  /* Table of contents */
+  /* ----------------------------- */
+  /*
+    == Paths
+    == Colors
+    == Timing functions
+    == Spacings
+    == Patterns
+    == Formage
+  */
+  /* ==================== */
+  /* == Paths
+  /* ==================== */
+  /* ==================== */
+  /* == Spacings
+  /* ==================== */
+  /* ==================== */
+  /* == Formage
+  /* ==================== */
+  /* ==================== */
+  /* == Base
+  /* ==================== */
+  /**
+   * @note Some improvements taken from Ergonomize.css
+   * @author Effeilo
+   - @see https://github.com/Effeilo/ergonomize.css/blob/master/ergonomize.css
+   * 1. Force scrollbars to always be visible to prevent awkward jumps when
+   *    navigating between pages that do/do not have enough content to produce
+   *    scrollbars naturally.
+   * 3. Smooth scroll
+   *    @see https://evilmartians.com/chronicles/scroll-to-the-future-modern-javascript-css-scrolling-implementations
+   *    @see https://codepen.io/benfrain/pen/VxeLPb
+   * 4. Breathing room to any content automatically scrolled to
+  *     @author Florens Verschelde (@fvsch)
+   *    @see https://twitter.com/fvsch/status/1190277947871105027
+   */
+  html:where([lang]) {
+    box-sizing: border-box;
+    caret-color: var(--accent);
+    text-size-adjust: none;
+    position: relative;
+    scroll-padding-block: 1vh; /* 3 */
+    color-scheme: light;
+    --neutral: 0 0%;
+    --treshold: 60%;
+    --hue: 240;
+    --rotation: calc(var(--hue) + 30);
+    --right: 150;
+    --wrong: calc(var(--right) + 180);
+    --light-scale: 1.61803398875;
+    --lightness: 40%;
+    --brighter: calc(var(--lightness) * var(--light-scale));
+    --darker: calc(var(--lightness) / var(--light-scale));
+    --switch: calc((var(--lightness) - var(--treshold)) * -100);
+    --secondary: hsl(var(--hue) 100% var(--lightness));
+    --secondary-shadow: hsl(var(--hue) 100% var(--lightness) / .1);
+    --secondary-light: hsl(var(--hue) 100% var(--brighter));
+    --secondary-lighter: hsl(var(--hue) 100% var(--brighter) / .1);
+    --secondary-dark: hsl(var(--hue) 100% var(--darker));
+    --accent: hsl(var(--rotation) 50% var(--lightness));
+    --accent-shadow: hsl(var(--rotation) 50% var(--lightness) / .1);
+    --accent-light: hsl(var(--rotation) 50% var(--brighter));
+    --accent-dark: hsl(var(--rotation) 50% var(--darker));
+    --alert: hsl(var(--wrong) 100% var(--lightness));
+    --alert-shadow: hsl(var(--wrong) 100% var(--lightness) / .1);
+    --alert-light: hsl(var(--wrong) 100% var(--brighter));
+    --alert-dark: hsl(var(--wrong) 100% var(--darker));
+    --success: hsl(var(--right) 100% var(--lightness));
+    --success-shadow: hsl(var(--right) 100% var(--lightness) / .1);
+    --success-light: hsl(var(--right) 100% var(--brighter));
+    --success-lighter: hsl(var(--right) 100% var(--brighter) / .4);
+    --success-dark: hsl(var(--right) 100% var(--darker));
+    --contrast: hsl(var(--neutral) var(--switch));
+    --contrast-o-50: hsl(var(--neutral) var(--switch) / .5);
+    --contrast-inverse: hsl(var(--neutral) calc(var(--switch) * -1));
+    --muted: hsl(var(--neutral) var(--lightness));
+    --muted-light: hsl(var(--neutral) var(--brighter));
+    --muted-lighter: hsl(var(--neutral) var(--brighter) / .5);
+    --muted-dark: hsl(var(--neutral) var(--darker));
+    --disabled: hsl(var(--neutral) 90%);
+    --background: hsl(var(--neutral) 96%);
+    --shadow: hsl(var(--neutral) var(--darker) / .1);
+    --enter: cubic-bezier(0, .5, .5, 1);
+    --exit: cubic-bezier(.5, 0, 1, .5);
+    --move: cubic-bezier(.5, 0, .5, 1);
+    --download: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 72'><path d='M63 0H9C4.03 0 0 4.03 0 9v54c0 4.969 4.03 9 9 9h54c4.971 0 9-4.031 9-9V9c0-4.97-4.029-9-9-9zm0 63H9V9h54z'/><path d='M54 36H42V15H30v21H18l18 21z'/></svg>");
+    --external: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M91.875 62H85v23H15V15h23V0H0v100h100V62z'/><path d='M54 0v.627l17.787 17.85L52.701 38H38v24h24V49.799l20.773-20.337L99.374 46H100V0z'/></svg>");
+    --unsafe: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 47 59.5'><path d='m 44,26.5 h -3.5 v -10 C 40.5,7.402 33.098,0 24,0 H 23 C 14.801,0 7.943,5.874 6.694,13.966 c -0.295,1.91 1.015,3.698 2.925,3.993 1.916,0.297 3.699,-1.016 3.993,-2.925 C 14.319,10.454 18.355,7 23,7 h 1 c 5.238,0 9.5,4.262 9.5,9.5 v 10 H 3 c -1.657,0 -3,1.343 -3,3 v 27 c 0,1.657 1.343,3 3,3 h 41 c 1.657,0 3,-1.343 3,-3 v -27 c 0,-1.657 -1.343,-3 -3,-3 z'/></svg>");
+    --anchor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 85 85.2'><path d='M56.7 51.7l9.1 9c-2.3 5.5-8.1 9.7-17.3 11.2v-45c6.1-2.3 8-7.1 8-12.7C56.5 6.4 50.2 0 42.4 0s-14 6.3-14 14.2c0 5.6 1.9 10.4 8 12.7v45c-9.1-1.5-15-5.7-17.3-11.2l9.2-9H0v27.8l9.8-9.8c6.2 9.2 18.5 15.5 32.7 15.5 14.2 0 26.5-6.3 32.7-15.5l9.8 9.8V51.7zM42.5 19c-2.6 0-4.7-2.1-4.7-4.7s2.1-4.7 4.7-4.7 4.7 2.1 4.7 4.7-2.1 4.7-4.7 4.7z'/></svg>");
+    --select: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 59 47.5'><path d='M29.414,37.657 L0.344,8.586 L8.828,0.102 L29.414,20.686 L50,0.1 L58.484,8.585 L29.414,37.657'/></svg>");
+    --required: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 125'><path fill='var(--alert)' d='M53.5355339 41.4644661L70 25l5 5-16.4644661 16.4644661h23.2842713v7.0710678H58.5355339L75 70l-5 5-16.4644661-16.4644661v23.2842713h-7.0710678V58.5355339L30 75l-5-5 16.4644661-16.4644661H18.1801948v-7.0710678h23.2842713L25 30l5-5 16.4644661 16.4644661V18.1801948h7.0710678z'/></svg>");
+    --valid: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6.3 6.1'><path fill='var(--success)' d='M0 2.6235l.898-.898 1.3851 1.3851L5.3936 0l.898.8981-4.0085 4.0085L0 2.6235z'/></svg>");
+    --invalid: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 125'><path fill='var(--alert)' d='M74.749 11.109L50 35.858 25.251 11.109 11.109 25.251 35.858 50 11.109 74.749l14.142 14.142L50 64.142l24.749 24.749 14.142-14.142L64.142 50l24.749-24.749z'/></svg>");
+    --mail: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 84 56'><path d='M0 0v3.7188l42 28.62504L84.000004 3.7188V0zm0 10.9688v45.03124h84.000004V10.9688L43.6875 38.46884a3.0003 3.0003 0 0 1-3.375 0z'/></svg>");
+    --tel: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 46 88'><path d='M6 0C2.676 0 0 2.676 0 6v76.00005c0 3.324 2.676 6 6 6h34c3.324 0 6-2.676 6-6V6c0-3.324-2.676-6-6-6zM4 10h38v64.00005H4z'/></svg>");
+  }
+  html:where([lang]):focus-within {
+    scroll-behavior: smooth; /*2 */
+  }
+  html:where([dir=rtl]) {
+    --is-rtl: -1;
+  }
+  @media (min-width: 61.25rem) {
+    html:where([lang]) {
+      --lightness: 30%;
+    }
+  }
+  *,
+  *::after,
+  *::before {
+    box-sizing: inherit;
+  }
+  body {
+    background: var(--background);
+    color: var(--muted-dark);
+    counter-reset: footnotes;
+    font: normal 400 1em/1.5 sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    margin: 0;
+    min-block-size: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    -webkit-font-smoothing: subpixel-antialiased;
+    text-rendering: optimizeSpeed;
+  }
+  /**
+   * @note Target
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/:target
+   */
+  @keyframes target {
+    from {
+      background-color: transparent;
+      box-shadow: none;
+      outline: 0.125rem solid transparent;
+      outline-offset: 2rem;
+    }
+    to {
+      background-color: var(--contrast);
+      box-shadow: 0 0 0 0.25rem var(--contrast);
+      outline: 0.125rem solid var(--accent);
+      outline-offset: 0.25rem;
+    }
+  }
+  :target {
+    animation: target 0.3s var(--enter) 0.3s forwards;
+  }
+  /**
+   * @note Selection
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/::selection
+   */
+  ::selection {
+    background-color: var(--accent);
+    color: var(--background);
+    text-shadow: none;
+  }
+  /**
+   * @note Placeholders
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/::placeholder
+   */
+  ::placeholder {
+    color: var(--muted);
+  }
+  /**
+   * @note Focus styles
+   */
+  a,
+  input,
+  button,
+  select,
+  summary,
+  textarea,
+  [tabindex="0"] {
+    outline-offset: 1rem;
+    transition: outline-offset 0.3s var(--enter);
+  }
+  :focus {
+    outline-color: transparent;
+  }
+  :focus-visible {
+    box-shadow: 0 0 0 0.125rem var(--contrast);
+    isolation: isolate;
+    outline: 0.125rem solid var(--accent);
+    outline-offset: 0.125rem;
+  }
+  a {
+    color: var(--secondary);
+    text-decoration-style: dotted;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: max(0.1em, 1px);
+    text-underline-offset: 0.25em;
+  }
+  a:hover {
+    color: var(--secondary-dark);
+    text-decoration-style: solid;
+  }
+  a:focus {
+    color: var(--secondary-dark);
+    text-decoration: none;
+  }
+  a:active {
+    opacity: 0.75;
+  }
+  /**
+   * @note Only to main content links
+   */
+  main a {
+    /**
+     * @note Using CSS masks to use colored base64 encoded SVG
+     * @link https://codepen.io/noahblon/post/coloring-svgs-in-css-background-images#css-masks-1
+     */
+  }
+  main a:visited {
+    color: var(--success-dark);
+  }
+  main a[hreflang]::after {
+    content: " [" attr(hreflang) "]";
+  }
+  main a[download]::after, main a[href^="#"]::before, main a[href^="tel:"]::before, main a[target$=blank]::after, main a[href^="http:"]::before, main a[href^="mailto:"]::before {
+    background: var(--secondary);
+    block-size: 0.625em;
+    content: "";
+    display: inline-block;
+    margin-inline-end: 0.25em;
+    mask-repeat: no-repeat;
+    mask-position: center center;
+    inline-size: 0.625em;
+  }
+  main a[download]::after {
+    margin-inline-end: 0;
+    margin-inline-start: 0.25em;
+    mask-image: var(--download);
+  }
+  main a[href^="tel:"]::before {
+    mask-image: var(--tel);
+  }
+  main a[href^="mailto:"]::before {
+    mask-image: var(--mail);
+  }
+  main a[href^="http:"]::before {
+    background: var(--alert);
+    mask-image: var(--unsafe);
+  }
+  main a[href^="#"]::before {
+    mask-image: var(--anchor);
+  }
+  main a[target$=blank]::after {
+    margin-inline-end: 0;
+    margin-inline-start: 0.25em;
+    mask-image: var(--external);
+  }
+  @media (hover: hover) {
+    main a[href^="tel:"] {
+      color: currentColor;
+      pointer-events: none;
+      text-decoration: none;
+    }
+    main a[href^="tel:"]::before {
+      display: none !important;
+    }
+  }
+  address {
+    font-size: 1.375rem;
+    font-style: normal;
+    padding: 0 0 0 2em;
+  }
+  code,
+  pre,
+  video,
+  svg {
+    max-inline-size: 100%;
+  }
+  [hidden],
+  [role=alert]:empty {
+    display: none;
+  }
+  a,
+  button {
+    touch-action: manipulation;
+  }
+  a svg,
+  button svg {
+    pointer-events: none;
+  }
+  main {
+    margin: 0 auto;
+    outline-color: transparent;
+  }
+  .hn, h1,
+  .h1, h2,
+  .h2, h3,
+  .h3, h4,
+  .h4, h5,
+  .h5, h6,
+  .h6 {
+    color: var(--contrast-inverse);
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 3rem 0 1.5rem;
+    text-rendering: optimizelegibility;
+    text-wrap: balance;
+  }
+  .hn:first-child {
+    margin-block-start: 0;
+  }
+  /* ==================== */
+  /* == Typography
+  /* ==================== */
+  p,
+  ul,
+  ol,
+  dl,
+  pre,
+  td,
+  th,
+  caption {
+    font-size: 1em;
+    line-height: 1.5;
+    margin: 1.5em 0;
+  }
+  h1,
+  .h1 {
+    color: var(--secondary);
+    font-size: 2.875em;
+    line-height: 1.0434;
+  }
+  h1 strong,
+  .h1 strong {
+    color: var(--muted-dark);
+  }
+  h2,
+  .h2 {
+    color: var(--accent);
+    font-size: 2.5em;
+    line-height: 1.2;
+  }
+  h3,
+  .h3 {
+    color: var(--muted-dark);
+    font-size: 2.25em;
+    line-height: 1.3334;
+  }
+  h4,
+  .h4 {
+    font-size: 1.875em;
+    line-height: 1.6;
+  }
+  h5,
+  .h5 {
+    font-size: 1.625em;
+    line-height: 1.8462;
+  }
+  h6,
+  .h6 {
+    font-size: 1.375em;
+    line-height: 1.0909;
+  }
+  td,
+  th,
+  div,
+  table,
+  textarea {
+    hyphens: auto;
+    word-wrap: break-word;
+  }
+  /**
+   * @note Advanced hyphenation
+   * @author Richard Rutter
+   * @link https://clagnut.com/blog/2395
+   */
+  p,
+  li,
+  dd {
+    -ms-hyphenate-limit-chars: 6 3 2;
+    -ms-hyphenate-limit-lines: 2;
+    -ms-hyphenate-limit-last: always;
+    -ms-hyphenate-limit-zone: 8%;
+    hyphenate-limit-chars: 6 3 2;
+    hyphenate-limit-lines: 2;
+    hyphenate-limit-last: always;
+    hyphenate-limit-zone: 8%;
+    hyphens: auto;
+    word-wrap: break-word;
+  }
+  li p,
+  li ul,
+  li ol {
+    margin-block: 0;
+  }
+}
+@layer elements {
+  /* ----------------------------- */
+  /* Table of contents */
+  /* ----------------------------- */
+  /*
+    == Paths
+    == Colors
+    == Timing functions
+    == Spacings
+    == Patterns
+    == Formage
+  */
+  /* ==================== */
+  /* == Paths
+  /* ==================== */
+  /* ==================== */
+  /* == Spacings
+  /* ==================== */
+  /* ==================== */
+  /* == Formage
+  /* ==================== */
+  .hn, blockquote footer, b,
+  dt,
+  strong, cite {
+    color: var(--contrast-inverse);
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 3rem 0 1.5rem;
+    text-rendering: optimizelegibility;
+    text-wrap: balance;
+  }
+  .hn:first-child {
+    margin-block-start: 0;
+  }
+  /* ==================== */
+  /* == Contents
+  /* ==================== */
+  blockquote {
+    font-size: 1rem;
+    font-style: italic;
+    line-height: 1.5;
+    margin: 3rem 0 1.5rem;
+    max-inline-size: 100%;
+    padding-inline-start: 7em;
+    position: relative;
+    quotes: "« " " »";
+    z-index: 2;
+  }
+  blockquote::before {
+    color: var(--muted-light);
+    content: open-quote;
+    font-size: 10em;
+    font-weight: 700;
+    inset-inline-start: 0;
+    line-height: 0;
+    opacity: 0.25;
+    position: absolute;
+    inset-block-start: 0;
+    z-index: -1;
+  }
+  blockquote footer {
+    font-style: normal;
+  }
+  abbr[aria-label] {
+    border-block-end: 1px dotted;
+    cursor: help;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  small,
+  .small {
+    font-size: 0.875rem;
+  }
+  cite {
+    color: var(--accent);
+    font-style: normal;
+  }
+  hr {
+    border-block-end: 1px solid var(--contrast);
+    border-block-start: 1px solid var(--muted-lighter);
+    block-size: 0;
+  }
+  var,
+  code {
+    font: inherit;
+    line-height: 1;
+  }
+  pre {
+    background: var(--contrast);
+    border: 1px dotted;
+    border-radius: 0.25rem;
+    color: var(--contrast-inverse);
+    direction: ltr;
+    font-family: "Fira Mono", "Consolas", "Monaco", "Andale Mono", monospace;
+    font-size: small;
+    line-height: 1.5;
+    hyphens: none;
+    tab-size: 4;
+    overflow-x: auto;
+    padding: 2rem 1rem 0.5rem;
+    text-align: start;
+    white-space: pre;
+    word-break: normal;
+    word-spacing: normal;
+    word-wrap: normal;
+  }
+  pre::before {
+    background: var(--alert);
+    border-radius: 50%;
+    box-shadow: 1.5rem 0 0 0 Orange, 3rem 0 0 0 var(--success);
+    content: "";
+    display: block;
+    block-size: 1rem;
+    transform: translateY(-1rem);
+    inline-size: 1rem;
+  }
+  :not(pre) > var,
+  :not(pre) > code {
+    border: 1px solid;
+    border-radius: 0.2em;
+    color: var(--accent);
+    display: inline-block;
+    font-family: inherit;
+    padding: 0.1em;
+    user-select: all;
+    white-space: nowrap;
+  }
+  :not(pre) > var {
+    background: var(--contrast);
+    border-style: dashed;
+    color: var(--accent-dark);
+  }
+  dl,
+  dd {
+    margin: 0;
+  }
+  dd + dt {
+    margin: 1rem 0 0;
+  }
+  dt dfn {
+    font-style: normal;
+  }
+  figure dt {
+    clear: inline-start;
+    float: inline-start;
+    margin: 0 0 1rem;
+  }
+  figure dd {
+    display: flex;
+    margin: 0 0 1rem;
+  }
+  figure dd::before {
+    border-block-start: 1px dotted;
+    content: "";
+    flex: 1;
+    margin: 0 0.5rem;
+    transform: translateY(0.9rem);
+  }
+  figure dl + figcaption {
+    text-align: center;
+  }
+  /* ----------------------------- */
+  /* Table of contents */
+  /* ----------------------------- */
+  /*
+    == Paths
+    == Colors
+    == Timing functions
+    == Spacings
+    == Patterns
+    == Formage
+  */
+  /* ==================== */
+  /* == Paths
+  /* ==================== */
+  /* ==================== */
+  /* == Spacings
+  /* ==================== */
+  /* ==================== */
+  /* == Formage
+  /* ==================== */
+  /* ==================== */
+  /* == Forms
+  /* ==================== */
+  input,
+  optgroup,
+  select,
+  textarea {
+    line-height: inherit;
+  }
+  input,
+  select,
+  label[for] {
+    vertical-align: middle;
+  }
+  input,
+  button,
+  select,
+  textarea {
+    border-radius: 0.25rem;
+    font-family: inherit;
+    font-size: 1em;
+    padding: 0.5rem;
+  }
+  form,
+  fieldset,
+  .fieldset {
+    max-inline-size: 61.25rem;
+  }
+  form > * + * {
+    margin-block-start: 3rem;
+  }
+  fieldset,
+  .fieldset {
+    border: 0;
+    margin: 1rem auto 2rem;
+    padding: 0;
+  }
+  fieldset > p,
+  fieldset > div,
+  .fieldset > p,
+  .fieldset > div {
+    margin-block-end: inherit;
+  }
+  legend:first-child {
+    font-weight: 700;
+    margin-block-end: inherit;
+  }
+  label[for] {
+    display: block;
+  }
+  select,
+  input[type=text], input[type=number], input[type=search], input[type=password], input[type=email], input[type=url], input[type=tel], input[type=date], input[type=time], input[type=datetime-local], input[type=month], input[type=week], input[type=color], input[type=file], textarea {
+    appearance: none;
+    background-color: var(--contrast);
+    border: 1px solid var(--contrast-inverse);
+    color: var(--muted-dark);
+    inline-size: 100%;
+    /**
+     * Avoid zoom on iOS when focus on inputs
+     * http://stackoverflow.com/questions/2989263/disable-auto-zoom-in-input-text-tag-safari-on-iphone
+     */
+  }
+  select:focus,
+  input[type=text]:focus, input[type=number]:focus, input[type=search]:focus, input[type=password]:focus, input[type=email]:focus, input[type=url]:focus, input[type=tel]:focus, input[type=date]:focus, input[type=time]:focus, input[type=datetime-local]:focus, input[type=month]:focus, input[type=week]:focus, input[type=color]:focus, input[type=file]:focus, textarea:focus {
+    border-color: var(--accent-light);
+  }
+  select[readonly],
+  input[type=text][readonly], input[type=number][readonly], input[type=search][readonly], input[type=password][readonly], input[type=email][readonly], input[type=url][readonly], input[type=tel][readonly], input[type=date][readonly], input[type=time][readonly], input[type=datetime-local][readonly], input[type=month][readonly], input[type=week][readonly], input[type=color][readonly], input[type=file][readonly], textarea[readonly] {
+    background-color: var(--disabled);
+  }
+  select[readonly]:focus,
+  input[type=text][readonly]:focus, input[type=number][readonly]:focus, input[type=search][readonly]:focus, input[type=password][readonly]:focus, input[type=email][readonly]:focus, input[type=url][readonly]:focus, input[type=tel][readonly]:focus, input[type=date][readonly]:focus, input[type=time][readonly]:focus, input[type=datetime-local][readonly]:focus, input[type=month][readonly]:focus, input[type=week][readonly]:focus, input[type=color][readonly]:focus, input[type=file][readonly]:focus, textarea[readonly]:focus {
+    border-color: var(--muted);
+  }
+  @media (-webkit-min-device-pixel-ratio: 1.5) {
+    select,
+    input[type=text], input[type=number], input[type=search], input[type=password], input[type=email], input[type=url], input[type=tel], input[type=date], input[type=time], input[type=datetime-local], input[type=month], input[type=week], input[type=color], input[type=file], textarea {
+      font-size: 1em;
+    }
+  }
+  /**
+   * Prevent inner select focus indicator in Firefox
+   ** @see https://developer.mozilla.org/fr/docs/Web/CSS/:-moz-focusring
+   */
+  select:-moz-focusring {
+    color: transparent;
+  }
+  input[type=image],
+  input[type=checkbox], input[type=radio] {
+    background-color: transparent;
+    border: 0;
+    inline-size: auto;
+  }
+  input[type=range] {
+    background-color: transparent;
+    appearance: none;
+    inline-size: 100%;
+    padding: 0;
+  }
+  input[type=range]:focus-visible::-webkit-slider-thumb {
+    box-shadow: 0 0 0 0.25rem var(--accent-light);
+  }
+  input[type=range]:focus-visible::-moz-range-thumb {
+    box-shadow: 0 0 0 0.25rem var(--accent-light);
+  }
+  input[type=range]::-webkit-slider-thumb {
+    inline-size: 1rem;
+    block-size: 1rem;
+    margin-block-start: -0.5rem;
+    background-color: var(--accent);
+    border: 0.25rem solid var(--background);
+    border-radius: 1rem;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    appearance: none;
+    box-sizing: content-box;
+    cursor: grab;
+    filter: drop-shadow(0 0 0.25rem rgba(0, 0, 0, 0.2));
+  }
+  input[type=range]::-webkit-slider-thumb:active {
+    cursor: grabbing;
+  }
+  input[type=range]::-webkit-slider-runnable-track {
+    inline-size: 100%;
+    block-size: 0.5rem;
+    color: transparent;
+    cursor: pointer;
+    background-color: var(--contrast);
+    border-color: transparent;
+    border-radius: 1rem;
+    background-image: linear-gradient(to right, var(--accent-light) var(--value, 0%), var(--contrast) var(--value, 0%));
+  }
+  input[type=range]::-moz-range-thumb {
+    inline-size: 1rem;
+    block-size: 1rem;
+    background-color: var(--accent);
+    border: 0.25rem solid var(--background);
+    border-radius: 1rem;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    appearance: none;
+    cursor: grab;
+    filter: drop-shadow(0 0 0.25rem rgba(0, 0, 0, 0.2));
+  }
+  input[type=range]::-moz-range-thumb:active {
+    cursor: grabbing;
+  }
+  input[type=range]::-moz-range-track {
+    inline-size: 100%;
+    block-size: 0.5rem;
+    color: transparent;
+    cursor: pointer;
+    background-color: var(--contrast);
+    border-color: transparent;
+    border-radius: 1rem;
+  }
+  input[type=range]::-moz-range-progress {
+    block-size: 0.5rem;
+    background-color: var(--accent-light);
+    border-radius: 1rem;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    input[type=range]::-webkit-slider-thumb {
+      transition: none;
+    }
+    input[type=range]::-moz-range-thumb {
+      transition: none;
+    }
+  }
+  @media (prefers-contrast: more) {
+    input[type=range]::-webkit-slider-thumb {
+      background: HighlightText;
+      border-color: Highlight;
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+      background-color: CanvasText;
+    }
+    input[type=range]::-moz-range-thumb {
+      background: HighlightText;
+      border-color: Highlight;
+    }
+    input[type=range]::-moz-range-track {
+      background-color: CanvasText;
+    }
+  }
+  input[type=range]:disabled {
+    pointer-events: none;
+  }
+  input[type=range]:disabled::-webkit-slider-thumb {
+    background-color: var(--disabled);
+  }
+  input[type=range]:disabled::-moz-range-thumb {
+    background-color: var(--disabled);
+  }
+  input[type=range] ~ output {
+    box-sizing: content-box;
+    inline-size: 3ch;
+    inset-inline-start: calc(var(--value) * 1% - 3ch * var(--value) / 100);
+    text-align: center;
+    translate: calc(-0.5rem * var(--is-rtl, 1));
+  }
+  input[type=number],
+  input[type=search] {
+    appearance: textfield;
+  }
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+  input[type=checkbox]:not(:first-of-type), input[type=radio]:not(:first-of-type) {
+    margin-inline-start: 0.5rem;
+  }
+  input[type=checkbox] + label[for], input[type=radio] + label[for] {
+    display: inline-block;
+  }
+  select[multiple] {
+    vertical-align: top;
+  }
+  input[list],
+  select:not([multiple]) {
+    appearance: none;
+    background: var(--contrast) no-repeat var(--select) center right 0.5em/1em 1em;
+  }
+  textarea {
+    resize: vertical;
+    vertical-align: top;
+  }
+  /**
+   * Cursors
+   */
+  label[for],
+  .button, button, [type=submit], [type=reset], [type=button] {
+    appearance: none;
+    cursor: pointer;
+  }
+  form [disabled] {
+    background-color: var(--disabled);
+    cursor: not-allowed;
+  }
+  /**
+   * Messages
+   */
+  label [class^=label-msg] {
+    display: block;
+    margin: -0.25rem 0 0.25rem;
+    font-size: small;
+  }
+  .label-msg-error {
+    color: var(--alert);
+  }
+  /**
+   * States
+   ** @note Prevent required input to be invalid on first load
+   ** @link https://www.ffoodd.fr/l-etat-des-champs/
+   */
+  input[type=text]:not([list]):valid:focus, input[type=number]:not([list]):valid:focus, input[type=search]:not([list]):valid:focus, input[type=password]:not([list]):valid:focus, input[type=email]:not([list]):valid:focus, input[type=url]:not([list]):valid:focus, input[type=tel]:not([list]):valid:focus, input[type=date]:not([list]):valid:focus, input[type=time]:not([list]):valid:focus, input[type=datetime-local]:not([list]):valid:focus, input[type=month]:not([list]):valid:focus, input[type=week]:not([list]):valid:focus, input[type=color]:not([list]):valid:focus, input[type=file]:not([list]):valid:focus, textarea:not([list]):valid:focus {
+    background: var(--contrast) no-repeat var(--valid) center right 0.5em/1em 1.25em;
+  }
+  input[type=text]:not([list]):invalid:not(:focus), input[type=number]:not([list]):invalid:not(:focus), input[type=search]:not([list]):invalid:not(:focus), input[type=password]:not([list]):invalid:not(:focus), input[type=email]:not([list]):invalid:not(:focus), input[type=url]:not([list]):invalid:not(:focus), input[type=tel]:not([list]):invalid:not(:focus), input[type=date]:not([list]):invalid:not(:focus), input[type=time]:not([list]):invalid:not(:focus), input[type=datetime-local]:not([list]):invalid:not(:focus), input[type=month]:not([list]):invalid:not(:focus), input[type=week]:not([list]):invalid:not(:focus), input[type=color]:not([list]):invalid:not(:focus), input[type=file]:not([list]):invalid:not(:focus), textarea:not([list]):invalid:not(:focus) {
+    background: var(--contrast) no-repeat var(--invalid) center right 0.5em/1em 1.25em;
+    box-shadow: 0 0 0 0.125rem var(--alert-light);
+  }
+  input[type=text]:invalid:placeholder-shown:not(:focus), input[type=number]:invalid:placeholder-shown:not(:focus), input[type=search]:invalid:placeholder-shown:not(:focus), input[type=password]:invalid:placeholder-shown:not(:focus), input[type=email]:invalid:placeholder-shown:not(:focus), input[type=url]:invalid:placeholder-shown:not(:focus), input[type=tel]:invalid:placeholder-shown:not(:focus), input[type=date]:invalid:placeholder-shown:not(:focus), input[type=time]:invalid:placeholder-shown:not(:focus), input[type=datetime-local]:invalid:placeholder-shown:not(:focus), input[type=month]:invalid:placeholder-shown:not(:focus), input[type=week]:invalid:placeholder-shown:not(:focus), input[type=color]:invalid:placeholder-shown:not(:focus), input[type=file]:invalid:placeholder-shown:not(:focus), textarea:invalid:placeholder-shown:not(:focus) {
+    box-shadow: none;
+  }
+  input[type=text]:not([list]):required:placeholder-shown, input[type=number]:not([list]):required:placeholder-shown, input[type=search]:not([list]):required:placeholder-shown, input[type=password]:not([list]):required:placeholder-shown, input[type=email]:not([list]):required:placeholder-shown, input[type=url]:not([list]):required:placeholder-shown, input[type=tel]:not([list]):required:placeholder-shown, input[type=date]:not([list]):required:placeholder-shown, input[type=time]:not([list]):required:placeholder-shown, input[type=datetime-local]:not([list]):required:placeholder-shown, input[type=month]:not([list]):required:placeholder-shown, input[type=week]:not([list]):required:placeholder-shown, input[type=color]:not([list]):required:placeholder-shown, input[type=file]:not([list]):required:placeholder-shown, textarea:not([list]):required:placeholder-shown {
+    background: var(--contrast) no-repeat var(--required) center right 0.5em/1em 1.25em;
+  }
+  /**
+   * Browser reset
+   *
+   * 1. 'x' appears on right of search input when text is entered. This removes it
+   */
+  [type=search]::-webkit-search-decoration, [type=search]::-webkit-search-cancel-button, [type=search]::-webkit-search-results-button, [type=search]::-webkit-search-results-decoration {
+    display: none; /* 1 */
+  }
+  /* ----------------------------- */
+  /* Table of contents */
+  /* ----------------------------- */
+  /*
+    == Paths
+    == Colors
+    == Timing functions
+    == Spacings
+    == Patterns
+    == Formage
+  */
+  /* ==================== */
+  /* == Paths
+  /* ==================== */
+  /* ==================== */
+  /* == Spacings
+  /* ==================== */
+  /* ==================== */
+  /* == Formage
+  /* ==================== */
+  /* ==================== */
+  /* == Buttons
+  /* ==================== */
+  /**
+   * Better <button> styling, inspired by:
+   ** @author Florens Verschelde (@fvsch)
+   ** @see https://fvsch.com/styling-buttons/
+   */
+  .button, button, [type=submit], [type=reset], [type=button] {
+    background-color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 0.25rem;
+    color: var(--contrast);
+    cursor: pointer;
+    display: inline-block;
+    font: inherit;
+    line-height: 1.5;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    vertical-align: middle;
+    text-decoration: none;
+    transition: all 300ms var(--move);
+    inline-size: auto;
+    appearance: none;
+  }
+  .button:hover, button:hover, [type=submit]:hover, [type=reset]:hover, [type=button]:hover {
+    border: 1px solid var(--accent-light);
+    background-color: var(--accent-light);
+  }
+  .button:focus, .button:active, .button[aria-expanded=true], button:focus, button:active, button[aria-expanded=true], [type=submit]:focus, [type=submit]:active, [type=submit][aria-expanded=true], [type=reset]:focus, [type=reset]:active, [type=reset][aria-expanded=true], [type=button]:focus, [type=button]:active, [type=button][aria-expanded=true] {
+    border: 1px solid var(--accent-dark);
+    background-color: var(--accent-dark);
+  }
+  .button:active, .button[aria-expanded=true], button:active, button[aria-expanded=true], [type=submit]:active, [type=submit][aria-expanded=true], [type=reset]:active, [type=reset][aria-expanded=true], [type=button]:active, [type=button][aria-expanded=true] {
+    transform: translateY(0.125rem);
+  }
+  .button[disabled], .button[disabled]:hover, .button[disabled]:focus, .button[disabled]:active, button[disabled], button[disabled]:hover, button[disabled]:focus, button[disabled]:active, [type=submit][disabled], [type=submit][disabled]:hover, [type=submit][disabled]:focus, [type=submit][disabled]:active, [type=reset][disabled], [type=reset][disabled]:hover, [type=reset][disabled]:focus, [type=reset][disabled]:active, [type=button][disabled], [type=button][disabled]:hover, [type=button][disabled]:focus, [type=button][disabled]:active {
+    background-color: var(--muted-dark);
+    color: var(--background);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+@layer layout {
+  /* ----------------------------- */
+  /* Table of contents */
+  /* ----------------------------- */
+  /*
+    == Paths
+    == Colors
+    == Timing functions
+    == Spacings
+    == Patterns
+    == Formage
+  */
+  /* ==================== */
+  /* == Paths
+  /* ==================== */
+  /* ==================== */
+  /* == Spacings
+  /* ==================== */
+  /* ==================== */
+  /* == Formage
+  /* ==================== */
+  /* ==================== */
+  /* == Grid
+  /* ==================== */
+  [class*=grid] > *,
+  [class*=columns] > * {
+    display: inline-block;
+    margin-block-end: 2rem;
+    max-inline-size: 100%;
+  }
+  @media (min-width: 61.25rem) {
+    /* -------------------- */
+    /* -- Columns
+     * 1.
+     * @bugfix avoiding weird gaps in Chrome
+     * @affected Chrome
+     * @see https://github.com/twbs/bootstrap/issues/20925
+     * 2.
+     * @note Avoiding break inside children isn't so well supported
+     * @see https://caniuse.com/#search=break-inside
+    /* -------------------- */
+    [class*=columns] {
+      column-gap: 2rem;
+      orphans: 1; /* 1 */
+      widows: 1; /* 1 */
+    }
+    [class*=columns] > * {
+      page-break-inside: avoid; /* 2 */
+      break-inside: avoid; /* 2 */
+    }
+    .columns-2 {
+      columns: 2;
+    }
+    .columns-3 {
+      columns: 3;
+    }
+    .columns-4 {
+      columns: 4;
+    }
+    /* -------------------- */
+    /* -- Fixed grid
+    /* -------------------- */
+    [class*=grid] {
+      display: grid;
+      grid-gap: 2rem;
+      inline-size: 100%;
+    }
+    .grid-2 {
+      grid-template-columns: repeat(2, [col] 1fr);
+    }
+    .grid-3, .grid-2-1, .grid-1-2 {
+      grid-template-columns: repeat(3, [col] 1fr);
+    }
+    .grid-4, .grid-3-1, .grid-1-3 {
+      grid-template-columns: repeat(4, [col] 1fr);
+    }
+    .grid-1-2 > *:nth-child(even) {
+      grid-column: 2/span 2;
+    }
+    .grid-2-1 > *:nth-child(odd) {
+      grid-column: 1/span 2;
+    }
+    .grid-1-3 > *:nth-child(even) {
+      grid-column: 2/span 3;
+    }
+    .grid-3-1 > *:nth-child(odd) {
+      grid-column: 1/span 3;
+    }
+  }
+}
+@layer components {}
+@layer utilities {
+  /* ----------------------------- */
+  /* Table of contents */
+  /* ----------------------------- */
+  /*
+    == Paths
+    == Colors
+    == Timing functions
+    == Spacings
+    == Patterns
+    == Formage
+  */
+  /* ==================== */
+  /* == Paths
+  /* ==================== */
+  /* ==================== */
+  /* == Spacings
+  /* ==================== */
+  /* ==================== */
+  /* == Formage
+  /* ==================== */
+  /* == Helpers
+  /* ==================== */
+  .no-border {
+    border: 0;
+  }
+  .no-list {
+    list-style: none;
+    padding: 0;
+  }
+  .no-event {
+    pointer-events: none;
+  }
+  .list-inline > li {
+    display: inline;
+  }
+  .p-relative {
+    position: relative;
+  }
+  .p-absolute {
+    position: absolute;
+  }
+  .p-sticky {
+    position: sticky;
+  }
+  .d-flex {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .d-block {
+    display: block;
+  }
+  .js .js-hidden,
+  .no-js .no-js-hidden {
+    display: none;
+  }
+  .align-top {
+    align-items: flex-start;
+  }
+  .align-end {
+    place-self: flex-end;
+  }
+  .flex-column {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .fw-400 {
+    font-weight: normal;
+  }
+  .fw-700 {
+    font-weight: bold;
+  }
+  .f-is {
+    float: inline-start;
+  }
+  .stretch {
+    block-size: 100%;
+    object-fit: cover;
+    object-position: center;
+    inline-size: 100%;
+  }
+  @media (max-width: 29.9375em) {
+    .sm-hidden {
+      display: none;
+    }
+  }
+  .rounded {
+    border-radius: 50%;
+  }
+  [class*=bg-] * {
+    color: inherit;
+  }
+  [class*=bg-] a:hover,
+  [class*=bg-] a:focus {
+    color: inherit;
+    opacity: 0.75;
+  }
+  .bg-alert {
+    background-color: var(--alert);
+    color: var(--contrast);
+  }
+  .bg-success {
+    background-color: var(--success);
+    color: var(--contrast);
+  }
+  .bg-accent {
+    background-color: var(--accent);
+    color: var(--contrast);
+  }
+  .bg-secondary {
+    background-color: var(--secondary);
+    color: var(--contrast);
+  }
+  .no-background {
+    background: none;
+  }
+  .muted {
+    color: var(--muted);
+  }
+  .muted em,
+  .muted strong {
+    color: var(--background);
+  }
+  .clr-alert {
+    color: var(--alert);
+  }
+  .clr-success {
+    color: var(--success);
+  }
+  .clr-accent {
+    color: var(--accent);
+  }
+  .clr-secondary {
+    color: var(--secondary);
+  }
+  [class*="--xs"] {
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+  [class*="--s"] {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+  [class*="--l"] {
+    font-size: 1.125rem;
+    line-height: 1.05;
+  }
+  [class*="--xl"] {
+    font-size: 1.5rem;
+    line-height: 1.75;
+    margin: 3rem 0;
+  }
+  /* ----------------------------- */
+  /* Table of contents */
+  /* ----------------------------- */
+  /*
+    == Paths
+    == Colors
+    == Timing functions
+    == Spacings
+    == Patterns
+    == Formage
+  */
+  /* ==================== */
+  /* == Paths
+  /* ==================== */
+  /* ==================== */
+  /* == Spacings
+  /* ==================== */
+  /* ==================== */
+  /* == Formage
+  /* ==================== */
+  .no-margin {
+    margin: 0;
+  }
+  .mb-0 {
+    margin-block: 0;
+  }
+  .mbs-0 {
+    margin-block-start: 0;
+  }
+  .mbe-0 {
+    margin-block-end: 0;
+  }
+  .mi-0 {
+    margin-inline: 0;
+  }
+  .mis-0 {
+    margin-inline-start: 0;
+  }
+  .mie-0 {
+    margin-inline-end: 0;
+  }
+  .no-padding {
+    padding: 0;
+  }
+  .pb-0 {
+    padding-block: 0;
+  }
+  .pbs-0 {
+    padding-block-start: 0;
+  }
+  .pbe-0 {
+    padding-block-end: 0;
+  }
+  .pi-0 {
+    padding-inline: 0;
+  }
+  .pis-0 {
+    padding-inline-start: 0;
+  }
+  .pie-0 {
+    padding-inline-end: 0;
+  }
+  .m-1 {
+    margin: 1rem;
+  }
+  .mb-1 {
+    margin-block: 1rem;
+  }
+  .mbs-1 {
+    margin-block-start: 1rem;
+  }
+  .mbe-1 {
+    margin-block-end: 1rem;
+  }
+  .mi-1 {
+    margin-inline: 1rem;
+  }
+  .mis-1 {
+    margin-inline-start: 1rem;
+  }
+  .mie-1 {
+    margin-inline-end: 1rem;
+  }
+  .p-1 {
+    padding: 1rem;
+  }
+  .pb-1 {
+    padding-block: 1rem;
+  }
+  .pbs-1 {
+    padding-block-start: 1rem;
+  }
+  .pbe-1 {
+    padding-block-end: 1rem;
+  }
+  .pi-1 {
+    padding-inline: 1rem;
+  }
+  .pis-1 {
+    padding-inline-start: 1rem;
+  }
+  .pie-1 {
+    padding-inline-end: 1rem;
+  }
+  .m-2 {
+    margin: 2rem;
+  }
+  .mb-2 {
+    margin-block: 2rem;
+  }
+  .mbs-2 {
+    margin-block-start: 2rem;
+  }
+  .mbe-2 {
+    margin-block-end: 2rem;
+  }
+  .mi-2 {
+    margin-inline: 2rem;
+  }
+  .mis-2 {
+    margin-inline-start: 2rem;
+  }
+  .mie-2 {
+    margin-inline-end: 2rem;
+  }
+  .p-2 {
+    padding: 2rem;
+  }
+  .pb-2 {
+    padding-block: 2rem;
+  }
+  .pbs-2 {
+    padding-block-start: 2rem;
+  }
+  .pbe-2 {
+    padding-block-end: 2rem;
+  }
+  .pi-2 {
+    padding-inline: 2rem;
+  }
+  .pis-2 {
+    padding-inline-start: 2rem;
+  }
+  .pie-2 {
+    padding-inline-end: 2rem;
+  }
+  .m-3 {
+    margin: 3rem;
+  }
+  .mb-3 {
+    margin-block: 3rem;
+  }
+  .mbs-3 {
+    margin-block-start: 3rem;
+  }
+  .mbe-3 {
+    margin-block-end: 3rem;
+  }
+  .mi-3 {
+    margin-inline: 3rem;
+  }
+  .mis-3 {
+    margin-inline-start: 3rem;
+  }
+  .mie-3 {
+    margin-inline-end: 3rem;
+  }
+  .p-3 {
+    padding: 3rem;
+  }
+  .pb-3 {
+    padding-block: 3rem;
+  }
+  .pbs-3 {
+    padding-block-start: 3rem;
+  }
+  .pbe-3 {
+    padding-block-end: 3rem;
+  }
+  .pi-3 {
+    padding-inline: 3rem;
+  }
+  .pis-3 {
+    padding-inline-start: 3rem;
+  }
+  .pie-3 {
+    padding-inline-end: 3rem;
+  }
+  .m-auto {
+    margin: auto;
+  }
+  .mb-auto {
+    margin-block: auto;
+  }
+  .mbs-auto {
+    margin-block-start: auto;
+  }
+  .mbe-auto {
+    margin-block-end: auto;
+  }
+  .mi-auto {
+    margin-inline: auto;
+  }
+  .mis-auto {
+    margin-inline-start: auto;
+  }
+  .mie-auto {
+    margin-inline-end: auto;
+  }
+  .p-auto {
+    padding: auto;
+  }
+  .pb-auto {
+    padding-block: auto;
+  }
+  .pbs-auto {
+    padding-block-start: auto;
+  }
+  .pbe-auto {
+    padding-block-end: auto;
+  }
+  .pi-auto {
+    padding-inline: auto;
+  }
+  .pis-auto {
+    padding-inline-start: auto;
+  }
+  .pie-auto {
+    padding-inline-end: auto;
+  }
+  .sr-only,
+  .visually-hidden {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    block-size: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    inline-size: 1px;
+    white-space: nowrap;
+  }
+  .sr-only-focusable:focus,
+  .sr-only-focusable:active,
+  .sr-only-focusable:focus-within,
+  .visually-hidden-focusable:focus,
+  .visually-hidden-focusable:active,
+  .visually-hidden-focusable:focus-within {
+    clip: auto;
+    clip-path: none;
+    block-size: auto;
+    overflow: visible;
+    inline-size: auto;
+    white-space: normal;
+  }
+}
+@layer preferences {
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms;
+      animation-iteration-count: 1;
+      transition-duration: 0.01ms;
+      scroll-behavior: auto;
+    }
+  }
+  @media (inverted-colors) {
+    img {
+      filter: invert(100%);
+    }
+  }
+  /* ----------------------------- */
+  /* Table of contents */
+  /* ----------------------------- */
+  /*
+    == Paths
+    == Colors
+    == Timing functions
+    == Spacings
+    == Patterns
+    == Formage
+  */
+  /* ==================== */
+  /* == Paths
+  /* ==================== */
+  /* ==================== */
+  /* == Spacings
+  /* ==================== */
+  /* ==================== */
+  /* == Formage
+  /* ==================== */
+  html:where([data-theme=dark]) {
+    color-scheme: dark;
+    --hue: 210;
+    --lightness: 66%;
+    --treshold: 40%;
+    --rotation: calc(var(--hue) - 30);
+    --brighter: calc(var(--lightness) / var(--light-scale));
+    --darker: calc(var(--lightness) * var(--light-scale));
+    --disabled: hsl(var(--neutral) 10%);
+    --background: hsl(var(--neutral) 20%);
+    --success-light: hsl(var(--right) 100% calc(var(--lightness) / 3));
+    --success-dark: hsl(var(--right) 100% var(--brighter));
+  }
+  html:where([data-theme=dark]) img {
+    filter: brightness(0.8) contrast(1.2);
+  }
+  @media (min-width: 61.25rem) {
+    html:where([data-theme=dark]) {
+      --lightness: 60%;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    .no-js,
+    html:where(:not([data-theme=light])) {
+      color-scheme: dark;
+      --hue: 210;
+      --lightness: 66%;
+      --treshold: 40%;
+      --rotation: calc(var(--hue) - 30);
+      --brighter: calc(var(--lightness) / var(--light-scale));
+      --darker: calc(var(--lightness) * var(--light-scale));
+      --disabled: hsl(var(--neutral) 10%);
+      --background: hsl(var(--neutral) 20%);
+      --success-light: hsl(var(--right) 100% calc(var(--lightness) / 3));
+      --success-dark: hsl(var(--right) 100% var(--brighter));
+    }
+    .no-js img,
+    html:where(:not([data-theme=light])) img {
+      filter: brightness(0.8) contrast(1.2);
+    }
+  }
+  @media (min-width: 61.25rem) and (prefers-color-scheme: dark) {
+    .no-js,
+    html:where(:not([data-theme=light])) {
+      --lightness: 60%;
+    }
+  }
+  @media (prefers-contrast: more) {
+    html:where([lang]) {
+      --secondary: LinkText;
+      --secondary-light: LinkText;
+      --secondary-lighter: LinkText;
+      --secondary-dark: LinkText;
+      --accent: Highlight;
+      --accent-light: Highlight;
+      --accent-dark: Highlight;
+      --alert: ActiveText;
+      --alert-light: ActiveText;
+      --alert-dark: ActiveText;
+      --success: VisitedText;
+      --success-light: VisitedText;
+      --success-lighter: VisitedText;
+      --success-dark: VisitedText;
+      --contrast: Canvas;
+      --contrast-o-50: CanvasText;
+      --contrast-inverse: CanvasText;
+      --muted: CanvasText;
+      --muted-light: CanvasText;
+      --muted-lighter: CanvasText;
+      --muted-dark: CanvasText;
+      --disabled: Canvas;
+      --background: Canvas;
+    }
+    .high-contrast-hidden {
+      display: none !important;
+    }
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
