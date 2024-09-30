@@ -97,9 +97,9 @@ $timing-functions: (
 /* ==================== */
 $full-width: false !default;
 $base: math.div(1140, 16) !default;
-$width: em( 1024 ) !default;
-$gutter: rem( 16 ) !default;
-$content-width: em( 600 ) !default;
+$width: em( 1024, 16 ) !default;
+$gutter: rem( 16, 16 ) !default;
+$content-width: em( 600, 16 ) !default;
 
 /* ==================== */
 /* == Patterns

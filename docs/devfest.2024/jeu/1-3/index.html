@@ -1,67 +1,68 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-	<meta charset="utf-8">
-	<title>L’invasion du HTML mutant</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="L’invasion du HTML mutant — Atelier animé par Gaël Poupard lors du devFest Nantes 2024.">
-	<meta name="author" content="Gaël Poupard">
-	<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
-</head>
-<body>
-<header role="banner">
-	<h1>L’invasion du HTML mutant</h1>
-</header>
+	<head>
+		<meta charset="utf-8">
+		<title>L’invasion du HTML mutant</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="L’invasion du HTML mutant — Atelier animé par Gaël Poupard lors du devFest Nantes 2024.">
+		<meta name="author" content="Gaël Poupard">
+		<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+	</head>
+	<body>
+		<header role="banner">
+			<h1>L’invasion du HTML mutant</h1>
+		</header>
 
-<main role="main">
-	<h1>
-		Le vampire
-		<span>Niveau 1-3</span>
-	</h1>
+		<main role="main">
+			<h1>
+				Le vampire
+				<span>Niveau 1-3</span>
+			</h1>
 
-	<p class="portrait">🧛</p>
-	<p>Le vampire.</p>
+			<p class="portrait">🧛</p>
+			<p>Le vampire.</p>
 
-	<code-runner type="json">
-		<form>
-			<label for="condition">Condition</label>
-			<pre><code>const observer = new MutationObserver(mutations => {
-	for (const mutation of mutations) {
-		if (</code></pre>
-			<input type="text" id="condition"
-						 autocomplete="off"
-						 autocorrect="off"
-						 autocapitalize="off"
-						 spellcheck="false"
-						 enterkeyhint="send"
-						 required>
-			<pre><code>) {
-			mutation.target.remove();
-			observer.disconnect();
-		}
-	}
-});</code></pre>
+			<code-runner type="json">
+				<form>
+					<label for="condition">Condition</label>
+					<pre><code>const observer = new MutationObserver(mutations => {
+			for (const mutation of mutations) {
+				if (</code></pre>
+					<input type="text" id="condition"
+								 autocomplete="off"
+								 autocorrect="off"
+								 autocapitalize="off"
+								 spellcheck="false"
+								 enterkeyhint="send"
+								 required>
+					<pre><code>) {
+					mutation.target.remove();
+					observer.disconnect();
+				}
+			}
+		});</code></pre>
 
-			<label for="options">Options</label>
-			<pre><code>observer.observe(document.querySelector("mu-tant"), {</code></pre>
-			<input type="text" id="options"
-						 autocomplete="off"
-						 autocorrect="off"
-						 autocapitalize="off"
-						 spellcheck="false"
-						 enterkeyhint="send"
-						 required>
-			<pre><code>});</code></pre>
+					<label for="options">Options</label>
+					<pre><code>observer.observe(document.querySelector("mu-tant"), {</code></pre>
+					<input type="text" id="options"
+								 autocomplete="off"
+								 autocorrect="off"
+								 autocapitalize="off"
+								 spellcheck="false"
+								 enterkeyhint="send"
+								 required>
+					<pre><code>});</code></pre>
 
-			<button>Feu&nbsp;!</button>
-		</form>
-	</code-runner>
-</main>
+					<button>Feu&nbsp;!</button>
+				</form>
+			</code-runner>
+		</main>
 
-<play-ground type="vampire"></play-ground>
+		<play-ground type="vampire"></play-ground>
 
-<script src="../code-runner.js"></script>
-<script src="../mu-tant.js"></script>
-<script src="../play-ground.js"></script>
-</body>
+		<script src="../script.js"></script>
+		<script src="../code-runner.js"></script>
+		<script src="../mu-tant.js"></script>
+		<script src="../play-ground.js"></script>
+	</body>
 </html>

@@ -7,10 +7,31 @@
 		<meta name="description" content="L’invasion du HTML mutant — Atelier animé par Gaël Poupard lors du devFest Nantes 2024.">
 		<meta name="author" content="Gaël Poupard">
 		<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+		<link rel="stylesheet" href="styles.css" media="screen">
 	</head>
 	<body>
 		<header role="banner">
 			<h1>L’invasion du HTML mutant</h1>
+			<div role="group" aria-label="Choix du thème" id="theme" class="toggle no-js-hidden high-contrast-hidden mis-auto">
+				<button type="button" title="Thème sombre"
+								data-scheme="dark" aria-pressed="false">
+					<svg width="24" height="24" role="img" aria-label="Thème sombre" class="mx-auto no-padding">
+						<use xlink:href="img/symbol.svg#moon"></use>
+					</svg>
+				</button>
+				<button type="button"	title="Thème clair"
+								data-scheme="light" aria-pressed="false">
+					<svg width="24" height="24" role="img" aria-label="Thème clair" class="mx-auto no-padding">
+						<use xlink:href="img/symbol.svg#sun"></use>
+					</svg>
+				</button>
+				<button type="button"	title="Thème par défaut"
+								data-scheme="none" aria-pressed="false">
+					<svg width="24" height="24" role="img" aria-label="Thème par défaut" class="mx-auto no-padding">
+						<use xlink:href="img/symbol.svg#unset"></use>
+					</svg>
+				</button>
+			</div>
 		</header>
 
 		<main role="main">
@@ -28,13 +49,20 @@
 						<li><a href="1-2/index.html">Fantôme</a></li>
 					</ol>
 				</li>
+				<!-- @todo Trouver d’autres niveaux ?
+				     @note Mélanger les mutants et n’en cibler qu’un type
+				     @note Ajouter des humains et les épargner (score : survivants ?)
+				     @note Contamination : des humains uniquement, qui mutent petit à petit… (score : survivants ?)
+				     @note Deux paliers : d’abord détecter, puis logger / supprimer ? -->
 				<li>Les options avancées (définir une condition)&nbsp;:
 					<ol>
 						<li><a href="1-3/index.html">Vampire</a></li>
 						<li><a href="2-3/index.html">Crâne</a></li>
 					</ol>
 				</li>
+				<!-- @todo Boss final, avec rédaction du callback -->
 			</ol>
 		</main>
+		<script src="script.js"></script>
 	</body>
 </html>
