@@ -13,8 +13,6 @@ const { imgSize } = require("@mdit/plugin-img-size")
 const tocPlugin = require("eleventy-plugin-toc")
 const rssPlugin = require("@11ty/eleventy-plugin-rss")
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight")
-// Assets
-const sass = require("sass");
 
 module.exports = function (eleventyConfig) {
 	// Shortcodes
