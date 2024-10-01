@@ -12,8 +12,6 @@
 		"wp:migrate:posts": "node scripts/posts.js",
 		"wp:migrate:pages": "node scripts/pages.js",
 		"wp:migrate:comments": "node scripts/comments.js",
-		"build:sass": "sass _src/talks/devfest.2024/jeu/styles.scss:docs/devfest.2024/jeu/styles.css --load-path=node_modules --style expanded --source-map --no-error-css --quiet-deps",
-		"postbuild:sass": "postcss docs/devfest.2024/jeu/styles.css --dir docs/devfest.2024/jeu/ --ext .min.css -u autoprefixer cssnano -m",
 		"docs:lint": "link-checker ./docs/ --disable-external",
 		"docs:lint:external": "link-checker ./docs/ --external-only --http-timeout 30000 --http-status-ignore 301,302"
 	},
@@ -29,9 +27,7 @@
 		"@11ty/eleventy-plugin-rss": "^1.2.0",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
 		"@mdit/plugin-img-size": "^0.8.0",
-		"autoprefixer": "^10.4.20",
 		"concurrently": "^8.2.2",
-		"cssnano": "^7.0.6",
 		"eleventy-plugin-toc": "^1.1.5",
 		"json-to-frontmatter-markdown": "^1.0.0",
 		"link-checker": "^1.4.2",
@@ -39,10 +35,6 @@
 		"markdown-it-footnote": "^4.0.0",
 		"markdown-it-image-figures": "^2.1.1",
 		"patch-package": "^8.0.0",
-		"postcss": "^8.4.47",
-		"postcss-cli": "^11.0.0",
-		"sass": "^1.79.4",
-		"sseeeedd": "^0.4.8",
 		"string": "^3.3.3",
 		"turndown": "^7.2.0"
 	}
