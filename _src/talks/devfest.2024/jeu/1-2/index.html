@@ -7,6 +7,7 @@
 		<meta name="description" content="L’invasion du HTML mutant — Atelier animé par Gaël Poupard lors du devFest Nantes 2024.">
 		<meta name="author" content="Gaël Poupard">
 		<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+		<link rel="stylesheet" href="../styles.css" media="screen">
 	</head>
 	<body>
 		<header role="banner">
@@ -15,8 +16,8 @@
 
 		<main role="main">
 			<h1>
+				Niveau 1-2<br>
 				Le fantôme
-				<span>Niveau 1-2</span>
 			</h1>
 
 			<p class="portrait">👻</p>
@@ -24,7 +25,7 @@
 
 			<code-runner type="json">
 				<form>
-					<label for="options">Options</label>
+					<label for="options" class="sr-only">Options de la méthode <code>observe()</code></label>
 					<pre><code>observer.observe(document.querySelector("mu-tant"), {</code></pre>
 					<input type="text" id="options"
 								 autocomplete="off"
