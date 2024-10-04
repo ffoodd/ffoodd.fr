@@ -16,7 +16,7 @@ class CodeRunner extends HTMLElement {
 		if (event.type === 'submit') {
 			event.preventDefault();
 			let questions = this.form?.options.value;
-			let condition = this.form?.condition.value;
+			let condition = this.form.condition ? this.form.condition.value : '';
 
 			if (this.type === 'json') {
 				questions = this._normalizeJson(questions);
