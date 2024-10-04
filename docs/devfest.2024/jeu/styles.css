@@ -1,7 +1,7 @@
-@layer fonts, base, layout, design, preferences;
+@layer fonts, base, layout, design, utilities, preferences;
 
 @layer fonts {
-	/* @todo Subset pour « mutan » */
+	/* @todo Subset + unicode-range pour « mutan » */
 	@font-face {
 		font-display: swap;
 		font-family: 'Luckiest Guy';
@@ -42,6 +42,7 @@
 		src: url('./assets/fonts/ZillaSlab-BoldItalic.woff2') format('woff2');
 	}
 
+	/* @todo Subset + unicode-range pour chaque niveau ? */
 	@font-face {
 		font-display: block;
 		font-family: 'Twemoji Mozilla';
@@ -210,19 +211,31 @@
 	pre, code, var, samp,
 	input, textarea {
 		font-family: "FontWithASyntaxHighlighter", monospace;
+		font-size: 1rem;
 	}
 
 	pre {
-		line-height: 1.5;
 		hyphens: none;
-		tab-size: 4;
+		line-height: 1.5;
+		margin: 0;
 		overflow-x: auto;
-		padding: 2rem 1rem .5rem;
+		padding: 0;
+		tab-size: 4;
 		text-align: start;
 		white-space: pre;
 		word-break: normal;
 		word-spacing: normal;
 		word-wrap: normal;
+	}
+
+	input,
+	textarea {
+		background-color: transparent;
+		border: 1px solid var(--accent);
+		field-sizing: content;
+		margin: .5rem 0;
+		min-width: 32rem;
+		padding: .5rem;
 	}
 }
 
@@ -234,6 +247,7 @@
 
 	.splash {
 		place-content: center;
+		grid-template: initial;
 	}
 
 	main {
@@ -258,7 +272,7 @@
 			perspective(12rem)
 			rotateY(12deg)
 			rotateX(6deg);
-		transform-origin: top left;
+		transform-origin: 0%;
 	}
 
 	h1::first-line {
@@ -273,9 +287,26 @@
 			perspective(50rem)
 			rotateY(48deg)
 			rotateX(24deg);
+		transform-origin: 50%;
 	}
 
 	.splash h1::first-line {
 		font-size: 4rem;
 	}
 }
+
+@layer utilities {
+	.sr-only {
+		border: 0;
+		clip-path: inset(50%);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+		white-space: nowrap;
+	}
+}
+
+@layer preferences {}
