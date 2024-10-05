@@ -11,17 +11,17 @@
 	</head>
 	<body>
 		<header role="banner">
-			<h1>L’invasion du HTML mutant</h1>
-		</header>
-
-		<main role="main">
 			<h1>
 				Niveau 3-1<br>
 				Le vilain
 			</h1>
+		</header>
 
-			<p class="portrait">🦹🏼</p>
-			<p>Le vilain.</p>
+		<main role="main">
+			<div class="carte">
+				<p class="portrait">🦹🏼</p>
+				<p>Le vilain.</p>
+			</div>
 
 			<code-runner type="json">
 				<form>
@@ -38,6 +38,18 @@
 					<button>Feu&nbsp;!</button>
 				</form>
 			</code-runner>
+			<dialog id="portal" role="dialog" aria-labelledby="portal-heading">
+				<h2 id="portal-heading">C’est un oiseau&nbsp;? C’est un avion&nbsp;? Non&nbsp;!</h2>
+				<p>
+					Alors, battre des super-vilains, c’est rigolo. Mais avoir besoin de déclencher quelque chose en JavaScript
+					lorsque le contenu textuel d’un élément change, ça l’est déjà moins…
+					<!-- @todo Cas d’usage (?) Un bouton qui change d’intitulé mais pas d’état ni de classe ?-->
+				</p>
+				<form method="dialog">
+					<button>Rejouer</button>
+					<a href="../3-2/index.html">Niveau suivant</a>
+				</form>
+			</dialog>
 		</main>
 
 		<play-ground type="villain"></play-ground>

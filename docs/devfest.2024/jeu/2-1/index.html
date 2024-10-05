@@ -7,24 +7,25 @@
 		<meta name="description" content="L’invasion du HTML mutant — Atelier animé par Gaël Poupard lors du devFest Nantes 2024.">
 		<meta name="author" content="Gaël Poupard">
 		<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+		<link rel="stylesheet" href="../styles.css" media="screen">
 	</head>
 	<body>
 		<header role="banner">
-			<h1>L’invasion du HTML mutant</h1>
+			<h1>
+				Niveau 2-1<br>
+				L’alien
+			</h1>
 		</header>
 
 		<main role="main">
-			<h1>
-				L’alien
-				<span>Niveau 2-1</span>
-			</h1>
-
-			<p class="portrait">👾</p>
-			<p>L’alien.</p>
+			<div class="carte">
+				<p class="portrait">👾</p>
+				<p>L’alien.</p>
+			</div>
 
 			<code-runner type="json">
 				<form>
-					<label for="options">Options</label>
+					<label for="options" class="sr-only">Options de la méthode <code>observe()</code></label>
 					<pre><code>observer.observe(document.querySelector("mu-tant"), {</code></pre>
 					<input type="text" id="options"
 								 autocomplete="off"
@@ -37,6 +38,18 @@
 					<button>Feu&nbsp;!</button>
 				</form>
 			</code-runner>
+			<dialog id="portal" role="dialog" aria-labelledby="portal-heading">
+				<h2 id="portal-heading">Nous venons en paix&nbsp;!</h2>
+				<p>
+					Alors, repousser une invasion alien, c’est rigolo. Mais avoir besoin de déclencher quelque chose en JavaScript
+					lorsque le contenu d’un élément change, ça l’est déjà moins…
+					<!-- @todo Cas d’usage (?) Un élément inséré, par exemple dans une live region ?-->
+				</p>
+				<form method="dialog">
+					<button>Rejouer</button>
+					<a href="../3-1/index.html">Niveau suivant</a>
+				</form>
+			</dialog>
 		</main>
 
 		<play-ground type="invaders"></play-ground>

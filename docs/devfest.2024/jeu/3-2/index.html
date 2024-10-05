@@ -11,17 +11,17 @@
 	</head>
 	<body>
 		<header role="banner">
-			<h1>L’invasion du HTML mutant</h1>
+			<h1>
+				Niveau 3-2<br>
+				Le crâne
+			</h1>
 		</header>
 
 		<main role="main">
-			<h1>
-				Niveau 2-3<br>
-				Le crâne
-			</h1>
-
-			<p class="portrait">☠️</p>
-			<p>Le crâne.</p>
+			<div class="carte">
+				<p class="portrait">☠️</p>
+				<p>Le crâne.</p>
+			</div>
 
 			<code-runner type="json">
 				<form>
@@ -57,6 +57,19 @@
 					<button>Feu&nbsp;!</button>
 				</form>
 			</code-runner>
+			<dialog id="portal" role="dialog" aria-labelledby="portal-heading">
+				<h2 id="portal-heading">Même pas peur&nbsp;!</h2>
+				<p>
+					Alors, vaincre la mort, c’est rigolo. Mais avoir besoin de déclencher quelque chose en JavaScript
+					lorsqu’une portion de texte précise disparaît, ça l’est beaucoup moins…
+					<!-- @todo Cas d’usage (?) Un indicateur de robustesse qui masque une contrainte quand elle est franchie ? -->
+				</p>
+				<form method="dialog">
+					<button>Rejouer</button>
+					<!-- @todo Boss final ? Easter Egg ? -->
+					<a href="../1-2/index.html">Niveau suivant</a>
+				</form>
+			</dialog>
 		</main>
 
 		<play-ground type="skull"></play-ground>
