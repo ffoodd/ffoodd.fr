@@ -7,6 +7,7 @@ class PlayGround extends HTMLElement {
 		super();
 		document.addEventListener('voightkampff', this);
 		this.type = this.hasAttribute('type') ? this.getAttribute('type') : 'zombie';
+		this.portal = document.getElementById('portal');
 	}
 
 	connectedCallback() {
@@ -15,16 +16,10 @@ class PlayGround extends HTMLElement {
 		this.spyer = new MutationObserver(mutations => {
 			for (const mutation of mutations) {
 				if (mutation.removedNodes.length) {
-					// @fixme Vérifier le **dernier** élément à être supprimé
-					if (this._isMutant(mutation.removedNodes[0])) {
-						// @todo Lien vers le niveau suivant ? Événement ?
-						// @note Fiche « IRL » avec cas d’usage réél (?)
-						// @note Pour que tout le monde franchisse les paliers en même temps…
-						// @todo Possibilité de rejouer le niveau ?
-						// @todo Présentation du cas d’usage avant de passer au niveau suivant
-						console.log('Success!');
-						this.spyer.disconnect();
-						clearTimeout(this.invader);
+					if (this._isMutant(mutation.removedNodes[0]) && !document.querySelector('mu-tant')) {
+						this.observer.disconnect();
+						this.portal.showModal();
+						this.portal.addEventListener('close', this);
 					}
 				}
 			}
@@ -33,12 +28,22 @@ class PlayGround extends HTMLElement {
 	}
 
 	handleEvent(event) {
-		if (event.type === 'voightkampff') {
-			this._stopInvasion(
-				event.detail.data.questions,
-				event.detail.data.condition,
-				event.detail.type
-			);
+		switch (event.type) {
+			case 'voightkampff':
+				this._stopInvasion(
+					event.detail.data.questions,
+					event.detail.data.condition,
+					event.detail.type
+				);
+				break;
+			case 'close':
+				document.querySelectorAll('input, textarea')
+					.forEach(element => element.value = '');
+				this._invade();
+				break;
+			default:
+				console.info(`Event ${event.type} not handled by play-ground.`)
+				break;
 		}
 	}
 
@@ -61,7 +66,6 @@ class PlayGround extends HTMLElement {
 			// @note Voire même pour certains niveaux : ajouter un type après chargement, en mode contagion ?
 			// @todo Un niveau contenant tous les types de mutants, pour en cibler un en particulier ?
 			// @note Pour les niveaux supérieurs ?
-			// @todo Sinon détecter la présence, au lieu de chercher à tuer ?
 			let mutant = document.createElement('mu-tant');
 			mutant.type = this.type;
 			this.append(mutant);
@@ -73,7 +77,6 @@ class PlayGround extends HTMLElement {
 	_stopInvasion(options = '"characterData": true, "childList": true', condition = '', type = 'json') {
 		const wachTextNode = this._isCharacterData(options);
 
-		// @todo Si type = callback, on fait quoi ?
 		this.querySelectorAll('mu-tant').forEach(
 			leon => {
 				this._killMutant(leon, options, condition, wachTextNode);
@@ -95,16 +98,18 @@ class PlayGround extends HTMLElement {
 	_killMutant(mutant, options, condition, wachTextNode) {
 		const hunter = new MutationObserver(mutations => {
 			for (const mutation of mutations) {
-				// @todo Comparaison : solution attendue pour le niveau ?
+				// @note Comparaison : solution attendue pour le niveau ?
 				const target = wachTextNode ? mutation.target.parentNode : mutation.target;
-				// @todo Avec callback complet ?
+				// @todo Avec callback complet, pour niveau expert / boss final ?
 				if (condition !== '') {
 					eval(`if (${condition}) {
 						target.remove();
+						clearTimeout(this.invader);
 						hunter.disconnect();
 					}`);
 				} else {
 					target.remove();
+					clearTimeout(this.invader);
 					hunter.disconnect();
 				}
 			}

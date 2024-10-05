@@ -11,17 +11,17 @@
 	</head>
 	<body>
 		<header role="banner">
-			<h1>L’invasion du HTML mutant</h1>
-		</header>
-
-		<main role="main">
 			<h1>
 				Niveau 2-1<br>
 				L’alien
 			</h1>
+		</header>
 
-			<p class="portrait">👾</p>
-			<p>L’alien.</p>
+		<main role="main">
+			<div class="carte">
+				<p class="portrait">👾</p>
+				<p>L’alien.</p>
+			</div>
 
 			<code-runner type="json">
 				<form>
@@ -38,6 +38,18 @@
 					<button>Feu&nbsp;!</button>
 				</form>
 			</code-runner>
+			<dialog id="portal" role="dialog" aria-labelledby="portal-heading">
+				<h2 id="portal-heading">Nous venons en paix&nbsp;!</h2>
+				<p>
+					Alors, repousser une invasion alien, c’est rigolo. Mais avoir besoin de déclencher quelque chose en JavaScript
+					lorsque le contenu d’un élément change, ça l’est déjà moins…
+					<!-- @todo Cas d’usage (?) Un élément inséré, par exemple dans une live region ?-->
+				</p>
+				<form method="dialog">
+					<button>Rejouer</button>
+					<a href="../3-1/index.html">Niveau suivant</a>
+				</form>
+			</dialog>
 		</main>
 
 		<play-ground type="invaders"></play-ground>

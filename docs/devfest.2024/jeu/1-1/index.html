@@ -15,14 +15,13 @@
 				Niveau 1-1<br>
 				Le zombie
 			</h1>
-			<!-- @todo Retour à l’accueil ? -->
 		</header>
 
 		<main role="main">
-
-
-			<p class="portrait">🧟</p>
-			<p>Le zombie, c’était un humain aussi. Puis il est mort, et depuis il mute&nbsp;!</p>
+			<div class="carte">
+				<p class="portrait">🧟</p>
+				<p>Le zombie, c’était un humain aussi. Puis il est mort, et depuis il mute&nbsp;!</p>
+			</div>
 
 			<code-runner type="json">
 				<form>
@@ -39,6 +38,18 @@
 					<button>Feu&nbsp;!</button>
 				</form>
 			</code-runner>
+			<dialog id="portal" role="dialog" aria-labelledby="portal-heading">
+				<h2 id="portal-heading">Sus aux zombies&nbsp;!</h2>
+				<p>
+					Alors, dézinguer des zombies, c’est rigolo. Mais avoir besoin de déclencher quelque chose en JavaScript
+					lorsqu’un élément change d’attribut, ça l’est déjà moins…
+					<!-- @todo Cas d’usage (?)  Apparition d’un attribut booléen (hidden, multiple, required…) -->
+				</p>
+				<form method="dialog">
+					<button>Rejouer</button>
+					<a href="../1-2/index.html">Niveau suivant</a>
+				</form>
+			</dialog>
 		</main>
 
 		<play-ground></play-ground>

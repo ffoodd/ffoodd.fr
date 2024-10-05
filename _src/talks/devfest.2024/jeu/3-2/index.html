@@ -12,19 +12,37 @@
 	<body>
 		<header role="banner">
 			<h1>
-				Niveau 3-1<br>
-				Le vilain
+				Niveau 3-2<br>
+				Le crâne
 			</h1>
 		</header>
 
 		<main role="main">
 			<div class="carte">
-				<p class="portrait">🦹🏼</p>
-				<p>Le vilain.</p>
+				<p class="portrait">☠️</p>
+				<p>Le crâne.</p>
 			</div>
 
 			<code-runner type="json">
 				<form>
+					<label for="condition" class="sr-only">Condition à remplir pour supprimer la mutation</label>
+					<pre><code>const observer = new MutationObserver(mutations => {
+			for (const mutation of mutations) {
+				if (</code></pre>
+					<input type="text" id="condition"
+								 autocomplete="off"
+								 autocorrect="off"
+								 autocapitalize="off"
+								 spellcheck="false"
+								 enterkeyhint="send"
+								 required>
+					<pre><code>) {
+					mutation.target.remove();
+					observer.disconnect();
+				}
+			}
+		});</code></pre>
+
 					<label for="options" class="sr-only">Options de la méthode <code>observe()</code></label>
 					<pre><code>observer.observe(document.querySelector("mu-tant"), {</code></pre>
 					<input type="text" id="options"
@@ -35,24 +53,26 @@
 								 enterkeyhint="send"
 								 required>
 					<pre><code>});</code></pre>
+
 					<button>Feu&nbsp;!</button>
 				</form>
 			</code-runner>
 			<dialog id="portal" role="dialog" aria-labelledby="portal-heading">
-				<h2 id="portal-heading">C’est un oiseau&nbsp;? C’est un avion&nbsp;? Non&nbsp;!</h2>
+				<h2 id="portal-heading">Même pas peur&nbsp;!</h2>
 				<p>
-					Alors, battre des super-vilains, c’est rigolo. Mais avoir besoin de déclencher quelque chose en JavaScript
-					lorsque le contenu textuel d’un élément change, ça l’est déjà moins…
-					<!-- @todo Cas d’usage (?) Un bouton qui change d’intitulé mais pas d’état ni de classe ?-->
+					Alors, vaincre la mort, c’est rigolo. Mais avoir besoin de déclencher quelque chose en JavaScript
+					lorsqu’une portion de texte précise disparaît, ça l’est beaucoup moins…
+					<!-- @todo Cas d’usage (?) Un indicateur de robustesse qui masque une contrainte quand elle est franchie ? -->
 				</p>
 				<form method="dialog">
 					<button>Rejouer</button>
-					<a href="../3-2/index.html">Niveau suivant</a>
+					<!-- @todo Boss final ? Easter Egg ? -->
+					<a href="../1-2/index.html">Niveau suivant</a>
 				</form>
 			</dialog>
 		</main>
 
-		<play-ground type="villain"></play-ground>
+		<play-ground type="skull"></play-ground>
 
 		<script src="../code-runner.js"></script>
 		<script src="../mu-tant.js"></script>

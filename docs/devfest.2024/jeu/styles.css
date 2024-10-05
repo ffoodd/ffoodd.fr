@@ -86,7 +86,7 @@
 	body {
 		background: var(--background);
 		color: var(--foreground);
-		font: normal 400 1.5rem/1.5 sans-serif;
+		font: normal 400 2rem/1.5 sans-serif;
 		font-family: 'Zilla Slab', system-ui, sans-serif;
 		margin: 0;
 		min-block-size: 100vh;
@@ -211,7 +211,7 @@
 	pre, code, var, samp,
 	input, textarea {
 		font-family: "FontWithASyntaxHighlighter", monospace;
-		font-size: 1rem;
+		font-size: 1.5rem;
 	}
 
 	pre {
@@ -232,6 +232,7 @@
 	textarea {
 		background-color: transparent;
 		border: 1px solid var(--accent);
+		font-size: 1.5rem;
 		field-sizing: content;
 		margin: .5rem 0;
 		min-width: 32rem;
@@ -265,20 +266,24 @@
 	h1 {
 		color: var(--accent);
 		font-family: 'Luckiest Guy', system-ui, sans-serif;
-		font-size: 3rem;
+		font-size: 6rem;
 		line-height: 1;
 		padding: 2rem;
+		paint-order: stroke fill;
+		-webkit-text-stroke: .1em #000;
+		text-shadow: 0 0 .1em var(--foreground);
 		transform:
 			perspective(12rem)
 			rotateY(12deg)
 			rotateX(6deg);
-		transform-origin: 0%;
+		transform-origin: 0;
 	}
 
 	h1::first-line {
 		color: var(--foreground);
 		font-family: 'Zilla Slab', system-ui, sans-serif;
-		font-size: 1.5rem;
+		font-size: 2.5rem;
+		-webkit-text-stroke: initial;
 	}
 
 	.splash h1 {

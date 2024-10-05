@@ -11,17 +11,17 @@
 	</head>
 	<body>
 		<header role="banner">
-			<h1>L’invasion du HTML mutant</h1>
-		</header>
-
-		<main role="main">
 			<h1>
 				Niveau 1-2<br>
 				Le fantôme
 			</h1>
+		</header>
 
-			<p class="portrait">👻</p>
-			<p>Le fantôme.</p>
+		<main role="main">
+			<div class="carte">
+				<p class="portrait">👻</p>
+				<p>Le fantôme.</p>
+			</div>
 
 			<code-runner type="json">
 				<form>
@@ -38,6 +38,19 @@
 					<button>Feu&nbsp;!</button>
 				</form>
 			</code-runner>
+			<dialog id="portal" role="dialog" aria-labelledby="portal-heading">
+				<h2 id="portal-heading">Bouh&nbsp;!</h2>
+				<p>
+					Alors, chasser des fantômes, c’est rigolo.
+					Mais avoir besoin de déclencher quelque chose en JavaScript
+					lorsqu’un élément change de valeur pour un attribut spécifique, ça l’est déjà moins…
+					<!-- @todo Cas d’usage (?) Changement de valeur pour aria-expanded ? -->
+				</p>
+				<form method="dialog">
+					<button>Rejouer</button>
+					<a href="../1-3/index.html">Niveau suivant</a>
+				</form>
+			</dialog>
 		</main>
 
 		<play-ground type="ghost"></play-ground>

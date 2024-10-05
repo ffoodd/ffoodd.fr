@@ -8,6 +8,7 @@ class CodeRunner extends HTMLElement {
 
 		this.form = this.querySelector('form');
 		this.form.addEventListener('submit', this);
+		window.addEventListener('error', this);
 
 		this.type = this.hasAttribute('type') ? this.getAttribute('type') : 'json';
 	}
@@ -33,6 +34,8 @@ class CodeRunner extends HTMLElement {
 				}
 			});
 			this.dispatchEvent(voightkampff);
+		} else if (event.type === 'error') {
+			// @todo Message d’erreur associé au champ de saisie (?)
 		}
 	}
 
