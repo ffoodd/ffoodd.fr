@@ -47,7 +47,7 @@ class PlayGround extends HTMLElement {
 		}
 	}
 
-	generateRandomDelay(min = 300, max = 3000) {
+	generateRandomNumber(min = 300, max = 3000) {
 		return Math.floor(Math.random() * (max - min + 1)) + min;
 	}
 
@@ -67,11 +67,12 @@ class PlayGround extends HTMLElement {
 			// @todo Un niveau contenant tous les types de mutants, pour en cibler un en particulier ?
 			// @note Pour les niveaux supérieurs ?
 			let mutant = document.createElement('mu-tant');
-			mutant.type = this.type;
+			mutant.setAttribute('type', this.type);
+			mutant.style.setProperty('--placement', this.generateRandomNumber(0, 100))
 			this.append(mutant);
 			this._invade();
 			// @note Ajouter du son : un BIP par apparition, etc.
-		}, this.generateRandomDelay());
+		}, this.generateRandomNumber());
 	}
 
 	_stopInvasion(options = '"characterData": true, "childList": true', condition = '', type = 'json') {

@@ -1,4 +1,4 @@
-@layer fonts, base, layout, design, utilities, preferences;
+@layer fonts, base, layout, design, animation, utilities, preferences;
 
 @layer fonts {
 	/* @todo Subset + unicode-range pour « mutan » */
@@ -255,6 +255,22 @@
 		grid-area: 2 / 1;
 		padding: 2rem;
 	}
+
+	play-ground {
+		block-size: 100vh;
+		grid-area: 1 / 2 / span 2 / 2;
+		overflow: hidden;
+		place-content: center;
+		position: relative;
+	}
+
+	mu-tant {
+		aspect-ratio: 1;
+		block-size: 6rem;
+		display: inline-flex;
+		place-content: center;
+		position: absolute;
+	}
 }
 
 @layer design {
@@ -270,8 +286,7 @@
 		line-height: 1;
 		padding: 2rem;
 		paint-order: stroke fill;
-		-webkit-text-stroke: .1em #000;
-		text-shadow: 0 0 .1em var(--foreground);
+		-webkit-text-stroke: .2em #000;
 		transform:
 			perspective(12rem)
 			rotateY(12deg)
@@ -284,6 +299,7 @@
 		font-family: 'Zilla Slab', system-ui, sans-serif;
 		font-size: 2.5rem;
 		-webkit-text-stroke: initial;
+		text-shadow: 0 0 .1em var(--foreground);
 	}
 
 	.splash h1 {
@@ -295,8 +311,51 @@
 		transform-origin: 50%;
 	}
 
+	mu-tant,
 	.splash h1::first-line {
 		font-size: 4rem;
+	}
+}
+
+@layer animation {
+	@keyframes zombie {
+		13% { transform: translateX(calc(12rem * var(--direction))) translateY(0); }
+		26%, 78% { transform: translateX(calc(12rem * var(--direction))) translateY(calc(12rem * var(--direction))); }
+		39% { transform: translateX(calc(24rem * var(--direction))) translateY(calc(12rem * var(--direction))); }
+		52% { transform: translateX(calc(24rem * var(--direction))) translateY(calc(24rem * var(--direction))); }
+		65% { transform: translateX(calc(12rem * var(--direction))) translateY(calc(24rem * var(--direction))); }
+		91% { transform: translateX(0) translateY(calc(12rem * var(--direction))); }
+	}
+
+	[type="zombie"] {
+		--direction: 1;
+		animation: zombie 48s steps(48, end) infinite;
+		inset-block-start: clamp(0%, var(--placement) * 1%, 100%);
+		inset-inline-start: clamp(0%, var(--placement) * 1%, 100%);
+		transform: translateX(0) translateY(0);
+	}
+
+	[type="zombie"]:nth-child(odd) {
+		--direction: -1;
+		inset-inline-start: clamp(0%, var(--placement) * .5%, 50%);
+	}
+
+	[type="zombie"]:nth-child(3n +1) {
+		inset-inline-start: clamp(50%, var(--placement) * 1%, 100%);
+		scale: .75;
+	}
+
+	[type="zombie"]:nth-child(4n +1) {
+		inset-block-start: clamp(0%, var(--placement) * .5%, 50%);
+	}
+
+	[type="zombie"]:nth-child(5n +1) {
+		inset-block-start: clamp(50%, var(--placement) * 1%, 100%);
+		scale: .5;
+	}
+
+	[type="zombie"]:nth-child(6n +1) {
+		inset-inline-start: clamp(50%, var(--placement) * 1%, 100%);
 	}
 }
 
