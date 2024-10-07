@@ -67,6 +67,7 @@ class PlayGround extends HTMLElement {
 			// @todo Un niveau contenant tous les types de mutants, pour en cibler un en particulier ?
 			// @note Pour les niveaux supérieurs ?
 			let mutant = document.createElement('mu-tant');
+			mutant.type = this.type;
 			mutant.setAttribute('type', this.type);
 			mutant.style.setProperty('--placement', this.generateRandomNumber(0, 100))
 			this.append(mutant);
