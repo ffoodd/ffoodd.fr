@@ -8,6 +8,7 @@ class PlayGround extends HTMLElement {
 		document.addEventListener('voightkampff', this);
 		this.type = this.hasAttribute('type') ? this.getAttribute('type') : 'zombie';
 		this.portal = document.getElementById('portal');
+		this.setAttribute('data-type', this.type);
 	}
 
 	connectedCallback() {
