@@ -11,10 +11,12 @@
 	</head>
 	<body>
 		<header role="banner">
-			<h1>
-				Niveau 1-1<br>
+			<a class="link--unstyled" href="../"><h1>L’invasion du HTML<br>mutant</h1></a>
+			<h2>
+				Niveau 1-1 : <br>
 				Le zombie
-			</h1>
+			</h2>
+			<social-links></social-links>
 		</header>
 
 		<main role="main">
@@ -47,7 +49,7 @@
 				</p>
 				<form method="dialog">
 					<button>Rejouer</button>
-					<a href="../1-2/index.html">Niveau suivant</a>
+					<a class="link--filled" href="../1-2/index.html">Niveau suivant</a>
 				</form>
 			</dialog>
 			<!-- @todo Game over sous condition -->
@@ -56,6 +58,7 @@
 		<play-ground></play-ground>
 
 		<script src="../code-runner.js"></script>
+		<script src="../social-links.js"></script>
 		<script src="../mu-tant.js"></script>
 		<script src="../play-ground.js"></script>
 	</body>
