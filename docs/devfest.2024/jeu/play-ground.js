@@ -69,6 +69,7 @@ class PlayGround extends HTMLElement {
 			let mutant = document.createElement('mu-tant');
 			mutant.type = this.type;
 			mutant.setAttribute('type', this.type);
+			mutant.type = this.type;
 			mutant.style.setProperty('--placement', this.generateRandomNumber(0, 100))
 			this.append(mutant);
 			this._invade();
