@@ -43,7 +43,7 @@
 
 	/* @todo Subset + unicode-range pour chaque niveau ? */
 	@font-face {
-		font-display: block;
+		font-display: swap;
 		font-family: 'Twemoji Mozilla';
 		font-style: normal;
 		font-weight: 400;
@@ -86,7 +86,7 @@
 	body {
 		background: var(--background);
 		color: var(--foreground);
-		font: normal 400 2rem/1.5 sans-serif;
+		font: normal 400 1.5rem/1.5 sans-serif;
 		font-family: 'Zilla Slab', system-ui, sans-serif;
 		margin: 0;
 		min-block-size: 100vh;
@@ -210,7 +210,7 @@
 	pre {
 		hyphens: none;
 		inline-size: min-content;
-		line-height: 1.5;
+		line-height: 1.25;
 		margin: 0;
 		overflow-x: auto;
 		padding: 0;
@@ -240,18 +240,24 @@
 	input,
 	textarea {
 		background-color: transparent;
-		inline-size: 100%;
+		inline-size: calc(100% - (4ch * var(--tabs, 1)));
 		border: 1px solid var(--accent);
 		font-size: 1.5rem;
-		margin: .5rem 0;
+		margin-block: .5rem;
+		margin-inline-start: calc(4ch * var(--tabs, 1));
 		padding: .5rem;
+	}
+
+	[id="condition"] {
+		--tabs: 3;
 	}
 }
 
 @layer layout {
 	body {
+		color: #fff;
 		display: grid;
-		grid-template: 14rem auto / 1fr 1fr;
+		grid-template: 10rem auto / 1fr 1fr;
 	}
 
 	.splash {
@@ -261,14 +267,16 @@
 
 	main {
 		grid-area: 2 / 1;
-		padding: 2rem;
+		padding: 1rem;
 	}
 
 	play-ground {
-		block-size: 100vh;
+		background-color: color-mix(in srgb, var(--background) 75%, #000);
+		border-radius: .5rem;
+		block-size: calc(100vh - 2rem);
 		grid-area: 1 / 2 / span 2 / 2;
+		margin: 1rem;
 		overflow: hidden;
-		place-content: center;
 		position: relative;
 	}
 
@@ -276,6 +284,8 @@
 		aspect-ratio: 1;
 		block-size: 6rem;
 		display: inline-flex;
+		font-family: 'Twemoji Mozilla', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', sans-serif;
+		font-size: 4rem;
 		place-content: center;
 		position: absolute;
 	}
@@ -285,7 +295,8 @@
 	dialog {
 		background: var(--background);
 		border-color: #000;
-		color: var(--foreground);
+		border-radius: .5rem;
+		box-shadow: 0 0 10rem #000;
 		max-inline-size: clamp(50vw, 100%, 67.5rem);
 	}
 
@@ -298,6 +309,11 @@
 		font-family: 'Luckiest Guy', system-ui, sans-serif;
 	}
 
+	dialog button {
+		background-color: transparent;
+		border-color: transparent;
+	}
+
 	/**
 	 @link https://codepen.io/enbee81/pen/WNdKLBY
 	 @link https://codepen.io/gayane-gasparyan/pen/vYmYMeV
@@ -306,9 +322,9 @@
 	h1 {
 		color: var(--accent);
 		font-family: 'Luckiest Guy', system-ui, sans-serif;
-		font-size: 6rem;
+		font-size: 4rem;
 		line-height: 1;
-		padding: 2rem;
+		padding: 1rem;
 		transform:
 			perspective(12rem)
 			rotateY(12deg)
@@ -319,7 +335,8 @@
 	h1::first-line {
 		color: var(--foreground);
 		font-family: 'Zilla Slab', system-ui, sans-serif;
-		font-size: 2.5rem;
+		font-size: 1.75rem;
+		line-height: 2;
 	}
 
 	.splash h1 {
@@ -336,9 +353,9 @@
 		text-align: right;
 	}
 
-	mu-tant,
 	.splash h1::first-line {
 		font-size: 4rem;
+		line-height: 1.5;
 	}
 
 	.carte {
@@ -346,20 +363,22 @@
 		background-color: color-mix(in srgb, var(--background) 90%, #fff);
 		border-radius: .5rem;
 		display: flex;
-		gap: 2rem;
+		gap: 1rem;
 		margin-block-end: 4rem;
-		padding: 2rem;
+		padding: 1rem;
 	}
 
 	.portrait {
 		aspect-ratio: 1;
 		block-size: 6rem;
+		font-family: 'Twemoji Mozilla', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', sans-serif;
 		font-size: 6rem;
-		line-height: 1;
+		line-height: .8;
 		margin: 0;
 	}
 
 	.description {
+		font-size: 1.5rem;
 		line-height: 1.25;
 		margin: 0;
 	}
@@ -408,10 +427,6 @@
 }
 
 @layer utilities {
-	.no-margin {
-		margin: 0;
-	}
-
 	.sr-only {
 		border: 0;
 		clip-path: inset(50%);

@@ -57,6 +57,7 @@ class Mutant extends HTMLElement {
 			case 'vampire':
 				// @note attributeOldValue: true
 				// @note mutation.oldValue === 'mutant'
+				// @todo Vérifier si oldValue.includes() peut faire le job plus vite (?)
 				// Et éventuellement :
 				// @note mutation.type === 'attributes' && mutation.attributeName === 'class'
 				this.innerText = '🧛';
