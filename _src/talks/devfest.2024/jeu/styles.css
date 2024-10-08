@@ -358,6 +358,27 @@
 		line-height: 1.5;
 	}
 
+	footer {
+		display: flex;
+		margin-block-start: 6rem;
+	}
+
+	footer p {
+		color: var(--muted);
+		line-height: 2;
+	}
+
+	.networks {
+		display: flex;
+		filter: invert(100%);
+		list-style: none;
+	}
+
+	.networks a {
+		background-color: transparent;
+		border-color: transparent;
+	}
+
 	.carte {
 		align-items: center;
 		background-color: color-mix(in srgb, var(--background) 90%, #fff);
