@@ -72,7 +72,7 @@ class Mutant extends HTMLElement {
 				this.current = 0;
 				this.interval = setInterval(() => this._mutateOldText(), this.generateRandomDelay());
 				break;
-				// @fixme Pas d’exemple avec subtree (?)
+				// @todo Trouver un exemple avec subtree (?)
 				// @note Zombie avec enfants en emoji (?)
 			default:
 				this.innerText = '🧑';
