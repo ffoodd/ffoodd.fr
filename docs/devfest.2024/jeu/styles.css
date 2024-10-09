@@ -384,7 +384,7 @@
 		background-color: color-mix(in srgb, var(--background) 90%, #fff);
 		border-radius: .5rem;
 		display: flex;
-		gap: 1rem;
+		gap: 2rem;
 		margin-block-end: 4rem;
 		padding: 1rem;
 	}
@@ -392,9 +392,7 @@
 	.portrait {
 		aspect-ratio: 1;
 		block-size: 6rem;
-		font-family: 'Twemoji Mozilla', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', sans-serif;
-		font-size: 6rem;
-		line-height: .8;
+		font: 6rem / 1 'Twemoji Mozilla', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', sans-serif;
 		margin: 0;
 	}
 
@@ -406,6 +404,37 @@
 }
 
 @layer animation {
+	mu-tant {
+		--direction: 1;
+		animation-iteration-count: infinite;
+		inset-block-start: clamp(0%, var(--placement, 50) * 1%, 100%);
+		inset-inline-start: clamp(0%, var(--placement, 50) * 1%, 100%);
+		transform: translateX(0) translateY(0);
+	}
+
+	mu-tant:nth-child(odd) {
+		--direction: -1;
+		inset-inline-start: clamp(0%, var(--placement, 50) * .5%, 50%);
+	}
+
+	mu-tant:nth-child(3n +1) {
+		inset-inline-start: clamp(50%, var(--placement, 50) * 1%, 100%);
+		scale: .75;
+	}
+
+	mu-tant:nth-child(4n +1) {
+		inset-block-start: clamp(0%, var(--placement, 50) * .5%, 50%);
+	}
+
+	mu-tant:nth-child(5n +1) {
+		inset-block-start: clamp(50%, var(--placement, 50) * 1%, 100%);
+		scale: .5;
+	}
+
+	mu-tant:nth-child(6n +1) {
+		inset-inline-start: clamp(50%, var(--placement, 50) * 1%, 100%);
+	}
+
 	@keyframes zombie {
 		13% { transform: translateX(calc(12rem * var(--direction))) translateY(0); }
 		26%, 78% { transform: translateX(calc(12rem * var(--direction))) translateY(calc(12rem * var(--direction))); }
@@ -416,34 +445,28 @@
 	}
 
 	[type="zombie"] {
-		--direction: 1;
-		animation: zombie 48s steps(48, end) infinite;
-		inset-block-start: clamp(0%, var(--placement, 50) * 1%, 100%);
-		inset-inline-start: clamp(0%, var(--placement, 50) * 1%, 100%);
-		transform: translateX(0) translateY(0);
+		animation: zombie 48s steps(48, end);
 	}
 
-	[type="zombie"]:nth-child(odd) {
-		--direction: -1;
-		inset-inline-start: clamp(0%, var(--placement, 50) * .5%, 50%);
+	@keyframes ghost {
+		10% { transform: translateX(calc(4rem * var(--direction))) translateY(6rem); }
+		20% { transform: translateX(calc(8rem * var(--direction))) translateY(0); }
+		30% { transform: translateX(calc(12rem * var(--direction))) translateY(6rem); }
+		40% { transform: translateX(calc(16rem * var(--direction))) translateY(0); }
+		50% { transform: translateX(calc(20rem * var(--direction))) translateY(6rem); }
+		60% { transform: translateX(calc(16rem * var(--direction))) translateY(0); }
+		70% { transform: translateX(calc(12rem * var(--direction))) translateY(6rem); }
+		80% { transform: translateX(calc(8rem * var(--direction))) translateY(0); }
+		90% { transform: translateX(calc(4rem * var(--direction))) translateY(6rem); }
 	}
 
-	[type="zombie"]:nth-child(3n +1) {
-		inset-inline-start: clamp(50%, var(--placement, 50) * 1%, 100%);
-		scale: .75;
+	@keyframes ghosting {
+		50% { opacity: .5; }
 	}
 
-	[type="zombie"]:nth-child(4n +1) {
-		inset-block-start: clamp(0%, var(--placement, 50) * .5%, 50%);
-	}
-
-	[type="zombie"]:nth-child(5n +1) {
-		inset-block-start: clamp(50%, var(--placement, 50) * 1%, 100%);
-		scale: .5;
-	}
-
-	[type="zombie"]:nth-child(6n +1) {
-		inset-inline-start: clamp(50%, var(--placement, 50) * 1%, 100%);
+	[type="ghost"] {
+		animation: ghost 36s ease-out, ghosting 6s ease-in;
+		opacity: 1;
 	}
 }
 
