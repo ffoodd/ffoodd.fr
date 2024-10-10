@@ -478,15 +478,11 @@
 	}
 
 	@keyframes ghost {
-		10% { transform: translateX(calc(4rem * var(--direction))) translateY(6rem); }
-		20% { transform: translateX(calc(8rem * var(--direction))) translateY(0); }
-		30% { transform: translateX(calc(12rem * var(--direction))) translateY(6rem); }
-		40% { transform: translateX(calc(16rem * var(--direction))) translateY(0); }
+		10%, 90% { transform: translateX(calc(4rem * var(--direction))) translateY(6rem); }
+		20%, 80% { transform: translateX(calc(8rem * var(--direction))) translateY(0); }
+		30%, 70% { transform: translateX(calc(12rem * var(--direction))) translateY(6rem); }
+		40%, 60% { transform: translateX(calc(16rem * var(--direction))) translateY(0); }
 		50% { transform: translateX(calc(20rem * var(--direction))) translateY(6rem); }
-		60% { transform: translateX(calc(16rem * var(--direction))) translateY(0); }
-		70% { transform: translateX(calc(12rem * var(--direction))) translateY(6rem); }
-		80% { transform: translateX(calc(8rem * var(--direction))) translateY(0); }
-		90% { transform: translateX(calc(4rem * var(--direction))) translateY(6rem); }
 	}
 
 	@keyframes ghosting {
@@ -501,28 +497,15 @@
 	@keyframes vampire {
 		0% { transform: translateY(0) translateX(0) skewY(0); }
 		5% { transform: translateY(calc(15rem * var(--direction))) translateX(0) skewY(25deg); }
-		6% { transform: translateY(calc(15rem * var(--direction))) translateX(0) skewY(0); }
-		35% { transform: translateY(calc(15rem * var(--direction))) translateX(0) skewY(0); }
+		6%, 35% { transform: translateY(calc(15rem * var(--direction))) translateX(0) skewY(0); }
 		40% { transform: translateY(calc(15rem * var(--direction))) translateX(calc(15rem * var(--direction))) skewY(25deg); }
-		41% { transform: translateY(calc(15rem * var(--direction))) translateX(calc(15rem * var(--direction))) skewY(0); }
-		70% { transform: translateY(calc(15rem * var(--direction))) translateX(calc(15rem * var(--direction))) skewY(0); }
+		41%, 70% { transform: translateY(calc(15rem * var(--direction))) translateX(calc(15rem * var(--direction))) skewY(0); }
 		75% { transform: translateY(calc(30rem * var(--direction))) translateX(calc(15rem * var(--direction))) skewY(25deg); }
-		76% { transform: translateY(calc(30rem * var(--direction))) translateX(calc(15rem * var(--direction))) skewY(0); }
-		100% { transform: translateY(calc(30rem * var(--direction))) translateX(calc(15rem * var(--direction))) skewY(0); }
+		76%, 100% { transform: translateY(calc(30rem * var(--direction))) translateX(calc(15rem * var(--direction))) skewY(0); }
 	}
 
 	mu-tant[type="vampire"] {
 		animation: vampire 6s linear infinite;
-	}
-
-	@keyframes villain {
-		0% { transform: translateX(0) rotateZ(calc(90deg * var(--direction))); }
-		100% { transform: translateX(calc(15rem * var(--direction))) rotateZ(calc(90deg * var(--direction))) ; }
-	}
-
-	mu-tant[type="villain"] {
-		animation: villain 2s linear infinite;
-		transform: rotateZ(calc(90deg * var(--direction)));
 	}
 
 	@keyframes invade {
@@ -565,6 +548,15 @@
 
 	mu-tant[type="invaders"]:nth-child(4n + 1) {
 		filter: grayscale(100%) brightness(0%) invert(91%) sepia(27%) saturate(1428%) hue-rotate(1deg) brightness(110%) contrast(104%);
+	}
+
+	@keyframes villain {
+		100% { transform: translateY(-15rem); }
+	}
+
+	mu-tant[type="villain"] {
+		animation: villain 2s linear infinite;
+		rotate: z calc(90deg * var(--direction));
 	}
 }
 
