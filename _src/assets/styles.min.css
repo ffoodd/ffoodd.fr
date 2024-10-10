@@ -1,91 +1,5 @@
 @charset "UTF-8";
-/**
- * @author Gaël Poupard
- * @site Thème ffeeeedd--sass
- * @lastmodified 2013-11-13
- */
-/**
-* @author Gaël Poupard
-* @site Thème ffeeeedd
-* @lastmodified 2014-03-26
-*/
-/* ----------------------------- */
-/* ==Mixins */
-/* ----------------------------- */
-/* -- @subsection Gestion de l’échelle typographique -------------------- */
 /*
- * @note Inspiré de plusieurs outils et techniques :
- ** @author Pascal C
- ** @see https://twitter.com/eQRoeil
- ** @see https://soqr.fr/vertical-rhythm/
- ** @author Emmanuel Georjon
- ** @see https://twitter.com/emmanuelgeorjon/
- ** @see https://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
- * @note Le premier paramètre est obligatoire : c’est le corps cible, en PX — et ce doit être un nombre, évidemment.
- * @note Le second paramètre est optionnel (« true » par défaut) : il active le calcul des marges externes.
-*/
-/* -- @subsection Gestion de l’échelle typographique -------------------- */
-/*
- * @note Défini un style standard pour les boutons d’actions et éléments avec un dégradé.
- * @note Trois paramtères existent :
- ** @note Les deux premiers sont les couleurs de début et de fin du dégradé de base.
- ** @note Elles doivent être dans un format de couleurs valide, et sont obligatoires.
- ** @note La dernière est facultative (« false » par défaut) et active les interactions (survol, focus…).
-*/
-/* -- @subsection Récupérer la position des sprites en EM -------------------- */
-/**
- * @note Une seule modification apportée : retirer l’unité PX de la position du sprite.
- ** @author Marie Guillaumet
- ** @see https://twitter.com/kReEsTaL
- ** @see https://marieguillaumet.com/
- ** @see https://gist.github.com/kReEsTaL/7222348
- ** @author Mehdi Kabab
- ** @see https://twitter.com/piouPiouM
- ** @see https://pioupioum.fr/
- */
-/* -- @subsection Récupérer les dimensions du sprite en EM -------------------- */
-/**
- * @note Une seule modification apportée : retirer l’unité PX des dimensions du sprite.
- ** @author Marie Guillaumet
- ** @see https://twitter.com/kReEsTaL
- ** @see https://marieguillaumet.com/
- ** @see https://gist.github.com/kReEsTaL/6997139
- */
-/**
- * @author Gaël Poupard
- * @lastmodified 2014-03-26
- */
-/* ----------------------------- */
-/* ==Fonctions */
-/* ----------------------------- */
-/* -- @subsection Supprimer l’unité d’une valeur -------------------- */
-/*
- * @note Inspiré directement des « helpers » de Foundation
- * @see https://github.com/zurb/foundation/blob/master/scss/foundation/_functions.scss#L39
- * @note Le seul paramètre est obligatoire et doit être un nombre.
-*/
-/* -- @subsection Conversion en em -------------------- */
-/*
- * @note Référence trouvée grâce aux Gists de Marie Guillaumet
- ** @author Marie Guillaumet
- ** @see https://twitter.com/kReEsTaL
- ** @see https://marieguillaumet.com/
- * @see https://gist.github.com/ijy/1441967
-*/
-/**
- * @author Gaël Poupard
- * @lastmodified 2014-03-26
- */
-/* ----------------------------- */
-/* ==Placeholders */
-/* ----------------------------- */
-/* -- @subsection Styles communs aux actions -------------------- */
-/*
- * @note Regroupement des styles communs pour le mixin éponyme.
- * @see « CSS maintenables avec Sass & Compass », pages 238/239
- * @author Kaelig Deloumeau-Prigent
-*/
-/**
 * @author Gaël Poupard
 * @site Thème ffeeeedd
 * @lastmodified 2013-06-26
@@ -1737,5 +1651,3 @@ pre[class*="language-"][tabindex] {
 		padding: .25em;
 	}
 }
-
-/*# sourceMappingURL=styles.min.css.map */
