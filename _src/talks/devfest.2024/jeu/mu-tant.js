@@ -1,7 +1,6 @@
 class Mutant extends HTMLElement {
 	// @todo Ajouter un attribut genre + peau pour varier les personnages ?
 	// @link https://emojipedia.org/zero-width-joiner?ref=blog.emojipedia.org
-	// @todo Ajouter une animation spécifique pour chaque type ?
 	static get observedAttributes() {
 		return ['type'];
 	}
@@ -72,8 +71,12 @@ class Mutant extends HTMLElement {
 				this.current = 0;
 				this.interval = setInterval(() => this._mutateOldText(), this.generateRandomDelay());
 				break;
-				// @todo Trouver un exemple avec subtree (?)
-				// @note Zombie avec enfants en emoji (?)
+			case 'troll':
+				// @note childList: true, subtree: true
+				this.innerHTML = '<span>🧌</span>';
+				this.depth = 1;
+				this.interval = setInterval(() => this._mutateSubTree(), this.generateRandomDelay());
+				break;
 			default:
 				this.innerText = '🧑';
 				console.warn(`${type} n’est pas un type de mutation connu…`);
@@ -109,6 +112,14 @@ class Mutant extends HTMLElement {
 		this.childNodes[0].nodeValue = content[this.current];
 		if (this.current === (content.length -1)) {
 			this.current = -1;
+		}
+	}
+
+	_mutateSubTree() {
+		const target = this.querySelector('span '.repeat(this.depth));
+		if (target) {
+			this.querySelector('span '.repeat(this.depth)).innerHTML = '🧌<span>🧌</span>';
+			this.depth++;
 		}
 	}
 }
