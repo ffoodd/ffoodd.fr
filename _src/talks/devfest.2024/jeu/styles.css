@@ -287,6 +287,11 @@
 		counter-reset: invaders;
 	}
 
+	play-ground[type="zombie"] {
+		background-image: url(./assets/img/background.png);
+		background-repeat: repeat;
+	}
+
 	@counter-style invasion {
 		system: numeric;
 		symbols: "0" "1" "2" "3" "4" "5" "6" "7" "8" "9";
@@ -494,12 +499,30 @@
 	}
 
 	@keyframes vampire {
-		0%, 100% { transform: scale(.25); opacity: 0; }
-		5% { transform: scale(2); opacity: 1; }
+		0% { transform: translateY(0) translateX(0) skewY(0); }
+		5% { transform: translateY(calc(15rem * var(--direction))) translateX(0) skewY(25deg); }
+		6% { transform: translateY(calc(15rem * var(--direction))) translateX(0) skewY(0); }
+		35% { transform: translateY(calc(15rem * var(--direction))) translateX(0) skewY(0); }
+		40% { transform: translateY(calc(15rem * var(--direction))) translateX(calc(15rem * var(--direction))) skewY(25deg); }
+		41% { transform: translateY(calc(15rem * var(--direction))) translateX(calc(15rem * var(--direction))) skewY(0); }
+		70% { transform: translateY(calc(15rem * var(--direction))) translateX(calc(15rem * var(--direction))) skewY(0); }
+		75% { transform: translateY(calc(30rem * var(--direction))) translateX(calc(15rem * var(--direction))) skewY(25deg); }
+		76% { transform: translateY(calc(30rem * var(--direction))) translateX(calc(15rem * var(--direction))) skewY(0); }
+		100% { transform: translateY(calc(30rem * var(--direction))) translateX(calc(15rem * var(--direction))) skewY(0); }
 	}
 
 	mu-tant[type="vampire"] {
-		animation: vampire 3s ease-out infinite;
+		animation: vampire 6s linear infinite;
+	}
+
+	@keyframes villain {
+		0% { transform: translateX(0) rotateZ(calc(90deg * var(--direction))); }
+		100% { transform: translateX(calc(15rem * var(--direction))) rotateZ(calc(90deg * var(--direction))) ; }
+	}
+
+	mu-tant[type="villain"] {
+		animation: villain 2s linear infinite;
+		transform: rotateZ(calc(90deg * var(--direction)));
 	}
 
 	@keyframes invade {
