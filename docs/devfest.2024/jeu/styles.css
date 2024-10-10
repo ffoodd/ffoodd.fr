@@ -50,6 +50,7 @@
 		src: local('Twemoji Mozilla'), url('./assets/fonts/Twemoji.woff2') format('woff2');
 	}
 
+	/* @todo override-color */
 	@font-face {
 		font-display: swap;
 		font-family: 'FontWithASyntaxHighlighter';
@@ -274,10 +275,34 @@
 		background-color: color-mix(in srgb, var(--background) 75%, #000);
 		border-radius: .5rem;
 		block-size: calc(100vh - 2rem);
+		contain: strict;
 		grid-area: 1 / 2 / span 2 / 2;
 		margin: 1rem;
 		overflow: hidden;
 		position: relative;
+	}
+
+	play-ground[type="invaders"] {
+		background-color: #000;
+		counter-reset: invaders;
+	}
+
+	@counter-style invasion {
+		system: numeric;
+		symbols: "0" "1" "2" "3" "4" "5" "6" "7" "8" "9";
+		pad: 5 "0";
+		speak-as: numbers;
+	}
+
+	play-ground[type="invaders"]::after {
+		content: "score\A" counter(invaders, invasion);
+		font-family: "FontWithASyntaxHighlighter", monospace;
+		font-weight: bold;
+		inset-block-start: 2rem;
+		inset-inline-end: 2rem;
+		position: absolute;
+		text-transform: uppercase;
+		white-space: pre;
 	}
 
 	mu-tant {
@@ -477,19 +502,26 @@
 		animation: vampire 3s ease-out infinite;
 	}
 
-	@keyframes invaders {
-		100% { transform: translateY(100vh); }
+	@keyframes invade {
+		100% { transform: translateY(calc(100vh + 18rem)); }
+	}
+
+	@keyframes stepping {
+		100% { scale: .75; }
 	}
 
 	mu-tant[type="invaders"] {
-		animation: invaders 24s ease-out forwards;
-		block-size: auto;
-		inset-block-start: -6rem;
-		inset-inline-start: auto;
-		inline-size: 100%;
+		animation: invade 24s ease-out 1 forwards, stepping 24s steps(12, end) 1 forwards;
+		block-size: 2ex;
+		counter-increment: invaders;
+		inset-block-start: -6rem !important;
+		inset-inline-start: auto !important;
+		inline-size: 130%;
 		letter-spacing: .25ch;
-		text-align: center;
 		scale: 1;
+		text-align: center;
+		text-indent: clamp(0ch, var(--placement, 50) * var(--direction) * .1ch, 20ch);
+		white-space: nowrap;
 	}
 
 	/*
