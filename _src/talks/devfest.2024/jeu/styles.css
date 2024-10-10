@@ -558,6 +558,11 @@
 		animation: villain 2s linear infinite;
 		rotate: z calc(90deg * var(--direction));
 	}
+
+	mu-tant[type="troll"] span {
+		display: inline-block;
+		scale: .8;
+	}
 }
 
 @layer utilities {

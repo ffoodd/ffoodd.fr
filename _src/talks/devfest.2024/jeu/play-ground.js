@@ -59,6 +59,10 @@ class PlayGround extends HTMLElement {
 		return options.includes('characterData') || options.includes('characterDataOldValue');
 	}
 
+	_isSubtree(options) {
+		return options.includes('subtree');
+	}
+
 	_invade() {
 		this.invader = setTimeout(() => {
 			// @todo Ajouter des mutants sans type (humain) à ne pas dézinguer ?
@@ -79,10 +83,11 @@ class PlayGround extends HTMLElement {
 
 	_stopInvasion(options = '"characterData": true, "childList": true', condition = '', type = 'json') {
 		const wachTextNode = this._isCharacterData(options);
+		const watchSubtree = this._isSubtree(options);
 
 		this.querySelectorAll('mu-tant').forEach(
 			leon => {
-				this._killMutant(leon, options, condition, wachTextNode);
+				this._killMutant(leon, options, condition, wachTextNode, watchSubtree);
 			}
 		);
 
@@ -90,7 +95,7 @@ class PlayGround extends HTMLElement {
 			for (const mutation of mutations) {
 				for (const leon of mutation.addedNodes) {
 					if (this._isMutant(leon)) {
-						this._killMutant(leon, options, condition, wachTextNode);
+						this._killMutant(leon, options, condition, wachTextNode, watchSubtree);
 					}
 				}
 			}
@@ -98,11 +103,16 @@ class PlayGround extends HTMLElement {
 		this.observer.observe(this, { "childList": true });
 	}
 
-	_killMutant(mutant, options, condition, wachTextNode) {
+	_killMutant(mutant, options, condition, wachTextNode, watchSubtree) {
 		const hunter = new MutationObserver(mutations => {
 			for (const mutation of mutations) {
+				console.log(mutation);
 				// @note Comparaison : solution attendue pour le niveau ?
-				const target = wachTextNode ? mutation.target.parentNode : mutation.target;
+				const target = wachTextNode ?
+					mutation.target.parentNode :
+					watchSubtree ?
+						mutation.target.closest('mu-tant')
+						: mutation.target;
 				// @todo Avec callback complet, pour niveau expert / boss final ?
 				if (condition !== '') {
 					eval(`if (${condition}) {
