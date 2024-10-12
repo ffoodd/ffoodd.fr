@@ -6,7 +6,7 @@ class PlayGround extends HTMLElement {
 	constructor() {
 		super();
 		document.addEventListener('voightkampff', this);
-		this.type = this.hasAttribute('type') ? this.getAttribute('type') : 'zombie';
+		this.type = this.hasAttribute('type') ? this.getAttribute('type') : '';
 		this.portal = document.getElementById('portal');
 	}
 

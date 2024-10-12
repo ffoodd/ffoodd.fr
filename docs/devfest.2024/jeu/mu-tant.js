@@ -1,7 +1,6 @@
 class Mutant extends HTMLElement {
 	// @todo Ajouter un attribut genre + peau pour varier les personnages ?
 	// @link https://emojipedia.org/zero-width-joiner?ref=blog.emojipedia.org
-	// @todo Ajouter une animation spécifique pour chaque type ?
 	static get observedAttributes() {
 		return ['type'];
 	}
@@ -118,7 +117,7 @@ class Mutant extends HTMLElement {
 
 	_mutateSubTree() {
 		const target = this.querySelector('span '.repeat(this.depth));
-		if (target) {
+		if (target && this.depth < 10) {
 			this.querySelector('span '.repeat(this.depth)).innerHTML = '🧌<span>🧌</span>';
 			this.depth++;
 		}

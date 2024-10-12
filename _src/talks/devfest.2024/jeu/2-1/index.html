@@ -8,22 +8,22 @@
 		<meta name="author" content="Gaël Poupard">
 		<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 		<link rel="stylesheet" href="../styles.css" media="screen">
-		<style media="screen">.portrait { filter: invert(100%); }</style>
 	</head>
 	<body>
 		<header role="banner">
 			<h1>
 				Niveau 2-1<br>
-				L’alien
+				Le fantôme
 			</h1>
 		</header>
 
 		<main role="main">
 			<div class="carte">
-				<p class="portrait">👾</p>
+				<p class="portrait">👻</p>
 				<p class="description">
-					Les aliens, ces petits envahisseurs de l’espace.
-					Ils viennent pour détruire la Terre… ou peut-être juste pour squatter ta connexion Wi-Fi.
+					Le fantôme, l’expert en passage à travers les murs.
+					Il est léger, transparent… mais toujours prêt à te faire sursauter
+					quand tu t’y attends le moins&nbsp;!
 				</p>
 			</div>
 
@@ -43,20 +43,21 @@
 				</form>
 			</code-runner>
 			<dialog id="portal" role="dialog" aria-labelledby="portal-heading">
-				<h2 id="portal-heading">Nous venons en paix&nbsp;!</h2>
+				<h2 id="portal-heading">Bouh&nbsp;!</h2>
 				<p>
-					Alors, repousser une invasion alien, c’est rigolo. Mais avoir besoin de déclencher quelque chose en JavaScript
-					lorsque le contenu d’un élément change, ça l’est déjà moins…
-					<!-- @todo Cas d’usage (?) Un élément inséré, par exemple dans une live region ?-->
+					Alors, chasser des fantômes, c’est rigolo.
+					Mais avoir besoin de déclencher quelque chose en JavaScript
+					lorsqu’un élément change de valeur pour un attribut spécifique, ça l’est déjà moins…
+					<!-- @todo Cas d’usage (?) Changement de valeur pour aria-expanded ? -->
 				</p>
 				<form method="dialog">
 					<button>Rejouer</button>
-					<a href="../3-1/index.html">Niveau suivant</a>
+					<a href="../2-2/index.html">Niveau suivant</a>
 				</form>
 			</dialog>
 		</main>
 
-		<play-ground type="invaders"></play-ground>
+		<play-ground type="ghost"></play-ground>
 
 		<script src="../code-runner.js"></script>
 		<script src="../mu-tant.js"></script>

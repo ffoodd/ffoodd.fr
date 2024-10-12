@@ -53,6 +53,12 @@ class Mutant extends HTMLElement {
 				this.innerText = '👻';
 				this.interval = setInterval(() => this._mutateAttributes(), this.generateRandomDelay());
 				break;
+			case 'troll':
+				// @note childList: true, subtree: true
+				this.innerHTML = '<span>🧌</span>';
+				this.depth = 1;
+				this.interval = setInterval(() => this._mutateSubTree(), this.generateRandomDelay());
+				break;
 			case 'vampire':
 				// @note attributeOldValue: true
 				// @note mutation.oldValue === 'mutant'
@@ -70,12 +76,6 @@ class Mutant extends HTMLElement {
 				this.innerText = '👶';
 				this.current = 0;
 				this.interval = setInterval(() => this._mutateOldText(), this.generateRandomDelay());
-				break;
-			case 'troll':
-				// @note childList: true, subtree: true
-				this.innerHTML = '<span>🧌</span>';
-				this.depth = 1;
-				this.interval = setInterval(() => this._mutateSubTree(), this.generateRandomDelay());
 				break;
 			default:
 				this.innerText = '🧑';
@@ -117,7 +117,7 @@ class Mutant extends HTMLElement {
 
 	_mutateSubTree() {
 		const target = this.querySelector('span '.repeat(this.depth));
-		if (target) {
+		if (target && this.depth < 10) {
 			this.querySelector('span '.repeat(this.depth)).innerHTML = '🧌<span>🧌</span>';
 			this.depth++;
 		}

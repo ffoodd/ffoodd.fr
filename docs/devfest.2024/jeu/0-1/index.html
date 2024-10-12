@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>L’invasion du HTML mutant</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="L’invasion du HTML mutant — Atelier animé par Gaël Poupard lors du devFest Nantes 2024.">
+		<meta name="author" content="Gaël Poupard">
+		<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+		<link rel="stylesheet" href="../styles.css" media="screen">
+	</head>
+	<body>
+		<header role="banner">
+			<h1>
+				Niveau 0-1<br>
+				L’humain
+			</h1>
+		</header>
+
+		<main role="main">
+			<div class="carte">
+				<p class="portrait">👩</p>
+				<p class="description">
+					Les humains sont gentils. Ils n’essaient pas de vous mordre, de vous manger, ni de vous envahir.
+					Enfin, pas tous &nbsp;!
+				</p>
+			</div>
+
+			<!-- @note Attendu :
+				const observer = new MutationObserver(mutations => {
+					for (mutation of mutations) {
+						observer.disconnect();
+					}
+				});
+				observer.observe(document.body, {});
+			-->
+
+			<div contenteditable></div>
+			<p>
+				<button type="button" onclick="portal.showModal()">C’est mon ultime bafouille</button>
+			</p>
+
+			<dialog id="portal" role="dialog" aria-labelledby="portal-heading">
+				<h2 id="portal-heading">Super&nbsp;!</h2>
+				<p>
+					Paré au décollage&nbsp;?
+				</p>
+				<form method="dialog">
+					<button>Rejouer</button>
+					<a href="../1-1/index.html">Niveau suivant</a>
+				</form>
+			</dialog>
+			<!-- @todo Game over sous condition -->
+		</main>
+
+		<play-ground></play-ground>
+
+		<script src="../mu-tant.js"></script>
+		<script src="../play-ground.js"></script>
+	</body>
+</html>

@@ -8,44 +8,27 @@
 		<meta name="author" content="Gaël Poupard">
 		<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 		<link rel="stylesheet" href="../styles.css" media="screen">
+		<style media="screen">.portrait { filter: invert(100%); }</style>
 	</head>
 	<body>
 		<header role="banner">
 			<h1>
 				Niveau 1-3<br>
-				Le vampire
+				L’alien
 			</h1>
 		</header>
 
 		<main role="main">
 			<div class="carte">
-				<p class="portrait">🧛</p>
+				<p class="portrait">👾</p>
 				<p class="description">
-					Le vampire&nbsp;: toujours chic, toujours classe.
-					Mais fais attention à ton cou, il a tendance à confondre les salutations avec les morsures&nbsp;!
+					Les aliens, ces petits envahisseurs de l’espace.
+					Ils viennent pour détruire la Terre… ou peut-être juste pour squatter ta connexion Wi-Fi.
 				</p>
 			</div>
 
 			<code-runner type="json">
 				<form>
-					<label for="condition" class="sr-only">Condition à remplir pour supprimer la mutation</label>
-					<pre><code>const observer = new MutationObserver(mutations => {
-	for (const mutation of mutations) {
-		if (</code></pre>
-					<input type="text" id="condition"
-								 autocomplete="off"
-								 autocorrect="off"
-								 autocapitalize="off"
-								 spellcheck="false"
-								 enterkeyhint="send"
-								 required>
-					<pre><code>		) {
-			mutation.target.remove();
-			observer.disconnect();
-		}
-	}
-});</code></pre>
-
 					<label for="options" class="sr-only">Options de la méthode <code>observe()</code></label>
 					<pre><code>observer.observe(document.querySelector("mu-tant"), {</code></pre>
 					<input type="text" id="options"
@@ -56,25 +39,24 @@
 								 enterkeyhint="send"
 								 required>
 					<pre><code>});</code></pre>
-
 					<p><button>Feu&nbsp;!</button></p>
 				</form>
 			</code-runner>
 			<dialog id="portal" role="dialog" aria-labelledby="portal-heading">
-				<h2 id="portal-heading">Vade Retro, Dracula&nbsp;!</h2>
+				<h2 id="portal-heading">Nous venons en paix&nbsp;!</h2>
 				<p>
-					Alors, tuer des vampires, c’est rigolo. Mais avoir besoin de déclencher quelque chose en JavaScript
-					lorsqu’un attribut perd une valeur précise, ça l’est déjà moins…
-					<!-- @todo Cas d’usage (?) Une classe .open / .show qui s’en va, induisant la fermeture de l’élément ?-->
+					Alors, repousser une invasion alien, c’est rigolo. Mais avoir besoin de déclencher quelque chose en JavaScript
+					lorsque le contenu d’un élément change, ça l’est déjà moins…
+					<!-- @todo Cas d’usage (?) Un élément inséré, par exemple dans une live region ?-->
 				</p>
 				<form method="dialog">
 					<button>Rejouer</button>
-					<a href="../1-4/index.html">Niveau suivant</a>
+					<a href="../2-1/index.html">Niveau suivant</a>
 				</form>
 			</dialog>
 		</main>
 
-		<play-ground type="vampire"></play-ground>
+		<play-ground type="invaders"></play-ground>
 
 		<script src="../code-runner.js"></script>
 		<script src="../mu-tant.js"></script>
