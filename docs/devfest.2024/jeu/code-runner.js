@@ -17,8 +17,9 @@ class CodeRunner extends HTMLElement {
 		switch (event.type) {
 			case 'submit':
 				event.preventDefault();
-				let questions = this.form?.options.value;
+				let questions = this.form.options ? this.form.options.value : '"attributes": true, "childList": true';
 				let condition = this.form.condition ? this.form.condition.value : '';
+				let fonction = this.form.fonction ? this.form.fonction.value : '';
 
 				if (this.type === 'json') {
 					questions = this._normalizeJson(questions);
@@ -29,7 +30,8 @@ class CodeRunner extends HTMLElement {
 					detail: {
 						data: {
 							questions: questions,
-							condition: condition
+							condition: condition,
+							fonction: fonction
 						},
 						type: this.type
 					}

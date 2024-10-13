@@ -30,6 +30,10 @@ class PorTrait extends HTMLElement {
 				this.emoji = '🧛';
 				this.portrait.textContent = `${this.emoji}${this.teint}‍${this.genre}`;
 				break;
+			case 'boss':
+				this.emoji = (this.genre === '♀️') ? '👩' : (this.genre === '♂️') ? '👨' : '🧑';
+				this.portrait.textContent = `${this.emoji}${this.teint}‍‍🚒`;
+				break;
 			default:
 				this.emoji = (this.genre === '♀️') ? '👩' : (this.genre === '♂️') ? '👨' : '🧑';
 				this.portrait.textContent = `${this.emoji}${this.teint}`;

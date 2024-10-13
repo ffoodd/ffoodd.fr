@@ -62,8 +62,8 @@ class Mutant extends HTMLElement {
 				this.interval = setInterval(() => this._mutateSubTree(), this.generateRandomDelay());
 				break;
 			case 'vampire':
-				// @note attributeOldValue: true
 				// @note mutation.oldValue.includes('mutant')
+				// @note attributeOldValue: true
 				// Et éventuellement :
 				// @note mutation.type === 'attributes' && mutation.attributeName === 'class'
 				this.innerText = `🧛${this.teint}‍${this.genre}`;

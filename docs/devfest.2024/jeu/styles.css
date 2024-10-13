@@ -272,6 +272,11 @@
 		--tabs: 4;
 		translate: -3.75ch -11.75rem;
 	}
+
+	[id="fonction"] {
+		field-sizing: content;
+		min-block-size: 8lh;
+	}
 }
 
 @layer layout {

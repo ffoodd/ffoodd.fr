@@ -15,8 +15,14 @@ class PlayGround extends HTMLElement {
 
 		this.spyer = new MutationObserver(mutations => {
 			for (const mutation of mutations) {
-				if (mutation.removedNodes.length) {
-					if (this._isMutant(mutation.removedNodes[0]) && !document.querySelector('mu-tant')) {
+				if (mutation.removedNodes.length && this._isMutant(mutation.removedNodes[0])) {
+					if (this.type === 'all' &&
+						(document.querySelectorAll('mu-tant')?.length === document.querySelectorAll('mu-tant[type=""]')?.length)
+					) {
+						this.observer.disconnect();
+						this.portal.showModal();
+						this.portal.addEventListener('close', this);
+					} else if (!document.querySelector('mu-tant')) {
 						this.observer.disconnect();
 						this.portal.showModal();
 						this.portal.addEventListener('close', this);
@@ -33,6 +39,7 @@ class PlayGround extends HTMLElement {
 				this._stopInvasion(
 					event.detail.data.questions,
 					event.detail.data.condition,
+					event.detail.data.fonction,
 					event.detail.type
 				);
 				break;
@@ -51,6 +58,11 @@ class PlayGround extends HTMLElement {
 		return Math.floor(Math.random() * (max - min + 1)) + min;
 	}
 
+	generateRandomType() {
+		const types = ['', 'zombie', 'invaders', 'villain', 'ghost', 'mage', 'vampire', 'skull'];
+		return types[Math.floor((Math.random() * types.length))];
+	}
+
 	_isMutant(element) {
 		return element.nodeName.toLowerCase() === 'mu-tant';
 	}
@@ -65,15 +77,14 @@ class PlayGround extends HTMLElement {
 
 	_invade() {
 		this.invader = setTimeout(() => {
-			// @todo Ajouter des mutants sans type (humain) à ne pas dézinguer ?
-			// @note Et vérifier qu’ils n’ont pas été tués… ?
-			// @note Voire même pour certains niveaux : ajouter un type après chargement, en mode contagion ?
-			// @todo Un niveau contenant tous les types de mutants, pour en cibler un en particulier ?
-			// @note Pour les niveaux supérieurs ?
+			// @note Ajouter un type après chargement, en mode contagion ?
 			let mutant = document.createElement('mu-tant');
-			mutant.type = this.type;
-			mutant.setAttribute('type', this.type);
-			mutant.type = this.type;
+			let type = this.type;
+			if (this.type === 'all') {
+				type = this.generateRandomType();
+			}
+			mutant.type = type;
+			mutant.setAttribute('type', type);
 			mutant.style.setProperty('--placement', this.generateRandomNumber(0, 100))
 			this.append(mutant);
 			this._invade();
@@ -81,13 +92,19 @@ class PlayGround extends HTMLElement {
 		}, this.generateRandomNumber());
 	}
 
-	_stopInvasion(options = '"characterData": true, "childList": true', condition = '', type = 'json') {
-		const wachTextNode = this._isCharacterData(options);
-		const watchSubtree = this._isSubtree(options);
+	_stopInvasion(options = '"attributes": true, "childList": true', condition = '', fonction = '', type = 'json') {
+		let watchTextNode = this._isCharacterData(options);
+		let watchSubtree = this._isSubtree(options);
+
+		if (this.type === 'all') {
+			options = '"attributes": true, "childList": true, "characterData": true, "subtree": true';
+			watchTextNode = false;
+			watchSubtree = false;
+		}
 
 		this.querySelectorAll('mu-tant').forEach(
 			leon => {
-				this._killMutant(leon, options, condition, wachTextNode, watchSubtree);
+				this._killMutant(leon, options, condition, fonction, watchTextNode, watchSubtree);
 			}
 		);
 
@@ -95,7 +112,7 @@ class PlayGround extends HTMLElement {
 			for (const mutation of mutations) {
 				for (const leon of mutation.addedNodes) {
 					if (this._isMutant(leon)) {
-						this._killMutant(leon, options, condition, wachTextNode, watchSubtree);
+						this._killMutant(leon, options, condition, fonction, watchTextNode, watchSubtree);
 					}
 				}
 			}
@@ -103,17 +120,34 @@ class PlayGround extends HTMLElement {
 		this.observer.observe(this, { "childList": true });
 	}
 
-	_killMutant(mutant, options, condition, wachTextNode, watchSubtree) {
+	_killMutant(mutant, options, condition, fonction, watchTextNode, watchSubtree) {
 		const hunter = new MutationObserver(mutations => {
 			for (const mutation of mutations) {
 				// @note Comparaison : solution attendue pour le niveau ?
-				const target = wachTextNode ?
+				const target = watchTextNode ?
 					mutation.target.parentNode :
 					watchSubtree ?
 						mutation.target.closest('mu-tant')
 						: mutation.target;
-				// @todo Avec callback complet, pour niveau expert / boss final ?
-				if (condition !== '') {
+				if (fonction !== '') {
+					// @note Solutions :
+					/* Solution 1 :
+					if (mutation.target.nodeName === 'MU-TANT') {
+						mutation.target.remove();
+					} else if (mutation.target.parentNode.nodeName === 'MU-TANT') {
+						mutation.target.parentNode.remove();
+					} else if (mutation.target.closest('mu-tant') !== undefined) {
+						mutation.target.closest('mu-tant').remove();
+					}
+					*/
+					/* Solution 2 :
+					document.querySelectorAll('mu-tant:not([type=""])').forEach(mutant => mutant.remove());
+					 */
+					eval(fonction);
+					clearTimeout(this.invader);
+					hunter.disconnect();
+					// @todo Si échec, recharger la page ?
+				} else if (condition !== '') {
 					eval(`if (${condition}) {
 						target.remove();
 						clearTimeout(this.invader);
@@ -126,7 +160,7 @@ class PlayGround extends HTMLElement {
 				}
 			}
 		});
-		hunter.observe(wachTextNode ? mutant.childNodes[0] : mutant, JSON.parse(`{${options}}`));
+		hunter.observe(watchTextNode ? mutant.childNodes[0] : mutant, JSON.parse(`{${options}}`));
 	}
 }
 

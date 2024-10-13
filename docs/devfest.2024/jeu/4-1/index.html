@@ -12,53 +12,52 @@
 	<body>
 		<header role="banner">
 			<h1>
-				Niveau 2-1<br>
-				Le fantôme
+				Niveau 4-1<br>
+				Le boss final
 			</h1>
 		</header>
 
 		<main role="main">
-			<div class="carte">
-				<p class="portrait">👻</p>
+			<por-trait type="boss" class="carte">
+				<p class="portrait"></p>
 				<p class="description">
-					Le fantôme, l’expert en passage à travers les murs.
-					Il est léger, transparent… mais toujours prêt à te faire sursauter
-					quand tu t’y attends le moins&nbsp;!
+					Vous l’avez compris, c’est la technique idéale pour jouer les pompiers sur un projet&nbsp;!
+					Mais les pompiers, ça ne fait pas qu’éteindre les incendies… Ça sauve des gens, aussi&nbsp;!
 				</p>
-			</div>
+			</por-trait>
 
-			<code-runner type="json">
+			<code-runner type="callback">
 				<form>
-					<label for="options" class="sr-only">Options de la méthode <code>observe()</code></label>
-					<pre><code>observer.observe(document.querySelector("mu-tant"), {</code></pre>
-					<input type="text" id="options"
+					<label for="fonction" class="sr-only">Condition à remplir pour supprimer la mutation</label>
+					<pre><code>const death = new MutationObserver(mutations => {
+	for (const mutation of mutations) {</code></pre>
+					<textarea id="fonction"
 								 autocomplete="off"
 								 autocorrect="off"
 								 autocapitalize="none"
 								 spellcheck="false"
 								 enterkeyhint="send"
-								 required>
-					<pre><code>});</code></pre>
+								 required></textarea>
+					<pre><code>	}
+});</code></pre>
 					<p><button>Feu&nbsp;!</button></p>
 				</form>
 			</code-runner>
 			<dialog id="portal" role="dialog" aria-labelledby="portal-heading">
-				<h2 id="portal-heading">Bouh&nbsp;!</h2>
+				<h2 id="portal-heading">Bravo, vous avez survécu&nbsp;!</h2>
 				<p>
-					Alors, chasser des fantômes, c’est rigolo.
-					Mais avoir besoin de déclencher quelque chose en JavaScript
-					lorsqu’un élément change de valeur pour un attribut spécifique, ça l’est déjà moins…
-					<!-- @todo Cas d’usage (?) Changement de valeur pour aria-expanded ? -->
+					<!-- @todo Easter Egg + générique (?) -->
 				</p>
 				<form method="dialog">
 					<button>Rejouer</button>
-					<a href="../2-2/index.html">Niveau suivant</a>
+					<a href="../1-2/index.html">Générique de fin</a>
 				</form>
 			</dialog>
 		</main>
 
-		<play-ground type="ghost"></play-ground>
+		<play-ground type="all"></play-ground>
 
+		<script src="../por-trait.js"></script>
 		<script src="../code-runner.js"></script>
 		<script src="../mu-tant.js"></script>
 		<script src="../play-ground.js"></script>

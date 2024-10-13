@@ -11,7 +11,9 @@ class AutoPortrait extends HTMLElement {
 
 	connectedCallback() {
 		this.genre = localStorage.getItem('genre') || '';
+		this.form.genre.value = this.genre;
 		this.teint = localStorage.getItem('teint') || '';
+		this.form.teint.value = this.teint;
 		this.portrait.textContent = `🦸${this.teint}‍${this.genre}`;
 	}
 
