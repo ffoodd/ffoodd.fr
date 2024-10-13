@@ -14,28 +14,33 @@ class CodeRunner extends HTMLElement {
 	}
 
 	handleEvent(event) {
-		if (event.type === 'submit') {
-			event.preventDefault();
-			let questions = this.form?.options.value;
-			let condition = this.form.condition ? this.form.condition.value : '';
+		switch (event.type) {
+			case 'submit':
+				event.preventDefault();
+				let questions = this.form?.options.value;
+				let condition = this.form.condition ? this.form.condition.value : '';
 
-			if (this.type === 'json') {
-				questions = this._normalizeJson(questions);
-			}
-
-			let voightkampff = new CustomEvent('voightkampff', {
-				bubbles: true,
-				detail: {
-					data: {
-						questions: questions,
-						condition: condition
-					},
-					type: this.type
+				if (this.type === 'json') {
+					questions = this._normalizeJson(questions);
 				}
-			});
-			this.dispatchEvent(voightkampff);
-		} else if (event.type === 'error') {
-			// @todo Message d’erreur associé au champ de saisie (?)
+
+				let voightkampff = new CustomEvent('voightkampff', {
+					bubbles: true,
+					detail: {
+						data: {
+							questions: questions,
+							condition: condition
+						},
+						type: this.type
+					}
+				});
+				this.dispatchEvent(voightkampff);
+				break;
+			case 'error':
+				// @todo Message d’erreur associé au champ de saisie (?)
+				break;
+			default:
+				break;
 		}
 	}
 

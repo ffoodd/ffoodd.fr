@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<title>L’invasion du HTML mutant</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="L’invasion du HTML mutant — Atelier animé par Gaël Poupard lors du devFest Nantes 2024.">
+	<meta name="author" content="Gaël Poupard">
+	<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+	<link rel="stylesheet" href="../styles.css" media="screen">
+</head>
+<body>
+<header role="banner">
+	<h1>
+		Niveau 0-0<br>
+		Le héros
+	</h1>
+</header>
+
+<main role="main">
+	<div class="carte">
+		<p class="portrait">🦸</p>
+		<p class="description">
+			Ça, c’est vous. Et étonnamment, le reste du monde vous ressemblera souvent&nbsp;!
+		</p>
+	</div>
+
+	<auto-portrait>
+		<form>
+			<fieldset>
+				<legend>Genre</legend>
+				<input type="radio" name="genre" id="feminin" value="♀️">
+				<label for="feminin">Féminin</label>
+				<input type="radio" name="genre" id="masculin" value="♂️">
+				<label for="masculin">Masculin</label>
+				<input type="radio" name="genre" id="neutre" value="" checked>
+				<label for="neutre">Neutre</label>
+			</fieldset>
+			<fieldset>
+				<legend>Teint</legend>
+				<label for="aucun">
+					<input class="sr-only" type="radio" name="teint" id="aucun" value="" checked>
+					<svg aria-hidden="true" width="3ch" height="3ch" viewBox="0 0 10 10">
+						<circle cx="5" cy="5" r="5" fill="#fed868"/>
+					</svg>
+					<span class="sr-only">Aucun</span>
+				</label>
+				<label for="light">
+					<input class="sr-only" type="radio" name="teint" id="light" value="🏻">
+					<svg aria-hidden="true" width="3ch" height="3ch" viewBox="0 0 10 10">
+						<circle cx="5" cy="5" r="5" fill="#fae0c0"/>
+					</svg>
+					<span class="sr-only">Aucun</span>
+				</label>
+				<label for="medium-light">
+					<input class="sr-only" type="radio" name="teint" id="medium-light" value="🏽">
+					<svg aria-hidden="true" width="3ch" height="3ch" viewBox="0 0 10 10">
+						<circle cx="5" cy="5" r="5" fill="#e2c19d"/>
+					</svg>
+					<span class="sr-only">Aucun</span>
+				</label>
+				<label for="medium">
+					<input class="sr-only" type="radio" name="teint" id="medium" value="🏽">
+					<svg aria-hidden="true" width="3ch" height="3ch" viewBox="0 0 10 10">
+						<circle cx="5" cy="5" r="5" fill="#e2c19d"/>
+					</svg>
+					<span class="sr-only">Aucun</span>
+				</label>
+				<label for="medium-dark">
+					<input class="sr-only" type="radio" name="teint" id="medium-dark" value="🏾">
+					<svg aria-hidden="true" width="3ch" height="3ch" viewBox="0 0 10 10">
+						<circle cx="5" cy="5" r="5" fill="#c5946c"/>
+					</svg>
+					<span class="sr-only">Aucun</span>
+				</label>
+				<label for="dark">
+					<input class="sr-only" type="radio" name="teint" id="dark" value="🏿">
+					<svg aria-hidden="true" width="3ch" height="3ch" viewBox="0 0 10 10">
+						<circle cx="5" cy="5" r="5" fill="#5c473d"/>
+					</svg>
+					<span class="sr-only">Aucun</span>
+				</label>
+			</fieldset>
+			<!-- @todo Ajouter des options : barbe, lunettes, etc. -->
+			<p><button>Je valide</button></p>
+		</form>
+	</auto-portrait>
+
+	<dialog id="portal" role="dialog" aria-labelledby="portal-heading">
+		<h2 id="portal-heading">Vous êtes beaux&nbsp;!</h2>
+		<p>
+			Vous êtes fins prêts pour l’aventure.<br>
+			Si on s’entraînait un peu, d’abord&nbsp;?
+		</p>
+		<form method="dialog">
+			<button>Refaire mon personnage</button>
+			<a href="../0-1/index.html">Entraînement</a>
+		</form>
+	</dialog>
+</main>
+
+<play-ground></play-ground>
+
+<script src="../auto-portrait.js"></script>
+<script src="../mu-tant.js"></script>
+<script src="../play-ground.js"></script>
+</body>
+</html>

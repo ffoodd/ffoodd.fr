@@ -85,6 +85,7 @@
 	}
 
 	body {
+		accent-color: var(--accent);
 		background: var(--background);
 		color: var(--foreground);
 		font: normal 400 1.5rem/1.5 sans-serif;
@@ -202,6 +203,10 @@
 		word-wrap: break-word;
 	}
 
+	q {
+		quotes: "« " " »";
+	}
+
 	pre, code, var, samp,
 	input, textarea,
 	[contenteditable] {
@@ -251,6 +256,12 @@
 		padding: 0 .5rem;
 	}
 
+	input[type="radio"] {
+		background-color: initial;
+		border: 0;
+		inline-size: auto;
+	}
+
 	input:focus-visible,
 	textarea:focus-visible,
 	[contenteditable]:focus-visible {
@@ -278,6 +289,45 @@
 	main {
 		grid-area: 2 / 1;
 		padding: 1rem;
+	}
+
+	auto-portrait,
+	auto-portrait form {
+		display: block;
+		inline-size: 100%;
+	}
+
+	auto-portrait fieldset {
+		border: 0;
+		display: flex;
+	}
+
+	auto-portrait legend {
+		color: var(--accent);
+		font-family: 'Luckiest Guy', sans-serif;
+	}
+
+	auto-portrait label {
+		display: inline-flex;
+	}
+
+	auto-portrait input {
+		--tabs: .5;
+	}
+
+	auto-portrait label:has( > [name="teint"]) {
+		border-radius: 50%;
+		margin-inline-start: 2ch;
+		outline-offset: 1rem;
+		transition: outline-offset .3s var(--enter);
+	}
+
+	auto-portrait label:has( > [name="teint"]:checked),
+	auto-portrait label:has( > [name="teint"]):focus-within {
+		box-shadow: 0 0 0 .125rem var(--background);
+		isolation: isolate;
+		outline: .125rem solid var(--accent);
+		outline-offset: .125rem;
 	}
 
 	[contenteditable] {
@@ -309,11 +359,6 @@
 	play-ground[type="invaders"] {
 		background-color: #000;
 		counter-reset: invaders;
-	}
-
-	play-ground[type="zombie"] {
-		background-image: url(./assets/img/background.png);
-		background-repeat: repeat;
 	}
 
 	@counter-style invasion {

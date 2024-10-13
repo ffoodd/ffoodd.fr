@@ -106,7 +106,6 @@ class PlayGround extends HTMLElement {
 	_killMutant(mutant, options, condition, wachTextNode, watchSubtree) {
 		const hunter = new MutationObserver(mutations => {
 			for (const mutation of mutations) {
-				console.log(mutation);
 				// @note Comparaison : solution attendue pour le niveau ?
 				const target = wachTextNode ?
 					mutation.target.parentNode :
