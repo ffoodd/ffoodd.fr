@@ -501,6 +501,24 @@
 		border-color: transparent;
 	}
 
+	.credits a {
+		border: 0;
+		display: inline;
+		padding: 0;
+		text-decoration-style: dotted;
+		text-decoration-skip-ink: auto;
+		text-decoration-thickness: max(.1em, 1px);
+		text-underline-offset: .25em;
+	}
+
+	.credits a:hover {
+		text-decoration-style: solid;
+	}
+
+	.credits a:focus {
+		text-decoration: none;
+	}
+
 	.carte {
 		align-items: center;
 		background-color: color-mix(in srgb, var(--background) 90%, #fff);

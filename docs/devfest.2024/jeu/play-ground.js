@@ -20,6 +20,8 @@ class PlayGround extends HTMLElement {
 					if (this.type === 'all' &&
 						(document.querySelectorAll('mu-tant') === document.querySelectorAll('mu-tant[type=""]'))
 					) {
+						// @fixme On ne rentre pas là-dedans
+						console.log(document.querySelectorAll('mu-tant[type=""]'));
 						if (this.observer) this.observer.disconnect();
 						this.portal.showModal();
 						this.portal.addEventListener('close', this);
@@ -156,7 +158,7 @@ class PlayGround extends HTMLElement {
 					hunter.disconnect();
 					// Échec !
 					setTimeout(() => {
-						if (this.querySelectorAll('mu-tant').length) {
+						if (this.querySelectorAll('mu-tant:not([type=""])').length) {
 							const replay = document.getElementById('replay');
 							replay.showModal();
 							replay.addEventListener('close', () => location.reload());
