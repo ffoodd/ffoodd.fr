@@ -17,10 +17,7 @@ class PlayGround extends HTMLElement {
 		this.spyer = new MutationObserver(mutations => {
 			for (const mutation of mutations) {
 				if (mutation.removedNodes.length && this._isMutant(mutation.removedNodes[0])) {
-					if (this.type === 'all' &&
-						(document.querySelectorAll('mu-tant') === document.querySelectorAll('mu-tant[type=""]'))
-					) {
-						// @fixme On ne rentre pas là-dedans
+					if (this.type === 'all' && !document.querySelector('mu-tant:not([type=""])')) {
 						console.log(document.querySelectorAll('mu-tant[type=""]'));
 						if (this.observer) this.observer.disconnect();
 						this.portal.showModal();
@@ -140,23 +137,19 @@ class PlayGround extends HTMLElement {
 						mutation.target.closest('mu-tant')
 						: mutation.target;
 				if (fonction !== '') {
-					// @note Solutions :
-					/* Solution 1 :
-					if (mutation.target.nodeName === 'MU-TANT') {
+					// @note Solution 1
+					/* if (mutation.target.nodeName === 'MU-TANT') {
 						mutation.target.remove();
 					} else if (mutation.target.parentNode.nodeName === 'MU-TANT') {
 						mutation.target.parentNode.remove();
 					} else if (mutation.target.closest('mu-tant') !== undefined) {
 						mutation.target.closest('mu-tant').remove();
-					}
-					*/
-					/* Solution 2 :
-					document.querySelectorAll('mu-tant:not([type=""])').forEach(mutant => mutant.remove());
-					 */
+					} */
+					// @note Solution 2
+					// document.querySelectorAll('mu-tant:not([type=""])').forEach(mutant => mutant.remove());
 					eval(fonction);
 					clearTimeout(this.invader);
 					hunter.disconnect();
-					// Échec !
 					setTimeout(() => {
 						if (this.querySelectorAll('mu-tant:not([type=""])').length) {
 							const replay = document.getElementById('replay');

@@ -50,7 +50,6 @@
 		src: local('Twemoji Mozilla'), url('./assets/fonts/Twemoji.woff2') format('woff2');
 	}
 
-	/* @todo override-color */
 	@font-face {
 		font-display: swap;
 		font-family: 'FontWithASyntaxHighlighter';
@@ -76,6 +75,16 @@
 
 	html:where([lang]):focus-within {
 		scroll-behavior: smooth;
+	}
+
+	@font-palette-values --syntaxHighlighter {
+		font-family: 'FontWithASyntaxHighlighter';
+		override-colors:
+			0 var(--foreground),
+			4 rebeccapurple,
+			5 var(--accent),
+			7 var(--muted),
+	;
 	}
 
 	*,
@@ -204,12 +213,13 @@
 	}
 
 	q {
-		quotes: "« " " »";
+		quotes: '« ' ' »';
 	}
 
 	pre, code, var, samp,
 	input, textarea {
-		font-family: "FontWithASyntaxHighlighter", monospace;
+		font-family: 'FontWithASyntaxHighlighter', monospace;
+		font-palette: --syntaxHighlighter;
 		font-size: 1.5rem;
 	}
 
@@ -361,10 +371,10 @@
 	play-ground {
 		background-color: color-mix(in srgb, var(--background) 75%, #000);
 		border-radius: .5rem;
-		block-size: calc(100vh - 2rem);
 		contain: strict;
 		grid-area: 1 / 2 / span 2 / 2;
 		margin: 1rem;
+		min-block-size: calc(100vh - 2rem);
 		overflow: hidden;
 		position: relative;
 	}
