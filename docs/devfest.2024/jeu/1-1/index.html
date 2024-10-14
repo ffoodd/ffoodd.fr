@@ -30,7 +30,7 @@
 			<code-runner type="json">
 				<form>
 					<label for="options" class="sr-only">Options de la méthode <code>observe()</code></label>
-					<pre><code>observer.observe(document.querySelector("mu-tant"), {</code></pre>
+					<pre role="presentation"><code>observer.observe(document.querySelector("mu-tant"), {</code></pre>
 					<input type="text" id="options"
 								 autocomplete="off"
 								 autocorrect="off"
@@ -38,7 +38,7 @@
 								 spellcheck="false"
 								 enterkeyhint="send"
 								 required>
-					<pre><code>});</code></pre>
+					<pre role="presentation"><code>});</code></pre>
 					<p><button>Feu&nbsp;!</button></p>
 				</form>
 			</code-runner>
@@ -54,7 +54,16 @@
 					<a href="../1-2/index.html">Niveau suivant</a>
 				</form>
 			</dialog>
-			<!-- @todo Game over sous condition -->
+			<dialog id="game-over" role="dialog" aria-labelledby="game-over-heading">
+				<h2 id="game-over-heading" lang="en">Game over</h2>
+				<p>
+					Vous avez été submergé&nbsp;! Pour vous épargner (et évider de faire fondre votre navigateur),
+					vous êtes priés de recommencer le niveau…
+				</p>
+				<form method="dialog">
+					<button>Rejouer</button>
+				</form>
+			</dialog>
 		</main>
 
 		<play-ground type="zombie"></play-ground>

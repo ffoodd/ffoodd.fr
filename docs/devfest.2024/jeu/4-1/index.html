@@ -29,7 +29,7 @@
 			<code-runner type="callback">
 				<form>
 					<label for="fonction" class="sr-only">Condition à remplir pour supprimer la mutation</label>
-					<pre><code>const death = new MutationObserver(mutations => {
+					<pre role="presentation"><code>const death = new MutationObserver(mutations => {
 	for (const mutation of mutations) {</code></pre>
 					<textarea id="fonction"
 								 autocomplete="off"
@@ -38,7 +38,7 @@
 								 spellcheck="false"
 								 enterkeyhint="send"
 								 required></textarea>
-					<pre><code>	}
+					<pre role="presentation"><code>	}
 });</code></pre>
 					<p><button>Feu&nbsp;!</button></p>
 				</form>
@@ -46,11 +46,31 @@
 			<dialog id="portal" role="dialog" aria-labelledby="portal-heading">
 				<h2 id="portal-heading">Bravo, vous avez survécu&nbsp;!</h2>
 				<p>
-					<!-- @todo Easter Egg + générique (?) -->
+					Et n’oubliez pas&nbsp;: le meilleur attribut que vous puissiez croiser dans ce jeu
+					est <span aria-hidden="true">🥚&nbsp;</span><code>data-yoyo</code>.
 				</p>
 				<form method="dialog">
 					<button>Rejouer</button>
 					<a href="../1-2/index.html">Générique de fin</a>
+				</form>
+			</dialog>
+			<dialog id="game-over" role="dialog" aria-labelledby="game-over-heading">
+				<h2 id="game-over-heading" lang="en">Game over</h2>
+				<p>
+					Vous avez été submergé&nbsp;! Pour vous épargner (et évider de faire fondre votre navigateur),
+					vous êtes priés de recommencer le niveau…
+				</p>
+				<form method="dialog">
+					<button>Rejouer</button>
+				</form>
+			</dialog>
+			<dialog id="replay" role="dialog" aria-labelledby="replay-heading">
+				<h2 id="replay-heading" lang="en">Raté&nbsp;!</h2>
+				<p>
+					Votre fonction de rappel n’a pas fonctionné… Nouvelle chance&nbsp;?
+				</p>
+				<form method="dialog">
+					<button>Rejouer</button>
 				</form>
 			</dialog>
 		</main>

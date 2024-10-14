@@ -8,6 +8,7 @@ class PlayGround extends HTMLElement {
 		document.addEventListener('voightkampff', this);
 		this.type = this.hasAttribute('type') ? this.getAttribute('type') : '';
 		this.portal = document.getElementById('portal');
+		this.over = document.getElementById('game-over');
 	}
 
 	connectedCallback() {
@@ -17,16 +18,26 @@ class PlayGround extends HTMLElement {
 			for (const mutation of mutations) {
 				if (mutation.removedNodes.length && this._isMutant(mutation.removedNodes[0])) {
 					if (this.type === 'all' &&
-						(document.querySelectorAll('mu-tant')?.length === document.querySelectorAll('mu-tant[type=""]')?.length)
+						(document.querySelectorAll('mu-tant') === document.querySelectorAll('mu-tant[type=""]'))
 					) {
-						this.observer.disconnect();
+						if (this.observer) this.observer.disconnect();
 						this.portal.showModal();
 						this.portal.addEventListener('close', this);
 					} else if (!document.querySelector('mu-tant')) {
-						this.observer.disconnect();
+						if (this.observer) this.observer.disconnect();
 						this.portal.showModal();
 						this.portal.addEventListener('close', this);
 					}
+				}
+
+				// GAME OVER!
+				if (mutation.addedNodes.length && document.querySelectorAll('mu-tant').length >= 100) {
+					if (this.observer) this.observer.disconnect();
+					clearTimeout(this.invader);
+					this.querySelectorAll('mu-tant')
+						.forEach(mutant => mutant.remove());
+					this.over.showModal();
+					this.over.addEventListener('close', this);
 				}
 			}
 		});
@@ -49,7 +60,7 @@ class PlayGround extends HTMLElement {
 				this._invade();
 				break;
 			default:
-				console.info(`Event ${event.type} not handled by play-ground.`)
+				console.info(`L’événement ${event.type} n’est pas supporté par le play-ground.`)
 				break;
 		}
 	}
@@ -78,11 +89,8 @@ class PlayGround extends HTMLElement {
 	_invade() {
 		this.invader = setTimeout(() => {
 			// @note Ajouter un type après chargement, en mode contagion ?
-			let mutant = document.createElement('mu-tant');
-			let type = this.type;
-			if (this.type === 'all') {
-				type = this.generateRandomType();
-			}
+			const mutant = document.createElement('mu-tant');
+			const type = (this.type === 'all') ? this.generateRandomType() : this.type;
 			mutant.type = type;
 			mutant.setAttribute('type', type);
 			mutant.style.setProperty('--placement', this.generateRandomNumber(0, 100))
@@ -146,7 +154,14 @@ class PlayGround extends HTMLElement {
 					eval(fonction);
 					clearTimeout(this.invader);
 					hunter.disconnect();
-					// @todo Si échec, recharger la page ?
+					// Échec !
+					setTimeout(() => {
+						if (this.querySelectorAll('mu-tant').length) {
+							const replay = document.getElementById('replay');
+							replay.showModal();
+							replay.addEventListener('close', () => location.reload());
+						}
+					});
 				} else if (condition !== '') {
 					eval(`if (${condition}) {
 						target.remove();

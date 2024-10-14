@@ -29,7 +29,7 @@
 			<code-runner type="json">
 				<form>
 					<label for="condition" class="sr-only">Condition à remplir pour supprimer la mutation</label>
-					<pre><code>const death = new MutationObserver(mutations => {
+					<pre role="presentation"><code>const death = new MutationObserver(mutations => {
 	for (const mutation of mutations) {
 		if (									) {
 			mutation.target.remove();
@@ -46,7 +46,7 @@
 								 required>
 
 					<label for="options" class="sr-only">Options de la méthode <code>observe()</code></label>
-					<pre><code>death.observe(document.querySelector("mu-tant"), {</code></pre>
+					<pre role="presentation"><code>death.observe(document.querySelector("mu-tant"), {</code></pre>
 					<input type="text" id="options"
 								 autocomplete="off"
 								 autocorrect="off"
@@ -54,7 +54,7 @@
 								 spellcheck="false"
 								 enterkeyhint="send"
 								 required>
-					<pre><code>});</code></pre>
+					<pre role="presentation"><code>});</code></pre>
 
 					<p><button>Feu&nbsp;!</button></p>
 				</form>
@@ -69,6 +69,16 @@
 				<form method="dialog">
 					<button>Rejouer</button>
 					<a href="../4-1/index.html">Niveau suivant</a>
+				</form>
+			</dialog>
+			<dialog id="game-over" role="dialog" aria-labelledby="game-over-heading">
+				<h2 id="game-over-heading" lang="en">Game over</h2>
+				<p>
+					Vous avez été submergé&nbsp;! Pour vous épargner (et évider de faire fondre votre navigateur),
+					vous êtes priés de recommencer le niveau…
+				</p>
+				<form method="dialog">
+					<button>Rejouer</button>
 				</form>
 			</dialog>
 		</main>

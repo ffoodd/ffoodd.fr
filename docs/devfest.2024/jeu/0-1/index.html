@@ -26,35 +26,67 @@
 				</p>
 			</por-trait>
 
-			<!-- @todo Attendu : en plusieurs étapes ?
-				const observer = new MutationObserver(mutations => {
-					for (mutation of mutations) {
-						observer.disconnect();
-					}
-				});
-				observer.observe(document.body, {});
-			-->
+			<train-er>
+				<form>
+					<pre role="presentation"><code>const observer =                      (mutations => {
+	for (const mutation of mutations) {
+		mutation.target.remove();
+		observer.           ();
+	}
+});
 
-			<div contenteditable></div>
-			<p>
-				<button type="button" onclick="portal.showModal()">C’est mon ultime bafouille</button>
-			</p>
+observer.        (document.body, {});</code></pre>
+					<label class="sr-only" for="constructor">Constructeur</label>
+					<input type="text" id="constructor"
+								 autocomplete="off"
+								 autocorrect="off"
+								 autocapitalize="none"
+								 spellcheck="false"
+								 enterkeyhint="send"
+								 pattern="new MutationObserver"
+								 maxlength="20" minlength="20"
+								 required>
+
+					<label class="sr-only" for="disconnect">Déconnexion</label>
+					<input type="text" id="disconnect"
+								 autocomplete="off"
+								 autocorrect="off"
+								 autocapitalize="none"
+								 spellcheck="false"
+								 enterkeyhint="send"
+								 pattern="disconnect"
+								 maxlength="10" minlength="10"
+								 required>
+
+					<label class="sr-only" for="observe">Observation</label>
+					<input type="text" id="observe"
+								 autocomplete="off"
+								 autocorrect="off"
+								 autocapitalize="none"
+								 spellcheck="false"
+								 enterkeyhint="send"
+								 pattern="observe"
+								 maxlength="7" minlength="7"
+								 required>
+					<p><button>Je suis prêt&nbsp;!</button></p>
+				</form>
+			</train-er>
 
 			<dialog id="portal" role="dialog" aria-labelledby="portal-heading">
 				<h2 id="portal-heading">Super&nbsp;!</h2>
 				<p>
-					Paré au décollage&nbsp;?
+					Prêt à en découdre&nbsp;?
 				</p>
 				<form method="dialog">
 					<button>Rejouer</button>
 					<a href="../1-1/index.html">Niveau suivant</a>
 				</form>
 			</dialog>
-			<!-- @todo Game over sous condition -->
 		</main>
 
 		<play-ground></play-ground>
 
+		<script src="../train-er.js"></script>
 		<script src="../por-trait.js"></script>
 		<script src="../mu-tant.js"></script>
 		<script src="../play-ground.js"></script>
