@@ -7,7 +7,6 @@
 	<meta name="description" content="L’invasion du HTML mutant — Atelier animé par Gaël Poupard lors du devFest Nantes 2024.">
 	<meta name="author" content="Gaël Poupard">
 	<link rel="icon" href="../favicon.svg" type="image/svg+xml">
-	<link rel="preconnect" href="https://twemoji.maxcdn.com">
 	<link rel="preconnect" href="https://cdn.jsdelivr.net">
 	<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../accesslide/fonts/bello-pro.woff2">
 	<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../accesslide/fonts/museo-slab-300.woff2">
@@ -16,7 +15,7 @@
 </head>
 <body>
 <main role="main" tabindex="0">
-	<section id="slide-1" data-note="2m" class="d-flex flex-column justify-between">
+	<section id="slide-1" data-note="5m" class="d-flex flex-column justify-between">
 		<h1>L’invasion du HTML mutant</h1>
 		<dl>
 			<dt>Slides en ligne</dt>
@@ -26,7 +25,7 @@
 		</dl>
 		<footer>
 			<div class="d-flex">
-				<p class="my-0">Raconté par <a href="https://www.ffoodd.fr">Gaël Poupard</a></p>
+				<p class="my-0">Animé par <a href="https://www.ffoodd.fr">Gaël Poupard</a></p>
 				<ul role="list">
 					<li><a href="https://www.ffoodd.fr">
 						<img src="../accesslide/img/ffoodd.svg" alt="Blog de Gaël Poupard" height="32" width="32">
@@ -54,18 +53,155 @@
 	</section>
 
 	<section id="slide-2" data-note="5m">
-		<h2>Confort+ <span aria-hidden="true">&nbsp;&#128999;</span></h2>
-		<p class="lead">
-			Une solution open-source pour améliorer le confort de tous et mettre en valeur les sites web accessibles&nbsp;!
-		</p>
-		<ul>
-			<li>Plus de 20 réglages disponibles.</li>
-			<li>Organisés en 9 modes d’usage.</li>
-			<li>Disponible sur Firefox, Edge et Chrome.</li>
-		</ul>
+		<h2>Le décor <span aria-hidden="true">&nbsp;🖼️</span></h2>
+		<p class="lead">Préparez-vous à découvrir un script qui vous fera baliser&nbsp;!</p>
+		<ol>
+			<li>Lancez <a href="https://ffoodd.fr/devfest.2024/jeu/">le jeu</a> dans votre navigateur favori.</li>
+			<li>Démarrez votre inspecteur, avec <kbd>F12</kbd> ou <kbd>Maj</kbd>+<kbd>Ctrl</kbd>+<kbd>i</kbd>.</li>
+		</ol>
+		<p>Vous aurez besoin d’ouvrir et refermer votre inspecteur régulièrement.</p>
 	</section>
 
-	<section id="slide-10">
+	<section id="slide-3" data-note="5m">
+		<h2>Le héros <span aria-hidden="true">&nbsp;🦸🏿</span></h2>
+		<p class="lead">Parce que c’est vous, le héros. Ça change, un peu.</p>
+		<p>Chaque niveau aura la même structure&nbsp;:</p>
+		<ul>
+			<li>Un portrait du personnage central —&nbsp;généralement, le mutant&nbsp;!</li>
+			<li>Une zone de saisie, plus ou moins complexe.</li>
+			<li>Une scène, dans laquelle a lieu l’invasion.</li>
+		</ul>
+		<p>
+			Des personnages mal intentionnés apparaissent inopinément…
+			À vous de vous en débarrasser avant qu’il ne soit trop tard&nbsp;!
+		</p>
+	</section>
+
+	<section id="slide-4" data-note="10m">
+		<h2>L’échauffement <span aria-hidden="true">&nbsp;🏃🏿</span></h2>
+		<p class="lead">Prenons quelques repères.</p>
+		<p>Nous allons nous servir d’un <code>MutationObserver</code>. Quelques règles&nbsp;:</p>
+		<ol>
+			<li>Il faut l’instancier.</li>
+			<li>Il faut lui donner un cible.</li>
+			<li>Il faut le débrancher, à un moment.</li>
+		</ol>
+		<p>
+			Ces éléments seront déjà en place dans la suite du jeu
+			—&nbsp;mais il est important de savoir qu’ils existent.
+		</p>
+	</section>
+
+	<section id="slide-5" data-note="5m">
+		<h2>Le décollage <span aria-hidden="true">&nbsp;🚀</span></h2>
+		<p class="lead">Bouclez vos ceintures…</p>
+		<p>
+			Vous avez remarqué l’objet vide, à la fin&nbsp;?
+			C’est lui qui va nous intéresser le plus&nbsp;!
+		</p>
+		<p>Le premier palier du jeu concerne les options de base d’une observation.</p>
+	</section>
+
+	<section id="slide-6" data-note="10m">
+		<h2>Le zombie <span aria-hidden="true">&nbsp;🧟</span></h2>
+		<p class="lead">Entrons dans le vif du sujet&nbsp;!</p>
+		<!-- @todo Contenu ? Gif animé ? -->
+	</section>
+
+	<section id="slide-7" data-note="5m">
+		<h2>Les changements d’attribut</h2>
+		<p class="lead">Les attributs, ça va, ça vient…</p>
+		<!-- @todo FontWithASyntaxHighlighter (?) -->
+		<pre><code>attributes: true</code></pre>
+		<!-- @todo Cas d’usage : Apparition d’un attribut booléen (hidden, multiple, required…) -->
+	</section>
+
+	<section id="slide-8" data-note="10m">
+		<h2>Le vilain <span aria-hidden="true">&nbsp;🦹🏿</span></h2>
+		<!-- @todo Contenu ? Gif animé ? -->
+	</section>
+
+	<section id="slide-9" data-note="5m">
+		<h2>Les changements textuels</h2>
+		<p class="lead">Quoi de pire qu’un changement au sein d’un nœud texte, franchement&nbsp;?</p>
+		<pre><code>characterData: true</code></pre>
+		<!-- @todo Cas d’usage : Un bouton qui change d’intitulé mais pas d’état ni de classe -->
+	</section>
+
+	<section id="slide-10" data-note="10m">
+		<h2>L’alien <span aria-hidden="true">&nbsp;👾</span></h2>
+		<p class="lead">Ils sont parmi nous&nbsp;!</p>
+		<!-- @todo Contenu ? Gif animé ? -->
+	</section>
+
+	<section id="slide-11" data-note="5m">
+		<h2>Les changements de descendance directe</h2>
+		<p class="lead">Les enfants, ça ne tient pas en place&nbsp;!</p>
+		<pre><code>childList: true</code></pre>
+		<!-- @todo Cas d’usage : Un élément inséré, par exemple dans une live region -->
+	</section>
+
+	<section id="slide-12" data-note="10m">
+		<h2>Le fantôme <span aria-hidden="true">&nbsp;👻</span></h2>
+		<p class="lead">Vous n’avez pas entendu un truc&nbsp;?</p>
+		<!-- @todo Contenu ? Gif animé ? -->
+	</section>
+
+	<section id="slide-13" data-note="5m">
+		<h2>Les changements de descendance directe</h2>
+		<p class="lead">Les enfants, ça ne tient pas en place&nbsp;!</p>
+		<pre><code>attributeFilter: ['id']</code></pre>
+		<!-- @todo Cas d’usage : Changement de valeur pour aria-expanded -->
+	</section>
+
+	<section id="slide-14" data-note="10m">
+		<h2>Le sorcier <span aria-hidden="true">&nbsp;🧙🏿</span></h2>
+		<p class="lead">Il faut se méfier des types encapuchonnés avec un grand bâton.</p>
+		<!-- @todo Contenu ? Gif animé ? -->
+	</section>
+
+	<section id="slide-15" data-note="5m">
+		<h2>Les changements de descendance</h2>
+		<p class="lead">Les enfants, ça se reproduit&nbsp;!</p>
+		<pre><code>childList: true, subtree: true</code></pre>
+		<!-- @todo Cas d’usage : Des listes qui s’alimentent toutes seules au scroll -->
+	</section>
+
+	<section id="slide-16" data-note="10m">
+		<h2>Le vampire <span aria-hidden="true">&nbsp;🧛🏿</span></h2>
+		<p class="lead">Il faut se méfier des types encapuchonnés avec un grand bâton.</p>
+		<!-- @todo Contenu ? Gif animé ? -->
+	</section>
+
+	<section id="slide-17" data-note="5m">
+		<h2>Les valeurs disparues</h2>
+		<p class="lead">Se souvenir du passé, ça peut aider.</p>
+		<pre><code>attributeOldValue: true</code></pre>
+		<pre><code>mutation.oldValue.includes('mutant')</code></pre>
+		<!-- @todo Cas d’usage : Une classe .open / .show qui s’en va, induisant la fermeture de l’élément -->
+	</section>
+
+	<section id="slide-18" data-note="10m">
+		<h2>Le vieillissement <span aria-hidden="true">&nbsp;☠️</span></h2>
+		<p class="lead">Vous ne l’aviez pas vu venir, hein&nbsp;?</p>
+		<!-- @todo Contenu ? Gif animé ? -->
+	</section>
+
+	<section id="slide-19" data-note="5m">
+		<h2>Les valeurs disparues</h2>
+		<p class="lead">Se souvenir du passé, ça peut aider.</p>
+		<pre><code>characterDataOldValue: true</code></pre>
+		<pre><code>mutation.oldValue === '💀'</code></pre>
+		<!-- @todo Cas d’usage : Un indicateur de robustesse qui masque une contrainte quand elle est franchie -->
+	</section>
+
+	<section id="slide-20" data-note="20m">
+		<h2>Le boss final</h2>
+		<p class="lead">C’est le moment de sauver des vies.</p>
+		<!-- @todo Contenu ? Gif animé ? -->
+	</section>
+
+	<section id="slide-21">
 		<h2>Merci</h2>
 		<h3>Et à bientôt <span aria-hidden="true">&nbsp;&#128522;</span></h3>
 		<div>
@@ -89,8 +225,6 @@
 <script src="../sliide/js/prism.min.js"></script>
 <script src="../accesslide/js/twemoji.min.js"></script>
 <script>
-	twemoji.parse(document.body, {folder: 'svg', ext: '.svg'});
-
 	let view;
 	switchSlide = (id) => {
 		// Historique

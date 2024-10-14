@@ -379,6 +379,23 @@
 		position: relative;
 	}
 
+	play-ground::before {
+		font-family: 'Twemoji Mozilla', sans-serif;
+		font-size: calc(100vh + 10rem);
+		line-height: calc(100vh + 10rem);
+		inset: -5rem;
+		position: absolute;
+	}
+
+	play-ground[type="zombie"]::before {
+		content: '🌆';
+	}
+
+	play-ground[type="villain"]::before {
+		content: '🌉';
+		mix-blend-mode: soft-light;
+	}
+
 	play-ground[type="invaders"] {
 		background-color: #000;
 		counter-reset: invaders;
@@ -400,6 +417,27 @@
 		position: absolute;
 		text-transform: uppercase;
 		white-space: pre;
+	}
+
+	play-ground[type="ghost"]::before {
+		content: '🌁';
+	}
+
+	play-ground[type="mage"]::before {
+		content: '🏔️';
+	}
+
+	play-ground[type="skull"]::before {
+		content: '🌫️';
+		mix-blend-mode: soft-light;
+	}
+
+	play-ground[type="vampire"]::before {
+		content: '🌃';
+	}
+
+	play-ground[type="all"]::before {
+		content: '🌌';
 	}
 
 	mu-tant {
