@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>L’invasion du HTML mutant</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="L’invasion du HTML mutant — Atelier animé par Gaël Poupard lors du devFest Nantes 2024.">
+		<meta name="author" content="Gaël Poupard">
+		<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+		<link rel="stylesheet" href="../styles.css" media="screen">
+	</head>
+	<body>
+		<header role="banner">
+			<h1>L’invasion du HTML mutant</h1>
+		</header>
+
+		<main role="main">
+			<h1>
+				Niveau 2-3<br>
+				Le crâne
+			</h1>
+
+			<p class="portrait">☠️</p>
+			<p>Le crâne.</p>
+
+			<code-runner type="json">
+				<form>
+					<label for="condition" class="sr-only">Condition à remplir pour supprimer la mutation</label>
+					<pre><code>const observer = new MutationObserver(mutations => {
+			for (const mutation of mutations) {
+				if (</code></pre>
+					<input type="text" id="condition"
+								 autocomplete="off"
+								 autocorrect="off"
+								 autocapitalize="off"
+								 spellcheck="false"
+								 enterkeyhint="send"
+								 required>
+					<pre><code>) {
+					mutation.target.remove();
+					observer.disconnect();
+				}
+			}
+		});</code></pre>
+
+					<label for="options" class="sr-only">Options de la méthode <code>observe()</code></label>
+					<pre><code>observer.observe(document.querySelector("mu-tant"), {</code></pre>
+					<input type="text" id="options"
+								 autocomplete="off"
+								 autocorrect="off"
+								 autocapitalize="off"
+								 spellcheck="false"
+								 enterkeyhint="send"
+								 required>
+					<pre><code>});</code></pre>
+
+					<button>Feu&nbsp;!</button>
+				</form>
+			</code-runner>
+		</main>
+
+		<play-ground type="skull"></play-ground>
+
+		<script src="../code-runner.js"></script>
+		<script src="../mu-tant.js"></script>
+		<script src="../play-ground.js"></script>
+	</body>
+</html>

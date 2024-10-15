@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>L’invasion du HTML mutant</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="L’invasion du HTML mutant — Atelier animé par Gaël Poupard lors du devFest Nantes 2024.">
+		<meta name="author" content="Gaël Poupard">
+		<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+		<link rel="stylesheet" href="../styles.css" media="screen">
+	</head>
+	<body>
+		<header role="banner">
+			<h1>
+				Niveau 0-1<br>
+				L’humain
+			</h1>
+		</header>
+
+		<main role="main">
+			<por-trait type="" class="carte">
+				<p class="portrait">👩</p>
+				<p class="description">
+					Les humains sont gentils. Ils n’essaient pas de vous mordre, de vous manger, ni de vous envahir.
+					Enfin, pas tous &nbsp;!
+				</p>
+			</por-trait>
+
+			<train-er>
+				<form>
+					<pre role="presentation"><code>const observer =                      (mutations => {
+	for (const mutation of mutations) {
+		mutation.target.remove();
+		observer.           ();
+	}
+});
+
+observer.        (document.body, {});</code></pre>
+					<label class="sr-only" for="constructor">Constructeur</label>
+					<input type="text" id="constructor"
+								 autocomplete="off"
+								 autocorrect="off"
+								 autocapitalize="none"
+								 spellcheck="false"
+								 enterkeyhint="send"
+								 pattern="new MutationObserver"
+								 maxlength="20" minlength="20"
+								 required>
+
+					<label class="sr-only" for="disconnect">Déconnexion</label>
+					<input type="text" id="disconnect"
+								 autocomplete="off"
+								 autocorrect="off"
+								 autocapitalize="none"
+								 spellcheck="false"
+								 enterkeyhint="send"
+								 pattern="disconnect"
+								 maxlength="10" minlength="10"
+								 required>
+
+					<label class="sr-only" for="observe">Observation</label>
+					<input type="text" id="observe"
+								 autocomplete="off"
+								 autocorrect="off"
+								 autocapitalize="none"
+								 spellcheck="false"
+								 enterkeyhint="send"
+								 pattern="observe"
+								 maxlength="7" minlength="7"
+								 required>
+					<p><button>Je suis prêt&nbsp;!</button></p>
+				</form>
+			</train-er>
+
+			<dialog id="portal" role="dialog" aria-labelledby="portal-heading">
+				<h2 id="portal-heading">Super&nbsp;!</h2>
+				<p>Prêt à en découdre&nbsp;?</p>
+				<form method="dialog">
+					<button>Rejouer</button>
+					<a href="../1-1/index.html">Niveau suivant</a>
+				</form>
+			</dialog>
+		</main>
+
+		<play-ground></play-ground>
+
+		<script src="../train-er.js"></script>
+		<script src="../por-trait.js"></script>
+		<script src="../mu-tant.js"></script>
+		<script src="../play-ground.js"></script>
+	</body>
+</html>

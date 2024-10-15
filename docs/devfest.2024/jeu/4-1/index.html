@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>L’invasion du HTML mutant</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="L’invasion du HTML mutant — Atelier animé par Gaël Poupard lors du devFest Nantes 2024.">
+		<meta name="author" content="Gaël Poupard">
+		<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+		<link rel="stylesheet" href="../styles.css" media="screen">
+	</head>
+	<body>
+		<header role="banner">
+			<h1>
+				Niveau 4-1<br>
+				Le boss final
+			</h1>
+		</header>
+
+		<main role="main">
+			<por-trait type="boss" class="carte">
+				<p class="portrait"></p>
+				<p class="description">
+					Vous l’avez compris, c’est la technique idéale pour jouer les pompiers sur un projet&nbsp;!
+					Mais les pompiers, ça ne fait pas qu’éteindre les incendies… Ça sauve des gens, aussi&nbsp;!
+				</p>
+			</por-trait>
+
+			<code-runner type="callback">
+				<form>
+					<label for="fonction" class="sr-only">Condition à remplir pour supprimer la mutation</label>
+					<pre role="presentation"><code>const death = new MutationObserver(mutations => {
+	for (const mutation of mutations) {</code></pre>
+					<textarea id="fonction"
+								 autocomplete="off"
+								 autocorrect="off"
+								 autocapitalize="none"
+								 spellcheck="false"
+								 enterkeyhint="send"
+								 required></textarea>
+					<pre role="presentation"><code>	}
+});</code></pre>
+					<p><button>Feu&nbsp;!</button></p>
+				</form>
+			</code-runner>
+			<dialog id="portal" role="dialog" aria-labelledby="portal-heading">
+				<h2 id="portal-heading">Bravo, vous avez survécu&nbsp;!</h2>
+				<p>
+					Vous avez gagné un <span aria-hidden="true">🥚&nbsp;</span>œuf de Pâques, à utiliser dans <cite lang="en">Beyond The Phobia</cite>
+					sur le stand Onepoint&nbsp;: <code>data-yoyo</code>.
+				</p>
+				<h3>Crédits</h3>
+				<ul class="credits">
+					<li>Typographie de titraille&nbsp;: <a hreflang="en" href="https://fonts.google.com/specimen/Luckiest+Guy?preview.text=Mutant&classification=Display,Handwriting&query=Astigmatic">Luckiest Guy</a> par Astigmatic.</li>
+					<li>Typographie de labeur&nbsp;: <a hreflang="en" href="https://github.com/mozilla/zilla-slab">Zilla Slab</a> par Mozilla.</li>
+					<li>Typographie monospace&nbsp;: <a hreflang="en" href="https://blog.glyphdrawing.club/font-with-built-in-syntax-highlighting/">FontWithASyntaxHighlighter</a> par Heikki Lotvonen.</li>
+					<li>Typographie pour les émojis&nbsp;: <a hreflang="en" href="https://github.com/mozilla/twemoji-colr">Twemoji COLR</a> par Mozilla.</li>
+					<li>Certaines animations sont l’œuvre de Clément Étienne&nbsp;: merci&nbsp;!</li>
+				</ul>
+				<form method="dialog">
+					<button>Rejouer</button>
+					<a href="../index.html">Terminer</a>
+				</form>
+			</dialog>
+			<dialog id="game-over" role="dialog" aria-labelledby="game-over-heading">
+				<h2 id="game-over-heading" lang="en">Game over</h2>
+				<p>
+					Vous avez été submergé&nbsp;! Pour vous épargner (et évider de faire fondre votre navigateur),
+					vous êtes priés de recommencer le niveau…
+				</p>
+				<form method="dialog">
+					<button>Rejouer</button>
+				</form>
+			</dialog>
+			<dialog id="replay" role="dialog" aria-labelledby="replay-heading">
+				<h2 id="replay-heading">Raté&nbsp;!</h2>
+				<p>
+					Votre fonction de rappel n’a pas fonctionné… Nouvelle chance&nbsp;?
+				</p>
+				<form method="dialog">
+					<button>Rejouer</button>
+				</form>
+			</dialog>
+		</main>
+
+		<play-ground type="all"></play-ground>
+
+		<script src="../por-trait.js"></script>
+		<script src="../code-runner.js"></script>
+		<script src="../mu-tant.js"></script>
+		<script src="../play-ground.js"></script>
+	</body>
+</html>

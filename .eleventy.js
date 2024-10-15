@@ -1,3 +1,4 @@
+const path = require("node:path");
 // Globals: dates, strings
 const { DateTime } = require('luxon')
 const string = require('string')
@@ -14,7 +15,6 @@ const rssPlugin = require("@11ty/eleventy-plugin-rss")
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight")
 
 module.exports = function (eleventyConfig) {
-
 	// Shortcodes
 	eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`)
 

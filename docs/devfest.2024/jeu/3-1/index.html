@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>L’invasion du HTML mutant</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="L’invasion du HTML mutant — Atelier animé par Gaël Poupard lors du devFest Nantes 2024.">
+		<meta name="author" content="Gaël Poupard">
+		<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+		<link rel="stylesheet" href="../styles.css" media="screen">
+	</head>
+	<body>
+		<header role="banner">
+			<h1>
+				Niveau 3-1<br>
+				Le vampire
+			</h1>
+		</header>
+
+		<main role="main">
+			<por-trait type="vampire" class="carte">
+				<p class="portrait">🧛</p>
+				<p class="description">
+					Le vampire&nbsp;: toujours chic, toujours classe.
+					Mais fais attention à ton cou, il a tendance à confondre les salutations avec les morsures&nbsp;!
+				</p>
+			</por-trait>
+
+			<code-runner type="json">
+				<form>
+					<label for="condition" class="sr-only">Condition à remplir pour supprimer la mutation</label>
+					<pre role="presentation"><code>const slayer = new MutationObserver(mutations => {
+	for (const mutation of mutations) {
+		if (									) {
+			mutation.target.remove();
+			slayer.disconnect();
+		}
+	}
+});</code></pre>
+					<input type="text" id="condition"
+								 autocomplete="off"
+								 autocorrect="off"
+								 autocapitalize="none"
+								 spellcheck="false"
+								 enterkeyhint="send"
+								 required>
+
+					<label for="options" class="sr-only">Options de la méthode <code>observe()</code></label>
+					<pre role="presentation"><code>slayer.observe(document.querySelector("mu-tant"), {</code></pre>
+					<input type="text" id="options"
+								 autocomplete="off"
+								 autocorrect="off"
+								 autocapitalize="none"
+								 spellcheck="false"
+								 enterkeyhint="send"
+								 required>
+					<pre role="presentation"><code>});</code></pre>
+
+					<p><button>Feu&nbsp;!</button></p>
+				</form>
+			</code-runner>
+			<dialog id="portal" role="dialog" aria-labelledby="portal-heading">
+				<h2 id="portal-heading">Vade Retro, Dracula&nbsp;!</h2>
+				<p>
+					Alors, tuer des vampires, c’est rigolo. Mais avoir besoin de déclencher quelque chose en JavaScript
+					lorsqu’un attribut perd une valeur précise, ça l’est déjà moins…
+				</p>
+				<form method="dialog">
+					<button>Rejouer</button>
+					<a href="../3-2/index.html">Niveau suivant</a>
+				</form>
+			</dialog>
+			<dialog id="game-over" role="dialog" aria-labelledby="game-over-heading">
+				<h2 id="game-over-heading" lang="en">Game over</h2>
+				<p>
+					Vous avez été submergé&nbsp;! Pour vous épargner (et évider de faire fondre votre navigateur),
+					vous êtes priés de recommencer le niveau…
+				</p>
+				<form method="dialog">
+					<button>Rejouer</button>
+				</form>
+			</dialog>
+			<dialog id="replay" role="dialog" aria-labelledby="replay-heading">
+				<h2 id="replay-heading">Raté&nbsp;!</h2>
+				<p>
+					Votre condition et / ou vos options n’ont pas fonctionné… Nouvelle chance&nbsp;?
+				</p>
+				<form method="dialog">
+					<button>Rejouer</button>
+				</form>
+			</dialog>
+		</main>
+
+		<play-ground type="vampire"></play-ground>
+
+		<script src="../por-trait.js"></script>
+		<script src="../code-runner.js"></script>
+		<script src="../mu-tant.js"></script>
+		<script src="../play-ground.js"></script>
+	</body>
+</html>
