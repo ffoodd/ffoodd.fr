@@ -9,6 +9,7 @@ class PlayGround extends HTMLElement {
 		this.type = this.hasAttribute('type') ? this.getAttribute('type') : '';
 		this.portal = document.getElementById('portal');
 		this.over = document.getElementById('game-over');
+		this.replay = document.getElementById('replay');
 	}
 
 	connectedCallback() {
@@ -16,27 +17,16 @@ class PlayGround extends HTMLElement {
 
 		this.spyer = new MutationObserver(mutations => {
 			for (const mutation of mutations) {
-				if (mutation.removedNodes.length && this._isMutant(mutation.removedNodes[0])) {
-					if (this.type === 'all' && !document.querySelector('mu-tant:not([type=""])')) {
-						console.log(document.querySelectorAll('mu-tant[type=""]'));
-						if (this.observer) this.observer.disconnect();
-						this.portal.showModal();
-						this.portal.addEventListener('close', this);
-					} else if (!document.querySelector('mu-tant')) {
-						if (this.observer) this.observer.disconnect();
-						this.portal.showModal();
-						this.portal.addEventListener('close', this);
-					}
+				if (mutation.addedNodes.length && document.querySelectorAll('mu-tant').length >= 100) {
+					this._gameOver();
 				}
 
-				// GAME OVER!
-				if (mutation.addedNodes.length && document.querySelectorAll('mu-tant').length >= 100) {
-					if (this.observer) this.observer.disconnect();
-					clearTimeout(this.invader);
-					this.querySelectorAll('mu-tant')
-						.forEach(mutant => mutant.remove());
-					this.over.showModal();
-					this.over.addEventListener('close', this);
+				if (mutation.removedNodes.length && this._isMutant(mutation.removedNodes[0])) {
+					if (!document.querySelector('mu-tant')) {
+						this._nextLevel();
+					} else if ((this.type === 'all' && !document.querySelector('mu-tant:not([type=""])'))) {
+						this._nextLevel();
+					}
 				}
 			}
 		});
@@ -52,11 +42,18 @@ class PlayGround extends HTMLElement {
 					event.detail.data.fonction,
 					event.detail.type
 				);
+				if (event.detail.data.fonction === '') {
+					this.timeout = setTimeout(() => this._replay(), 2000);
+				} else {
+					this.timeout = setTimeout(() => {
+						if (this.querySelectorAll('mu-tant:not([type=""])').length) {
+							this._replay();
+						}
+					}, 2000);
+				}
 				break;
 			case 'close':
-				document.querySelectorAll('input, textarea')
-					.forEach(element => element.value = '');
-				this._invade();
+				location.reload();
 				break;
 			default:
 				console.info(`L’événement ${event.type} n’est pas supporté par le play-ground.`)
@@ -114,23 +111,12 @@ class PlayGround extends HTMLElement {
 				this._killMutant(leon, options, condition, fonction, watchTextNode, watchSubtree);
 			}
 		);
-
-		this.observer = new MutationObserver(mutations => {
-			for (const mutation of mutations) {
-				for (const leon of mutation.addedNodes) {
-					if (this._isMutant(leon)) {
-						this._killMutant(leon, options, condition, fonction, watchTextNode, watchSubtree);
-					}
-				}
-			}
-		});
-		this.observer.observe(this, { "childList": true });
 	}
 
 	_killMutant(mutant, options, condition, fonction, watchTextNode, watchSubtree) {
+		// @fixme Comparaison : solution attendue pour le niveau ?
 		const hunter = new MutationObserver(mutations => {
 			for (const mutation of mutations) {
-				// @note Comparaison : solution attendue pour le niveau ?
 				const target = watchTextNode ?
 					mutation.target.parentNode :
 					watchSubtree ?
@@ -140,8 +126,6 @@ class PlayGround extends HTMLElement {
 					// @note Solution 1
 					/* if (mutation.target.nodeName === 'MU-TANT') {
 						mutation.target.remove();
-					} else if (mutation.target.parentNode.nodeName === 'MU-TANT') {
-						mutation.target.parentNode.remove();
 					} else if (mutation.target.closest('mu-tant') !== undefined) {
 						mutation.target.closest('mu-tant').remove();
 					} */
@@ -150,27 +134,40 @@ class PlayGround extends HTMLElement {
 					eval(fonction);
 					clearTimeout(this.invader);
 					hunter.disconnect();
-					setTimeout(() => {
-						if (this.querySelectorAll('mu-tant:not([type=""])').length) {
-							const replay = document.getElementById('replay');
-							replay.showModal();
-							replay.addEventListener('close', () => location.reload());
-						}
-					});
 				} else if (condition !== '') {
 					eval(`if (${condition}) {
 						target.remove();
 						clearTimeout(this.invader);
+						clearTimeout(this.timeout);
 						hunter.disconnect();
 					}`);
 				} else {
 					target.remove();
 					clearTimeout(this.invader);
+					clearTimeout(this.timeout);
 					hunter.disconnect();
 				}
 			}
 		});
 		hunter.observe(watchTextNode ? mutant.childNodes[0] : mutant, JSON.parse(`{${options}}`));
+	}
+
+	_nextLevel() {
+		if (this.observer) this.observer.disconnect();
+		this.portal.showModal();
+		this.portal.addEventListener('close', this);
+	}
+
+	_gameOver() {
+		if (this.observer) this.observer.disconnect();
+		clearTimeout(this.invader);
+		this.over.showModal();
+		this.over.addEventListener('close', this);
+	}
+
+	_replay() {
+		this.replay.showModal();
+		this.replay.addEventListener('close', this);
 	}
 }
 
