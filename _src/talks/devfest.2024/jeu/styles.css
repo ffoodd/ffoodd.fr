@@ -380,7 +380,7 @@
 	}
 
 	play-ground::before {
-		font-family: 'Twemoji Mozilla', sans-serif;
+		font-family: 'Twemoji Mozilla', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', sans-serif;
 		font-size: calc(100vh + 10rem);
 		line-height: calc(100vh + 10rem);
 		inset: -5rem;

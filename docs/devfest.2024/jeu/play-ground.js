@@ -84,7 +84,6 @@ class PlayGround extends HTMLElement {
 
 	_invade() {
 		this.invader = setTimeout(() => {
-			// @note Ajouter un type après chargement, en mode contagion ?
 			const mutant = document.createElement('mu-tant');
 			const type = (this.type === 'all') ? this.generateRandomType() : this.type;
 			mutant.type = type;
@@ -92,7 +91,6 @@ class PlayGround extends HTMLElement {
 			mutant.style.setProperty('--placement', this.generateRandomNumber(0, 100))
 			this.append(mutant);
 			this._invade();
-			// @note Ajouter du son : un BIP par apparition, etc.
 		}, this.generateRandomNumber());
 	}
 
@@ -123,14 +121,6 @@ class PlayGround extends HTMLElement {
 						mutation.target.closest('mu-tant')
 						: mutation.target;
 				if (fonction !== '') {
-					// @note Solution 1
-					/* if (mutation.target.nodeName === 'MU-TANT') {
-						mutation.target.remove();
-					} else if (mutation.target.closest('mu-tant') !== undefined) {
-						mutation.target.closest('mu-tant').remove();
-					} */
-					// @note Solution 2
-					// document.querySelectorAll('mu-tant:not([type=""])').forEach(mutant => mutant.remove());
 					eval(fonction);
 					clearTimeout(this.invader);
 					hunter.disconnect();
@@ -149,7 +139,13 @@ class PlayGround extends HTMLElement {
 				}
 			}
 		});
-		hunter.observe(watchTextNode ? mutant.childNodes[0] : mutant, JSON.parse(`{${options}}`));
+		try {
+			const optionsAsJson = JSON.parse(`{${options}}`);
+			hunter.observe(watchTextNode ? mutant.childNodes[0] : mutant, optionsAsJson);
+		} catch (error) {
+			console.error(error);
+			this._replay();
+		}
 	}
 
 	_nextLevel() {
