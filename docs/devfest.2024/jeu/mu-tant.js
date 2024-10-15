@@ -51,6 +51,7 @@ class Mutant extends HTMLElement {
 				break;
 			case 'ghost':
 				// @note attributeFilter: ['id']
+				// @fixme Ça fonctionne aussi avec attributes: true :/
 				this.innerText = '👻';
 				this.interval = setInterval(() => this._mutateAttributes(), this.generateRandomDelay());
 				break;
@@ -65,15 +66,13 @@ class Mutant extends HTMLElement {
 				// @note mutation.oldValue.includes('mutant')
 				// @note attributeOldValue: true
 				// Et éventuellement :
-				// @note mutation.type === 'attributes' && mutation.attributeName === 'class'
+				// @note mutation.attributeName === 'class'
 				this.innerText = `🧛${this.teint}‍${this.genre}`;
 				this.interval = setInterval(() => this._mutateAttributeValue(), this.generateRandomDelay());
 				break;
 			case 'skull':
 				// @note characterDataOldValue: true
 				// @note mutation.oldValue === '💀'
-				// Et éventuellement :
-				// @note mutation.type === 'characterData'
 				this.innerText =  `👶${this.teint}`;
 				this.current = 0;
 				this.interval = setInterval(() => this._mutateOldText(), this.generateRandomDelay());

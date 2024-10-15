@@ -7,21 +7,50 @@
 	<meta name="description" content="L’invasion du HTML mutant — Atelier animé par Gaël Poupard lors du devFest Nantes 2024.">
 	<meta name="author" content="Gaël Poupard">
 	<link rel="icon" href="../favicon.svg" type="image/svg+xml">
-	<link rel="preconnect" href="https://cdn.jsdelivr.net">
 	<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../accesslide/fonts/bello-pro.woff2">
 	<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../accesslide/fonts/museo-slab-300.woff2">
-	<link rel="stylesheet" href="../sliide/sliide.css?4" type="text/css" media="screen">
-	<link rel="stylesheet" href="../sliide/prism.min.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="../sliide/sliide.css?5" type="text/css" media="screen">
+	<style>
+		@font-face {
+			font-display: swap;
+			font-family: 'Twemoji Mozilla';
+			font-style: normal;
+			font-weight: 400;
+			src: local('Twemoji Mozilla'), url('./jeu/assets/fonts/Twemoji.woff2') format('woff2');
+		}
+
+		@font-face {
+			font-display: swap;
+			font-family: 'FontWithASyntaxHighlighter';
+			src: url('./jeu/assets/fonts/FontWithASyntaxHighlighter-Regular.woff2') format('woff2');
+		}
+
+		pre code {
+			color: #fafafa;
+			font-family: 'FontWithASyntaxHighlighter', monospace;
+			outline: 0;
+		}
+
+		.portrait {
+			font-size: 80vh;
+			inset-block-start: 10vh;
+			inset-inline-end: 10vh;
+			line-height: 80vh;
+			position: absolute;
+		}
+	</style>
 </head>
 <body>
 <main role="main" tabindex="0">
 	<section id="slide-1" data-note="5m" class="d-flex flex-column justify-between">
-		<h1>L’invasion du HTML mutant</h1>
+		<h1>L’invasion du <abbr title="HyperText Markup Language">html</abbr> mutant</h1>
 		<dl>
 			<dt>Slides en ligne</dt>
 			<dd><a href="https://www.ffoodd.fr/devfest.2024/">ffoodd.fr/devfest.2024/</a></dd>
 			<dt>Le jeu</dt>
 			<dd><a href="https://www.ffoodd.fr/devfest.2024/jeu/">ffoodd.fr/devfest.2024/jeu/</a></dd>
+			<dt>Les accès wi-fi</dt>
+			<dd><code>codelab</code> — <code>12ans</code></dd>
 		</dl>
 		<footer>
 			<div class="d-flex">
@@ -53,8 +82,9 @@
 	</section>
 
 	<section id="slide-2" data-note="5m">
-		<h2>Le décor <span aria-hidden="true">&nbsp;🖼️</span></h2>
+		<h2>Le décor</h2>
 		<p class="lead">Préparez-vous à découvrir un script qui vous fera baliser&nbsp;!</p>
+		<div class="portrait" aria-hidden="true">🖼️</div>
 		<ol>
 			<li>Lancez <a href="https://ffoodd.fr/devfest.2024/jeu/">le jeu</a> dans votre navigateur favori.</li>
 			<li>Démarrez votre inspecteur, avec <kbd>F12</kbd> ou <kbd>Maj</kbd>+<kbd>Ctrl</kbd>+<kbd>i</kbd>.</li>
@@ -63,8 +93,9 @@
 	</section>
 
 	<section id="slide-3" data-note="5m">
-		<h2>Le héros <span aria-hidden="true">&nbsp;🦸🏿</span></h2>
+		<h2>Le héros</h2>
 		<p class="lead">Parce que c’est vous, le héros. Ça change, un peu.</p>
+		<div class="portrait" aria-hidden="true">🦸🏿</div>
 		<p>Chaque niveau aura la même structure&nbsp;:</p>
 		<ul>
 			<li>Un portrait du personnage central —&nbsp;généralement, le mutant&nbsp;!</li>
@@ -72,14 +103,15 @@
 			<li>Une scène, dans laquelle a lieu l’invasion.</li>
 		</ul>
 		<p>
-			Des personnages mal intentionnés apparaissent inopinément…
+			Des personnages mal intentionnés apparaissent inopinément…<br>
 			À vous de vous en débarrasser avant qu’il ne soit trop tard&nbsp;!
 		</p>
 	</section>
 
-	<section id="slide-4" data-note="10m">
-		<h2>L’échauffement <span aria-hidden="true">&nbsp;🏃🏿</span></h2>
+	<section id="slide-4" data-note="5m">
+		<h2>L’échauffement</h2>
 		<p class="lead">Prenons quelques repères.</p>
+		<div class="portrait" aria-hidden="true">🏃🏿</div>
 		<p>Nous allons nous servir d’un <code>MutationObserver</code>. Quelques règles&nbsp;:</p>
 		<ol>
 			<li>Il faut l’instancier.</li>
@@ -87,143 +119,200 @@
 			<li>Il faut le débrancher, à un moment.</li>
 		</ol>
 		<p>
-			Ces éléments seront déjà en place dans la suite du jeu
+			Ces éléments seront déjà en place dans la suite du jeu<br>
 			—&nbsp;mais il est important de savoir qu’ils existent.
 		</p>
 	</section>
 
 	<section id="slide-5" data-note="5m">
-		<h2>Le décollage <span aria-hidden="true">&nbsp;🚀</span></h2>
+		<h2>Le décollage</h2>
 		<p class="lead">Bouclez vos ceintures…</p>
+		<div class="portrait" aria-hidden="true">🚀</div>
 		<p>
 			Vous avez remarqué l’objet vide, à la fin&nbsp;?
 			C’est lui qui va nous intéresser le plus&nbsp;!
 		</p>
-		<p>Le premier palier du jeu concerne les options de base d’une observation.</p>
+		<p>Le premier palier du jeu concerne <strong>les options de base</strong> d’une observation.</p>
 	</section>
 
-	<section id="slide-6" data-note="10m">
-		<h2>Le zombie <span aria-hidden="true">&nbsp;🧟</span></h2>
+	<section id="slide-6" data-note="8m">
+		<h2>Le zombie</h2>
 		<p class="lead">Entrons dans le vif du sujet&nbsp;!</p>
-		<!-- @todo Contenu ? Gif animé ? -->
+		<div class="portrait" aria-hidden="true">🧟</div>
 	</section>
 
-	<section id="slide-7" data-note="5m">
+	<section id="slide-7" data-note="3m">
 		<h2>Les changements d’attribut</h2>
 		<p class="lead">Les attributs, ça va, ça vient…</p>
-		<!-- @todo FontWithASyntaxHighlighter (?) -->
 		<pre><code>attributes: true</code></pre>
-		<!-- @todo Cas d’usage : Apparition d’un attribut booléen (hidden, multiple, required…) -->
+		<h3>Cas d’usage</h3>
+		<p>
+			Songez à tous ces attributs qui peuvent être importants&nbsp;:
+			<code>hidden</code>, <code>aria-label</code>, <code>aria-invalid</code>…
+		</p>
 	</section>
 
-	<section id="slide-8" data-note="10m">
-		<h2>Le vilain <span aria-hidden="true">&nbsp;🦹🏿</span></h2>
-		<!-- @todo Contenu ? Gif animé ? -->
+	<section id="slide-8" data-note="8m">
+		<h2>Le vilain</h2>
+		<p class="lead">Et oui, il n’y a pas que des gentils, dans la vie.</p>
+		<div class="portrait" aria-hidden="true">🦹🏿</div>
 	</section>
 
-	<section id="slide-9" data-note="5m">
+	<section id="slide-9" data-note="3m">
 		<h2>Les changements textuels</h2>
 		<p class="lead">Quoi de pire qu’un changement au sein d’un nœud texte, franchement&nbsp;?</p>
 		<pre><code>characterData: true</code></pre>
-		<!-- @todo Cas d’usage : Un bouton qui change d’intitulé mais pas d’état ni de classe -->
+		<h3>Cas d’usage</h3>
+		<p>
+			Imaginez un peu&nbsp;: un bouton dont l’intitulé change,
+			mais pas d’état ni de classe auxquels s’accrocher&nbsp;?
+		</p>
 	</section>
 
-	<section id="slide-10" data-note="10m">
-		<h2>L’alien <span aria-hidden="true">&nbsp;👾</span></h2>
+	<section id="slide-10" data-note="8m">
+		<h2>L’alien</h2>
 		<p class="lead">Ils sont parmi nous&nbsp;!</p>
-		<!-- @todo Contenu ? Gif animé ? -->
+		<div class="portrait" aria-hidden="true">👾</div>
 	</section>
 
-	<section id="slide-11" data-note="5m">
+	<section id="slide-11" data-note="3m">
 		<h2>Les changements de descendance directe</h2>
 		<p class="lead">Les enfants, ça ne tient pas en place&nbsp;!</p>
 		<pre><code>childList: true</code></pre>
-		<!-- @todo Cas d’usage : Un élément inséré, par exemple dans une live region -->
+		<h3>Cas d’usage</h3>
+		<p>
+			Un contenu injecté inopinément —&nbsp;au hasard,
+			lors d’un <i lang="en">scroll</i> infini&nbsp;— c’est irritant&nbsp;!
+		</p>
 	</section>
 
-	<section id="slide-12" data-note="10m">
-		<h2>Le fantôme <span aria-hidden="true">&nbsp;👻</span></h2>
+	<section id="slide-12" data-note="8m">
+		<h2>Le fantôme</h2>
 		<p class="lead">Vous n’avez pas entendu un truc&nbsp;?</p>
-		<!-- @todo Contenu ? Gif animé ? -->
+		<div class="portrait" aria-hidden="true">👻</div>
 	</section>
 
-	<section id="slide-13" data-note="5m">
-		<h2>Les changements de descendance directe</h2>
-		<p class="lead">Les enfants, ça ne tient pas en place&nbsp;!</p>
+	<section id="slide-13" data-note="3m">
+		<h2>Quand il y a trop d’attributs…</h2>
+		<p class="lead">Il faut choisir&nbsp;!</p>
 		<pre><code>attributeFilter: ['id']</code></pre>
-		<!-- @todo Cas d’usage : Changement de valeur pour aria-expanded -->
+		<h3>Cas d’usage</h3>
+		<p>
+			Dans un formulaire Angular, où beaucoup d’attributs sont reflétés et changent à la moindre interaction…
+			Filtrer en amont les attributs à surveiller est bien commode.
+		</p>
 	</section>
 
-	<section id="slide-14" data-note="10m">
-		<h2>Le sorcier <span aria-hidden="true">&nbsp;🧙🏿</span></h2>
-		<p class="lead">Il faut se méfier des types encapuchonnés avec un grand bâton.</p>
-		<!-- @todo Contenu ? Gif animé ? -->
+	<section id="slide-14" data-note="8m">
+		<h2>Le sorcier</h2>
+		<p class="lead">Il faut se méfier des types encapuchonnés<br>avec un grand bâton.</p>
+		<div class="portrait" aria-hidden="true">🧙🏿</div>
 	</section>
 
-	<section id="slide-15" data-note="5m">
-		<h2>Les changements de descendance</h2>
-		<p class="lead">Les enfants, ça se reproduit&nbsp;!</p>
+	<section id="slide-15" data-note="3m">
+		<h2>Les changements de descendance profonde</h2>
+		<p class="lead">Il n’y a pas que les parents pour surveiller les enfants&nbsp;: tous leurs aïeux le peuvent.</p>
 		<pre><code>childList: true, subtree: true</code></pre>
-		<!-- @todo Cas d’usage : Des listes qui s’alimentent toutes seules au scroll -->
+		<h3>Cas d’usage</h3>
+		<p>
+			Supposez que vous ajoutiez des colonnes ou contenus dans un tableau dynamique…
+			Mais vous ne faites pas ça, n’est-ce pas&nbsp;?
+		</p>
 	</section>
 
-	<section id="slide-16" data-note="10m">
-		<h2>Le vampire <span aria-hidden="true">&nbsp;🧛🏿</span></h2>
-		<p class="lead">Il faut se méfier des types encapuchonnés avec un grand bâton.</p>
-		<!-- @todo Contenu ? Gif animé ? -->
+	<section id="slide-16" data-note="8m">
+		<h2>Le vampire</h2>
+		<p class="lead">Il faut aussi se méfier des types avec un sourire qui déborde.</p>
+		<div class="portrait" aria-hidden="true">🧛🏿</div>
 	</section>
 
-	<section id="slide-17" data-note="5m">
+	<section id="slide-17" data-note="3m">
 		<h2>Les valeurs disparues</h2>
 		<p class="lead">Se souvenir du passé, ça peut aider.</p>
 		<pre><code>attributeOldValue: true</code></pre>
 		<pre><code>mutation.oldValue.includes('mutant')</code></pre>
-		<!-- @todo Cas d’usage : Une classe .open / .show qui s’en va, induisant la fermeture de l’élément -->
+		<p>On peut aussi affiner&nbsp;:</p>
+		<pre><code>mutation.attributeName === 'class'</code></pre>
+		<h3>Cas d’usage</h3>
+		<p>
+			Vous avez connu l’époque des classes <code>.open</code> et <code>.show</code>
+			pour afficher ou masquer un élément —&nbsp;et aucun autre changement dans le DOM&nbsp;?
+		</p>
 	</section>
 
-	<section id="slide-18" data-note="10m">
-		<h2>Le vieillissement <span aria-hidden="true">&nbsp;☠️</span></h2>
+	<section id="slide-18" data-note="8m">
+		<h2>Le vieillissement</h2>
 		<p class="lead">Vous ne l’aviez pas vu venir, hein&nbsp;?</p>
-		<!-- @todo Contenu ? Gif animé ? -->
+		<div class="portrait" aria-hidden="true">☠️</div>
 	</section>
 
-	<section id="slide-19" data-note="5m">
-		<h2>Les valeurs disparues</h2>
-		<p class="lead">Se souvenir du passé, ça peut aider.</p>
+	<section id="slide-19" data-note="3m">
+		<h2>Les caractères disparus</h2>
+		<p class="lead">C’est presque un cercle, les caractères disparus.</p>
 		<pre><code>characterDataOldValue: true</code></pre>
 		<pre><code>mutation.oldValue === '💀'</code></pre>
-		<!-- @todo Cas d’usage : Un indicateur de robustesse qui masque une contrainte quand elle est franchie -->
+		<h3>Cas d’usage</h3>
+		<p>
+			Un composant de création de mot de passe qui enlève la description des contraintes franchies…
+			Vous n’avez jamais vu ça&nbsp;?
+		</p>
 	</section>
 
-	<section id="slide-20" data-note="20m">
+	<section id="slide-20" data-note="8m">
 		<h2>Le boss final</h2>
 		<p class="lead">C’est le moment de sauver des vies.</p>
-		<!-- @todo Contenu ? Gif animé ? -->
+		<div class="portrait" aria-hidden="true">🎆</div>
 	</section>
 
-	<section id="slide-21">
+	<section id="slide-21" data-note="5m">
+		<h2>Les solutions</h2>
+		<h3>Le bazooka</h3>
+		<pre><code>document.querySelectorAll('mu-tant:not([type=""])')
+	.forEach(mutant => mutant.remove());</code></pre>
+		<h3>Le précautionneux</h3>
+		<pre><code>if (mutation.target.nodeName === 'MU-TANT') {
+	mutation.target.remove();
+} else if (mutation.target.closest('mu-tant') !== undefined) {
+	mutation.target.closest('mu-tant').remove();
+}</code></pre>
+		<p>
+			Malgré toutes les options, on peut avoir du mal à trier les mutations.
+			Fort à propos, le type <code>MutationRecord</code> dispose de tout un tas de propriétés bien utiles.
+		</p>
+	</section>
+
+	<section id="slide-22">
 		<h2>Merci</h2>
 		<h3>Et à bientôt <span aria-hidden="true">&nbsp;&#128522;</span></h3>
-		<div>
-			<h4>Crédits</h4>
-			<ul>
-				<li>Emojis&nbsp;: <a hreflang="en" href="https://github.com/twitter/twemoji">Twemoji</a> —&nbsp;par Twitter&nbsp;;</li>
-				<li>Typographie de titraille&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/bello-pro">Bello Pro</a> —&nbsp;créée par <a hreflang="en" href="https://www.underware.nl/">Underware</a>&nbsp;;</li>
-				<li>Typographie de labeur&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/museo-slab">Museo Slab</a> —&nbsp;créée par <a hreflang="en" href="https://www.exljbris.com/">Exljbris</a>&nbsp;;</li>
-				<li>Moteur de présentation inspiré de <a hreflang="en" href="https://css-tricks.com/css-scroll-snap-slide-deck/">"<cite lang="en">CSS scroll-snap slide deck that supports live coding</cite>" de Stephanie Eckles sur Smashing Magazine</a>.</li>
-			</ul>
+		<div class="grid-2">
+			<div>
+				<h4>Crédits</h4>
+				<ul>
+					<li>Emojis&nbsp;: <a hreflang="en" href="https://github.com/twitter/twemoji">Twemoji</a> —&nbsp;par Twitter&nbsp;;</li>
+					<li>Typographie de titraille&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/bello-pro">Bello Pro</a> —&nbsp;créée par <a hreflang="en" href="https://www.underware.nl/">Underware</a>&nbsp;;</li>
+					<li>Typographie de labeur&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/museo-slab">Museo Slab</a> —&nbsp;créée par <a hreflang="en" href="https://www.exljbris.com/">Exljbris</a>&nbsp;;</li>
+					<li>Moteur de présentation inspiré de <a hreflang="en" href="https://css-tricks.com/css-scroll-snap-slide-deck/">"<cite lang="en">CSS scroll-snap slide deck that supports live coding</cite>" de Stephanie Eckles sur Smashing Magazine</a>.</li>
+				</ul>
+			</div>
+			<div class="m-auto">
+				<h4>Laissez votre <i lang="en">feedback</i></h4>
+				<p><a href="https://openfeedback.io/devfestnantes24/2024-10-17/linvasionduhtmlmutantatelier">
+					<img src="./jeu/assets/img/qr.svg" alt="Openfeedback" width="400" height="400" loading="lazy">
+				</a></p>
+		</div>
+
 		</div>
 	</section>
 </main>
 
-<div class="timer">
-	<span style="--time: 3600s"></span>h&nbsp;
-	<span style="--time: 60s"></span>m&nbsp;
-	<span style="--time: 1s"></span>s
+<div class="timer" style="--duration: 120;">
+	<div class="clock" role="presentation">
+		<span style="--time: 3600s"></span>h&nbsp;
+		<span style="--time: 60s"></span>m&nbsp;
+		<span style="--time: 1s"></span>s
+	</div>
 </div>
 
-<script src="../sliide/js/prism.min.js"></script>
-<script src="../accesslide/js/twemoji.min.js"></script>
 <script>
 	let view;
 	switchSlide = (id) => {

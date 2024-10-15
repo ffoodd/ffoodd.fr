@@ -31,12 +31,14 @@
 				<form>
 					<label for="options" class="sr-only">Options de la méthode <code>observe()</code></label>
 					<pre role="presentation"><code>observer.observe(document.querySelector("mu-tant"), {</code></pre>
+					<!-- @fixme Ajouter un pattern sur chaque champ -->
 					<input type="text" id="options"
 								 autocomplete="off"
 								 autocorrect="off"
 								 autocapitalize="none"
 								 spellcheck="false"
 								 enterkeyhint="send"
+								 minlength="18"
 								 required>
 					<pre role="presentation"><code>});</code></pre>
 					<p><button>Feu&nbsp;!</button></p>
