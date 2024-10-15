@@ -39,7 +39,7 @@ class CodeRunner extends HTMLElement {
 				this.dispatchEvent(voightkampff);
 				break;
 			case 'error':
-				// @todo Message d’erreur associé au champ de saisie (?)
+				console.error('Une erreur s’est glissée dans votre réponse.')
 				break;
 			default:
 				break;
