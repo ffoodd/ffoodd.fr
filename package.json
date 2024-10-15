@@ -8,10 +8,6 @@
 		"start": "eleventy --serve",
 		"build": "eleventy",
 		"build:debug": "DEBUG=Eleventy* eleventy",
-		"wp:migrate": "concurrently \"wp:migrate:*\"",
-		"wp:migrate:posts": "node scripts/posts.js",
-		"wp:migrate:pages": "node scripts/pages.js",
-		"wp:migrate:comments": "node scripts/comments.js",
 		"docs:lint": "link-checker ./docs/ --disable-external",
 		"docs:lint:external": "link-checker ./docs/ --external-only --http-timeout 30000 --http-status-ignore 301,302"
 	},
@@ -27,15 +23,12 @@
 		"@11ty/eleventy-plugin-rss": "^1.2.0",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
 		"@mdit/plugin-img-size": "^0.8.0",
-		"concurrently": "^8.2.2",
 		"eleventy-plugin-toc": "^1.1.5",
-		"json-to-frontmatter-markdown": "^1.0.0",
 		"link-checker": "^1.4.2",
 		"markdown-it-anchor": "^9.0.1",
 		"markdown-it-footnote": "^4.0.0",
 		"markdown-it-image-figures": "^2.1.1",
 		"patch-package": "^8.0.0",
-		"string": "^3.3.3",
-		"turndown": "^7.2.0"
+		"string": "^3.3.3"
 	}
 }
