@@ -50,6 +50,15 @@
 		src: local('Twemoji Mozilla'), url('./assets/fonts/Twemoji.woff2') format('woff2');
 	}
 
+	@font-palette-values --syntaxHighlighter {
+		font-family: 'FontWithASyntaxHighlighter';
+		override-colors:
+			0 var(--foreground),
+			4 rebeccapurple,
+			5 var(--accent),
+			7 var(--muted);
+	}
+
 	@font-face {
 		font-display: swap;
 		font-family: 'FontWithASyntaxHighlighter';
@@ -77,16 +86,6 @@
 		scroll-behavior: smooth;
 	}
 
-	@font-palette-values --syntaxHighlighter {
-		font-family: 'FontWithASyntaxHighlighter';
-		override-colors:
-			0 var(--foreground),
-			4 rebeccapurple,
-			5 var(--accent),
-			7 var(--muted),
-		;
-	}
-
 	*,
 	*::after,
 	*::before {
@@ -97,7 +96,7 @@
 		accent-color: var(--accent);
 		background: var(--background);
 		color: #fff;
-		font: normal 400 1.5rem/1.5 sans-serif;
+		font: normal 400 1.25rem/1.5 sans-serif;
 		font-family: 'Zilla Slab', system-ui, sans-serif;
 		margin: 0;
 		min-block-size: 100vh;
@@ -219,7 +218,7 @@
 	input, textarea {
 		font-family: 'FontWithASyntaxHighlighter', monospace;
 		font-palette: --syntaxHighlighter;
-		font-size: 1.5rem;
+		font-size: 1.15rem;
 	}
 
 	pre {
@@ -242,14 +241,12 @@
 	}
 
 	form[method="dialog"] {
-		display: flex;
-		gap: 2rem;
 		inline-size: 100%;
-		justify-content: end;
+		text-align: center;
 	}
 
-	form p {
-		text-align: end;
+	fieldset {
+		border: 0;
 	}
 
 	input,
@@ -309,12 +306,34 @@
 	[id="fonction"] {
 		min-block-size: 8lh;
 	}
+
+	@media screen and (min-width: 60rem) {
+		body {
+			font-size: 1.5rem;
+		}
+
+		pre, code, var, samp,
+		input, textarea {
+			font-size: 1.5rem;
+		}
+
+		form p {
+			text-align: end;
+		}
+
+		form[method="dialog"] {
+			display: flex;
+			gap: 2rem;
+			justify-content: end;
+		}
+	}
 }
 
 @layer layout {
 	body {
 		display: grid;
-		grid-template: 10rem auto / 1fr 1fr;
+		grid-template-rows: 8rem 1fr 1fr;
+		max-inline-size: 100vw;
 	}
 
 	.splash {
@@ -324,6 +343,7 @@
 
 	main {
 		grid-area: 2 / 1;
+		max-inline-size: 100vw;
 		padding: 1rem;
 	}
 
@@ -331,12 +351,6 @@
 	auto-portrait form {
 		display: block;
 		inline-size: 100%;
-	}
-
-	auto-portrait fieldset {
-		align-items: center;
-		border: 0;
-		display: flex;
 	}
 
 	auto-portrait legend {
@@ -371,9 +385,8 @@
 		background-color: color-mix(in srgb, var(--background) 75%, #000);
 		border-radius: .5rem;
 		contain: strict;
-		grid-area: 1 / 2 / span 2 / 2;
+		grid-row: 3 / 3;
 		margin: 1rem;
-		min-block-size: calc(100vh - 2rem);
 		overflow: hidden;
 		position: relative;
 	}
@@ -451,8 +464,33 @@
 
 	code-runner,
 	train-er {
+		background:
+			local linear-gradient(to right, var(--background) 30%, transparent) 0 0/2.5rem 100% no-repeat,
+			local linear-gradient(to right, transparent, var(--background) 70%) 100%/2.5rem 100% no-repeat,
+			scroll radial-gradient(farthest-side at 0% 50%, #000, transparent) 0 0/1rem 100% no-repeat,
+			var(--background) scroll radial-gradient(farthest-side at 100% 50%, #000, transparent) 100%/1rem 100% no-repeat;
 		display: block;
 		inline-size: 100%;
+		overflow-x: scroll;
+		overflow-y: hidden;
+		-webkit-overflow-scrolling: touch;
+		scroll-snap-type: both mandatory;
+	}
+
+	@media screen and (min-width: 60rem) {
+		body {
+			grid-template: 10rem auto / 1fr 1fr;
+		}
+
+		play-ground {
+			grid-area: 1 / 2 / span 2 / 2;
+			min-block-size: calc(100vh - 2rem);
+		}
+
+		auto-portrait fieldset {
+			align-items: center;
+			display: flex;
+		}
 	}
 }
 
@@ -487,7 +525,7 @@
 	h1 {
 		color: var(--accent);
 		font-family: 'Luckiest Guy', system-ui, sans-serif;
-		font-size: 4rem;
+		font-size: 3rem;
 		line-height: 1;
 		padding: 1rem;
 		transform:
@@ -500,31 +538,58 @@
 	h1::first-line {
 		color: var(--foreground);
 		font-family: 'Zilla Slab', system-ui, sans-serif;
-		font-size: 1.75rem;
-		line-height: 2;
+		font-size: 1.5rem;
+		line-height: 1.875;
 	}
 
 	.splash h1 {
-		font-size: 8rem;
+		font-size: 6rem;
 		transform:
-			perspective(50rem)
-			rotateY(48deg)
-			rotateX(24deg);
-		transform-origin: 50%;
+			perspective(12rem)
+			rotateY(12deg)
+			rotateX(6deg)
+			translateX(10vw)
+			scale(1.25);
+	}
+
+	.splash h1::first-line {
+		font-size: 2.5rem;
+	}
+
+	@media screen and (min-width: 60rem) {
+		h1 {
+			font-size: 4rem;
+		}
+
+		h1::first-line {
+			font-size: 1.75rem;
+			line-height: 2;
+		}
+
+		.splash h1 {
+			font-size: 8rem;
+			transform:
+				perspective(48rem)
+				rotateY(48deg)
+				rotateX(24deg);
+			transform-origin: 50%;
+		}
+
+		.splash h1::first-line {
+			font-size: 4rem;
+		}
 	}
 
 	.splash main {
+		max-inline-size: inherit;
 		padding-block-start: 0;
 		text-align: end;
 	}
 
-	.splash h1::first-line {
-		font-size: 4rem;
-		line-height: 1.5;
-	}
-
 	footer {
 		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
 		margin-block-start: 6rem;
 	}
 
@@ -537,6 +602,7 @@
 		display: flex;
 		filter: invert(1);
 		list-style: none;
+		padding: 0;
 	}
 
 	.networks > :last-child img {
@@ -572,23 +638,40 @@
 		border-radius: .5rem;
 		display: flex;
 		gap: 2rem;
-		margin-block-end: 4rem;
+		margin-block-end: 2rem;
 		padding: 1rem;
 	}
 
 	.portrait {
 		aspect-ratio: 1;
-		block-size: 6rem;
-		font: 6rem / 1 'Twemoji Mozilla', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', sans-serif;
+		block-size: 4rem;
+		font: 4rem / 1 'Twemoji Mozilla', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', sans-serif;
 		margin: 0;
 		overflow: hidden;
 	}
 
 	.description {
-		font-size: 1.5rem;
-		inline-size: calc(100% - 6rem);
-		line-height: 1.25;
+		font-size: 1rem;
+		inline-size: calc(100% - 4rem);
+		line-height: 1.15;
 		margin: 0;
+	}
+
+	@media screen and (min-width: 60rem) {
+		.carte {
+			margin-block-end: 4rem;
+		}
+
+		.portrait {
+			block-size: 6rem;
+			font-size: 6rem;
+		}
+
+		.description {
+			font-size: 1.5rem;
+			inline-size: calc(100% - 6rem);
+			line-height: 1.25;
+		}
 	}
 }
 
