@@ -31,13 +31,15 @@
 			outline: 0;
 		}
 
-		.portrait {
-			font-family: 'Twemoji Mozilla', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', sans-serif;
-			font-size: 80vh;
-			inset-block-start: 10vh;
-			inset-inline-end: 10vh;
-			line-height: 80vh;
-			position: absolute;
+		@media screen and (min-width: 60rem) {
+			.portrait {
+				font-family: 'Twemoji Mozilla', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', sans-serif;
+				font-size: 80vh;
+				inset-block-start: 10vh;
+				inset-inline-end: 10vh;
+				line-height: 80vh;
+				position: absolute;
+			}
 		}
 	</style>
 </head>
@@ -85,7 +87,6 @@
 	<section id="slide-2" data-note="5m">
 		<h2>Le décor</h2>
 		<p class="lead">Préparez-vous à découvrir un script qui vous fera baliser&nbsp;!</p>
-		<div class="portrait" aria-hidden="true">🖼️</div>
 		<ol>
 			<li>Lancez <a href="https://ffoodd.fr/devfest.2024/jeu/">le jeu</a> dans votre navigateur favori.</li>
 			<li>Démarrez votre inspecteur, avec <kbd>F12</kbd> ou <kbd>Maj</kbd>+<kbd>Ctrl</kbd>+<kbd>i</kbd>.</li>
@@ -96,6 +97,7 @@
 	<section id="slide-3" data-note="5m">
 		<h2>Le héros</h2>
 		<p class="lead">Parce que c’est vous, le héros. Ça change, un peu.</p>
+		<!-- @fixme Déplacer les portraits dans les titre -->
 		<div class="portrait" aria-hidden="true">🦸🏿</div>
 		<p>Chaque niveau aura la même structure&nbsp;:</p>
 		<ul>

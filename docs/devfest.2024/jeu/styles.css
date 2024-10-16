@@ -84,7 +84,7 @@
 			4 rebeccapurple,
 			5 var(--accent),
 			7 var(--muted),
-	;
+		;
 	}
 
 	*,
@@ -96,7 +96,7 @@
 	body {
 		accent-color: var(--accent);
 		background: var(--background);
-		color: var(--foreground);
+		color: #fff;
 		font: normal 400 1.5rem/1.5 sans-serif;
 		font-family: 'Zilla Slab', system-ui, sans-serif;
 		margin: 0;
@@ -104,7 +104,6 @@
 		overflow-x: hidden;
 		position: relative;
 		-webkit-font-smoothing: subpixel-antialiased;
-		text-rendering: optimizeSpeed;
 	}
 
 	::selection {
@@ -314,7 +313,6 @@
 
 @layer layout {
 	body {
-		color: #fff;
 		display: grid;
 		grid-template: 10rem auto / 1fr 1fr;
 	}
@@ -336,6 +334,7 @@
 	}
 
 	auto-portrait fieldset {
+		align-items: center;
 		border: 0;
 		display: flex;
 	}
@@ -582,10 +581,12 @@
 		block-size: 6rem;
 		font: 6rem / 1 'Twemoji Mozilla', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', sans-serif;
 		margin: 0;
+		overflow: hidden;
 	}
 
 	.description {
 		font-size: 1.5rem;
+		inline-size: calc(100% - 6rem);
 		line-height: 1.25;
 		margin: 0;
 	}
