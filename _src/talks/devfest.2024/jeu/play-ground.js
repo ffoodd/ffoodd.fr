@@ -17,11 +17,11 @@ class PlayGround extends HTMLElement {
 
 		this.spyer = new MutationObserver(mutations => {
 			for (const mutation of mutations) {
-				if (mutation.addedNodes.length && document.querySelectorAll('mu-tant').length >= 100) {
+				if (this.over && mutation.addedNodes.length && document.querySelectorAll('mu-tant').length >= 100) {
 					this._gameOver();
 				}
 
-				if (mutation.removedNodes.length && this._isMutant(mutation.removedNodes[0])) {
+				if (this.portal && mutation.removedNodes.length && this._isMutant(mutation.removedNodes[0])) {
 					if (!document.querySelector('mu-tant')) {
 						this._nextLevel();
 					} else if ((this.type === 'all' && !document.querySelector('mu-tant:not([type=""])'))) {
@@ -42,14 +42,16 @@ class PlayGround extends HTMLElement {
 					event.detail.data.fonction,
 					event.detail.type
 				);
-				if (event.detail.data.fonction === '') {
-					this.timeout = setTimeout(() => this._replay(), 2000);
-				} else {
-					this.timeout = setTimeout(() => {
-						if (this.querySelectorAll('mu-tant:not([type=""])').length) {
-							this._replay();
-						}
-					}, 2000);
+				if (this.replay) {
+					if (event.detail.data.fonction === '') {
+						this.timeout = setTimeout(() => this._replay(), 2000);
+					} else {
+						this.timeout = setTimeout(() => {
+							if (this.querySelectorAll('mu-tant:not([type=""])').length) {
+								this._replay();
+							}
+						}, 2000);
+					}
 				}
 				break;
 			case 'close':
