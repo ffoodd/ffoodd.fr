@@ -28,7 +28,10 @@
 
 			<code-runner type="json">
 				<form>
-					<label for="condition" class="sr-only">Condition à remplir pour supprimer la mutation</label>
+					<label for="condition" class="sr-only">
+						Condition à remplir par une mutation pour supprimer la cible de la mutation
+						et interrompre l’observation.
+					</label>
 					<pre role="presentation"><code>const death = new MutationObserver(mutations => {
 	for (const mutation of mutations) {
 		if (									) {
@@ -45,7 +48,10 @@
 								 enterkeyhint="send"
 								 required>
 
-					<label for="options" class="sr-only">Options de la méthode <code>observe()</code></label>
+					<label for="options" class="sr-only">
+						Options de la méthode <code>observe()</code>, dont le premier argument
+						est <code>document.querySelector("mu-tant")</code>.
+					</label>
 					<pre role="presentation"><code>death.observe(document.querySelector("mu-tant"), {</code></pre>
 					<input type="text" id="options"
 								 autocomplete="off"

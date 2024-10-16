@@ -28,7 +28,10 @@
 
 			<code-runner type="callback">
 				<form>
-					<label for="fonction" class="sr-only">Condition à remplir pour supprimer la mutation</label>
+					<label for="fonction" class="sr-only">
+						Code JavaScript à déclencher dans la fonction de rappel pour chaque mutation,
+						avec pour objectif de supprimer les mutants.
+					</label>
 					<pre role="presentation"><code>const death = new MutationObserver(mutations => {
 	for (const mutation of mutations) {</code></pre>
 					<textarea id="fonction"

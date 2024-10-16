@@ -36,7 +36,10 @@
 });
 
 observer.        (document.body, {});</code></pre>
-					<label class="sr-only" for="constructor">Constructeur</label>
+					<label class="sr-only" for="constructor">
+						Constructeur, affecté à une constante <code>observer</code>
+						et qui prend en argument une fonction de rappel qui récupère les mutations.
+					</label>
 					<input type="text" id="constructor"
 								 autocomplete="off"
 								 autocorrect="off"
@@ -47,7 +50,10 @@ observer.        (document.body, {});</code></pre>
 								 maxlength="20" minlength="20"
 								 required>
 
-					<label class="sr-only" for="disconnect">Déconnexion</label>
+					<label class="sr-only" for="disconnect">
+						Nom de la méthode qui permet d’arrêter l’observation.
+						Dans notre exemple, elle est déclenchée dans la fonction de rappel.
+					</label>
 					<input type="text" id="disconnect"
 								 autocomplete="off"
 								 autocorrect="off"
@@ -58,7 +64,10 @@ observer.        (document.body, {});</code></pre>
 								 maxlength="10" minlength="10"
 								 required>
 
-					<label class="sr-only" for="observe">Observation</label>
+					<label class="sr-only" for="observe">
+						Nom de la méthode qui permet de démarrer l’observation.
+						Elle prend en argument un élément, et des options formalisées en JSON.
+					</label>
 					<input type="text" id="observe"
 								 autocomplete="off"
 								 autocorrect="off"
