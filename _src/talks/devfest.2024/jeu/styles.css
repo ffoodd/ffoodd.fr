@@ -254,7 +254,7 @@
 		background-color: color-mix(in srgb, var(--background) 75%, #000);
 		border: 1px solid var(--accent);
 		border-radius: .25rem;
-		font-size: 1.5rem;
+		font-size: 1.15rem;
 		margin-block: .5rem;
 		margin-inline-start: calc(4ch * var(--tabs, 1));
 		padding: 0 .5rem;
@@ -279,28 +279,28 @@
 	[id="constructor"] {
 		--tabs: 4;
 		inline-size: 21ch;
-		translate: .75ch -15.5rem;
+		translate: .75ch -12rem;
 	}
 
 	[id="disconnect"] {
 		--tabs: 4;
 		inline-size: 11ch;
-		translate: .875ch -12.875rem;
+		translate: .875ch -10.25rem;
 	}
 
 	[id="observe"] {
 		--tabs: 0;
 		inline-size: 8ch;
-		translate: -18.5ch -5.5rem;
+		translate: -18.5ch -4.5rem;
 	}
 
 	[id="observe"] + p {
-		margin-block-start: -5rem;
+		margin-block-start: -3rem;
 	}
 
 	[id="condition"] {
 		--tabs: 4;
-		translate: -3.75ch -11.75rem;
+		translate: -3.75ch -9.25rem;
 	}
 
 	[id="fonction"] {
@@ -325,6 +325,27 @@
 			display: flex;
 			gap: 2rem;
 			justify-content: end;
+		}
+
+		[id="constructor"] {
+			translate: .75ch -15.5rem;
+		}
+
+		[id="disconnect"] {
+			translate: .875ch -12.875rem;
+		}
+
+		[id="observe"] {
+			translate: -18.5ch -5.5rem;
+		}
+
+		[id="observe"] + p {
+			margin-block-start: -5rem;
+		}
+
+		[id="condition"] {
+			--tabs: 4;
+			translate: -3.75ch -11.75rem;
 		}
 	}
 }
