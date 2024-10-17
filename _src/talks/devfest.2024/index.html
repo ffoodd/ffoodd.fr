@@ -167,8 +167,9 @@
 		<pre><code>characterData: true</code></pre>
 		<h3>Cas d’usage</h3>
 		<p>
-			Imaginez un peu&nbsp;: un bouton dont l’intitulé change,
-			mais pas d’état ni de classe auxquels s’accrocher&nbsp;?
+			Imaginez un peu&nbsp;: un bouton dont l’intitulé change, mais pas d’état ni de classe auxquels s’accrocher&nbsp;?
+			Ou mieux, vous faites vos <i lang="en">slides</i> en HTML, avec une vue présentateur que vous
+			voulez synchroniser sur votre pagination.
 		</p>
 	</section>
 
@@ -185,8 +186,10 @@
 		<h3>Cas d’usage</h3>
 		<p>
 			Un contenu injecté inopinément —&nbsp;au hasard,
-			lors d’un <i lang="en">scroll</i> infini&nbsp;— c’est irritant&nbsp;!
+			lors d’un <i lang="en">scroll</i> infini&nbsp;— c’est irritant&nbsp;! Ou encore&nbsp;: une <code>iframe</code>
+			dont vous devriez ajuster la hauteur en fonction de son contenu…
 		</p>
+		<p class="small">Ceci n’est pas inspiré de faits réels, évidemment&nbsp;!</p>
 	</section>
 
 	<section id="slide-12" data-note="8m">
@@ -201,9 +204,11 @@
 		<pre><code>attributeFilter: ['id']</code></pre>
 		<h3>Cas d’usage</h3>
 		<p>
-			Dans un formulaire Angular, où beaucoup d’attributs sont reflétés et changent à la moindre interaction…
-			Filtrer en amont les attributs à surveiller est bien commode.
+			Imaginez un <i lang="en">framework</i> qui indique l’état invalide d’un champ de formulaire
+			avec une classe, mais sans <code>aria-invalid</code>&nbsp;? Vous savez comment <i lang="en">patcher</i> ça,
+			maintenant.
 		</p>
+		<p class="small">Toute ressemblance avec des <i lang="en">frameworks</i> serait purement fortuite.</p>
 	</section>
 
 	<section id="slide-14" data-note="8m">
@@ -218,8 +223,8 @@
 		<pre><code>childList: true, subtree: true</code></pre>
 		<h3>Cas d’usage</h3>
 		<p>
-			Supposez que vous ajoutiez des colonnes ou contenus dans un tableau dynamique…
-			Mais vous ne faites pas ça, n’est-ce pas&nbsp;?
+			Le saviez-vous&nbsp;? Un WebComponent ne peut pas émettre un événement en disparaissant…
+			Donc si vous voulez déclencher quelque chose, vous saurez comment faire&nbsp;!
 		</p>
 	</section>
 
@@ -240,7 +245,9 @@
 		<p>
 			Vous avez connu l’époque des classes <code>.open</code> et <code>.show</code>
 			pour afficher ou masquer un élément —&nbsp;et aucun autre changement dans le DOM&nbsp;?
+			Ou un script tiers qui fait des trucs sans émettre d’événements&nbsp;?
 		</p>
+		<p class="small">Bien entendu, ce sujet est une pure fiction.</p>
 	</section>
 
 	<section id="slide-18" data-note="8m">
@@ -285,6 +292,25 @@
 	</section>
 
 	<section id="slide-22">
+		<h2>Mais encore&nbsp;?</h2>
+		<p class="lead">Les <code>MutationObserver</code> ne sont pas seuls&nbsp;!</p>
+		<ul>
+			<li>
+				Les <code>IntersectionObserver</code> permettent de surveiller les collisions
+				visuelles entre éléments&nbsp;;
+			</li>
+			<li>
+				Les <code>ResizeObserver</code> permettent de surveiller les changements
+				de dimensions d’un élément&nbsp;;
+			</li>
+			<li>
+				Les <code>PerformanceObserver</code> permettent de surveiller différents
+				indicateurs de performance et de les consigner dans les <i lang="en">logs.</i>
+			</li>
+		</ul>
+	</section>
+
+	<section id="slide-23">
 		<h2>Merci</h2>
 		<h3>Et à bientôt <span aria-hidden="true">&nbsp;&#128522;</span></h3>
 		<div class="grid-2">
