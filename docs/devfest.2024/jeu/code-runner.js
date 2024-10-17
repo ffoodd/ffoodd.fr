@@ -9,21 +9,39 @@ class CodeRunner extends HTMLElement {
 		this.form = this.querySelector('form');
 		this.form.addEventListener('submit', this);
 		window.addEventListener('error', this);
+		document.addEventListener('beforeunload', this);
 
 		this.type = this.hasAttribute('type') ? this.getAttribute('type') : 'json';
+	}
+
+	connectedCallback() {
+		this.level = document.querySelector('h1').innerText.split(' ')[1].split('\n')[0];
+
+		['options', 'condition', 'fonction']
+			.map(field => {
+				const value = localStorage.getItem(`${this.level}-${field}`);
+				if (value) {
+					this.form[field].value = value;
+				}
+			});
 	}
 
 	handleEvent(event) {
 		switch (event.type) {
 			case 'submit':
 				event.preventDefault();
-				let questions = this.form.options ? this.form.options.value : '"attributes": true, "childList": true';
-				let condition = this.form.condition ? this.form.condition.value : '';
-				let fonction = this.form.fonction ? this.form.fonction.value : '';
+				const defaultOptions = '"attributes": true, "childList": true';
+				let questions = this.form?.options ? this.form.options.value : defaultOptions;
+				let condition = this.form?.condition ? this.form.condition.value : '';
+				let fonction = this.form?.fonction ? this.form.fonction.value : '';
 
 				if (this.type === 'json') {
 					questions = this._normalizeJson(questions);
 				}
+
+				if (questions !== defaultOptions) localStorage.setItem(`${this.level}-options`, questions);
+				if (condition !== '') localStorage.setItem(`${this.level}-condition`, condition);
+				if (fonction !== '') localStorage.setItem(`${this.level}-fonction`, fonction);
 
 				let voightkampff = new CustomEvent('voightkampff', {
 					bubbles: true,
