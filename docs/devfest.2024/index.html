@@ -280,7 +280,7 @@
 		<pre><code>document.querySelectorAll('mu-tant:not([type=""])')
 	.forEach(mutant => mutant.remove());</code></pre>
 		<h3>Le précautionneux</h3>
-		<pre><code>if (mutation.target.nodeName === 'MU-TANT') {
+		<pre><code>if (mutation.target.nodeName === 'MU-TANT' && mutation.target.type !== '') {
 	mutation.target.remove();
 } else if (mutation.target.closest('mu-tant') !== undefined) {
 	mutation.target.closest('mu-tant').remove();
