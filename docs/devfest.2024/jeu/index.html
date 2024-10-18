@@ -10,7 +10,7 @@
 		<link rel="preload" as="font" href="/assets/fonts/ZillaSlab-Regular.woff2">
 		<link rel="preload" as="font" href="/assets/fonts/LuckiestGuy-Regular.woff2">
 		<link rel="preload" as="font" href="/assets/fonts/FontWithASyntaxHighlighter-Regular.woff2">
-		<link rel="preload" as="font" href="/assets/fonts/Twemoji.woff2">
+		<link rel="preload" as="font" href="./assets/fonts/Twemoji.woff2">
 		<link rel="stylesheet" href="styles.css" media="screen">
 	</head>
 	<body class="splash">
@@ -19,7 +19,67 @@
 		</header>
 
 		<main role="main">
+			<button type="button" onclick="rules.showModal()">Règles du jeu</button>
 			<a href="0-0/index.html">Démarrer</a>
+
+			<dialog id="rules" role="dialog" aria-labelledby="rules-heading">
+				<h2 id="rules-heading">Règles du jeu</h2>
+				<h3>Organisation de l’interface</h3>
+				<p>Quand vous démarrez le jeu, chaque niveau est structuré de la même façon, sur deux colonnes&nbsp;:</p>
+				<ol>
+					<li>
+						À gauche, de haut en bas&nbsp;:
+						<ol>
+							<li>Le nom du niveau en haut&nbsp;;</li>
+							<li>La présentation du personnage central, le mutant, sous le nom du niveau&nbsp;;</li>
+							<li>Un formulaire.</li>
+						</ol>
+					</li>
+					<li>À droite&nbsp;: la scène où se déroule l’invasion. Les décors sont simplistes, mais l’invasion est réelle&nbsp;!</li>
+				</ol>
+				<h3>Les niveaux</h3>
+				<p>
+					Le palier zéro vous permet de vous familiariser avec l’interface.
+					Puis les paliers suivants sont le jeu à proprement parler, avec une difficulté croissante&nbsp;:
+					des mutants envahissent la scène, et vous devez utiliser votre inspecteur pour repérer leur mutation.
+				</p>
+				<p>
+					L’objectif de chaque niveau est de configurer un <code>MutationObserver</code> pour qu’il détecte les mutations.
+					Une fonction de rappel est déclenchée automatiquement pour supprimer les mutants si votre configuration est correcte.
+				</p>
+				<h3>Les interactions</h3>
+				<p>
+					Le code est exécuté tel quel, il est donc possible que plusieurs solutions fonctionnent.
+				</p>
+				<p>
+					Chaque niveau est limité à cent mutants. Au-delà, une modale
+					vous informera de votre échec et vous proposera de rejouer.
+					Vous reprendrez sur le niveau en cours, pas au début.
+				</p>
+				<p>
+					Lors d’une soumission, si elle n’a aucun effet en l’espace de deux secondes, on considère que la réponse
+					est incorrecte et la même modale apparaîtra pour vous proposer de rejouer.
+				</p>
+				<p>
+					Une réponse correcte entraînera immédiatement l’élimination de certains mutants, mais comme l’élimination
+					se produit en cas de mutation et qu’elles ont lieu dans des intervalles de temps aléatoires, l’éradication
+					des mutants peut prendre quelques instants… Patientez jusqu’à la fin, une modale apparaîtra automatiquement
+					quand il n’y a plus de mutants pour vous proposer d’atteindre le niveau suivant.
+				</p>
+				<p>
+					Le boss final est plus corsé, évidemment&nbsp;: vous devrez écrire la fonction de rappel pour éliminer tous
+					les mutants, mais conserver les humains en vie&nbsp;! Si vous ne laissez aucun survivant, ce sera un échec.
+				</p>
+				<h3>Démarrage</h3>
+				<p>
+					Voilà, vous êtes fin prêts&nbsp;! Faites chauffer votre inspecteur, vous en aurez grandement besoin.
+					La console pourrait vous servir, aussi&nbsp;: jetez-y un œil en cas de difficulté.
+				</p>
+				<form method="dialog">
+					<button>Fermer</button>
+					<a href="0-0/index.html">Démarrer</a>
+				</form>
+			</dialog>
 		</main>
 
 		<footer role="contentinfo" itemscope itemtype="https://schema.org/Person">
