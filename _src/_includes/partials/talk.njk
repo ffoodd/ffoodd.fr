@@ -13,4 +13,8 @@
 		<dt>Vidéo</dt>
 		<dd><a href="{{ talk.replay }}">Regarder la vidéo de «&nbsp;{{ talk.title | safe }}&nbsp;»{% if "youtube.com" in talk.replay %} (sur YouTube){% elseif "vimeo.com" in talk.replay %} (sur Viméo){% endif %}</a></dd>
 	{% endif %}
+	{% if talk.game %}
+		<dt>Jeu</dt>
+		<dd><a href="{{ talk.game }}">Jouer au jeu «&nbsp;{{ talk.title | safe }}&nbsp;»</a></dd>
+	{% endif %}
 </dl>

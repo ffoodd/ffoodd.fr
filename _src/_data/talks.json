@@ -1,5 +1,13 @@
 [
 	{
+		"title": "L’invasion du HTML mutant",
+		"event": "DevFest Nantes 2024",
+		"date": "2024-10-17",
+		"link": "https://devfest2024.gdgnantes.com/sessions/l_invasion_du_html_mutant__atelier_/",
+		"slides": "https://www.ffoodd.fr/devfest.2024",
+		"game": "https://www.ffoodd.fr/devfest.2024/jeu"
+	},
+	{
 		"title": "Orange Confort+",
 		"event": "a11y Paris 2024",
 		"date": "2024-06-26",
