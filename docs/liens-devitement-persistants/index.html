@@ -8,7 +8,7 @@
 		<link rel="preload" as="font" href="/assets/fonts/museo-slab-300.woff2"><link rel="stylesheet" href="/assets/styles.min.css" media="all">
 		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
 		<meta name="description" content="&lt;a href=&quot;http://www.johanramon.fr&quot; target=&quot;_blank&quot; title=&quot;Le site de Johan Ramon (nouvelle fenêtre)&quot;&gt;Johan Ramon&lt;/a&gt; propose quelques techniques simples à mettre en oeuvre et améliorant significativement l&#39;accessibilité d&#39;un site - et il a eu la bonté de &lt;a href=&quot;http://www.johanramon.fr/accessibiliser-subtilite/&quot; target=&quot;_blank&quot; title=&quot;Les slides de la conférence de Johan Ramon (nouvelle fenêtre)&quot;&gt;mettre ses slides à disposition&lt;/a&gt; (et en &lt;abbr title=&quot;HyperText Markup Language&quot; lang=&quot;en&quot;&gt;HTML&lt;/abbr&gt; s&#39;il-vous-plaît).">
-		<meta name="generator" content="Eleventy v2.0.1">
+		<meta name="generator" content="Eleventy v3.0.0">
 		<link rel="icon" href="/favicon.ico" sizes="32x32">
 		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 		<link rel="author" href="/humans.txt" type="text/plain">
@@ -66,7 +66,7 @@
 <li><strong>aria-hidden à true :</strong> cet attribut permet de taire un élément dans les lecteurs d’écrans. La logique est la même que précédemment, à ceci près qu’on prendra soin de laisser le lien dont la vocalisation sera la plus pertinente : dans le cas d’une boucle WordPress, le lien présent dans les titres est idéal.</li>
 </ul>
 <p>En appliquant cette technique correctement, on divise par deux ou trois le nombre de liens à parcourir dans une liste d’articles. Vos utilisateurs vous remercieront 🙂 .</p>
-<h2 id="les-liens-devitement" tabindex="-1">Les liens d’évitement</h2>
+<h2 id="les-liens-d-evitement" tabindex="-1">Les liens d’évitement</h2>
 <p>Je ne reviendrais pas sur les bases de cette technique, qui est plus que documentée sur le web.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
 <ul>
 <li>La persistance des liens d’évitement après leur première prise de focus</li>
@@ -74,7 +74,7 @@
 </ul>
 <p>Concernant le second point, je ne l’ai pas encore implémenté sur ffoodd.fr pour la seule raison que je dois trouver un signifiant visuel cohérent avec mon design, mais ça ne saurait tarder 🙂 .</p>
 <p>Cependant la persistance des liens m’a particulièrement intéressé, car c’est un point que je trouve réellement bénéfique pour le confort d’utilisation. Même si je ne me sers de la tabulation que pour tester mes intégrations, il m’a toujours semblé désagréable de « perdre » ces liens.</p>
-<h2 id="la-persistance-des-liens-devitement" tabindex="-1">La persistance des liens d’évitement</h2>
+<h2 id="la-persistance-des-liens-d-evitement" tabindex="-1">La persistance des liens d’évitement</h2>
 <p>En recherchant plus d’informations sur cette technique, je suis tombé sur le blog de la société Atalan pour laquelle travaille Johan – et sur <a href="https://blog.atalan.fr/des-liens-devitement-astucieux/" title="Article sur les liens d’évitement astucieux (nouvelle fenêtre)">un article dédié au sujet</a>. Des ressources très intéressantes sont données, cependant toutes sont basées sur jQuery pour ajouter une classe aux liens après leur première prise de focus. <strong>Dommage, je n’utilise pas jQuery sur ffoodd.fr.</strong></p>
 <p>Voici donc le bout de code correspondant, en vanilla javascript :</p>
 <pre class="language-javascript" tabindex="0"><code class="language-javascript">
@@ -102,7 +102,7 @@ window<span class="token punctuation">.</span><span class="token function">addEv
     element<span class="token punctuation">.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h2 id="la-qualite-de-lexperience" tabindex="-1">La qualité de l’expérience</h2>
+<h2 id="la-qualite-de-l-experience" tabindex="-1">La qualité de l’expérience</h2>
 <p>Ce sont certes des détails, mais ces détails améliorent le confort de navigation et rendent un site agréable : l’internaute appréciera cette expérience, et reviendra (pour peu que vos contenus soient à la hauteur).</p>
 <ol class="footnotes-list small mt2 pt2 pb2">
 <li id="fn1" class="footnote-item"><p>Un article de Jean-Pierre Villain sur Alsacréations - il date de 2006 et est toujours (presque) d’actualités : https://www.alsacreations.com/tuto/lire/572-Les-liens-d-evitement.htm <a href="#fnref1" class="footnote-backref">↩︎</a></p>
@@ -185,7 +185,7 @@ Petite question : dans le cas d’une image présente dans un lien en html. Le a
 		<div class="aside pl2 pt2 pr3">
 			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
 			<div class="textwidget">
-				<ol><li><a href="#les-liens-similaires">Les liens similaires</a></li><li><a href="#les-liens-devitement">Les liens d’évitement</a></li><li><a href="#la-persistance-des-liens-devitement">La persistance des liens d’évitement</a></li><li><a href="#la-qualite-de-lexperience">La qualité de l’expérience</a></li><li><a href="#comments">Commentaires</a></li></ol>
+				<ol><li><a href="#les-liens-similaires">Les liens similaires</a></li><li><a href="#les-liens-d-evitement">Les liens d’évitement</a></li><li><a href="#la-persistance-des-liens-d-evitement">La persistance des liens d’évitement</a></li><li><a href="#la-qualite-de-l-experience">La qualité de l’expérience</a></li><li><a href="#comments">Commentaires</a></li></ol>
 			</div>
 		</div>
 	</aside>

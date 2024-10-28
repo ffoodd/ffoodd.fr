@@ -8,7 +8,7 @@
 		<link rel="preload" as="font" href="/assets/fonts/museo-slab-300.woff2"><link rel="stylesheet" href="/assets/styles.min.css" media="all">
 		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
 		<meta name="description" content="Il m&amp;apos;arrive souvent de devoir masquer visuellement du texte en le conservant accessible.">
-		<meta name="generator" content="Eleventy v2.0.1">
+		<meta name="generator" content="Eleventy v3.0.0">
 		<link rel="icon" href="/favicon.ico" sizes="32x32">
 		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 		<link rel="author" href="/humans.txt" type="text/plain">
@@ -115,7 +115,7 @@
 <h3 id="version-anglaise" tabindex="-1">Version anglaise</h3>
 <p><a href="https://twitter.com/KittyGiraudel">Kitty Giraudel</a> m’a fait l’honneur de <a href="https://kittygiraudel.com/2016/10/13/css-hide-and-seek/">traduire cet article en anglais et le publier sur son blog</a>. Merci !</p>
 <h2 id="modifications" tabindex="-1">Modifications</h2>
-<h3 id="les-lecteurs-decran-sur-mobile" tabindex="-1">Les lecteurs d’écran sur mobile</h3>
+<h3 id="les-lecteurs-d-ecran-sur-mobile" tabindex="-1">Les lecteurs d’écran sur mobile</h3>
 <p>19 octobre 2016</p>
 <p>Ayant besoin de tests sur cette version pour vérifier qu’elle n’introduit pas de régressions, <a href="https://twitter.com/johan_ramon/status/788372720224526336">Johan Ramon m’a remonté un bug étrange sur VoiceOver</a>. En creusant un peu avec <a href="https://github.com/PigeardSylvain">Sylvain Pigeard</a>, il nous est apparu que <code>position: static</code> posait problème lors de la prise de focus d’un lien ayant la classe <code>.sr-only-focusable</code>.</p>
 <p>Nous étions contents, lorsqu’en cherchant à avertir l’équipe de Bootstrap nous sommes tombés sur <a href="https://github.com/twbs/bootstrap/issues/20732">un ticket ouvert récemment qui implique également TalkBack</a>. <a href="https://twitter.com/patrick_h_lauke">Patrick H. Lauke</a>, en investiguant, a décelé de nombreuses incohérences dans la gestion du focus entre les diverses technologies d’assistance sur mobile. Il a ainsi ouvert des tickets un peu partout :</p>

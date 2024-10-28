@@ -8,7 +8,7 @@
 		<link rel="preload" as="font" href="/assets/fonts/museo-slab-300.woff2"><link rel="stylesheet" href="/assets/styles.min.css" media="all">
 		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
 		<meta name="description" content="Un champ requis et vide est invalide, n&amp;apos;est-ce pas&amp;nbsp;?">
-		<meta name="generator" content="Eleventy v2.0.1">
+		<meta name="generator" content="Eleventy v3.0.0">
 		<link rel="icon" href="/favicon.ico" sizes="32x32">
 		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 		<link rel="author" href="/humans.txt" type="text/plain">
@@ -61,7 +61,7 @@
 <h2 id="le-souci" tabindex="-1">Le souci</h2>
 <p>Lorsque vous appliquez des styles à un champ invalide (en utilisant la pseudo-classe <code>:invalid</code>), ils seront donc appliqués dès le chargement de la page si ce champ est également affublé de l’attribut <code>required</code>. Dommage !</p>
 <p>C’est ce qui a conduit <a href="https://nota-bene.org/">Stéphane Deschamps</a> à ouvrir <a href="https://github.com/w3c/html/issues/1073">une issue sur le Github du W3C</a>.</p>
-<h3 id="letat-indetermine" tabindex="-1">L’état indéterminé</h3>
+<h3 id="l-etat-indetermine" tabindex="-1">L’état indéterminé</h3>
 <p>Quelques échanges plus tard, on évoque l’existence de l’état indéterminé pour les cases à cocher, boutons radios et barres de progression <a href="https://www.w3.org/TR/html5/disabled-elements.html#selector-indeterminate">dans la spécification HTML5</a> qui pourrait porter le statu quo sur l’invalidité de notre champ. Cet état est facile à cibler en CSS à l’aide de la pseudo-classe <code>:indeterminate</code>.</p>
 <h3 id="le-brouillon-du-module-4-des-selecteurs" tabindex="-1">Le brouillon du module 4 des sélecteurs</h3>
 <p>Dans <a href="https://drafts.csswg.org/selectors-4/#user-pseudos">le brouillon du module de niveau 4 des sélecteurs CSS</a>, une nouvelle pseudo-classe tente de résoudre ce problème : <code>:user-invalid</code>. Vous noterez par ailleurs que le paragraphe descriptif n’est pas à jour puisqu’il évoque la première dénomination de ce nouveau sélecteur, à savoir <code>:user-error</code>.</p>

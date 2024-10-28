@@ -8,7 +8,7 @@
 		<link rel="preload" as="font" href="/assets/fonts/museo-slab-300.woff2"><link rel="stylesheet" href="/assets/styles.min.css" media="all">
 		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
 		<meta name="description" content="WordPress est un bon outil, pour qui sait s&#39;en servir. Parmi les défauts que je lui trouve, la gestion de la sémantique et de l’accessibilité sur le front-end sont assez sensibles. Voici le fruit de mes réflexions et recherches sur la thématique des images &amp;mdash; un thème sensible s’il en est.">
-		<meta name="generator" content="Eleventy v2.0.1">
+		<meta name="generator" content="Eleventy v3.0.0">
 		<link rel="icon" href="/favicon.ico" sizes="32x32">
 		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 		<link rel="author" href="/humans.txt" type="text/plain">
@@ -58,7 +58,7 @@
 		<time class="screen-reader-text" datetime="2013-11-12T16:32:51" itemprop="datePublished">12 novembre 2013</time>
 			<div itemprop="articleBody">
 				<p>Pour commencer, il faut comprendre une problématique de base en terme d’accessibilité : la distinction entre <strong>les images décoratives</strong> et <strong>les images porteuses de sens</strong>. Pour comprendre cette distinction et son importance, je vous recommande vivement la lecture d’<a href="https://www.ffoodd.fr/lecture-accessibilite-web/" title="Accessibilité web"><em>«Accessibilité web»</em></a> par <a href="https://www.armonyaltinier.fr/" title="Le site d’Armony Altinier (nouvelle fenêtre)">Armony Altinier</a>. Comme souvent lorsque nous parlons d’<strong>accessibilité web</strong>, il s’agit de bon sens : une image porteuse de sens doit être restituée à tous les utilisateurs, tandis qu’une image décorative ne doit être montrée qu’aux utilisateurs disposant d’un affichage graphique complet.</p>
-<h2 id="les-limites-de-wordpress" tabindex="-1">Les limites de WordPress</h2>
+<h2 id="les-limites-de-word-press" tabindex="-1">Les limites de WordPress</h2>
 <p>Tout le monde n’est pas sensible à ces questions, même s’il le faudrait : WordPress ne fait pas exception. Il donne cependant la possibilité à ses utilisateurs de servir des images de façon tout à fait correcte, en proposant de base pour tous les fichiers la capacité d’adjoindre un texte alternatif — ce qui remplit le critère principal des <a href="https://checklists.opquast.com/fr/" title="Les checklists Opquast (nouvelle fenêtre)">bonnes pratiques d’OpQuast</a> et permet de satisfaire la plupart des critères de niveau Bronze d’Accessiweb.</p>
 <p>Pour autant WordPress ne va pas plus loin :</p>
 <ul>
@@ -103,7 +103,7 @@
   <span class="token variable">$output</span> <span class="token operator">.=</span> ’<span class="token operator">&lt;</span><span class="token operator">/</span>figure<span class="token operator">></span>’<span class="token punctuation">;</span>
   <span class="token keyword">return</span> <span class="token variable">$output</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span></code></pre>
-<h2 id="lintervention-detaillee" tabindex="-1">L’intervention détaillée</h2>
+<h2 id="l-intervention-detaillee" tabindex="-1">L’intervention détaillée</h2>
 <p>La structure d’origine est conservée ; je détaille ce qui a été fait :</p>
 <ul>
 <li>Une couche sémantique HTML5 est appliquée en lieu et place du balisage «neutre» précédent : <code>figure</code> et <code>figcaption</code> ;</li>
@@ -140,7 +140,7 @@
 		<div class="aside pl2 pt2 pr3">
 			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
 			<div class="textwidget">
-				<ol><li><a href="#les-limites-de-wordpress">Les limites de WordPress</a></li><li><a href="#les-images-porteuses-de-sens">Les images porteuses de sens</a></li><li><a href="#lintervention-detaillee">L’intervention détaillée</a></li><li><a href="#mises-a-jour">Mises à jour</a></li></ol>
+				<ol><li><a href="#les-limites-de-word-press">Les limites de WordPress</a></li><li><a href="#les-images-porteuses-de-sens">Les images porteuses de sens</a></li><li><a href="#l-intervention-detaillee">L’intervention détaillée</a></li><li><a href="#mises-a-jour">Mises à jour</a></li></ol>
 			</div>
 		</div>
 	</aside>

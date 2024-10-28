@@ -8,7 +8,7 @@
 		<link rel="preload" as="font" href="/assets/fonts/museo-slab-300.woff2"><link rel="stylesheet" href="/assets/styles.min.css" media="all">
 		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
 		<meta name="description" content="Il est rare de sʼen servir de nos jours, je sais bien. Nʼempêche, je mʼen sers sur &lt;a href=&quot;https://github.com/ffoodd/a11y.css&quot; hreflang=&quot;en&quot;&gt;a11y.css&lt;/a&gt; et cʼest ma joie.">
-		<meta name="generator" content="Eleventy v2.0.1">
+		<meta name="generator" content="Eleventy v3.0.0">
 		<link rel="icon" href="/favicon.ico" sizes="32x32">
 		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 		<link rel="author" href="/humans.txt" type="text/plain">
@@ -62,7 +62,7 @@
 <p>Lʼélément <code>img</code> est ce quʼon appelle <strong>un élément remplacé</strong>. Je vous conseille à ce propos la lecture de « <a href="https://la-cascade.ghost.io/quest-ce-quun-element-remplace/">Qu’est-ce qu’un élément remplacé ?</a> », traduction en français sur La Cascade de « <a href="https://demosthenes.info/blog/461/What-The-Heck-Is-A-Replaced-Element#">What The Heck Is A Replaced Element?</a> » écrit par <a href="https://twitter.com/dudleystorey">Dudley Storey</a>.</p>
 <p>Cela signifie que la balise nʼest fonctionnelle que si le contenu qui est censé le remplacer est présent. Pour la plupart des éléments remplacés, ça a peu dʼincidence puisque cʼest le système qui sʼen charge — cʼest notamment le cas des éléments de formulaire tels que <code>input</code>, <code>textarea</code> ou <code>select</code>.</p>
 <p>En revanche dʼautres éléments ont besoin quʼon leur dise par quoi ils vont être remplacés, et le système nʼintervient pas. Cʼest donc le cas des <code>img</code>. Ainsi, si malencontreusement la source est introuvable, lʼélément nʼest pas remplacé et peut alors supporter les pseudos-éléments. Voilà, vous savez tout.</p>
-<h2 id="le-test-de-la-source-manquante-dans-a11ycss" tabindex="-1">Le test de la source manquante dans a11y.css</h2>
+<h2 id="le-test-de-la-source-manquante-dans-a11y-css" tabindex="-1">Le test de la source manquante dans a11y.css</h2>
 <p>Comble de lʼironie, ça fait bientôt deux ans que jʼapplique <a href="https://ffoodd.github.io/a11y.css/errors.html#no-src">un test dans a11y.css pour vérifier que la source est mentionnée</a>.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
 <p>Mais alors, se pourrait-il que cette astuce fonctionne également sur ce type de champ ? <strong>Et bien oui.</strong> Je vous ai préparé <a href="https://codepen.io/ffoodd/pen/vGJPLe">un codePen de démonstration avec le champ de type image</a>.</p>
 <p>Ce nʼest pas une révolution — et globalement personne ne sʼen servira — mais allez savoir.</p>
@@ -84,7 +84,7 @@
 		<div class="aside pl2 pt2 pr3">
 			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
 			<div class="textwidget">
-				<ol><li><a href="#on-recapitule-pour-ceux-du-fond">On récapitule, pour ceux du fond</a></li><li><a href="#le-test-de-la-source-manquante-dans-a11ycss">Le test de la source manquante dans a11y.css</a></li></ol>
+				<ol><li><a href="#on-recapitule-pour-ceux-du-fond">On récapitule, pour ceux du fond</a></li><li><a href="#le-test-de-la-source-manquante-dans-a11y-css">Le test de la source manquante dans a11y.css</a></li></ol>
 			</div>
 		</div>
 	</aside>

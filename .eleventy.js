@@ -1,20 +1,19 @@
-const path = require("node:path");
+import path from 'node:path'
 // Globals: dates, strings
-const { DateTime } = require('luxon')
-const string = require('string')
-const slugify = s => string(s).slugify().toString()
+import { DateTime } from 'luxon'
+import slugify from '@sindresorhus/slugify'
 // Markdown configuration
-const markdownit = require("markdown-it")
-const anchor = require("markdown-it-anchor")
-const figure = require("markdown-it-image-figures")
-const footnote = require("markdown-it-footnote")
-const { imgSize } = require("@mdit/plugin-img-size")
+import markdownit from 'markdown-it'
+import anchor from 'markdown-it-anchor'
+import figure from 'markdown-it-image-figures'
+import footnote from 'markdown-it-footnote'
+import { imgSize } from '@mdit/plugin-img-size'
 // 11ty plugins
-const tocPlugin = require("eleventy-plugin-toc")
-const rssPlugin = require("@11ty/eleventy-plugin-rss")
-const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight")
+import tocPlugin from 'eleventy-plugin-toc'
+import rssPlugin from '@11ty/eleventy-plugin-rss'
+import syntaxHighlightPlugin from '@11ty/eleventy-plugin-syntaxhighlight'
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	// Shortcodes
 	eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`)
 
@@ -49,7 +48,7 @@ module.exports = function (eleventyConfig) {
 		typographer: true,
 		quotes: ['«\xA0', '\xA0»', '‹\xA0', '\xA0›'],
 	})
-		.use(anchor, { slugify })
+		.use(anchor, { slugify: s => slugify(s) })
 		.use(footnote)
 		.use(figure, {
 			figcaption: true,

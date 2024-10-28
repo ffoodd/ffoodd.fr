@@ -8,7 +8,7 @@
 		<link rel="preload" as="font" href="/assets/fonts/museo-slab-300.woff2"><link rel="stylesheet" href="/assets/styles.min.css" media="all">
 		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
 		<meta name="description" content="J&amp;apos;arrive sur la page… Hop&amp;nbsp;! Le menu vient de se cacher&amp;nbsp;! J&amp;apos;ai du l&amp;apos;effrayer…">
-		<meta name="generator" content="Eleventy v2.0.1">
+		<meta name="generator" content="Eleventy v3.0.0">
 		<link rel="icon" href="/favicon.ico" sizes="32x32">
 		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 		<link rel="author" href="/humans.txt" type="text/plain">
@@ -58,7 +58,7 @@
 		<time class="screen-reader-text" datetime="2017-02-03T17:02:05" itemprop="datePublished">3 février 2017</time>
 			<div itemprop="articleBody">
 				<p>Vous avez déjà vécu ça, pas vrai ?</p>
-<h2 id="lamelioration-progressive" tabindex="-1">L’amélioration progressive</h2>
+<h2 id="l-amelioration-progressive" tabindex="-1">L’amélioration progressive</h2>
 <p>Quand on cherche à bien faire ces interactions qui affichent et masquent un élément à l’aide de JavaScript, une des fondations est de <strong>s’assurer que le contenu soit accessible sans JavaScript</strong>. Ça fait partie intégrante de l’amélioration progressive, que je synthétise comme suit :</p>
 <ol>
 <li>le HTML est propre, lisible, cohérent, et permet d’<strong>accéder au contenu sans obstacle</strong> ;</li>
@@ -83,7 +83,7 @@ document<span class="token punctuation">.</span>documentElement<span class="toke
 <h2 id="les-styles-a-la-rescousse" tabindex="-1">Les styles à la rescousse</h2>
 <p>La base du fonctionnement que je propose est l’astuce utilisée par <a href="https://www.nicolas-hoffmann.net/source/">Nicolas Hoffmann</a> sur <a href="https://a11y.nicolas-hoffmann.net/">ses composants jQuery accessibles</a>. <em>Grosso modo</em>, il effectue une transition sur <code>max-height</code> pour la partie animée, et sur <code>visibility</code> avec un délai pour <strong>masquer réellement</strong> le contenu.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
 <p>J’aime beaucoup cette technique, dont le seul inconvénient — à mon avis — est d’animer <code>max-height</code>, ce qui nous oblige à utiliser un <a href="https://www.ffoodd.fr/decouvrez-le-calcul-magique/">chiffre magique</a> pour une hauteur maximum inatteignable.</p>
-<h3 id="letat-de-base" tabindex="-1">L’état de base</h3>
+<h3 id="l-etat-de-base" tabindex="-1">L’état de base</h3>
 <p>Voici l’état de base de ma navigation :</p>
 <pre class="language-css" tabindex="0"><code class="language-css"><span class="token selector">[id="nav"]</span> <span class="token punctuation">{</span>
   <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate3d</span><span class="token punctuation">(</span>-100%<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -96,7 +96,7 @@ document<span class="token punctuation">.</span>documentElement<span class="toke
 <span class="token punctuation">}</span></code></pre>
 <p>Elle est décalée vers la gauche de la totalité de sa largeur, afin de <strong>sortir de l’écran</strong> ; et est masquée.</p>
 <p>Notez que nous avons un délai sur nos deux transitions. Pour le moment, seul celui sur <code>visibility</code> est important, puisqu’il permet de faire coïncider le changement de visibilité avec la durée de la transformation.</p>
-<h3 id="louverture-grace-a-js" tabindex="-1">L’ouverture grâce à JS</h3>
+<h3 id="l-ouverture-grace-a-js" tabindex="-1">L’ouverture grâce à JS</h3>
 <p>Là, c’est tout bête. Le JS ajoute une classe <code>.is-opened</code> à la navigation, je m’en sers pour accrocher mes styles :</p>
 <pre class="language-css" tabindex="0"><code class="language-css">
 <span class="token selector">.is-opened</span> <span class="token punctuation">{</span>
@@ -229,7 +229,7 @@ De plus ca répond à ton postulat de départ :</p>
 		<div class="aside pl2 pt2 pr3">
 			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
 			<div class="textwidget">
-				<ol><li><a href="#lamelioration-progressive">L’amélioration progressive</a></li><li><a href="#la-limite-du-js">La limite du JS</a></li><li><a href="#les-styles-a-la-rescousse">Les styles à la rescousse</a></li><li><a href="#demonstration">Démonstration</a></li><li><a href="#comments">Commentaires</a></li></ol>
+				<ol><li><a href="#l-amelioration-progressive">L’amélioration progressive</a></li><li><a href="#la-limite-du-js">La limite du JS</a></li><li><a href="#les-styles-a-la-rescousse">Les styles à la rescousse</a></li><li><a href="#demonstration">Démonstration</a></li><li><a href="#comments">Commentaires</a></li></ol>
 			</div>
 		</div>
 	</aside>
