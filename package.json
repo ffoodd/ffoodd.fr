@@ -4,12 +4,13 @@
 	"description": "Personal website using 11ty",
 	"main": "index.html",
 	"scripts": {
-		"postinstall": "patch-package",
+		"postinstall": "patch-package && npm run move:game",
 		"start": "eleventy --serve",
 		"build": "eleventy",
 		"build:debug": "DEBUG=Eleventy* eleventy",
 		"docs:lint": "link-checker ./docs/ --disable-external",
-		"docs:lint:external": "link-checker ./docs/ --external-only --http-timeout 30000 --http-status-ignore 301,302"
+		"docs:lint:external": "link-checker ./docs/ --external-only --http-timeout 30000 --http-status-ignore 301,302",
+		"move:game": "cp -R node_modules/html-mutant/jeu/ _src/talks/devfest.2024/"
 	},
 	"keywords": [],
 	"author": {
@@ -30,5 +31,8 @@
 		"markdown-it-image-figures": "^2.1.1",
 		"patch-package": "^8.0.0",
 		"string": "^3.3.3"
+	},
+	"dependencies": {
+		"html-mutant": "^0.0.2"
 	}
 }

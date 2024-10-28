@@ -846,6 +846,8 @@
 		width: 1px;
 		white-space: nowrap;
 	}
+
+	.float-right { float: right; }
 }
 
 @layer preferences {}
