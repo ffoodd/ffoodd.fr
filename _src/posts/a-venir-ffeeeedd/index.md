@@ -5,8 +5,7 @@ date: "2013-01-08T14:15:11"
 modified: "2014-05-17T11:23:31"
 permalink: "a-venir-ffeeeedd/index.html"
 excerpt: "On a ainsi vu germer ces dernières années une multitude d’outils, proposés par des professionnels aguerris et basés sur leur expérience et leur envie de partager leurs connaissances. Certains sont l’œuvre d’un seul, d’autres le fruit d’une communauté de passionnés. On peut en citer quelques-uns : HTML5 Boilerplate par Nicolas Gallagher, Hans Christian Reinl, Cãtãlin […]"
-format: "standard"
-tags: "posts"
+tags: ["posts"]
 description: "Au fil des années de pratique qui se succèdent, chaque professionnel du web acquière des techniques, des compétences et des habitudes qui lui sont propres."
 ---
 On a ainsi vu germer ces dernières années une multitude d’outils, proposés par des professionnels aguerris et basés sur leur expérience et leur envie de partager leurs connaissances. Certains sont l’œuvre d’un seul, d’autres le fruit d’une communauté de passionnés. On peut en citer quelques-uns :

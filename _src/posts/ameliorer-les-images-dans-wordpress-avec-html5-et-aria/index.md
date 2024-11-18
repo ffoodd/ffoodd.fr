@@ -5,8 +5,7 @@ date: "2013-11-12T16:32:51"
 modified: "2015-07-03T10:49:36"
 permalink: "ameliorer-les-images-dans-wordpress-avec-html5-et-aria/index.html"
 excerpt: "Le shortcode [caption], au demeurant très pratique, est cependant très limité :&nbsp;il se contente d’ajouter l’image et sa description ( un paragraphe ) dans une div. Correct pour l’affichage, mais très léger en terme de sémantique et d’accessibilité. Voyons comment améliorer ça !"
-format: "standard"
-tags: "posts"
+tags: ["posts"]
 description: "WordPress est un bon outil, pour qui sait s'en servir. Parmi les défauts que je lui trouve, la gestion de la sémantique et de l’accessibilité sur le front-end sont assez sensibles. Voici le fruit de mes réflexions et recherches sur la thématique des images &mdash; un thème sensible s’il en est."
 ---
 Pour commencer, il faut comprendre une problématique de base en terme d’accessibilité&thinsp;:&nbsp;la distinction entre **les images décoratives** et **les images porteuses de sens**. Pour comprendre cette distinction et son importance, je vous recommande vivement la lecture d’[_«Accessibilité web»_](https://www.ffoodd.fr/lecture-accessibilite-web/ "Accessibilité web") par [Armony Altinier](https://www.armonyaltinier.fr/ "Le site d’Armony Altinier (nouvelle fenêtre)"). Comme souvent lorsque nous parlons d’**accessibilité web**, il s’agit de bon sens&thinsp;:&nbsp;une image porteuse de sens doit être restituée à tous les utilisateurs, tandis qu’une image décorative ne doit être montrée qu’aux utilisateurs disposant d’un affichage graphique complet.

@@ -5,8 +5,7 @@ date: "2013-12-04T16:43:09"
 modified: "2015-07-03T10:49:03"
 permalink: "a11y-cssun-credo/index.html"
 excerpt: "Étant conscient de mes lacunes, je cherche constamment à améliorer la qualité des sites que je produis. Capitaliser sur les bonnes pratiques est une base, et c’est pourquoi j’ai «&nbsp;fabriqué&nbsp;» a11y.css."
-format: "standard"
-tags: "posts"
+tags: ["posts"]
 description: "Mon crédo, c’est l’<strong>amélioration perpétuelle</strong>. Tester la qualité d’une intégration peut s’avérer difficile, surtout si vous souhaitez le faire au fil de l’eau. C’est pourquoi depuis deux ans j’affine mon petit <abbr lang=\"en\" title=\"Cascading StyleSheet\">CSS</abbr> de «&thinsp;pré-audit&thinsp;»&thinsp;:&nbsp;<a href=\"https://github.com/ffoodd/a11y.css\" target=\"_blank\" title=\"Le projet a11y.css sur GitHub (nouvelle fenêtre)\">a11y.css</a>."
 ---
 `a11y.css` .[^1]

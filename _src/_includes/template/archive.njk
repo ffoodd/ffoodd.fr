@@ -4,9 +4,16 @@
 	<div>
 		<ol class="ul-reset p-reset">
 			{%- for post in posts %}
-				<li class="mb2 format-{{ post.data.format }}">
-					{% include '../partials/format-' + post.data.format + '.njk' %}
-				</li>
+				{% if post.data.format -%}
+					<li class="mb2 format-{{ post.data.format }}">
+						{% include '../partials/format-' + post.data.format + '.njk' %}
+					</li>
+				{%- else -%}
+					<li class="mb2 format-standard">
+						{% include '../partials/format-standard.njk' %}
+					</li>
+				{%- endif -%}
+
 			{%- endfor %}
 		</ol>
 		<ol class="ul-reset pl0 page-numbers">

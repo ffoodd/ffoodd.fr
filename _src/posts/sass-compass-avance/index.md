@@ -6,7 +6,7 @@ modified: "2014-09-21T12:39:31"
 permalink: "sass-compass-avance/index.html"
 excerpt: "Nul besoin j’imagine de vous présenter Sass et Compass — en revanche le récent livre de Mehdi Kabab peut vous intéresser d’avantage ( si vous ne l’avez pas déjà acheté :) ). Voici mes impressions et ce que j’en retiens."
 format: "status"
-tags: "posts"
+tags: ["posts"]
 description: "J’ai récemment débuté mon apprentissage de <a href=\"http://sass-lang.com/\" target=\"_blank\" title=\"Le site du préprocesseur Sass (nouvelle fenêtre, en anglais)\">Sass</a> &mdash; que j’avais jusqu’ici repoussé par méfiance, mais ça fera l’objet d’un autre article &mdash; et la publication du livre de <a href=\"http://mehdi.kabab.name/\" target=\"_blank\" title=\"Le site de Mehdi Kabab (nouvelle fenêtre)\">Mehdi Kabab</a> est apparue comme une aubaine. Voici un résumé de ce parcours initiatique, qui fut bien agréable."
 editeur: "Eyrolles"
 auteur: "Mehdi Kabab"

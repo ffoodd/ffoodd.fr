@@ -5,8 +5,7 @@ date: "2012-06-21T10:48:38"
 modified: "2013-12-16T10:58:14"
 permalink: "les-sprites-negatifs/index.html"
 excerpt: "L’utilisation des sprites est connue de – presque – tous. Et dans le cas ou vous feriez partie du presque, voici un très bon article en français sur le sujet. Ma réflexion aujourd’hui ne portera donc pas sur l’intérêt des sprites, mais sur une façon de pousser plus loin la quête du moindre octet. La […]"
-format: "standard"
-tags: "posts"
+tags: ["posts"]
 ---
 L’utilisation des sprites est connue de – presque – tous. Et dans le cas ou vous feriez partie du presque, voici un [très bon article](https://www.alsacreations.com/tuto/lire/1068-sprites-css-background-position.html) en français sur le sujet. Ma réflexion aujourd’hui ne portera donc pas sur l’intérêt des sprites, mais sur une façon de pousser plus loin **la quête du moindre octet**.
 

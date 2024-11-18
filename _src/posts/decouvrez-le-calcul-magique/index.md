@@ -5,8 +5,7 @@ date: "2015-03-30T14:30:04"
 modified: "2016-01-07T16:12:06"
 permalink: "decouvrez-le-calcul-magique/index.html"
 excerpt: "Vous souvenez-vous de cette expression fort courante il y a quelques années, le fameux «&nbsp;nombre magique&nbsp;»&nbsp;? Cette pratique a tendance à disparaître depuis l’avènement du _responsive design_ et le besoin de souplesse, que ne permettait pas un `height:&nbsp;42px;`. Mais les nouvelles propriétés CSS et le support des navigateurs m’ont permis de rencontrer le niveau deux de ce sortilège&nbsp;: le **calcul magique**. Venez voir, c’est rigolo&nbsp;!"
-format: "standard"
-tags: "posts"
+tags: ["posts"]
 description: "Le nombre magique était un symptôme d’une maladie répandue, la quête du <i lang=\"en\">pixel perfect</i>. On se retrouvait à tout caler au pixel près."
 ---
 Et ça, c’était pas terrible. Non, vraiment pas. On cherchait frénétiquement à obtenir le même rendu sur tous les navigateurs et tous les écrans. Aujourd’hui, c’est drôle —&nbsp;à l’époque, c’était le nerf de la guerre.

@@ -5,9 +5,7 @@ date: "2024-06-18T14:09:15"
 modified: "2024-06-18T14:09:15"
 permalink: "mon-epopee-au-devquest/index.html"
 excerpt: "La première édition du devQuest avait lieu à Niort le 14 juin dernier. Et pour une première édition, c’était incroyablement réussi&nbsp;!"
-format: "standard"
-tags: "posts"
-description: "La première édition du devQuest avait lieu à Niort le 14 juin dernier. Et pour une première édition, c’était incroyablement réussi&nbsp;!"
+tags: ["posts"]
 commentsOpen: "true"
 ---
 

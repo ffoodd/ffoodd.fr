@@ -5,8 +5,7 @@ date: "2013-11-04T17:32:27"
 modified: "2013-11-13T11:50:06"
 permalink: "ethymologie-du-web/index.html"
 excerpt: "Mon récent périple sur l’île de Jersey m’a non seulement relaxé, mais aussi fait découvrir sous un nouveau jour certains éléments que j’utilise quotidiennement dans mon travail — et ce pour mon plus grand plaisir."
-format: "standard"
-tags: "posts"
+tags: ["posts"]
 description: "Ça n’est une surprise pour personne&thinsp;:&nbsp;«Rien ne se perd, rien ne se crée, tout se transforme». C’est particulièrement vrai sur le web où chaque langage et chaque élément cherche malgré lui à reproduire un objet réel et concret."
 ---
 Je m’étais déjà fait cette réflexion en lisant [Webgrids](https://www.ffoodd.fr/lecture-webgrids/ "Compte-rendu de lecture&thinsp;:&nbsp;Webgrids (nouvelle fenêtre)"), dans lequel [Anne-Sophie Fradier](https://twitter.com/Mitternacht "Anne-Sophie Fradier sur Twitter (nouvelle fenêtre)") m’apprenait l’origine du mot _scroll_, qui signifiait simplement l’action de dérouler un parchemin. Mais mes vacances à Jersey m’ont appris bien plus encore.

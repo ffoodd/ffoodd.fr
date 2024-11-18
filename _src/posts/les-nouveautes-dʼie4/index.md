@@ -5,8 +5,7 @@ date: "2016-12-08T16:28:58"
 modified: "2016-12-08T16:28:58"
 permalink: "les-nouveautes-dʼie4/index.html"
 excerpt: "L'industrie web est dans un état d'emballement général, qui voit son histoire s'effacer plus vite qu'elle ne s'écrit. Et si on remontait vingt ans en arrière, pour voir de quoi demain aurait pu être fait&nbsp;?"
-format: "standard"
-tags: "posts"
+tags: ["posts"]
 description: "En 1997, <abbr title=\"Internet Explorer\" lang=\"en\">IE</abbr>4 voit le jour et est la première version à dominer Netscape."
 ---
 Elle apporte son lot de nouveautés à travers les filtres Microsoft, dont le plus connu concerne l’opacité. Pour rappel, la spécification finale de CSS1 ne voit le jour que le 17 décembre 1996.[^1]

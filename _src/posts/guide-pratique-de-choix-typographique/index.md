@@ -6,7 +6,7 @@ modified: "2013-11-13T11:44:37"
 permalink: "guide-pratique-de-choix-typographique/index.html"
 excerpt: "Le choix d’une typographie est toujours sensible :&nbsp;en maîtriser toutes les connotations, toutes les aspérités est une gageure. Et s’en expliquer lorsque le besoin surgit n’est pas un mince affaire non plus. Laissez-vous guider !"
 format: "status"
-tags: "posts"
+tags: ["posts"]
 description: "Après &laquo;Typo & web&raquo; et &laquo;<a href=\"http://www.ffoodd.fr/lecture-webgrids/\" title=\"Compte-rendu de lecture\">Webgrids</a>&raquo;, un nouvel ouvrage édité par les Ateliers Perrousseaux vient enrichir ma bibliothèque. Et encore une fois, je ne suis pas déçu : ce livre est efficient."
 editeur: "Atelier Perrousseaux"
 auteur: "David Rault"

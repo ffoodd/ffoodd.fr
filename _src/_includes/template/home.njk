@@ -7,7 +7,11 @@
 {%- block latest %}
 	{%- for post in collections.posts.slice(-1) %}
 		<div>
-			{% include '../partials/format-' + post.data.format + '.njk' %}
+			{% if post.data.format -%}
+				{% include '../partials/format-' + post.data.format + '.njk' %}
+			{%- else -%}
+				{% include '../partials/format-standard.njk' %}
+			{%- endif -%}
 		</div>
 	{%- endfor %}
 {%- endblock %}

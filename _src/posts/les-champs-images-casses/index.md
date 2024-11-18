@@ -5,8 +5,7 @@ date: "2016-03-31T10:27:00"
 modified: "2016-03-31T10:27:00"
 permalink: "les-champs-images-casses/index.html"
 excerpt: "Il y a quelques jours, [Ire Aderinokun](https://bitsofco.de/) a dévoilé que les images cassées supportaient les pseudo-éléments. En bossant sur [a11y.css](https://github.com/ffoodd/a11y.css), je me suis aperçu que ça valait également pour les champs images."
-format: "standard"
-tags: "posts"
+tags: ["posts"]
 description: "Il est rare de sʼen servir de nos jours, je sais bien. Nʼempêche, je mʼen sers sur <a href=\"https://github.com/ffoodd/a11y.css\" hreflang=\"en\">a11y.css</a> et cʼest ma joie."
 ---
 [Ire Aderinokun](https://bitsofco.de/) a brisé un mythe il y a quelques jours à propos des pseudos-éléments sur la balise `img`.

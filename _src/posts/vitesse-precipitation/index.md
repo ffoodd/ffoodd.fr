@@ -5,8 +5,7 @@ date: "2012-05-18T15:02:06"
 modified: "2012-05-19T11:41:27"
 permalink: "vitesse-precipitation/index.html"
 excerpt: "Les transitions représentent une formidable avancée en matière de CSS, dans le but de s’affranchir du javascript pour les interactions simples. Je ne vais pas vous faire l’offense de vous présenter les transitions CSS, mais avant d’évoquer le sujet principal, j’aimerais faire une piqûre de rappel sur les origines des transitions. Au commencement Dans une […]"
-format: "standard"
-tags: "posts"
+tags: ["posts"]
 ---
 Les transitions représentent une formidable avancée en matière de CSS, dans le but de s’affranchir du javascript pour les interactions simples. Je ne vais pas vous faire l’offense de vous présenter les transitions CSS, mais avant d’évoquer le sujet principal, j’aimerais faire une piqûre de rappel sur les origines des transitions.
 

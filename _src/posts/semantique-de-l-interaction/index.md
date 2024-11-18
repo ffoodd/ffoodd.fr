@@ -5,8 +5,7 @@ date: "2011-03-05T11:52:36"
 modified: "2013-10-03T10:14:18"
 permalink: "semantique-de-l-interaction/index.html"
 excerpt: "Saviez-vous que le langage entre êtres humains dépend à 80% des expressions physiques – même infimes ? Il en va de même pour les sites internet. Un internaute ressent – et comprend – un site grâce à son comportement : mouvements, animations, changements de couleurs, etc.. Les sites ont des sentiments, eux aussi !"
-format: "standard"
-tags: "posts"
+tags: ["posts"]
 ---
 Saviez-vous que le langage entre êtres humains dépend à 80% des expressions physiques – même infimes ? **Il en va de même pour les sites internet.** Un internaute ressent – et comprend – un site grâce à son comportement : mouvements, animations, changements de couleurs, etc…
 

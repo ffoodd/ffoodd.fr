@@ -6,7 +6,7 @@ modified: "2016-02-19T13:03:53"
 permalink: "la-dette-technique/index.html"
 excerpt: "Cʼest un sujet complexe mais pas compliqué, que Bastien Jaillot nous fait parcourir sous lʼéclairage de ses années dʼexpériences en tant que pompier de la dette technique."
 format: "status"
-tags: "posts"
+tags: ["posts"]
 description: "<a href=\"http://boutique.letrainde13h37.fr/\">Les éditions du train de 13&nbsp;h&nbsp;37</a>  lancent dans une nouvelle aventure avec cet ouvrage sur la dette technique, ainsi que «&nbsp;<a href=\"http://boutique.letrainde13h37.fr/products/design-icones-le-manuel-sebastien-desbenoit\">Design d&#700;icônes&nbsp;: le manuel</a>&nbsp;» de Sébastien Desbenoit."
 editeur: "Le Train de 13 h 37"
 auteur: "Bastien Jaillot"

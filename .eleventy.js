@@ -67,6 +67,13 @@ export default function (eleventyConfig) {
 	// @todo Corriger les liens externes morts
 	// @note Lancer `npm run docs:lint:external`
 
+	// Préprocesseurs
+	eleventyConfig.addPreprocessor("drafts", "*", (data, content) => {
+		if(data.draft && process.env.ELEVENTY_RUN_MODE === "build") {
+			return false;
+		}
+	});
+
 	// Plugins
 	eleventyConfig.addPlugin(tocPlugin, {
 		tags: ["h2"],

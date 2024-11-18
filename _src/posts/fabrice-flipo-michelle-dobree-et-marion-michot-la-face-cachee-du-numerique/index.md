@@ -6,7 +6,7 @@ modified: "2014-05-23T23:20:56"
 permalink: "fabrice-flipo-michelle-dobree-et-marion-michot-la-face-cachee-du-numerique/index.html"
 excerpt: "On ne peut attendre d’un outil qu’il modifie les comportements."
 format: "quote"
-tags: "posts"
+tags: ["posts"]
 lang: ""
 ---
 On ne peut attendre d’un outil qu’il modifie les comportements.

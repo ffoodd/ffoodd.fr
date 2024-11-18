@@ -6,7 +6,7 @@ modified: "2013-11-13T12:19:59"
 permalink: "lecture-strategie-contenu-mobile/index.html"
 excerpt: "Les détails négatifs Car il ne faut pas plus de quelques détails pour donner une impression négative : Les explications se répètent de nombreuses fois, et parfois s’enchaînent simplement – donnant l’impression d’être légèrement attardé et d’avoir besoin de cette frustrante répétition; Beaucoup d’allusions péjoratives sont faites aux CMS «&nbsp;populaires&nbsp;» – comparant WordPress à Tumblr, […]"
 format: "status"
-tags: "posts"
+tags: ["posts"]
 description: "Donnons le ton : il est rare que je sois déçu par un livre. Et pourtant au fil de la lecture de ce livre, paru chez <a href=\"http://www.abookapart.com/products/content-strategy-for-mobile\" title=\"A Book Apart (nouvelle fenêtre)\" target=\"_blank\">A Book Apart</a>, les négligences s'accumulent et rendent la lecture ennuyeuse."
 editeur: "Eyrolles"
 auteur: "Karen McGrane"

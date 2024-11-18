@@ -5,8 +5,7 @@ date: "2016-02-12T19:29:10"
 modified: "2016-02-22T09:18:46"
 permalink: "un-fichier-vide/index.html"
 excerpt: "Si vous cherchez un outil pour démarrer un projet et qu’aucun _framework_ ne vous plaît, nʼoubliez pas cette option. Elle vous sierra à merveille."
-format: "standard"
-tags: "posts"
+tags: ["posts"]
 description: "Nous avons tous bricolé des outils pour nous les approprier."
 ---
 Et c’est bien normal. C’est ainsi que nous découvrons nos outils, les personnalisons et atteignons leurs limites (ainsi que les nôtres).

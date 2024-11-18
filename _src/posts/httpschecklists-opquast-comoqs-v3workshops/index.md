@@ -6,6 +6,6 @@ modified: "2015-07-03T10:58:07"
 permalink: false
 excerpt: "La troisième version du référentiel Opquast est en cours d’élaboration&nbsp;!"
 format: "link"
-tags: "posts"
+tags: ["posts"]
 ---
 La troisième version du référentiel Opquast est en cours d’élaboration&nbsp;!

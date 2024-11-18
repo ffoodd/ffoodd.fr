@@ -5,8 +5,7 @@ date: "2017-12-21T14:09:15"
 modified: "2022-12-22T16:55:46"
 permalink: "l-etat-des-champs/index.html"
 excerpt: "Les champs de formulaire ont toujours été une gageure en terme de styles, qu’on parle des listes déroulantes, des cases à cocher, des boutons radios… Il est désormais plus simple de les personnaliser, mais il demeure quelques écueils tel que l'état invalide d'un champ requis lors du chargement de la page. Oups."
-format: "standard"
-tags: "posts"
+tags: ["posts"]
 description: "Un champ requis et vide est invalide, n&apos;est-ce pas&nbsp;?"
 ---
 Mais en arrivant sur la page, ledit champ est vide —&nbsp;et par conséquent, invalide.

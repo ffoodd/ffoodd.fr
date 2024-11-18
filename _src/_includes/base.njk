@@ -11,7 +11,7 @@
 		{%- endif -%}
 		<link rel="stylesheet" href="/assets/styles.min.css" media="all">
 		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
-		<meta name="description" content="{{ metadescription or description }}">
+		<meta name="description" content="{{ metadescription or description or excerpt }}">
 		<meta name="generator" content="{{ eleventy.generator }}">
 		<link rel="icon" href="/favicon.ico" sizes="32x32">
 		<link rel="icon" href="/favicon.svg" type="image/svg+xml">

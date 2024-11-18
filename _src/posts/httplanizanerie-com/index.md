@@ -6,6 +6,6 @@ modified: "2013-10-02T12:09:21"
 permalink: false
 excerpt: "Apprivoisez la rue Paul Nizan, à Nantes ! Par le collectif Fil."
 format: "link"
-tags: "posts"
+tags: ["posts"]
 ---
 Apprivoisez la rue Paul Nizan, à Nantes ! Par le collectif Fil.

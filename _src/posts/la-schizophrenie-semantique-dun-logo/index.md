@@ -5,8 +5,7 @@ date: "2012-05-11T17:19:25"
 modified: "2013-10-18T09:56:22"
 permalink: "la-schizophrenie-semantique-dun-logo/index.html"
 excerpt: "Comme beaucoup d’intégrateurs, je me suis heurté à la schizophrénie sémantique du logo. Vous rêvez de l’inclure dans un h1 plein de bon texte pour le SEO, mais m**d* ! Votre logo est une image. Que dois-je faire, Docteur ? De nombreux remèdes ont vu le jour pour combattre ce symptôme, à tel point que […]"
-format: "standard"
-tags: "posts"
+tags: ["posts"]
 ---
 Comme beaucoup d’intégrateurs, je me suis heurté à la **schizophrénie sémantique** du logo. Vous rêvez de l’inclure dans un h1 plein de bon texte pour le SEO, mais m\*\*d\* ! Votre logo est une image.
 

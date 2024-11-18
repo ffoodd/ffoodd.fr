@@ -5,8 +5,7 @@ date: "2013-10-07T16:18:18"
 modified: "2013-11-13T12:02:30"
 permalink: "experience-de-typecast/index.html"
 excerpt: "Typecast est un outil conçu pour vous faciliter la recherche de typographies : échelle typographique, association, couleurs, et même CSS. Piochez dans le catalogue de grandes fonderies et designez !"
-format: "standard"
-tags: "posts"
+tags: ["posts"]
 description: "La précédente version de ffoodd manquait de lisibilité. J'ai donc axé le travail de refonte sur la typographie, et ai enfin eu l'occasion de tester l'outil approprié : <a href=\"http://typecast.com/\" title=\"Typecast (nouvelle fenêtre)\" target=\"_blank\">Typecast</a>."
 ---
 ## Présentation

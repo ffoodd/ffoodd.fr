@@ -5,8 +5,7 @@ date: "2015-11-16T19:16:54"
 modified: "2015-11-30T10:34:36"
 permalink: "les-elements-remplaces/index.html"
 excerpt: "En travaillant sur [a11y.css](https://ffoodd.github.io/a11y.css/ 'a11y.css sur Github (en anglais)'), les balises auto-fermantes et éléments remplacés [mʼont causé quelques tracas](https://github.com/ffoodd/a11y.css/blob/main/README-fr.md). Jʼen remets une couche aujourdʼhui avec un cas particulier au sein de ces cas particuliers&nbsp;: les **boutons**."
-format: "standard"
-tags: "posts"
+tags: ["posts"]
 description: "Les ressources sont rares sur le sujet, et le sujet des éléments remplacés se mélange parfois avec celui des balises auto-fermantes."
 ---
 Pourtant —&nbsp;et malgré le fait que **la plupart** des éléments remplacés soient des balises auto-fermantes&nbsp;— ça nʼest pas la même chose&nbsp;!

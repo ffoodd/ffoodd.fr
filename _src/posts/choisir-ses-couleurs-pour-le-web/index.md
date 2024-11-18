@@ -6,7 +6,7 @@ modified: "2015-04-01T09:23:14"
 permalink: "choisir-ses-couleurs-pour-le-web/index.html"
 excerpt: "Après le «&nbsp;[Guide pratique de choix typographique](https://www.ffoodd.fr/guide-pratique-de-choix-typographique/)&nbsp;», voici un bouquin pour nous aider à bien choisir nos couleurs. Même si «&nbsp;pour le web&nbsp;» est plus une accroche qu’une spécialisation du livre, le livre explique les principales notions avec clarté."
 format: "status"
-tags: "posts"
+tags: ["posts"]
 description: "La couleur a un impact titanesque sur la perception des choses&nbsp;: elle peut aussi bien induire une bonne impression qu’un mauvais <i>a priori</i>."
 editeur: "Eyrolles"
 auteur: "Cameron Chapman"

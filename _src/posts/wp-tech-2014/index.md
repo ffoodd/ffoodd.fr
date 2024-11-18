@@ -5,8 +5,7 @@ date: "2014-12-04T21:08:44"
 modified: "2014-12-04T21:22:40"
 permalink: "wp-tech-2014/index.html"
 excerpt: "Le premier WP Tech s’est déroulé samedi à Nantes. Cet événement orienté sur la technique a été un franc succès, et pour cause&nbsp;: les organisateurs [Daniel Roch](https://www.seomix.fr) et [Willy Bahuaud](https://www.wabeo.fr) ont été extraordinaires, avec le soutien bienvenu de plusieurs bénévoles."
-format: "standard"
-tags: "posts"
+tags: ["posts"]
 description: "Cette journée fut très instructive, dans une atmosphère vraiment agréable. Chaque intervention m’a appris quelque chose —&nbsp;et pour en lire un compte-rendu d’excellente facture, je vous invite à lire celui de <a href=\"http://wpmarmite.com/wp-tech-2014/\">WP Marmite</a>. "
 ---
 Car non, je ne vais pas vous en faire un compte-rendu&nbsp;: j’étais orateur, et ça me fait beaucoup de choses à raconter&nbsp;!

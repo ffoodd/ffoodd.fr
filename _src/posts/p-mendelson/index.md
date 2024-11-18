@@ -6,7 +6,7 @@ modified: "2013-10-18T13:51:25"
 permalink: "p-mendelson/index.html"
 excerpt: "Il vaut mieux savoir tout chercher que chercher à tout savoir."
 format: "quote"
-tags: "posts"
+tags: ["posts"]
 lang: ""
 ---
 Il vaut mieux savoir tout chercher que chercher à tout savoir.

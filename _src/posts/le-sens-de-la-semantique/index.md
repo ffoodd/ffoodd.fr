@@ -5,8 +5,7 @@ date: "2016-06-24T16:06:10"
 modified: "2016-06-27T12:42:49"
 permalink: "le-sens-de-la-semantique/index.html"
 excerpt: "Encore une réflexion ce matin, dans le train, sur les changements de conception des styles qui remuent notre milieu en 2016."
-format: "standard"
-tags: "posts"
+tags: ["posts"]
 description: "Utiliser des éléments <abbr lang=\"en\" title=\"HyperText Markup Language\">HTML</abbr> pour leur aspect visuel ou utiliser des attributs de présentation sont de mauvaises pratiques."
 ---
 Mais probablement pas pour les raisons auxquelles vous pourriez penser de prime abord, je pense. Attention, ceci nʼest quʼune réflexion et sera peut-être truffée dʼerreurs, pleine de non sens et de raccourcis.

@@ -6,7 +6,7 @@ modified: "2013-11-13T12:09:00"
 permalink: "lecture-accessibilite-web/index.html"
 excerpt: "Dans ma quête perpétuelle d’amélioration(s), le destin m’a parfois mis sur la route de l’accessibilité – que ce soit pour des clients ou par simple goût pour la qualité. La lecture de cet ouvrage était donc inévitable."
 format: "status"
-tags: "posts"
+tags: ["posts"]
 description: "C'est probablement - à l'heure actuelle - l'ouvrage de référence sur le thème de l'accessibilité web en France. Et il tient son rang, croyez-moi."
 editeur: "Eyrolles"
 auteur: "Armony Altinier"

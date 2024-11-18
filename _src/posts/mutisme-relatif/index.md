@@ -5,8 +5,7 @@ date: "2014-05-17T11:59:35"
 modified: "2015-07-03T10:48:05"
 permalink: "mutisme-relatif/index.html"
 excerpt: "Restant muet depuis plusieurs semaines, il m’a semblé bon de faire un point sur le pourquoi du comment. Les changements opérés en quelques mois, les nouveautés à afficher ainsi que les projets en cours et à venir devraient me permettre de me projeter dans cette année qui s’annonce très riche !"
-format: "standard"
-tags: "posts"
+tags: ["posts"]
 description: "Beaucoup de choses se sont passées depuis le mois de mars qui expliquent ce silence radio —&nbsp;notamment mon embauche chez <a href=\"http://www.kosmos.fr\">Kosmos</a>. Cela a engendré certains changements et me demande un peu plus de souplesse pour continuer mes publications sur ce blog."
 ---
 Voici un&nbsp;résumé de&nbsp;mes activités des derniers mois, ainsi que de mes projets pour cette année. Je souhaite seulement signaler que cette baisse de régime dans mes publications n’est que temporaire.

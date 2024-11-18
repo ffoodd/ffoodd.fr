@@ -5,8 +5,7 @@ date: "2022-12-22T16:53:57"
 modified: "2022-12-22T16:54:59"
 permalink: "html-comme-fondation/index.html"
 excerpt: "Traduction de [ma contribution au calendrier de l’avent de HTMHell](https://www.htmhell.dev/adventcalendar/2022/17/)&nbsp;!"
-format: "standard"
-tags: "posts"
+tags: ["posts"]
 alternate: "https://www.htmhell.dev/adventcalendar/2022/17/"
 commentsOpen: "true"
 ---

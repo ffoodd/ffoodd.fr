@@ -6,7 +6,7 @@ modified: "2013-10-21T16:08:04"
 permalink: "lecture-webgrids/index.html"
 excerpt: "L’adret Ma formation en communication visuelle m’a enseigné les règles typographiques, de mise en page, l’histoire de l’imprimerie et les différents mouvements qui ont heurté l’histoire du graphisme et de l’impression. L’ubac Mon expérience professionnelle dans le web m’a éduqué aux contraintes spécifiques du support : affichage sur écran divers et variés, dans des navigateurs […]"
 format: "status"
-tags: "posts"
+tags: ["posts"]
 description: "Bien que familier avec les deux versants du graphisme web - à savoir : le graphisme <strong>&amp;</strong> le web - force m'est de constater que ces deux versants d'une même montagne sont opposés, à l'instar de l'<a title=\"Définition sur Wikipédia\" href=\"http://fr.wikipedia.org/wiki/Adret\" target=\"_blank\">adret</a> et l'<a title=\"Définition sur Wikipédia\" href=\"http://fr.wikipedia.org/wiki/Ubac\" target=\"_blank\">ubac</a>."
 editeur: "Atelier Perrousseaux"
 auteur: "Anne-Sophie Fradier"

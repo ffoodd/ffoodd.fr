@@ -6,7 +6,7 @@ modified: "2020-12-16T09:12:04"
 permalink: "napoleon-bonaparte/index.html"
 excerpt: "N’attribuez jamais à la malveillance ce qui s’explique très bien par l’incompétence."
 format: "quote"
-tags: "posts"
+tags: ["posts"]
 lang: ""
 ---
 N’attribuez jamais à la malveillance ce qui s’explique très bien par l’incompétence.

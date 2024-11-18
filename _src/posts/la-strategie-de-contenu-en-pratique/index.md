@@ -6,7 +6,7 @@ modified: "2013-10-23T13:29:32"
 permalink: "la-strategie-de-contenu-en-pratique/index.html"
 excerpt: "Le synopsis est clair : «_30 outils pour rendre votre site Web attractif et performant. L’expérience des auteurs est mise à profit efficacement._». Pas si loin des grands principes et des grandes théories, ce livre reste pragmatique et concret : à lire si vous touchez parfois à du contenu 🙂"
 format: "status"
-tags: "posts"
+tags: ["posts"]
 description: "Loin des clichés de son prédécesseur <a href=\"http://www.ffoodd.fr/lecture-strategie-contenu-mobile/\" title=\"Mon compte-rendu de lecture\">&laquo;Stratégie de contenu mobile&raquo;</a>, cet ouvrage est pragmatique, comme l'indique son sous-titre : <strong itemprop=\"alternativeHeadline\">30 outils passés au crible</strong>."
 editeur: "Eyrolles"
 auteur: "Isabelle Canivet-Bourgaux & Jean-Marc Hardy"
