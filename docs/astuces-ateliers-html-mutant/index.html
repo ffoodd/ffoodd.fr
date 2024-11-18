@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="fr-FR">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Les astuces derrière «&amp;nbsp;l’Invasion du HTML mutant&amp;nbsp;» — La vie en #ffoodd</title>
+		<link rel="preload" as="font" href="/assets/fonts/bello-pro.woff2">
+		<link rel="preload" as="font" href="/assets/fonts/museo-slab-300.woff2"><link rel="stylesheet" href="/assets/styles.min.css" media="all">
+		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
+		<meta name="description" content="Le 17 octobre dernier, j’animais au devFest Nantes un atelier intitulé «&amp;nbsp;L’Invasion du HTML mutant&amp;nbsp;».">
+		<meta name="generator" content="Eleventy v3.0.0">
+		<link rel="icon" href="/favicon.ico" sizes="32x32">
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+		<link rel="author" href="/humans.txt" type="text/plain">
+		<meta property="fediverse:creator" content="@ffoodd@mamot.fr">
+		<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/index.xml">
+	</head>
+	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#sommaire">Aller au sommaire</a>
+		<div class="row">
+			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation" aria-label="Menu principal">
+				<ul class="menu aside p-reset m-reset ul-reset">
+					<li class="tk-bello-pro h1-like m-reset">
+						<a href="/">ffoodd</a>
+					</li>
+					<li class="h3-like m-reset">
+						<a href="/journal/">Journal</a>
+					</li>
+					<li class="h3-like m-reset">
+						<a href="/travaux/">Parcours</a>
+					</li>
+					<li class="h3-like m-reset">
+						<a href="/now/">En ce moment</a>
+					</li>
+				</ul>
+			</nav>
+
+			<main class="col w--site pl3 pb3 pr3" id="content" role="main" role="main" itemprop="mainContentOfPage">
+				<div class="logo print-hidden">
+					<img src="/assets/img/embossed-ffoodd.png" alt="" id="logo" width="144" height="144">
+				</div>
+				<header class="center pt1 mb1" role="banner">
+					<h1 class="mb0 mt0 tk-bello-pro" itemprop="name">Les astuces derrière «&nbsp;l’Invasion du HTML mutant&nbsp;»</h1>
+						<nav role="navigation" aria-labelledby="here" class="print-hidden small mt2 mb1">
+	<span id="here">Vous êtes ici&nbsp;: </span>
+	<div class="inbl" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+		<a href="/" itemprop="url"><span itemprop="title">La vie en #ffoodd</span></a>
+		<span> ›&nbsp;</span>
+	</div>
+	<div class="inbl" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+		<span itemprop="title">Les astuces derrière «&nbsp;l’Invasion du HTML mutant&nbsp;»</span>
+	</div>
+</nav>
+
+						<h2 class="h3-like description" itemprop="description">Le 17 octobre dernier, j’animais au devFest Nantes un atelier intitulé «&nbsp;L’Invasion du HTML mutant&nbsp;».</h2>
+				</header>
+	<article role="article" itemscope itemtype="https://schema.org/Article">
+		<time class="screen-reader-text" datetime="2024-11-18" itemprop="datePublished">18 novembre 2024</time>
+			<div itemprop="articleBody">
+				<p>Un atelier devant par définition impliquer les participants, j’ai fait le choix de créer un mini-jeu en guise de support. C’est <a href="https://www.ffoodd.fr/devfest.2024/jeu/">un site statique disponible en ligne</a>, <a href="https://github.com/ffoodd/html-mutant">open-sourcé sur GitHub</a> — pour que vous puissiez l’améliorer !</p>
+<p>Quand je dis statique, c’est statique : le dépôt a une unique dépendance, <a href="https://github.com/lukejacksonn/servor">servor</a>, chargée de fournir un serveur HTTP basique pour travailler en local  et servor n’a elle-même aucune dépendance. Le reste n’est que HTML, CSS et JavaScript.</p>
+<p>Ça m’a permis de revenir aux fondamentaux, considérablement gagner en efficience ; mais surtout… découvrir tout un tas de trucs et astuces !</p>
+<h2 id="la-mecanique-du-jeu" tabindex="-1">La mécanique du jeu</h2>
+<p>En démarrant le jeu, vous commencerez par personnaliser votre personnage. Le seul objectif de cette étape est de découvrir la structure visuelle d’un niveau, en vous permettant de vous impliquer personnellement dans le jeu. Les valeurs choisies seront appliquées dès que possible à tous les personnages du jeu, dans une sorte de représentation en miroir.</p>
+<p>Après avoir choisi votre personnage, un niveau d’entraînement vous familiarise avec la mécanique très simple du jeu : une portion de code à compléter et soumettre, exécutée en direct, qui affecte la zone envahie progressivement par des mutants ! Ce code est dans la plupart des niveaux les options passées à un <code>mutationObserver</code>, mais parfois aussi dans la fonction de rappel.</p>
+<p>En cas d’échec comme en cas de réussite, une fenêtre modale vous informera. Parlons-en, de cette fenêtre modale !</p>
+<h2 id="les-particularites-de-l-element-dialog" tabindex="-1">Les particularités de l’élément <code>&lt;dialog&gt;</code></h2>
+<p>J’en parlais <a href="https://www.paris-web.fr/2022/conferences/decouvrez-le-bon-html-et-economisez-du-js-et-du-css.php">en 2022 à Paris Web</a> puis <a href="https://devfest2022.gdgnantes.com/sessions/decouvrez_le_bon_html_et_economisez_du_js_et_du_css">au devFest Nantes</a> dans mon sujet « <a href="https://www.ffoodd.fr/devfest/#slide-1">Découvrez &quot; le bon HTML &quot; et économisez du JS et du CSS </a>», <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/dialog">l’élément <code>&lt;dialog&gt;</code></a> est extrêmement intéressant et devrait à terme supplanter toutes els implémentations de fenêtres modales dans les différentes bibliothèques de composants.</p>
+<p>Dans l’atelier, je m’en sers en plusieurs endroits :</p>
+<ol>
+<li>pour afficher les règles du jeu dans l’écran d’accueil ;</li>
+<li>pour interrompre un niveau, quand le nombre de mutants dépasse la centaine ;</li>
+<li>pour informer d’un échec lors d’une soumission de code qui ne fonctionne pas ;</li>
+<li>pour informer de la réussite, dans le cas contraire — et permettre de passer au niveau suivant.</li>
+</ol>
+<h3 id="ouvrir-la-fenetre" tabindex="-1">Ouvrir la fenêtre</h3>
+<p>La plupart sont ouvertes programmatiquement, en réaction à un événement. Rien de plus simple : il suffit de récupérer une référence à l’élément <code>&lt;dialog&gt;</code> à l’aide de <code>querySelector()</code> ou une référence à un identifiant via l’accès aux propriétés nommées, ou <a href="https://html.spec.whatwg.org/multipage/nav-history-apis.html#named-access-on-the-window-object:html-elements-2"><i lang="en">named properties access</i> (en anglais)</a>, et d’invoquer <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/showModal">la méthode <code>showModal()</code> (sur MDN, en anglais)</a>.</p>
+<pre class="language-js" tabindex="0"><code class="language-js">document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'dialog'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">showModal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4 id="sans-java-script-externe" tabindex="-1">Sans JavaScript externe</h4>
+<p>Une exception toutefois, pour éviter d’ajouter un écouteur d’événement inutile : la fenêtre des règles du jeu est invoquée grâce à un gestionnaire d’événement HTML <code>onclick</code> et profite de la projection des identifiants HTML en objets globaux pour écourter le code.</p>
+<pre class="language-html" tabindex="0"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token special-attr"><span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value javascript language-javascript">rules<span class="token punctuation">.</span><span class="token function">showModal</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>Règles du jeu<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dialog</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>rules<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dialog<span class="token punctuation">"</span></span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Règles du jeu<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dialog</span><span class="token punctuation">></span></span></code></pre>
+<p><strong>Note</strong> : La méthode <code>showModal()</code> permet d’ouvrir une fenêtre modale, pas une simple boîte de dialogue — en respectant les exigences en matière d’accessibilité : la <i lang="en">focus</i> est mécaniquement piégé dedans, la fermeture est possible avec la touche <kbd>Échap</kbd>, etc.</p>
+<h3 id="l-arriere-plan" tabindex="-1">L’arrière-plan</h3>
+<p>Une fois la fenêtre modale ouverte, on peut s’appliquer à la styler. Là où moult bibliothèques de composants imposent une <code>&lt;div&gt;</code> (voire plusieurs) pour servir d’arrière-plan à la fenêtre, la version native est livrée avec <a href="https://developer.mozilla.org/fr/docs/Web/CSS/::backdrop">un pseudo-élément <code>::backdrop</code></a> qui s’étend naturellement sur tout le <i lang="en">viewport</i> et est promue, avec la fenêtre modale, par-dessus le reste de la page dans ce qui est spécifié sous le nom de <i lang="en">top layer</i>.</p>
+<p>Vous n’avez plus qu’à lui appliquer une couleur, une opacité ou que sais-je encore. Dans le jeu, j’ai utilisé une propriété au nom évocateur de <a href="https://developer.mozilla.org/fr/docs/Web/CSS/backdrop-filter"><code>backdrop-filter</code></a> pour appliquer un effet de flou grisé sur l’arrière-plan.</p>
+<pre class="language-css" tabindex="0"><code class="language-css"><span class="token selector">dialog::backdrop</span> <span class="token punctuation">{</span>
+	<span class="token property">backdrop-filter</span><span class="token punctuation">:</span> <span class="token function">grayscale</span><span class="token punctuation">(</span>50%<span class="token punctuation">)</span> <span class="token function">blur</span><span class="token punctuation">(</span>.25rem<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="les-dimensions" tabindex="-1">Les dimensions</h3>
+<p>Ne maîtrisant pas le mode de consultation du jeu, j’ai utilisé un peu de CSS moderne pour la largeur de la fenêtre modale afin qu’elle ait une largeur fluide, mais avec des valeurs minimum et maximum.</p>
+<pre class="language-css" tabindex="0"><code class="language-css"><span class="token selector">dialog</span> <span class="token punctuation">{</span>
+	<span class="token property">max-inline-size</span><span class="token punctuation">:</span> <span class="token function">clamp</span><span class="token punctuation">(</span>50vw<span class="token punctuation">,</span> 100%<span class="token punctuation">,</span> 67.5rem<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>La propriété  <code>max-inline-size</code> est la <a href="https://developer.mozilla.org/fr/docs/Web/CSS/CSS_logical_properties_and_values">propriété logique</a> correspondant à <code>max-width</code> dans le cas du Français. Et <a href="https://developer.mozilla.org/fr/docs/Web/CSS/clamp">la fonction <code>clamp()</code></a> est un petit bijou, dont j’abuse déjà copieusement dans <a href="https://ffoodd.github.io/chaarts/pie-charts.html">chaarts « chaarts (en anglais) »</a> pour obtenir un pseudo-booléen en CSS en fonction d’une valeur, comme expliqué <a href="https://www.ffoodd.fr/devquest/#slide-27">slide 27 de ma conférence « Dessine-moi un graphique (en CSS) »</a> donnée au <a href="https://devfest2023.gdgnantes.com/sessions/dessine_moi_un_graphique__en_css_/">devFest Nantes 2023</a>, <a href="https://2024.touraine.tech/talk/ioc2x2nW4KV5zrt69ZQm">TNT #24</a> et <a href="https://www.devquest.fr/sessions/dessine-moi-un-graphique-en-CSS">DevQuest 2024</a>.</p>
+<h3 id="fermer-la-fenetre" tabindex="-1">Fermer la fenêtre</h3>
+<p>J’ai évoqué la capacité de fermer la modale avec la touche <kbd>Échap</kbd>, mais l’élément <code>&lt;dialog&gt;</code> tire d’autres super-pouvoirs du fait d’être natif, et notamment son association avec un élément <code>&lt;form&gt;</code>. C’est parfaitement naturel, puisqu’une fenêtre modale permet généralement de valider ou annuler une action associée à une saisie.</p>
+<p>C’est pourquoi la valeur <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/form#method"><code>dialog</code> est ajoutée à la <code>method</code></a> de soumission d’un formulaire. Elle ne correspond pas à une méthode HTTP comme <code>get</code> ou <code>post</code>, mais bien à un contexte HTML, et permet de fermer directement la fenêtre modale parente. L’utilisation est fort simple :</p>
+<pre class="language-html" tabindex="0"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fermer<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dialog<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre>
+<p>Et, pour revenir à du HTML à l’ancienne : saviez-vous qu’un bouton à l’autre bout du DOM peut soumettre un formulaire ? Il suffit de lui indiquer le formulaire à soumettre :</p>
+<pre class="language-html" tabindex="0"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">form</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fermer<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Fermer la fenêtre<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+<p>Et voilà : c’est un bouton de type <code>submit</code> qui soumettra le formulaire avec l’identifiant <code>fermer</code>, qui lui-même fermera la fenêtre de dialogue. C’est beau, non ? Et <a href="https://www.w3.org/TR/2006/WD-web-forms-2-20060821/#formAttribute">cet attribut date (au moins) de 2006, dans les spécifications W3C des Web Forms (en anglais)</a> dont les premiers brouillons remontent à 2004…</p>
+<h2 id="les-emojis" tabindex="-1">Les émojis</h2>
+<p>Pour cet atelier, j’avais besoin de méchants envahisseurs, et de décors. Clairement pas le temps de faire des illustrations à la main, ni les moyens d’acheter des visuels. Une quête sur les internets m’a appris que le type de visuels que je cherchais se nomme les <i lang="en">top down tileset</i>, ces petits décors et personnages généralement en 8-bit avec une perspective écrasée.</p>
+<p>À force de regarder des visuels en 8-bit, j’ai fini par faire le lien avec une vieille habitude dans mes supports de conférences : les émojis décoratifs en fin de titre. Bon sang, mais c’est bien sûr ! Des émojis !</p>
+<p>Les émojis sont formidables. Ce sont des points Unicode, purement textuels, et extrêmement nombreux désormais avec des pelletées de nouveautés dans chaque version d’Unicode. Il y a même des variantes, composées en séquence !</p>
+<h3 id="les-personnages" tabindex="-1">Les personnages</h3>
+<p>Le meilleur exemple de séquence Unicode à mon avis sont les personnages : le neutre Personne 🧑 peut devenir un homme 👨 ou une femme 👩 en y ajoutant le point unicode du genre masculin ♂️ ou féminin ♀️, séparé par une jointure de largeur zéro (<i lang="en">zero-width joiner</i>, <code>‍</code>).</p>
+<p>Pour obtenir un pompier 👨‍🚒, on ajoute simplement un camion de pompier 🚒 à une personne 🧑 ! N’est-ce pas génial, franchement ? Et on peut évidemment y ajouter le genre et le teint.</p>
+<h3 id="la-personnalisation" tabindex="-1">La personnalisation</h3>
+<p>Ainsi <a href="https://www.ffoodd.fr/devfest.2024/jeu/0-0/index.html">le premier palier permet de personnaliser le genre et le teint du héros</a>.</p>
+<p>Le formulaire n’est composé que de deux groupes de bouton radio, chacun ayant une valeur correspondant au point Unicode concerné.</p>
+<pre class="language-html" tabindex="0"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>fieldset</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>legend</span><span class="token punctuation">></span></span>Genre<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>legend</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>genre<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>feminin<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>♀️<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>feminin<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Féminin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>genre<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>masculin<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>♂️<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>masculin<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Masculin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>genre<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>neutre<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">checked</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>neutre<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Neutre<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>fieldset</span><span class="token punctuation">></span></span></code></pre>
+<p>Lors de la soumission, les deux valeurs sélectionnées sont poussées dans le <code>localStorage</code> et ré-employées dès que possible dans la suite du jeu. Pour certains méchants, il suffit de concaténer le caractère du méchant avec les deux sélections : voilà comme un Mage 🧙 devient une Mage au teint sombre 🧙🏿‍♀️.</p>
+<h3 id="les-decors" tabindex="-1">Les décors</h3>
+<p>J’ai un peu lutté avec les décors, demandant même de l’aide à mon camarade Clément Étienne. Et finalement, je suis revenu aux émojis : certains ont un caractère paysager intéressant, il suffit de les agrandir un peu…</p>
+<p style="font-size:16rem;margin:0;padding:0;text-indent:0;text-align:center" role="presentation">🏔️</p>
+<h3 id="les-navigateurs" tabindex="-1">Les navigateurs</h3>
+<p>Les navigateurs et systèmes d’exploitation ont leur propre livrée d’émojis, avec des supports disparates et des rendus variés. Pour palier cet écueil, j’ai opté pour une solution très simple technologiquement parlant : une typographie. Et à ce jeu-là, j’avais déjà ma préférée : <a href="https://github.com/mozilla/twemoji-colr">la Twemoji-COLR par Mozilla (sur GitHub, en anglais)</a>.</p>
+<p>Les utilisateurs de Mozilla ne verront pas grand chose de nouveau : elle est embarquée dans Firefox sous le nom de Twemoji Mozilla, ce qui permet de tenter d’utiliser la version locale en CSS.</p>
+<pre class="language-css" tabindex="0"><code class="language-css"><span class="token atrule"><span class="token rule">@font-face</span></span> <span class="token punctuation">{</span>
+	<span class="token property">font-display</span><span class="token punctuation">:</span> swap<span class="token punctuation">;</span>
+	<span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">'Twemoji Mozilla'</span><span class="token punctuation">;</span>
+	<span class="token property">font-style</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
+	<span class="token property">font-weight</span><span class="token punctuation">:</span> 400<span class="token punctuation">;</span>
+	<span class="token property">src</span><span class="token punctuation">:</span> <span class="token function">local</span><span class="token punctuation">(</span><span class="token string">'Twemoji Mozilla'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">'/assets/fonts/Twemoji.woff2'</span><span class="token punctuation">)</span></span> <span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'woff2'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Et le tour est joué : les utilisateurs de Firefox ne chargeront rien, et les autres téléchargeront une typographie pour afficher la même chose que Firefox. Choisissez mieux votre navigateur, la prochaine fois !</p>
+<figure><img src="/images/2024/11/firefox.png" alt="Capture d’écran de l’inspecteur de Polices de Firefox, pour la Twemoji Mozilla." width="348" height="102" loading="lazy" decoding="async"><figcaption>Firefox indique bien « système » pour l’origine de la typographie.</figcaption></figure>
+<h4 id="web-kit" tabindex="-1">WebKit</h4>
+<p>Comme souvent quand je prépare un sujet, je me suis heurté à quelques limites des navigateurs. En l’occurrence, WebKit, le moteur de Safari et Epiphany, a des problèmes avec les variantes de teinte de la Twemoji-COLR. J’ai pu ouvrir <a href="https://bugs.webkit.org/show_bug.cgi?id=281739">un ticket sur leur Bugzilla (en anglais)</a>.</p>
+<h2 id="la-coloration-syntaxique-sans-java-script" tabindex="-1">La coloration syntaxique (sans JavaScript)</h2>
+<p>Dans la mécanique du jeu, des portions de code sont affichées (pour faire un « code à trous ») et du code est saisi des éléments <code>&lt;input&gt;</code> et <code>&lt;textarea&gt;</code>.</p>
+<p>Et pour lire et écrire du code, la coloration syntaxique est drôlement pratique et agréable ! Mais charger un script tel que <a href="https://prismjs.com/">PrismJS (en anglais)</a> ou <a href="https://highlightjs.org/">highlight.js (en anglais)</a> m’a toujours semblé démesuré pour la valeur ajoutée. Le bloc de code se retrouve charcuté dans le DOM, où des <code>&lt;span&gt;</code> avec des classes plus ou moins lisibles saucissonnent chaque portion de texte en fonction de son rôle syntaxique. C’est lourd, et moche.</p>
+<p>Mais au moment où je préparais cet atelier, Heikki Lotvonen a publié un article ahurissant : <a href="https://blog.glyphdrawing.club/font-with-built-in-syntax-highlighting/"><cite lang="en">Font with Built-In Syntax Highlighting</cite> (en anglais)</a>. C’est à mon sens, une petite révolution : une typographie tirant parti des fonctionnalités OpenType et notamment la table COLR. Fini les tartines de <code>&lt;span&gt;</code>, place à un code lisible et propre !</p>
+<p>Si les détails d’implémentation OpenType vous intéressent, je vous encourage à lire l’article. De mon côté, je me suis focalisé sur la personnalisation de la palette, rendues possibles en CSS avec <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-palette-values"><code>@font-palette-values</code> (sur MDN, en anglais)</a> et la propriété <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-palette-values/override-colors"><code>override-colors</code> (sur MDN, en anglais)</a>.</p>
+<p>Voilà ce que ça donne pour le jeu, dans lequel je profite de l’utilisation de propriétés personnalisées CSS pour la gestion des couleurs :</p>
+<pre class="language-css" tabindex="0"><code class="language-css"><span class="token atrule"><span class="token rule">@font-palette-values</span> --syntaxHighlighter</span> <span class="token punctuation">{</span>
+	<span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">'FontWithASyntaxHighlighter'</span><span class="token punctuation">;</span>
+	<span class="token property">override-colors</span><span class="token punctuation">:</span>
+		0 <span class="token function">var</span><span class="token punctuation">(</span>--foreground<span class="token punctuation">)</span><span class="token punctuation">,</span>
+		4 rebeccapurple<span class="token punctuation">,</span>
+		5 <span class="token function">var</span><span class="token punctuation">(</span>--accent<span class="token punctuation">)</span><span class="token punctuation">,</span>
+		7 <span class="token function">var</span><span class="token punctuation">(</span>--muted<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Le rendu est pas mal, non ?</p>
+<figure><img src="/images/2024/11/code.png" alt="Bloc de code avec coloration syntaxique et champs de formulaires." width="480" height="158" loading="lazy" decoding="async"></figure>
+<p>Et c’est de la pure amélioration progressive : vis notre navigateur ne supporte pas la table COLR, la règle <code>@font-palette-values</code> ou la propriété <code>override-colors</code>, vous aurez juste du texte brut avec la <i lang="en">monospace</i> par défaut.</p>
+<h2 id="les-space-invaders" tabindex="-1">Les <i lang="en">Space Invaders</i></h2>
+<p>Le dernier point sur lequel je me suis beaucoup amusé, c’est le niveau des aliens. L’émoji <i lang="en">alien monster</i> 👾 ressemble beaucoup, beaucoup, beaucoup aux vaisseaux de <i lang="en">Space Invaders</i>. Pour un jeu d’invasion, ça tombe bien.</p>
+<p>J’ai donc voulu assumer la référence : arrière-plan noir, animation des envahisseurs qui défilent vers le bas, et… un compteur de score.</p>
+<h3 id="les-compteurs" tabindex="-1">Les compteurs</h3>
+<p>Pour ceux qui font du CSS depuis longtemps, vous avez peut-être déjà entendu parler des <a href="https://developer.mozilla.org/fr/docs/Web/CSS/CSS_counter_styles/Using_CSS_counters">compteurs CSS</a>. Notre score correspondra simplement au nombre d’aliens présents.</p>
+<p>Cependant, si notre compteur commence à <code>1</code> et peut monter jusqu’à <code>100</code> — et sachant que le jeu original disposait d’un compteur sur cinq chiffres — le rendu ne sera ni élégant ni une belle citation. Heureusement, <a href="https://developer.mozilla.org/fr/docs/Web/CSS/@counter-style">CSS nous permet de personnaliser le style du compteur avec <code>@counter-style</code></a>.</p>
+<p>Pour obtenir un compteur sur cinq chiffres, affichant des <code>0</code> avant la valeur du compteur, voici la déclaration utilisée :</p>
+<pre class="language-css" tabindex="0"><code class="language-css"><span class="token atrule"><span class="token rule">@counter-style</span> invasion</span> <span class="token punctuation">{</span>
+	<span class="token property">system</span><span class="token punctuation">:</span> numeric<span class="token punctuation">;</span>
+	<span class="token property">symbols</span><span class="token punctuation">:</span> <span class="token string">"0"</span> <span class="token string">"1"</span> <span class="token string">"2"</span> <span class="token string">"3"</span> <span class="token string">"4"</span> <span class="token string">"5"</span> <span class="token string">"6"</span> <span class="token string">"7"</span> <span class="token string">"8"</span> <span class="token string">"9"</span><span class="token punctuation">;</span>
+	<span class="token property">pad</span><span class="token punctuation">:</span> 5 <span class="token string">"0"</span><span class="token punctuation">;</span>
+	<span class="token property">speak-as</span><span class="token punctuation">:</span> numbers<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h4 id="web-kit-encore" tabindex="-1">WebKit (encore)</h4>
+<p>Là aussi, WebKit est limité : les compteurs CSS ne sont pas incrémentés quand on ajoute des éléments au DOM. C’est <a href="https://la-grange.net/karl/">Karl Dubost</a> qui a ouvert <a href="https://bugs.webkit.org/show_bug.cgi?id=281277">ce ticket sur Bugzilla (en anglais)</a>.</p>
+<h3 id="les-couleurs" tabindex="-1">Les couleurs</h3>
+<p>Un autre point saillant pour citer visuellement <i lang="en">Space Invaders</i>, ce sont les couleurs vives. L’émoji utilisé vient avec une couleur qu’on ne peut pas surcharger, donc on va devoir l’altérer. Cette technique n’est pas récente, mais extrêmement utile : l’accumulation de <a href="https://developer.mozilla.org/fr/docs/Web/CSS/filter">filtres CSS</a> pour atteindre la bonne couleur.</p>
+<p>C’est un exercice compliqué, et je remercie Barrett Sonntag pour son <a href="https://codepen.io/sosuke/pen/Pjoqqp">générateur de filtres pour convertir du noir vers un code héxadécimal (sur CodePen, en anglais)</a>. La seule contrainte est de commencer par du noir ce qui se résout facilement en appliquant en premier <code>grayscale(100%) brightness(0%)</code>.</p>
+<pre class="language-css" tabindex="0"><code class="language-css"><span class="token selector">mu-tant[type="invaders"]:nth-child(1n + 1)</span> <span class="token punctuation">{</span>
+	<span class="token property">filter</span><span class="token punctuation">:</span> <span class="token function">grayscale</span><span class="token punctuation">(</span>100%<span class="token punctuation">)</span> <span class="token function">brightness</span><span class="token punctuation">(</span>0%<span class="token punctuation">)</span> <span class="token function">invert</span><span class="token punctuation">(</span>15%<span class="token punctuation">)</span> <span class="token function">sepia</span><span class="token punctuation">(</span>90%<span class="token punctuation">)</span> <span class="token function">saturate</span><span class="token punctuation">(</span>5339%<span class="token punctuation">)</span> <span class="token function">hue-rotate</span><span class="token punctuation">(</span>6deg<span class="token punctuation">)</span> <span class="token function">brightness</span><span class="token punctuation">(</span>96%<span class="token punctuation">)</span> <span class="token function">contrast</span><span class="token punctuation">(</span>127%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">mu-tant[type="invaders"]:nth-child(2n + 1)</span> <span class="token punctuation">{</span>
+	<span class="token property">filter</span><span class="token punctuation">:</span> <span class="token function">grayscale</span><span class="token punctuation">(</span>100%<span class="token punctuation">)</span> <span class="token function">brightness</span><span class="token punctuation">(</span>0%<span class="token punctuation">)</span> <span class="token function">invert</span><span class="token punctuation">(</span>66%<span class="token punctuation">)</span> <span class="token function">sepia</span><span class="token punctuation">(</span>82%<span class="token punctuation">)</span> <span class="token function">saturate</span><span class="token punctuation">(</span>4488%<span class="token punctuation">)</span> <span class="token function">hue-rotate</span><span class="token punctuation">(</span>88deg<span class="token punctuation">)</span> <span class="token function">brightness</span><span class="token punctuation">(</span>117%<span class="token punctuation">)</span> <span class="token function">contrast</span><span class="token punctuation">(</span>129%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">mu-tant[type="invaders"]:nth-child(3n + 1)</span> <span class="token punctuation">{</span>
+	<span class="token property">filter</span><span class="token punctuation">:</span> <span class="token function">grayscale</span><span class="token punctuation">(</span>100%<span class="token punctuation">)</span> <span class="token function">brightness</span><span class="token punctuation">(</span>0%<span class="token punctuation">)</span> <span class="token function">invert</span><span class="token punctuation">(</span>9%<span class="token punctuation">)</span> <span class="token function">sepia</span><span class="token punctuation">(</span>90%<span class="token punctuation">)</span> <span class="token function">saturate</span><span class="token punctuation">(</span>7442%<span class="token punctuation">)</span> <span class="token function">hue-rotate</span><span class="token punctuation">(</span>247deg<span class="token punctuation">)</span> <span class="token function">brightness</span><span class="token punctuation">(</span>91%<span class="token punctuation">)</span> <span class="token function">contrast</span><span class="token punctuation">(</span>149%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">mu-tant[type="invaders"]:nth-child(4n + 1)</span> <span class="token punctuation">{</span>
+	<span class="token property">filter</span><span class="token punctuation">:</span> <span class="token function">grayscale</span><span class="token punctuation">(</span>100%<span class="token punctuation">)</span> <span class="token function">brightness</span><span class="token punctuation">(</span>0%<span class="token punctuation">)</span> <span class="token function">invert</span><span class="token punctuation">(</span>91%<span class="token punctuation">)</span> <span class="token function">sepia</span><span class="token punctuation">(</span>27%<span class="token punctuation">)</span> <span class="token function">saturate</span><span class="token punctuation">(</span>1428%<span class="token punctuation">)</span> <span class="token function">hue-rotate</span><span class="token punctuation">(</span>1deg<span class="token punctuation">)</span> <span class="token function">brightness</span><span class="token punctuation">(</span>110%<span class="token punctuation">)</span> <span class="token function">contrast</span><span class="token punctuation">(</span>104%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>C’est verbeux, mais ça fonctionne !</p>
+<figure><img src="/images/2024/11/invaders.png" alt="Des lignes d’aliens aux couleurs vives sur un fond noir, et un score en haut à droite en monospace." width="480" height="457" loading="lazy" decoding="async"><figcaption>Plutôt ressemblant, non ?</figcaption></figure>
+<h2 id="les-web-components" tabindex="-1">Les <i lang="en">Web Components</i></h2>
+<p>Et dire que je n’ai parlé que de HTML et CSS, pour le moment… Je ne m’étendrai pas autant, mais côté JavaScript, je me suis (un peu trop) amusé avec les <i lang="en">Web Components</i>. En résumé :</p>
+<ul>
+<li><code>&lt;mu-tant&gt;</code> est le composant qui affiche un mutant, et gère sa mutation : un changement d’attribut, de valeur d’attribut, de contenu, de descendance, etc. Le tout à intervalle irrégulier, et de façon désordonnée.</li>
+<li><code>&lt;code-runner&gt;</code> étend la fonctionnalité du formulaire pour normaliser les réponses et les envoyer au <code>&lt;play-ground&gt;</code>. Pour le clin d’œil, l’événement qui permet de diffuser les réponses est intitulé <code>voightkampff</code>.</li>
+<li><code>&lt;play-ground&gt;</code> est le composant le plus critique : il déclenche l’invasion, surveille l’événement <code>voightkampff</code>, exécute le code soumis, et donne le verdict (en ouvrant la fenêtre modale appropriée).</li>
+</ul>
+<p>Dans tout ça, j’ai énormément joué avec les <code>mutationObserver</code>, les intervalles et les minuteurs, les émojis, et la génération de valeurs aléatoires.</p>
+<h2 id="conclusion" tabindex="-1">Conclusion</h2>
+<p>Si tout ce fatras vous rend curieux, je vous invite à visiter <a href="https://github.com/ffoodd/html-mutant/tree/main">le dépôt du jeu sur GitHub</a> et à en faire ce que vous voulez !</p>
+<figure><img src="/images/2024/11/invasion.png" alt="Niveau 2-1 : le fantôme, dans lequel il faut configurer les options du mutationObserver pour enrayer l’invasion. Les fantômes apparaissent sur un décor nuageux, au milieu duquel émerge un pont ressemblant au Golden Gate, à San Francisco." width="480" height="276" loading="lazy" decoding="async"></figure>
+<p>Et si vous vous lancez dans le jeu, je vous invite à consulter <a href="https://www.ffoodd.fr/devfest.2024/#slide-1">les <i lang="en">slides</i> adossés au jeu</a>. En avançant, vous verrez que chaque mutant a son slide. N’avancez pas trop vite, car le <i lang="en">slide</i> suivant donne la réponse…</p>
+<p>Faites chauffer votre inspecteur !</p>
+
+			</div>
+		<footer class="small mt2">
+			<p class="pl2 mt0 pt1">
+				Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
+				Modifié le <time class="updated" datetime="2024-11-18" itemprop="dateModified">18 novembre 2024</time>.
+			</p>
+		</footer>
+	</article>
+<div id="comments" class="comments-area pl2 pt2 mt2 print-hidden"><div class="comment-respond">
+	<h3>Laisser un commentaire</h3>
+	<form action="https://github.com/ffoodd/ffoodd.fr/new/main/src/posts/astuces-ateliers-html-mutant/comments/new?value=&filename=9856.md" method="post" class="comment-form">
+		<p class="comment-notes">
+			Vous devez avoir un compte GitHub pour ajouter un commentaire.
+		</p>
+		<p>
+			<label for="pseudo">Pseudonyme GitHub <span class="required">(obligatoire)</span></label>
+			<input id="pseudo" name="pseudo" type="text"
+						 aria-required="true" required="required" autocomplete="nickname">
+		</p>
+		<p>
+			<label for="comment">Commentaire <span class="required">(obligatoire)</span></label>
+			<textarea id="comment" name="comment" cols="45" rows="8"
+								aria-required="true" required="required" aria-describedby="comment-note"></textarea>
+			<span id="comment-note" class="small">Markdown accepté.</span>
+		</p>
+		<p class="form-submit">
+			<input name="submit" type="submit" id="submit" class="submit" value="Laisser un commentaire">
+		</p>
+	</form>
+	<script>
+		const form = document.querySelector('.comment-form');
+		const dynamicCommentID = Math.random().toString(36).substr(0, 4);
+
+		form.addEventListener('submit', async (event) => {
+			event.preventDefault();
+			const pseudo = document.getElementById('pseudo').value;
+			const comment = document.getElementById('comment').value;
+
+			const content = await fetch(`https://api.github.com/users/${pseudo}`)
+				.then(response => response.json())
+				.then(user => {
+					const content = encodeURIComponent(`---
+date: "${new Date().toISOString()}"
+author_name: "${user.name}"
+author_url: "${user.blog}"
+author_avatar: "${user.avatar_url}"
+id: "${dynamicCommentID}"
+tags: ["comments","astuces-ateliers-html-mutant"]
+---
+${comment}`);
+
+					window.open(`https://github.com/ffoodd/ffoodd.fr/new/main/_src/posts/astuces-ateliers-html-mutant/comments/?value=${content}&filename=${dynamicCommentID}.md`)
+				});
+		});
+	</script>
+</div>
+</main><aside class="col pt8 pl0 pr0 print-hidden" role="complementary" id="sommaire">
+		<div class="aside pl2 pt2 pr3">
+			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
+			<div class="textwidget">
+				<ol><li><a href="#la-mecanique-du-jeu">La mécanique du jeu</a></li><li><a href="#les-particularites-de-l-element-dialog">Les particularités de l’élément &lt;dialog&gt;</a></li><li><a href="#les-emojis">Les émojis</a></li><li><a href="#la-coloration-syntaxique-sans-java-script">La coloration syntaxique (sans JavaScript)</a></li><li><a href="#les-space-invaders">Les Space Invaders</a></li><li><a href="#les-web-components">Les Web Components</a></li><li><a href="#conclusion">Conclusion</a></li></ol>
+			</div>
+		</div>
+	</aside>
+		</div>
+		<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
+			<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden"><li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__mastodon" href="https://mamot.fr/@ffoodd" itemprop="url" rel="me"title="Gaël Poupard sur Mastodon">
+							<span itemprop="name">Mastodon</span>
+						</a>
+					</li><li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__github" href="https://github.com/ffoodd" itemprop="url"title="Gaël Poupard sur GitHub">
+							<span itemprop="name">GitHub</span>
+						</a>
+					</li><li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__codepen" href="https://codepen.io/ffoodd" itemprop="url"title="Gaël Poupard sur CodePen">
+							<span itemprop="name">CodePen</span>
+						</a>
+					</li><li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__dribbble" href="https://dribbble.com/ffoodd" itemprop="url"title="Gaël Poupard sur Dribbble">
+							<span itemprop="name">Dribbble</span>
+						</a>
+					</li><li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__linkedin" href="https://www.linkedin.com/pub/ga%C3%ABl-poupard/30/17b/401" itemprop="url"title="Gaël Poupard sur LinkedIn">
+							<span itemprop="name">LinkedIn</span>
+						</a>
+					</li><li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/index.xml" itemprop="url"title="La vie en #ffoodd | Flux RSS">
+							<span itemprop="name">RSS</span>
+						</a>
+					</li></ul>
+
+			<p class="small">
+				&copy; 2024 La vie en #ffoodd &mdash; Design et intégration par <span itemprop="name">Gaël Poupard</span> &mdash; <a href="/mentions-legales/">Mentions légales</a>
+				<br>
+				Sauf mention contraire, l’ensemble du contenu est sous <a rel="license" href="creativecommons.org/licenses/by-nc-sa/4.0/fr/">Licence <abbr lang="en" title="Creative Commons">CC</abbr> <abbr lang="en" title="Attribution">BY</abbr>-<abbr lang="en" title="Non Commercial">NC</abbr>-<abbr lang="en" title="Share Alike">SA</abbr></a>.
+			</p>
+
+			<meta itemprop="jobTitle" content="Webdesigner et intégrateur web">
+			<meta itemprop="worksFor" content="onepoint">
+		</footer></body>
+</html>
