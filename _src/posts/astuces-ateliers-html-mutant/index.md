@@ -46,14 +46,22 @@ document.querySelector('dialog').showModal();
 
 #### Sans JavaScript externe
 
-Une exception toutefois, pour éviter d’ajouter un écouteur d’événement inutile&nbsp;: la fenêtre des règles du jeu est invoquée grâce à un gestionnaire d’événement HTML `onclick` et profite de la projection des identifiants HTML en objets globaux pour écourter le code.
+Une exception toutefois, pour éviter d’ajouter un écouteur d’événement inutile&nbsp;: la fenêtre des règles du jeu est invoquée grâce à un gestionnaire d’événement HTML `onclick`&nbsp;:
 
 ```html
 <button type="button" onclick="rules.showModal()">Règles du jeu</button>
 <dialog id="rules" role="dialog" aria-label="Règles du jeu"></dialog>
 ```
 
-**Note**&nbsp;: La méthode `showModal()` permet d’ouvrir une fenêtre modale, pas une simple boîte de dialogue —&nbsp;en respectant les exigences en matière d’accessibilité&nbsp;: la <i lang="en">focus</i> est mécaniquement piégé dedans, la fermeture est possible avec la touche <kbd>Échap</kbd>, etc.
+##### Aparté&nbsp;: la projection des identifiants HTML en objets globaux
+
+Dans cet exemple, j’invoque l’ouverture de la fenêtre modale avec `rules.showModal()`, sans avoir défini la variable `rules`. Comment est-ce possible&nbsp;? En résumé, tout élément porteur d’un attribut `id` devient mécaniquement une propriété globale de l’objet `window`, et devient donc accessible directement par son nom. C’est spécifié sous le joli nom de [<i lang="en">Named Access on Window Object</i> (en anglais)](https://html.spec.whatwg.org/multipage/nav-history-apis.html#named-access-on-the-window-object).
+
+C’est drôlement pratique, non&nbsp;? Figurez-vous que c’est aussi un vecteur d’attaque méconnu faisant partie d’un groupe sobrement intitulé [<i lang="en">DOM clobbering</i> (en anglais)](https://domclob.xyz/). Je vous encourage à parcourir [les recommandations de l’OWASP pour mitiger le <i lang="en">DOM clobbering</i> (en anglais)](https://cheatsheetseries.owasp.org/cheatsheets/DOM_Clobbering_Prevention_Cheat_Sheet.html).
+
+#### Accessibilité
+
+La méthode `showModal()` permet d’ouvrir une fenêtre modale, pas une simple boîte de dialogue —&nbsp;en respectant les exigences en matière d’accessibilité&nbsp;: la <i lang="en">focus</i> est mécaniquement piégé dedans, la fermeture est possible avec la touche <kbd>Échap</kbd>, etc.
 
 ### L’arrière-plan
 
@@ -77,7 +85,7 @@ dialog {
 }
 ```
 
-La propriété  `max-inline-size` est la [propriété logique](https://developer.mozilla.org/fr/docs/Web/CSS/CSS_logical_properties_and_values) correspondant à `max-width` dans le cas du Français. Et [la fonction `clamp()`](https://developer.mozilla.org/fr/docs/Web/CSS/clamp) est un petit bijou, dont j’abuse déjà copieusement dans [chaarts "chaarts (en anglais)"](https://ffoodd.github.io/chaarts/pie-charts.html) pour obtenir un pseudo-booléen en CSS en fonction d’une valeur, comme expliqué [slide 27 de ma conférence «&nbsp;Dessine-moi un graphique (en CSS)&nbsp;»](https://www.ffoodd.fr/devquest/#slide-27) donnée au [devFest Nantes 2023](https://devfest2023.gdgnantes.com/sessions/dessine_moi_un_graphique__en_css_/), [TNT #24](https://2024.touraine.tech/talk/ioc2x2nW4KV5zrt69ZQm) et [DevQuest 2024](https://www.devquest.fr/sessions/dessine-moi-un-graphique-en-CSS).
+La propriété  `max-inline-size` est la [propriété logique](https://developer.mozilla.org/fr/docs/Web/CSS/CSS_logical_properties_and_values) correspondant à `max-width` dans le cas du Français. Et [la fonction `clamp()`](https://developer.mozilla.org/fr/docs/Web/CSS/clamp) est un petit bijou, dont j’abuse déjà copieusement dans [chaarts (en anglais)](https://ffoodd.github.io/chaarts/pie-charts.html) pour obtenir un pseudo-booléen en CSS en fonction d’une valeur, comme expliqué [slide 27 de ma conférence «&nbsp;Dessine-moi un graphique (en CSS)&nbsp;»](https://www.ffoodd.fr/devquest/#slide-27) donnée au [devFest Nantes 2023](https://devfest2023.gdgnantes.com/sessions/dessine_moi_un_graphique__en_css_/), [TNT #24](https://2024.touraine.tech/talk/ioc2x2nW4KV5zrt69ZQm) et [DevQuest 2024](https://www.devquest.fr/sessions/dessine-moi-un-graphique-en-CSS).
 
 ### Fermer la fenêtre
 
@@ -166,7 +174,7 @@ Comme souvent quand je prépare un sujet, je me suis heurté à quelques limites
 
 Dans la mécanique du jeu, des portions de code sont affichées (pour faire un «&nbsp;code à trous&nbsp;») et du code est saisi des éléments `<input>` et `<textarea>`.
 
-Et pour lire et écrire du code, la coloration syntaxique est drôlement pratique et agréable&nbsp;! Mais charger un script tel que [PrismJS (en anglais)](https://prismjs.com/) ou [highlight.js (en anglais)](https://highlightjs.org/) m’a toujours semblé démesuré pour la valeur ajoutée. Le bloc de code se retrouve charcuté dans le DOM, où des `<span>` avec des classes plus ou moins lisibles saucissonnent chaque portion de texte en fonction de son rôle syntaxique. C’est lourd, et moche.
+Et pour lire et écrire du code, la coloration syntaxique est drôlement pratique et agréable&nbsp;! Mais charger un script tel que [PrismJS (en anglais)](https://prismjs.com/) ou [highlight.js (en anglais)](https://highlightjs.org/) m’a toujours semblé démesuré pour la valeur ajoutée. Le bloc de code se retrouve charcuté dans le DOM, où des `<span>` avec des classes plus ou moins lisibles saucissonnent chaque portion de texte en fonction de son rôle syntaxique. C’est carrément indigeste.
 
 Mais au moment où je préparais cet atelier, Heikki Lotvonen a publié un article ahurissant&nbsp;: [<cite lang="en">Font with Built-In Syntax Highlighting</cite> (en anglais)](https://blog.glyphdrawing.club/font-with-built-in-syntax-highlighting/). C’est à mon sens, une petite révolution&nbsp;: une typographie tirant parti des fonctionnalités OpenType et notamment la table COLR. Fini les tartines de `<span>`, place à un code lisible et propre&nbsp;!
 
@@ -189,7 +197,7 @@ Le rendu est pas mal, non&nbsp;?
 
 ![Bloc de code avec coloration syntaxique et champs de formulaires.](/images/2024/11/code.png =480x158)
 
-Et c’est de la pure amélioration progressive&nbsp;: vis notre navigateur ne supporte pas la table COLR, la règle `@font-palette-values` ou la propriété `override-colors`, vous aurez juste du texte brut avec la <i lang="en">monospace</i> par défaut.
+Et c’est de la pure amélioration progressive&nbsp;: si votre navigateur ne supporte pas la table COLR, la règle `@font-palette-values` ou la propriété `override-colors`, vous aurez juste du texte brut avec la <i lang="en">monospace</i> par défaut.
 
 ## Les <i lang="en">Space Invaders</i>
 
