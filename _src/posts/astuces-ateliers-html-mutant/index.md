@@ -24,9 +24,9 @@ Après avoir choisi votre personnage, un niveau d’entraînement vous familiari
 
 En cas d’échec comme en cas de réussite, une fenêtre modale vous informera. Parlons-en, de cette fenêtre modale&nbsp;!
 
-## Les particularités de l’élément `<dialog>`
+## Les particularités de `<dialog>`
 
-J’en parlais [en 2022 à Paris Web](https://www.paris-web.fr/2022/conferences/decouvrez-le-bon-html-et-economisez-du-js-et-du-css.php) puis [au devFest Nantes](https://devfest2022.gdgnantes.com/sessions/decouvrez_le_bon_html_et_economisez_du_js_et_du_css) dans mon sujet «&nbsp;[Découvrez "&nbsp;le bon HTML&nbsp;" et économisez du JS et du CSS&nbsp;](https://www.ffoodd.fr/devfest/#slide-1)», [l’élément `<dialog>`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/dialog) est extrêmement intéressant et devrait à terme supplanter toutes els implémentations de fenêtres modales dans les différentes bibliothèques de composants.
+J’en parlais [en 2022 à Paris Web](https://www.paris-web.fr/2022/conferences/decouvrez-le-bon-html-et-economisez-du-js-et-du-css.php) puis [au devFest Nantes](https://devfest2022.gdgnantes.com/sessions/decouvrez_le_bon_html_et_economisez_du_js_et_du_css) dans mon sujet «&nbsp;[Découvrez "&nbsp;le bon HTML&nbsp;" et économisez du JS et du CSS&nbsp;](https://www.ffoodd.fr/devfest/#slide-1)», [l’élément `<dialog>`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/dialog) est extrêmement intéressant et devrait à terme supplanter toutes les implémentations de fenêtres modales dans les différentes bibliothèques de composants.
 
 Dans l’atelier, je m’en sers en plusieurs endroits&nbsp;:
 
@@ -169,7 +169,7 @@ Et le tour est joué&nbsp;: les utilisateurs de Firefox ne chargeront rien, et l
 
 Comme souvent quand je prépare un sujet, je me suis heurté à quelques limites des navigateurs. En l’occurrence, WebKit, le moteur de Safari et Epiphany, a des problèmes avec les variantes de teinte de la Twemoji-COLR. J’ai pu ouvrir [un ticket sur leur Bugzilla (en anglais)](https://bugs.webkit.org/show_bug.cgi?id=281739).
 
-## La coloration syntaxique (sans JavaScript)
+## La coloration syntaxique sans JS
 
 Dans la mécanique du jeu, des portions de code sont affichées (pour faire un «&nbsp;code à trous&nbsp;») et du code est saisi des éléments `<input>` et `<textarea>`.
 
