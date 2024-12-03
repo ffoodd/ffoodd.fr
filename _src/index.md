@@ -2,7 +2,7 @@
 layout: "template/home.njk"
 title: "La vie en #ffoodd"
 permalink: "index.html"
-tags: "pages"
+tags: ["pages"]
 description: "Intégrateur web à Nantes"
 metadescription: "ffoodd est la métaphore d'un regard particulier sur le web. Une passion nourrissante qui m'amène à créer ce site, afin de montrer mon savoir-faire et témoigner de cette vision originale en expérimentant « sur site »."
 metatitle: "Gaël Poupard, graphiste et intégrateur web à Nantes"

@@ -2,10 +2,10 @@
 layout: "template/now.njk"
 title: "En ce moment"
 permalink: "now/index.html"
-tags: "pages"
+tags: ["pages"]
 description: "Et maintenant, je fais quoi ?"
 metatitle: "En ce moment chez Gaël"
-modified: "2024-08-19"
+modified: "2024-12-03"
 ---
 
 

@@ -2,7 +2,7 @@
 layout: "template/page.njk"
 title: "Politique de confidentialité"
 permalink: "politique-de-confidentialite/index.html"
-tags: "pages"
+tags: ["pages"]
 ---
 ## Qui suis-je&nbsp;?
 
