@@ -65,8 +65,8 @@
 <p>En démarrant le jeu, vous commencerez par personnaliser votre personnage. Le seul objectif de cette étape est de découvrir la structure visuelle d’un niveau, en vous permettant de vous impliquer personnellement dans le jeu. Les valeurs choisies seront appliquées dès que possible à tous les personnages du jeu, dans une sorte de représentation en miroir.</p>
 <p>Après avoir choisi votre personnage, un niveau d’entraînement vous familiarise avec la mécanique très simple du jeu : une portion de code à compléter et soumettre, exécutée en direct, qui affecte la zone envahie progressivement par des mutants ! Ce code est dans la plupart des niveaux les options passées à un <code>mutationObserver</code>, mais parfois aussi dans la fonction de rappel.</p>
 <p>En cas d’échec comme en cas de réussite, une fenêtre modale vous informera. Parlons-en, de cette fenêtre modale !</p>
-<h2 id="les-particularites-de-l-element-dialog" tabindex="-1">Les particularités de l’élément <code>&lt;dialog&gt;</code></h2>
-<p>J’en parlais <a href="https://www.paris-web.fr/2022/conferences/decouvrez-le-bon-html-et-economisez-du-js-et-du-css.php">en 2022 à Paris Web</a> puis <a href="https://devfest2022.gdgnantes.com/sessions/decouvrez_le_bon_html_et_economisez_du_js_et_du_css">au devFest Nantes</a> dans mon sujet « <a href="https://www.ffoodd.fr/devfest/#slide-1">Découvrez &quot; le bon HTML &quot; et économisez du JS et du CSS </a>», <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/dialog">l’élément <code>&lt;dialog&gt;</code></a> est extrêmement intéressant et devrait à terme supplanter toutes els implémentations de fenêtres modales dans les différentes bibliothèques de composants.</p>
+<h2 id="les-particularites-de-dialog" tabindex="-1">Les particularités de <code>&lt;dialog&gt;</code></h2>
+<p>J’en parlais <a href="https://www.paris-web.fr/2022/conferences/decouvrez-le-bon-html-et-economisez-du-js-et-du-css.php">en 2022 à Paris Web</a> puis <a href="https://devfest2022.gdgnantes.com/sessions/decouvrez_le_bon_html_et_economisez_du_js_et_du_css">au devFest Nantes</a> dans mon sujet « <a href="https://www.ffoodd.fr/devfest/#slide-1">Découvrez &quot; le bon HTML &quot; et économisez du JS et du CSS </a>», <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/dialog">l’élément <code>&lt;dialog&gt;</code></a> est extrêmement intéressant et devrait à terme supplanter toutes les implémentations de fenêtres modales dans les différentes bibliothèques de composants.</p>
 <p>Dans l’atelier, je m’en sers en plusieurs endroits :</p>
 <ol>
 <li>pour afficher les règles du jeu dans l’écran d’accueil ;</li>
@@ -142,7 +142,7 @@
 <figure><img src="/images/2024/11/firefox.png" alt="Capture d’écran de l’inspecteur de Polices de Firefox, pour la Twemoji Mozilla." width="348" height="102" loading="lazy" decoding="async"><figcaption>Firefox indique bien « système » pour l’origine de la typographie.</figcaption></figure>
 <h4 id="web-kit" tabindex="-1">WebKit</h4>
 <p>Comme souvent quand je prépare un sujet, je me suis heurté à quelques limites des navigateurs. En l’occurrence, WebKit, le moteur de Safari et Epiphany, a des problèmes avec les variantes de teinte de la Twemoji-COLR. J’ai pu ouvrir <a href="https://bugs.webkit.org/show_bug.cgi?id=281739">un ticket sur leur Bugzilla (en anglais)</a>.</p>
-<h2 id="la-coloration-syntaxique-sans-java-script" tabindex="-1">La coloration syntaxique (sans JavaScript)</h2>
+<h2 id="la-coloration-syntaxique-sans-js" tabindex="-1">La coloration syntaxique sans JS</h2>
 <p>Dans la mécanique du jeu, des portions de code sont affichées (pour faire un « code à trous ») et du code est saisi des éléments <code>&lt;input&gt;</code> et <code>&lt;textarea&gt;</code>.</p>
 <p>Et pour lire et écrire du code, la coloration syntaxique est drôlement pratique et agréable ! Mais charger un script tel que <a href="https://prismjs.com/">PrismJS (en anglais)</a> ou <a href="https://highlightjs.org/">highlight.js (en anglais)</a> m’a toujours semblé démesuré pour la valeur ajoutée. Le bloc de code se retrouve charcuté dans le DOM, où des <code>&lt;span&gt;</code> avec des classes plus ou moins lisibles saucissonnent chaque portion de texte en fonction de son rôle syntaxique. C’est carrément indigeste.</p>
 <p>Mais au moment où je préparais cet atelier, Heikki Lotvonen a publié un article ahurissant : <a href="https://blog.glyphdrawing.club/font-with-built-in-syntax-highlighting/"><cite lang="en">Font with Built-In Syntax Highlighting</cite> (en anglais)</a>. C’est à mon sens, une petite révolution : une typographie tirant parti des fonctionnalités OpenType et notamment la table COLR. Fini les tartines de <code>&lt;span&gt;</code>, place à un code lisible et propre !</p>
@@ -221,7 +221,7 @@
 	</article>
 <div id="comments" class="comments-area pl2 pt2 mt2 print-hidden"><div class="comment-respond">
 	<h3>Laisser un commentaire</h3>
-	<form action="https://github.com/ffoodd/ffoodd.fr/new/main/src/posts/astuces-ateliers-html-mutant/comments/new?value=&filename=5594.md" method="post" class="comment-form">
+	<form action="https://github.com/ffoodd/ffoodd.fr/new/main/src/posts/astuces-ateliers-html-mutant/comments/new?value=&filename=8144.md" method="post" class="comment-form">
 		<p class="comment-notes">
 			Vous devez avoir un compte GitHub pour ajouter un commentaire.
 		</p>
@@ -271,7 +271,7 @@ ${comment}`);
 		<div class="aside pl2 pt2 pr3">
 			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
 			<div class="textwidget">
-				<ol><li><a href="#la-mecanique-du-jeu">La mécanique du jeu</a></li><li><a href="#les-particularites-de-l-element-dialog">Les particularités de l’élément &lt;dialog&gt;</a></li><li><a href="#les-emojis">Les émojis</a></li><li><a href="#la-coloration-syntaxique-sans-java-script">La coloration syntaxique (sans JavaScript)</a></li><li><a href="#les-space-invaders">Les Space Invaders</a></li><li><a href="#les-web-components">Les Web Components</a></li><li><a href="#conclusion">Conclusion</a></li></ol>
+				<ol><li><a href="#la-mecanique-du-jeu">La mécanique du jeu</a></li><li><a href="#les-particularites-de-dialog">Les particularités de &lt;dialog&gt;</a></li><li><a href="#les-emojis">Les émojis</a></li><li><a href="#la-coloration-syntaxique-sans-js">La coloration syntaxique sans JS</a></li><li><a href="#les-space-invaders">Les Space Invaders</a></li><li><a href="#les-web-components">Les Web Components</a></li><li><a href="#conclusion">Conclusion</a></li></ol>
 			</div>
 		</div>
 	</aside>
