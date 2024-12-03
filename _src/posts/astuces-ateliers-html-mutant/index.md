@@ -8,7 +8,6 @@ excerpt: "L’atelier donné au devFest Nantes 2024 fut l’occasion d’explore
 description: "Le 17 octobre dernier, j’animais au devFest Nantes un atelier intitulé «&nbsp;L’Invasion du HTML mutant&nbsp;»."
 tags: ["posts"]
 commentsOpen: "true"
-draft: true
 ---
 
 Un atelier devant par définition impliquer les participants, j’ai fait le choix de créer un mini-jeu en guise de support. C’est [un site statique disponible en ligne](https://www.ffoodd.fr/devfest.2024/jeu/), [open-sourcé sur GitHub](https://github.com/ffoodd/html-mutant) —&nbsp;pour que vous puissiez l’améliorer&nbsp;!
@@ -275,3 +274,8 @@ Et si vous vous lancez dans le jeu, je vous invite à consulter [les <i lang="en
 
 Faites chauffer votre inspecteur&nbsp;!
 
+---
+
+### Note
+
+Cet article fait partie du «&nbsp;<i lang="en">Advent of Tech 2024 Onepoint</i>&nbsp;», [une série d’articles tech](https://dev.to/onepoint/advent-of-tech-2024-onepoint-le) publiés par [Onepoint sur dev.to](https://dev.to/onepoint) pour patienter jusqu’à Noël.
