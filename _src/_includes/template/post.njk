@@ -20,7 +20,10 @@
 		<footer class="small mt2">
 			<p class="pl2 mt0 pt1">
 				Article rédigé par <strong itemprop="author"><span class="fn">{{ site.author.name }}</span></strong>.
-				Modifié le <time class="updated" datetime="{{ modified or date }}" itemprop="dateModified">{{ modified | date or date | date }}</time>.
+				Publié le <time class="updated" datetime="{{ date }}" itemprop="datePublished">{{ date | date }}</time>
+				{%- if modified !== null and modified !== date %}
+				 et modifié le <time class="updated" datetime="{{ modified }}" itemprop="dateModified">{{ modified | date }}</time>
+				{%- endif -%}.
 			</p>
 		</footer>
 	</article>
@@ -47,7 +50,7 @@
 	{%- set comments = collections.comments | comments(slug) -%}
 	{%- set commentsNumber = comments | length -%}
 	<aside class="col pt8 pl0 pr0 print-hidden" role="complementary" id="sommaire">
-		<div class="aside pl2 pt2 pr3">
+		<div class="aside pt1 pr3 pb1 pl2">
 			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
 			<div class="textwidget">
 				{{ content | toc | replace('</ol>', '') | safe }}
