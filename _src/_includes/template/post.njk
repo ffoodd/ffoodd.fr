@@ -7,7 +7,6 @@
 
 {%- block content %}
 	<article role="article" itemscope itemtype="https://schema.org/{% if format === 'status' %}Book{% else %}Article{% endif %}">
-		<time class="screen-reader-text" datetime="{{ date }}" itemprop="datePublished">{{ date | date }}</time>
 		{%- if format === 'status' %}
 			{% include '../partials/content-status.njk' %}
 		{%- elseif format === 'quote' %}
@@ -21,7 +20,7 @@
 			<p class="pl2 mt0 pt1">
 				Article rédigé par <strong itemprop="author"><span class="fn">{{ site.author.name }}</span></strong>.
 				Publié le <time class="updated" datetime="{{ date }}" itemprop="datePublished">{{ date | date }}</time>
-				{%- if modified !== null and modified !== date %}
+				{%- if modified !== undefined and modified !== date %}
 				 et modifié le <time class="updated" datetime="{{ modified }}" itemprop="dateModified">{{ modified | date }}</time>
 				{%- endif -%}.
 			</p>

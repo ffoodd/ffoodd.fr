@@ -19,9 +19,10 @@
 	<footer class="small mt1">
 		<p class="pl2">
 			Article rédigé par <strong itemprop="author" class="vcard author"><span class="fn">Gaël Poupard</span></strong>.
-			{% if post.data.modified | date !== post.data.date | date %}
-				Modifié le <time class="updated" datetime="{{ post.data.modified }}" itemprop="dateModified">{{ post.data.modified | date }}</time>.
-			{% endif %}
+			Publié le <time class="updated" datetime="{{ post.data.date }}" itemprop="datePublished">{{ post.data.date | date }}</time>
+			{%- if post.data.modified !== undefined and post.data.modified !== post.data.date %}
+			et modifié le <time class="updated" datetime="{{ post.data.modified }}" itemprop="dateModified">{{ post.data.modified | date }}</time>
+			{%- endif -%}.
 		</p>
 	</footer>
 </article>
