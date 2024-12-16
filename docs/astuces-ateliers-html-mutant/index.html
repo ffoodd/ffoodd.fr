@@ -220,7 +220,7 @@
 	</article>
 <div id="comments" class="comments-area pl2 pt2 mt2 print-hidden"><div class="comment-respond">
 	<h3>Laisser un commentaire</h3>
-	<form action="https://github.com/ffoodd/ffoodd.fr/new/main/src/posts/astuces-ateliers-html-mutant/comments/new?value=&filename=7584.md" method="post" class="comment-form">
+	<form action="https://github.com/ffoodd/ffoodd.fr/new/main/_src/posts/astuces-ateliers-html-mutant/comments/?filename=0000.md" method="post" class="comment-form">
 		<p class="comment-notes">
 			Vous devez avoir un compte GitHub pour ajouter un commentaire.
 		</p>
@@ -230,8 +230,8 @@
 						 aria-required="true" required="required" autocomplete="nickname">
 		</p>
 		<p>
-			<label for="comment">Commentaire <span class="required">(obligatoire)</span></label>
-			<textarea id="comment" name="comment" cols="45" rows="8"
+			<label for="value">Commentaire <span class="required">(obligatoire)</span></label>
+			<textarea id="value" name="value" cols="45" rows="8"
 								aria-required="true" required="required" aria-describedby="comment-note"></textarea>
 			<span id="comment-note" class="small">Markdown accepté.</span>
 		</p>
@@ -241,7 +241,7 @@
 	</form>
 	<script>
 		const form = document.querySelector('.comment-form');
-		const dynamicCommentID = Math.random().toString(36).substr(0, 4);
+		const dynamicCommentID = crypto.randomUUID().substring(0, 4);
 
 		form.addEventListener('submit', async (event) => {
 			event.preventDefault();

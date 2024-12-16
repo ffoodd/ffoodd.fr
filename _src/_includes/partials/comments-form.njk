@@ -1,11 +1,6 @@
-{%- set commentID_1 = [1,2,3,4,5,6,7,8,9] | random -%}
-{%- set commentID_2 = [1,2,3,4,5,6,7,8,9] | random -%}
-{%- set commentID_3 = [1,2,3,4,5,6,7,8,9] | random -%}
-{%- set commentID_4 = [1,2,3,4,5,6,7,8,9] | random -%}
-{%- set staticCommentID = [commentID_1,commentID_2,commentID_3,commentID_4] | join -%}
 <div class="comment-respond">
 	<h3>Laisser un commentaire</h3>
-	<form action="https://github.com/ffoodd/ffoodd.fr/new/main/src/posts/{{ slug }}/comments/new?value=&filename={{ staticCommentID }}.md" method="post" class="comment-form">
+	<form action="https://github.com/ffoodd/ffoodd.fr/new/main/_src/posts/{{ slug }}/comments/?filename=0000.md" method="post" class="comment-form">
 		<p class="comment-notes">
 			Vous devez avoir un compte GitHub pour ajouter un commentaire.
 		</p>
@@ -15,8 +10,8 @@
 						 aria-required="true" required="required" autocomplete="nickname">
 		</p>
 		<p>
-			<label for="comment">Commentaire <span class="required">(obligatoire)</span></label>
-			<textarea id="comment" name="comment" cols="45" rows="8"
+			<label for="value">Commentaire <span class="required">(obligatoire)</span></label>
+			<textarea id="value" name="value" cols="45" rows="8"
 								aria-required="true" required="required" aria-describedby="comment-note"></textarea>
 			<span id="comment-note" class="small">Markdown accepté.</span>
 		</p>
@@ -26,7 +21,7 @@
 	</form>
 	<script>
 		const form = document.querySelector('.comment-form');
-		const dynamicCommentID = Math.random().toString(36).substr(0, 4);
+		const dynamicCommentID = crypto.randomUUID().substring(0, 4);
 
 		form.addEventListener('submit', async (event) => {
 			event.preventDefault();
