@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="fr-FR">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>25e jour de web — La vie en #ffoodd</title>
+		<link rel="preload" as="font" href="/assets/fonts/bello-pro.woff2">
+		<link rel="preload" as="font" href="/assets/fonts/museo-slab-300.woff2"><link rel="stylesheet" href="/assets/styles.min.css" media="all">
+		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
+		<meta name="description" content="Les 24 Jours de Web viennent de se terminer. Je vous raconte les péripéties de l’intégration du thème annuel&amp;nbsp;?">
+		<meta name="generator" content="Eleventy v3.0.0">
+		<link rel="icon" href="/favicon.ico" sizes="32x32">
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+		<link rel="author" href="/humans.txt" type="text/plain">
+		<meta property="fediverse:creator" content="@ffoodd@mamot.fr">
+		<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/index.xml">
+	</head>
+	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#sommaire">Aller au sommaire</a>
+		<div class="row">
+			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation" aria-label="Menu principal">
+				<ul class="menu aside p-reset m-reset ul-reset">
+					<li class="tk-bello-pro h1-like m-reset">
+						<a href="/">ffoodd</a>
+					</li>
+					<li class="h3-like m-reset">
+						<a href="/journal/">Journal</a>
+					</li>
+					<li class="h3-like m-reset">
+						<a href="/travaux/">Parcours</a>
+					</li>
+					<li class="h3-like m-reset">
+						<a href="/now/">En ce moment</a>
+					</li>
+				</ul>
+			</nav>
+
+			<main class="col w--site pl3 pb3 pr3" id="content" role="main" role="main" itemprop="mainContentOfPage">
+				<div class="logo print-hidden">
+					<img src="/assets/img/embossed-ffoodd.png" alt="" id="logo" width="144" height="144">
+				</div>
+				<header class="center pt1 mb1" role="banner">
+					<h1 class="mb0 mt0 tk-bello-pro" itemprop="name">25e jour de web</h1>
+						<nav role="navigation" aria-labelledby="here" class="print-hidden small mt2 mb1">
+	<span id="here">Vous êtes ici&nbsp;: </span>
+	<div class="inbl" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+		<a href="/" itemprop="url"><span itemprop="title">La vie en #ffoodd</span></a>
+		<span> ›&nbsp;</span>
+	</div>
+	<div class="inbl" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+		<span itemprop="title">25e jour de web</span>
+	</div>
+</nav>
+
+						<h2 class="h3-like description" itemprop="description">Les 24 Jours de Web viennent de se terminer. Je vous raconte les péripéties de l’intégration du thème annuel&nbsp;?</h2>
+				</header>
+	<article role="article" itemscope itemtype="https://schema.org/Article">
+			<div itemprop="articleBody">
+				<p>C’est un exercice très intéressant, car nous avons deux contraintes très spécifiques pour le thème visuel annuel :</p>
+<ol>
+<li><strong>le format calendrier</strong> : 24 cases à ouvrir, une par jour…</li>
+<li><strong>l’illustration</strong>, réalisée bénévolement après un appel sur nos différents réseaux sociaux — et généralement reçue moins de quinze jours avant l’ouverture du calendrier !</li>
+</ol>
+<p>Et plus les contraintes sont exotiques, plus les solutions sont astucieuses !</p>
+<p>C’était une très chouette expérience <a href="https://www.24joursdeweb.fr/2023">en 2023</a>, avec l’illustration de <a href="https://sophie-rocher.com/">Sophie Rocher</a> qui m’a inspiré un calendrier tout en fenêtres et en lumières. Je me suis beaucoup amusé et vous invite à jeter un œil aux CSS.</p>
+<p>Pour 2024, <a href="https://laurefevrier.myportfolio.com/">Laure Février</a> nous a gratifiés d’une illustration riche en décorations : boules de Noël, couleurs, chats et lutins ! Maintenant, à moi de jouer pour en extraire la substantifique moelle et réaliser une intégration cohérente qui tire parti et mette en valeur l’illustration de Laure.</p>
+<p><strong>Note</strong> : certains exemples de code ne sont pas présents dans l’article, je vous encourage à inspecter le code directement <a href="https://www.24joursdeweb.fr/">sur site</a>.</p>
+<h2 id="le-calendrier" tabindex="-1">Le calendrier</h2>
+<h3 id="les-blobs" tabindex="-1">Les Blobs</h3>
+<p>Le premier élément qui nous a plu dans cette nouvelle illustration, c’est le « cadre » offert par la forme en arrière-plan. Appelons-le Blob.</p>
+<p>Je savais en voyant cette forme que je pourrais mobiliser une astuce CSS rarement utile : le fait que <code>border-radius</code> est en réalité une propriété raccourcie. On trouve parfois une utilisation avec quatre valeurs, une pour chaque angle — par exemple <code>border-top-left-radius</code>… Mais saviez-vous que chacune de ces valeurs est également une propriété raccourcie, qui peut prendre deux valeurs ?</p>
+<p>La logique est simple : avec une seule valeur, vous définissez le rayon du cercle ; avec deux valeurs, vous définissez les axes horizontaux et verticaux d’une ellipse.</p>
+<p>Et si vous comptez bien, ça signifie que vous pouvez utiliser huit valeurs distinctes dans la propriété <code>border-radius</code>, et c’est drôlement pratique pour dessiner des formes irrégulières sans passer par un <code>path</code>.</p>
+<p>Et puisque je suis un flemmard notoire, j’ai farfouillé les internets pour trouver un générateur de formes irrégulières basées sur <code>border-radius</code>. Évidemment, j’en ai trouvé plusieurs, et j’ai utilisé <a href="https://codepen.io/LekovicMilos/pen/omVzYv">celui de Milos Lekovic</a> que <a href="https://codepen.io/ffoodd/pen/RNbVRmR">j’ai fourché pour définir une couleur d’arrière-plan</a> au lieu d’appeler une image qui retourne une 404.</p>
+<p>Ça donne quelque chose comme ça, répété pour chacune des 24 cases du calendrier :</p>
+<pre class="language-css" tabindex="0"><code class="language-css"><span class="token selector">.calendar > :first-child</span> <span class="token punctuation">{</span>
+	<span class="token property">border-radius</span><span class="token punctuation">:</span> 65% 35% 34% 66% / 58% 30% 70% 42%<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="les-boules-de-noel" tabindex="-1">Les boules de Noël</h3>
+<p>C’est le second élément le plus marquant dans l’illustration. Leur forme circulaire et leurs couleurs sont très présentes, et clairement un élément visuel sur lequel capitaliser. Il y en a quatre, et cette fréquence m’a immédiatement fait comprendre comment réutiliser cet élément visuel : <strong>les numéros de chaque case</strong>, symbole fort du calendrier de l’avent.</p>
+<p>Il existe des solutions simples pour les quelques éléments de langages visuels présents dans les boules de l’illustration&amp;nsp;:</p>
+<ul>
+<li>C’est un cercle : on utilise la même valeur pour la hauteur et la largeur afin d’avoir un carré parfait, puis <code>border-radius: 50%</code> pour un cercle.</li>
+<li>C’est une sphère : un <code>radial-gradient()</code> pour l’arrière-plan et <code>box-shadow</code> pour renforcer l’effet visuel de relief font très bien le boulot.</li>
+<li>C’est brillant : un <code>conic-gradient()</code> couplé à un <code>radial-gradient</code> en <code>mask-image</code> sur un pseudo-élément donne un reflet suffisamment convaincant.</li>
+<li>C’est coloré : la fonction <code>color-mix()</code> permet de décliner la couleur de la boule et de ses effets en fonction d’une seule couleur en entrée.</li>
+</ul>
+<pre class="language-css" tabindex="0"><code class="language-css"><span class="token selector">.day-number</span> <span class="token punctuation">{</span>
+	<span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--color-number-bg<span class="token punctuation">)</span> <span class="token function">radial-gradient</span><span class="token punctuation">(</span>circle at 66% 66%<span class="token punctuation">,</span> #fff9<span class="token punctuation">,</span> transparent 50%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token property">border-color</span><span class="token punctuation">:</span> <span class="token function">color-mix</span><span class="token punctuation">(</span>in srgb<span class="token punctuation">,</span> <span class="token function">var</span><span class="token punctuation">(</span>--color-number-bg<span class="token punctuation">)</span><span class="token punctuation">,</span> #fff 50%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token property">box-shadow</span><span class="token punctuation">:</span> 0 0 1rem #fff<span class="token punctuation">;</span>
+	<span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">color-mix</span><span class="token punctuation">(</span>in srgb<span class="token punctuation">,</span> <span class="token function">var</span><span class="token punctuation">(</span>--color-number-bg<span class="token punctuation">)</span><span class="token punctuation">,</span> #000 50%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.day:nth-child(3n + 1)</span> <span class="token punctuation">{</span> <span class="token property">--color-number-bg</span><span class="token punctuation">:</span> #eb8181<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token selector">.day:nth-child(3n + 2)</span> <span class="token punctuation">{</span> <span class="token property">--color-number-bg</span><span class="token punctuation">:</span> #439d7d<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token selector">.day:nth-child(3n + 3)</span> <span class="token punctuation">{</span> <span class="token property">--color-number-bg</span><span class="token punctuation">:</span> #ffed9f<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+
+<span class="token selector">.day-number::before</span> <span class="token punctuation">{</span>
+	<span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">conic-gradient</span><span class="token punctuation">(</span>transparent 10%<span class="token punctuation">,</span> #fff 33% 66%<span class="token punctuation">,</span> transparent 90%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+	<span class="token property">mask-image</span><span class="token punctuation">:</span> <span class="token function">radial-gradient</span><span class="token punctuation">(</span>transparent 60%<span class="token punctuation">,</span> #0003 60%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>L’accroche de la boule est une version simplifiée de celle dans l’illustration, simplement appliquée en image d’arrière-plan sur un pseudo-élément.</p>
+<p>Et voilà, de jolies boules de Noël pour décorer notre calendrier !</p>
+<hr>
+<p>C’est déjà très joli, mais ces boules suspendues ont clairement <strong>envie de bouger</strong>, non ?</p>
+<h2 id="les-animations" tabindex="-1">Les animations</h2>
+<p>Je savais qu’une animation légère était possible — et clairement, il fallait que ça reste très léger pour ne pas donner envie de vomir à tout le monde…</p>
+<p>Commençons par un cas simple.</p>
+<h3 id="les-boules-de-noel-en-css" tabindex="-1">Les boules de Noël en CSS</h3>
+<p>Le mouvement de pendule, ou de balancier, est une animation que je n’ai pas eu l’occasion de travailler auparavant. Elle me paraissait relativement complexe, et une bonne candidate pour une technologie d’animation que je n’avais pu utiliser jusqu’à présent : <a href="https://developer.mozilla.org/fr/docs/Web/CSS/CSS_motion_path"><em lang="en">motion path</em> en CSS</a>.</p>
+<h4 id="motion-path" tabindex="-1"><i lang="en">Motion path</i></h4>
+<p>C’est une spécification déjà datée, plutôt simple car inspirée de SVG, mais dont le support est disparate. En l’occurrence, l’utilisation de <code>offset-path</code> (pour le tracé de l’animation) et <code>offset-distance</code> (pour la position sur le tracé) suffit à atteindre la cible, avec un support satisfaisant.</p>
+<pre class="language-css" tabindex="0"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> balance</span> <span class="token punctuation">{</span>
+	<span class="token selector">50%</span> <span class="token punctuation">{</span> <span class="token property">offset-distance</span><span class="token punctuation">:</span> 26%<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.day-number</span> <span class="token punctuation">{</span>
+	<span class="token property">animation</span><span class="token punctuation">:</span> balance 4s ease-in-out infinite<span class="token punctuation">;</span>
+	<span class="token property">offset-distance</span><span class="token punctuation">:</span> 24%<span class="token punctuation">;</span>
+	<span class="token property">offset-path</span><span class="token punctuation">:</span> <span class="token function">ellipse</span><span class="token punctuation">(</span>6.75rem 5rem at 50% -6%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token property">offset-rotate</span><span class="token punctuation">:</span> reverse<span class="token punctuation">;</span>
+	<span class="token property">will-change</span><span class="token punctuation">:</span> offset-distance<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Et voilà une animation de la position (de 24 à 26%) sur un tracé elliptique, qui se répète à l’infini.</p>
+<p>Cependant, malgré l’utilisation de <code>will-change</code>, cette méthode d’animation est vraiment peu performante et Lighthouse indiquait clairement ce problème, perceptible à l’œil nu.</p>
+<h4 id="retour-aux-transformations" tabindex="-1">Retour aux transformations</h4>
+<p>Revenons-en aux basiques des animations CSS performantes : <code>transform</code> !</p>
+<p>Après quelques nœuds au cerveau, j’ai pu appréhender le mouvement de pendule : c’est effectivement une simple rotation, mais avec un point d’origine éloigné à l’aide d’un <code>transform-origin: 50% -300%</code>.</p>
+<p>Une rotation légère (de <code>3deg</code> à <code>-3deg</code>) et un délai différent toutes les trois boules (sur une ligne de 4) rend l’animation très organique, et relativement naturelle.</p>
+<p>Une étape supplémentaire aurait pu permettre d’améliorer encore les performances : utiliser les propriétés individuelles de transformation à la place des fonctions (en l’occurrence <code>rotate</code> au lieu de <code>transform: rotate()</code>). Bien que mise en place, cette modification n’a eu qu’un effet négligeable sur les performances.</p>
+<h3 id="l-entete" tabindex="-1">L’entête</h3>
+<p>L’illustration elle-même, dans l’entête, était livrée au format SVG. C’est chouette car ça permet une grande souplesse dans l’implémentation.</p>
+<p>Pour éviter de trop s’éloigner de l’intégration habituelle des thèmes annuels, j’ai conservé l’intégration de l’illustration en CSS via <code>background-image</code> et la fonction <code>url()</code>. Fort heureusement, des animations déclarées dans le SVG source sont exécutées même dans ce contexte, ce qui permet de travailler dans le fichier source directement.</p>
+<h4 id="les-animations-svg" tabindex="-1">Les animations SVG</h4>
+<p>Ma première initiative était d’utiliser <a href="https://developer.mozilla.org/fr/docs/Web/SVG/SVG_animation_with_SMIL">les animations SVG SMIL</a>, et notamment <a href="https://developer.mozilla.org/fr/docs/Web/SVG/Element/animateTransform">l’élément <code>&lt;animateTransform&gt;</code></a> pour animer <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform#rotate">l’attribut <code>rotate</code></a>.</p>
+<p>Je ne l’avais jamais employé et ai eu du mal à comprendre son fonctionnement, notamment que l’effet s’applique sur le parent et par conséquent que les coordonnées (par exemple, le <code>x</code> des rotations dans <code>values</code>) devaient correspondre au <code>transform-origin</code>.</p>
+<pre class="language-svg" tabindex="0"><code class="language-svg"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>g</span> <span class="token attr-name">transform-origin</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>200 0<span class="token punctuation">"</span></span> <span class="token attr-name">transform</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>translate(-172)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>animateTransform</span> <span class="token attr-name">values</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>-0.5 200 0;0.5 200 0;-0.5 200 0<span class="token punctuation">"</span></span> 
+										<span class="token attr-name">attributeName</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>transform<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>rotate<span class="token punctuation">"</span></span> 
+										<span class="token attr-name">dur</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>4s<span class="token punctuation">"</span></span> <span class="token attr-name">repeatCount</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>indefinite<span class="token punctuation">"</span></span> 
+										<span class="token attr-name">additive</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sum<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>g</span><span class="token punctuation">></span></span></code></pre>
+<p>À noter que pour que les autres transformations (notamment la translation) soient cumulées avec la rotation animée, l’ajout de l’attribut <code>additive=&quot;sum&quot;</code> est indispensable.</p>
+<h4 id="desactiver-les-animations" tabindex="-1">Désactiver les animations</h4>
+<p>On a beau être bénévoles, on essaie de faire au mieux — et en l’occurrence respecter les préférences utilisateur. Dans le cas des animations, le minimum sur le plan technique est d’honorer la <i lang="en">media query</i> <code>prefers-reduced-motion</code>.</p>
+<p>Dans le cas de cette illustration, nous ne pouvons pas utiliser la méthode JavaScript <code>svg.pauseAnimations()</code> puisque le SVG est embarqué via CSS — il n’est pas dans le DOM.</p>
+<p>L’astuce que j’ai trouvée dans les bas-fonds des internets est de définir un <code>display: contents</code> sur l’élément <code>&lt;g class=&quot;boule&quot;&gt;</code> animé : <code>&lt;animateTransform&gt;</code> perd sa cible et devient donc inerte. Ça fonctionne, et ça n’est <strong>que</strong> du CSS !</p>
+<p>Cette portion de CSS est embarquée dans le SVG au sein d’un élément <code>&lt;style&gt;</code>.</p>
+<pre class="language-css" tabindex="0"><code class="language-css"><span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">prefers-reduced-motion</span><span class="token punctuation">:</span> reduce<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+	<span class="token selector">.boule</span> <span class="token punctuation">{</span>
+		<span class="token property">display</span><span class="token punctuation">:</span> contents<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h5 id="mais-web-kit" tabindex="-1">Mais… WebKit</h5>
+<p>WebKit (le moteur de rendu de Safari, notamment) n’affiche plus du tout les groupes affublés d’un <code>display: contents</code>, que ce soit sur Epiphany ou Safari <i lang="en">Technology Preview 209</i>.</p>
+<p>C’est <a href="https://bugs.webkit.org/show_bug.cgi?id=284634">le premier ticket de bug ouvert sur WebKit (en anglais)</a> dans le cadre de ce chantier. Cette astuce n’est donc pas viable pour le moment…</p>
+<p><strong>Re-changement de stratégie</strong> : on va utiliser des animations et transformations <strong>CSS, dans le SVG, dans le CSS</strong> ! Ça n’est pas aussi compliqué qu’il y parait.</p>
+<h4 id="css-dans-svg-dans-css" tabindex="-1">CSS dans SVG dans CSS</h4>
+<p>L’animation des boules est récupérée et adaptée aux groupes correspondants dans le SVG, en composant les transformations pour conserver le <code>translate</code> indispensable au bon placement des groupes dans l’illustration.</p>
+<pre class="language-css" tabindex="0"><code class="language-css"><span class="token selector">.boule</span> <span class="token punctuation">{</span>
+	<span class="token property">transform-origin</span><span class="token punctuation">:</span> 50% 0%<span class="token punctuation">;</span>
+	<span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--translate<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">prefers-reduced-motion</span><span class="token punctuation">:</span> no-preference<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+	<span class="token atrule"><span class="token rule">@keyframes</span> balance</span><span class="token punctuation">{</span>
+		<span class="token selector">50%</span> <span class="token punctuation">{</span> <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--translate<span class="token punctuation">)</span> <span class="token function">rotate</span><span class="token punctuation">(</span>-3deg<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token selector">.boule</span> <span class="token punctuation">{</span>
+		<span class="token property">animation</span><span class="token punctuation">:</span> balance 6s ease-in-out infinite<span class="token punctuation">;</span>
+		<span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--translate<span class="token punctuation">)</span> <span class="token function">rotate</span><span class="token punctuation">(</span>3deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>La translation étant propre à chacun des groupes, elle est définie à l’aide d’une propriété personnalisée sur l’élément lui-même — à l’instar du délai de l’animation :</p>
+<pre class="language-html" tabindex="0"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>g</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>boule<span class="token punctuation">"</span></span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">--translate</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span>-172px<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token property">animation-delay</span><span class="token punctuation">:</span> .5s</span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span></code></pre>
+<h5 id="l-origine-des-animations-css-dans-un-svg" tabindex="-1">L’origine des animations CSS dans un SVG</h5>
+<p>Mais là, <strong>surprise</strong> : les boules semblent suivre la même animation, comme si l’origine de la rotation était la même pour les quatre !</p>
+<p>Après quelques recherches, j’ai découvert qu’il fallait indiquer <a href="https://developer.mozilla.org/fr/docs/Web/CSS/transform-box#fill-box"><code>transform-box: fill-box</code></a> aux éléments dans un SVG pour que <code>transform-origin</code> ait un effet sur eux, sans quoi c’est en réalité la <code>viewBox</code> qui sert d’origine à toutes les transformations CSS au sein d’un SVG ! Il suffisait de le savoir…</p>
+<pre class="language-css" tabindex="0"><code class="language-css"><span class="token selector">.boule</span> <span class="token punctuation">{</span>
+	<span class="token property">transform-box</span><span class="token punctuation">:</span> fill-box<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Et ça fonctionne !</p>
+<h4 id="oui-mais" tabindex="-1">Oui, mais…</h4>
+<p>En cherchant à vérifier le respect des préférences liées aux animations, j’ai pu constater que les émulateurs proposés dans les outils de développement de WebKit et Chromium ne propageaient pas l’état de la préférence aux SVG embarquées dans un <code>background-image</code> CSS — alors que c’est fonctionnel avec la préférence modifiée sur le système.</p>
+<p>Voici donc <a href="https://bugs.webkit.org/show_bug.cgi?id=283894">le bug numéro deux chez WebKit (en anglais)</a> et <a href="https://issues.chromium.org/issues/381770607">le même bug chez Chromium (en anglais)</a>.</p>
+<p>Ce sont les derniers, promis.</p>
+<h4 id="plot-twist-les-performances" tabindex="-1"><i lang="en">Plot twist</i> : les performances</h4>
+<p>Je récapitule :</p>
+<ol>
+<li>Nous avons des animations qui fonctionnent en CSS, à la fois côté CSS global et à l’intérieur du SVG de l’illustration ;</li>
+<li>Elles respectent les préférences utilisateur ;</li>
+<li>Et utilisent les techniques d’animation recommandées pour de bonnes performances.</li>
+</ol>
+<p>Pas mal, non ?</p>
+<p>Mais alors… <strong>Pourquoi l’animation de l’illustration semble grippée</strong>, sur Chromium et WebKit ?</p>
+<p>Figurez-vous que c’est un choix délibéré de ces moteurs de rendu. Il semble que l’utilisation d’animations CSS dans un SVG embarqué en CSS soit trop peu courant pour faire l’effort de les optimiser lors du rendu. <strong>Je suis le seul à faire ce genre de choses, alors ?</strong></p>
+<p>Après une micro-formation avec Anthony Ricaud sur les outils de développement de Chromium, nous avons pu identifier le problème et avancer une correction possible : sortir les éléments animés du SVG principal pour que les animations soient effectivement dans le CSS global, et pas embarquées dans le SVG.</p>
+<p>En exportant les quatre éléments à animer, j’ai pu les inclure dans des pseudos-éléments sans avoir à modifier le DOM. Parfait !</p>
+<p>Reprendre les animations revenait presque à faire un copier-coller. J’ai surtout eu à <strong>ajuster les dimensions et positions des boules pour chaque point de rupture</strong> ; jusqu’à présent, jouer avec les <code>background-size</code> et <code>background-position</code> suffisaient, mais ce n’est plus le cas.</p>
+<p>C’est assez verbeux (trop pour être affiché ici), mais ça permet en contrepartie de charger moins de SVG sur les petits écrans qui ne les affichent pas.</p>
+<h2 id="au-dela-des-preferences" tabindex="-1">Au-delà des préférences</h2>
+<p>Jusqu’à présent, les animations ne sont actives que si l’utilisateur n’a pas exprimé de préférence qui s’y oppose. Mais idéalement, chaque utilisateur doit pouvoir interrompre ou déclencher les animations sans devoir passer par les réglages de son système.</p>
+<h3 id="un-bouton-pour-les-interrompre-toutes" tabindex="-1">Un bouton pour les interrompre toutes</h3>
+<p>Puisque toutes nos animations sont implémentées en CSS, une propriété magique permet d’en définir l’état : <code>animation-play-state</code>.</p>
+<p>La fonctionnalité elle-même est plutôt simple, en s’appuyant sur un bouton.</p>
+<pre class="language-html" tabindex="0"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hero-button<span class="token punctuation">"</span></span> <span class="token attr-name">aria-pressed</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+	Stopper les animations
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+<h4 id="une-pincee-de-java-script" tabindex="-1">Une pincée de JavaScript</h4>
+<p>Difficile de s’en passer pour écouter le clic et mettre à jour une classe <code>.reduced-motion</code> sur le <code>&lt;body&gt;</code>, tout comme l’état du bouton avec <code>aria-pressed</code>.</p>
+<pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">pauseAnimations</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>window<span class="token punctuation">.</span><span class="token function">matchMedia</span><span class="token punctuation">(</span><span class="token string">'(prefers-reduced-motion: no-preference)'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>matches<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> button <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.hero-button'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    button<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+      document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token string">'reduced-motion'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">const</span> pressed <span class="token operator">=</span> button<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">'aria-pressed'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'true'</span> <span class="token operator">||</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+      button<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">'aria-pressed'</span><span class="token punctuation">,</span> <span class="token operator">!</span>pressed<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">passive</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"DOMContentLoaded"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token function">pauseAnimations</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4 id="un-etat-personnalise-en-css" tabindex="-1">Un état personnalisé en CSS</h4>
+<p>Une propriété personnalisée permet de gouverner l’état de toutes les animations de façon cohérente.</p>
+<pre class="language-css" tabindex="0"><code class="language-css"><span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">prefers-reduced-motion</span><span class="token punctuation">:</span> reduce<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+	<span class="token selector">.hero-button</span> <span class="token punctuation">{</span> <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">prefers-reduced-motion</span><span class="token punctuation">:</span> no-preference<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+	<span class="token selector">.boule</span> <span class="token punctuation">{</span>
+		<span class="token property">animation</span><span class="token punctuation">:</span> balance 6s ease-in-out infinite <span class="token function">var</span><span class="token punctuation">(</span>--state<span class="token punctuation">,</span> running<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	
+	<span class="token selector">.reduced-motion</span> <span class="token punctuation">{</span>
+		<span class="token property">--state</span><span class="token punctuation">:</span> paused<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Rien de bien méchant finalement, mais… ça prend du temps ! Et clairement, ça pourrait toujours être amélioré !</p>
+<h2 id="bilan" tabindex="-1">Bilan</h2>
+<p>Ce travail est vraiment un <i lang="en">rush</i>, avec seulement quelques jours (travaillés de surcroît) pour proposer une intégration créative qui soit d’une qualité suffisante pour ne pas subir l’ire d’un lectorat exigeant, et parfois intransigeant.</p>
+<p>Certaines fonctionnalités sont arrivées tardivement, après le lancement du calendrier — j’avais enchaîné plusieurs nuits très courtes avant le lancement pour finir dans les temps, et ça n’a pas suffi.</p>
+<p>Mais <strong>j’ai pu terminer en profitant des conseils des lecteurices, auteurices et camarades de discussion sur IRC</strong> — qui furent très enrichissants : merci à tous ceux qui ont participé, j’espère qu’ils se reconnaitront !</p>
+<p><strong>Post-Scriptum</strong> : cet article est focalisé sur le défi de l’intégration du thème annuel, mais nous avons aussi fait le choix en amont de changer de CMS. Grâce à un impressionnant travail du professeur Joachim (qui s’est également fendu d’<a href="https://blog.professeurjoachim.com/billet/2024-11-22-30-jours-de-kirby-pour-24-jours-de-web">un article rétrospectif sur la migration vers Kirby</a> que je vous encourage à lire), c’est un succès — mais ça ajouté au défi puisque nous avons eu beaucoup d’ajustements à faire sur l’intégration commune, notamment sur l’affichage du contenu riche des articles.</p>
+
+			</div>
+		<footer class="small mt2">
+			<p class="pl2 mt0 pt1">
+				Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
+				Publié le <time class="updated" datetime="2025-01-08" itemprop="datePublished">8 janvier 2025</time>.
+			</p>
+		</footer>
+	</article>
+<div id="comments" class="comments-area pl2 pt2 mt2 print-hidden"><div class="comment-respond">
+	<h3>Laisser un commentaire</h3>
+	<form action="https://github.com/ffoodd/ffoodd.fr/new/main/_src/posts/25e-jour-de-web/comments/?filename=0000.md" method="post" class="comment-form">
+		<p class="comment-notes">
+			Vous devez avoir un compte GitHub pour ajouter un commentaire.
+		</p>
+		<p>
+			<label for="pseudo">Pseudonyme GitHub <span class="required">(obligatoire)</span></label>
+			<input id="pseudo" name="pseudo" type="text"
+						 aria-required="true" required="required" autocomplete="nickname">
+		</p>
+		<p>
+			<label for="value">Commentaire <span class="required">(obligatoire)</span></label>
+			<textarea id="value" name="value" cols="45" rows="8"
+								aria-required="true" required="required" aria-describedby="comment-note"></textarea>
+			<span id="comment-note" class="small">Markdown accepté.</span>
+		</p>
+		<p class="form-submit">
+			<input name="submit" type="submit" id="submit" class="submit" value="Laisser un commentaire">
+		</p>
+	</form>
+	<script>
+		const form = document.querySelector('.comment-form');
+		const dynamicCommentID = crypto.randomUUID().substring(0, 4);
+
+		form.addEventListener('submit', async (event) => {
+			event.preventDefault();
+			const pseudo = document.getElementById('pseudo').value;
+			const comment = document.getElementById('comment').value;
+
+			const content = await fetch(`https://api.github.com/users/${pseudo}`)
+				.then(response => response.json())
+				.then(user => {
+					const content = encodeURIComponent(`---
+date: "${new Date().toISOString()}"
+author_name: "${user.name}"
+author_url: "${user.blog}"
+author_avatar: "${user.avatar_url}"
+id: "${dynamicCommentID}"
+tags: ["comments","25e-jour-de-web"]
+---
+${comment}`);
+
+					window.open(`https://github.com/ffoodd/ffoodd.fr/new/main/_src/posts/25e-jour-de-web/comments/?value=${content}&filename=${dynamicCommentID}.md`)
+				});
+		});
+	</script>
+</div>
+</main><aside class="col pt8 pl0 pr0 print-hidden" role="complementary" id="sommaire">
+		<div class="aside pt1 pr3 pb1 pl2">
+			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
+			<div class="textwidget">
+				<ol><li><a href="#le-calendrier">Le calendrier</a></li><li><a href="#les-animations">Les animations</a></li><li><a href="#au-dela-des-preferences">Au-delà des préférences</a></li><li><a href="#bilan">Bilan</a></li></ol>
+			</div>
+		</div>
+	</aside>
+		</div>
+		<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
+			<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden"><li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__mastodon" href="https://mamot.fr/@ffoodd" itemprop="url" rel="me"title="Gaël Poupard sur Mastodon">
+							<span itemprop="name">Mastodon</span>
+						</a>
+					</li><li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__github" href="https://github.com/ffoodd" itemprop="url"title="Gaël Poupard sur GitHub">
+							<span itemprop="name">GitHub</span>
+						</a>
+					</li><li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__codepen" href="https://codepen.io/ffoodd" itemprop="url"title="Gaël Poupard sur CodePen">
+							<span itemprop="name">CodePen</span>
+						</a>
+					</li><li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__dribbble" href="https://dribbble.com/ffoodd" itemprop="url"title="Gaël Poupard sur Dribbble">
+							<span itemprop="name">Dribbble</span>
+						</a>
+					</li><li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__linkedin" href="https://www.linkedin.com/pub/ga%C3%ABl-poupard/30/17b/401" itemprop="url"title="Gaël Poupard sur LinkedIn">
+							<span itemprop="name">LinkedIn</span>
+						</a>
+					</li><li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/index.xml" itemprop="url"title="La vie en #ffoodd | Flux RSS">
+							<span itemprop="name">RSS</span>
+						</a>
+					</li></ul>
+
+			<p class="small">
+				&copy; 2025 La vie en #ffoodd &mdash; Design et intégration par <span itemprop="name">Gaël Poupard</span> &mdash; <a href="/mentions-legales/">Mentions légales</a>
+				<br>
+				Sauf mention contraire, l’ensemble du contenu est sous <a rel="license" href="creativecommons.org/licenses/by-nc-sa/4.0/fr/">Licence <abbr lang="en" title="Creative Commons">CC</abbr> <abbr lang="en" title="Attribution">BY</abbr>-<abbr lang="en" title="Non Commercial">NC</abbr>-<abbr lang="en" title="Share Alike">SA</abbr></a>.
+			</p>
+
+			<meta itemprop="jobTitle" content="Webdesigner et intégrateur web">
+			<meta itemprop="worksFor" content="onepoint">
+		</footer></body>
+</html>
