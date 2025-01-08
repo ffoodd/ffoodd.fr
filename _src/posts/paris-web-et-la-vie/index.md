@@ -14,7 +14,7 @@ Il sʼen est passé, des choses, cet été ☺.
 
 ### Guide pratique de choix typographique
 
-Je lʼavais peut-être déjà mentionné, mais tant pis —&nbsp;jʼen suis fier&nbsp;: David Rault mʼa fait lʼhonneur de citer mon [compte-rendu de lecture de son «&nbsp;Guide pratique de choix typographique&nbsp;»](https://www.ffoodd.fr/guide-pratique-de-choix-typographique/) sur la 4e de couverture de sa réédition. Cʼest un excellent livre, je vous le conseille vraiment&nbsp;! Vous le trouverez sur [le site des Ateliers Perrousseaux](https://www.adverbum.fr/guide-pratique-de-choix-typographique-rault-david-atelier-perrousseaux_ouvrage-perrousseaux_4yrc07ab75lc.html).
+Je lʼavais peut-être déjà mentionné, mais tant pis —&nbsp;jʼen suis fier&nbsp;: David Rault mʼa fait lʼhonneur de citer mon [compte-rendu de lecture de son «&nbsp;Guide pratique de choix typographique&nbsp;»](https://www.ffoodd.fr/guide-pratique-de-choix-typographique/) sur la 4<sup>e</sup> de couverture de sa réédition. Cʼest un excellent livre, je vous le conseille vraiment&nbsp;! Vous le trouverez sur [le site des Ateliers Perrousseaux](https://www.adverbum.fr/guide-pratique-de-choix-typographique-rault-david-atelier-perrousseaux_ouvrage-perrousseaux_4yrc07ab75lc.html).
 
 ### Optimiser son référencement WordPress
 
@@ -42,7 +42,7 @@ Lʼan passé, jʼai découvert le rôle dʼorateur au WP Tech lors de lʼatelier
 
 ### Paris Web
 
-Déjà la 3e édition à laquelle jʼassiste et je prends toujours autant de plaisir à découvrir les gens et les sujets. Je ne vais pas mʼétendre sur un compte-rendu, le web en fourmille déjà et ce nʼest pas mon propos du jour —&nbsp;mais comme dʼhabitude il y a eu de grands moments. Peut-être vous ferais-je un véritable retour plus tard ☺.
+Déjà la 3<sup>e</sup> édition à laquelle j’assiste et je prends toujours autant de plaisir à découvrir les gens et les sujets. Je ne vais pas mʼétendre sur un compte-rendu, le web en fourmille déjà et ce nʼest pas mon propos du jour —&nbsp;mais comme dʼhabitude il y a eu de grands moments. Peut-être vous ferais-je un véritable retour plus tard ☺.
 
 ## Travail
 
