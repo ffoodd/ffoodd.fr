@@ -3,7 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>{{ metatitle or title }} — {{ site.name }}</title>
+		{%  set titre = metatitle or title %}
+		<title>{{ titre | striptags | replace('&nbsp;', ' ') | replace('&thinsp;', ' ') }} — {{ site.name }}</title>
 		<link rel="preload" as="font" href="/assets/fonts/bello-pro.woff2">
 		<link rel="preload" as="font" href="/assets/fonts/museo-slab-300.woff2">
 		{%- if comments > 0 -%}
@@ -11,7 +12,8 @@
 		{%- endif -%}
 		<link rel="stylesheet" href="/assets/styles.min.css" media="all">
 		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
-		<meta name="description" content="{{ metadescription or description or excerpt }}">
+		{%  set desc = metadescription or description or excerpt %}
+		<meta name="description" content="{{ desc | striptags | replace('&nbsp;', ' ') | replace('&thinsp;', ' ') }}">
 		<meta name="generator" content="{{ eleventy.generator }}">
 		<link rel="icon" href="/favicon.ico" sizes="32x32">
 		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
