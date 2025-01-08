@@ -32,7 +32,7 @@
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&quot;les-boules-de-noel&quot; tabindex=&quot;-1&quot;&gt;Les boules de Noël&lt;/h3&gt;
 &lt;p&gt;C’est le second élément le plus marquant dans l’illustration. Leur forme circulaire et leurs couleurs sont très présentes, et clairement un élément visuel sur lequel capitaliser. Il y en a quatre, et cette fréquence m’a immédiatement fait comprendre comment réutiliser cet élément visuel : &lt;strong&gt;les numéros de chaque case&lt;/strong&gt;, symbole fort du calendrier de l’avent.&lt;/p&gt;
-&lt;p&gt;Il existe des solutions simples pour les quelques éléments de langages visuels présents dans les boules de l’illustration&amp;amp;nsp;:&lt;/p&gt;
+&lt;p&gt;Il existe des solutions simples pour les quelques éléments de langages visuels présents dans les boules de l’illustration :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;C’est un cercle : on utilise la même valeur pour la hauteur et la largeur afin d’avoir un carré parfait, puis &lt;code&gt;border-radius: 50%&lt;/code&gt; pour un cercle.&lt;/li&gt;
 &lt;li&gt;C’est une sphère : un &lt;code&gt;radial-gradient()&lt;/code&gt; pour l’arrière-plan et &lt;code&gt;box-shadow&lt;/code&gt; pour renforcer l’effet visuel de relief font très bien le boulot.&lt;/li&gt;

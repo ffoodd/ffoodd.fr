@@ -51,7 +51,7 @@ Et puisque je suis un flemmard notoire, j’ai farfouillé les internets pour tr
 
 C’est le second élément le plus marquant dans l’illustration. Leur forme circulaire et leurs couleurs sont très présentes, et clairement un élément visuel sur lequel capitaliser. Il y en a quatre, et cette fréquence m’a immédiatement fait comprendre comment réutiliser cet élément visuel&nbsp;: **les numéros de chaque case**, symbole fort du calendrier de l’avent.
 
-Il existe des solutions simples pour les quelques éléments de langages visuels présents dans les boules de l’illustration&nsp;:
+Il existe des solutions simples pour les quelques éléments de langages visuels présents dans les boules de l’illustration&nbsp;:
 
 * C’est un cercle&nbsp;: on utilise la même valeur pour la hauteur et la largeur afin d’avoir un carré parfait, puis `border-radius: 50%` pour un cercle.
 * C’est une sphère&nbsp;: un `radial-gradient()` pour l’arrière-plan et `box-shadow` pour renforcer l’effet visuel de relief font très bien le boulot.
