@@ -1,6 +1,7 @@
 ---
 layout: "template/post.njk"
 title: "25<sup>e</sup> jour de web"
+metatitle: "25e jour de web"
 date: "2025-01-08"
 permalink: "25e-jour-de-web/index.html"
 excerpt: "Pour la deuxième année consécutive, je me suis occupé au sein de l’association Paris Web de l’intégration graphique du thème annuel des [24 Jours de Web](https://www.24joursdeweb.fr/), le calendrier de l’avent des gens qui font le web d’après."
