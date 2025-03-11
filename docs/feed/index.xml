@@ -8,6 +8,62 @@
 		<description>Intégrateur web à Nantes.</description>
 		<language>fr-FR</language>
 				<item>
+					<title>Masquage accessible de pointe</title>
+					<link>https://www.ffoodd.fr/masquage-accessible-de-pointe/</link>
+					<description>&lt;p&gt;La classe de masquage accessible &lt;code&gt;.visually-hidden&lt;/code&gt; — anciennement &lt;code&gt;.sr-only&lt;/code&gt; dans Bootstrap — a beaucoup évolué au fil du temps. C’est pour ça que j’ai publié &lt;a href=&quot;https://www.ffoodd.fr/cache-cache-css/&quot;&gt;&lt;cite&gt;cache-cache CSS&lt;/cite&gt;&lt;/a&gt; il y a quelques années, qui récapitulait l’état de l’art à ce moment.&lt;/p&gt;
+&lt;p&gt;Mais il n’y a pas que les techniques CSS qui évoluent… Les navigateurs, aussi. Et parfois, ça requièrs de l’adaptation !&lt;/p&gt;
+&lt;h2 id=&quot;un-cas-legendaire&quot; tabindex=&quot;-1&quot;&gt;Un cas légendaire&lt;/h2&gt;
+&lt;p&gt;Louis-Maxime Piton — un des mainteneurs de &lt;a href=&quot;https://boosted.orange.com/&quot;&gt;Boosted (en anglais)&lt;/a&gt; et inévitablement contributeur à &lt;a href=&quot;https://getbootstrap.com/&quot;&gt;Bootstrap (en anglais)&lt;/a&gt; — a &lt;a href=&quot;https://github.com/twbs/bootstrap/pull/37533&quot;&gt;proposé un correctif (sur GitHub, en anglais)&lt;/a&gt; il y a plus de deux ans pour contourner &lt;a href=&quot;https://stackoverflow.com/questions/31057955/why-are-table-borders-not-collapsing-when-caption-is-positioned/32063028#32063028&quot;&gt;un problème provoqué par le masquage accessible appliqué à une légende de tableau (sur StackOverflow, en anglais)&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Les &lt;code&gt;caption&lt;/code&gt;, lorsqu’ils sont en position absolue, sont considérés comme des cellules de tableaux anonymes — et ça met la grouille dans la fusion des bordures, l’indispensable &lt;code&gt;border-collapse: collapse&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Le correctif proposé est simplissime, bien qu’il puisse théoriquement poser des problèmes : n’appliquer la position absolue que si l’élément n’est pas un &lt;code&gt;caption&lt;/code&gt;. C’est l’état actuel &lt;a href=&quot;https://github.com/twbs/bootstrap/blob/53171ad564b2d01bff7613d7210e93a5197a367b/scss/mixins/_visually-hidden.scss&quot;&gt;du &lt;em lang=&quot;en&quot;&gt;mixin&lt;/em&gt; dans Bootstrap (sur GitHub, en anglais)&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;En résumé, voici la modification :&lt;/p&gt;
+&lt;pre class=&quot;language-css&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;.visually-hidden:not(caption)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;token property&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; absolute &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;en-cas-de-debordement&quot; tabindex=&quot;-1&quot;&gt;En cas de débordement&lt;/h2&gt;
+&lt;p&gt;La semaine dernière, l’ami &lt;a href=&quot;https://www.djangojanny.net/&quot;&gt;Django Janny&lt;/a&gt; a relancé &lt;a href=&quot;https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034?permalink_comment_id=5468620#gistcomment-5468620&quot;&gt;le sujet sur Gist (en anglais) avec un cas marginal&lt;/a&gt; : un élément qui déborde, à l’intérieur d’un élément masqué visuellement.&lt;/p&gt;
+&lt;p&gt;En général, on ne masque qu’une portion de texte de cette façon : aucun élément bloc ne devrait s’y trouver — ni, en réalité, aucun enfant. La majorité du temps, le masquage accessible respecte implicitement les mêmes règles qu’un attribut &lt;code&gt;aria-label&lt;/code&gt; par exemple : un texte simple et concis.&lt;/p&gt;
+&lt;p&gt;Mais c’est une règle implicite, et à ma connaissance aucune contre-indication n’a jamais été mentionnée quant à l’utilisation du masquage accessible sur une portion de DOM plus riche. Je l’ai par exemple fait lorsque j’ai amélioré les liens d’évitements sur &lt;a href=&quot;https://getbootstrap.com/docs/5.3/getting-started/introduction/&quot;&gt;la documentation de Bootstrap (en anglais)&lt;/a&gt;, dont le conteneur est masqué visuellement — mais il apparaît à la prise de focus, nous faisant passer à côté du problème…&lt;/p&gt;
+&lt;p&gt;Depuis (au moins) 2019, les éléments en débordement deviennent focusables dans la plupart des navigateurs, pour palier un défaut d’accessibilité : ne pas pouvoir interagir avec un élément masqué par un débordement. &lt;a href=&quot;https://cassey.dev/til/2019-11-19-overflow-scroll-gets-focus/&quot;&gt;Cassey Lottman a retracé ce changement dans son article &lt;cite lang=&quot;en&quot;&gt;Elements with overflow: scroll become focusable&lt;/cite&gt; (en anglais)&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Ce qui, dans un élément masqué visuellement, devient un piège : on ne voit (évidemment) pas le focus.&lt;/p&gt;
+&lt;p&gt;La solution proposée par Django — et après quelques tests, la seule qui paraisse fonctionner — est d’&lt;a href=&quot;https://codepen.io/djangounet/pen/WbNpmMP?editors=1111&quot;&gt;empêcher le débordement sur les enfants d’un élément masqué visuellement (sur CodePen, en anglais)&lt;/a&gt; :&lt;/p&gt;
+&lt;pre class=&quot;language-css&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;.visually-hidden *&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;token property&quot;&gt;overflow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; hidden &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;la-totale&quot; tabindex=&quot;-1&quot;&gt;La totale&lt;/h2&gt;
+&lt;p&gt;Voici donc la version mise à jour de la technique de masquage accessible :&lt;/p&gt;
+&lt;pre class=&quot;language-css&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;.visually-hidden&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;token property&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0 &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;token property&quot;&gt;clip-path&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;inset&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;50%&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;token property&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 1px &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;token property&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; -1px &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;token property&quot;&gt;overflow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; hidden &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;token property&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0 &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;token property&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 1px &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;token property&quot;&gt;white-space&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; nowrap &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token selector&quot;&gt;.visually-hidden:not(caption)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;token property&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; absolute &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token selector&quot;&gt;.visually-hidden *&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;token property&quot;&gt;overflow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; hidden &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;J’en ai profité pour &lt;a href=&quot;https://github.com/twbs/bootstrap/pull/41286&quot;&gt;proposer ce changement dans Bootstrap (sur GitHub, en anglais)&lt;/a&gt; — en citant Django bien entendu — et pour mettre à jour &lt;a href=&quot;https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034&quot;&gt;le Gist servant souvent de référence (en anglais)&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Notez par ailleurs quelques autres changements succincts :&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;J’ai renommé &lt;code&gt;.sr-only&lt;/code&gt; en &lt;code&gt;.visually-hidden&lt;/code&gt; pour me conformer aux usages des &lt;em lang=&quot;en&quot;&gt;frameworks&lt;/em&gt; populaires,&lt;/li&gt;
+&lt;li&gt;Et nettoyé un peu le support de navigateurs anciens : plus de &lt;code&gt;clip&lt;/code&gt; désormais, car &lt;a href=&quot;https://developer.mozilla.org/fr/docs/Web/CSS/clip-path&quot;&gt;&lt;code&gt;clip-path&lt;/code&gt; est très largement supporté&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;La variante pour démasquer le contenu lors de la prise de focus n’est plus une remise à zéro, mais une autre classe conditionnée à l’état : &lt;code&gt;.visually-hidden-focusable:not(:focus):not(:focus-within)&lt;/code&gt;, à l’instar de ce qui est fait &lt;a href=&quot;https://github.com/twbs/bootstrap/pull/32440&quot;&gt;dans Bootstrap depuis cinq ans déjà (sur GitHub, en anglais)&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+					<pubDate>Tue, 11 Mar 2025 01:00:00 GMT</pubDate>
+					<dc:creator>Gaël Poupard</dc:creator>
+					<guid>https://www.ffoodd.fr/masquage-accessible-de-pointe/</guid>
+					<frDate>11 mars 2025</frDate>
+				</item>
+				<item>
 					<title>25&lt;sup&gt;e&lt;/sup&gt; jour de web</title>
 					<link>https://www.ffoodd.fr/25e-jour-de-web/</link>
 					<description>&lt;p&gt;C’est un exercice très intéressant, car nous avons deux contraintes très spécifiques pour le thème visuel annuel :&lt;/p&gt;
@@ -782,6 +838,10 @@ document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;documentEl
 					<description>&lt;p&gt;Et j’ai beau trouver ça idiot — masquer du texte pour certains utilisateurs et pas pour d’autres, ça me paraît incohérent avec l’accessibilité — c’est un besoin récurrent.&lt;/p&gt;
 &lt;p&gt;Il existe de nombreuses façons de faire, que je ne détaillerai pas ici. Depuis quelques années, lorsque je le peux, j’utilise celle de &lt;a href=&quot;https://twitter.com/thierrykoblentz&quot;&gt;Thierry Koblentz&lt;/a&gt; pour Yahoo! qui est décrite &lt;a href=&quot;https://developer.yahoo.com/blogs/ydn/clip-hidden-content-better-accessibility-53456.html&quot;&gt;sur le blog technique de Yahoo!&lt;/a&gt; &lt;a href=&quot;https://cssmojo.com/hide-content-from-sighted-users/&quot;&gt;sur le blog de Thierry&lt;/a&gt;. C’est de loin la plus complète, et la seule à ma connaissance à supporter la direction de texte de droite à gauche.&lt;/p&gt;
 &lt;p&gt;Mais elle n’est pas exempte de problème, désormais.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2 id=&quot;mise-a-jour&quot; tabindex=&quot;-1&quot;&gt;Mise à jour&lt;/h2&gt;
+&lt;p&gt;Depuis la dernière mise à jour en 2019, d’autres changements ont été apportés. Je les ai récapitulés dans &lt;a href=&quot;https://www.ffoodd.fr/masquage-accessible-de-pointe/&quot;&gt;&lt;cite&gt;Masquage accessible de point&lt;/cite&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;hr /&gt;
 &lt;h2 id=&quot;propriete-depreciee&quot; tabindex=&quot;-1&quot;&gt;Propriété dépréciée&lt;/h2&gt;
 &lt;p&gt;La « magie » de cette solution repose sur la propriété &lt;code&gt;clip&lt;/code&gt;. Elle est simple à comprendre et très efficace. Seul bémol : &lt;code&gt;clip&lt;/code&gt; est &lt;strong&gt;déprécié par le module &lt;em&gt;&lt;a href=&quot;https://drafts.fxtf.org/css-masking-1/#clip-property&quot;&gt;CSS masking&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt; de niveau 1.&lt;/p&gt;
 &lt;p&gt;Pas de souci. La technique basée sur &lt;code&gt;clip&lt;/code&gt; date un peu, il est normal qu’elle tombe en désuétude. La nouvelle spécification recommande l’utilisation de &lt;code&gt;clip-path&lt;/code&gt; pour remplacer &lt;code&gt;clip&lt;/code&gt;. Ce qui nous laisse pantois, puisque &lt;a href=&quot;https://caniuse.com/#feat=css-clip-path&quot;&gt;le support de &lt;code&gt;clip-path&lt;/code&gt; est encore tout à fait relatif&lt;/a&gt;. &lt;strong&gt;Nous devons conserver &lt;code&gt;clip&lt;/code&gt; et ajouter &lt;code&gt;clip-path&lt;/code&gt; en guise d’amélioration progressive&lt;/strong&gt;.&lt;/p&gt;
@@ -796,8 +856,7 @@ document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;documentEl
 &lt;p&gt;Et voilà, second problème résolu.&lt;/p&gt;
 &lt;h2 id=&quot;la-totale&quot; tabindex=&quot;-1&quot;&gt;La totale&lt;/h2&gt;
 &lt;p&gt;Voilà la version finale que je propose actuellement :&lt;/p&gt;
-&lt;pre class=&quot;language-css&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;
-&lt;span class=&quot;token selector&quot;&gt;.sr-only&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;pre class=&quot;language-css&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;.sr-only&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;token property&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0 &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;token property&quot;&gt;clip&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;rect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;1px&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 1px&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 1px&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 1px&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;token property&quot;&gt;-webkit-clip-path&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;inset&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;50%&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
@@ -838,7 +897,7 @@ document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;documentEl
 &lt;p&gt;&lt;a href=&quot;https://twitter.com/KittyGiraudel&quot;&gt;Kitty Giraudel&lt;/a&gt; m’a fait l’honneur de &lt;a href=&quot;https://kittygiraudel.com/2016/10/13/css-hide-and-seek/&quot;&gt;traduire cet article en anglais et le publier sur son blog&lt;/a&gt;. Merci !&lt;/p&gt;
 &lt;h2 id=&quot;modifications&quot; tabindex=&quot;-1&quot;&gt;Modifications&lt;/h2&gt;
 &lt;h3 id=&quot;les-lecteurs-d-ecran-sur-mobile&quot; tabindex=&quot;-1&quot;&gt;Les lecteurs d’écran sur mobile&lt;/h3&gt;
-&lt;p&gt;19 octobre 2016&lt;/p&gt;
+&lt;p&gt;&lt;time datetime=&quot;2016-10-19&quot;&gt;19 octobre 2016&lt;/time&gt;&lt;/p&gt;
 &lt;p&gt;Ayant besoin de tests sur cette version pour vérifier qu’elle n’introduit pas de régressions, &lt;a href=&quot;https://twitter.com/johan_ramon/status/788372720224526336&quot;&gt;Johan Ramon m’a remonté un bug étrange sur VoiceOver&lt;/a&gt;. En creusant un peu avec &lt;a href=&quot;https://github.com/PigeardSylvain&quot;&gt;Sylvain Pigeard&lt;/a&gt;, il nous est apparu que &lt;code&gt;position: static&lt;/code&gt; posait problème lors de la prise de focus d’un lien ayant la classe &lt;code&gt;.sr-only-focusable&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Nous étions contents, lorsqu’en cherchant à avertir l’équipe de Bootstrap nous sommes tombés sur &lt;a href=&quot;https://github.com/twbs/bootstrap/issues/20732&quot;&gt;un ticket ouvert récemment qui implique également TalkBack&lt;/a&gt;. &lt;a href=&quot;https://twitter.com/patrick_h_lauke&quot;&gt;Patrick H. Lauke&lt;/a&gt;, en investiguant, a décelé de nombreuses incohérences dans la gestion du focus entre les diverses technologies d’assistance sur mobile. Il a ainsi ouvert des tickets un peu partout :&lt;/p&gt;
 &lt;ul&gt;
@@ -850,12 +909,16 @@ document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;documentEl
 &lt;/ul&gt;
 &lt;p&gt;L’état des lieux est assez sombre : &lt;strong&gt;les liens d’évitement ne marchent globalement pas sur les interfaces tactiles lorsqu’on utilise un lecteur d’écran&lt;/strong&gt;. Ô joie.&lt;/p&gt;
 &lt;h3 id=&quot;le-referencement-naturel&quot; tabindex=&quot;-1&quot;&gt;Le référencement naturel&lt;/h3&gt;
-&lt;p&gt;19 octobre 2016&lt;/p&gt;
+&lt;p&gt;&lt;time datetime=&quot;2016-10-19&quot;&gt;19 octobre 2016&lt;/time&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://twitter.com/stevefaulkner&quot;&gt;Steve Faulkner&lt;/a&gt; — du &lt;a href=&quot;https://www.paciellogroup.com/blog/&quot;&gt;Paciello Group&lt;/a&gt; — a posé la question au forum de support pour &lt;em&gt;webmasters&lt;/em&gt; de Google : &lt;a href=&quot;https://productforums.google.com/forum/#!msg/webmasters/YJcZUhtMIE4/XkOEzVakBAAJ&quot;&gt;les contextes supplémentaires pour utilisateurs malvoyants ont-ils un effet négatif sur le positionnement dans les résultats de recherche ?&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Réponse courte : &lt;strong&gt;non&lt;/strong&gt; Cependant étant donné que ce texte n’apparaît pas de prime abord il est considéré comme du contenu secondaire et a donc un très faible impact sur le positionnement, et c’est une excellente chose puisque cela dissuade d’en abuser.&lt;/p&gt;
 &lt;h3 id=&quot;les-debordements-inopines&quot; tabindex=&quot;-1&quot;&gt;Les débordements inopinés&lt;/h3&gt;
-&lt;p&gt;18 janvier 2019&lt;/p&gt;
+&lt;p&gt;&lt;time datetime=&quot;2019-01-18&quot;&gt;18 janvier 2019&lt;/time&gt;&lt;/p&gt;
 &lt;p&gt;De multiples problèmes de débordements ont été observés, notamment sur Chrome, lorsque les éléments masqués sont contenus dans un élément avec &lt;code&gt;overflow: auto;&lt;/code&gt;. &lt;a href=&quot;https://github.com/Orange-OpenSource/Orange-Boosted-Bootstrap/issues/84&quot;&gt;Le problème est résolu dans Boosted&lt;/a&gt; en ajoutant &lt;code&gt;margin: -1px;&lt;/code&gt;.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2 id=&quot;mise-a-jour-1&quot; tabindex=&quot;-1&quot;&gt;Mise à jour&lt;/h2&gt;
+&lt;p&gt;Depuis la dernière mise à jour en 2019, d’autres changements ont été apportés. Je les ai récapitulés dans &lt;a href=&quot;https://www.ffoodd.fr/masquage-accessible-de-pointe/&quot;&gt;&lt;cite&gt;Masquage accessible de point&lt;/cite&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;hr /&gt;
 </description>
 					<pubDate>Thu, 13 Oct 2016 15:11:13 GMT</pubDate>
 					<dc:creator>Gaël Poupard</dc:creator>

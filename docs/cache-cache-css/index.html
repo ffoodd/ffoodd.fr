@@ -62,6 +62,10 @@
 				<p>Et j’ai beau trouver ça idiot — masquer du texte pour certains utilisateurs et pas pour d’autres, ça me paraît incohérent avec l’accessibilité — c’est un besoin récurrent.</p>
 <p>Il existe de nombreuses façons de faire, que je ne détaillerai pas ici. Depuis quelques années, lorsque je le peux, j’utilise celle de <a href="https://twitter.com/thierrykoblentz">Thierry Koblentz</a> pour Yahoo! qui est décrite <a href="https://developer.yahoo.com/blogs/ydn/clip-hidden-content-better-accessibility-53456.html">sur le blog technique de Yahoo!</a> <a href="https://cssmojo.com/hide-content-from-sighted-users/">sur le blog de Thierry</a>. C’est de loin la plus complète, et la seule à ma connaissance à supporter la direction de texte de droite à gauche.</p>
 <p>Mais elle n’est pas exempte de problème, désormais.</p>
+<hr>
+<h2 id="mise-a-jour" tabindex="-1">Mise à jour</h2>
+<p>Depuis la dernière mise à jour en 2019, d’autres changements ont été apportés. Je les ai récapitulés dans <a href="/masquage-accessible-de-pointe/"><cite>Masquage accessible de point</cite></a>.</p>
+<hr>
 <h2 id="propriete-depreciee" tabindex="-1">Propriété dépréciée</h2>
 <p>La « magie » de cette solution repose sur la propriété <code>clip</code>. Elle est simple à comprendre et très efficace. Seul bémol : <code>clip</code> est <strong>déprécié par le module <em><a href="https://drafts.fxtf.org/css-masking-1/#clip-property">CSS masking</a></em></strong> de niveau 1.</p>
 <p>Pas de souci. La technique basée sur <code>clip</code> date un peu, il est normal qu’elle tombe en désuétude. La nouvelle spécification recommande l’utilisation de <code>clip-path</code> pour remplacer <code>clip</code>. Ce qui nous laisse pantois, puisque <a href="https://caniuse.com/#feat=css-clip-path">le support de <code>clip-path</code> est encore tout à fait relatif</a>. <strong>Nous devons conserver <code>clip</code> et ajouter <code>clip-path</code> en guise d’amélioration progressive</strong>.</p>
@@ -76,8 +80,7 @@
 <p>Et voilà, second problème résolu.</p>
 <h2 id="la-totale" tabindex="-1">La totale</h2>
 <p>Voilà la version finale que je propose actuellement :</p>
-<pre class="language-css" tabindex="0"><code class="language-css">
-<span class="token selector">.sr-only</span> <span class="token punctuation">{</span>
+<pre class="language-css" tabindex="0"><code class="language-css"><span class="token selector">.sr-only</span> <span class="token punctuation">{</span>
   <span class="token property">border</span><span class="token punctuation">:</span> 0 <span class="token important">!important</span><span class="token punctuation">;</span>
   <span class="token property">clip</span><span class="token punctuation">:</span> <span class="token function">rect</span><span class="token punctuation">(</span>1px<span class="token punctuation">,</span> 1px<span class="token punctuation">,</span> 1px<span class="token punctuation">,</span> 1px<span class="token punctuation">)</span> <span class="token important">!important</span><span class="token punctuation">;</span>
   <span class="token property">-webkit-clip-path</span><span class="token punctuation">:</span> <span class="token function">inset</span><span class="token punctuation">(</span>50%<span class="token punctuation">)</span> <span class="token important">!important</span><span class="token punctuation">;</span>
@@ -118,7 +121,7 @@
 <p><a href="https://twitter.com/KittyGiraudel">Kitty Giraudel</a> m’a fait l’honneur de <a href="https://kittygiraudel.com/2016/10/13/css-hide-and-seek/">traduire cet article en anglais et le publier sur son blog</a>. Merci !</p>
 <h2 id="modifications" tabindex="-1">Modifications</h2>
 <h3 id="les-lecteurs-d-ecran-sur-mobile" tabindex="-1">Les lecteurs d’écran sur mobile</h3>
-<p>19 octobre 2016</p>
+<p><time datetime="2016-10-19">19 octobre 2016</time></p>
 <p>Ayant besoin de tests sur cette version pour vérifier qu’elle n’introduit pas de régressions, <a href="https://twitter.com/johan_ramon/status/788372720224526336">Johan Ramon m’a remonté un bug étrange sur VoiceOver</a>. En creusant un peu avec <a href="https://github.com/PigeardSylvain">Sylvain Pigeard</a>, il nous est apparu que <code>position: static</code> posait problème lors de la prise de focus d’un lien ayant la classe <code>.sr-only-focusable</code>.</p>
 <p>Nous étions contents, lorsqu’en cherchant à avertir l’équipe de Bootstrap nous sommes tombés sur <a href="https://github.com/twbs/bootstrap/issues/20732">un ticket ouvert récemment qui implique également TalkBack</a>. <a href="https://twitter.com/patrick_h_lauke">Patrick H. Lauke</a>, en investiguant, a décelé de nombreuses incohérences dans la gestion du focus entre les diverses technologies d’assistance sur mobile. Il a ainsi ouvert des tickets un peu partout :</p>
 <ul>
@@ -130,19 +133,23 @@
 </ul>
 <p>L’état des lieux est assez sombre : <strong>les liens d’évitement ne marchent globalement pas sur les interfaces tactiles lorsqu’on utilise un lecteur d’écran</strong>. Ô joie.</p>
 <h3 id="le-referencement-naturel" tabindex="-1">Le référencement naturel</h3>
-<p>19 octobre 2016</p>
+<p><time datetime="2016-10-19">19 octobre 2016</time></p>
 <p><a href="https://twitter.com/stevefaulkner">Steve Faulkner</a> — du <a href="https://www.paciellogroup.com/blog/">Paciello Group</a> — a posé la question au forum de support pour <em>webmasters</em> de Google : <a href="https://productforums.google.com/forum/#!msg/webmasters/YJcZUhtMIE4/XkOEzVakBAAJ">les contextes supplémentaires pour utilisateurs malvoyants ont-ils un effet négatif sur le positionnement dans les résultats de recherche ?</a></p>
 <p>Réponse courte : <strong>non</strong> Cependant étant donné que ce texte n’apparaît pas de prime abord il est considéré comme du contenu secondaire et a donc un très faible impact sur le positionnement, et c’est une excellente chose puisque cela dissuade d’en abuser.</p>
 <h3 id="les-debordements-inopines" tabindex="-1">Les débordements inopinés</h3>
-<p>18 janvier 2019</p>
+<p><time datetime="2019-01-18">18 janvier 2019</time></p>
 <p>De multiples problèmes de débordements ont été observés, notamment sur Chrome, lorsque les éléments masqués sont contenus dans un élément avec <code>overflow: auto;</code>. <a href="https://github.com/Orange-OpenSource/Orange-Boosted-Bootstrap/issues/84">Le problème est résolu dans Boosted</a> en ajoutant <code>margin: -1px;</code>.</p>
+<hr>
+<h2 id="mise-a-jour-1" tabindex="-1">Mise à jour</h2>
+<p>Depuis la dernière mise à jour en 2019, d’autres changements ont été apportés. Je les ai récapitulés dans <a href="/masquage-accessible-de-pointe/"><cite>Masquage accessible de point</cite></a>.</p>
+<hr>
 
 			</div>
 		<footer class="small mt2">
 			<p class="pl2 mt0 pt1">
 				Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
 				Publié le <time class="updated" datetime="2016-10-13T13:11:13" itemprop="datePublished">13 octobre 2016</time>
-				 et modifié le <time class="updated" datetime="2021-03-05T17:07:37" itemprop="dateModified">5 mars 2021</time>.
+				 et modifié le <time class="updated" datetime="2025-03-11" itemprop="dateModified">11 mars 2025</time>.
 			</p>
 		</footer>
 	</article>
@@ -329,7 +336,7 @@ Je viens de faire une passe sur tous mes projets en cours, pour créer un ticket
 		<div class="aside pt1 pr3 pb1 pl2">
 			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
 			<div class="textwidget">
-				<ol><li><a href="#propriete-depreciee">Propriété dépréciée</a></li><li><a href="#le-texte-ratatine">Le texte ratatiné</a></li><li><a href="#la-totale">La totale</a></li><li><a href="#code-et-traduction">Code et traduction</a></li><li><a href="#modifications">Modifications</a></li><li><a href="#comments">Commentaires</a></li></ol>
+				<ol><li><a href="#mise-a-jour">Mise à jour</a></li><li><a href="#propriete-depreciee">Propriété dépréciée</a></li><li><a href="#le-texte-ratatine">Le texte ratatiné</a></li><li><a href="#la-totale">La totale</a></li><li><a href="#code-et-traduction">Code et traduction</a></li><li><a href="#modifications">Modifications</a></li><li><a href="#mise-a-jour-1">Mise à jour</a></li><li><a href="#comments">Commentaires</a></li></ol>
 			</div>
 		</div>
 	</aside>

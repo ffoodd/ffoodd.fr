@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="fr-FR">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<title>Masquage accessible de pointe — La vie en #ffoodd</title>
+		<link rel="preload" as="font" href="/assets/fonts/bello-pro.woff2">
+		<link rel="preload" as="font" href="/assets/fonts/museo-slab-300.woff2"><link rel="stylesheet" href="/assets/styles.min.css" media="all">
+		<link rel="stylesheet" href="/assets/impression.min.css" media="print">
+		
+		<meta name="description" content="Depuis ma dernière partie de cache-cache CSS, les choses ont changé — quelques cas tordus sont apparus.">
+		<meta name="generator" content="Eleventy v3.0.0">
+		<link rel="icon" href="/favicon.ico" sizes="32x32">
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+		<link rel="author" href="/humans.txt" type="text/plain">
+		<meta property="fediverse:creator" content="@ffoodd@mamot.fr">
+		<link rel="alternate" type="application/rss+xml" title="La vie en #ffoodd | Flux RSS" href="/feed/index.xml">
+	</head>
+	<body class="tk-museo-slab" itemscope itemtype="https://schema.org/WebPage">
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#content">Aller au contenu</a>
+	<a class="skip scroll pa1 inbl smaller print-hidden" href="#sommaire">Aller au sommaire</a>
+		<div class="row">
+			<nav class="col txtright pt8 w-33 pl0 pr0 print-hidden" id="nav" role="navigation" aria-label="Menu principal">
+				<ul class="menu aside p-reset m-reset ul-reset">
+					<li class="tk-bello-pro h1-like m-reset">
+						<a href="/">ffoodd</a>
+					</li>
+					<li class="h3-like m-reset">
+						<a href="/journal/">Journal</a>
+					</li>
+					<li class="h3-like m-reset">
+						<a href="/travaux/">Parcours</a>
+					</li>
+					<li class="h3-like m-reset">
+						<a href="/now/">En ce moment</a>
+					</li>
+				</ul>
+			</nav>
+
+			<main class="col w--site pl3 pb3 pr3" id="content" role="main" role="main" itemprop="mainContentOfPage">
+				<div class="logo print-hidden">
+					<img src="/assets/img/embossed-ffoodd.png" alt="" id="logo" width="144" height="144">
+				</div>
+				<header class="center pt1 mb1" role="banner">
+					<h1 class="mb0 mt0 tk-bello-pro" itemprop="name">Masquage accessible de pointe</h1>
+						<nav role="navigation" aria-labelledby="here" class="print-hidden small mt2 mb1">
+	<span id="here">Vous êtes ici&nbsp;: </span>
+	<div class="inbl" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+		<a href="/" itemprop="url"><span itemprop="title">La vie en #ffoodd</span></a>
+		<span> ›&nbsp;</span>
+	</div>
+	<div class="inbl" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+		<span itemprop="title">Masquage accessible de pointe</span>
+	</div>
+</nav>
+
+						<h2 class="h3-like description" itemprop="description">Depuis ma dernière partie de <a href='/cache-cache-css/'>cache-cache CSS</a>, les choses ont changé&nbsp;— quelques cas tordus sont apparus.</h2>
+				</header>
+	<article role="article" itemscope itemtype="https://schema.org/Article">
+			<div itemprop="articleBody">
+				<p>La classe de masquage accessible <code>.visually-hidden</code> — anciennement <code>.sr-only</code> dans Bootstrap — a beaucoup évolué au fil du temps. C’est pour ça que j’ai publié <a href="/cache-cache-css/"><cite>cache-cache CSS</cite></a> il y a quelques années, qui récapitulait l’état de l’art à ce moment.</p>
+<p>Mais il n’y a pas que les techniques CSS qui évoluent… Les navigateurs, aussi. Et parfois, ça requièrs de l’adaptation !</p>
+<h2 id="un-cas-legendaire" tabindex="-1">Un cas légendaire</h2>
+<p>Louis-Maxime Piton — un des mainteneurs de <a href="https://boosted.orange.com/">Boosted (en anglais)</a> et inévitablement contributeur à <a href="https://getbootstrap.com">Bootstrap (en anglais)</a> — a <a href="https://github.com/twbs/bootstrap/pull/37533">proposé un correctif (sur GitHub, en anglais)</a> il y a plus de deux ans pour contourner <a href="https://stackoverflow.com/questions/31057955/why-are-table-borders-not-collapsing-when-caption-is-positioned/32063028#32063028">un problème provoqué par le masquage accessible appliqué à une légende de tableau (sur StackOverflow, en anglais)</a>.</p>
+<p>Les <code>caption</code>, lorsqu’ils sont en position absolue, sont considérés comme des cellules de tableaux anonymes — et ça met la grouille dans la fusion des bordures, l’indispensable <code>border-collapse: collapse</code>.</p>
+<p>Le correctif proposé est simplissime, bien qu’il puisse théoriquement poser des problèmes : n’appliquer la position absolue que si l’élément n’est pas un <code>caption</code>. C’est l’état actuel <a href="https://github.com/twbs/bootstrap/blob/53171ad564b2d01bff7613d7210e93a5197a367b/scss/mixins/_visually-hidden.scss">du <em lang="en">mixin</em> dans Bootstrap (sur GitHub, en anglais)</a>.</p>
+<p>En résumé, voici la modification :</p>
+<pre class="language-css" tabindex="0"><code class="language-css"><span class="token selector">.visually-hidden:not(caption)</span> <span class="token punctuation">{</span>
+	<span class="token property">position</span><span class="token punctuation">:</span> absolute <span class="token important">!important</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="en-cas-de-debordement" tabindex="-1">En cas de débordement</h2>
+<p>La semaine dernière, l’ami <a href="https://www.djangojanny.net/">Django Janny</a> a relancé <a href="https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034?permalink_comment_id=5468620#gistcomment-5468620">le sujet sur Gist (en anglais) avec un cas marginal</a> : un élément qui déborde, à l’intérieur d’un élément masqué visuellement.</p>
+<p>En général, on ne masque qu’une portion de texte de cette façon : aucun élément bloc ne devrait s’y trouver — ni, en réalité, aucun enfant. La majorité du temps, le masquage accessible respecte implicitement les mêmes règles qu’un attribut <code>aria-label</code> par exemple : un texte simple et concis.</p>
+<p>Mais c’est une règle implicite, et à ma connaissance aucune contre-indication n’a jamais été mentionnée quant à l’utilisation du masquage accessible sur une portion de DOM plus riche. Je l’ai par exemple fait lorsque j’ai amélioré les liens d’évitements sur <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/">la documentation de Bootstrap (en anglais)</a>, dont le conteneur est masqué visuellement — mais il apparaît à la prise de focus, nous faisant passer à côté du problème…</p>
+<p>Depuis (au moins) 2019, les éléments en débordement deviennent focusables dans la plupart des navigateurs, pour palier un défaut d’accessibilité : ne pas pouvoir interagir avec un élément masqué par un débordement. <a href="https://cassey.dev/til/2019-11-19-overflow-scroll-gets-focus/">Cassey Lottman a retracé ce changement dans son article <cite lang="en">Elements with overflow: scroll become focusable</cite> (en anglais)</a>.</p>
+<p>Ce qui, dans un élément masqué visuellement, devient un piège : on ne voit (évidemment) pas le focus.</p>
+<p>La solution proposée par Django — et après quelques tests, la seule qui paraisse fonctionner — est d’<a href="https://codepen.io/djangounet/pen/WbNpmMP?editors=1111">empêcher le débordement sur les enfants d’un élément masqué visuellement (sur CodePen, en anglais)</a> :</p>
+<pre class="language-css" tabindex="0"><code class="language-css"><span class="token selector">.visually-hidden *</span> <span class="token punctuation">{</span>
+	<span class="token property">overflow</span><span class="token punctuation">:</span> hidden <span class="token important">!important</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="la-totale" tabindex="-1">La totale</h2>
+<p>Voici donc la version mise à jour de la technique de masquage accessible :</p>
+<pre class="language-css" tabindex="0"><code class="language-css"><span class="token selector">.visually-hidden</span> <span class="token punctuation">{</span>
+	<span class="token property">border</span><span class="token punctuation">:</span> 0 <span class="token important">!important</span><span class="token punctuation">;</span>
+	<span class="token property">clip-path</span><span class="token punctuation">:</span> <span class="token function">inset</span><span class="token punctuation">(</span>50%<span class="token punctuation">)</span> <span class="token important">!important</span><span class="token punctuation">;</span>
+	<span class="token property">height</span><span class="token punctuation">:</span> 1px <span class="token important">!important</span><span class="token punctuation">;</span>
+	<span class="token property">margin</span><span class="token punctuation">:</span> -1px <span class="token important">!important</span><span class="token punctuation">;</span>
+	<span class="token property">overflow</span><span class="token punctuation">:</span> hidden <span class="token important">!important</span><span class="token punctuation">;</span>
+	<span class="token property">padding</span><span class="token punctuation">:</span> 0 <span class="token important">!important</span><span class="token punctuation">;</span>
+	<span class="token property">width</span><span class="token punctuation">:</span> 1px <span class="token important">!important</span><span class="token punctuation">;</span>
+	<span class="token property">white-space</span><span class="token punctuation">:</span> nowrap <span class="token important">!important</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.visually-hidden:not(caption)</span> <span class="token punctuation">{</span>
+	<span class="token property">position</span><span class="token punctuation">:</span> absolute <span class="token important">!important</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.visually-hidden *</span> <span class="token punctuation">{</span>
+	<span class="token property">overflow</span><span class="token punctuation">:</span> hidden <span class="token important">!important</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>J’en ai profité pour <a href="https://github.com/twbs/bootstrap/pull/41286">proposer ce changement dans Bootstrap (sur GitHub, en anglais)</a> — en citant Django bien entendu — et pour mettre à jour <a href="https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034">le Gist servant souvent de référence (en anglais)</a>.</p>
+<p>Notez par ailleurs quelques autres changements succincts :</p>
+<ol>
+<li>J’ai renommé <code>.sr-only</code> en <code>.visually-hidden</code> pour me conformer aux usages des <em lang="en">frameworks</em> populaires,</li>
+<li>Et nettoyé un peu le support de navigateurs anciens : plus de <code>clip</code> désormais, car <a href="https://developer.mozilla.org/fr/docs/Web/CSS/clip-path"><code>clip-path</code> est très largement supporté</a>.</li>
+<li>La variante pour démasquer le contenu lors de la prise de focus n’est plus une remise à zéro, mais une autre classe conditionnée à l’état : <code>.visually-hidden-focusable:not(:focus):not(:focus-within)</code>, à l’instar de ce qui est fait <a href="https://github.com/twbs/bootstrap/pull/32440">dans Bootstrap depuis cinq ans déjà (sur GitHub, en anglais)</a>.</li>
+</ol>
+
+			</div>
+		<footer class="small mt2">
+			<p class="pl2 mt0 pt1">
+				Article rédigé par <strong itemprop="author"><span class="fn">Gaël Poupard</span></strong>.
+				Publié le <time class="updated" datetime="2025-03-11" itemprop="datePublished">11 mars 2025</time>.
+			</p>
+		</footer>
+	</article>
+<div id="comments" class="comments-area pl2 pt2 mt2 print-hidden"><div class="comment-respond">
+	<h3>Laisser un commentaire</h3>
+	<form action="https://github.com/ffoodd/ffoodd.fr/new/main/_src/posts/masquage-accessible-de-pointe/comments/?filename=0000.md" method="post" class="comment-form">
+		<p class="comment-notes">
+			Vous devez avoir un compte GitHub pour ajouter un commentaire.
+		</p>
+		<p>
+			<label for="pseudo">Pseudonyme GitHub <span class="required">(obligatoire)</span></label>
+			<input id="pseudo" name="pseudo" type="text"
+						 aria-required="true" required="required" autocomplete="nickname">
+		</p>
+		<p>
+			<label for="value">Commentaire <span class="required">(obligatoire)</span></label>
+			<textarea id="value" name="value" cols="45" rows="8"
+								aria-required="true" required="required" aria-describedby="comment-note"></textarea>
+			<span id="comment-note" class="small">Markdown accepté.</span>
+		</p>
+		<p class="form-submit">
+			<input name="submit" type="submit" id="submit" class="submit" value="Laisser un commentaire">
+		</p>
+	</form>
+	<script>
+		const form = document.querySelector('.comment-form');
+		const dynamicCommentID = crypto.randomUUID().substring(0, 4);
+
+		form.addEventListener('submit', async (event) => {
+			event.preventDefault();
+			const pseudo = document.getElementById('pseudo').value;
+			const comment = document.getElementById('comment').value;
+
+			const content = await fetch(`https://api.github.com/users/${pseudo}`)
+				.then(response => response.json())
+				.then(user => {
+					const content = encodeURIComponent(`---
+date: "${new Date().toISOString()}"
+author_name: "${user.name}"
+author_url: "${user.blog}"
+author_avatar: "${user.avatar_url}"
+id: "${dynamicCommentID}"
+tags: ["comments","masquage-accessible-de-pointe"]
+---
+${comment}`);
+
+					window.open(`https://github.com/ffoodd/ffoodd.fr/new/main/_src/posts/masquage-accessible-de-pointe/comments/?value=${content}&filename=${dynamicCommentID}.md`)
+				});
+		});
+	</script>
+</div>
+</main><aside class="col pt8 pl0 pr0 print-hidden" role="complementary" id="sommaire">
+		<div class="aside pt1 pr3 pb1 pl2">
+			<h3 class="tk-bello-pro h2-like m-reset">Sommaire</h3>
+			<div class="textwidget">
+				<ol><li><a href="#un-cas-legendaire">Un cas légendaire</a></li><li><a href="#en-cas-de-debordement">En cas de débordement</a></li><li><a href="#la-totale">La totale</a></li></ol>
+			</div>
+		</div>
+	</aside>
+		</div>
+		<footer class="mw--site mod txtcenter center" role="contentinfo" itemscope itemtype="https://schema.org/Person">
+			<ul class="ffeeeedd--contact ul-reset p-reset mt0 print-hidden"><li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__mastodon" href="https://mamot.fr/@ffoodd" itemprop="url" rel="me"title="Gaël Poupard sur Mastodon">
+							<span itemprop="name">Mastodon</span>
+						</a>
+					</li><li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__github" href="https://github.com/ffoodd" itemprop="url"title="Gaël Poupard sur GitHub">
+							<span itemprop="name">GitHub</span>
+						</a>
+					</li><li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__codepen" href="https://codepen.io/ffoodd" itemprop="url"title="Gaël Poupard sur CodePen">
+							<span itemprop="name">CodePen</span>
+						</a>
+					</li><li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__dribbble" href="https://dribbble.com/ffoodd" itemprop="url"title="Gaël Poupard sur Dribbble">
+							<span itemprop="name">Dribbble</span>
+						</a>
+					</li><li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__linkedin" href="https://www.linkedin.com/pub/ga%C3%ABl-poupard/30/17b/401" itemprop="url"title="Gaël Poupard sur LinkedIn">
+							<span itemprop="name">LinkedIn</span>
+						</a>
+					</li><li class="inbl pa1" itemscope itemprop="contactPoint">
+						<a class="skip inbl ir ffeeeedd--sprite ffeeeedd--sprite__rss" href="/feed/index.xml" itemprop="url"title="La vie en #ffoodd | Flux RSS">
+							<span itemprop="name">RSS</span>
+						</a>
+					</li></ul>
+
+			<p class="small">
+				&copy; 2025 La vie en #ffoodd &mdash; Design et intégration par <span itemprop="name">Gaël Poupard</span> &mdash; <a href="/mentions-legales/">Mentions légales</a>
+				<br>
+				Sauf mention contraire, l’ensemble du contenu est sous <a rel="license" href="creativecommons.org/licenses/by-nc-sa/4.0/fr/">Licence <abbr lang="en" title="Creative Commons">CC</abbr> <abbr lang="en" title="Attribution">BY</abbr>-<abbr lang="en" title="Non Commercial">NC</abbr>-<abbr lang="en" title="Share Alike">SA</abbr></a>.
+			</p>
+
+			<meta itemprop="jobTitle" content="Webdesigner et intégrateur web">
+			<meta itemprop="worksFor" content="onepoint">
+		</footer></body>
+</html>

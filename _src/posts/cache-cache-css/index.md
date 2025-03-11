@@ -2,7 +2,7 @@
 layout: "template/post.njk"
 title: "Cache-cache CSS"
 date: "2016-10-13T13:11:13"
-modified: "2021-03-05T17:07:37"
+modified: "2025-03-11"
 permalink: "cache-cache-css/index.html"
 excerpt: "Il existe une myriade de façon de masquer visuellement du texte en CSS tout en le maintenant accessible aux technologies d'assistance telles que les lecteurs d'écran. J'en agrège ici quelques-unes pour proposer une version que j'espère plus robuste."
 tags: ["posts"]
@@ -13,6 +13,14 @@ Et j’ai beau trouver ça idiot —&nbsp;masquer du texte pour certains utilisa
 Il existe de nombreuses façons de faire, que je ne détaillerai pas ici. Depuis quelques années, lorsque je le peux, j’utilise celle de [Thierry Koblentz](https://twitter.com/thierrykoblentz) pour Yahoo! qui est décrite [sur le blog technique de Yahoo!](https://developer.yahoo.com/blogs/ydn/clip-hidden-content-better-accessibility-53456.html) [sur le blog de Thierry](https://cssmojo.com/hide-content-from-sighted-users/). C’est de loin la plus complète, et la seule à ma connaissance à supporter la direction de texte de droite à gauche.
 
 Mais elle n’est pas exempte de problème, désormais.
+
+---
+
+## Mise à jour
+
+Depuis la dernière mise à jour en 2019, d’autres changements ont été apportés. Je les ai récapitulés dans [<cite>Masquage accessible de point</cite>](/masquage-accessible-de-pointe/).
+
+---
 
 ## Propriété dépréciée
 
@@ -47,7 +55,6 @@ Et voilà, second problème résolu.
 Voilà la version finale que je propose actuellement&nbsp;:
 
 ```css
-
 .sr-only {
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
@@ -105,7 +112,7 @@ Qu’en dites-vous&nbsp;?
 
 ### Les lecteurs d’écran sur mobile
 
-19 octobre 2016
+<time datetime="2016-10-19">19 octobre 2016</time>
 
 Ayant besoin de tests sur cette version pour vérifier qu’elle n’introduit pas de régressions, [Johan Ramon m’a remonté un bug étrange sur VoiceOver](https://twitter.com/johan_ramon/status/788372720224526336). En creusant un peu avec [Sylvain Pigeard](https://github.com/PigeardSylvain), il nous est apparu que `position: static` posait problème lors de la prise de focus d’un lien ayant la classe `.sr-only-focusable`.
 
@@ -121,7 +128,7 @@ L’état des lieux est assez sombre&nbsp;: **les liens d’évitement ne marche
 
 ### Le référencement naturel
 
-19 octobre 2016
+<time datetime="2016-10-19">19 octobre 2016</time>
 
 [Steve Faulkner](https://twitter.com/stevefaulkner) —&nbsp;du [Paciello Group](https://www.paciellogroup.com/blog/)&nbsp;— a posé la question au forum de support pour _webmasters_ de Google&nbsp;: [les contextes supplémentaires pour utilisateurs malvoyants ont-ils un effet négatif sur le positionnement dans les résultats de recherche&nbsp;?](https://productforums.google.com/forum/#!msg/webmasters/YJcZUhtMIE4/XkOEzVakBAAJ)
 
@@ -129,6 +136,14 @@ Réponse courte&nbsp;: **non** Cependant étant donné que ce texte n’apparaî
 
 ### Les débordements inopinés
 
-18 janvier 2019
+<time datetime="2019-01-18">18 janvier 2019</time>
 
 De multiples problèmes de débordements ont été observés, notamment sur Chrome, lorsque les éléments masqués sont contenus dans un élément avec `overflow: auto;`. [Le problème est résolu dans Boosted](https://github.com/Orange-OpenSource/Orange-Boosted-Bootstrap/issues/84) en ajoutant `margin: -1px;`.
+
+---
+
+## Mise à jour
+
+Depuis la dernière mise à jour en 2019, d’autres changements ont été apportés. Je les ai récapitulés dans [<cite>Masquage accessible de point</cite>](/masquage-accessible-de-pointe/).
+
+---
