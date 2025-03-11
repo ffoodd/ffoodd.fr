@@ -55,7 +55,8 @@ La solution proposée par Django —&nbsp;et après quelques tests, la seule qui
 Voici donc la version mise à jour de la technique de masquage accessible&nbsp;:
 
 ```css
-.visually-hidden {
+.visually-hidden,
+.visually-hidden-focusable:not(:focus, :focus-within) {
 	border: 0 !important;
 	clip-path: inset(50%) !important;
 	height: 1px !important;
@@ -66,11 +67,13 @@ Voici donc la version mise à jour de la technique de masquage accessible&nbsp;:
 	white-space: nowrap !important;
 }
 
-.visually-hidden:not(caption) {
+.visually-hidden:not(caption),
+.visually-hidden-focusable:not(caption):not(:focus, :focus-within){
 	position: absolute !important;
 }
 
-.visually-hidden * {
+.visually-hidden *,
+.visually-hidden-focusable:not(:focus, :focus-within) * {
 	overflow: hidden !important;
 }
 ```
@@ -81,7 +84,7 @@ Notez par ailleurs quelques autres changements succincts&nbsp;:
 
 1. J’ai renommé `.sr-only` en `.visually-hidden` pour me conformer aux usages des <em lang="en">frameworks</em> populaires,
 2. Et nettoyé un peu le support de navigateurs anciens&nbsp;: plus de `clip` désormais, car [`clip-path` est très largement supporté](https://developer.mozilla.org/fr/docs/Web/CSS/clip-path).
-3. La variante pour démasquer le contenu lors de la prise de focus n’est plus une remise à zéro, mais une autre classe conditionnée à l’état&nbsp;: `.visually-hidden-focusable:not(:focus):not(:focus-within)`, à l’instar de ce qui est fait [dans Bootstrap depuis cinq ans déjà (sur GitHub, en anglais)](https://github.com/twbs/bootstrap/pull/32440).
+3. La variante pour démasquer le contenu lors de la prise de focus n’est plus une remise à zéro, mais une autre classe conditionnée à l’état&nbsp;: `.visually-hidden-focusable:not(:focus, :focus-within)`, à l’instar de ce qui est fait [dans Bootstrap depuis cinq ans déjà (sur GitHub, en anglais)](https://github.com/twbs/bootstrap/pull/32440) mais avec [la syntaxe moderne de `:not()`](https://developer.mozilla.org/fr/docs/Web/CSS/:not).
 
 
 

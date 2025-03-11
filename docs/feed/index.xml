@@ -32,7 +32,8 @@
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&quot;la-totale&quot; tabindex=&quot;-1&quot;&gt;La totale&lt;/h2&gt;
 &lt;p&gt;Voici donc la version mise à jour de la technique de masquage accessible :&lt;/p&gt;
-&lt;pre class=&quot;language-css&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;.visually-hidden&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;pre class=&quot;language-css&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;.visually-hidden,
+.visually-hidden-focusable:not(:focus, :focus-within)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
 	&lt;span class=&quot;token property&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0 &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 	&lt;span class=&quot;token property&quot;&gt;clip-path&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;inset&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;50%&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 	&lt;span class=&quot;token property&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 1px &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
@@ -43,11 +44,13 @@
 	&lt;span class=&quot;token property&quot;&gt;white-space&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; nowrap &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-&lt;span class=&quot;token selector&quot;&gt;.visually-hidden:not(caption)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;token selector&quot;&gt;.visually-hidden:not(caption),
+.visually-hidden-focusable:not(caption):not(:focus, :focus-within)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
 	&lt;span class=&quot;token property&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; absolute &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-&lt;span class=&quot;token selector&quot;&gt;.visually-hidden *&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;token selector&quot;&gt;.visually-hidden *,
+.visually-hidden-focusable:not(:focus, :focus-within) *&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
 	&lt;span class=&quot;token property&quot;&gt;overflow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; hidden &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;J’en ai profité pour &lt;a href=&quot;https://github.com/twbs/bootstrap/pull/41286&quot;&gt;proposer ce changement dans Bootstrap (sur GitHub, en anglais)&lt;/a&gt; — en citant Django bien entendu — et pour mettre à jour &lt;a href=&quot;https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034&quot;&gt;le Gist servant souvent de référence (en anglais)&lt;/a&gt;.&lt;/p&gt;
@@ -55,7 +58,7 @@
 &lt;ol&gt;
 &lt;li&gt;J’ai renommé &lt;code&gt;.sr-only&lt;/code&gt; en &lt;code&gt;.visually-hidden&lt;/code&gt; pour me conformer aux usages des &lt;em lang=&quot;en&quot;&gt;frameworks&lt;/em&gt; populaires,&lt;/li&gt;
 &lt;li&gt;Et nettoyé un peu le support de navigateurs anciens : plus de &lt;code&gt;clip&lt;/code&gt; désormais, car &lt;a href=&quot;https://developer.mozilla.org/fr/docs/Web/CSS/clip-path&quot;&gt;&lt;code&gt;clip-path&lt;/code&gt; est très largement supporté&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;La variante pour démasquer le contenu lors de la prise de focus n’est plus une remise à zéro, mais une autre classe conditionnée à l’état : &lt;code&gt;.visually-hidden-focusable:not(:focus):not(:focus-within)&lt;/code&gt;, à l’instar de ce qui est fait &lt;a href=&quot;https://github.com/twbs/bootstrap/pull/32440&quot;&gt;dans Bootstrap depuis cinq ans déjà (sur GitHub, en anglais)&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;La variante pour démasquer le contenu lors de la prise de focus n’est plus une remise à zéro, mais une autre classe conditionnée à l’état : &lt;code&gt;.visually-hidden-focusable:not(:focus, :focus-within)&lt;/code&gt;, à l’instar de ce qui est fait &lt;a href=&quot;https://github.com/twbs/bootstrap/pull/32440&quot;&gt;dans Bootstrap depuis cinq ans déjà (sur GitHub, en anglais)&lt;/a&gt; mais avec &lt;a href=&quot;https://developer.mozilla.org/fr/docs/Web/CSS/:not&quot;&gt;la syntaxe moderne de &lt;code&gt;:not()&lt;/code&gt;&lt;/a&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 </description>
 					<pubDate>Tue, 11 Mar 2025 01:00:00 GMT</pubDate>
