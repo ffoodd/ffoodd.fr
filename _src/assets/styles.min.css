@@ -359,8 +359,8 @@ label {
 
 .pl2, ul,
 ol, blockquote,
-div[itemprop="articleBody"] :is(p, ul, ol),
-div[itemprop="reviewBody"]  :is(p, ul, ol) {
+[itemprop="articleBody"] :is(p, ul, ol),
+[itemprop="reviewBody"]  :is(p, ul, ol) {
 	padding-left: 2em;
 }
 
@@ -723,11 +723,11 @@ figcaption,
 	font-weight: 300;
 }
 
-[itemprop="articleBody"] > p > code,
-[itemprop="articleBody"] > ul code {
+[itemprop="articleBody"] :is(p, ul, ol) code {
 	border: 1px solid;
 	border-radius: 2px;
 	color: #c42419;
+	font-family: "Consolas", "Monaco", "Andale Mono", monospace;
 	padding: 0 0.2em;
 }
 
@@ -1553,20 +1553,14 @@ pre[class*="language-"][tabindex] {
 		width: 100%;
 	}
 
-	div[itemprop="articleBody"] p,
-	div[itemprop="articleBody"] ul,
-	div[itemprop="articleBody"] ol,
-	div[itemprop="reviewBody"] p,
-	div[itemprop="reviewBody"] ul,
-	div[itemprop="reviewBody"] ol {
+	[itemprop="articleBody"] :is(p, ul, ol),
+	[itemprop="reviewBody"] :is(p, ul, ol) {
 		padding-left: .5em;
 		text-align: left;
 	}
 
-	div[itemprop="articleBody"] ul,
-	div[itemprop="articleBody"] ol,
-	div[itemprop="reviewBody"] ul,
-	div[itemprop="reviewBody"] ol {
+	[itemprop="articleBody"] :is(ul, ol),
+	[itemprop="reviewBody"] :is(ul, ol) {
 		list-style-position: inside;
 	}
 
