@@ -15,7 +15,11 @@ class CodeRunner extends HTMLElement {
 	}
 
 	connectedCallback() {
-		this.level = document.querySelector('h1').innerText.split(' ')[1].split('\n')[0];
+		if (this.parentNode.nodeName === 'MAIN') {
+			this.level = document.querySelector('h1').innerText.split(' ')[1].split('\n')[0];
+		} else {
+			this.level = this.closest('section').id.split('-')[1];
+		}
 
 		['options', 'condition', 'fonction']
 			.map(field => {
