@@ -598,7 +598,6 @@
 	.sr-only,
 	.visually-hidden {
 		border: 0;
-		clip: rect(1px, 1px, 1px, 1px);
 		clip-path: inset(50%);
 		block-size: 1px;
 		margin: -1px;
