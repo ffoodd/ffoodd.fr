@@ -1,36 +1,58 @@
 class PlayGround extends HTMLElement {
 	static get observedAttributes() {
-		return ['type'];
+		return ['type', 'await', 'max'];
 	}
 
 	constructor() {
 		super();
 		document.addEventListener('voightkampff', this);
 		this.type = this.hasAttribute('type') ? this.getAttribute('type') : '';
+		this.max = this.hasAttribute('max') ? this.getAttribute('max') : 100;
+		this.async = this.hasAttribute('await');
 		this.portal = document.getElementById('portal');
 		this.over = document.getElementById('game-over');
 		this.replay = document.getElementById('replay');
 	}
 
 	connectedCallback() {
-		this._invade();
+		if (this.async) {
+			this.scout = new IntersectionObserver(entries => {
+				if (entries[0].isIntersecting === true) {
+					this._invade();
+					this.spyer.observe(this, { "childList": true });
+				} else {
+					this.querySelectorAll('mu-tant').forEach(
+						mutant => mutant.remove()
+					);
+					clearTimeout(this.invader);
+					clearTimeout(this.timeout);
+					this.spyer.disconnect();
+				}
+			}, {
+				root: document.querySelector('main'),
+				threshold: [1]
+			});
+			this.scout.observe(this);
+		} else {
+			this._invade();
+			this.spyer.observe(this, { "childList": true });
+		}
 
 		this.spyer = new MutationObserver(mutations => {
 			for (const mutation of mutations) {
-				if (this.over && mutation.addedNodes.length && document.querySelectorAll('mu-tant').length >= 100) {
+				if (this.over && mutation.addedNodes.length && this.querySelectorAll('mu-tant').length >= this.max) {
 					this._gameOver();
 				}
 
 				if (this.portal && mutation.removedNodes.length && this._isMutant(mutation.removedNodes[0])) {
 					if (!document.querySelector('mu-tant')) {
 						this._nextLevel();
-					} else if ((this.type === 'all' && !document.querySelector('mu-tant:not([type=""])'))) {
+					} else if ((this.type === 'all' && !this.querySelector('mu-tant:not([type=""])'))) {
 						this._nextLevel();
 					}
 				}
 			}
 		});
-		this.spyer.observe(this, { "childList": true });
 	}
 
 	handleEvent(event) {
