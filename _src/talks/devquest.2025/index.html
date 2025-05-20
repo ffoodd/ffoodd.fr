@@ -9,370 +9,13 @@
 	<link rel="icon" href="../favicon.svg" type="image/svg+xml">
 	<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../accesslide/fonts/bello-pro.woff2">
 	<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../accesslide/fonts/museo-slab-300.woff2">
-	<link rel="stylesheet" href="../sliide/sliide.css?5" type="text/css" media="screen">
-	<style>
-		@layer content {
-			.playground {
-				overflow: hidden;
-			}
-
-			.demo > :first-child + * {
-				border: 0;
-				margin: 0;
-				padding: 0;
-			}
-		}
-		@layer demos {
-			/* @todo Récupérer les styles du jeu <3 */
-			/* @todo Extraire dans une CSS spécifique */
-			@font-face {
-				font-display: swap;
-				font-family: 'Twemoji Mozilla';
-				font-style: normal;
-				font-weight: 400;
-				src: local('Twemoji Mozilla'), url('../devfest.2024/jeu/assets/fonts/Twemoji.woff2') format('woff2');
-			}
-
-			@font-palette-values --syntaxHighlighter {
-				font-family: 'FontWithASyntaxHighlighter';
-				override-colors: 0 var(--foreground),
-				4 rebeccapurple,
-				5 var(--accent),
-				7 var(--muted);
-			}
-
-			@font-face {
-				font-display: swap;
-				font-family: 'FontWithASyntaxHighlighter';
-				src: url('../devfest.2024/jeu/assets/fonts/FontWithASyntaxHighlighter-Regular.woff2') format('woff2');
-			}
-
-			pre code {
-				color: #fafafa;
-				font-family: 'FontWithASyntaxHighlighter', monospace;
-				font-palette: --syntaxHighlighter;
-				outline: 0;
-			}
-
-			p code {
-				font-family: 'FontWithASyntaxHighlighter', monospace;
-				font-palette: --syntaxHighlighter;
-			}
-
-			.portrait {
-				font-size: 80vw;
-				text-align: center;
-			}
-
-			@media screen and (min-width: 60rem) {
-				.portrait {
-					font-family: 'Twemoji Mozilla', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', sans-serif;
-					font-size: min(40vw, 80vh);
-					inset-block-start: 10vh;
-					inset-inline-end: 10vh;
-					line-height: 80vh;
-					position: absolute;
-					text-align: start;
-				}
-			}
-
-			dialog {
-				background: inherit;
-				border-color: #000;
-				border-radius: .5rem;
-				box-shadow: 0 0 10rem #000;
-				max-inline-size: clamp(50vw, 100%, 67.5rem);
-			}
-
-			dialog::backdrop {
-				backdrop-filter: grayscale(50%) blur(.25rem);
-			}
-
-			play-ground {
-				background-color: color-mix(in srgb, #231745 75%, #000);
-				border-radius: .5rem;
-				contain: strict;
-				margin: 1rem;
-				overflow: hidden;
-				position: relative;
-			}
-
-			play-ground::before {
-				font-family: 'Twemoji Mozilla', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', sans-serif;
-				font-size: calc(100vh + 10rem);
-				line-height: calc(100vh + 10rem);
-				inset: -5rem;
-				position: absolute;
-			}
-
-			play-ground[type="zombie"]::before {
-				content: '🌆';
-			}
-
-			play-ground[type="villain"]::before {
-				content: '🌉';
-				mix-blend-mode: soft-light;
-			}
-
-			play-ground[type="invaders"] {
-				background-color: #000;
-				counter-reset: invaders;
-			}
-
-			@counter-style invasion {
-				system: numeric;
-				symbols: "0" "1" "2" "3" "4" "5" "6" "7" "8" "9";
-				pad: 5 "0";
-				speak-as: numbers;
-			}
-
-			play-ground[type="invaders"]::after {
-				content: "score\A" counter(invaders, invasion);
-				font-family: "FontWithASyntaxHighlighter", monospace;
-				font-weight: bold;
-				inset-block-start: 2rem;
-				inset-inline-end: 2rem;
-				position: absolute;
-				text-transform: uppercase;
-				white-space: pre;
-			}
-
-			play-ground[type="ghost"]::before {
-				content: '🌁';
-			}
-
-			play-ground[type="mage"]::before {
-				content: '🏔️';
-			}
-
-			play-ground[type="skull"]::before {
-				content: '🌫️';
-				mix-blend-mode: soft-light;
-			}
-
-			play-ground[type="vampire"]::before {
-				content: '🌃';
-			}
-
-			play-ground[type="all"]::before {
-				content: '🌌';
-			}
-
-			mu-tant {
-				aspect-ratio: 1;
-				block-size: 6rem;
-				display: inline-flex;
-				font-family: 'Twemoji Mozilla', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', sans-serif;
-				font-size: 4rem;
-				place-content: center;
-				position: absolute;
-			}
-
-			code-runner {
-				background:
-					local linear-gradient(to right, #231745 30%, transparent) 0 0/2.5rem 100% no-repeat,
-					local linear-gradient(to right, transparent, #231745 70%) 100%/2.5rem 100% no-repeat,
-					scroll radial-gradient(farthest-side at 0% 50%, #000, transparent) 0 0/1rem 100% no-repeat,
-					#231745 scroll radial-gradient(farthest-side at 100% 50%, #000, transparent) 100%/1rem 100% no-repeat;
-				display: block;
-				inline-size: 100%;
-				overflow-x: scroll;
-				overflow-y: hidden;
-				padding: 0 1rem;
-				-webkit-overflow-scrolling: touch;
-				scroll-snap-type: both mandatory;
-			}
-
-			@media screen and (min-width: 60rem) {
-				play-ground {
-					min-block-size: calc(100vh - 2rem);
-				}
-			}
-
-			@layer animation {
-				/* @fixme La répartition dans le playground n’est pas assez variée */
-				mu-tant {
-					--direction: 1;
-					inset-block-start: clamp(0%, var(--placement, 50) * 1%, 100%);
-					inset-inline-start: clamp(0%, var(--placement, 50) * 1%, 100%);
-					transform: translateX(0) translateY(0);
-				}
-
-				mu-tant:nth-child(odd) {
-					--direction: -1;
-					inset-inline-start: clamp(0%, var(--placement, 50) * .5%, 50%);
-				}
-
-				mu-tant:nth-child(3n +1) {
-					inset-inline-start: clamp(50%, var(--placement, 50) * 1%, 100%);
-					scale: .75;
-				}
-
-				mu-tant:nth-child(4n +1) {
-					inset-block-start: clamp(0%, var(--placement, 50) * .5%, 50%);
-				}
-
-				mu-tant:nth-child(5n +1) {
-					inset-block-start: clamp(50%, var(--placement, 50) * 1%, 100%);
-					scale: .5;
-				}
-
-				mu-tant:nth-child(6n +1) {
-					inset-inline-start: clamp(50%, var(--placement, 50) * 1%, 100%);
-				}
-
-				@keyframes zombie {
-					13% {
-						transform: translateX(calc(12rem * var(--direction))) translateY(0);
-					}
-					26%, 78% {
-						transform: translateX(calc(12rem * var(--direction))) translateY(calc(12rem * var(--direction)));
-					}
-					39% {
-						transform: translateX(calc(24rem * var(--direction))) translateY(calc(12rem * var(--direction)));
-					}
-					52% {
-						transform: translateX(calc(24rem * var(--direction))) translateY(calc(24rem * var(--direction)));
-					}
-					65% {
-						transform: translateX(calc(12rem * var(--direction))) translateY(calc(24rem * var(--direction)));
-					}
-					91% {
-						transform: translateX(0) translateY(calc(12rem * var(--direction)));
-					}
-				}
-
-				mu-tant[type="zombie"] {
-					animation: zombie 48s steps(48, end) infinite;
-				}
-
-				@keyframes ghost {
-					10%, 90% {
-						transform: translateX(calc(4rem * var(--direction))) translateY(6rem);
-					}
-					20%, 80% {
-						transform: translateX(calc(8rem * var(--direction))) translateY(0);
-					}
-					30%, 70% {
-						transform: translateX(calc(12rem * var(--direction))) translateY(6rem);
-					}
-					40%, 60% {
-						transform: translateX(calc(16rem * var(--direction))) translateY(0);
-					}
-					50% {
-						transform: translateX(calc(20rem * var(--direction))) translateY(6rem);
-					}
-				}
-
-				@keyframes ghosting {
-					50% {
-						opacity: .5;
-					}
-				}
-
-				mu-tant[type="ghost"] {
-					animation: ghost 36s ease-out infinite, ghosting 3s ease-in infinite;
-					opacity: 1;
-				}
-
-				@keyframes vampire {
-					0% {
-						transform: translateY(0) translateX(0) skewY(0);
-					}
-					5% {
-						transform: translateY(calc(15rem * var(--direction))) translateX(0) skewY(25deg);
-					}
-					6%, 35% {
-						transform: translateY(calc(15rem * var(--direction))) translateX(0) skewY(0);
-					}
-					40% {
-						transform: translateY(calc(15rem * var(--direction))) translateX(calc(15rem * var(--direction))) skewY(25deg);
-					}
-					41%, 70% {
-						transform: translateY(calc(15rem * var(--direction))) translateX(calc(15rem * var(--direction))) skewY(0);
-					}
-					75% {
-						transform: translateY(calc(30rem * var(--direction))) translateX(calc(15rem * var(--direction))) skewY(25deg);
-					}
-					76%, 100% {
-						transform: translateY(calc(30rem * var(--direction))) translateX(calc(15rem * var(--direction))) skewY(0);
-					}
-				}
-
-				mu-tant[type="vampire"] {
-					animation: vampire 6s linear infinite;
-				}
-
-				@keyframes invade {
-					100% {
-						transform: translateY(calc(100vh + 18rem));
-					}
-				}
-
-				@keyframes stepping {
-					100% {
-						scale: .75;
-					}
-				}
-
-				mu-tant[type="invaders"] {
-					animation: invade 24s ease-out 1 forwards, stepping 24s steps(12, end) 1 forwards;
-					block-size: 2ex;
-					counter-increment: invaders;
-					inset-block-start: -6rem !important;
-					inset-inline-start: auto !important;
-					inline-size: 130%;
-					letter-spacing: .25ch;
-					scale: 1;
-					text-align: center;
-					text-indent: clamp(0ch, var(--placement, 50) * var(--direction) * .1ch, 20ch);
-					white-space: nowrap;
-				}
-
-				/*
-				@note Merci Barrett Sonntag
-				@link https://codepen.io/sosuke/pen/Pjoqqp
-			 */
-				mu-tant[type="invaders"]:nth-child(1n + 1) {
-					filter: grayscale(100%) brightness(0%) invert(15%) sepia(90%) saturate(5339%) hue-rotate(6deg) brightness(96%) contrast(127%);
-				}
-
-				mu-tant[type="invaders"]:nth-child(2n + 1) {
-					filter: grayscale(100%) brightness(0%) invert(66%) sepia(82%) saturate(4488%) hue-rotate(88deg) brightness(117%) contrast(129%);
-				}
-
-				mu-tant[type="invaders"]:nth-child(3n + 1) {
-					filter: grayscale(100%) brightness(0%) invert(9%) sepia(90%) saturate(7442%) hue-rotate(247deg) brightness(91%) contrast(149%);
-				}
-
-				mu-tant[type="invaders"]:nth-child(4n + 1) {
-					filter: grayscale(100%) brightness(0%) invert(91%) sepia(27%) saturate(1428%) hue-rotate(1deg) brightness(110%) contrast(104%);
-				}
-
-				@keyframes villain {
-					100% {
-						transform: translateY(-15rem);
-					}
-				}
-
-				mu-tant[type="villain"] {
-					animation: villain 2s linear infinite;
-					rotate: z calc(90deg * var(--direction));
-				}
-
-				mu-tant[type="troll"] span {
-					display: inline-block;
-					scale: .8;
-				}
-			}
-		}
-	</style>
+	<link rel="stylesheet" href="sliide.css" type="text/css" media="screen">
 </head>
 <body>
 <main role="main" tabindex="0">
-	<section id="slide-1" data-note="5m" class="d-flex flex-column justify-between">
-		<h1>L’invasion du <abbr title="HyperText Markup Language">html</abbr> mutant</h1>
-		<dl>
+	<section id="slide-1" data-note="5m" class="splash d-flex flex-column justify-between">
+		<h1>L’invasion du <abbr title="HyperText Markup Language">html</abbr><br>mutant</h1>
+		<dl class="d-flex m-auto">
 			<dt>Slides en ligne</dt>
 			<dd><a href="https://www.ffoodd.fr/devquest.2025/">ffoodd.fr/devquest.2025/</a></dd>
 		</dl>
@@ -399,41 +42,46 @@
 			</div>
 			<p>
 				<a href="https://www.groupeonepoint.com">
-					<img src="../accesslide/img/onepoint.svg" width="166" height="80" alt="onepoint">
+					<img src="onepoint.svg" width="166" height="80" alt="onepoint">
 				</a>
 			</p>
 		</footer>
 	</section>
 
 	<section id="slide-2" data-note="Xm">
-		<h2>L’inspecteur</h2>
+		<h2>Niveau 0<br>L’inspecteur</h2>
 		<p class="lead">C’est notre héros du jour&nbsp;: invoquez-le avec <kbd>F12</kbd>.</p>
 		<div class="grid-2">
 			<div class="portrait" aria-hidden="true">🕵🏿</div>
-			<div>
+			<div class="carte">
 				<p>L’inspecteur développe un site web, et tout se passe pour le mieux.</p>
-				<p>Mais au moment de déployer pour la recette, tous les indicateurs sont au rouge&nbsp;!</p>
+				<p>
+					Mais au moment de faire un audit d’accessibilité, le DOM est sens dessus dessous
+					et des scripts tiers font n’importe quoi&nbsp;!
+				</p>
 				<p>Ni une, ni deux&nbsp;: l’inspecteur dégaine ses outils, il faut corriger le tir&nbsp;!</p>
 			</div>
 		</div>
 	</section>
 
-	<section id="slide-4" data-note="Xm">
-		<h2>Les outils</h2>
-		<p class="lead">L’inspecteur n’a pas de flingue, il a une API&nbsp;!</p>
-		<div class="grid-1-2">
-			<div>
-				<p>Nous allons nous servir d’un <code>MutationObserver</code>.</p>
-				<p>Quelques règles&nbsp;:</p>
-				<ol>
-					<li>Il faut l’instancier.</li>
-					<li>Il faut lui donner une cible.</li>
-					<li>Il lui faut une fonction de rappel.</li>
-					<li>Il faut le débrancher, à un moment.</li>
-				</ol>
-				<p>Et maintenant, en avant&nbsp;!</p>
-			</div>
-			<pre><code>
+	<section id="slide-3" class="demo" data-note="Xm">
+		<h2>Niveau 0<br>Les outils</h2>
+		<div class="markup p-1">
+			<p class="lead">L’inspecteur n’a pas de flingue, il a une API&nbsp;!</p>
+			<p>Pour réparer le DOM, nous allons nous servir d’un <code>MutationObserver</code>.</p>
+			<p>Quelques règles&nbsp;:</p>
+			<ol>
+				<li>Il faut l’instancier.</li>
+				<li>Il faut lui donner une cible.</li>
+				<li>Il lui faut une fonction de rappel.</li>
+				<li>Il faut le débrancher, à un moment.</li>
+			</ol>
+			<p>Et maintenant, en avant&nbsp;!</p>
+		</div>
+		<pre class="playground"><code>
+
+
+
 
 
 
@@ -444,17 +92,15 @@ observer.observe(
 	callback
 );
 observer.disconnect();
-			</code></pre>
-		</div>
+		</code></pre>
 	</section>
 
-	<section id="slide-6" data-note="Xm">
-		<h2>Le zombie</h2>
-		<p class="lead">Entrons dans le vif du sujet&nbsp;!</p>
+	<section id="slide-4" data-note="Xm">
+		<h2>Niveau 1<br>Le zombie</h2>
 		<div class="grid-2">
 			<div class="portrait" aria-hidden="true">🧟</div>
 			<div>
-				<h3>Cas d’usage&nbsp;: les changements d’attribut</h3>
+				<h3>Entrons dans le vif du sujet&nbsp;: les changements d’attribut</h3>
 				<p>
 					Avez-vous déjà eu besoin de déclencher quelque chose en JavaScript
 					lorsqu’un élément change d’attribut&nbsp;?
@@ -467,11 +113,13 @@ observer.disconnect();
 		</div>
 	</section>
 
-	<section id="slide-7" class="demo" data-note="attributes: true">
-		<h2 role="presentation">Le zombie</h2>
+	<section id="slide-5" class="demo" data-note="attributes: true">
+		<h2 role="presentation">Niveau 1<br>Le zombie</h2>
 		<div class="markup">
 			<code-runner type="json">
 				<form>
+					<!-- @todo Scripts ne fonctionnent pas ? -->
+					<!-- @todo Champs à caler -->
 					<!-- @todo Le formulaire ne contient pas options mais options-machin -->
 					<label for="options-zombie" class="sr-only">
 						Options de la méthode <code>observe()</code>, dont le premier argument
@@ -484,20 +132,23 @@ observer.disconnect();
 								 autocapitalize="none"
 								 spellcheck="false"
 								 enterkeyhint="send"
+								 list="attributes"
 								 required>
+					<datalist id="attributes">
+						<option>attributes: true</option>
+					</datalist>
 					<pre role="presentation"><code>});</code></pre>
 					<p><button>Feu&nbsp;!</button></p>
 				</form>
 			</code-runner>
 		</div>
 		<div class="playground">
-			<!-- @todo Playground démarre uniquement après IntersectionObserver -->
 			<play-ground type="zombie"max="1000" await></play-ground>
 		</div>
 	</section>
 
-	<section id="slide-8" data-note="Xm">
-		<h2>Le super-vilain</h2>
+	<section id="slide-6" data-note="Xm">
+		<h2>Niveau 2<br>Le super-vilain</h2>
 		<p class="lead">Il n’y a pas que des gentils dans la vie.</p>
 		<div class="grid-2">
 			<div class="portrait" aria-hidden="true">🦹🏿</div>
@@ -516,8 +167,8 @@ observer.disconnect();
 		</div>
 	</section>
 
-	<section id="slide-9" class="demo" data-note="characterData: true">
-		<h2 role="presentation">Le super-vilain</h2>
+	<section id="slide-7" class="demo" data-note="characterData: true">
+		<h2 role="presentation">Niveau 2<br>Le super-vilain</h2>
 		<div class="markup">
 			<code-runner type="json">
 				<form>
@@ -532,7 +183,11 @@ observer.disconnect();
 								 autocapitalize="none"
 								 spellcheck="false"
 								 enterkeyhint="send"
+								 list="characterdata"
 								 required>
+					<datalist id="characterdata">
+						<option>characterData: true</option>
+					</datalist>
 					<pre role="presentation"><code>});</code></pre>
 					<p><button>Feu&nbsp;!</button></p>
 				</form>
@@ -543,8 +198,8 @@ observer.disconnect();
 		</div>
 	</section>
 
-	<section id="slide-10" data-note="Xm">
-		<h2>L’alien</h2>
+	<section id="slide-8" data-note="Xm">
+		<h2>Niveau 3<br>L’alien</h2>
 		<p class="lead">Ils sont parmi nous&nbsp;!</p>
 		<div class="grid-2">
 			<div class="portrait" aria-hidden="true">👾</div>
@@ -564,8 +219,8 @@ observer.disconnect();
 		</div>
 	</section>
 
-	<section id="slide-11" class="demo" data-note="childList: true">
-		<h2 role="presentation">L’alien</h2>
+	<section id="slide-9" class="demo" data-note="childList: true">
+		<h2 role="presentation">Niveau 3<br>L’alien</h2>
 		<div class="markup">
 			<code-runner type="json">
 				<form>
@@ -580,7 +235,11 @@ observer.disconnect();
 								 autocapitalize="none"
 								 spellcheck="false"
 								 enterkeyhint="send"
+								 list="childlist"
 								 required>
+					<datalist id="childlist">
+						<option>childList: true</option>
+					</datalist>
 					<pre role="presentation"><code>});</code></pre>
 					<p><button>Feu&nbsp;!</button></p>
 				</form>
@@ -591,8 +250,8 @@ observer.disconnect();
 		</div>
 	</section>
 
-	<section id="slide-12" data-note="Xm">
-		<h2>Le fantôme</h2>
+	<section id="slide-10" data-note="Xm">
+		<h2>Niveau 4<br>Le fantôme</h2>
 		<p class="lead">Vous n’avez pas entendu un truc&nbsp;?</p>
 		<div class="grid-2">
 			<div class="portrait" aria-hidden="true">👻</div>
@@ -608,8 +267,8 @@ observer.disconnect();
 		</div>
 	</section>
 
-	<section id="slide-13" class="demo" data-note="attributeFilter: ['id']">
-		<h2 role="presentation">Le fantôme</h2>
+	<section id="slide-11" class="demo" data-note="attributeFilter: ['id']">
+		<h2 role="presentation">Niveau 4<br>Le fantôme</h2>
 		<div class="markup">
 			<code-runner type="json">
 				<form>
@@ -625,7 +284,11 @@ observer.disconnect();
 								 spellcheck="false"
 								 enterkeyhint="send"
 								 minlength="18"
+								 list="attributefilter"
 								 required>
+					<datalist id="attributefilter">
+						<option>attributeFilter: ['id']</option>
+					</datalist>
 					<pre role="presentation"><code>});</code></pre>
 					<p><button>Feu&nbsp;!</button></p>
 				</form>
@@ -636,8 +299,8 @@ observer.disconnect();
 		</div>
 	</section>
 
-	<section id="slide-14" data-note="Xm">
-		<h2>Le sorcier</h2>
+	<section id="slide-12" data-note="Xm">
+		<h2>Niveau 5<br>Le sorcier</h2>
 		<p class="lead">Il faut se méfier des types encapuchonnés<br>avec un grand bâton.</p>
 		<div class="grid-2">
 			<div class="portrait" aria-hidden="true">🧙🏿</div>
@@ -652,8 +315,8 @@ observer.disconnect();
 		</div>
 	</section>
 
-	<section id="slide-15" class="demo" data-note="childList: true, subtree: true">
-		<h2 role="presentation">Le sorcier</h2>
+	<section id="slide-13" class="demo" data-note="childList: true, subtree: true">
+		<h2 role="presentation">Niveau 5<br>Le sorcier</h2>
 		<div class="markup">
 			<code-runner type="json">
 				<form>
@@ -669,7 +332,11 @@ observer.disconnect();
 								 spellcheck="false"
 								 enterkeyhint="send"
 								 minlength="18"
+								 list="subtree"
 								 required>
+					<datalist id="subtree">
+						<option>childList: true, subtree: true</option>
+					</datalist>
 					<pre role="presentation"><code>});</code></pre>
 					<p><button>Feu&nbsp;!</button></p>
 				</form>
@@ -680,8 +347,8 @@ observer.disconnect();
 		</div>
 	</section>
 
-	<section id="slide-16" data-note="Xm">
-		<h2>Le vampire</h2>
+	<section id="slide-14" data-note="Xm">
+		<h2>Niveau 6<br>Le vampire</h2>
 		<p class="lead">Il faut aussi se méfier des types avec un sourire qui déborde.</p>
 		<div class="grid-2">
 			<div class="portrait" aria-hidden="true">🧛🏿</div>
@@ -697,8 +364,8 @@ observer.disconnect();
 		</div>
 	</section>
 
-	<section id="slide-17" class="demo" data-note="attributeOldValue: true\A0mutation.oldValue.includes('mutant')">
-		<h2 role="presentation">Le vampire</h2>
+	<section id="slide-15" class="demo" data-note="attributeOldValue: true\A0mutation.oldValue.includes('mutant')">
+		<h2 role="presentation">Niveau 6<br>Le vampire</h2>
 		<div class="markup">
 			<code-runner type="json">
 				<form>
@@ -720,7 +387,11 @@ observer.disconnect();
 								 autocapitalize="none"
 								 spellcheck="false"
 								 enterkeyhint="send"
+								 list="attributeoldvalue"
 								 required>
+					<datalist id="attributeoldvalue">
+						<option>attributeOldValue: true</option>
+					</datalist>
 					<label for="options-vampire" class="sr-only">
 						Options de la méthode <code>observe()</code>, dont le premier argument
 						est <code>document.querySelector("mu-tant")</code>.
@@ -732,9 +403,12 @@ observer.disconnect();
 								 autocapitalize="none"
 								 spellcheck="false"
 								 enterkeyhint="send"
+								 list="mutationoldvalue"
 								 required>
+					<datalist id="mutationoldvalue">
+						<option>mutation.oldValue.includes('mutant')</option>
+					</datalist>
 					<pre role="presentation"><code>});</code></pre>
-
 					<p><button>Feu&nbsp;!</button></p>
 				</form>
 			</code-runner>
@@ -744,8 +418,8 @@ observer.disconnect();
 		</div>
 	</section>
 
-	<section id="slide-18" data-note="Xm">
-		<h2>Le vieillissement</h2>
+	<section id="slide-16" data-note="Xm">
+		<h2>Niveau 7<br>Le vieillissement</h2>
 		<p class="lead">Vous ne l’aviez pas vu venir, hein&nbsp;?</p>
 		<div class="grid-2">
 			<div class="portrait" aria-hidden="true">☠️</div>
@@ -759,8 +433,8 @@ observer.disconnect();
 		</div>
 	</section>
 
-	<section id="slide-19" class="demo" data-note="characterDataOldValue: true\A0mutation.oldValue === '💀'">
-		<h2 role="presentation">Le vieillissement</h2>
+	<section id="slide-17" class="demo" data-note="characterDataOldValue: true\A0mutation.oldValue === '💀'">
+		<h2 role="presentation">Niveau 7<br>Le vieillissement</h2>
 		<div class="markup">
 			<code-runner type="json">
 				<form>
@@ -782,8 +456,11 @@ observer.disconnect();
 								 autocapitalize="none"
 								 spellcheck="false"
 								 enterkeyhint="send"
+								 list="characterdataoldvalue"
 								 required>
-
+					<datalist id="characterdataoldvalue">
+						<option>characterDataOldValue: true</option>
+					</datalist>
 					<label for="options-skull" class="sr-only">
 						Options de la méthode <code>observe()</code>, dont le premier argument
 						est <code>document.querySelector("mu-tant")</code>.
@@ -795,9 +472,12 @@ observer.disconnect();
 								 autocapitalize="none"
 								 spellcheck="false"
 								 enterkeyhint="send"
+								 list="mutationoldchar"
 								 required>
+					<datalist id="mutationoldchar">
+						<option>mutation.oldValue === '💀'</option>
+					</datalist>
 					<pre role="presentation"><code>});</code></pre>
-
 					<p><button>Feu&nbsp;!</button></p>
 				</form>
 			</code-runner>
@@ -807,8 +487,8 @@ observer.disconnect();
 		</div>
 	</section>
 
-	<section id="slide-20" data-note="8m">
-		<h2>Le boss final</h2>
+	<section id="slide-18" data-note="8m">
+		<h2>Niveau 8<br>Le boss final</h2>
 		<p class="lead">C’est le moment de sauver des vies.</p>
 		<div class="grid-2">
 			<div class="portrait" aria-hidden="true">🎆</div>
@@ -822,8 +502,8 @@ observer.disconnect();
 		</div>
 	</section>
 
-	<section id="slide-21" class="demo" data-note="5m">
-		<h2 role="presentation"></h2>
+	<section id="slide-19" class="demo" data-note="5m">
+		<h2 role="presentation">Niveau 8<br>Le boss final</h2>
 		<div class="markup">
 			<code-runner type="callback">
 				<form>
@@ -851,8 +531,8 @@ observer.disconnect();
 		</div>
 	</section>
 
-	<section id="slide-22" data-note="5m">
-		<h2>Les solutions</h2>
+	<section id="slide-20" data-note="5m">
+		<h2>Niveau 8<br>Les solutions</h2>
 		<h3>Le bazooka</h3>
 		<pre><code>document.querySelectorAll('mu-tant:not([type=""])')
 	.forEach(mutant => mutant.remove());</code></pre>
@@ -868,8 +548,8 @@ observer.disconnect();
 		</p>
 	</section>
 
-	<section id="slide-23">
-		<h2>Mais encore&nbsp;?</h2>
+	<section id="slide-21">
+		<h2>Niveau bonus<br>Mais encore&nbsp;?</h2>
 		<p class="lead">Les <code>MutationObserver</code> ne sont pas seuls&nbsp;!</p>
 		<ul>
 			<li>
@@ -882,31 +562,34 @@ observer.disconnect();
 			</li>
 			<li>
 				Les <code>PerformanceObserver</code> permettent de surveiller différents
-				indicateurs de performance et de les consigner dans les <i lang="en">logs.</i>
+				indicateurs de performance et de les consigner dans les <i lang="en">logs</i>.
 			</li>
 		</ul>
 	</section>
 
-	<section id="slide-24">
-		<h2>Merci</h2>
-		<h3>Et à bientôt <span aria-hidden="true">&nbsp;&#128522;</span></h3>
-		<!-- @todo Lien vers le jeu -->
+	<section id="slide-22">
+		<h2>Générique de fin<br>Merci</h2>
+		<p class="lead">
+			Découvrez <a href="../devfest.2024/jeu/">le jeu réalisé pour le
+			dernier devFest Nantes</a>&nbsp;!
+		</p>
 		<div class="grid-2">
 			<div>
 				<h4>Crédits</h4>
 				<ul>
-					<li>Emojis&nbsp;: <a hreflang="en" href="https://github.com/twitter/twemoji">Twemoji</a> —&nbsp;par Twitter&nbsp;;</li>
-					<li>Typographie de titraille&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/bello-pro">Bello Pro</a> —&nbsp;créée par <a hreflang="en" href="https://www.underware.nl/">Underware</a>&nbsp;;</li>
-					<li>Typographie de labeur&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/museo-slab">Museo Slab</a> —&nbsp;créée par <a hreflang="en" href="https://www.exljbris.com/">Exljbris</a>&nbsp;;</li>
+					<li>Typographie de titraille&nbsp;: <a hreflang="en" href="https://fonts.google.com/specimen/Luckiest+Guy?preview.text=Mutant&class&nbsp;;fication=Display,Handwriting&query=Astigmatic">Luckiest Guy</a> par Astigmatic&nbsp;;</li>
+					<li>Typographie de labeur&nbsp;: <a hreflang="en" href="https://github.com/mozilla/zilla-slab">Zilla Slab</a> par Mozilla&nbsp;;</li>
+					<li>Typographie monospace&nbsp;: <a hreflang="en" href="https://blog.glyphdrawing.club/font-with-built-in-syntax-highlighting/">FontWithASyntaxHighlighter</a> par Heikki Lotvonen&nbsp;;</li>
+					<li>Typographie pour les émojis&nbsp;: <a hreflang="en" href="https://github.com/mozilla/twemoji-colr">Twemoji COLR</a> par Mozilla.</li>
 					<li>Moteur de présentation inspiré de <a hreflang="en" href="https://css-tricks.com/css-scroll-snap-slide-deck/">"<cite lang="en">CSS scroll-snap slide deck that supports live coding</cite>" de Stephanie Eckles sur Smashing Magazine</a>.</li>
 				</ul>
 			</div>
-			<!--<div class="m-auto">
+			<div class="m-auto">
 				<h4>Laissez votre <i lang="en">feedback</i></h4>
-				<p><a href="https://openfeedback.io/">
-					<img src="../img/qr.svg" alt="Openfeedback" width="400" height="400" loading="lazy">
+				<p><a href="https://www.devquest.fr/sessions/linvasion-du-html-mutant">
+					<img src="qr.svg" alt="Openfeedback" width="400" height="400" loading="lazy">
 				</a></p>
-			</div>-->
+			</div>
 		</div>
 	</section>
 </main>

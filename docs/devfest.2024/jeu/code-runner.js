@@ -15,7 +15,9 @@ class CodeRunner extends HTMLElement {
 	}
 
 	connectedCallback() {
-		this.level = document.querySelector('h1').innerText.split(' ')[1].split('\n')[0];
+		this.level =
+			this.closest('section')?.id?.split('-')[1] ||
+			document.querySelector('h1')?.innerText?.split(' ')[1]?.split('\n')[0];
 
 		['options', 'condition', 'fonction']
 			.map(field => {
