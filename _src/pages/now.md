@@ -13,9 +13,9 @@ modified: "2024-12-03"
 
 **Il s’en passe, des choses, dans une vie**&nbsp;: nos trois enfants nous occupent, ma moitié et moi, et je savoure le temps passé ensemble.
 
-**Côté jardin**, le potager reste au repos et les poules ont quartier libre.
+**Côté jardin**, le potager reprend ses droits et nous avons planté pommes de terre, tomates et tomates cerises, cèleri-rave et cèleri-branche, brocolis, courgettes, butternuts, poivrons… Les fraisiers donnent à plein depuis deux semaines et la coriandre que nous avions laissée graîner l’an passé a pris ses aises&nbsp;!
 
-**Je lis beaucoup, de tout**. En ce moment, c’est <cite>Le Livre de Hain</cite> de <em>Ursula K. Le Guin</em>, l’autrice des <cite>Contes de Terremer</cite> que j’ai dévorés l’an passé. J’ai récemment lu <cite>Apprendre, si par bonheur</cite> de Becky Chambers —&nbsp;que j’adore de plus en plus.
+**Je lis beaucoup, de tout**. En ce moment, c’est <cite>Le temps d’après</cite> de <em>Jean Hegland</em>, l’autrice de <cite>Dans la Forêt</cite> que j’ai dévoré juste avant. J’ai récemment lu <cite>Le Livre de Hain</cite> de <em>Ursula K. Le Guin</em> et <cite>Apprendre, si par bonheur</cite> de <em>Becky Chambers</em> —&nbsp;que j’adore de plus en plus.
 
 Ma <abbr title="Pile à lire" aria-label="Pile à lire">PàL</abbr> contient des œuvres de Lovecraft, Fabrice Caro, Caryl Férey, Tolkien, encore du Terry Pratchett, Pierre Lemaitre, Stephen King… mais aussi <cite>La volonté de changer</cite> ou <cite>Voyage en misarchie</cite>, qu’il faudra bien que je me décide à lire un jour&nbsp;!
 
