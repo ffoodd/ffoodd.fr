@@ -117,8 +117,9 @@ figure img {
 	max-width: 30em;
 }
 
-summary {
-	margin: 1rem 0;
+details {
+	border-bottom: 1px dotted;
+	padding: 1rem 0;
 }
 
 summary :is(h2, h3, h4, h5, h6) {
@@ -537,14 +538,12 @@ label {
 }
 
 /* -- @subsection Niveaux de titres -------------------- */
-h1,
-.h1-like, h2,
-.h2-like,
-.h3-like, h3,
-h4,
-.h4-like, h5,
-.h5-like, h6,
-.h6-like {
+h1, .h1-like,
+h2, .h2-like,
+h3, .h3-like,
+h4, .h4-like,
+h5, .h5-like,
+h6, .h6-like {
 	font-weight: 500;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
@@ -558,30 +557,27 @@ h1,
 }
 
 h2,
-.h2-like,
-.h3-like {
+.h2-like{
 	font-size: 1.5em;
 	line-height: 1;
 	margin: 1.5em 0 1em;
 }
 
-h3,
-h4,
-.h4-like {
+h3, .h3-like {
 	font-size: 1.375em;
 	line-height: 1.09091;
 	margin: 2.18182em 0 1.09091em;
 }
 
-h5,
-.h5-like {
+h4,
+.h4-like {
 	font-size: 1.25em;
 	line-height: 1.2;
 	margin: 2.4em 0 1.2em;
 }
 
-h6,
-.h6-like {
+h5,
+.h5-like {
 	font-size: 1.125em;
 	line-height: 1.33333;
 	margin: 2.66667em 0 1.33333em;
