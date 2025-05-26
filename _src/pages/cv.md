@@ -38,21 +38,10 @@ Depuis quatre ans, j’ai eu l’occasion de travailler sur des sujets variés&n
 
 Développeur intégrateur web chez [OAB](https://www.orange-business.com/fr/applications-for-business), une filiale d’[OBS](https://www.orange-business.com/fr) faisant partie du groupe Orange.
 
-Initialement engagé pour renforcer les équipes PHP sur les projets WordPress et l’intégration, je suis progressivement devenu référent accessibilité pour OBS, référent technique HTML / CSS et WordPress et animateur des communautés de pratique <em lang="en">front-end</em>, accessibilité et éco-conception. J’intervenais en conseil dans tous ces domaines pour la plupart des projets de mon pôle.
+Initialement engagé pour renforcer les équipes PHP sur les projets WordPress et l’intégration HTML / CSS, je suis progressivement devenu référent accessibilité pour OBS, référent technique HTML / CSS et WordPress et animateur des communautés de pratique <em lang="en">front-end</em>, accessibilité et éco-conception. J’intervenais en conseil dans tous ces domaines pour la plupart des projets de mon pôle, et en expertise sur la capitalisation des développements via la documentation et l’élaboration de référentiels.
 
 Je fus également mainteneur, pendant plus de deux ans, de [Boosted](https://boosted.orange.com), le <em lang="en">fork</em> de Bootstrap du groupe Orange —&nbsp;et ai intégré l’équipe de Bootstrap à force de reversions de qualité. Ce projet était extrêmement riche&nbsp;: collaboration étroite avec l’équipe londonienne de la marque Orange (en charge du <em lang="en">design system</em>) et avec l’équipe EASE, la cellule d’expertise accessibilité du groupe Orange.
 
-#### Environnements et missions
-
-* PHP7 dans PHPStorm, sur Ubuntu&nbsp;;
-* Vagrant et Puppet, puis Docker pour l’industrialisation&nbsp;;
-* Gulp ou Webpack pour le <em lang="en">workflow front-end</em> complet&nbsp;;
-* Développements Node&nbsp;;
-* Outillage pour test&nbsp;: accessibilité, non-régression visuelle, performance… avec notamment la réalisation d’un tableau de <em lang="en">monitoring</em> interne, à l’origine de chaarts&nbsp;;
-* Git et GitHub avancés&nbsp;;
-* Thème WordPress très avancé pour une usine à sites&nbsp;: exploitation des <em lang="en">Must Use plugins</em>, thème parent et enfant, personnalisation à l’aide du <em lang="en">customizer</em>…
-* Personnalisation CSS d’un outil de GRU (Gestion de Relations Usager) déployé par Lantéas&nbsp;;
-* Documentation technique, élaboration de référentiels et plans de test.
 
 ### Ornikar<br><time datetime="2015-10">octobre 2015</time> à <time datetime="2016-06">juin 2016</time>
 
@@ -64,24 +53,7 @@ Un effort conséquent a également été produit pour améliorer l’accessibili
 
 #### Environnement
 
-* PHP7 (Laravel) dans PHPStorm, sur OSx&nbsp;;
-* Angular pour le développement <em lang="en">front-end</em>&nbsp;;
-* Gulp pour le <em lang="en">workflow front-end</em> complet&nbsp;;
-* GitHub pour la gestion des versions, des PR, et la relecture&nbsp;;
-* Livraison continue avec CodeShip&nbsp;;
-* SauceLabs pour les tests de compatibilité.
-
-#### Mes sujets
-
-* Nettoyer les dépendances et repartir de zéro si possible&nbsp;;
-* Travail conjoint avec un DA externe pour formaliser une charte graphique&nbsp;;
-* Mise en place de Hologram pour le guide de styles&nbsp;;
-* Création d’un socle CSS sur-mesure avec une approche éducative&nbsp;;
-* Mise en conformité et évangélisation autour de l’accessibilité&nbsp;;
-* Réalisation de quelques illustrations&nbsp;;
-* Audits récurrents avec Opquast Reporting, Tanaguru, Dareboost et <em lang="en">bookmarklets</em>&nbsp;;
-* Travail d’optimisation avec l’agence [SeoMix](https://www.seomix.fr) pour le référencement naturel&nbsp;;
-* Mise en place d’un <em lang="en">workflow</em> dédié aux SVG, inexistant jusqu'alors.
+* Laravel / Angular avec Gulp, sur GitHub.
 
 
 ### Kosmos<br><time datetime="2014-04">avril 2014</time> à <time datetime="2015-09">septembre 2015</time>
@@ -92,25 +64,7 @@ Ma mission principale consiste à rembourser la dette technique accumulée sur l
 
 #### Environnement
 
-* Environnement Java dans IntelliJ Idea, sur Ubuntu&nbsp;;
-* Gestion de versions avec SVN&nbsp;;
-* Développement du produit en méthode agile.
-
-#### Mes rôles
-
-* alimenter la feuille de route <em lang="en">front-end</em>&nbsp;;
-* faciliter les échanges entre les équipes fonctionnelles et techniques via l'UX&nbsp;;
-* intervenir en support des équipes Qualité pour les sujets <em lang="en">front-end</em>&nbsp;;
-* migrer des composants UI (basés en majeure partie sur YUI2) vers Kendo UI&nbsp;;
-* mettre en place d’utilitaire JavaScript pour palier aux scripts spécifiques&nbsp;;
-* ré-écrire des scripts en JS natif pour supprimer des dépendances inutiles&nbsp;;
-* factoriser et optimiser massivement l’ensemble des CSS&nbsp;;
-* passer à HTML5 et ARIA&nbsp;;
-* améliorer le niveau d’accessibilité en allant du général au particulier&nbsp;;
-* faciliter l’utilisation des dernières avancées CSS et JS notamment&nbsp;;
-* former et outiller progressivement les développeurs sur les sujets <em lang="en">front-end</em>&nbsp;;
-* documenter les modifications et apports au fur et à mesure&nbsp;;
-* proposer et expérimenter des alternatives techniques (vidéo HTML5, par ex.).
+* Java dans IntelliJ Idea avec SVN, sur Ubuntu.
 
 
 ### 1-ter-net<br><time datetime="2009-10">octobre 2009</time> à <time datetime="2014-04">avril 2014</time>
@@ -123,15 +77,9 @@ Ma mission initiale était la création graphique, puis s’est étendue jusqu�
 
 * Création graphique (logos, chartes graphique et maquette) avec Gimp et Inkscape&nbsp;;
 * Conception ergonomique et fonctionnelle, prototypes fonctionnels sur Axure et Balsamiq&nbsp;;
-* Intégration HTML, CSS et JS —&nbsp;<em lang="en">responsive</em> et <em lang="en">mobile first</em> selon les projets&nbsp;;
-* Optimisation de la sémantique et des performances pour le référencement&nbsp;;
-* Développements WordPress spécifiques (thèmes et extensions) et industrialisation des bonnes pratiques&nbsp;;
-* Développements de plugins jQuery&nbsp;;
-* Gestion des versions avec SVN puis Git&nbsp;;
-* Développement et intégration occasionnels sur Prestashop et Magento&nbsp;;
-* Gestion de projets simples.
+* Intégration HTML, CSS et JS —&nbsp;<em lang="en">responsive</em> et <em lang="en">mobile first</em>&nbsp;— avec un focus sur la sémantique et des performances pour le référencement&nbsp;;
+* Développement&nbsp;: WordPress spécifiques (thèmes et extensions), Prestashop et Magento, industrialisation des bonnes pratiques, plugins jQuery.
 
-Les différentes prestations en ESN m’ont permis de découvrir les environnements Java et dotNet, et de travailler aussi bien sur des applications riches que sur des clients lourds. J’ai également créé un thème complet pour la solution de portail Liferay, et suis intervenu sur l’intranet de Système U pour de la compatibilité IE6. Quelle belle époque&nbsp;!
 
 ### Zéni<br><time datetime="2008-10">octobre 2008</time> à <time datetime="2009-10">octobre 2009</time>
 
@@ -153,7 +101,7 @@ J’y ai découvert le CMS Kirby, un petit bijou —&nbsp;mais aussi, de plus lo
 
 ### WP-Tech
 
-Après avoir été orateur lors de la première édition en 2014, j’ai contribué à l’organisation de la deuxième édition en 2015. J’étais très impliqué dans l’écosystème WordPress nantais à ce moment-là, animant également quelques <em lang="en">meetups</em> L’événement a sauté quelques années avant de renaître à Lyon en 2018, où j’ai également été orateur.
+Après avoir été orateur lors de la première édition en 2014, j’ai contribué à l’organisation de la deuxième édition en 2015. J’étais très impliqué dans l’écosystème WordPress nantais à ce moment-là, animant également quelques <em lang="en">meetups</em>. L’événement a sauté quelques années avant de renaître à Lyon en 2018, où j’ai également été orateur.
 
 ---
 
