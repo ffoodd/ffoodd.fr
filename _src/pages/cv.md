@@ -1,24 +1,18 @@
 ---
-layout: "template/page.njk"
-title: "Parcours"
-permalink: "travaux/index.html"
+layout: "cv.njk"
+title: "Gaël Poupard"
+permalink: "cv/index.html"
 tags: ["pages"]
-description: "Voici comment je me suis occupé ces dernières années&nbsp;: mes études, puis du travail, un peu de rédaction sur ce blog et quelques interventions pour partager mes idées."
-metadescription: "Mes travaux en accessibilité, intégration web, développement, webdesign et graphisme web."
-metatitle: "Gaël Poupard - Travaux de webdesign et intégration web"
+metadescription: "Gaël Poupard : accessibilité, intégration web, développement, webdesign."
 ---
 
-<details><summary>
-
 ## Parcours professionnel
-
-</summary>
 
 Spécialiste du HTML / CSS passé par les cases designer UX/UI en agence, développeur PHP, développeur _front-end_ en _start-up_ aux commandes d’un guide de styles —&nbsp;on ne parlait pas encore de _design system_&nbsp;!&nbsp;—, chef de chantier sur une refonte technique _front-end_ chez un éditeur dans un environnement Java, puis spécialiste _front-end_ et CMS en ESN, je suis actuellement référent accessibilité et expert HTML / CSS / SVG chez Onepoint.
 
 Et ne le répétez pas, mais j’ai commencé en 2007 par faire du Flash —&nbsp;et j’aimais ça&nbsp;!
 
-### Onepoint — <time datetime="2021-03">mars 2021</time> à aujourd’hui
+### Onepoint<br><time datetime="2021-03">mars 2021</time> à aujourd’hui
 
 _Lead tech front_ et référent accessibilité chez [Onepoint](https://www.groupeonepoint.com/fr/).
 
@@ -40,7 +34,7 @@ Depuis quatre ans, j’ai eu l’occasion de travailler sur des sujets variés&n
 * Participation au [comité de traduction des <em lang="en">Web Content Accessibility Guidelines</em> (WCAG) 2.2](https://lists.w3.org/Archives/Public/w3c-translators/2024JanMar/0031.html) coordonné par Access42&nbsp;;
 * Contribution au cercle d’expertise nantais&nbsp;: commité éditorial, conférences internes avec accompagnement des orateurices, programme de mentorat…
 
-### Orange — <time datetime="2016-08">août 2016</time> à <time datetime="2021-03">mars 2021</time>
+### Orange<br><time datetime="2016-08">août 2016</time> à <time datetime="2021-03">mars 2021</time>
 
 Développeur intégrateur web chez [OAB](https://www.orange-business.com/fr/applications-for-business), une filiale d’[OBS](https://www.orange-business.com/fr) faisant partie du groupe Orange.
 
@@ -60,8 +54,7 @@ Je fus également mainteneur, pendant plus de deux ans, de [Boosted](https://boo
 * Personnalisation CSS d’un outil de GRU (Gestion de Relations Usager) déployé par Lantéas&nbsp;;
 * Documentation technique, élaboration de référentiels et plans de test.
 
-
-### Ornikar — <time datetime="2015-10">octobre 2015</time> à <time datetime="2016-06">juin 2016</time>
+### Ornikar<br><time datetime="2015-10">octobre 2015</time> à <time datetime="2016-06">juin 2016</time>
 
 Développeur <em lang="en">front-end</em> chez [Ornikar](https://www.ornikar.com/).
 
@@ -91,7 +84,7 @@ Un effort conséquent a également été produit pour améliorer l’accessibili
 * Mise en place d’un <em lang="en">workflow</em> dédié aux SVG, inexistant jusqu'alors.
 
 
-### Kosmos — <time datetime="2014-04">avril 2014</time> à <time datetime="2015-09">septembre 2015</time>
+### Kosmos<br><time datetime="2014-04">avril 2014</time> à <time datetime="2015-09">septembre 2015</time>
 
 Développeur <em lang="en">front-end</em> chez [Kosmos](https://www.kosmos.fr/digital-for-education-33228.kjsp).
 
@@ -120,7 +113,7 @@ Ma mission principale consiste à rembourser la dette technique accumulée sur l
 * proposer et expérimenter des alternatives techniques (vidéo HTML5, par ex.).
 
 
-### 1-ter-net — <time datetime="2009-10">octobre 2009</time> à <time datetime="2014-04">avril 2014</time>
+### 1-ter-net<br><time datetime="2009-10">octobre 2009</time> à <time datetime="2014-04">avril 2014</time>
 
 Graphiste, intégrateur web et développeur WordPress au sein de l’agence 1-ter-net —&nbsp;disparue depuis.
 
@@ -140,21 +133,17 @@ Ma mission initiale était la création graphique, puis s’est étendue jusqu�
 
 Les différentes prestations en ESN m’ont permis de découvrir les environnements Java et dotNet, et de travailler aussi bien sur des applications riches que sur des clients lourds. J’ai également créé un thème complet pour la solution de portail Liferay, et suis intervenu sur l’intranet de Système U pour de la compatibilité IE6. Quelle belle époque&nbsp;!
 
-### Zéni — <time datetime="2008-10">octobre 2008</time> à <time datetime="2009-10">octobre 2009</time>
+### Zéni<br><time datetime="2008-10">octobre 2008</time> à <time datetime="2009-10">octobre 2009</time>
 
 Infographiste en alternance chez Zéni, l’agence web du groupe Keyrus —&nbsp;devenue Spikly puis disparue&nbsp;?
 
 Mon rôle consistait principalement à réaliser des déclinaisons de maquettes, des animations Flash ainsi que des supports publicitaires web et <em lang="en">print</em>.
 
-</details>
-
-<details><summary>
+---
 
 ## Projets associatifs
 
-</summary>
-
-Au-delà de quelques fugaces contributions pour créer les sites web d’association de quartier ou d’un club de rugby,  
+Au-delà de quelques fugaces contributions pour créer les sites web d’association de quartier ou d’un club de rugby,
 
 ### Paris Web
 
@@ -166,18 +155,13 @@ J’y ai découvert le CMS Kirby, un petit bijou —&nbsp;mais aussi, de plus lo
 
 Après avoir été orateur lors de la première édition en 2014, j’ai contribué à l’organisation de la deuxième édition en 2015. J’étais très impliqué dans l’écosystème WordPress nantais à ce moment-là, animant également quelques <em lang="en">meetups</em> L’événement a sauté quelques années avant de renaître à Lyon en 2018, où j’ai également été orateur.
 
-</details>
-
-<details><summary>
+---
 
 ## Projets open-source
-
-</summary>
 
 Je contribue dès que possible aux projets _open-source_ que j’utilise, que ce soit pour signaler des <em lang="en">bugs</em> (dans [Chromium](https://issues.chromium.org/issues?q=reporter:gael.poupard@gmail.com) ou [WebKit](https://bugs.webkit.org/buglist.cgi?bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&email1=webkit.jiion%40passinbox.com&emailassigned_to1=1&emailreporter1=1&emailtype1=exact&list_id=12261679) récemment), améliorer la documentation ou proposer des corrections. Mais certains projets prennent plus de place que les autres, notamment quand j’en suis à l’initiative.
 
 ### a11y.css
-
 
 [a11y.css](https://ffoodd.github.io/a11y.css/) est une feuille de styles pour évaluer la qualité de votre HTML —&nbsp;très orientée accessibilité et assurance qualité web&nbsp;— et traduite en dix langues !
 Elle est embarquée dans [une extension navigateur](https://github.com/ffoodd/a11y.css-webextension/) qui ajoute quelques fonctionnalités utiles, comme l’inspection des alternatives aux images et l’affichage des langues déclarées dans la page.
@@ -190,26 +174,9 @@ Elle est embarquée dans [une extension navigateur](https://github.com/ffoodd/a1
 
 Ma position de mainteneur de [Boosted](https://boosted.orange.com) pendant plus de deux ans m’a permis de contribuer largement à [Bootstrap](https://getbootstrap.com) et d’être intégré à la <em lang="en">core team</em>. J’ai notamment implémenté le RTL dans la v5 de Bootstrap à l’aide de RTLCSS, déjà utilisé dans la v4 de Boosted.
 
-</details>
-
-<details><summary>
-
-## Publications
-
-</summary>
-
-* Trois pages d’introduction à l’accessibilité et à son impact sur le référencement naturel dans «&nbsp;[Optimiser son référencement WordPress](https://www.eyrolles.com/Informatique/Livre/optimiser-son-referencement-wordpress-9782212141825)&nbsp;» par [Daniel Roch](https://daniel-roch.fr/) <abbr lang="en" title="also know as">a.k.a.</abbr> [SEO Mix](https://www.seomix.fr/)&nbsp;;
-* [Du consommateur au producteur](https://openweb.eu.org/articles/du-consommateur-au-producteur) le <time datetime="2014-08-22">22 août 2014</time> sur Openweb&nbsp;;
-* [Webgrids&nbsp;: Structure et typographie de la page web](https://www.alsacreations.com/livres/lire/1503-webgrids-structure-et-typographie-de-la-page-web.html) le <time datetime="2012-11-09">09 novembre 2012</time> sur Alsacréations&nbsp;;
-* C’est anecdotique, mais j’en suis fier&nbsp;: un extrait de mon [compte-rendu de lecture](https://www.ffoodd.fr/guide-pratique-de-choix-typographique/) du «&nbsp;[Guide pratique de choix typographique](https://www.adverbum.fr/atelier-perrousseaux/david-rault/guide-pratique-de-choix-typographique-9782367650319_6lkksszthj8.html?from[alias]=livres-adverbum)&nbsp;» est cité en quatrième de couverture de l’édition revue et augmentée, toujours rédigé par David Rault.
-
-</details>
-
-<details><summary>
+---
 
 ## Formation
-
-</summary>
 
 * **2022**&nbsp;: Formation Audit RGAA chez Access42&nbsp;;
 * **2018**&nbsp;: Formation Référent Qualité Web chez Opquast —&nbsp;[certifié expert avec 965/1000](https://directory.opquast.com/fr/certificat/CSRQGB/)&nbsp;;
@@ -217,4 +184,4 @@ Ma position de mainteneur de [Boosted](https://boosted.orange.com) pendant plus 
 * **2006&nbsp;— 2008**&nbsp;: **BTS** communication visuelle option Multimédia au [lycée Eugénie Cotton](https://lyceecotton.net/joom/) à Montreuil&nbsp;;
 * **2003&nbsp;— 2006**&nbsp;: **Bac** STI Arts Appliqués au [lycée Albert Claveille](https://claveille.org/) à Périgueux&nbsp;;
 
-</details>
+

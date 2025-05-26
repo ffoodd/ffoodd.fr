@@ -1,0 +1,250 @@
+@charset "UTF-8";
+
+@font-face {
+	font-display: swap;
+	font-family: 'Luckiest Guy';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../devfest.2024/jeu/assets/fonts/LuckiestGuy-Regular.woff2') format('woff2');
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'Zilla Slab';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../devfest.2024/jeu/assets/fonts/ZillaSlab-Regular.woff2') format('woff2');
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'Zilla Slab';
+	font-style: italic;
+	font-weight: 400;
+	src: url('../devfest.2024/jeu/assets/fonts/ZillaSlab-Italic.woff2') format('woff2');
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'Zilla Slab';
+	font-style: normal;
+	font-weight: 700;
+	src: url('../devfest.2024/jeu/assets/fonts/ZillaSlab-Bold.woff2') format('woff2');
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'Zilla Slab';
+	font-style: italic;
+	font-weight: 700;
+	src: url('../devfest.2024/jeu/assets/fonts/ZillaSlab-BoldItalic.woff2') format('woff2');
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+hr {
+	margin-top: 2em;
+	opacity: .1;
+}
+
+body {
+	color: #032c36;
+	font-family: 'Zilla Slab';
+}
+
+strong {
+	color: #01171d;
+}
+
+em {
+	font-style: italic;
+}
+
+a {
+	color: #c42419;
+}
+
+a:is(:hover, :focus) {
+	color: #971c13;
+}
+
+p, ul, ol {
+	font-size: 1em;
+	line-height: 1.5;
+	margin: 1em 0 0.5em;
+}
+
+[role="main"] ul {
+	list-style-type: "";
+	padding-left: 0;
+}
+
+[role="main"] li ul,
+[role="main"] li ol {
+	font-size: .875em;
+	margin-block: 0;
+	padding-left: 2em;
+}
+
+sup,
+sub {
+	vertical-align: 0;
+	position: relative;
+}
+
+sup {
+	bottom: 1ex;
+}
+
+sub {
+	top: .5ex;
+}
+
+abbr[title] {
+	border-bottom: dotted 1px;
+	cursor: help;
+	text-decoration: none;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 700;
+	line-height: 1;
+	margin: 1.5em 0 1em;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1 {
+	font-family: 'Luckiest Guy';
+	font-size: 4em;
+}
+
+h2 {
+	font-size: 2em;
+	font-weight: 700;
+}
+
+h3 {
+	font-size: 1.25em;
+}
+
+h3:has(time) {
+	margin-top: 3em;
+}
+
+h3:has(time)::first-line {
+	font-family: 'Luckiest Guy';
+	font-size: 1.375em;
+}
+
+h3 time {
+	color: #c42419;
+}
+
+h4 {
+	font-size: 1.25em;
+	font-weight: 700;
+}
+
+small {
+	font-size: 0.875em;
+}
+
+[role="main"] ul li::before {
+	content: "—";
+	color: #c42419;
+	display: inline-block;
+	margin-left: -1.2em;
+	width: 1.2em;
+}
+
+.w--site {
+	width: 40em;
+}
+
+.mw--site {
+	max-width: 40em;
+}
+
+.mt0,
+:is(h1, h2, h3, h4, h5, h6):first-child {
+	margin-top: 0;
+}
+
+.mb0,
+:is(p, ul, ol):last-child {
+	margin-bottom: 0;
+}
+
+.mb1 {
+	margin-bottom: 1em;
+}
+
+.mt2 {
+	margin-top: 2em;
+}
+
+.mb2 {
+	margin-bottom: 2em;
+}
+
+.pb3 {
+	padding-bottom: 3em;
+}
+
+.pl3 {
+	padding-left: 3em;
+}
+
+.pr3 {
+	padding-right: 3em;
+}
+
+.ul-flex {
+	display: flex;
+	gap: 1rem;
+	list-style-type: "";
+}
+
+.m-reset {
+	margin: 0;
+}
+
+.p-reset {
+	padding: 0
+}
+
+@media print {
+	body {
+		font-size: 8pt;
+		margin: 0 !important;
+		padding: 0 !important;
+		width: auto !important
+	}
+
+	[class*="mw"], [class*="w-"] {
+		width: 100%
+	}
+
+	p {
+		orphans: 3;
+		widows: 3
+	}
+
+	ul {
+		page-break-inside: avoid
+	}
+
+	h1, h2, h3 {
+		page-break-after: avoid
+	}
+}

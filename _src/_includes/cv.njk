@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="{{ site.language }}">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		{%  set titre = metatitle or title %}
+		<title>{{ titre | striptags | replace('&nbsp;', ' ') | replace('&thinsp;', ' ') }} — {{ site.name }}</title>
+		<link rel="stylesheet" href="/assets/cv.min.css" media="all">
+		{%  set desc = metadescription or description or excerpt %}
+		<meta name="description" content="{{ desc | striptags | replace('&nbsp;', ' ') | replace('&thinsp;', ' ') }}">
+		<meta name="generator" content="{{ eleventy.generator }}">
+		<link rel="icon" href="/favicon.ico" sizes="32x32">
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+		<link rel="author" href="/humans.txt" type="text/plain">
+		<meta property="fediverse:creator" content="@ffoodd@mamot.fr">
+	</head>
+	<body itemscope itemtype="https://schema.org/WebPage">
+		<header class="mw--site pr3 pl3 mt2" role="banner" itemscope itemtype="https://schema.org/Person">
+			<h1 itemprop="name" class="mb0">{{ title | safe }}</h1>
+			<ul class="ul-flex p-reset mt0 mb2">
+				<li itemscope itemprop="contactPoint">
+					<a href="mailto:gael+cv@ffoodd.fr" itemprop="url">
+						<span itemprop="name">gael@ffoodd.fr</span>
+					</a>
+				</li>
+				<li itemscope itemprop="contactPoint">
+					<a href="https://www.ffoodd.fr" itemprop="url">
+						<span itemprop="name">ffoodd.fr</span>
+					</a>
+				</li>
+				{%- for contactPoint in contactPoints -%}
+					{%- if contactPoint.name === "RSS" -%}
+					{%- else -%}
+					<li itemscope itemprop="contactPoint">
+						<a href="{{ contactPoint.url }}" itemprop="url"{%- if contactPoint.name === 'Mastodon' %} rel="me"{% endif -%}>
+							<span itemprop="name">{{ contactPoint.name }}</span>
+						</a>
+					</li>
+					{%- endif -%}
+				{%- endfor -%}
+			</ul>
+			<meta itemprop="jobTitle" content="Webdesigner et intégrateur web">
+			<meta itemprop="worksFor" content="onepoint">
+		</header>
+		<main class="w--site pl3 pb3 pr3" id="content" role="main" itemprop="mainContentOfPage">
+			{%- block content %}
+				{{ content | safe }}
+			{%- endblock -%}
+			</main>
+	</body>
+</html>
