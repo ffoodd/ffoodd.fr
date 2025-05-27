@@ -314,9 +314,10 @@
 		font-style: normal;
 		font-weight: normal;
 		margin-block-start: 0;
+		margin-inline: .25ch;
 		outline: 1px solid;
 		outline-offset: 1px;
-		padding: 0 0.2em;
+		padding: 0 0.25ch;
 		white-space: nowrap;
 	}
 
@@ -392,7 +393,7 @@
 
 	textarea,
 	input:not([maxlength]) {
-		inline-size: calc(100% - (4ch * var(--tabs, 1)));
+		inline-size: calc(100% - (4.25ch * var(--tabs, 1)));
 	}
 
 	input[type="radio"] {
@@ -404,21 +405,6 @@
 	input:focus-visible,
 	textarea:focus-visible {
 		outline-color: var(--accent);
-	}
-
-	[required] {
-		background-position: calc(100% - 0.75rem) 50%;
-		background-size: 1rem;
-	}
-
-	[required]:valid {
-		border-color: #5a8b02;
-		background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%235a8b02' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
-	}
-
-	[required]:invalid {
-		border-color: #df0045;
-		background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23df0045'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
 	}
 
 	dialog {
@@ -475,6 +461,7 @@
 	}
 
 	footer ul {
+		align-items: center;
 		display: flex;
 		filter: invert(1);
 		list-style: none;
@@ -818,6 +805,8 @@
 
 	section::before {
 		--integer: calc(var(--slides));
+		background-color: var(--background);
+		border-radius: .5rem 0 0 0;
 		counter-reset: total var(--integer);
 		inset-block-end: 0;
 		content: counter(slides) " / " counter(total);
@@ -900,8 +889,6 @@
 	}
 }
 @layer demos {
-	/* @todo Récupérer les styles du jeu <3 */
-	/* @todo Extraire dans une CSS spécifique */
 	pre code {
 		color: #fafafa;
 		font-family: 'FontWithASyntaxHighlighter', monospace;
@@ -926,13 +913,24 @@
 		padding: 1rem;
 	}
 
-	@media screen and (min-width: 60rem) {
+	[id^="condition"] {
+		--tabs: 5;
+		translate: -3.75ch -6.875lh;
+	}
+
+	[id^="fonction"] {
+		min-block-size: 8lh;
+	}
+
+	@media (width > 60rem) {
 		.portrait {
 			font-family: 'Twemoji Mozilla', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', sans-serif;
 			font-size: min(40vw, 80vh);
+			inline-size: 40vw;
 			inset-block-start: 10vh;
 			inset-inline-end: 10vh;
 			line-height: 80vh;
+			overflow: hidden;
 			position: absolute;
 			text-align: start;
 		}
@@ -1031,6 +1029,13 @@
 		position: absolute;
 	}
 
+	.portrait mu-tant {
+		display: unset;
+		font-size: inherit;
+		line-height: inherit;
+		position: static;
+	}
+
 	code-runner {
 		background: local linear-gradient(to right, #231745 30%, transparent) 0 0/2.5rem 100% no-repeat,
 		local linear-gradient(to right, transparent, #231745 70%) 100%/2.5rem 100% no-repeat,
@@ -1047,7 +1052,7 @@
 
 	@media screen and (min-width: 60rem) {
 		play-ground {
-			min-block-size: calc(100vh - 2rem);
+			min-block-size: calc(80vh - 2rem);
 		}
 	}
 

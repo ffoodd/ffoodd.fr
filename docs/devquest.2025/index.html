@@ -84,8 +84,6 @@
 
 
 
-
-
 const observer = new MutationObserver();
 observer.observe(
 	document.querySelector('#cible'),
@@ -98,7 +96,9 @@ observer.disconnect();
 	<section id="slide-4" data-note="Xm">
 		<h2>Niveau 1<br>Le zombie</h2>
 		<div class="grid-2">
-			<div class="portrait" aria-hidden="true">🧟</div>
+			<div class="portrait" aria-hidden="true">
+				<mu-tant type="zombie"></mu-tant>
+			</div>
 			<div>
 				<h3>Entrons dans le vif du sujet&nbsp;: les changements d’attribut</h3>
 				<p>
@@ -151,7 +151,9 @@ observer.disconnect();
 		<h2>Niveau 2<br>Le super-vilain</h2>
 		<p class="lead">Il n’y a pas que des gentils dans la vie.</p>
 		<div class="grid-2">
-			<div class="portrait" aria-hidden="true">🦹🏿</div>
+			<div class="portrait" aria-hidden="true">
+				<mu-tant type="villain"></mu-tant>
+			</div>
 			<div>
 				<h3>Cas d’usage&nbsp;: les changements textuels</h3>
 				<p>
@@ -202,7 +204,9 @@ observer.disconnect();
 		<h2>Niveau 3<br>L’alien</h2>
 		<p class="lead">Ils sont parmi nous&nbsp;!</p>
 		<div class="grid-2">
-			<div class="portrait" aria-hidden="true">👾</div>
+			<div class="portrait" aria-hidden="true">
+				<mu-tant type="invaders"></mu-tant>
+			</div>
 			<div>
 				<h3>Cas d’usage&nbsp;: les changements de descendance directe</h3>
 				<p>
@@ -246,7 +250,7 @@ observer.disconnect();
 			</code-runner>
 		</div>
 		<div class="playground">
-			<play-ground type="alien"max="1000" await></play-ground>
+			<play-ground type="invaders" max="1000" await></play-ground>
 		</div>
 	</section>
 
@@ -254,7 +258,9 @@ observer.disconnect();
 		<h2>Niveau 4<br>Le fantôme</h2>
 		<p class="lead">Vous n’avez pas entendu un truc&nbsp;?</p>
 		<div class="grid-2">
-			<div class="portrait" aria-hidden="true">👻</div>
+			<div class="portrait" aria-hidden="true">
+				<mu-tant type="ghost"></mu-tant>
+			</div>
 			<div>
 				<h3>Cas d’usage&nbsp;: un attribut précis change pour une valeur spécifique</h3>
 				<p>
@@ -303,7 +309,9 @@ observer.disconnect();
 		<h2>Niveau 5<br>Le sorcier</h2>
 		<p class="lead">Il faut se méfier des types encapuchonnés<br>avec un grand bâton.</p>
 		<div class="grid-2">
-			<div class="portrait" aria-hidden="true">🧙🏿</div>
+			<div class="portrait" aria-hidden="true">
+				<mu-tant type="mage"></mu-tant>
+			</div>
 			<div>
 				<h3>Cas d’usage&nbsp;: les changements de descendance profonde</h3>
 				<p>
@@ -351,7 +359,9 @@ observer.disconnect();
 		<h2>Niveau 6<br>Le vampire</h2>
 		<p class="lead">Il faut aussi se méfier des types avec un sourire qui déborde.</p>
 		<div class="grid-2">
-			<div class="portrait" aria-hidden="true">🧛🏿</div>
+			<div class="portrait" aria-hidden="true">
+				<mu-tant type="vampire"></mu-tant>
+			</div>
 			<div>
 				<h3>Cas d’usage&nbsp;: les valeurs disparues</h3>
 				<p>
@@ -375,7 +385,7 @@ observer.disconnect();
 					</label>
 					<pre role="presentation"><code>const slayer = new MutationObserver(mutations => {
 	for (const mutation of mutations) {
-		if (									) {
+		if (										) {
 			mutation.target.remove();
 			slayer.disconnect();
 		}
@@ -422,7 +432,9 @@ observer.disconnect();
 		<h2>Niveau 7<br>Le vieillissement</h2>
 		<p class="lead">Vous ne l’aviez pas vu venir, hein&nbsp;?</p>
 		<div class="grid-2">
-			<div class="portrait" aria-hidden="true">☠️</div>
+			<div class="portrait" aria-hidden="true">
+				<mu-tant type="skull"></mu-tant>
+			</div>
 			<div>
 				<h3>Cas d’usage&nbsp;: les caractères disparus</h3>
 				<p>
