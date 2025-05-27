@@ -34,6 +34,6 @@
 		"patch-package": "^8.0.0"
 	},
 	"dependencies": {
-		"html-mutant": "^0.0.2"
+		"html-mutant": "^0.0.3"
 	}
 }
