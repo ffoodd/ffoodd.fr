@@ -168,11 +168,11 @@ small {
 }
 
 .w--site {
-	width: 40em;
+	width: min(100%, 40em);
 }
 
 .mw--site {
-	max-width: 40em;
+	max-width: min(100%, 40em);
 }
 
 .mt0,

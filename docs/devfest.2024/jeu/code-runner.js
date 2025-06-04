@@ -15,7 +15,9 @@ class CodeRunner extends HTMLElement {
 	}
 
 	connectedCallback() {
-		this.level = document.querySelector('h1').innerText.split(' ')[1].split('\n')[0];
+		this.level =
+			this.closest('section')?.id?.split('-')[1] ||
+			document.querySelector('h1')?.innerText?.split(' ')[1]?.split('\n')[0];
 
 		['options', 'condition', 'fonction']
 			.map(field => {
@@ -24,6 +26,12 @@ class CodeRunner extends HTMLElement {
 					this.form[field].value = value;
 				}
 			});
+	}
+
+	disconnectedCallback() {
+		this.form.removeEventListener('submit', this);
+		window.removeEventListener('error', this);
+		document.removeEventListener('beforeunload', this);
 	}
 
 	handleEvent(event) {
@@ -57,7 +65,7 @@ class CodeRunner extends HTMLElement {
 				this.dispatchEvent(voightkampff);
 				break;
 			case 'error':
-				console.error('Une erreur s’est glissée dans votre réponse.')
+				console.error('Une erreur s’est glissée dans votre réponse.');
 				break;
 			default:
 				break;

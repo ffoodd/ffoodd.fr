@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<title>L’invasion du HTML mutant</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="L’invasion du HTML mutant — conférence donnée par Gaël Poupard lors du DevQuest Niort 2025.">
+	<meta name="author" content="Gaël Poupard">
+	<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+	<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../accesslide/fonts/bello-pro.woff2">
+	<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../accesslide/fonts/museo-slab-300.woff2">
+	<link rel="stylesheet" href="sliide.css" type="text/css" media="screen">
+</head>
+<body>
+<main role="main" tabindex="0">
+	<section id="slide-1" data-note="5m" class="splash d-flex flex-column justify-between">
+		<h1>L’invasion du <abbr title="HyperText Markup Language">html</abbr><br>mutant</h1>
+		<dl class="d-flex m-auto">
+			<dt>Slides en ligne</dt>
+			<dd><a href="https://www.ffoodd.fr/devquest.2025/">ffoodd.fr/devquest.2025/</a></dd>
+		</dl>
+		<footer>
+			<div class="d-flex">
+				<p class="my-0">Animé par <a href="https://www.ffoodd.fr">Gaël Poupard</a></p>
+				<ul role="list">
+					<li><a href="https://www.ffoodd.fr">
+						<img src="../accesslide/img/ffoodd.svg" alt="Blog de Gaël Poupard" height="32" width="32">
+					</a></li>
+					<li><a href="https://mamot.fr/@ffoodd">
+						<img src="../accesslide/img/mastodon.svg" alt="@ffoodd sur Mastodon" height="32" width="32">
+					</a></li>
+					<li><a href="https://github.com/ffoodd/">
+						<img src="../accesslide/img/github.svg" alt="@ffoodd sur Github" height="32" width="32">
+					</a></li>
+					<li><a href="https://www.linkedin.com/in/ga%C3%ABl-poupard-40117b30/">
+						<img src="../accesslide/img/linkedin.svg" alt="Gaël Poupard sur Linkedin" height="32" width="32">
+					</a></li>
+					<li><a href="https://www.paris-web.fr/">
+						<img src="../accesslide/img/pw.svg" alt="Paris Web" height="32" width="32">
+					</a></li>
+				</ul>
+			</div>
+			<p>
+				<a href="https://www.groupeonepoint.com">
+					<img src="onepoint.svg" width="166" height="80" alt="onepoint">
+				</a>
+			</p>
+		</footer>
+	</section>
+
+	<section id="slide-2" data-note="Xm">
+		<h2>Niveau 0<br>L’inspecteur</h2>
+		<p class="lead">C’est notre héros du jour&nbsp;: invoquez-le avec <kbd>F12</kbd>.</p>
+		<div class="grid-2">
+			<div class="portrait" aria-hidden="true">🕵🏿</div>
+			<div class="carte">
+				<p>L’inspecteur développe un site web, et tout se passe pour le mieux.</p>
+				<p>
+					Mais au moment de faire un audit d’accessibilité, le DOM est sens dessus dessous
+					et des scripts tiers font n’importe quoi&nbsp;!
+				</p>
+				<p>Ni une, ni deux&nbsp;: l’inspecteur dégaine ses outils, il faut corriger le tir&nbsp;!</p>
+			</div>
+		</div>
+	</section>
+
+	<section id="slide-3" data-note="Xm">
+		<h2>Niveau 0<br>Les outils</h2>
+		<div>
+			<p class="lead">L’inspecteur n’a pas de flingue, il a une API&nbsp;!</p>
+			<p>Pour réparer le DOM, nous allons nous servir d’un <code>MutationObserver</code>.</p>
+			<p class="mb-0">Quelques règles&nbsp;:</p>
+		</div>
+		<div class="grid-2">
+			<div>
+				<ol>
+					<li>Il faut l’instancier.</li>
+					<li>Il faut lui donner une cible.</li>
+					<li>Il lui faut une fonction de rappel.</li>
+					<li>Il faut le débrancher, à un moment.</li>
+				</ol>
+				<p>Et maintenant, en avant&nbsp;!</p>
+			</div>
+			<pre class="playground pt-0"><code>const observer = new MutationObserver();
+observer.observe(
+	document.querySelector('#cible'),
+	callback
+);
+observer.disconnect();
+		</code></pre>
+		</div>
+	</section>
+
+	<section id="slide-4" data-note="Xm">
+		<h2>Niveau 1<br>Le zombie</h2>
+		<div class="grid-2">
+			<div class="portrait" aria-hidden="true">
+				<mu-tant type="zombie"></mu-tant>
+			</div>
+			<div>
+				<h3>Entrons dans le vif du sujet&nbsp;: les changements d’attribut</h3>
+				<p>
+					Avez-vous déjà eu besoin de déclencher quelque chose en JavaScript
+					lorsqu’un élément change d’attribut&nbsp;?
+				</p>
+				<p class="small">
+					Songez à tous ces attributs qui peuvent être importants&nbsp;:
+					<code>hidden</code>, <code>aria-label</code>, <code>aria-invalid</code>…
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section id="slide-5" class="demo" data-note="attributes: true">
+		<h2 role="presentation">Niveau 1<br>Le zombie</h2>
+		<div class="markup">
+			<code-runner type="json">
+				<form>
+					<label for="options-zombie" class="sr-only">
+						Options de la méthode <code>observe()</code>, dont le premier argument
+						est <code>document.querySelector("mu-tant")</code>.
+					</label>
+					<pre role="presentation"><code>observer.observe(document.querySelector("mu-tant"), {</code></pre>
+					<input type="text" name="options"
+								 id="options-zombie"
+								 autocomplete="off"
+								 autocorrect="off"
+								 autocapitalize="none"
+								 spellcheck="false"
+								 enterkeyhint="send"
+								 list="attributes"
+								 required>
+					<datalist id="attributes">
+						<option>attributes: true</option>
+					</datalist>
+					<pre role="presentation"><code>});</code></pre>
+					<p><button>Feu&nbsp;!</button></p>
+				</form>
+			</code-runner>
+		</div>
+		<div class="playground">
+			<play-ground type="zombie" max="1000" await></play-ground>
+		</div>
+	</section>
+
+	<section id="slide-6" data-note="Xm">
+		<h2>Niveau 2<br>Le super-vilain</h2>
+		<p class="lead">Il n’y a pas que des gentils dans la vie.</p>
+		<div class="grid-2">
+			<div class="portrait" aria-hidden="true">
+				<mu-tant type="villain"></mu-tant>
+			</div>
+			<div>
+				<h3>Cas d’usage&nbsp;: les changements textuels</h3>
+				<p>
+					Avez-vous déjà eu besoin de déclencher quelque chose en JavaScript
+					lorsque le contenu textuel d’un élement change&nbsp;?
+				</p>
+				<p class="small">
+					Imaginez un peu&nbsp;: un bouton dont l’intitulé change, mais pas d’état ni de classe auxquels s’accrocher&nbsp;?
+					Ou mieux, vous faites vos <i lang="en">slides</i> en HTML, avec une vue présentateur que vous
+					voulez synchroniser sur votre pagination.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section id="slide-7" class="demo" data-note="characterData: true">
+		<h2 role="presentation">Niveau 2<br>Le super-vilain</h2>
+		<div class="markup">
+			<code-runner type="json">
+				<form>
+					<label for="options-villain" class="sr-only">
+						Options de la méthode <code>observe()</code>, dont le premier argument
+						est <code>document.querySelector("mu-tant")</code>.
+					</label>
+					<pre role="presentation"><code>observer.observe(document.querySelector("mu-tant"), {</code></pre>
+					<input type="text" name="options"
+								 id="options-villain"
+								 autocomplete="off"
+								 autocorrect="off"
+								 autocapitalize="none"
+								 spellcheck="false"
+								 enterkeyhint="send"
+								 list="character-data"
+								 required>
+					<datalist id="character-data">
+						<option>characterData: true</option>
+					</datalist>
+					<pre role="presentation"><code>});</code></pre>
+					<p><button>Feu&nbsp;!</button></p>
+				</form>
+			</code-runner>
+		</div>
+		<div class="playground">
+			<play-ground type="villain" max="1000" await></play-ground>
+		</div>
+	</section>
+
+	<section id="slide-8" data-note="Xm">
+		<h2>Niveau 3<br>L’alien</h2>
+		<p class="lead">Ils sont parmi nous&nbsp;!</p>
+		<div class="grid-2">
+			<div class="portrait" aria-hidden="true">
+				<mu-tant type="invaders"></mu-tant>
+			</div>
+			<div>
+				<h3>Cas d’usage&nbsp;: les changements de descendance directe</h3>
+				<p>
+					Un contenu injecté inopinément —&nbsp;au hasard,
+					lors d’un <i lang="en">scroll</i> infini, un script tiers
+					qui injecte tout seul son DOM…&nbsp;— c’est irritant&nbsp;!
+				</p>
+				<p>
+					Ou encore&nbsp;: une <code>iframe</code>
+					dont vous devriez ajuster la hauteur en fonction de son contenu…
+				</p>
+				<p class="small">Ceci n’est pas inspiré de faits réels, évidemment&nbsp;!</p>
+			</div>
+		</div>
+	</section>
+
+	<section id="slide-9" class="demo" data-note="childList: true">
+		<h2 role="presentation">Niveau 3<br>L’alien</h2>
+		<div class="markup">
+			<code-runner type="json">
+				<form>
+					<label for="options-alien" class="sr-only">
+						Options de la méthode <code>observe()</code>, dont le premier argument
+						est <code>document.querySelector("mu-tant")</code>.
+					</label>
+					<pre role="presentation"><code>observer.observe(document.querySelector("mu-tant"), {</code></pre>
+					<input type="text" name="options"
+								 id="options-alien"
+								 autocomplete="off"
+								 autocorrect="off"
+								 autocapitalize="none"
+								 spellcheck="false"
+								 enterkeyhint="send"
+								 list="child-list"
+								 required>
+					<datalist id="child-list">
+						<option>childList: true</option>
+					</datalist>
+					<pre role="presentation"><code>});</code></pre>
+					<p><button>Feu&nbsp;!</button></p>
+				</form>
+			</code-runner>
+		</div>
+		<div class="playground">
+			<play-ground type="invaders" max="1000" await></play-ground>
+		</div>
+	</section>
+
+	<section id="slide-10" data-note="Xm">
+		<h2>Niveau 4<br>Le fantôme</h2>
+		<p class="lead">Vous n’avez pas entendu un truc&nbsp;?</p>
+		<div class="grid-2">
+			<div class="portrait" aria-hidden="true">
+				<mu-tant type="ghost"></mu-tant>
+			</div>
+			<div>
+				<h3>Cas d’usage&nbsp;: un attribut précis change pour une valeur spécifique</h3>
+				<p>
+					Imaginez un <i lang="en">framework</i> qui indique l’état invalide d’un champ de formulaire
+					avec une classe, mais sans <code>aria-invalid</code>&nbsp;? Vous savez comment <i lang="en">patcher</i> ça,
+					maintenant.
+				</p>
+				<p class="small">Toute ressemblance avec des <i lang="en">frameworks</i> serait purement fortuite.</p>
+			</div>
+		</div>
+	</section>
+
+	<section id="slide-11" class="demo" data-note="attributeFilter: ['id']">
+		<h2 role="presentation">Niveau 4<br>Le fantôme</h2>
+		<div class="markup">
+			<code-runner type="json">
+				<form>
+					<label for="options-ghost" class="sr-only">
+						Options de la méthode <code>observe()</code>, dont le premier argument
+						est <code>document.querySelector("mu-tant")</code>.
+					</label>
+					<pre role="presentation"><code>observer.observe(document.querySelector("mu-tant"), {</code></pre>
+					<input type="text" name="options"
+								 id="options-ghost"
+								 autocomplete="off"
+								 autocorrect="off"
+								 autocapitalize="none"
+								 spellcheck="false"
+								 enterkeyhint="send"
+								 minlength="18"
+								 list="attribute-filter"
+								 required>
+					<datalist id="attribute-filter">
+						<option>attributeFilter: ['id']</option>
+					</datalist>
+					<pre role="presentation"><code>});</code></pre>
+					<p><button>Feu&nbsp;!</button></p>
+				</form>
+			</code-runner>
+		</div>
+		<div class="playground">
+			<play-ground type="ghost" max="1000" await></play-ground>
+		</div>
+	</section>
+
+	<section id="slide-12" data-note="Xm">
+		<h2>Niveau 5<br>Le sorcier</h2>
+		<p class="lead">Il faut se méfier des types encapuchonnés<br>avec un grand bâton.</p>
+		<div class="grid-2">
+			<div class="portrait" aria-hidden="true">
+				<mu-tant type="mage"></mu-tant>
+			</div>
+			<div>
+				<h3>Cas d’usage&nbsp;: les changements de descendance profonde</h3>
+				<p>
+					Le saviez-vous&nbsp;? Un <i lang="en">Web Component</i> ne peut pas émettre un événement en disparaissant…
+					Donc si vous voulez déclencher quelque chose, vous saurez comment faire&nbsp;!
+				</p>
+				<p class="small">Toute ressemblance avec des <i lang="en">frameworks</i> serait purement fortuite.</p>
+			</div>
+		</div>
+	</section>
+
+	<section id="slide-13" class="demo" data-note="childList: true, subtree: true">
+		<h2 role="presentation">Niveau 5<br>Le sorcier</h2>
+		<div class="markup">
+			<code-runner type="json">
+				<form>
+					<label for="options-mage" class="sr-only">
+						Options de la méthode <code>observe()</code>, dont le premier argument
+						est <code>document.querySelector("mu-tant")</code>.
+					</label>
+					<pre role="presentation"><code>observer.observe(document.querySelector("mu-tant"), {</code></pre>
+					<input type="text" name="options"
+								 id="options-mage"
+								 autocomplete="off"
+								 autocorrect="off"
+								 autocapitalize="none"
+								 spellcheck="false"
+								 enterkeyhint="send"
+								 minlength="18"
+								 list="subtree"
+								 required>
+					<datalist id="subtree">
+						<option>childList: true, subtree: true</option>
+					</datalist>
+					<pre role="presentation"><code>});</code></pre>
+					<p><button>Feu&nbsp;!</button></p>
+				</form>
+			</code-runner>
+		</div>
+		<div class="playground">
+			<play-ground type="mage" max="1000" await></play-ground>
+		</div>
+	</section>
+
+	<section id="slide-14" data-note="Xm">
+		<h2>Niveau 6<br>Le vampire</h2>
+		<p class="lead">Il faut aussi se méfier des types avec un sourire qui déborde.</p>
+		<div class="grid-2">
+			<div class="portrait" aria-hidden="true">
+				<mu-tant type="vampire"></mu-tant>
+			</div>
+			<div>
+				<h3>Cas d’usage&nbsp;: les valeurs disparues</h3>
+				<p>
+					Vous avez connu l’époque des classes <code>.open</code> et <code>.show</code>
+					pour afficher ou masquer un élément —&nbsp;et aucun autre changement dans le DOM&nbsp;?
+					Ou un script tiers qui fait des trucs sans émettre d’événements&nbsp;?
+				</p>
+				<p class="small">Bien entendu, ce sujet est une pure fiction.</p>
+			</div>
+		</div>
+	</section>
+
+	<section id="slide-15" class="demo" data-note="attributeOldValue: true\A0mutation.oldValue.includes('mutant')">
+		<h2 role="presentation">Niveau 6<br>Le vampire</h2>
+		<div class="markup">
+			<code-runner type="json">
+				<form>
+					<label for="condition-vampire" class="sr-only">
+						Condition à remplir par une mutation pour supprimer la cible de la mutation
+						et interrompre l’observation.
+					</label>
+					<pre role="presentation"><code>const slayer = new MutationObserver(mutations => {
+	for (const mutation of mutations) {
+		if (										) {
+			mutation.target.remove();
+			slayer.disconnect();
+		}
+	}
+});</code></pre>
+					<input type="text" name="condition"
+								 id="condition-vampire"
+								 autocomplete="off"
+								 autocorrect="off"
+								 autocapitalize="none"
+								 spellcheck="false"
+								 enterkeyhint="send"
+								 list="mutation-old-value"
+								 required>
+					<datalist id="mutation-old-value">
+						<option>mutation?.oldValue?.includes('mutant')</option>
+					</datalist>
+					<label for="options-vampire" class="sr-only">
+						Options de la méthode <code>observe()</code>, dont le premier argument
+						est <code>document.querySelector("mu-tant")</code>.
+					</label>
+					<pre role="presentation"><code>slayer.observe(document.querySelector("mu-tant"), {</code></pre>
+					<input type="text" name="options"
+								 id="options-vampire"
+								 autocomplete="off"
+								 autocorrect="off"
+								 autocapitalize="none"
+								 spellcheck="false"
+								 enterkeyhint="send"
+								 list="attribute-old-value"
+								 required>
+					<datalist id="attribute-old-value">
+						<option>attributeOldValue: true</option>
+					</datalist>
+					<pre role="presentation"><code>});</code></pre>
+					<p><button>Feu&nbsp;!</button></p>
+				</form>
+			</code-runner>
+		</div>
+		<div class="playground">
+			<play-ground type="vampire" max="1000" await></play-ground>
+		</div>
+	</section>
+
+	<section id="slide-16" data-note="Xm">
+		<h2>Niveau 7<br>Le vieillissement</h2>
+		<p class="lead">Vous ne l’aviez pas vu venir, hein&nbsp;?</p>
+		<div class="grid-2">
+			<div class="portrait" aria-hidden="true">
+				<mu-tant type="skull"></mu-tant>
+			</div>
+			<div>
+				<h3>Cas d’usage&nbsp;: les caractères disparus</h3>
+				<p>
+					Un composant de création de mot de passe qui enlève la description des contraintes franchies…
+				</p>
+				<p class="small">Vous n’avez jamais vu ça&nbsp;?</p>
+			</div>
+		</div>
+	</section>
+
+	<section id="slide-17" class="demo" data-note="characterDataOldValue: true\A0mutation.oldValue === '💀'">
+		<h2 role="presentation">Niveau 7<br>Le vieillissement</h2>
+		<div class="markup">
+			<code-runner type="json">
+				<form>
+					<label for="condition-skull" class="sr-only">
+						Condition à remplir par une mutation pour supprimer la cible de la mutation
+						et interrompre l’observation.
+					</label>
+					<pre role="presentation"><code>const death = new MutationObserver(mutations => {
+	for (const mutation of mutations) {
+		if (									) {
+			mutation.target.remove();
+			death.disconnect();
+		}
+	}
+});</code></pre>
+					<input type="text" name="condition"
+								 id="condition-skull"
+								 autocomplete="off"
+								 autocorrect="off"
+								 autocapitalize="none"
+								 spellcheck="false"
+								 enterkeyhint="send"
+								 list="character-data-old-value"
+								 required>
+					<datalist id="character-data-old-value">
+						<option>mutation?.oldValue === '💀'</option>
+					</datalist>
+					<label for="options-skull" class="sr-only">
+						Options de la méthode <code>observe()</code>, dont le premier argument
+						est <code>document.querySelector("mu-tant")</code>.
+					</label>
+					<pre role="presentation"><code>death.observe(document.querySelector("mu-tant"), {</code></pre>
+					<input type="text" name="options"
+								 id="options-skull"
+								 autocomplete="off"
+								 autocorrect="off"
+								 autocapitalize="none"
+								 spellcheck="false"
+								 enterkeyhint="send"
+								 list="mutation-old-char"
+								 required>
+					<datalist id="mutation-old-char">
+						<option>characterDataOldValue: true</option>
+					</datalist>
+					<pre role="presentation"><code>});</code></pre>
+					<p><button>Feu&nbsp;!</button></p>
+				</form>
+			</code-runner>
+		</div>
+		<div class="playground">
+			<play-ground type="skull" max="1000" await></play-ground>
+		</div>
+	</section>
+
+	<section id="slide-18" data-note="8m">
+		<h2>Niveau 8<br>Le boss final</h2>
+		<p class="lead">C’est le moment de sauver des vies.</p>
+		<div class="grid-2">
+			<div class="portrait" aria-hidden="true">🎆</div>
+			<div>
+				<h3>La fonction de rappel dispose aussi de pouvoirs.</h3>
+				<p>
+					Jusqu’à présent, j’ai savamment supprimé l’élément mutant&nbsp;:
+					mais comment faire si on veut trier, filtrer… bref, tenir compte du contexte&nbsp;?
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section id="slide-19" class="demo" data-note="5m">
+		<h2 role="presentation">Niveau 8<br>Le boss final</h2>
+		<div class="markup">
+			<code-runner type="callback">
+				<form>
+					<label for="fonction" class="sr-only">
+						Code JavaScript à déclencher dans la fonction de rappel pour chaque mutation,
+						avec pour objectif de supprimer les mutants.
+					</label>
+					<pre role="presentation"><code>const death = new MutationObserver(mutations => {
+	for (const mutation of mutations) {</code></pre>
+					<textarea id="fonction"
+										autocomplete="off"
+										autocorrect="off"
+										autocapitalize="none"
+										spellcheck="false"
+										enterkeyhint="send"
+										required></textarea>
+					<pre role="presentation"><code>	}
+});</code></pre>
+					<p><button>Feu&nbsp;!</button></p>
+				</form>
+			</code-runner>
+		</div>
+		<div class="playground">
+			<play-ground type="all" max="1000" await></play-ground>
+		</div>
+	</section>
+
+	<section id="slide-20" data-note="5m">
+		<h2>Niveau 8<br>Les solutions</h2>
+		<h3>Le bazooka</h3>
+		<pre><code>document.querySelectorAll('mu-tant:not([type=""])')
+	.forEach(mutant => mutant.remove());</code></pre>
+		<h3>Le précautionneux</h3>
+		<pre><code>if (mutation.target.nodeName === 'MU-TANT' && mutation.target.type !== '') {
+	mutation.target.remove();
+} else if (mutation.target.closest('mu-tant') !== undefined) {
+	mutation.target.closest('mu-tant').remove();
+}</code></pre>
+		<p>
+			Malgré toutes les options, on peut avoir du mal à trier les mutations.
+			Fort à propos, le type <code>MutationRecord</code> dispose de tout un tas de propriétés bien utiles.
+		</p>
+	</section>
+
+	<section id="slide-21">
+		<h2>Niveau bonus<br>Mais encore&nbsp;?</h2>
+		<p class="lead">Les <code>MutationObserver</code> ne sont pas seuls&nbsp;!</p>
+		<ul>
+			<li>
+				Les <code>IntersectionObserver</code> permettent de surveiller les collisions
+				visuelles entre éléments&nbsp;;
+			</li>
+			<li>
+				Les <code>ResizeObserver</code> permettent de surveiller les changements
+				de dimensions d’un élément&nbsp;;
+			</li>
+			<li>
+				Les <code>PerformanceObserver</code> permettent de surveiller différents
+				indicateurs de performance et de les consigner dans les <i lang="en">logs</i>.
+			</li>
+		</ul>
+	</section>
+
+	<section id="slide-22">
+		<h2>Générique de fin<br>Merci</h2>
+		<p class="lead">
+			Découvrez <a href="../devfest.2024/jeu/">le jeu réalisé pour le
+			dernier devFest Nantes</a>&nbsp;!
+		</p>
+		<div class="grid-2">
+			<div>
+				<h4>Crédits</h4>
+				<ul>
+					<li>Typographie de titraille&nbsp;: <a hreflang="en" href="https://fonts.google.com/specimen/Luckiest+Guy?preview.text=Mutant&class&nbsp;;fication=Display,Handwriting&query=Astigmatic">Luckiest Guy</a> par Astigmatic&nbsp;;</li>
+					<li>Typographie de labeur&nbsp;: <a hreflang="en" href="https://github.com/mozilla/zilla-slab">Zilla Slab</a> par Mozilla&nbsp;;</li>
+					<li>Typographie monospace&nbsp;: <a hreflang="en" href="https://blog.glyphdrawing.club/font-with-built-in-syntax-highlighting/">FontWithASyntaxHighlighter</a> par Heikki Lotvonen&nbsp;;</li>
+					<li>Typographie pour les émojis&nbsp;: <a hreflang="en" href="https://github.com/mozilla/twemoji-colr">Twemoji COLR</a> par Mozilla.</li>
+					<li>Moteur de présentation inspiré de <a hreflang="en" href="https://css-tricks.com/css-scroll-snap-slide-deck/">"<cite lang="en">CSS scroll-snap slide deck that supports live coding</cite>" de Stephanie Eckles sur Smashing Magazine</a>.</li>
+				</ul>
+			</div>
+			<div class="m-auto">
+				<h4>Laissez votre <i lang="en">feedback</i></h4>
+				<p><a href="https://www.devquest.fr/sessions/linvasion-du-html-mutant">
+					<img src="qr.svg" alt="Openfeedback" width="400" height="400" loading="lazy">
+				</a></p>
+			</div>
+		</div>
+	</section>
+</main>
+
+<dialog id="portal" role="dialog" aria-labelledby="portal-heading">
+	<h2 id="portal-heading">Bien joué&nbsp;!</h2>
+	<p>Un cas tordu de moins&nbsp;: on passe au suivant&nbsp;?</p>
+	<form method="dialog">
+		<button>Continuer</button>
+	</form>
+</dialog>
+<dialog id="game-over" role="dialog" aria-labelledby="game-over-heading">
+	<h2 id="game-over-heading" lang="en">Game over</h2>
+	<p>
+		Vous avez été submergé&nbsp;! Pour vous épargner (et évider de faire fondre votre navigateur),
+		vous êtes priés de recommencer le niveau…
+	</p>
+	<form method="dialog">
+		<button>Rejouer</button>
+	</form>
+</dialog>
+<dialog id="replay" role="dialog" aria-labelledby="replay-heading">
+	<h2 id="replay-heading">Raté&nbsp;!</h2>
+	<p>
+		Vos options n’ont pas fonctionné… Nouvelle chance&nbsp;?
+	</p>
+	<form method="dialog">
+		<button>Rejouer</button>
+	</form>
+</dialog>
+
+<div class="timer" style="--duration: 45;">
+	<div class="clock" role="presentation">
+		<span style="--time: 3600s"></span>h&nbsp;
+		<span style="--time: 60s"></span>m&nbsp;
+		<span style="--time: 1s"></span>s
+	</div>
+</div>
+
+<script src="../devfest.2024/jeu/mu-tant.js"></script>
+<script src="../devfest.2024/jeu/code-runner.js"></script>
+<script src="../devfest.2024/jeu/play-ground.js"></script>
+<script>
+	let view;
+	switchSlide = (id) => {
+		// Historique
+		history.pushState({}, '', `#slide-${id}`);
+		// Vue présentateur
+		//// Aperçu du slide suivant
+		document.body.style.setProperty('--next', String(`-moz-element(#slide-${Number(id) + 1})`));
+		//// Synchro de la vue présentateur
+		if (view) {
+			view.postMessage(`slide-${id}`, `http://localhost:8080${document.location.pathname}index.html`);
+		}
+		//// Notes dans la vue présentateur
+		if('note' in document.getElementById(`slide-${id}`).dataset) {
+			document.body.dataset.note = document.getElementById(`slide-${id}`).dataset.note;
+		} else {
+			delete document.body.dataset.note;
+		}
+	}
+
+	document.addEventListener('DOMContentLoaded', () => {
+		const slides = document.querySelectorAll('section[id^="slide-"]');
+
+		// Nombre total de slides, pour la pagination
+		document.body.style.setProperty('--slides', String(slides.length));
+		document.body.style.setProperty('--next', String(`-moz-element(#slide-2)`));
+
+		// Gestion de l’historique
+		let io = new IntersectionObserver(entries => {
+			if (entries[0].isIntersecting === true) {
+				switchSlide(entries[0].target.id.split('-')[1]);
+			}
+		}, {
+			root: document.querySelector('main'),
+			threshold: [1]
+		});
+		slides.forEach(slide =>	io.observe(slide));
+
+		document.addEventListener('keydown', event => {
+			const index = Number(window.location.hash.split('-')[1]);
+			let id = null;
+			switch (event.key) {
+				// Activer la vue présentateur
+				case 's':
+					if (event.altKey) {
+						view = window.open(`http://localhost:8080${document.location.pathname}index.html`, 'speakerView');
+						view.addEventListener('load', () => {
+							view.document.body.classList.add('speaker');
+						})
+					}
+					break;
+				// Télécommande ++
+				case 'PageDown':
+					id = index + 1;
+					break;
+				// Télécommande --
+				case 'PageUp':
+					id = index - 1;
+					break;
+				default:
+					break;
+			}
+
+			if (id !== null && id >= 1) {
+				document.getElementById(`slide-${id}`).scrollIntoView({ behavior: 'smooth' });
+				switchSlide(id);
+			}
+		});
+	});
+
+	window.addEventListener('message', (e) => {
+		if (e.origin === 'http://localhost:8080' && typeof e.data === 'string') {
+			document.getElementById(e.data)?.scrollIntoView({ behavior: 'smooth' });
+			switchSlide(e.data?.split('-')[1]);
+		}
+	}, false);
+</script>
+</body>
+</html>

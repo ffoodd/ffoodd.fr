@@ -1,36 +1,69 @@
 class PlayGround extends HTMLElement {
 	static get observedAttributes() {
-		return ['type'];
+		return ['type', 'await', 'max'];
 	}
 
 	constructor() {
 		super();
 		document.addEventListener('voightkampff', this);
 		this.type = this.hasAttribute('type') ? this.getAttribute('type') : '';
+		this.max = this.hasAttribute('max') ? this.getAttribute('max') : 100;
+		this.async = this.hasAttribute('await');
 		this.portal = document.getElementById('portal');
 		this.over = document.getElementById('game-over');
 		this.replay = document.getElementById('replay');
 	}
 
 	connectedCallback() {
-		this._invade();
-
 		this.spyer = new MutationObserver(mutations => {
 			for (const mutation of mutations) {
-				if (this.over && mutation.addedNodes.length && document.querySelectorAll('mu-tant').length >= 100) {
+				if (this.over && mutation.addedNodes.length && this.querySelectorAll('mu-tant').length >= this.max) {
 					this._gameOver();
 				}
 
 				if (this.portal && mutation.removedNodes.length && this._isMutant(mutation.removedNodes[0])) {
-					if (!document.querySelector('mu-tant')) {
+					if (!this.querySelector('mu-tant')) {
 						this._nextLevel();
-					} else if ((this.type === 'all' && !document.querySelector('mu-tant:not([type=""])'))) {
+					} else if ((this.type === 'all' && !this.querySelector('mu-tant:not([type=""])'))) {
 						this._nextLevel();
 					}
 				}
 			}
 		});
-		this.spyer.observe(this, { "childList": true });
+
+		if (this.async) {
+			this.scout = new IntersectionObserver(entries => {
+				if (entries[0].isIntersecting === true) {
+					this._invade();
+					this.spyer.observe(this, { "childList": true });
+				} else {
+					this.querySelectorAll('mu-tant').forEach(
+						mutant => mutant.remove()
+					);
+					clearTimeout(this.invader);
+					clearTimeout(this.timeout);
+					this.spyer.disconnect();
+				}
+			}, {
+				root: document.querySelector('main'),
+				threshold: [1]
+			});
+			this.scout.observe(this);
+		} else {
+			this._invade();
+			this.spyer.observe(this, { "childList": true });
+		}
+	}
+
+	disconnectedCallback() {
+		this.scout.disconnect();
+		this.spyer.disconnect();
+		clearTimeout(this.invader);
+		clearTimeout(this.timeout);
+		document.removeEventListener('voightkampff', this);
+		this.portal.removeEventListener('close', this);
+		this.over.removeEventListener('close', this);
+		this.replay.removeEventListener('close', this);
 	}
 
 	handleEvent(event) {
@@ -43,15 +76,11 @@ class PlayGround extends HTMLElement {
 					event.detail.type
 				);
 				if (this.replay) {
-					if (event.detail.data.fonction === '') {
-						this.timeout = setTimeout(() => this._replay(), 2000);
-					} else {
-						this.timeout = setTimeout(() => {
-							if (this.querySelectorAll('mu-tant:not([type=""])').length) {
-								this._replay();
-							}
-						}, 2000);
-					}
+					this.timeout = setTimeout(() => {
+						if (this.querySelectorAll('mu-tant:not([type=""])').length > 0) {
+							this._replay();
+						}
+					}, 2000);
 				}
 				break;
 			case 'close':
@@ -111,6 +140,17 @@ class PlayGround extends HTMLElement {
 				this._killMutant(leon, options, condition, fonction, watchTextNode, watchSubtree);
 			}
 		);
+
+		const observer = new MutationObserver(mutations => {
+			for (const mutation of mutations) {
+				for (const leon of mutation.addedNodes) {
+					if (this._isMutant(leon)) {
+						this._killMutant(leon, options, condition, fonction, watchTextNode, watchSubtree);
+					}
+				}
+			}
+		});
+		observer.observe(this, { "childList": true });
 	}
 
 	_killMutant(mutant, options, condition, fonction, watchTextNode, watchSubtree) {
@@ -151,13 +191,20 @@ class PlayGround extends HTMLElement {
 	}
 
 	_nextLevel() {
-		if (this.observer) this.observer.disconnect();
 		this.portal.showModal();
-		this.portal.addEventListener('close', this);
+		if (this.async) {
+			const level = this.closest('section')?.id?.split('-')[1];
+			this.portal.addEventListener('close', () => {
+				const target = document.getElementById(`slide-${(Number(level) + 1).toString()}`);
+				target?.scrollIntoView({ inline: 'start' });
+				target?.focus();
+			});
+		} else {
+			this.portal.addEventListener('close', this);
+		}
 	}
 
 	_gameOver() {
-		if (this.observer) this.observer.disconnect();
 		clearTimeout(this.invader);
 		this.over.showModal();
 		this.over.addEventListener('close', this);

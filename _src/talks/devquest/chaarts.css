@@ -1,6 +1,6 @@
 @layer sliide, prism, sseeeedd, patches, examples;
 
-@import "../sliide/sliide.css?4" layer(sliide);
+@import "../sliide/sliide.css?5" layer(sliide);
 @import "../sliide/prism.min.css" layer(prism);
 
 @layer sliide {
