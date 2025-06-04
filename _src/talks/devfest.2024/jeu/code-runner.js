@@ -28,6 +28,12 @@ class CodeRunner extends HTMLElement {
 			});
 	}
 
+	disconnectedCallback() {
+		this.form.removeEventListener('submit', this);
+		window.removeEventListener('error', this);
+		document.removeEventListener('beforeunload', this);
+	}
+
 	handleEvent(event) {
 		switch (event.type) {
 			case 'submit':
@@ -59,7 +65,7 @@ class CodeRunner extends HTMLElement {
 				this.dispatchEvent(voightkampff);
 				break;
 			case 'error':
-				console.error('Une erreur s’est glissée dans votre réponse.')
+				console.error('Une erreur s’est glissée dans votre réponse.');
 				break;
 			default:
 				break;

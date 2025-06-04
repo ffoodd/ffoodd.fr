@@ -116,15 +116,13 @@ observer.disconnect();
 		<div class="markup">
 			<code-runner type="json">
 				<form>
-					<!-- @todo Scripts ne fonctionnent pas ? -->
-					<!-- @todo Champs à caler -->
-					<!-- @todo Le formulaire ne contient pas options mais options-machin -->
 					<label for="options-zombie" class="sr-only">
 						Options de la méthode <code>observe()</code>, dont le premier argument
 						est <code>document.querySelector("mu-tant")</code>.
 					</label>
 					<pre role="presentation"><code>observer.observe(document.querySelector("mu-tant"), {</code></pre>
-					<input type="text" id="options-zombie"
+					<input type="text" name="options"
+								 id="options-zombie"
 								 autocomplete="off"
 								 autocorrect="off"
 								 autocapitalize="none"
@@ -141,7 +139,7 @@ observer.disconnect();
 			</code-runner>
 		</div>
 		<div class="playground">
-			<play-ground type="zombie"max="1000" await></play-ground>
+			<play-ground type="zombie" max="1000" await></play-ground>
 		</div>
 	</section>
 
@@ -177,15 +175,16 @@ observer.disconnect();
 						est <code>document.querySelector("mu-tant")</code>.
 					</label>
 					<pre role="presentation"><code>observer.observe(document.querySelector("mu-tant"), {</code></pre>
-					<input type="text" id="options-villain"
+					<input type="text" name="options"
+								 id="options-villain"
 								 autocomplete="off"
 								 autocorrect="off"
 								 autocapitalize="none"
 								 spellcheck="false"
 								 enterkeyhint="send"
-								 list="characterdata"
+								 list="character-data"
 								 required>
-					<datalist id="characterdata">
+					<datalist id="character-data">
 						<option>characterData: true</option>
 					</datalist>
 					<pre role="presentation"><code>});</code></pre>
@@ -194,7 +193,7 @@ observer.disconnect();
 			</code-runner>
 		</div>
 		<div class="playground">
-			<play-ground type="villain"max="1000" await></play-ground>
+			<play-ground type="villain" max="1000" await></play-ground>
 		</div>
 	</section>
 
@@ -231,15 +230,16 @@ observer.disconnect();
 						est <code>document.querySelector("mu-tant")</code>.
 					</label>
 					<pre role="presentation"><code>observer.observe(document.querySelector("mu-tant"), {</code></pre>
-					<input type="text" id="options-alien"
+					<input type="text" name="options"
+								 id="options-alien"
 								 autocomplete="off"
 								 autocorrect="off"
 								 autocapitalize="none"
 								 spellcheck="false"
 								 enterkeyhint="send"
-								 list="childlist"
+								 list="child-list"
 								 required>
-					<datalist id="childlist">
+					<datalist id="child-list">
 						<option>childList: true</option>
 					</datalist>
 					<pre role="presentation"><code>});</code></pre>
@@ -281,16 +281,17 @@ observer.disconnect();
 						est <code>document.querySelector("mu-tant")</code>.
 					</label>
 					<pre role="presentation"><code>observer.observe(document.querySelector("mu-tant"), {</code></pre>
-					<input type="text" id="options-ghost"
+					<input type="text" name="options"
+								 id="options-ghost"
 								 autocomplete="off"
 								 autocorrect="off"
 								 autocapitalize="none"
 								 spellcheck="false"
 								 enterkeyhint="send"
 								 minlength="18"
-								 list="attributefilter"
+								 list="attribute-filter"
 								 required>
-					<datalist id="attributefilter">
+					<datalist id="attribute-filter">
 						<option>attributeFilter: ['id']</option>
 					</datalist>
 					<pre role="presentation"><code>});</code></pre>
@@ -299,7 +300,7 @@ observer.disconnect();
 			</code-runner>
 		</div>
 		<div class="playground">
-			<play-ground type="ghost"max="1000" await></play-ground>
+			<play-ground type="ghost" max="1000" await></play-ground>
 		</div>
 	</section>
 
@@ -331,7 +332,8 @@ observer.disconnect();
 						est <code>document.querySelector("mu-tant")</code>.
 					</label>
 					<pre role="presentation"><code>observer.observe(document.querySelector("mu-tant"), {</code></pre>
-					<input type="text" id="options-mage"
+					<input type="text" name="options"
+								 id="options-mage"
 								 autocomplete="off"
 								 autocorrect="off"
 								 autocapitalize="none"
@@ -349,7 +351,7 @@ observer.disconnect();
 			</code-runner>
 		</div>
 		<div class="playground">
-			<play-ground type="mage"max="1000" await></play-ground>
+			<play-ground type="mage" max="1000" await></play-ground>
 		</div>
 	</section>
 
@@ -389,32 +391,34 @@ observer.disconnect();
 		}
 	}
 });</code></pre>
-					<input type="text" id="condition-vampire"
+					<input type="text" name="condition"
+								 id="condition-vampire"
 								 autocomplete="off"
 								 autocorrect="off"
 								 autocapitalize="none"
 								 spellcheck="false"
 								 enterkeyhint="send"
-								 list="attributeoldvalue"
+								 list="mutation-old-value"
 								 required>
-					<datalist id="attributeoldvalue">
-						<option>attributeOldValue: true</option>
+					<datalist id="mutation-old-value">
+						<option>mutation?.oldValue?.includes('mutant')</option>
 					</datalist>
 					<label for="options-vampire" class="sr-only">
 						Options de la méthode <code>observe()</code>, dont le premier argument
 						est <code>document.querySelector("mu-tant")</code>.
 					</label>
 					<pre role="presentation"><code>slayer.observe(document.querySelector("mu-tant"), {</code></pre>
-					<input type="text" id="options-vampire"
+					<input type="text" name="options"
+								 id="options-vampire"
 								 autocomplete="off"
 								 autocorrect="off"
 								 autocapitalize="none"
 								 spellcheck="false"
 								 enterkeyhint="send"
-								 list="mutationoldvalue"
+								 list="attribute-old-value"
 								 required>
-					<datalist id="mutationoldvalue">
-						<option>mutation.oldValue.includes('mutant')</option>
+					<datalist id="attribute-old-value">
+						<option>attributeOldValue: true</option>
 					</datalist>
 					<pre role="presentation"><code>});</code></pre>
 					<p><button>Feu&nbsp;!</button></p>
@@ -422,7 +426,7 @@ observer.disconnect();
 			</code-runner>
 		</div>
 		<div class="playground">
-			<play-ground type="vampire"max="1000" await></play-ground>
+			<play-ground type="vampire" max="1000" await></play-ground>
 		</div>
 	</section>
 
@@ -460,32 +464,34 @@ observer.disconnect();
 		}
 	}
 });</code></pre>
-					<input type="text" id="condition-skull"
+					<input type="text" name="condition"
+								 id="condition-skull"
 								 autocomplete="off"
 								 autocorrect="off"
 								 autocapitalize="none"
 								 spellcheck="false"
 								 enterkeyhint="send"
-								 list="characterdataoldvalue"
+								 list="character-data-old-value"
 								 required>
-					<datalist id="characterdataoldvalue">
-						<option>characterDataOldValue: true</option>
+					<datalist id="character-data-old-value">
+						<option>mutation?.oldValue === '💀'</option>
 					</datalist>
 					<label for="options-skull" class="sr-only">
 						Options de la méthode <code>observe()</code>, dont le premier argument
 						est <code>document.querySelector("mu-tant")</code>.
 					</label>
 					<pre role="presentation"><code>death.observe(document.querySelector("mu-tant"), {</code></pre>
-					<input type="text" id="options-skull"
+					<input type="text" name="options"
+								 id="options-skull"
 								 autocomplete="off"
 								 autocorrect="off"
 								 autocapitalize="none"
 								 spellcheck="false"
 								 enterkeyhint="send"
-								 list="mutationoldchar"
+								 list="mutation-old-char"
 								 required>
-					<datalist id="mutationoldchar">
-						<option>mutation.oldValue === '💀'</option>
+					<datalist id="mutation-old-char">
+						<option>characterDataOldValue: true</option>
 					</datalist>
 					<pre role="presentation"><code>});</code></pre>
 					<p><button>Feu&nbsp;!</button></p>
@@ -493,7 +499,7 @@ observer.disconnect();
 			</code-runner>
 		</div>
 		<div class="playground">
-			<play-ground type="skull"max="1000" await></play-ground>
+			<play-ground type="skull" max="1000" await></play-ground>
 		</div>
 	</section>
 
@@ -537,7 +543,7 @@ observer.disconnect();
 			</code-runner>
 		</div>
 		<div class="playground">
-			<play-ground type="all"max="1000" await></play-ground>
+			<play-ground type="all" max="1000" await></play-ground>
 		</div>
 	</section>
 
@@ -631,7 +637,7 @@ observer.disconnect();
 	</form>
 </dialog>
 
-<div class="timer" style="--duration: 120;">
+<div class="timer" style="--duration: 45;">
 	<div class="clock" role="presentation">
 		<span style="--time: 3600s"></span>h&nbsp;
 		<span style="--time: 60s"></span>m&nbsp;
@@ -646,7 +652,7 @@ observer.disconnect();
 	let view;
 	switchSlide = (id) => {
 		// Historique
-		history.pushState({}, "", `#slide-${id}`);
+		history.pushState({}, '', `#slide-${id}`);
 		// Vue présentateur
 		//// Aperçu du slide suivant
 		document.body.style.setProperty('--next', String(`-moz-element(#slide-${Number(id) + 1})`));
@@ -713,9 +719,9 @@ observer.disconnect();
 	});
 
 	window.addEventListener('message', (e) => {
-		if (e.origin === 'http://localhost:8080/') {
-			document.getElementById(e.data).scrollIntoView({ behavior: 'smooth' });
-			switchSlide(e.data.split('-')[1]);
+		if (e.origin === 'http://localhost:8080' && typeof e.data === 'string') {
+			document.getElementById(e.data)?.scrollIntoView({ behavior: 'smooth' });
+			switchSlide(e.data?.split('-')[1]);
 		}
 	}, false);
 </script>

@@ -1,6 +1,13 @@
 [
 	{
 		"title": "L’invasion du HTML mutant",
+		"event": "DevQuest Niort 2025",
+		"date": "2025-06-06",
+		"link": "https://www.devquest.fr/sessions/linvasion-du-html-mutant",
+		"slides": "https://www.ffoodd.fr/devquest.2025"
+	},
+	{
+		"title": "L’invasion du HTML mutant",
 		"event": "DevFest Nantes 2024",
 		"date": "2024-10-17",
 		"link": "https://devfest2024.gdgnantes.com/sessions/l_invasion_du_html_mutant__atelier_/",

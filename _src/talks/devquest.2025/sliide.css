@@ -575,7 +575,7 @@
 			border-radius: 0.5rem;
 			box-shadow: 0 0 1rem 0 #000;
 			content: "";
-			background: #fff var(--next) 0 0/cover;
+			background: var(--background) var(--next) 0 0/cover;
 			display: block;
 			grid-area: next;
 		}
@@ -592,7 +592,7 @@
 		}
 
 		.speaker main {
-			background: #fff;
+			background: var(--background);
 			border-radius: 1rem;
 			box-shadow: 0 0 1rem 0 #000;
 			block-size: calc(100vh - 4rem);
@@ -610,7 +610,7 @@
 
 		.speaker .timer {
 			--seconds: calc(var(--duration) * 60);
-			background-color: #fff;
+			background-color: var(--background);
 			border-radius: 0.5rem;
 			box-shadow: 0 0 1rem 0 #000;
 			display: grid;
@@ -744,9 +744,12 @@
 	dialog h2 {
 		color: var(--accent);
 		font-family: 'Luckiest Guy', system-ui, sans-serif;
+		padding-block: 0;
+		transform: unset;
 	}
 
-	h2 [aria-hidden], .h2 [aria-hidden] {
+	h2 [aria-hidden],
+	.h2 [aria-hidden] {
 		display: inline-block;
 		vertical-align: middle;
 	}
