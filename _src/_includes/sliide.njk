@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="{{ site.language }}">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		{%  set titre = metatitle or title %}
+		<title>{{ titre | striptags | replace('&nbsp;', ' ') | replace('&thinsp;', ' ') }} — {{ site.name }}</title>
+		<link rel="preconnect" href="https://twemoji.maxcdn.com">
+		<link rel="preconnect" href="https://cdn.jsdelivr.net">
+		<link rel="preload" as="font" href="/assets/fonts/bello-pro.woff2">
+		<link rel="preload" as="font" href="/assets/fonts/museo-slab-300.woff2">
+		{%  set desc = metadescription or description or excerpt %}
+		<meta name="description" content="{{ desc | striptags | replace('&nbsp;', ' ') | replace('&thinsp;', ' ') }}">
+		<meta name="generator" content="{{ eleventy.generator }}">
+		<link rel="icon" href="../favicon.ico" sizes="32x32">
+		<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+		<meta name="author" content="Gaël Poupard">
+		<link rel="author" href="../humans.txt" type="text/plain">
+		<meta property="fediverse:creator" content="@ffoodd@mamot.fr">
+		<link rel="stylesheet" href="/assets/sliide/sliide.css?5" type="text/css" media="screen">
+		<link rel="stylesheet" href="/assets/sliide/prism.min.css" type="text/css" media="screen">
+		{%- block styles -%}{%- endblock -%}
+	</head>
+	<body itemscope itemtype="https:/schema.org/WebPage">
+		<main role="main" tabindex="0">
+			<section id="slide-1" data-note="2m" class="d-flex flex-column justify-between">
+				<h1>{{ title | safe }}</h1>
+				<dl>
+					<dt>Slides en ligne</dt>
+					<dd><a href="{{ permalink }}">{{ permalink | replace('https://www.', '') }}</a></dd>
+					{%- block links -%}{%- endblock -%}
+				</dl>
+				<footer>
+					<div class="d-flex">
+						<p class="my-0">Raconté par <a href="https://www.ffoodd.fr">Gaël Poupard</a></p>
+						{%- include '/partials/social-links.njk' -%}
+					</div>
+					<p class="d-flex align-center">
+						<a href="https://www.groupeonepoint.com">
+							<img src="/assets/accesslide/img/onepoint.svg" width="166" height="80" alt="onepoint">
+						</a>
+						{%- block crossover -%}{%- endblock -%}
+					</p>
+				</footer>
+			</section>
+
+			{%- block slides -%}{%- endblock -%}
+		</main>
+		<script src="/assets/sliide/js/prism.min.js"></script>
+		<script src="/assets/accesslide/js/twemoji.min.js"></script>
+		<script>
+			twemoji.parse(document.body, {folder: 'svg', ext: '.svg'});
+
+			let view;
+			switchSlide = (id) => {
+				// Historique
+				history.pushState({}, "", `#slide-${id}`);
+				// Vue présentateur
+				//// Aperçu du slide suivant
+				document.body.style.setProperty('--next', String(`-moz-element(#slide-${Number(id) + 1})`));
+				//// Synchro de la vue présentateur
+				if (view) {
+					view.postMessage(`slide-${id}`, `http://localhost:8080${document.location.pathname}index.html`);
+				}
+				//// Notes dans la vue présentateur
+				if('note' in document.getElementById(`slide-${id}`).dataset) {
+					document.body.dataset.note = document.getElementById(`slide-${id}`).dataset.note;
+				} else {
+					delete document.body.dataset.note;
+				}
+			}
+
+			document.addEventListener('DOMContentLoaded', () => {
+				const slides = document.querySelectorAll('section[id^="slide-"]');
+
+				// Nombre total de slides, pour la pagination
+				document.body.style.setProperty('--slides', String(slides.length));
+				document.body.style.setProperty('--next', String(`-moz-element(#slide-2)`));
+
+				// Gestion de l’historique
+				let io = new IntersectionObserver(entries => {
+					if (entries[0].isIntersecting === true) {
+						switchSlide(entries[0].target.id.split('-')[1]);
+					}
+				}, {
+					root: document.querySelector('main'),
+					threshold: [1]
+				});
+				slides.forEach(slide =>	io.observe(slide));
+
+				document.addEventListener('keydown', event => {
+					const index = Number(window.location.hash.split('-')[1]);
+					let id = null;
+					switch (event.key) {
+						// Activer la vue présentateur
+						case 's':
+							if (event.altKey) {
+								view = window.open(`http://localhost:8080${document.location.pathname}index.html`, 'speakerView');
+								view.addEventListener('load', () => {
+									view.document.body.classList.add('speaker');
+								})
+							}
+							break;
+						// Télécommande ++
+						case 'PageDown':
+							id = index + 1;
+							break;
+						// Télécommande --
+						case 'PageUp':
+							id = index - 1;
+							break;
+						default:
+							break;
+					}
+
+					if (id !== null && id >= 1) {
+						document.getElementById(`slide-${id}`).scrollIntoView({ behavior: 'smooth' });
+						switchSlide(id);
+					}
+				});
+			});
+
+			window.addEventListener('message', (e) => {
+				if (e.origin === 'http://localhost:8080/') {
+					document.getElementById(e.data).scrollIntoView({ behavior: 'smooth' });
+					switchSlide(e.data.split('-')[1]);
+				}
+			}, false);
+		</script>
+		{%- block script -%}{%- endblock -%}
+	</body>
+</html>
