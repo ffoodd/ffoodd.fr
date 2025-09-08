@@ -3,35 +3,35 @@
 @layer base {
 	@font-face {
 		font-family: "bello-pro";
-		src: url("../accesslide/fonts/bello-pro.woff2") format("woff2");
+		src: url("../../assets/accesslide/fonts/bello-pro.woff2") format("woff2");
 		font-weight: 300;
 		font-style: normal;
 		font-display: swap;
 	}
 	@font-face {
 		font-family: "museo-slab";
-		src: url("../accesslide/fonts/museo-slab-300.woff2") format("woff2");
+		src: url("../../assets/accesslide/fonts/museo-slab-300.woff2") format("woff2");
 		font-weight: 300;
 		font-style: normal;
 		font-display: swap;
 	}
 	@font-face {
 		font-family: "museo-slab";
-		src: url("../accesslide/fonts/museo-slab-300-italic.woff2") format("woff2");
+		src: url("../../assets/accesslide/fonts/museo-slab-300-italic.woff2") format("woff2");
 		font-weight: 300;
 		font-style: italic;
 		font-display: swap;
 	}
 	@font-face {
 		font-family: "museo-slab";
-		src: url("../accesslide/fonts/museo-slab-500.woff2") format("woff2");
+		src: url("../../assets/accesslide/fonts/museo-slab-500.woff2") format("woff2");
 		font-weight: 500;
 		font-style: normal;
 		font-display: swap;
 	}
 	@font-face {
 		font-family: "museo-slab";
-		src: url("../accesslide/fonts/museo-slab-500-italic.woff2") format("woff2");
+		src: url("../../assets/accesslide/fonts/museo-slab-500-italic.woff2") format("woff2");
 		font-weight: 500;
 		font-style: italic;
 		font-display: swap;
@@ -41,7 +41,7 @@
 		font-family: 'Twemoji Mozilla';
 		font-style: normal;
 		font-weight: 400;
-		src: local('Twemoji Mozilla'), url('../devfest.2024/jeu/assets/fonts/Twemoji.woff2') format('woff2');
+		src: local('Twemoji Mozilla'), url('../../talks/devfest.2024/jeu/assets/fonts/Twemoji.woff2') format('woff2');
 	}
 	*,
 	*::before,

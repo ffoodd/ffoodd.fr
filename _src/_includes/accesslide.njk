@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="{{ site.language }}">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		{%  set titre = metatitle or title %}
+		<title>{{ titre | striptags | replace('&nbsp;', ' ') | replace('&thinsp;', ' ') }} — {{ site.name }}</title>
+		<link rel="preload" as="font" href="/assets/fonts/bello-pro.woff2">
+		<link rel="preload" as="font" href="/assets/fonts/museo-slab-300.woff2">
+		{%  set desc = metadescription or description or excerpt %}
+		<meta name="description" content="{{ desc | striptags | replace('&nbsp;', ' ') | replace('&thinsp;', ' ') }}">
+		<meta name="generator" content="{{ eleventy.generator }}">
+		<link rel="icon" href="/favicon.ico" sizes="32x32">
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+		<link rel="author" href="/humans.txt" type="text/plain">
+		<meta name="author" content="Gaël Poupard">
+		<meta property="fediverse:creator" content="@ffoodd@mamot.fr">
+		<link rel="stylesheet" href="/assets/accesslide/css/style.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="/assets/accesslide/css/ffoodd.css?6" type="text/css" media="screen" id="currentCSS">
+		<link rel="stylesheet" href="/assets/accesslide/css/print.css" type="text/css" media="print">
+		{%- if verbose -%}
+			<script src="/assets/accesslide/js/AccesSlideVerbose.min.js"></script>
+		{%- else -%}
+			<script src="/assets/accesslide/js/AccesSlide.min.js"></script>
+		{%- endif -%}
+		<script src="/assets/accesslide/lang/lang_fr.js"></script>
+		<script src="/assets/accesslide/js/prism.min.js"></script>
+		{%- block styles -%}{%- endblock -%}
+	</head>
+	<body itemscope itemtype="https:/schema.org/WebPage">
+		{%- if verbose -%}
+			<div id="screen" class="modeplan" data-effect="Eno">
+		{%- else -%}
+			<div id="screen" data-effect="ffoodd">
+		{%- endif -%}
+			<div id="volet"></div>
+			<header id="banner" role="banner" class="main-header clearfix">
+				<a href="https://www.ffoodd.fr">ffoodd</a>
+				<h1 class="main-title">{{ title | safe }}</h1>
+			</header>
+
+			<div id="nav" class="tool-bar footer-nav clearfix">
+				<div id="wrappernav">
+					{%- include '/partials/social-links.njk' -%}
+				</div>
+			</div>
+			<nav role="navigation" id="sommaire" class="tool-block tool-block-summary" tabindex="-1"></nav>
+
+			<div id="wrapper">
+				<main role="main" id="main">
+					{%- block slides -%}{%- endblock -%}
+
+					<section class="slide end noprint">
+						<h2 class="end-title">Merci</h2>
+						<h3>Et à bientôt<span aria-hidden="true">&nbsp;&#9786;</span></h3>
+						<h4>Crédits</h4>
+						<ul class="credit">
+							<li>Moteur de présentation&nbsp;: <a href="https://github.com/access42/accesSlide" hreflang="en">AccesSlide</a> —&nbsp;par <a href="https://access42.net/">Access42</a>&nbsp;;</li>
+							<li>Pictogrammes&nbsp;: <a href="https://thenounproject.com/marekpolakovic/collection/rounded-ui" hreflang="en">Rounded UI</a> —&nbsp;par <a href="https://www.marekpolakovic.sk/">Marek Polakovic</a>&nbsp;;</li>
+							<li>Typographie de titraille&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/bello-pro">Bello Pro</a> —&nbsp;créée par <a hreflang="en" href="https://www.underware.nl/">Underware</a>&nbsp;;</li>
+							<li>Typographie de labeur&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/museo-slab">Museo Slab</a> —&nbsp;créée par <a hreflang="en" href="https://www.exljbris.com/">Exljbris</a>.</li>
+						</ul>
+					</section>
+				</main>
+			</div>
+			<div id="setting" class="tool-block tool-block-settings " role="dialog" tabindex="-1" style="display:none"></div>
+		</div>
+		<div id="Caudio"></div>
+		<div id="Dcourante" aria-live="polite" aria-atomic="true" aria-hidden="true"></div>
+
+		<script src="/assets/accesslide/js/slide.min.js"></script>
+		{%- if verbose -%}
+			<script>
+				window.addEventListener('load', () => {
+					window.addEventListener('message', (e) => {
+						if (e.origin !== 'http://localhost:8080') {
+							return;
+						}
+						document.getElementById('tocP').value = e.data - 1;
+						document.getElementById('tocp')?.click();
+					}, false);
+				});
+			</script>
+		{%- elseif hasVerbose -%}
+			<script>
+				let verbose;
+				window.addEventListener('load', () => {
+					if (window.location.host === 'localhost:8080') {
+						setTimeout(() => {
+							verbose = window.open('http://localhost:8080/{{ permalink | replace('/index.html', '') }}/verbose.html', 'verboseSlides');
+
+							const current = document.getElementById('current').childNodes[0];
+							const observer = new MutationObserver((mutations) => {
+								verbose.postMessage(mutations[0].target.data, 'http://localhost:8080');
+							});
+
+							observer.observe(current, {characterData: true});
+						}, 500);
+					}
+				});
+			</script>
+		{%- endif -%}
+		{%- block script -%}{%- endblock -%}
+	</body>
+</html>

@@ -1,7 +1,7 @@
 @layer sliide, prism, sseeeedd, patches, examples;
 
-@import "../sliide/sliide.css?5" layer(sliide);
-@import "../sliide/prism.min.css" layer(prism);
+@import "../../assets/sliide/sliide.css?5" layer(sliide);
+@import "../../assets/sliide/prism.min.css" layer(prism);
 
 @layer sliide {
 	.chaarts-container > table:not(.chaarts) .sr-only {
