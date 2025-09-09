@@ -48,6 +48,26 @@
 		</footer>
 	</section>
 
+	<!-- Contexte : CSS1 n’a que quelques mois : 17/12/1996 -->
+	<!-- Les débats incluent encore la question : JS dans CSS ? -->
+	<!-- IE4 introduit DHTML : la capacité d’utiliser du JS pour faire des trucs, vu comme l’ancêtre d’AJAX -->
+
+	<!-- @font-face -->
+	<!-- Les filtres : ombres, dégradés, opacité, masque… -->
+	<!-- Les transitions (inter-pages) -->
+	<!-- Le mode hors ligne (Active Channel) + copie locale -->
+
+	<section id="slide-21">
+		<h2>Autres anecdotes à propos d’IE4</h2>
+		<ul>
+			<li>Premier navigateur à supporter TLS 1.0</li>
+			<li>Premier navigateur à fonctionner sur Windows, MacOS et Unix</li>
+			<li>Le moteur MSHTML (ultérieurement rebaptisé Trident) Trident a débuté avec IE4</li>
+			<li>support du PNG et des favicons</li>
+			<li>Accessibilité : gestion du clavier, préférences utilisateurs (couleurs, typos, désactiver les animations, etc.), afficher les alternatives à laplace des images</li>
+			<li>Plein écran avec F11</li>
+		</ul>
+	</section>
 	<section id="slide-22">
 		<h2>Générique de fin<br>Merci</h2>
 		<h3>Crédits</h3>
@@ -61,33 +81,6 @@
 	</section>
 </main>
 
-<dialog id="portal" role="dialog" aria-labelledby="portal-heading">
-	<h2 id="portal-heading">Bien joué&nbsp;!</h2>
-	<p>Un cas tordu de moins&nbsp;: on passe au suivant&nbsp;?</p>
-	<form method="dialog">
-		<button>Continuer</button>
-	</form>
-</dialog>
-<dialog id="game-over" role="dialog" aria-labelledby="game-over-heading">
-	<h2 id="game-over-heading" lang="en">Game over</h2>
-	<p>
-		Vous avez été submergé&nbsp;! Pour vous épargner (et évider de faire fondre votre navigateur),
-		vous êtes priés de recommencer le niveau…
-	</p>
-	<form method="dialog">
-		<button>Rejouer</button>
-	</form>
-</dialog>
-<dialog id="replay" role="dialog" aria-labelledby="replay-heading">
-	<h2 id="replay-heading">Raté&nbsp;!</h2>
-	<p>
-		Vos options n’ont pas fonctionné… Nouvelle chance&nbsp;?
-	</p>
-	<form method="dialog">
-		<button>Rejouer</button>
-	</form>
-</dialog>
-
 <div class="timer" style="--duration: 45;">
 	<div class="clock" role="presentation">
 		<span style="--time: 3600s"></span>h&nbsp;
@@ -96,9 +89,6 @@
 	</div>
 </div>
 
-<script src="../devfest.2024/jeu/mu-tant.js"></script>
-<script src="../devfest.2024/jeu/code-runner.js"></script>
-<script src="../devfest.2024/jeu/play-ground.js"></script>
 <script>
 	let view;
 	switchSlide = (id) => {
