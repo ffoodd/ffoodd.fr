@@ -10,11 +10,20 @@
 	<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../accesslide/fonts/bello-pro.woff2">
 	<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../accesslide/fonts/museo-slab-300.woff2">
 	<link rel="stylesheet" href="sliide.css" type="text/css" media="screen">
+	<style>
+		[src^="img/Internet_Explorer_4"] {
+			background: #fff;
+			box-shadow: 0 .25rem .5rem rgba(0,0,0,.25);
+			max-width: 100%;
+			padding: .5em;
+			width: max-content;
+		}
+	</style>
 </head>
 <body>
 <main role="main" tabindex="0">
 	<section id="slide-1" data-note="5m" class="splash d-flex flex-column justify-between">
-		<h1>Les nouveautés d’<br>Internet Explorer 4</h1>
+		<h1>Les nouveautés d’<br>Internet Explorer <span>4</span></h1>
 		<dl class="d-flex m-auto">
 			<dt>Slides en ligne</dt>
 			<dd><a href="https://www.ffoodd.fr/ie4/">ffoodd.fr/ie4/</a></dd>
@@ -48,6 +57,189 @@
 		</footer>
 	</section>
 
+	<section id="slide-2">
+		<h2 lang="en">Back to<br>1997<span class="back-to-the-future" aria-hidden="true">&nbsp;⇠</span></h2>
+		<p class="lead">Le web, c’était <small>(pas)</small> mieux avant.</p>
+		<p class="small">
+			Les navigateurs embarquaient des clients mails, des messageries instantanées,
+			et on déplaçait des barres d’outils d’un coin à l’autre de l’écran…
+		</p>
+		<ol start="1991" class="muted pl-5">
+			<li>Naissance de <abbr lang="en" title="HyperText Markup Language">HTML</abbr> et <abbr lang="en" title="HyperText Transfert Protocol">HTTP</abbr>.</li>
+			<li>Création de l’<abbr lang="en" title="Unique Resource Locator">URL</abbr> et ViolaWWW.</li>
+			<li>Mosaic créé l’élément <code>&lt;img&gt;</code>, et le <strong>CERN verse le web dans le domaine public</strong>.</li>
+			<li>Le <abbr lang="en" title="World Wide Web Consortium">W3C</abbr> est lancé… <strong>le même jour que la première bannière pub</strong>. Netscape et Python, aussi.</li>
+			<li>FrontPage, <abbr lang="en" title="Personal Home Page">PHP</abbr>, JavaScript (et <a hreflang="en" href="https://en.wikipedia.org/wiki/JavaScript_Style_Sheets"><abbr lang="en" title="JavaScript StyleSheet">JSSS</abbr></a>) et HTML 2 voient le jour.</li>
+			<li>On fait du <em lang="en">Liquid Layout</em>. La <em lang="en">Wayback Machine</em> et la <abbr lang="en" title="Web Accessibility Initiative">WAI</abbr> sont créées. Flash voit le jour, tout comme… <abbr lang="en" title="Cascading StyleSheet">CSS</abbr>, le <time>17 décembre 1996</time>&nbsp;!</li>
+			<li>Le HTML <abbr lang="en" title="Working Group">WG</abbr> voit le jour au W3C, HTML 3.0 est abandonné et HTML 3.2 est publié. Netscape confie JavaScript à ECMA.</li>
+		</ol>
+		<p class="small">Jetez un œil à <a hreflang="en" href="https://thehistoryoftheweb.com/timeline/"><cite>The History of the Web</cite></a>.</p>
+		<hr>
+		<p class="small">Oh, et le 17 décembre, c’est la Saint Gaël. Coïncidence&nbsp;?</p>
+	</section>
+
+	<section id="slide-3">
+		<h2>Internet<br>Explorer 4</h2>
+		<p class="lead"><q>Le web comme vous le voulez</q></p>
+		<div class="grid-2">
+			<div>
+				<ul class="muted">
+					<li>IE4 fonctionnait sur Solaris, un OS <strong>Unix</strong> —&nbsp;mais aussi sur <strong>Mac</strong>.</li>
+					<li>Sont intégrés Microsoft Chat, <strong>Outlook</strong> Express, NetMeeting, <strong>FrontPage</strong> Express, et RealPlayer.</li>
+					<li>Un nouveau moteur de rendu est créé pour l’occasion&nbsp;: MSHTML, ultérieurement rebaptisé <strong>Trident</strong>.</li>
+					<li>C’est la naissance du <strong>DHTML</strong>&nbsp;: la capacité d’utiliser du JS dans le HTML —&nbsp;considéré comme l’ancêtre d’AJAX.</li>
+					<li>C’est le premier à supporter <strong>UTF-8 et TLS 1.0</strong>.</li>
+					<li>Il implémente déjà <code>@font-face</code>, supporte <strong>PNG</strong> et les <strong>favicon</strong>&nbsp;!</li>
+					<li>L’<strong>accessibilité</strong> devient un sujet&nbsp;: navigation au clavier, préférences utilisateurs, affichage des alternatives…</li>
+					<li><strong>Plein écran</strong> avec <kbd>F11</kbd>.</li>
+				</ul>
+				<p>Mais ce n’est pas tout&nbsp;!</p>
+			</div>
+			<div class="mt-n4 pl-5">
+				<img src="img/Internet_Explorer_4.png" width="365" height="273" loading="lazy" alt="" class="rotate-left">
+				<img src="img/Internet_Explorer_4_for_Solaris_screenshot.png" width="384" height="259" loading="lazy" alt="" class="rotate-right float-right mt-n4">
+			</div>
+		</div>
+	</section>
+
+	<section id="slide-4">
+		<h2>Les filtres<br>DirectX</h2>
+		<pre class="playground pt-0"><code>STYLE="filter:
+	progid:DXImageTransform.Microsoft.gradient(startColorstr=#550000FF, endColorstr=#55FFFF00)
+	progid:DXImageTransform.Microsoft.Alpha(opacity=50)"
+		</code></pre>
+		<div class="grid-2">
+			<div>
+				<h3>Opacité, dégradé, transition, ombre…</h3>
+				<p>
+					Uniquement dans l’attribut <code>STYLE</code> sur IE4, les filtres résisteront au passage du temps
+					reclus dans la propriété <code>-ms-filter</code> jusqu’à IE9&nbsp;!
+				</p>
+				<p class="small">
+					La doc est toujours disponible dans
+					<a hreflang="en" href="https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms532847(v=vs.85)">
+					la section <em lang="en">Legacy APIs</em> de <em lang="en">Internet Explorer for developers</em> sur Microsoft Learn
+					</a>.
+				</p>
+			</div>
+			<div class="pl-5">
+				<h3>CSS3 et le web <code>2.0</code></h3>
+				<p>
+					Les équivalents CSS sont apparus <strong>en 2009</strong> et ont initié une nouvelle révolution web,
+					le <em lang="en">Responsive Web Design</em>.
+				</p>
+				<pre class="playground pt-0"><code>.demo {
+	background: linear-gradient(#500f, #5ff0);
+	opacity: .5;
+}</code></pre>
+				<p class="small">
+					C’est l’ère des <em lang="en">frameworks</em> et des méta-langages comme Sass, Less ou Stylus.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section id="slide-5">
+		<h2>Le mode hors-ligne avec les <br>Active Channel</h2>
+		<div class="grid-2">
+			<div>
+				<p class="mt-0">
+					Internet Explorer 4 est le premier navigateur à permettre d’enregistrer une copie locale
+					—&nbsp;avec un bon vieux <kbd>CTRL</kbd>+<kbd>s</kbd>&nbsp;— mais aussi de <strong>synchroniser
+					la copie locale avec la version distante</strong> grâce à un fichier
+					<abbr lang="en" title="Channel Definition Format">CDF</abbr>.
+				</p>
+				<pre class="playground pt-0"><code>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;CHANNEL HREF="http://domain/folder/pageOne.extension"
+		BASE="http://domain/folder/"
+		LASTMOD="1998-11-05T22:12"
+		PRECACHE="YES"
+		LEVEL="0">
+	&lt;TITLE>Title of Channel&lt;/TITLE>
+	&lt;ABSTRACT>Synopsis of channel's contents.&lt;/ABSTRACT>
+	&lt;SCHEDULE>
+		&lt;INTERVALTIME DAY="14"/>
+	&lt;/SCHEDULE>
+	&lt;LOGO HREF="wideChannelLogo.gif" STYLE="IMAGE-WIDE"/>
+	&lt;LOGO HREF="imageChannelLogo.gif" STYLE="IMAGE"/>
+	&lt;LOGO HREF="iconChannelLogo.gif" STYLE="ICON"/>
+&lt;/CHANNEL>
+		</code></pre>
+			</div>
+			<div class="pl-5">
+				<h3 class="mt-n4">Les <abbr lang="en" title="Progressive Web App">PWA</abbr></h3>
+				<p4>
+					<strong>Depuis 2018</strong>, les navigateurs supportent les <em lang="en">Service Workers</em>,
+					déverrouillant la gestion du cache hors-ligne et les notifications&nbsp;; plus qu’à transformer un site
+					en PWA grâce à un fichier <code>manifest.json</code>.
+				</p4>
+				<pre class="playground pt-0"><code>{
+	"short_name": "MDN",
+	"name": "MDN Web Docs",
+	"icons": [
+		{
+			"src": "/favicon-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		}
+	],
+	"start_url": ".",
+	"display": "standalone",
+	"theme_color": "#000000",
+	"background_color": "#ffffff"
+}
+</code></pre>
+			</div>
+		</div>
+	</section>
+
+	<section id="slide-6">
+		<h2>Les transitions<br>interpages</h2>
+		<p>
+			Et si on mettait les filtres dans l’attribut <code>http-equiv</code> de l’élément <code>META</code>&nbsp;?
+		</p>
+		<pre class="playground pt-0"><code>
+&lt;META http-equiv="Page-Enter"
+	CONTENT="progid:DXImageTransform.Microsoft.Blinds(Duration=4)" />
+&lt;META http-equiv="Page-Exit"
+	CONTENT="progid:DXImageTransform.Microsoft.Slide(Duration=2.500,slidestyle=’HIDE’)" />
+		</code></pre>
+		<div class="grid-2 mt-1">
+			<div>
+				<h3>Les <em lang="en">View Transitions</em> en CSS</h3>
+				<p>Les premières implémentations datent de… <strong>2024</strong>&nbsp;!</p>
+				<p><a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API#browser_compatibility">
+						L’API sous-jacente</a> a mis près de 10 ans à être spécifiée.
+				</p>
+			</div>
+		<pre class="playground pt-0"><code>@view-transition {
+	navigation: auto;
+}
+
+::view-transition-old(root) {
+	animation: 2.5s ease-in both slide;
+}
+
+::view-transition-new(root) {
+	animation: 4s ease-in both blinds;
+}</code></pre>
+		</div>
+	</section>
+
+	<section id="slide-7">
+		<h2>Ils vécurent longtemps et firent<br>beaucoup de sites web</h2>
+		<p class="lead">Un éternel recommencement.</p>
+		<p>
+			Je vous prédis que dans 10 ans, on se remettra à faire des sites scénarisés «&nbsp;à la Flash&nbsp;»,
+			le temps que les <em lang="en">View Transitions</em> soient digérées par notre industrie.
+		</p>
+		<p>
+			La révolution qu’a été CSS3 en 2008-2009 aurait pu avoir lieu 10 ans plus tôt, s’il n’y avait pas eu
+			la fameuse guerre des navigateurs.
+		</p>
+		<p class="lead">Moralité&nbsp;: utilisez Firefox ou un de ses <em lang="en">forks</em>, et continuez à expérimenter&nbsp;!</p>
+	</section>
+
 	<section id="slide-22">
 		<h2>Générique de fin<br>Merci</h2>
 		<h3>Crédits</h3>
@@ -61,33 +253,6 @@
 	</section>
 </main>
 
-<dialog id="portal" role="dialog" aria-labelledby="portal-heading">
-	<h2 id="portal-heading">Bien joué&nbsp;!</h2>
-	<p>Un cas tordu de moins&nbsp;: on passe au suivant&nbsp;?</p>
-	<form method="dialog">
-		<button>Continuer</button>
-	</form>
-</dialog>
-<dialog id="game-over" role="dialog" aria-labelledby="game-over-heading">
-	<h2 id="game-over-heading" lang="en">Game over</h2>
-	<p>
-		Vous avez été submergé&nbsp;! Pour vous épargner (et évider de faire fondre votre navigateur),
-		vous êtes priés de recommencer le niveau…
-	</p>
-	<form method="dialog">
-		<button>Rejouer</button>
-	</form>
-</dialog>
-<dialog id="replay" role="dialog" aria-labelledby="replay-heading">
-	<h2 id="replay-heading">Raté&nbsp;!</h2>
-	<p>
-		Vos options n’ont pas fonctionné… Nouvelle chance&nbsp;?
-	</p>
-	<form method="dialog">
-		<button>Rejouer</button>
-	</form>
-</dialog>
-
 <div class="timer" style="--duration: 45;">
 	<div class="clock" role="presentation">
 		<span style="--time: 3600s"></span>h&nbsp;
@@ -96,9 +261,6 @@
 	</div>
 </div>
 
-<script src="../devfest.2024/jeu/mu-tant.js"></script>
-<script src="../devfest.2024/jeu/code-runner.js"></script>
-<script src="../devfest.2024/jeu/play-ground.js"></script>
 <script>
 	let view;
 	switchSlide = (id) => {

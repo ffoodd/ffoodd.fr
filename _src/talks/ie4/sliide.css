@@ -695,6 +695,7 @@
 
 	.splash h1 {
 		font-size: 6rem;
+		line-height: .8;
 		margin: 0;
 		padding: 1rem;
 		transform:
@@ -707,6 +708,32 @@
 
 	.splash h1::first-line {
 		font-size: 2.5rem;
+	}
+
+	.splash h1 span {
+		color: #fff;
+		font-size: 32rem;
+		line-height: .01;
+	}
+
+	:has(> .back-to-the-future) {
+		display: block;
+		perspective: 17rem;
+	}
+
+	.back-to-the-future {
+		font: 900 1.25em / .44 serif;
+		-webkit-text-stroke: .0625rem #ccc;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-image: linear-gradient(red 25%, orange, yellow 75%);
+		transform: rotateY(130deg) skewX(12deg);
+		position: absolute;
+	}
+
+	ol[start] li::marker {
+		color: var(--accent);
+		font-family: 'Luckiest Guy', system-ui, sans-serif;
 	}
 
 	@media screen and (min-width: 60rem) {
@@ -781,6 +808,15 @@
 	small,
 	.small {
 		font: 400 1.25rem/1 'Zilla Slab';
+	}
+
+	.muted {
+		color: var(--muted);
+	}
+
+	.muted abbr,
+	.muted strong {
+		color: #fff;
 	}
 
 	header a {
@@ -1250,8 +1286,16 @@
 		display: grid;
 	}
 
+	.float-right {
+		float: right;
+	}
+
 	.p-1 {
 		padding: 1rem;
+	}
+
+	.pl-5 {
+		padding-inline-start: 5rem;
 	}
 
 	.m-0 {
@@ -1264,6 +1308,14 @@
 
 	.mt-1 {
 		margin-block-start: 1rem;
+	}
+
+	.mt-n4 {
+		margin-block-start: -4.5rem;
+	}
+
+	.mt-0 {
+		margin-top: 0;
 	}
 
 	.mb-0 {
@@ -1290,6 +1342,14 @@
 		flex-direction: column;
 	}
 
+	.rotate-left {
+		transform: rotate(-.005turn);
+	}
+
+	.rotate-right {
+		transform: rotate(.005turn);
+	}
+
 	.sr-only,
 	.visually-hidden {
 		border: 0;
@@ -1305,7 +1365,7 @@
 
 	@media screen and (min-width: 60rem) {
 		.grid-2 {
-			grid-template-columns: repeat(2, 1fr);
+			grid-template-columns: repeat(2, 50%);
 		}
 
 		.grid-1-2 {
