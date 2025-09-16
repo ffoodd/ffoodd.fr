@@ -208,8 +208,14 @@
 			<div>
 				<h3>Les <em lang="en">View Transitions</em> en CSS</h3>
 				<p>Les premières implémentations datent de… <strong>2024</strong>&nbsp;!</p>
-				<p><a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API#browser_compatibility">
+				<p>
+					<a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API#browser_compatibility">
 						L’API sous-jacente</a> a mis près de 10 ans à être spécifiée.
+				</p>
+				<p>
+					En bonus&nbsp;: Bramus Van Damme a réimplémenté les transitions interpages d’IE
+					avec les <em lang="en">View Transitions</em> en CSS sur
+					<a hreflang="en" href="https://page-transitions.style/">page-transitions.style</a>.
 				</p>
 			</div>
 		<pre class="playground pt-0"><code>@view-transition {
@@ -227,20 +233,54 @@
 	</section>
 
 	<section id="slide-7">
-		<h2>Ils vécurent longtemps et firent<br>beaucoup de sites web</h2>
-		<p class="lead">Un éternel recommencement.</p>
-		<p>
-			Je vous prédis que dans 10 ans, on se remettra à faire des sites scénarisés «&nbsp;à la Flash&nbsp;»,
-			le temps que les <em lang="en">View Transitions</em> soient digérées par notre industrie.
-		</p>
-		<p>
-			La révolution qu’a été CSS3 en 2008-2009 aurait pu avoir lieu 10 ans plus tôt, s’il n’y avait pas eu
-			la fameuse guerre des navigateurs.
-		</p>
-		<p class="lead">Moralité&nbsp;: utilisez Firefox ou un de ses <em lang="en">forks</em>, et continuez à expérimenter&nbsp;!</p>
+		<h2>Si ça bouge encore, c’est que<br>c’est pas mort&nbsp;!</h2>
+		<p class="lead">Pour mettre la main dans le cambouis.</p>
+		<div class="grid-2">
+			<div>
+				<h3>Comment faire tourner IE4&nbsp;?</h3>
+				<p>
+					Vous pouvez lancer <strong>Windows 95 et IE4 dans votre navigateur</strong> grâce à
+					<a hreflang="en" href="https://github.com/copy/v86">v86</a>, basé sur
+					<abbr lang="en" title="Web Assembly">WASM</abbr> —&nbsp;et qui peut même faire
+					tourner Windows 1.01 et <a hreflang="en" href="https://copy.sh/v86/">plein d’autres vieux systèmes</a>&nbsp;!
+				</p>
+				<p>
+					Si vous voulez consulter un site local, un peu de <em lang="en">tunneling</em> avec
+					<a hreflang="en" href="https://ngrok.com/">ngrok</a> ou
+					<a hreflang="en" href="https://github.com/ekzhang/bore">bore</a> sera nécessaire.
+					Attention&nbsp;: <strong>HTTP sans S</strong>.
+				</p>
+				<p>
+					Il existe aussi des émulateurs —&nbsp;le plus en vue étant
+					<a hreflang="en" href="https://86box.net/">86box</a>.
+				</p>
+			</div>
+			<div class="pl-5">
+				<h3>Explorer le web d’époque</h3>
+				<p>
+					Un certain nombre de sites de 1997 sont toujours en ligne, et certains sont
+					<a hreflang="en" href="https://web.archive.org">archivés et consultables sur la
+						<em lang="en">Wayback Machine</em></a>. Quelques exemples&nbsp;:
+				</p>
+				<ul>
+					<li>
+						<a hreflang="en" href="https://www.spacejam.com/1996/jam.html">Le site de Space Jam de 1996</a>
+						est maintenu en ligne&nbsp;!
+					</li>
+					<li>
+						Le <a hreflang="en" href="https://web.archive.org/web/19970404064352/http://www.apple.com:80/">apple.com</a>
+						de 1997 est archivé, ça vaut le détour&nbsp;!
+					</li>
+					<li>
+						Une copie de la <a href="https://www.la-grange.net/w3c/wcag1/wai-pageauth.html">traduction française des WCAG 1</a>
+						de 1999 est disponible chez Karl Dubost.
+					</li>
+				</ul>
+			</div>
+		</div>
 	</section>
 
-	<section id="slide-22">
+	<section id="slide-8">
 		<h2>Générique de fin<br>Merci</h2>
 		<h3>Crédits</h3>
 		<ul>
