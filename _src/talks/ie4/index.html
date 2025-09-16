@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<title>Les nouveautés d’IE4</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Les nouveautés d’IE4 — conférence donnée par Gaël Poupard lors du e-tech day 2025.">
+	<meta name="author" content="Gaël Poupard">
+	<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+	<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../accesslide/fonts/bello-pro.woff2">
+	<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../accesslide/fonts/museo-slab-300.woff2">
+	<link rel="stylesheet" href="sliide.css" type="text/css" media="screen">
+	<style>
+		[src^="img/Internet_Explorer_4"] {
+			background: #fff;
+			box-shadow: 0 .25rem .5rem rgba(0,0,0,.25);
+			max-width: 100%;
+			padding: .5em;
+			width: max-content;
+		}
+	</style>
+</head>
+<body>
+<main role="main" tabindex="0">
+	<section id="slide-1" data-note="5m" class="splash d-flex flex-column justify-between">
+		<h1>Les nouveautés d’<br>Internet Explorer <span>4</span></h1>
+		<dl class="d-flex m-auto">
+			<dt>Slides en ligne</dt>
+			<dd><a href="https://www.ffoodd.fr/ie4/">ffoodd.fr/ie4/</a></dd>
+		</dl>
+		<footer>
+			<div class="d-flex">
+				<p class="my-0">Animé par <a href="https://www.ffoodd.fr">Gaël Poupard</a></p>
+				<ul role="list">
+					<li><a href="https://www.ffoodd.fr">
+						<img src="../accesslide/img/ffoodd.svg" alt="Blog de Gaël Poupard" height="32" width="32">
+					</a></li>
+					<li><a href="https://mamot.fr/@ffoodd">
+						<img src="../accesslide/img/mastodon.svg" alt="@ffoodd sur Mastodon" height="32" width="32">
+					</a></li>
+					<li><a href="https://github.com/ffoodd/">
+						<img src="../accesslide/img/github.svg" alt="@ffoodd sur Github" height="32" width="32">
+					</a></li>
+					<li><a href="https://www.linkedin.com/in/ga%C3%ABl-poupard-40117b30/">
+						<img src="../accesslide/img/linkedin.svg" alt="Gaël Poupard sur Linkedin" height="32" width="32">
+					</a></li>
+					<li><a href="https://www.paris-web.fr/">
+						<img src="../accesslide/img/pw.svg" alt="Paris Web" height="32" width="32">
+					</a></li>
+				</ul>
+			</div>
+			<p>
+				<a href="https://www.groupeonepoint.com">
+					<img src="onepoint.svg" width="166" height="80" alt="onepoint">
+				</a>
+			</p>
+		</footer>
+	</section>
+
+	<section id="slide-2">
+		<h2 lang="en">Back to<br>1997<span class="back-to-the-future" aria-hidden="true">&nbsp;⇠</span></h2>
+		<p class="lead">Le web, c’était <small>(pas)</small> mieux avant.</p>
+		<p class="small">
+			Les navigateurs embarquaient des clients mails, des messageries instantanées,
+			et on déplaçait des barres d’outils d’un coin à l’autre de l’écran…
+		</p>
+		<ol start="1991" class="muted pl-5">
+			<li>Naissance de <abbr lang="en" title="HyperText Markup Language">HTML</abbr> et <abbr lang="en" title="HyperText Transfert Protocol">HTTP</abbr>.</li>
+			<li>Création de l’<abbr lang="en" title="Unique Resource Locator">URL</abbr> et ViolaWWW.</li>
+			<li>Mosaic créé l’élément <code>&lt;img&gt;</code>, et le <strong>CERN verse le web dans le domaine public</strong>.</li>
+			<li>Le <abbr lang="en" title="World Wide Web Consortium">W3C</abbr> est lancé… <strong>le même jour que la première bannière pub</strong>. Netscape et Python, aussi.</li>
+			<li>FrontPage, <abbr lang="en" title="Personal Home Page">PHP</abbr>, JavaScript (et <a hreflang="en" href="https://en.wikipedia.org/wiki/JavaScript_Style_Sheets"><abbr lang="en" title="JavaScript StyleSheet">JSSS</abbr></a>) et HTML 2 voient le jour.</li>
+			<li>On fait du <em lang="en">Liquid Layout</em>. La <em lang="en">Wayback Machine</em> et la <abbr lang="en" title="Web Accessibility Initiative">WAI</abbr> sont créées. Flash voit le jour, tout comme… <abbr lang="en" title="Cascading StyleSheet">CSS</abbr>, le <time>17 décembre 1996</time>&nbsp;!</li>
+			<li>Le HTML <abbr lang="en" title="Working Group">WG</abbr> voit le jour au W3C, HTML 3.0 est abandonné et HTML 3.2 est publié. Netscape confie JavaScript à ECMA.</li>
+		</ol>
+		<p class="small">Jetez un œil à <a hreflang="en" href="https://thehistoryoftheweb.com/timeline/"><cite>The History of the Web</cite></a>.</p>
+		<hr>
+		<p class="small">Oh, et le 17 décembre, c’est la Saint Gaël. Coïncidence&nbsp;?</p>
+	</section>
+
+	<section id="slide-3">
+		<h2>Internet<br>Explorer 4</h2>
+		<p class="lead"><q>Le web comme vous le voulez</q></p>
+		<div class="grid-2">
+			<div>
+				<ul class="muted">
+					<li>IE4 fonctionnait sur Solaris, un OS <strong>Unix</strong> —&nbsp;mais aussi sur <strong>Mac</strong>.</li>
+					<li>Sont intégrés Microsoft Chat, <strong>Outlook</strong> Express, NetMeeting, <strong>FrontPage</strong> Express, et RealPlayer.</li>
+					<li>Un nouveau moteur de rendu est créé pour l’occasion&nbsp;: MSHTML, ultérieurement rebaptisé <strong>Trident</strong>.</li>
+					<li>C’est la naissance du <strong>DHTML</strong>&nbsp;: la capacité d’utiliser du JS dans le HTML —&nbsp;considéré comme l’ancêtre d’AJAX.</li>
+					<li>C’est le premier à supporter <strong>UTF-8 et TLS 1.0</strong>.</li>
+					<li>Il implémente déjà <code>@font-face</code>, supporte <strong>PNG</strong> et les <strong>favicon</strong>&nbsp;!</li>
+					<li>L’<strong>accessibilité</strong> devient un sujet&nbsp;: navigation au clavier, préférences utilisateurs, affichage des alternatives…</li>
+					<li><strong>Plein écran</strong> avec <kbd>F11</kbd>.</li>
+				</ul>
+				<p>Mais ce n’est pas tout&nbsp;!</p>
+			</div>
+			<div class="mt-n4 pl-5">
+				<img src="img/Internet_Explorer_4.png" width="365" height="273" loading="lazy" alt="" class="rotate-left">
+				<img src="img/Internet_Explorer_4_for_Solaris_screenshot.png" width="384" height="259" loading="lazy" alt="" class="rotate-right float-right mt-n4">
+			</div>
+		</div>
+	</section>
+
+	<section id="slide-4">
+		<h2>Les filtres<br>DirectX</h2>
+		<pre class="playground pt-0"><code>STYLE="filter:
+	progid:DXImageTransform.Microsoft.gradient(startColorstr=#550000FF, endColorstr=#55FFFF00)
+	progid:DXImageTransform.Microsoft.Alpha(opacity=50)"
+		</code></pre>
+		<div class="grid-2">
+			<div>
+				<h3>Opacité, dégradé, transition, ombre…</h3>
+				<p>
+					Uniquement dans l’attribut <code>STYLE</code> sur IE4, les filtres résisteront au passage du temps
+					reclus dans la propriété <code>-ms-filter</code> jusqu’à IE9&nbsp;!
+				</p>
+				<p class="small">
+					La doc est toujours disponible dans
+					<a hreflang="en" href="https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms532847(v=vs.85)">
+					la section <em lang="en">Legacy APIs</em> de <em lang="en">Internet Explorer for developers</em> sur Microsoft Learn
+					</a>.
+				</p>
+			</div>
+			<div class="pl-5">
+				<h3>CSS3 et le web <code>2.0</code></h3>
+				<p>
+					Les équivalents CSS sont apparus <strong>en 2009</strong> et ont initié une nouvelle révolution web,
+					le <em lang="en">Responsive Web Design</em>.
+				</p>
+				<pre class="playground pt-0"><code>.demo {
+	background: linear-gradient(#500f, #5ff0);
+	opacity: .5;
+}</code></pre>
+				<p class="small">
+					C’est l’ère des <em lang="en">frameworks</em> et des méta-langages comme Sass, Less ou Stylus.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section id="slide-5">
+		<h2>Le mode hors-ligne avec les <br>Active Channel</h2>
+		<div class="grid-2">
+			<div>
+				<p class="mt-0">
+					Internet Explorer 4 est le premier navigateur à permettre d’enregistrer une copie locale
+					—&nbsp;avec un bon vieux <kbd>CTRL</kbd>+<kbd>s</kbd>&nbsp;— mais aussi de <strong>synchroniser
+					la copie locale avec la version distante</strong> grâce à un fichier
+					<abbr lang="en" title="Channel Definition Format">CDF</abbr>.
+				</p>
+				<pre class="playground pt-0"><code>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;CHANNEL HREF="http://domain/folder/pageOne.extension"
+		BASE="http://domain/folder/"
+		LASTMOD="1998-11-05T22:12"
+		PRECACHE="YES"
+		LEVEL="0">
+	&lt;TITLE>Title of Channel&lt;/TITLE>
+	&lt;ABSTRACT>Synopsis of channel's contents.&lt;/ABSTRACT>
+	&lt;SCHEDULE>
+		&lt;INTERVALTIME DAY="14"/>
+	&lt;/SCHEDULE>
+	&lt;LOGO HREF="wideChannelLogo.gif" STYLE="IMAGE-WIDE"/>
+	&lt;LOGO HREF="imageChannelLogo.gif" STYLE="IMAGE"/>
+	&lt;LOGO HREF="iconChannelLogo.gif" STYLE="ICON"/>
+&lt;/CHANNEL>
+		</code></pre>
+			</div>
+			<div class="pl-5">
+				<h3 class="mt-n4">Les <abbr lang="en" title="Progressive Web App">PWA</abbr></h3>
+				<p4>
+					<strong>Depuis 2018</strong>, les navigateurs supportent les <em lang="en">Service Workers</em>,
+					déverrouillant la gestion du cache hors-ligne et les notifications&nbsp;; plus qu’à transformer un site
+					en PWA grâce à un fichier <code>manifest.json</code>.
+				</p4>
+				<pre class="playground pt-0"><code>{
+	"short_name": "MDN",
+	"name": "MDN Web Docs",
+	"icons": [
+		{
+			"src": "/favicon-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		}
+	],
+	"start_url": ".",
+	"display": "standalone",
+	"theme_color": "#000000",
+	"background_color": "#ffffff"
+}
+</code></pre>
+			</div>
+		</div>
+	</section>
+
+	<section id="slide-6">
+		<h2>Les transitions<br>interpages</h2>
+		<p>
+			Et si on mettait les filtres dans l’attribut <code>http-equiv</code> de l’élément <code>META</code>&nbsp;?
+		</p>
+		<pre class="playground pt-0"><code>
+&lt;META http-equiv="Page-Enter"
+	CONTENT="progid:DXImageTransform.Microsoft.Blinds(Duration=4)" />
+&lt;META http-equiv="Page-Exit"
+	CONTENT="progid:DXImageTransform.Microsoft.Slide(Duration=2.500,slidestyle=’HIDE’)" />
+		</code></pre>
+		<div class="grid-2 mt-1">
+			<div>
+				<h3>Les <em lang="en">View Transitions</em> en CSS</h3>
+				<p>Les premières implémentations datent de… <strong>2024</strong>&nbsp;!</p>
+				<p>
+					<a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API#browser_compatibility">
+						L’API sous-jacente</a> a mis près de 10 ans à être spécifiée.
+				</p>
+				<p>
+					En bonus&nbsp;: Bramus Van Damme a réimplémenté les transitions interpages d’IE
+					avec les <em lang="en">View Transitions</em> en CSS sur
+					<a hreflang="en" href="https://page-transitions.style/">page-transitions.style</a>.
+				</p>
+			</div>
+		<pre class="playground pt-0"><code>@view-transition {
+	navigation: auto;
+}
+
+::view-transition-old(root) {
+	animation: 2.5s ease-in both slide;
+}
+
+::view-transition-new(root) {
+	animation: 4s ease-in both blinds;
+}</code></pre>
+		</div>
+	</section>
+
+	<section id="slide-7">
+		<h2>Si ça bouge encore, c’est que<br>c’est pas mort&nbsp;!</h2>
+		<p class="lead">Pour mettre la main dans le cambouis.</p>
+		<div class="grid-2">
+			<div>
+				<h3>Comment faire tourner IE4&nbsp;?</h3>
+				<p>
+					Vous pouvez lancer <strong>Windows 95 et IE4 dans votre navigateur</strong> grâce à
+					<a hreflang="en" href="https://github.com/copy/v86">v86</a>, basé sur
+					<abbr lang="en" title="Web Assembly">WASM</abbr> —&nbsp;et qui peut même faire
+					tourner Windows 1.01 et <a hreflang="en" href="https://copy.sh/v86/">plein d’autres vieux systèmes</a>&nbsp;!
+				</p>
+				<p>
+					Si vous voulez consulter un site local, un peu de <em lang="en">tunneling</em> avec
+					<a hreflang="en" href="https://ngrok.com/">ngrok</a> ou
+					<a hreflang="en" href="https://github.com/ekzhang/bore">bore</a> sera nécessaire.
+					Attention&nbsp;: <strong>HTTP sans S</strong>.
+				</p>
+				<p>
+					Il existe aussi des émulateurs —&nbsp;le plus en vue étant
+					<a hreflang="en" href="https://86box.net/">86box</a>.
+				</p>
+			</div>
+			<div class="pl-5">
+				<h3>Explorer le web d’époque</h3>
+				<p>
+					Un certain nombre de sites de 1997 sont toujours en ligne, et certains sont
+					<a hreflang="en" href="https://web.archive.org">archivés et consultables sur la
+						<em lang="en">Wayback Machine</em></a>. Quelques exemples&nbsp;:
+				</p>
+				<ul>
+					<li>
+						<a hreflang="en" href="https://www.spacejam.com/1996/jam.html">Le site de Space Jam de 1996</a>
+						est maintenu en ligne&nbsp;!
+					</li>
+					<li>
+						Le <a hreflang="en" href="https://web.archive.org/web/19970404064352/http://www.apple.com:80/">apple.com</a>
+						de 1997 est archivé, ça vaut le détour&nbsp;!
+					</li>
+					<li>
+						Une copie de la <a href="https://www.la-grange.net/w3c/wcag1/wai-pageauth.html">traduction française des WCAG 1</a>
+						de 1999 est disponible chez Karl Dubost.
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section id="slide-8">
+		<h2>Générique de fin<br>Merci</h2>
+		<h3>Crédits</h3>
+		<ul>
+			<li>Typographie de titraille&nbsp;: <a hreflang="en" href="https://fonts.google.com/specimen/Luckiest+Guy?preview.text=Mutant&class&nbsp;;fication=Display,Handwriting&query=Astigmatic">Luckiest Guy</a> par Astigmatic&nbsp;;</li>
+			<li>Typographie de labeur&nbsp;: <a hreflang="en" href="https://github.com/mozilla/zilla-slab">Zilla Slab</a> par Mozilla&nbsp;;</li>
+			<li>Typographie monospace&nbsp;: <a hreflang="en" href="https://blog.glyphdrawing.club/font-with-built-in-syntax-highlighting/">FontWithASyntaxHighlighter</a> par Heikki Lotvonen&nbsp;;</li>
+			<li>Typographie pour les émojis&nbsp;: <a hreflang="en" href="https://github.com/mozilla/twemoji-colr">Twemoji COLR</a> par Mozilla.</li>
+			<li>Moteur de présentation inspiré de <a hreflang="en" href="https://css-tricks.com/css-scroll-snap-slide-deck/">"<cite lang="en">CSS scroll-snap slide deck that supports live coding</cite>" de Stephanie Eckles sur Smashing Magazine</a>.</li>
+		</ul>
+	</section>
+</main>
+
+<div class="timer" style="--duration: 45;">
+	<div class="clock" role="presentation">
+		<span style="--time: 3600s"></span>h&nbsp;
+		<span style="--time: 60s"></span>m&nbsp;
+		<span style="--time: 1s"></span>s
+	</div>
+</div>
+
+<script>
+	let view;
+	switchSlide = (id) => {
+		// Historique
+		history.pushState({}, '', `#slide-${id}`);
+		// Vue présentateur
+		//// Aperçu du slide suivant
+		document.body.style.setProperty('--next', String(`-moz-element(#slide-${Number(id) + 1})`));
+		//// Synchro de la vue présentateur
+		if (view) {
+			view.postMessage(`slide-${id}`, `http://localhost:8080${document.location.pathname}index.html`);
+		}
+		//// Notes dans la vue présentateur
+		if('note' in document.getElementById(`slide-${id}`).dataset) {
+			document.body.dataset.note = document.getElementById(`slide-${id}`).dataset.note;
+		} else {
+			delete document.body.dataset.note;
+		}
+	}
+
+	document.addEventListener('DOMContentLoaded', () => {
+		const slides = document.querySelectorAll('section[id^="slide-"]');
+
+		// Nombre total de slides, pour la pagination
+		document.body.style.setProperty('--slides', String(slides.length));
+		document.body.style.setProperty('--next', String(`-moz-element(#slide-2)`));
+
+		// Gestion de l’historique
+		let io = new IntersectionObserver(entries => {
+			if (entries[0].isIntersecting === true) {
+				switchSlide(entries[0].target.id.split('-')[1]);
+			}
+		}, {
+			root: document.querySelector('main'),
+			threshold: [1]
+		});
+		slides.forEach(slide =>	io.observe(slide));
+
+		document.addEventListener('keydown', event => {
+			const index = Number(window.location.hash.split('-')[1]);
+			let id = null;
+			switch (event.key) {
+				// Activer la vue présentateur
+				case 's':
+					if (event.altKey) {
+						view = window.open(`http://localhost:8080${document.location.pathname}index.html`, 'speakerView');
+						view.addEventListener('load', () => {
+							view.document.body.classList.add('speaker');
+						})
+					}
+					break;
+				// Télécommande ++
+				case 'PageDown':
+					id = index + 1;
+					break;
+				// Télécommande --
+				case 'PageUp':
+					id = index - 1;
+					break;
+				default:
+					break;
+			}
+
+			if (id !== null && id >= 1) {
+				document.getElementById(`slide-${id}`).scrollIntoView({ behavior: 'smooth' });
+				switchSlide(id);
+			}
+		});
+	});
+
+	window.addEventListener('message', (e) => {
+		if (e.origin === 'http://localhost:8080' && typeof e.data === 'string') {
+			document.getElementById(e.data)?.scrollIntoView({ behavior: 'smooth' });
+			switchSlide(e.data?.split('-')[1]);
+		}
+	}, false);
+</script>
+</body>
+</html>
