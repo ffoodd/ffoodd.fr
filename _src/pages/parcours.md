@@ -18,7 +18,11 @@ Spécialiste du HTML / CSS passé par les cases designer UX/UI en agence, dével
 
 Et ne le répétez pas, mais j’ai commencé en 2007 par faire du Flash —&nbsp;et j’aimais ça&nbsp;!
 
-### Onepoint — <time datetime="2021-03">mars 2021</time> à aujourd’hui
+### Entr'ouvert — <time datetime="2025-11"novembre 2025</time> à novembre 2025
+
+Développeur _front_ chez [Entr'ouvert](https://www.entrouvert.com/). Du HTML / CSS, du JavaScript, de l’accessibilité et de l’ergonomie, dans un écocsystème riche, exigeant et avec un historique profond.
+
+### Onepoint — <time datetime="2021-03">mars 2021</time> à <time datetime="2025-11"novembre 2025</time>
 
 _Lead tech front_ et référent accessibilité chez [Onepoint](https://www.groupeonepoint.com/fr/).
 
