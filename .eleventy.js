@@ -7,7 +7,7 @@ import markdownit from 'markdown-it'
 import anchor from 'markdown-it-anchor'
 import figure from 'markdown-it-image-figures'
 import footnote from 'markdown-it-footnote'
-import { imgSize } from '@mdit/plugin-img-size'
+import { legacyImgSize } from '@mdit/plugin-img-size'
 // 11ty plugins
 import tocPlugin from 'eleventy-plugin-toc'
 import rssPlugin from '@11ty/eleventy-plugin-rss'
@@ -56,7 +56,7 @@ export default function (eleventyConfig) {
 			async: true,
 			classes: ['aligncenter', 'alignright', 'alignleft']
 		})
-		.use(imgSize)
+		.use(legacyImgSize)
 
 	md.renderer.rules.footnote_block_open = () => ('<ol class="footnotes-list small mt2 pt2 pb2">\n')
 	// @note Beurk, mais permet d’ajouter le lien vers les commentaires
