@@ -41,7 +41,6 @@
 		src: url('./assets/fonts/ZillaSlab-BoldItalic.woff2') format('woff2');
 	}
 
-	/* @todo Subset + unicode-range pour chaque niveau ? */
 	@font-face {
 		font-display: swap;
 		font-family: 'Twemoji Mozilla';
@@ -702,7 +701,6 @@
 }
 
 @layer animation {
-	/* @fixme La répartition dans le playground n’est pas assez variée */
 	mu-tant {
 		--direction: 1;
 		inset-block-start: clamp(0%, var(--placement, 50) * 1%, 100%);

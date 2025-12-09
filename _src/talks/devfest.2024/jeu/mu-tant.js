@@ -51,7 +51,6 @@ class Mutant extends HTMLElement {
 				break;
 			case 'ghost':
 				// @note attributeFilter: ['id']
-				// @fixme Ça fonctionne aussi avec attributes: true :/
 				this.innerText = '👻';
 				this.interval = setInterval(() => this._mutateAttributes(), this.generateRandomDelay());
 				break;
