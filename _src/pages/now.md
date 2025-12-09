@@ -5,7 +5,7 @@ permalink: "now/index.html"
 tags: ["pages"]
 description: "Et maintenant, je fais quoi ?"
 metatitle: "En ce moment chez Gaël"
-modified: "2024-12-03"
+modified: "2025-12-09"
 ---
 
 
@@ -13,16 +13,17 @@ modified: "2024-12-03"
 
 **Il s’en passe, des choses, dans une vie**&nbsp;: nos trois enfants nous occupent, ma moitié et moi, et je savoure le temps passé ensemble.
 
-**Côté jardin**, le potager reprend ses droits et nous avons planté pommes de terre, tomates et tomates cerises, cèleri-rave et cèleri-branche, brocolis, courgettes, butternuts, poivrons… Les fraisiers donnent à plein depuis deux semaines et la coriandre que nous avions laissée graîner l’an passé a pris ses aises&nbsp;!
+**Côté jardin**, les légumes d’hiver font leur vie, mais nous ne nous en occupons plus vraiment.
 
-**Je lis beaucoup, de tout**. En ce moment, c’est <cite>Le temps d’après</cite> de <em>Jean Hegland</em>, l’autrice de <cite>Dans la Forêt</cite> que j’ai dévoré juste avant. J’ai récemment lu <cite>Le Livre de Hain</cite> de <em>Ursula K. Le Guin</em> et <cite>Apprendre, si par bonheur</cite> de <em>Becky Chambers</em> —&nbsp;que j’adore de plus en plus.
+**Je lis beaucoup, de tout**. En ce moment, c’est <cite>Libration</cite> de <em>Becky Chambers</em>, un des nombreux livres achetés grâce à mes camarades chez Onepoint. Mon précédent livre lu était <cite>Les Montagnes Hallucinées</cite> de <em>H.P. Lovecraft</em>, distrayant mais longuet.
 
-Ma <abbr title="Pile à lire" aria-label="Pile à lire">PàL</abbr> contient des œuvres de Lovecraft, Fabrice Caro, Caryl Férey, Tolkien, encore du Terry Pratchett, Pierre Lemaitre, Stephen King… mais aussi <cite>La volonté de changer</cite> ou <cite>Voyage en misarchie</cite>, qu’il faudra bien que je me décide à lire un jour&nbsp;!
+Ma <abbr title="Pile à lire" aria-label="Pile à lire">PàL</abbr> contient des œuvres de Fabrice Caro, Caryl Férey, encore du Terry Pratchett, Pierre Lemaitre, Stephen King… mais aussi <cite>La volonté de changer</cite> ou <cite>Voyage en misarchie</cite>, qu’il faudra bien que je me décide à lire un jour&nbsp;!
 
-J’écoute peu de musique. J’ai redécouvert Sporto Kantès et je retrouve mon plaisir de circa 2005. Ça rejoint Meute, Woodkid, C2C, Roudoudou ou Caravan Palace dans les artistes que je peux écouter en boucle.
+J’écoute peu de musique. J’ai redécouvert Sporto Kantès et je retrouve mon plaisir de circa 2005. Ça rejoint Meute, Woodkid, C2C, Fatboy Slim, Roudoudou ou Caravan Palace dans les artistes que je peux écouter en boucle.
 
-Et je regarde… Des films quand je peux (<cite>L’amour ouf</cite> récemment, au cinéma), quelques séries, et souvent du rugby pour travailler en parallèle le soir sur mes projets…
+Et je regarde… Des films quand je peux (<cite>Emilia Perez</cite> récemment, une belle œuvre), quelques séries de temps à autre (notamment <cite>Stranger Things</cite>), et souvent du rugby pour travailler en parallèle le soir sur mes projets…
 
+**Je fais du vélo, aussi**&nbsp;: nous avons acheté un vélo cargo triporteur cet été, je m’en sers presque tous les jours depuis que je travaille pour Entr'ouvert. Quatre places dans le caisson, avec une canopée&nbsp;: c’est idéal pour amener trois enfants à l’école&nbsp;!
 
 ## Les projets
 
@@ -43,15 +44,9 @@ Nous animons aussi [24 jours de web](https://www.24joursdeweb.fr/), <q>le calend
 
 ## Au travail
 
-Je fais plein de choses différentes, en tant que <strong>référent accessibilité numérique</strong> et <i lang="en">tech lead</i>. Sur une semaine de cinq jours, je travaille sur trois projets **très** différents&nbsp;:
+J’ai changé le mois dernier&nbsp;! Je découvre Entr'ouvert, une <abbr title="Société coopérative de production" aria-label="Société coopérative de production">SCOP</abbr> avec une organisation horizontale et démocratique et un fonctionnement original (semaine de quatre jours, salaire unique…). Convaincant&nbsp;!
 
-* une extension navigateur <i lang="en">open-source</i>, [Confort+ d’Orange](https://github.com/Orange-OpenSource/Orange-Confort-plus/)&nbsp;;
-* le site institutionnel de mon entreprise, utilisant WordPress&nbsp;;
-* un <i lang="en">design system</i>, la partie technique —&nbsp;Bootstrap pour la grille et les utilitaires, Material pour certains composants riches, Angular et du bon vieux HTML / CSS maison pour le reste&nbsp;— ainsi que **la documentation** et **la diffusion**.
+J’apprivoise donc beaucoup de choses en ce moment, le seul projet parallèle que j’ai pu gérer est le thème 2025 des [24 jours de web](https://www.24joursdeweb.fr/).
 
-Le reste du temps, je réponds aux questions HTML, CSS, SVG et accessibilité. Je participe à des retours d’expériences, à des appels d’offres, je donne et conçois des formations à l’accessibilité, enfin ce genre de choses.
-
-Je participe également au chantier de traduction en français des WCAG 2.2, coordonné par Access42. Et c’est très formateur&nbsp;!
-
-Je ne travaille plus sur [Bootstrap](https://getbootstrap.com) à mon grand désarroi, mais je suis toujours de loin certaines discussions et donne parfois mon avis. Le projet est très vivant et la relève sur [Boosted](https://boosted.orange.com) (que j’ai développé en solo pendant deux ans) assure à fond.
+Je ne travaille plus vraiment sur [Bootstrap](https://getbootstrap.com) à mon grand désarroi, mais je suis toujours de loin certaines discussions et donne parfois mon avis. Le projet est très vivant et la relève sur [Boosted](https://boosted.orange.com) (que j’ai développé en solo pendant deux ans) assure à fond.
 

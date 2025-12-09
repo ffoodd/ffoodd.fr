@@ -1,5 +1,11 @@
 [
 	{
+		"title": "Les nouveautés d’IE4",
+		"event": "e-tech day 2025",
+		"date": "2025-09-24",
+		"slides": "https://www.ffoodd.fr/ie4"
+	},
+	{
 		"title": "L’invasion du HTML mutant",
 		"event": "DevQuest Niort 2025",
 		"date": "2025-06-06",
