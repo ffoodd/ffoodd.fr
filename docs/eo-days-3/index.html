@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<title>EO Days #3 : accessibilité</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="EO Days #3 : accessibilité">
+	<meta name="author" content="Gaël Poupard">
+	<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+	<link rel="stylesheet" href="sliide.css" type="text/css" media="screen">
+</head>
+<body>
+<main role="main" tabindex="0">
+	<section id="slide-1" data-note="5m" class="splash d-flex flex-column justify-between">
+		<h1>Sensibilisation<br>Accessibilité</h1>
+
+		<footer>
+			<div class="d-flex">
+				<p class="my-0">Animé par <a href="https://www.ffoodd.fr">Gaël Poupard</a></p>
+				<ul role="list">
+					<li><a href="https://www.ffoodd.fr">
+						<img src="../accesslide/img/ffoodd.svg" alt="Blog de Gaël Poupard" height="32" width="32">
+					</a></li>
+					<li><a href="https://mamot.fr/@ffoodd">
+						<img src="../accesslide/img/mastodon.svg" alt="@ffoodd sur Mastodon" height="32" width="32">
+					</a></li>
+					<li><a href="https://github.com/ffoodd/">
+						<img src="../accesslide/img/github.svg" alt="@ffoodd sur Github" height="32" width="32">
+					</a></li>
+					<li><a href="https://www.linkedin.com/in/ga%C3%ABl-poupard-40117b30/">
+						<img src="../accesslide/img/linkedin.svg" alt="Gaël Poupard sur Linkedin" height="32" width="32">
+					</a></li>
+					<li><a href="https://www.paris-web.fr/">
+						<img src="../accesslide/img/pw.svg" alt="Paris Web" height="32" width="32">
+					</a></li>
+				</ul>
+			</div>
+			<dl class="d-flex">
+				<dt>Slides en ligne</dt>
+				<dd><a href="https://www.ffoodd.fr/eo-days-3/">ffoodd.fr/eo-days-3/</a></dd>
+			</dl>
+		</footer>
+	</section>
+
+	<section id="slide-2">
+		<h2>L’accessibilité,<br>kézako&nbsp;?</h2>
+
+		<div class="grid-2">
+			<div>
+				<p class="lead">Déficience <small>et</small> situation de handicap</p>
+				<div class="carte">
+					<p>
+						La situation de handicap est le <strong>résultat d’une interaction</strong> entre
+						un <strong>utilisateur et un contenu</strong> (ou une fonctionnalité) qui, du fait
+						d’une déficience, aboutit à l’impossibilité pour l’utilisateur d’y
+						accéder, de le percevoir, de le comprendre ou de l’utiliser.
+					</p>
+
+				</div>
+				<p class="lead">
+					L’accessibilité consiste donc avant tout à éliminer les obstacles générant des situations de handicap.
+				</p>
+			</div>
+			<div class="portrait" aria-hidden="true">&#9855;</div>
+		</div>
+	</section>
+
+	<section id="slide-3">
+		<h2>Les déficiences<br>visuelles</h2>
+		<div class="grid-2">
+			<div>
+				<p class="lead">
+					La <a href="https://www.atalan.fr/agissons/fr/cecite.html">cécité</a>,
+					la <a href="https://www.atalan.fr/agissons/fr/malvoyance.html">malvoyance</a>,
+					le <a href="https://www.atalan.fr/agissons/fr/daltonisme.html">daltonisme</a>,
+					ou encore la sensibilité à la lumière sont les déficiences visuelles les
+					plus courantes.
+				</p>
+				<div class="carte">
+					<h3>Les technologies d’assistance</h3>
+					<ul>
+						<li>Lecteur d’écran</li>
+						<li>Plage Braille</li>
+						<li>Loupes d’écran</li>
+						<li>Mode de contrastes élevés</li>
+						<li>Mode lecture</li>
+					</ul>
+				</div>
+			</div>
+			<div class="portrait mt-1" aria-hidden="true">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="1em" height="1em" fill="currentColor" role="presentation">
+          <path d="M9.147 23.824c.592.31 1.207.588 1.837.83l1.792-1.792a7.236 7.236 0 01-1.645-1.022zM8.898 18.641l-3.06 3.055c.495.378 1.02.747 1.566 1.102l2.4-2.4a7.247 7.247 0 01-.906-1.757zM8.468 16.189c0-1.21.298-2.35.819-3.353l-6.341 6.34c.418.416.878.85 1.38 1.287l4.15-4.15c0-.041-.008-.082-.008-.124zM14.975 23.47l-1.84 1.84c.769.17 1.561.276 2.368.302l2.403-2.403a7.322 7.322 0 01-2.93.26z"/>
+          <path d="M4.774 3.832L3.441 5.166l4.221 4.222c-.394.23-.78.477-1.148.792L.381 16.317c.177.227.595.755 1.218 1.449l7.197-7.198 1.181 1.181c.007-.008.015-.016.021-.025l2.477 2.477c-.006.01-.014.017-.02.027l.423.422-.906.905a3.835 3.835 0 00-.056.63c0 .611.143 1.185.396 1.698l1.897-1.897 1.38 1.38-2.002 2.003a3.838 3.838 0 001.992.676l1.343-1.344.815.815.031-.022 2.496 2.496-.023.02.804.803-2.509 2.509c1.304-.284 2.55-.757 3.72-1.341l4.79 4.791 1.334-1.333-4.418-4.418c4.477-2.79 7.467-6.832 7.467-6.832s-6.97-9.43-15.571-9.43c-2.31 0-4.5.688-6.47 1.687zM15.801 8.86a7.33 7.33 0 017.33 7.329 7.277 7.277 0 01-1.532 4.468l-2.494-2.494a3.824 3.824 0 00.548-1.974 3.867 3.867 0 00-3.867-3.866c-.722 0-1.396.205-1.973.548l-2.48-2.48a7.277 7.277 0 014.468-1.531z"/>
+        </svg>
+			</div>
+		</div>
+	</section>
+
+	<section id="slide-4">
+		<h2>Les déficiences<br>auditives</h2>
+		<div class="grid-2">
+			<div>
+				<p class="lead">
+					La surdité, la
+					<a href="https://www.atalan.fr/agissons/fr/malentendance.html">malentendance</a>,
+					ou la sensibilité accrue au bruit sont les troubles auditifs les
+					plus répandus.
+				</p>
+				<div class="carte">
+					<h3>Les technologies d’assistance</h3>
+					<ul>
+						<li>Prothèse auditive</li>
+						<li>Implants cochléaires</li>
+						<li>Sous-titres&nbsp;— automatiques ou non</li>
+						<li>Interprétariat <abbr title="Langue des Signes Françaises" aria-label="Langue des Signes Françaises">LSF</abbr></li>
+					</ul>
+				</div>
+			</div>
+			<div class="portrait mt-1" aria-hidden="true">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="1em" height="1em" fill="currentColor" role="presentation">
+          <path d="M23.856 2.012L7.549 30.304l-2.772-1.63L16.599 8.127c-.326-.082-.652-.082-.978-.082-1.468 0-2.772.571-3.75 1.55-.409.326-.653.733-.898 1.222l-1.386-.733c.326-.571.652-1.142 1.142-1.631 1.223-1.223 2.935-1.957 4.892-1.957.652 0 1.223.082 1.793.245l.897-1.468a7.827 7.827 0 00-2.69-.49c-2.365 0-4.485.98-6.034 2.528-1.386 1.387-2.201 3.18-2.446 5.056l-2.364-1.468a11.414 11.414 0 013.016-5.381c1.957-1.957 4.73-3.262 7.828-3.262 1.386 0 2.69.326 3.913.734l1.55-2.609zm-2.528 7.582c.734 1.06 1.142 2.365 1.142 3.751 0 1.875-.816 3.588-2.039 4.81l-1.06-1.06c.897-.978 1.55-2.282 1.55-3.75 0-.815-.164-1.468-.49-2.201zm2.283-3.913c1.875 2.038 3.017 4.729 3.017 7.664 0 2.12-.652 4.158-1.712 5.87-2.772 4.485-1.06 12.15-9.214 12.15a7.46 7.46 0 01-5.3-2.202l-.244-.245 1.386-2.364c.163.326.408.57.652.815a4.927 4.927 0 003.506 1.468c5.545 0 4.322-6.523 7.094-10.926.815-1.386 1.304-2.935 1.304-4.566 0-2.038-.652-3.832-1.875-5.3z"/>
+        </svg>
+			</div>
+		</div>
+	</section>
+
+	<section id="slide-5">
+		<h2>Les déficiences<br>motrices</h2>
+		<div class="grid-2">
+			<div>
+				<p class="lead">
+					La paralysie, l’hémiplégie, Parkinson ou les
+					<abbr title="Troubles MusculoSquelettiques" aria-label="Troubles MusculoSquelettiques">TMS</abbr>
+					ne sont que <a href="https://www.atalan.fr/agissons/fr/handicap-moteur.html">quelques
+					exemples de troubles moteurs</a> parmi une myriade.
+				</p>
+				<div class="carte">
+					<h3>Les technologies d’assistance</h3>
+					<ul>
+						<li>Reconnaissance vocale</li>
+						<li>Clavier virtuel</li>
+						<li>Dispositifs mécaniques&nbsp;: guide-doigts, <em lang="en">head-stick</em>, claviers et souris adaptés…</li>
+					</ul>
+				</div>
+			</div>
+			<div class="portrait mt-1" aria-hidden="true">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="1em" height="1em" fill="currentColor" role="presentation">
+          <path d="M13.824 6.225c1.395-.13 2.478-1.33 2.478-2.735A2.75 2.75 0 0013.556.744a2.75 2.75 0 00-2.745 2.746c0 .461.128.933.343 1.33l.978 13.766 10.076.002 4.132 9.683 5.426-2.128-.84-2-3.036 1.095-3.999-9.23-9.368.062-.129-1.743 6.782.002v-2.58l-7.04-.002z"/>
+          <path d="M23.958 25.967c-1.7 3.361-5.26 5.576-9.057 5.576-5.576 0-10.124-4.548-10.124-10.124 0-3.916 2.373-7.554 5.914-9.167l.229 2.99c-2.094 1.32-3.385 3.701-3.385 6.197 0 4.045 3.299 7.345 7.344 7.345 3.7 0 6.857-2.84 7.287-6.484z"/>
+        </svg>
+			</div>
+		</div>
+	</section>
+
+	<section id="slide-6">
+		<h2>Les déficiences<br>cognitives</h2>
+		<div class="grid-2">
+			<div>
+				<p class="lead">
+					Les troubles dys, l’anxiété, les <abbr title="Troubles De l’Attention avec
+					ou sans Hyperactivité" aria-label="Troubles De l’Attention avec
+					ou sans Hyperactivité">TDAH</abbr>, ou les troubles du spectre
+					autistique sont quelques exemples de troubles cognitifs.
+				</p>
+				<div class="carte">
+					<h3>Les technologies d’assistance</h3>
+					<ul>
+						<li>Aucune &nbsp;: chacun teste diverses choses.</li>
+						<li>Imprimer un contenu peut s’avérer plus facile pour certains, par exemple.</li>
+					</ul>
+				</div>
+			</div>
+			<div class="portrait mt-1" aria-hidden="true">
+			 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="1em" height="1em" fill="currentColor" role="presentation">
+        <path d="M0 0v25.823c1.373 1.35 3.356 2.392 5.86 3.345 2.526.96 5.21 1.348 7.242.533.176-.071.358-.187.523-.338a2.1 2.1 0 00.341-.405c.241-.373.337-.824.27-1.334a.234.234 0 01-.002-.046s.006-.045-.04-.304c-.046-.26-.145-.706-.356-1.43 0-.003 0-.005-.002-.008a.685.685 0 01.16-.627c.143-.15.325-.239.514-.309.316-.118.53-.371.56-.598.03-.226-.069-.486-.586-.728-.015-.006-2.448-1.024-4.17-2.125-.245-.157-.064-.535.212-.443 0 0 3.17 1.046 5.084 1.046.154 0 .333.013.478-.039.144-.051.26-.128.318-.443.015-.113-.042-.39-.126-.697-.086-.309-.187-.654-.187-.999l.005.035a.507.507 0 01.07-.337c.114-.17.337-.287.707-.33.028-.004.076-.009.176-.027.1-.018.237-.05.39-.098.304-.098.669-.27.94-.55.272-.282.464-.662.438-1.256-.025-.593-.284-1.404-.96-2.48 0 0-.363-.582-.73-1.74s-.748-2.909-.815-5.295V7.79c0-1.204.205-4.337-.983-7.79zm28.634 0c.334 1.161.66 2.946.754 7.898 0 0 1.118-.293 1.345.595.395 1.55-.463 4.105-.349 4.874.525 3.537-.96 3.44-.96 3.44-.48 6.064-1.843 9.508-5.093 12.267-1.995 1.304-5.321 2.818-10.006.805-.487-.202-.569.046-1.038.28-2.22.89-4.896.816-7.487-.17S1.462 27.726.018 26.292L0 26.116V32h32V0zM9.617 8.686c.638-.02 1.276.315 1.67 1.411.13.361.145.545-.088.48-.413-.113-1.64-.597-3.567-.333-.377.052-.226-.246.05-.57.295-.348 1.115-.962 1.935-.988zm13.25.029c-.866.024-1.705.758-1.987 1.149-.248.345-.377.654-.004.573 1.9-.418 3.162-.033 3.582.047.238.045.207-.136.05-.485-.446-.986-1.05-1.301-1.641-1.284zm.707 13.526a.607.607 0 00-.185.045c-2.215.842-4.484.739-4.64.739-1.179 0-3.136-.28-4.727-.726-.324-.082-.475.275-.194.439.7.38 2.862 1.414 4.949 1.414 2.468 0 4.101-.881 4.878-1.475.133-.1.168-.202.107-.337a.192.192 0 00-.188-.099z"/>
+      	</svg>
+			</div>
+		</div>
+	</section>
+
+	<!-- @todo Transitions : WCAG, RGAA, etc.	-->
+	<section id="slide-7">
+		<h2>Limiter les situations de<br>handicap</h2>
+		<div class="grid-2">
+			<div class="carte">
+				<p class="lead mt-0">
+					Au sein du <a href="https://www.w3.org/" hreflang="en">
+						<abbr lang="en" title="World Wide Web Consortium" aria-label="World Wide Web Consortium">W3C</abbr>
+					</a>, la <a href="https://www.w3.org/WAI/" hreflang="en">
+						<abbr lang="en" title="Web Accessibility Initiative" aria-label="Web Accessibility Initiative">WAI</abbr>
+					</a> spécifie les <a href="https://www.w3.org/Translations/WCAG22-fr/">
+						<abbr lang="en" title="Web Content Accessibility Guidelines" aria-label="Web Content Accessibility Guidelines">WCAG</abbr>
+					</a>, qui reposent sur quatre principes.
+				</p>
+				<ol>
+					<li>Perceptible.</li>
+					<li>Utilisable.</li>
+					<li>Compréhensible.</li>
+					<li>Robuste.</li>
+				</ol>
+				<p class="lead">
+					Le <a href="https://accessibilite.numerique.gouv.fr/">
+						<abbr title="Référentiel Général d’Amélioration de l’Accessibilité">RGAA</abbr>
+					</a> est une méthode d’application technique des WCAG.
+				</p>
+				<p class="small">
+					En France, les obligations ne portent pas uniquement sur la conformité&nbsp;:
+					une démarche doit être mise en œuvre et rendue publique, sous la forme d’un
+					schéma pluriannuel et de plans d’action annuels.
+				</p>
+			</div>
+			<div class="mt-n4 pl-5">
+				<h3>Anatomie d’un critère RGAA</h3>
+				<p>Chaque critère comprend&nbsp;:</p>
+				<ul>
+					<li>Un <strong>intitulé</strong>, avec des liens vers le glossaire pour les termes sujets à interprétation&nbsp;;</li>
+					<li>Un ou plusieurs <strong>tests</strong> techniques, avec une méthodologie détaillée pour chacun&nbsp;;</li>
+					<li>
+						Des <strong>références</strong> aux WCAG
+						—&nbsp;<small>critère(s) de succès, technique(s) suffisante(s) et / ou échec(s)</small>&nbsp;—
+					 et à l’EN 301 549.
+					</li>
+				</ul>
+				<p>Et, pour certains critères&nbsp;:</p>
+				<ul>
+					<li>Une <strong>note technique</strong>, pour certaines subtilités échappant au glossaire ou aux méthodologies de test&nbsp;;</li>
+					<li>Des <strong>cas particuliers</strong>.</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section id="slide-8">
+		<h2>Les tests<br>réflexes</h2>
+		<div class="grid-2">
+			<div>
+				<p>
+					Les <strong>comportements de base</strong> à adopter pour mesurer sommairement l’accessibilité
+					d’une page, en utilisant uniquement Firefox.
+				</p>
+				<ol>
+					<li>Vérifier le <strong>titre</strong> de l’onglet.</li>
+					<li>Contrôler les <strong>contrastes</strong>.</li>
+					<li>Tester le <strong>zoom</strong>, jusqu’à <samp>200%</samp>.</li>
+					<li>Naviguer <kbd>Tab</kbd> pour parcourir la page.</li>
+				</ol>
+			</div>
+			<div class="portrait mt-1" aria-hidden="true">
+				<svg xmlns="http://www.w3.org/2000/svg" aria-label="Firefox" role="img" viewBox="0 0 512 512">
+					<linearGradient id="a" x1=".7" x2=".3" y2=".8">
+						<stop offset=".3" stop-color="#fd5"/>
+						<stop offset=".6" stop-color="#f85"/>
+						<stop offset="1" stop-color="#d06"/>
+					</linearGradient>
+					<radialGradient id="b" cx=".4" cy=".7">
+						<stop offset=".4" stop-color="#74d"/>
+						<stop offset="1" stop-color="#a2d"/>
+					</radialGradient>
+					<linearGradient id="c" x1=".8" y1=".2" x2=".4" y2=".8">
+						<stop offset=".2" stop-color="#fd5"/>
+						<stop offset="1" stop-color="#f33"/>
+					</linearGradient>
+					<g transform="scale(4)">
+						<path d="M64 53S56 27 80 14c6 12 23 28 26 37 0-6-5-15-5-15A51 48 0 1114 68S38 35 47 33c-2 7 1 16 1 16" fill="url(#a)"/>
+						<circle cx="64" cy="67" r="26" fill="url(#b)"/>
+						<path d="M21 45l43 12c-6 11-16 3-23 14a22 22 0 1034-20s33 3 17 42H28m36 25h1" fill="url(#a)"/>
+						<path d="M35 43c16 0 12 7 29 14-18 6-23-9-38 0 5 9 12 8 12 8 1 43 72 29 67-17A50 46.6 47 0117 81c-9-18-1-40 16-51" fill="url(#c)"/>
+					</g>
+				</svg>
+			</div>
+		</div>
+	</section>
+
+	<section id="slide-9">
+		<h2>Les tests recommandés<br><span lang="en">easy checks</span></h2>
+		<p class="lead">
+			Les <a href="https://www.w3.org/WAI/test-evaluate/easy-checks/" hreflang="en" lang="en"><i>Easy Checks</i></a>
+		  sont des tests simples à réaliser, couvrant les risques d’accessibilité les plus courants.
+		</p>
+		<ol>
+			<li><strong>Titres des pages</strong>&nbsp;: <code>&lt;title&gt;</code> doit être présent, et décrire la page.</li>
+			<li><strong>Alternatives</strong> textuelles pour les images&nbsp;: attribut <code>alt</code>, élément <code>&lt;figcaption&gt;</code>, etc.</li>
+			<li><strong>Hiérarchie</strong> des titres (<code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>…) pertinente.</li>
+			<li><strong>Contraste</strong> des couleurs suffisants.</li>
+			<li><strong>Taille du texte</strong> ajustable.</li>
+			<li><strong>Navigation au clavier</strong>&nbsp;: utiliser <kbd>Tab</kbd>.</li>
+			<li><strong>Formulaires</strong>&nbsp;: libellés pertinents, indication des champs obligatoires…</li>
+			<li><strong>Les contenus animés</strong> doivent être contrôlables.</li>
+			<li><strong>Alternatives aux multimédia</strong> (audio et vidéo)&nbsp;: sous-titres, transcription textuelle, audiodescription…</li>
+			<li><strong>Structure</strong> de base&nbsp;: <code>&lt;main&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code> essentiellement.</li>
+		</ol>
+		<p class="small">
+			Certains sont acquis grâce à la structure de nos thèmes.
+			D’autres sont exclusivement du ressort des contributeurs.
+		</p>
+		<p class="lead">Le reste va nous <small>(pré)</small>occuper —&nbsp;sur les thèmes, notamment.</p>
+	</section>
+
+	<section id="slide-10">
+		<h2>Les tests<br>automatiques</h2>
+		<div class="grid-2">
+			<div>
+				<p>
+					<a href="https://addons.mozilla.org/fr/firefox/addon/tanaguru-webext/">L’extension Tanaguru</a>
+					est la seule à évaluer vis-à-vis du RGAA — ce qui évite les nœuds au cerveau.
+				</p>
+				<div class="carte">
+					<h3>Fonctionnalités appréciables</h3>
+					<ol>
+						<li>Filtrer par thématique (en amont de l’analyse).</li>
+						<li>Filtrer par statut.</li>
+						<li>Surveiller les modifications du <abbr lang="en" title="Document Object Model">DOM</abbr>.</li>
+						<li>Afficher l’ordre de tabulation.</li>
+						<li>Explications, légendes et accompagnements pertinents.</li>
+					</ol>
+				</div>
+			</div>
+			<div class="portrait mt-1" aria-hidden="true">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42" role="presentation">
+					<defs id="defs1">
+						<path id="path42" d="M27 15.47c-.1.42-5 0-6.92-1.27a2.15 2.15 0 0 1-1-2.92 12.1 12.1 0 0 0 3.24.32S27.06 15 27 15.47"/>
+						<path id="path55" d="M35 11.76a45 45 0 0 1-4.53 1.83c-1 .21-4.5.35-4.5.35l-.57-2.59 6.2-2.08Z"/>
+						<style id="style1">.cls-1{fill:#d20f00}.cls-2{opacity:.15}.cls-3{opacity:.05}.cls-4{fill:#e2211b}.cls-11{opacity:.2}.cls-12{fill:#ef362c}.cls-13{opacity:.1}.cls-16{fill:#fff}</style>
+					</defs>
+					<path d="M36.866 26.744s-1.23-1.83-1.06-2.16c.08-.15.71.32.71.32a6.6 6.6 0 0 1-.51-2.08 6.6 6.6 0 0 1 1.13-2.4 6.6 6.6 0 0 1 .94 2.48 6.7 6.7 0 0 1-.67 2s.66-.42.73-.26c.15.34-1.22 2.06-1.22 2.06z" class="cls-1"/>
+					<path d="M36.866 26.444s-.88-1.21-.75-1.45.64.24.64.24a10.6 10.6 0 0 1-.49-2.2 4.9 4.9 0 0 1 .87-1.78 4.8 4.8 0 0 1 .67 1.86 12 12 0 0 1-.64 2.21s.63-.3.68-.19c.1.26-.94 1.36-.94 1.36z" class="cls-2"/>
+					<g id="g19" class="cls-1" transform="translate(.496 1.324)">
+						<path d="M17.16 10.81a1.68 1.68 0 0 1-.54 2.31c-.79.49-.4-.64-.89-1.43s-1.68-.93-.89-1.42a1.69 1.69 0 0 1 2.32.54"/>
+							<path d="M19.28 9.82a1.68 1.68 0 0 1-.84 2.18c-.85.38-.31-.69-.69-1.53s-1.54-1.11-.7-1.47a1.69 1.69 0 0 1 2.23.82"/>
+							<path d="M15.26 12a1.68 1.68 0 0 1-.09 2.37c-.68.63-.51-.55-1.14-1.23s-1.82-.61-1.14-1.24a1.68 1.68 0 0 1 2.37.1"/>
+							<path d="M13.66 13.48a1.69 1.69 0 0 1 .21 2.37c-.6.71-.58-.48-1.29-1.08s-1.89-.37-1.29-1.08a1.69 1.69 0 0 1 2.37-.21"/>
+							<path d="M12.32 15.23a1.68 1.68 0 0 1 .39 2.35c-.54.75-.61-.44-1.37-1s-1.9-.23-1.36-1a1.68 1.68 0 0 1 2.34-.35"/>
+							<path d="M11.26 17.15a1.67 1.67 0 0 1 .74 2.26c-.42.82-.67-.35-1.49-.77s-1.92.06-1.5-.77a1.69 1.69 0 0 1 2.25-.72"/>
+							<path d="M10.3 19.15a1.69 1.69 0 0 1 1.14 2.09c-.26.89-.72-.21-1.62-.47s-1.87.41-1.61-.48a1.69 1.69 0 0 1 2.09-1.14"/>
+							<path d="M10 21.35a1.68 1.68 0 0 1 1.38 1.93c-.15.92-.74-.12-1.66-.27s-1.81.64-1.66-.28A1.69 1.69 0 0 1 10 21.35"/>
+							<path d="M9.8 23.73a1.67 1.67 0 0 1 1.55 1.79c-.07.93-.75-.05-1.68-.12s-1.74.81-1.67-.12a1.67 1.67 0 0 1 1.8-1.55"/>
+							<path d="M9.83 25.94a1.68 1.68 0 0 1 1.94 1.37c.16.92-.74.13-1.66.29s-1.5 1.2-1.65.28a1.68 1.68 0 0 1 1.37-1.94"/>
+							<path d="M10.41 28.44a1.68 1.68 0 0 1 2.26.74c.42.83-.67.34-1.5.76s-1.08 1.58-1.5.75a1.67 1.67 0 0 1 .74-2.25"/>
+							<path d="M12 30.85a1.67 1.67 0 0 1 2.31.54c.49.79-.64.4-1.43.89s-.93 1.67-1.42.88a1.67 1.67 0 0 1 .54-2.31"/>
+							<path d="M14 32.89a1.68 1.68 0 0 1 2.37-.17c.7.61-.49.57-1.1 1.27s-.4 1.88-1.1 1.27a1.68 1.68 0 0 1-.17-2.37"/>
+							<path d="M16.58 34.45a1.68 1.68 0 0 1 2.42-.17c.7.61-.5.57-1.1 1.27s-.4 1.88-1.1 1.27a1.68 1.68 0 0 1-.22-2.37"/>
+							<path d="M18.88 35.77a1.35 1.35 0 0 1 1.77-.68c.68.31-.24.55-.55 1.23s.13 1.52-.54 1.22a1.34 1.34 0 0 1-.68-1.77"/>
+							<path d="M21.3 36.48a.94.94 0 0 1 1.13-.7c.51.12-.09.41-.21.92s.29 1-.22.92a.94.94 0 0 1-.7-1.14"/>
+							<path d="M23.22 36.47a.94.94 0 0 1 1-.88c.52 0 0 .42-.06.94s.45 1-.07.94a.94.94 0 0 1-.87-1"/>
+						</g>
+						<path d="M26.496 12.694a10.3 10.3 0 0 1 2-2.07 14.67 14.67 0 0 0-18.32 14.21c0 8.1 6.56 13.49 14.67 13.49s13.17-6.82 12.15-14.45c-1 10-8.92 12.11-12.15 11.72-5.34-.64-9.92-4.82-9.3-10.76.57-5.44 4.33-9 9.3-9h.1a10.1 10.1 0 0 1 1.55-3.14" class="cls-4"/>
+						<path d="M26.496 11.074c-9.53 0-14.68 6.13-14.68 13.42 0 8.84 6.52 12.77 13 12.77 8 0 12.72-8.69 12.15-13.39-1 10-8.92 12.11-12.15 11.72-5.34-.64-9.92-4.82-9.3-10.76.57-5.44 4.33-9 9.3-9h.1c.36-1.13.9-3.81 1.58-4.76" class="cls-1"/>
+						<path d="M36.206 27.614c-2.35 6.3-8.14 6.9-11.36 6.63a9.17 9.17 0 0 1-8.42-9.41c0-5 4-9 8.42-9h.1a10.1 10.1 0 0 1 1.55-3.14 11.4 11.4 0 0 0-1.66-.12c-5.7 0-11.34 5.49-11.34 12.26a11.15 11.15 0 0 0 11.35 11.34c5.24 0 10.21-3.68 11.36-8.56" style="fill:#f1b08f"/>
+						<path d="M36.206 27.614c-2.35 6.3-8.14 6.9-11.36 6.63a9.17 9.17 0 0 1-8.42-9.41c0-5 4-9 8.42-9h.1a10.3 10.3 0 0 1 .55-1.51c-4.06-.19-10.5 3.74-10.5 10.51a10 10 0 0 0 9.82 10.36c6.27 0 10.42-3.28 11.39-7.58" style="opacity:.15;fill:#a05c3f"/>
+						<g id="g37" style="fill:#a05c3f;opacity:.6" transform="translate(.496 1.324)">
+							<path d="M33.87 29.77a.4.4 0 0 0-.06-.15l-.17.19h.08a.27.27 0 0 0 .15-.04"/>
+							<path d="M32.3 31.39a2.4 2.4 0 0 1-.27-.23l-.24.16a.6.6 0 0 0 .25.12.4.4 0 0 0 .26-.05"/>
+							<path d="M29.88 32.78a.7.7 0 0 0 .39.13 4 4 0 0 1-.47-.57v-.05l-.26.09a.6.6 0 0 0 .06.11.8.8 0 0 0 .28.29"/>
+							<path d="M27.24 33.41a1.2 1.2 0 0 0 .39.36 5 5 0 0 1-.35-.9h-.27a1.5 1.5 0 0 0 .23.54"/>
+							<path d="M24.31 33.63a1.6 1.6 0 0 0 .25.54 6 6 0 0 1 0-1.12v-.11h-.26a.4.4 0 0 0 0 .11 2 2 0 0 0 .01.58"/>
+							<path d="M21.3 33.17a1.65 1.65 0 0 0 .08.7 5 5 0 0 1 .35-1.29l.11-.22-.25-.09a1.3 1.3 0 0 0-.11.2 2.1 2.1 0 0 0-.18.7"/>
+							<path d="M18.82 31.88a2.1 2.1 0 0 0 0 .82 5 5 0 0 1 .58-1.46l.13-.18-.2-.17a1.4 1.4 0 0 0-.15.21 2.4 2.4 0 0 0-.36.78"/>
+							<path d="M16.73 29.89a2.3 2.3 0 0 0-.29.85 4.7 4.7 0 0 1 1-1.37l.22-.18-.1-.19a3 3 0 0 0-.26.19 2.7 2.7 0 0 0-.57.7"/>
+							<path d="M15.18 27.42a2.4 2.4 0 0 0-.49.84 4.7 4.7 0 0 1 .64-.69 3.2 3.2 0 0 1 .76-.52l.41-.17c0-.08-.05-.16-.08-.24a3 3 0 0 0-.45.17 2.6 2.6 0 0 0-.79.61"/>
+							<path d="M14.48 24.65a3 3 0 0 0-.84.57 6 6 0 0 1 1.85-.59 4 4 0 0 1 .5 0v-.26a4 4 0 0 0-.5 0 3.3 3.3 0 0 0-1.01.28"/>
+							<path d="M14.57 21.79a3.1 3.1 0 0 0-1 .28 6.4 6.4 0 0 1 1.9 0 3 3 0 0 1 .51.12 2 2 0 0 1 0-.25 3 3 0 0 0-.5-.14 3.7 3.7 0 0 0-.91-.01"/>
+							<path d="M15.35 19.19a2.8 2.8 0 0 0-1 .13 4.7 4.7 0 0 1 1.88.34 4 4 0 0 1 .42.21l.11-.24c-.15-.08-.29-.17-.45-.24a2.9 2.9 0 0 0-.96-.2"/>
+							<path d="M16.78 17a2.9 2.9 0 0 0-1.09-.14 5.7 5.7 0 0 1 1 .34 4.3 4.3 0 0 1 .91.52 3 3 0 0 1 .25.21c.06-.07.11-.14.17-.2a3 3 0 0 0-.26-.22 3.2 3.2 0 0 0-.98-.51"/>
+							<path d="M18.83 15.09a3.4 3.4 0 0 0-.53-.2l-.3-.07h-.26c-.03 0 .07.05.11.08l.13.06.24.12a5 5 0 0 1 .48.27 4 4 0 0 1 .83.66l.14.16.21-.15a1.5 1.5 0 0 0-.16-.19 3 3 0 0 0-.89-.74"/>
+						</g>
+						<g id="g72" transform="translate(.496 1.324)">
+								<path d="M21.31 11.86c-1.91-.28-2-.44-2-.44a4.8 4.8 0 0 0 .87-1.75c.12-.51 1.13-.51 1.43-.47.04 0 1.61 2.94-.3 2.66" class="cls-2"/>
+								<path d="M21.49 11.86c-1.91-.28-2-.44-2-.44a4.5 4.5 0 0 0 .85-1.75c.23-1.15 1-1.15 1.28-1.1a1.88 1.88 0 0 1 1.5 1c.12.06.28 2.57-1.63 2.29" style="fill:#b70000"/>
+								<path d="M27.68 15.69c-.11.43-4.72.89-5.92-.31s-1.33-3.87-1.33-3.87a12.6 12.6 0 0 0 3.24.32s4.12 3.44 4.01 3.86" class="cls-4"/>
+								<path d="M26.8 15.62c-.11.43-5 0-6.93-1.26a2.17 2.17 0 0 1-1-2.93 12.6 12.6 0 0 0 3.24.33s4.8 3.43 4.69 3.86" class="cls-2"/>
+								<use class="cls-1" href="#path42"/>
+								<use id="path43" class="cls-3" href="#path42"/>
+								<path d="M23.13 11.73c-2.23.39-2.88-.23-2.88-.23a4.8 4.8 0 0 0 1.15-2.39c.21-1.65 2.75-1.82 3.77-.41a2.29 2.29 0 0 1-2.04 3.03" class="cls-2"/>
+								<path d="M23.25 11.93c-2.74-.21-2.82-.42-2.82-.42a6.5 6.5 0 0 0 1-2.57c.21-1.64 1.27-1.72 1.7-1.68a2.65 2.65 0 0 1 2.22 1.31c.15.03.65 3.57-2.1 3.36" style="fill:#c90900"/>
+								<path d="M23.53 7.37c-.87-1-3.18-4.12-2.61-5.65s2.8-.35 2.2 1a1 1 0 0 1-1.39.63s.69 2.02 1.27 2.34.7-.48-.29-1.35c.57 0 2 1.27.74 1.92 0 .14.71.91.71.91" class="cls-4"/>
+								<path d="M24.16 7.17s-.75-.77-.71-.91-.79.08.08 1.11z" class="cls-11"/>
+								<path d="M25.54 7.06c-.41-.76-1.46-3-.9-3.86s1.8.17 1.25.9a.66.66 0 0 1-.95.2s.16 1.37.48 1.65.5-.2 0-.88c.37 0 1.1 1.06.22 1.29 0 .08.33.66.33.66" class="cls-1"/>
+								<path d="M25.54 7.06a13 13 0 0 1-.6-1.29c0-.16.17-.45.3-.11a1 1 0 0 0 .18.29c.14.12.25.12.3 0s.27.13.23.2a.7.7 0 0 1-.32.17c0 .08.33.66.33.66" class="cls-11"/>
+								<path d="M23.47 9.93a4.7 4.7 0 0 1-2.78-1c-1.18-1 2.34-.5 3.37-.13z" class="cls-2"/>
+								<path d="M23.37 9.73a10 10 0 0 1-3.79-1.51c-1.18-1-.92-2.92-.58-3.05s3.93 3 5 3.38z" class="cls-12"/>
+								<path d="M23.48 9.5a8.64 8.64 0 0 1-3.6-1.57c-.76-.68-.7-1.89-.48-2s2.74 1.87 4.43 2.85z" class="cls-1"/>
+								<path d="M22 11.35a6.9 6.9 0 0 0 1.27-3.3q-.24.79-.57 1.68c-.2.58-.43 1.13-.7 1.62" class="cls-13"/>
+								<path d="M35 11.76a45 45 0 0 1-4.53 1.83c-1 .21-4 .66-4 .66l-1.21-1.68.12-1.22 4.51-1.57 1.73-.51z" style="opacity:.1;fill:#fff;stroke:#b0b0b0;stroke-miterlimit:10;stroke-width:.07px"/>
+								<use class="cls-1" href="#path55"/>
+								<use id="path56" style="opacity:.3" href="#path55"/>
+								<path d="M30.63 9.7s-4.88 2.1-4.91 2.19-.13.48 0 .48a7.22 7.22 0 0 0 5.16-1.86 1 1 0 0 1-.11.77s0 .05.05.06c.47 0 .81-.54.81-.54a5.14 5.14 0 0 1 2.61 1.27l.44-.19c-.82-1-4.05-2.18-4.05-2.18" class="cls-13"/>
+								<path d="M34.3 12.82c.11-.15.33-.46.28-.66s-.38-.92-2.77-1.59c0 0-.35.58-.82.54 0 0-.06 0 0-.06a1 1 0 0 0 .1-.77 7.2 7.2 0 0 1-5.15 1.86c-.16 0-.5-.11-.47-.2s5.35-2.47 5.35-2.47 3.87 1.41 4.24 2.45a.79.79 0 0 1-.68 1 .064.064 0 0 1-.08-.1" class="cls-16"/>
+								<path d="M34.3 12.82c.11-.15.33-.46.28-.66s-.38-.92-2.77-1.59c0 0-.35.58-.82.54 0 0-.06 0 0-.06a1 1 0 0 0 .1-.77 3 3 0 0 0-.19-.63c.28 0 3.31 1.12 4.22 2.36.09.39-.42.89-.74.9a.06.06 0 0 1-.08-.09" class="cls-13"/>
+								<path d="M30.54 11.88h-.06a3.4 3.4 0 0 1-.36.94 6.7 6.7 0 0 1-3.67.6 9.5 9.5 0 0 0 4 .38c.72.29.47-1.7.09-1.92" class="cls-13"/>
+								<path d="M33.53 14.08a1.2 1.2 0 0 1-.17.65 4 4 0 0 0-.59-.59 5.6 5.6 0 0 0-1.81-1s0-1-.34-1.24h-.06a3.7 3.7 0 0 1-.36.94 6.7 6.7 0 0 1-3.67.6 9.45 9.45 0 0 0 4 .38 4.58 4.58 0 0 1 2.75 1.78c.11.14.7-.77.28-1.53.01-.01-.03-.02-.03.01" class="cls-16"/>
+								<path d="M33.53 14.08a1.2 1.2 0 0 1-.17.65 4 4 0 0 0-.59-.59 5.6 5.6 0 0 0-1.81-1s0-1-.34-1.24h-.06c.38.49-.4 1.47-.1 1.93a4.83 4.83 0 0 1 2.89 1.79c.11.14.65-.79.23-1.55-.01-.01-.05-.02-.05.01" class="cls-13"/>
+								<path d="M30.86 9.65a7.07 7.07 0 0 1-4.95 2.2c-3.33.17-3.88-.5-3.88-.5a7.8 7.8 0 0 0 1.24-3.09c.26-2 1.16-2.94 4.72-.45a8.5 8.5 0 0 0 3.2.61c1.6.14-.33 1.23-.33 1.23" class="cls-1"/>
+								<path d="M22 11.4s-1.19 3.36.93 4.53c3.1 1.05 8.76 1.15 10 .61.07-.01-9.35-4.81-10.93-5.14" class="cls-2"/>
+								<path d="M33.56 15.45a6.4 6.4 0 0 0-3.15-2.17 6.8 6.8 0 0 1-3.45.16 1.33 1.33 0 0 1-1.05-1.59 17.4 17.4 0 0 1-3.88-.5 6.6 6.6 0 0 0 .26 3.74 2.45 2.45 0 0 0 1.27 1.21c3.11 1 8.54.78 9.77.24a.34.34 0 0 0 .2-.15 2.5 2.5 0 0 0 .03-.94" class="cls-4"/>
+								<path d="M33.56 15.45a6.4 6.4 0 0 0-3.15-2.17 1.67 1.67 0 0 1-.36 1.23l3.38 2a.17.17 0 0 0 .09-.1 2.3 2.3 0 0 0 .04-.96" class="cls-12"/>
+								<path d="M25.92 7.3A6.8 6.8 0 0 1 28 8.6c.19.18 1 .27 1.09.43s-.78.42-1 .31a4.6 4.6 0 0 0-3.88-1.77c-.16 0 .6-.83 1.66-.49.13.04.05.22.05.22" class="cls-11"/>
+								<path d="M24.4 9.05a1.48 1.48 0 0 1 2.15-.13 1.8 1.8 0 0 1 .26.29 2 2 0 0 1 .17.35c-.11-.07-.2-.15-.3-.22l-.15-.1a.7.7 0 0 0-.14-.1.5.5 0 0 1-.15-.08L26.08 9l-.15-.05a1 1 0 0 0-.16 0 1.8 1.8 0 0 0-.66 0 4 4 0 0 0-.71.1" style="opacity:.8;fill:#1a1a1a"/>
+								<path d="M30.05 14.51s-1.41 1.56-7.77.58a2.45 2.45 0 0 0 1.27 1.21c3.21 1.07 8.94.75 9.88.19a8.8 8.8 0 0 0-3.38-1.98" class="cls-1"/>
+								<path d="m31.19 8.42-.54-.05a1.83 1.83 0 0 0 .21 1.28c.14-.07 1.88-1.1.33-1.23" class="cls-3"/>
+								<path d="M30.86 9.65c3.2 1.07 4.22 2.36 4.22 2.36s1.51-.29 1.06-1.6c-.23-.67-1.26.31-4-2.77-.79-.83-1.75.93-1.28 2.01" class="cls-12"/>
+								<path d="M32.22 9.17c.28-.22-.23-.7-.52-.45s-.57-.58-.21-.65c.62-.1 1.4 1 2.68 1.9.87.6 1.58.45 1.76.87s-.33.62-.34.44c-.06-.72-.58-.49-.59-.27s.5.38.16.52c-.12.05-.78-.7-1.62-1.21s-1.84-.65-1.93-.89c-.19-.43.39-.12.61-.26" class="cls-1"/>
+							</g>
+							<g id="g79" transform="translate(.496 1.324)">
+									<path d="M10.23 19.51a3.3 3.3 0 0 1 1.19-.57v-.14l-.93-.22s-.13.42-.26.93" class="cls-13"/>
+									<path d="M1 15.84c.08.19.24.14.74.2a5.81 5.81 0 0 1 5 4c.23.19.33-.1.72-.45a4.72 4.72 0 0 1 3.92-.61 13.3 13.3 0 0 1 .95-2.31s-4.22-3.11-4.63-4.88c-.13-.57 0-2-1-1.82.45.22.61.49-.11 1.18C3.9 13.71.75 15.23 1 15.84" class="cls-1"/>
+									<path d="M12.37 16.63s-.43-.3-1-.77C10.07 14.83 8 13 7.7 11.79c-.13-.57 0-2-1-1.82.45.22.61.49-.11 1.18.2 3.35 5.78 5.48 5.78 5.48" class="cls-4"/>
+									<path d="m3.26 15.3 3.54-1.66a.09.09 0 0 1 .14.09L7 17.94a.11.11 0 0 1-.19.06 5.15 5.15 0 0 0-1.6-1.66 9.5 9.5 0 0 0-2-.85.1.1 0 0 1 .05-.19" class="cls-13"/>
+									<path d="M6.8 13.64a.09.09 0 0 1 .14.09L7 17.94a.11.11 0 0 1-.19.06 5.15 5.15 0 0 0-1.6-1.66c1.71-1.45 1.59-2.7 1.59-2.7" class="cls-3"/>
+									<path d="m8.25 18.32 1.27-1.5a.21.21 0 0 1 .29 0l1.54 1.06a.08.08 0 0 1 0 .15 5.7 5.7 0 0 0-1.48 0 11 11 0 0 0-1.47.49.125.125 0 0 1-.15-.2" class="cls-13"/>
+									<path d="M9.52 16.82a.21.21 0 0 1 .29 0l1.54 1.06a.08.08 0 0 1 0 .15 5.7 5.7 0 0 0-1.48 0 1.19 1.19 0 0 0-.35-1.21" class="cls-3"/>
+								</g>
+				</svg>
+			</div>
+		</div>
+	</section>
+
+	<section id="slide-11">
+		<h2>Attention aux<br>surcouches</h2>
+		<div class="grid-2">
+			<div>
+				<p>Des éditeurs comme FACIL’iti parlent d’accessibilité.</p>
+				<div class="carte">
+					<h3>Le(s) problème(s) des surcouches</h3>
+					<ul>
+						<li>Elles ne peuvent pas rendre un site accessible.</li>
+						<li>Elles peuvent considérablement dégrader l’accessibilité du site.</li>
+						<li>Elles sont sur une couche technique inepte.</li>
+						<li>Elles ne peuvent en aucun cas améliorer la conformité, mais la dégradent souvent (et fortement).</li>
+					</ul>
+					<p>
+						Le site <a href="https://overlayfactsheet.com/fr/"><em lang="en">Overlay Fact Sheet</em></a>
+						détaille les problèmes posés par ces outils, témoignages à l’appui.
+					</p>
+				</div>
+				<p class="small">
+					<strong>Réclame</strong>&nbsp;: l’extension <a href="https://confort-plus.orange.com">Orange Confort+</a>
+					ajoute ce genre de fonctionnalités <strong>au navigateur</strong>.
+				</p>
+			</div>
+			<div class="portrait mt-1" aria-hidden="true">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 90" role="presentation" style="vertical-align:super">
+					<style>.st0{fill:#e2033c}.st2{fill:#fff}</style>
+					<circle cx="45" cy="45" r="45" class="st0"/>
+					<path d="m26.3 59.7 29.7 29C74.8 84 89 67.5 90 47.5L78.4 36.1z" class="st2" style="opacity:.2"/>
+					<path d="m77.5 34.3-22.5 5 2.5 3.1zM12.8 34.2l22.5 5.1-2.5 3zM45.3 47.5l10.1-4.2-10.1-15.6-10.5 15.5zv.1zv.1z" class="st2"/>
+					<path d="M45.3 50 12.2 36.1l14.1 23.6h38l14.1-23.6z" class="st2"/>
+					<path d="M235 27.7V11.1h8.6z" class="st0"/>
+					<path d="M138.2 18.9h-15.6v23.5h9.9V50h-9.9v28.6H115V11.3h23.2zM164.9 78.6h-7.7l-1-8.3h-9.6l-1 8.3h-8L148 11.4h6.8zm-9.6-15.5-3.8-29.4-3.9 29.4zM196.6 66.7c0 1.8-.3 3.5-1 5.1s-1.6 3-2.8 4.2-2.6 2.1-4.2 2.8-3.3 1-5.1 1-3.5-.3-5.1-1-3-1.6-4.2-2.8-2.1-2.6-2.8-4.2-1-3.3-1-5.1V23.3c0-1.8.3-3.5 1-5.1s1.6-3 2.8-4.2 2.6-2.1 4.2-2.8 3.3-1 5.1-1 3.5.3 5.1 1 3 1.6 4.2 2.8 2.1 2.6 2.8 4.2 1 3.3 1 5.1v2.2H189v-2.2c0-1.6-.5-2.9-1.6-3.9-1.1-1.1-2.4-1.6-3.9-1.6-1.6 0-2.9.5-3.9 1.6-1.1 1.1-1.6 2.4-1.6 3.9v43.4c0 1.6.5 2.9 1.6 3.9 1.1 1.1 2.4 1.6 3.9 1.6s2.8-.5 3.9-1.6 1.6-2.4 1.6-3.9v-.8l7.6-2.5zM210.4 78.6h-7.6V11.3h7.6zM237.8 78.6h-20.5V11.3h7.6V71h12.9zM256.6 78.6H249V26.1h7.6zM278.5 72.3c.7 0 1.4-.2 2.1-.5.6-.3 1.1-.8 1.4-1.3l5.1 5.6c-.9 1.1-2.2 2-3.7 2.7s-3.1 1-4.6 1q-5.55 0-8.7-3.6c-3.15-3.6-3.1-5.5-3.1-9.3v-34h-4.8v-6.6h4.8v-9.5l7.6-2.5v12.1h10V33h-10v34c0 3.5 1.3 5.3 3.9 5.3M299.7 78.6h-7.6V26.1h7.6z" class="st2"/>
+					<circle cx="253" cy="14.4" r="3.9" class="st2"/>
+					<circle cx="296.1" cy="14.4" r="3.9" class="st2"/>
+				</svg>
+			</div>
+		</div>
+	</section>
+
+	<section id="slide-12">
+		<h2>Générique de fin<br>Merci</h2>
+		<div>
+			<h3>Crédits</h3>
+			<ul>
+				<li>Typographie de titraille&nbsp;: <a hreflang="en" href="https://fonts.google.com/specimen/Luckiest+Guy?preview.text=Mutant&class&nbsp;;fication=Display,Handwriting&query=Astigmatic">Luckiest Guy</a> par Astigmatic&nbsp;;</li>
+				<li>Typographie de labeur&nbsp;: <a hreflang="en" href="https://github.com/mozilla/zilla-slab">Zilla Slab</a> par Mozilla&nbsp;;</li>
+				<li>Typographie monospace&nbsp;: <a hreflang="en" href="https://blog.glyphdrawing.club/font-with-built-in-syntax-highlighting/">FontWithASyntaxHighlighter</a> par Heikki Lotvonen&nbsp;;</li>
+				<li>Typographie pour les émojis&nbsp;: <a hreflang="en" href="https://github.com/mozilla/twemoji-colr">Twemoji COLR</a> par Mozilla.</li>
+				<li>Moteur de présentation inspiré de <a hreflang="en" href="https://css-tricks.com/css-scroll-snap-slide-deck/">"<cite lang="en">CSS scroll-snap slide deck that supports live coding</cite>" de Stephanie Eckles sur Smashing Magazine</a>.</li>
+			</ul>
+		</div>
+	</section>
+</main>
+
+<div class="timer" style="--duration: 45;">
+	<div class="clock" role="presentation">
+		<span style="--time: 3600s"></span>h&nbsp;
+		<span style="--time: 60s"></span>m&nbsp;
+		<span style="--time: 1s"></span>s
+	</div>
+</div>
+
+<script>
+	let view;
+	switchSlide = (id) => {
+		// Historique
+		history.pushState({}, '', `#slide-${id}`);
+		// Vue présentateur
+		//// Aperçu du slide suivant
+		document.body.style.setProperty('--next', String(`-moz-element(#slide-${Number(id) + 1})`));
+		//// Synchro de la vue présentateur
+		if (view) {
+			view.postMessage(`slide-${id}`, `http://localhost:8080${document.location.pathname}index.html`);
+		}
+		//// Notes dans la vue présentateur
+		if('note' in document.getElementById(`slide-${id}`).dataset) {
+			document.body.dataset.note = document.getElementById(`slide-${id}`).dataset.note;
+		} else {
+			delete document.body.dataset.note;
+		}
+	}
+
+	document.addEventListener('DOMContentLoaded', () => {
+		const slides = document.querySelectorAll('section[id^="slide-"]');
+
+		// Nombre total de slides, pour la pagination
+		document.body.style.setProperty('--slides', String(slides.length));
+		document.body.style.setProperty('--next', String(`-moz-element(#slide-2)`));
+
+		// Gestion de l’historique
+		let io = new IntersectionObserver(entries => {
+			if (entries[0].isIntersecting === true) {
+				switchSlide(entries[0].target.id.split('-')[1]);
+			}
+		}, {
+			root: document.querySelector('main'),
+			threshold: [1]
+		});
+		slides.forEach(slide =>	io.observe(slide));
+
+		document.addEventListener('keydown', event => {
+			const index = Number(window.location.hash.split('-')[1]);
+			let id = null;
+			switch (event.key) {
+				// Activer la vue présentateur
+				case 's':
+					if (event.altKey) {
+						view = window.open(`http://localhost:8080${document.location.pathname}index.html`, 'speakerView');
+						view.addEventListener('load', () => {
+							view.document.body.classList.add('speaker');
+						})
+					}
+					break;
+				// Télécommande ++
+				case 'PageDown':
+					id = index + 1;
+					break;
+				// Télécommande --
+				case 'PageUp':
+					id = index - 1;
+					break;
+				default:
+					break;
+			}
+
+			if (id !== null && id >= 1) {
+				document.getElementById(`slide-${id}`).scrollIntoView({ behavior: 'smooth' });
+				switchSlide(id);
+			}
+		});
+	});
+
+	window.addEventListener('message', (e) => {
+		if (e.origin === 'http://localhost:8080' && typeof e.data === 'string') {
+			document.getElementById(e.data)?.scrollIntoView({ behavior: 'smooth' });
+			switchSlide(e.data?.split('-')[1]);
+		}
+	}, false);
+</script>
+</body>
+</html>
