@@ -247,6 +247,11 @@
 		padding: 0;
 	}
 
+	ol li::marker {
+		color: var(--accent);
+		font-family: 'Luckiest Guy', system-ui, sans-serif;
+	}
+
 	abbr {
 		border-block-end: 1px dotted;
 		cursor: help;
@@ -684,13 +689,15 @@
 		transform-origin: 0;
 	}
 
-	h1::first-line,
-	h2::first-line,
-	.h2::first-line {
+	:is(h1, h2, .h2)::first-line {
 		color: var(--foreground);
 		font-family: 'Zilla Slab', system-ui, sans-serif;
 		font-size: 1.5rem;
 		line-height: 1.875;
+	}
+
+	:is(h1, h2, .h2) abbr {
+		font: inherit;
 	}
 
 	.splash h1 {
@@ -714,26 +721,6 @@
 		color: #fff;
 		font-size: 32rem;
 		line-height: .01;
-	}
-
-	:has(> .back-to-the-future) {
-		display: block;
-		perspective: 17rem;
-	}
-
-	.back-to-the-future {
-		font: 900 1.25em / .44 serif;
-		-webkit-text-stroke: .0625rem #ccc;
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-image: linear-gradient(red 25%, orange, yellow 75%);
-		transform: rotateY(130deg) skewX(12deg);
-		position: absolute;
-	}
-
-	ol[start] li::marker {
-		color: var(--accent);
-		font-family: 'Luckiest Guy', system-ui, sans-serif;
 	}
 
 	@media screen and (min-width: 60rem) {
@@ -807,7 +794,7 @@
 
 	small,
 	.small {
-		font: 400 1.25rem/1 'Zilla Slab';
+		font: 400 1.125rem/1 'Zilla Slab';
 	}
 
 	.muted {
@@ -925,6 +912,10 @@
 		section :is(p, ul, ol, dl, blockquote, .lead) {
 			font-size: 1.5rem;
 		}
+
+		section :is(small, .small) {
+			font-size: 1.25rem;
+		}
 	}
 }
 @layer demos {
@@ -938,6 +929,32 @@
 	p code {
 		font-family: 'FontWithASyntaxHighlighter', monospace;
 		font-palette: --syntaxHighlighter;
+	}
+
+	.portrait {
+		font-size: 80vw;
+		text-align: center;
+	}
+
+	.carte {
+		background-color: color-mix(in srgb, var(--background) 90%, #fff);
+		border-radius: .5rem;
+		margin-block-end: 2rem;
+		padding: 1rem;
+	}
+
+	@media (width > 60rem) {
+		.portrait {
+			font-family: 'Twemoji Mozilla', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', sans-serif;
+			font-size: min(40vw, 80vh);
+			inline-size: 40vw;
+			inset-block-start: 10vh;
+			inset-inline-end: 10vh;
+			line-height: 80vh;
+			overflow: hidden;
+			position: absolute;
+			text-align: start;
+		}
 	}
 }
 @layer utilities {
