@@ -15,13 +15,13 @@ modified: "2025-12-09"
 
 **Côté jardin**, les légumes d’hiver font leur vie, mais nous ne nous en occupons plus vraiment.
 
-**Je lis beaucoup, de tout**. En ce moment, c’est <cite>Libration</cite> de <em>Becky Chambers</em>, un des nombreux livres achetés grâce à mes camarades chez Onepoint. Mon précédent livre lu était <cite>Les Montagnes Hallucinées</cite> de <em>H.P. Lovecraft</em>, distrayant mais longuet.
+**Je lis beaucoup, de tout**. En ce moment, c’est <cite>Le Livre de Hain</cite> (volume 2) de <em>Ursula K. Le Guin</em>, un des nombreux livres achetés grâce à mes camarades chez Onepoint. Mon précédent livre lu était <cite>Libration</cite> de <em>Becky Chambers</em>, autrice que je commence à aduler.
 
 Ma <abbr title="Pile à lire" aria-label="Pile à lire">PàL</abbr> contient des œuvres de Fabrice Caro, Caryl Férey, encore du Terry Pratchett, Pierre Lemaitre, Stephen King… mais aussi <cite>La volonté de changer</cite> ou <cite>Voyage en misarchie</cite>, qu’il faudra bien que je me décide à lire un jour&nbsp;!
 
 J’écoute peu de musique. J’ai redécouvert Sporto Kantès et je retrouve mon plaisir de circa 2005. Ça rejoint Meute, Woodkid, C2C, Fatboy Slim, Roudoudou ou Caravan Palace dans les artistes que je peux écouter en boucle.
 
-Et je regarde… Des films quand je peux (<cite>Emilia Perez</cite> récemment, une belle œuvre), quelques séries de temps à autre (notamment <cite>Stranger Things</cite>), et souvent du rugby pour travailler en parallèle le soir sur mes projets…
+Et je regarde… Des films quand je peux (<cite>28 ans plus tard</cite> récemment, après avoir revu les deux premiers opus), quelques séries de temps à autre (<cite>Solar Opposites</cite>, en ce moment), et souvent du rugby pour travailler en parallèle le soir sur mes projets…
 
 **Je fais du vélo, aussi**&nbsp;: nous avons acheté un vélo cargo triporteur cet été, je m’en sers presque tous les jours depuis que je travaille pour Entr'ouvert. Quatre places dans le caisson, avec une canopée&nbsp;: c’est idéal pour amener trois enfants à l’école&nbsp;!
 
@@ -49,4 +49,3 @@ J’ai changé le mois dernier&nbsp;! Je découvre Entr'ouvert, une <abbr title=
 J’apprivoise donc beaucoup de choses en ce moment, le seul projet parallèle que j’ai pu gérer est le thème 2025 des [24 jours de web](https://www.24joursdeweb.fr/).
 
 Je ne travaille plus vraiment sur [Bootstrap](https://getbootstrap.com) à mon grand désarroi, mais je suis toujours de loin certaines discussions et donne parfois mon avis. Le projet est très vivant et la relève sur [Boosted](https://boosted.orange.com) (que j’ai développé en solo pendant deux ans) assure à fond.
-
