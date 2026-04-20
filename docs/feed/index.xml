@@ -10,19 +10,44 @@
 				<item>
 					<title>IA bien qui IA le dernier</title>
 					<link>https://www.ffoodd.fr/ia-bien-qui-ia-le-dernier/</link>
-					<description>&lt;ul&gt;
-&lt;li&gt;Les externalités techniques : machines physiques, énergie, surface imperméabilisée, etc.&lt;/li&gt;
-&lt;li&gt;Les impacts psychosociaux : perte d’esprit critique, mauvaise estimation du temps, biais de confirmation ++, orientation des idées par suggestion, perte de sens dans le travail, perte de travail tout court&lt;/li&gt;
-&lt;li&gt;Les risques culturels : non respect des licences et de la propriété intellectuelle (que se passera-t-il quand du code sous licence sera retrouvé dans vos vibe coded apps ? Orange VS Entr’ouvert), opacité et invisibilisation des sources — voire mensonges / manipulations purs et durs, etc.&lt;/li&gt;
-&lt;li&gt;Les risques de sécurité : envoyer des données à pétaouchnok, zéro confidentialité ni étanchéité&lt;/li&gt;
-&lt;li&gt;L’impact sur l’apprentissage et l’expertise : besoin d’expertise pour gérer les résultats, donc experts++ et apprentis–&lt;/li&gt;
-&lt;li&gt;Parti pris politique : lié au capitalisme extrême, exploitation des ressources et des gens (entraînements par des petites mains invisibles à Mada et ailleurs…), caisse de résonnance pour les discriminations (racisme, validisme, esxisme, etc.)…&lt;/li&gt;
-&lt;li&gt;Les retours / observations par collègues interposés : temps passé important, besoin de recadrer souvent (retours Boris), risques de sécurité ++, besoin de cumuler les outils / agents / serveurs, délire des MCP (talk d’Antonin)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Et que se passera t-il quand votre outil disparaîtra ?&lt;/p&gt;
+					<description>&lt;h2 id=&quot;preambule&quot; tabindex=&quot;-1&quot;&gt;Préambule&lt;/h2&gt;
+&lt;p&gt;L’intégralité de ce site est fait (hu)main.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&quot;https://www.ffoodd.fr/assets/img/fait-hu-main.svg&quot; alt=&quot;Fait (hu)main&quot; width=&quot;542&quot; height=&quot;160&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;&lt;figcaption&gt;Logo adapté par &lt;a href=&quot;https://fourbi.eu/ia&quot;&gt;Joachim Robert&lt;/a&gt; d’après le projet &lt;a href=&quot;https://hinokodo.itch.io/human-made&quot;&gt;&lt;em&gt;Human Made&lt;/em&gt;&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;mes-2-centimes&quot; tabindex=&quot;-1&quot;&gt;Mes 2 centimes&lt;/h2&gt;
+&lt;p&gt;Je ne cherche pas à documenter ce merdier. Si un sujet vous interpelle, cherchez et vous trouverez des sources.
+Tout ceci est évidemment teinté d’opinions, mais elles sont forgées sur du concret.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Les résultats côté accessibilité (audit, inté HTML / CSS, etc.) étaient jusque là très en retrait en terme de qualité par rapport au bon gros dévs : apparemment ça évolue en bien (Tenon, Romy, etc.).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Les externalités techniques :&lt;/strong&gt; machines physiques, énergie, surface imperméabilisée, etc.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Le déni de service généralisé :&lt;/strong&gt; les robots IA représentent une part massive des requêtes, au point de faire tomber certains services (y compris libres et gratuits).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;La merdification massive du web&lt;/strong&gt; — au point qu’un moteur de recherche devienne presque inutile — et la création et diffusion de désinformation de haute qualité.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Les impacts psychosociaux :&lt;/strong&gt; perte d’esprit critique, mauvaise estimation du temps, biais de confirmation ++, orientation des idées par suggestion, perte de sens dans le travail, perte de travail tout court.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Un facteur de &lt;em lang=&quot;en&quot;&gt;burn-out&lt;/em&gt; massif :&lt;/strong&gt; relire, débugger, débunker et corriger le produit d’une IAg est laborieux et pénible, plus pénible que de faire soi-même. On lance plusieurs agents en parallèle, on analyse les retours et on corrige… On se retrouve à micro-manager des outils qui nous harcèlent en retour.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Le parallèle évident avec l’Uberisation :&lt;/strong&gt; se lancer dans un métier qui n’est pas le sien et obtenir un résultat qui semble satisfaisant, c’est non seulement produire de la piètre qualité au lieu de faire travailler un professionnel.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Les risques culturels :&lt;/strong&gt; non respect des licences et de la propriété intellectuelle (que se passera-t-il quand du code sous licence sera retrouvé dans vos &lt;em lang=&quot;en&quot;&gt;vibe coded apps&lt;/em&gt; ? Orange VS Entr’ouvert) opacité et invisibilisation des sources — voire mensonges / manipulations purs et durs, etc.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Le pillage des communs numériques :&lt;/strong&gt; sans consentement, respect des licences ni rétribution des auteurices. Et maintenant, certaines IA ajoutent même un &lt;em lang=&quot;en&quot;&gt;watermark&lt;/em&gt; sur leurs résultats, et… les utilisateurs se plaignent qu’ils ne peuvent plus prétendre que c’est le fruit de leur travail ! CQFD.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Les risques de sécurité :&lt;/strong&gt; envoyer des données à pétaouchnok, zéro confidentialité ni étanchéité, et quid de la « souveraineté » ?&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;L’impact sur l’apprentissage et l’expertise :&lt;/strong&gt; besoin d’expertise pour gérer les résultats, donc des experts renforcés et des apprentis démunis. Qui seront les experts dans 20 ans ? Les dévs web sont les prochains dévs COBOL ?&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Les limites intrinsèques :&lt;/strong&gt; basées sur un corpus et un entraînement, et des résultats probabilistes. L’IA ne peut intrinsinquement pas dépasser l’intelligence collective.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;L’illusion de l’immédiateté :&lt;/strong&gt; l’impression de magie parce que ça génère un résultat complexe en 30s qui nous aurait pris des heures à rédiger nous-mếmés — mais basés sur des siècles d’expériences concrètes pré-digérées.&lt;/li&gt;
+&lt;li&gt;Accessoirement, plusieurs études ont démontré que « les gens » tendent à &lt;strong&gt;ignorer le temps&lt;/strong&gt; qu’ils passent à rédiger et corriger leurs &lt;em lang=&quot;en&quot;&gt;prompts&lt;/em&gt;, à exploiter les résultats fournis, etc.&lt;/li&gt;
+&lt;li&gt;Sans avoir lu à ce sujet, ces deux derniers points me font penser à &lt;strong&gt;une forme d’addiction&lt;/strong&gt; : on lance une requête, et quand elle arrive BOUM! Dopamine.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;L’illusion du savoir :&lt;/strong&gt; une IAg ne cherche rien, elle donne une réponse crédible — pas vraie, juste crédible — en s’appuyant sur ce qu’elle a en stock. Souvenez-vous des astuces à base de dates, en demandant par exemple qui est l’actuel président des USA.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Parti pris politique :&lt;/strong&gt; lié au capitalisme extrême, exploitation des ressources et des « travailleurs du clic » (autrement dit : néocolonialisme), caisse de résonnance pour les discriminations (racisme, validisme, esxisme, etc.)… aka le technofascime (en lien avec le technoféodalisme).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;L’irresponsabilité :&lt;/strong&gt; ces outils sont des boîtes noires, dont les résultats sont non déterministes. Couplé à un manque de compétences de l’utilisateur : qui est responsable en cas d’erreur, avec des potentialités physiques (dans le médical, par exemple) ?&lt;/li&gt;
+&lt;li&gt;U&lt;strong&gt;ne excuse pour ne pas faire&lt;/strong&gt;, &lt;abbr title=&quot;Also Known As&quot; aria-label=&quot;Also Known As&quot; lang=&quot;en&quot;&gt;a.k.a.&lt;/abbr&gt; le techno-solutionnisme.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Que se passera t-il quand votre outil disparaîtra&lt;/strong&gt; ? &lt;em lang=&quot;en&quot;&gt;Spoiler&lt;/em&gt; : il disparaîtra, un jour.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&quot;pourquoi-tant-de-haine&quot; tabindex=&quot;-1&quot;&gt;Pourquoi tant de haine ?&lt;/h2&gt;
+&lt;p&gt;Tout le monde semble s’émerveiller du gain de temps que l’IA procure — qui reste pourtant à prouver… — mais je m’interroge.&lt;/p&gt;
+&lt;p&gt;Le temps hypothétiquement gagné, vous en faites quoi ? Davantage de loisirs, de repos, de vie famille ?
+Si vous êtes simplement plus productifs, vous intensifiez votre travail. Vous avez demandé une augmentation, grâce à ce gain de productivité ? Ou imaginez-vous une quelconque reconnaissance de votre chef, patron, voire entreprise ?&lt;/p&gt;
+&lt;p&gt;Parce que &lt;strong&gt;si vous faites plus en moins de temps, il serait somme toute logique que la valeur de votre heure de travail augmente&lt;/strong&gt;, n’est-ce pas ?&lt;/p&gt;
+&lt;p&gt;Et si vous êtes plus productifs au même prix, que se passe-t-il pour les personnes autour de vous ? Doivent-elles également devenir plus performantes grâce à l’IA ?
+De mon point de vue, ces outils sont &lt;strong&gt;une essoreuse à travailleurs de plus dans le carquois du capitalisme&lt;/strong&gt;. Et je ne parle que de travail.&lt;/p&gt;
+&lt;p&gt;Enfin merde quoi, il y a même &lt;a href=&quot;https://en.wikipedia.org/wiki/Deaths_linked_to_chatbots&quot;&gt;une page sur Wikipédia pour les décès dûs à un abus ou une croyance excessive en ce que raconte une IA&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;sentence&quot; tabindex=&quot;-1&quot;&gt;Sentence&lt;/h2&gt;
+&lt;p&gt;Bref, je m’en sers pas, ne m’en servirai pas — et vous prierai de bien vouloir ne pas tenter de me convertir à votre religion.&lt;/p&gt;
+&lt;p&gt;Je fais de l’intégration HTML/CSS et de l’accessibilité depuis 15 ans, &lt;strong&gt;j’ai l’habitude de pisser sur un moulin à vent&lt;/strong&gt;.&lt;/p&gt;
 </description>
 					<pubDate>Mon, 20 Apr 2026 12:26:35 GMT</pubDate>
 					<dc:creator>Gaël Poupard</dc:creator>
