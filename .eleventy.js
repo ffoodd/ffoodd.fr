@@ -90,6 +90,7 @@ export default function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("_src/favicon.svg")
 	eleventyConfig.addPassthroughCopy("_src/favicon.ico")
 	eleventyConfig.addPassthroughCopy("_src/humans.txt")
+	eleventyConfig.addPassthroughCopy("_src/human.json")
 	eleventyConfig.addPassthroughCopy("_src/images")
 	eleventyConfig.addPassthroughCopy("_src/assets")
 	eleventyConfig.addPassthroughCopy({"_src/talks" : "./"})
