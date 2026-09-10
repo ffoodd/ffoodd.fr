@@ -1,0 +1,9 @@
+{
+	"version": "0.1.1",
+	"url": "https://ffoodd.fr",
+	"vouches": [
+		{ "url": "https://fourbi.eu/", "vouched_at": "2026-09-10" },
+		{ "url": "https://lamecarlate.net", "vouched_at": "2026-09-10" },
+		{ "url": "https://larlet.fr/", "vouched_at": "2026-09-10" }
+	]
+}
