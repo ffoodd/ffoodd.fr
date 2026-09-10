@@ -32,7 +32,7 @@ Tout ceci est évidemment teinté d’opinions, mais elles sont forgées sur du 
 - **Les risques de sécurité :** envoyer des données à pétaouchnok, zéro confidentialité ni étanchéité, et quid de la « souveraineté » ?
 - **L’impact sur l’apprentissage et l’expertise :** besoin d’expertise pour gérer les résultats, donc des experts renforcés et des apprentis démunis. Qui seront les experts dans 20 ans ? Les dévs web sont les prochains dévs COBOL ?
 - **Les limites intrinsèques :** basées sur un corpus et un entraînement, et des résultats probabilistes. L’IA ne peut intrinsinquement pas dépasser l’intelligence collective.
-- **L’illusion de l’immédiateté :** l’impression de magie parce que ça génère un résultat complexe en 30s qui nous aurait pris des heures à rédiger nous-mếmés — mais basés sur des siècles d’expériences concrètes pré-digérées. 
+- **L’illusion de l’immédiateté :** l’impression de magie parce que ça génère un résultat complexe en 30s qui nous aurait pris des heures à rédiger nous-mêmes — mais basés sur des siècles d’expériences concrètes pré-digérées. 
 - Accessoirement, plusieurs études ont démontré que « les gens » tendent à **ignorer le temps** qu’ils passent à rédiger et corriger leurs <em lang="en">prompts</em>, à exploiter les résultats fournis, etc.
 - Sans avoir lu à ce sujet, ces deux derniers points me font penser à **une forme d’addiction** : on lance une requête, et quand elle arrive BOUM! Dopamine.
 - **L’illusion du savoir :** une IAg ne cherche rien, elle donne une réponse crédible — pas vraie, juste crédible — en s’appuyant sur ce qu’elle a en stock. Souvenez-vous des astuces à base de dates, en demandant par exemple qui est l’actuel président des USA.
