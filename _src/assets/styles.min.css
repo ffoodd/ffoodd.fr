@@ -1636,6 +1636,10 @@ pre[class*="language-"][tabindex] {
 	.ffeeeedd--contact li {
 		padding: .5em;
 	}
+
+	figure img {
+		max-width: calc(100vw - 6em);
+	}
 }
 
 @media (max-width: 30em) {
