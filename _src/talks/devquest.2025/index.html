@@ -75,16 +75,16 @@
 			<div>
 				<ol>
 					<li>Il faut l’instancier.</li>
-					<li>Il faut lui donner une cible.</li>
 					<li>Il lui faut une fonction de rappel.</li>
+					<li>Il faut lui donner une cible, et des options.</li>
 					<li>Il faut le débrancher, à un moment.</li>
 				</ol>
 				<p>Et maintenant, en avant&nbsp;!</p>
 			</div>
-			<pre class="playground pt-0"><code>const observer = new MutationObserver();
+			<pre class="playground pt-0"><code>const observer = new MutationObserver(callback);
 observer.observe(
 	document.querySelector('#cible'),
-	callback
+	options
 );
 observer.disconnect();
 		</code></pre>
